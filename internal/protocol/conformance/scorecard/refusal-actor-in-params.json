@@ -1,0 +1,25 @@
+{
+  "description": "No identity may be typed into a card door (RT3.1/P34): a card is about its subject, and who asks changes no number.",
+  "method": "scorecard.agent",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "scorecard.agent",
+    "params": {
+      "agent": "dev-loops",
+      "actor": {
+        "kind": "user",
+        "id": "9001"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: scorecard.agent takes no \"actor\" \u2014 a card is about the subject it names; who asks changes no number"
+    }
+  },
+  "fromDoor": true
+}

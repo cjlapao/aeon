@@ -1,0 +1,60 @@
+{
+  "description": "mcp.server.share true: every agent declares the public server's classified tools, now and for agents created later. It is a declaration, not a permission \u2014 a policy allow still decides use. Sharing again is a no-op: changed:false and no audit row.",
+  "method": "mcp.server.share",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 926,
+    "method": "mcp.server.share",
+    "params": {
+      "name": "github",
+      "shared": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 926,
+    "result": {
+      "server": {
+        "name": "github",
+        "tier": "public",
+        "enabled": true,
+        "origin": "user",
+        "transport": {
+          "type": "stdio",
+          "command": "gh-mcp",
+          "args": [],
+          "env": [
+            "GITHUB_TOKEN"
+          ],
+          "url": ""
+        },
+        "tools": [
+          {
+            "name": "list_issues",
+            "rerun": "safe",
+            "effect": "local"
+          }
+        ],
+        "declaredBy": 0,
+        "status": "unprobed",
+        "updatedAt": "2026-11-01T17:00:00Z",
+        "shared": true
+      },
+      "grants": [
+        {
+          "agent": "golang-engineer",
+          "before": [],
+          "after": [
+            {
+              "qualified": "github.list_issues",
+              "tier": "public",
+              "state": "unavailable",
+              "reason": "unavailable: no ToolAccess allow rule grants github.list_issues (MC10)"
+            }
+          ]
+        }
+      ],
+      "changed": true
+    }
+  }
+}

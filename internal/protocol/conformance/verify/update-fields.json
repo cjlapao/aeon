@@ -1,0 +1,37 @@
+{
+  "description": "The update door: requirement, command and timeoutS change together with STRING/NUMBER values, and the changed command here is credential-shaped, so the daemon answers with its scrubbed-environment note (VerifyEnvNoteSentence, verify.go l.321) beside the gate — note is omitempty and appears ONLY when CommandIsTokenShaped matches; this fixture is that sample. The note is the daemon's sentence to print verbatim, never a refusal: the person decides whether the token was meant to be there.",
+  "method": "verify.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1004,
+    "method": "verify.update",
+    "params": {
+      "id": "vcm-10",
+      "command": "curl -s -H \"Authorization: bearer ghp_UPDATESAMPLENOTREAL0000000000\" https://api.internal.example/health",
+      "requirement": "advisory",
+      "timeoutS": 450,
+      "enabled": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1004,
+    "result": {
+      "gate": {
+        "id": "vcm-10",
+        "componentId": "c-child",
+        "name": "unit",
+        "command": "curl -s -H \"Authorization: bearer ghp_UPDATESAMPLENOTREAL0000000000\" https://api.internal.example/health",
+        "requirement": "advisory",
+        "timeoutS": 450,
+        "memoryMb": 512,
+        "position": 1,
+        "enabled": true,
+        "origin": "manual",
+        "createdAt": "2026-11-01T09:00:00Z",
+        "updatedAt": "2026-11-03T10:05:00Z"
+      },
+      "note": "gate commands run with a scrubbed environment; do not embed a credential"
+    }
+  }
+}

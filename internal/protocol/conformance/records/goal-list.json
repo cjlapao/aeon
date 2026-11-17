@@ -1,0 +1,34 @@
+{
+  "description": "goal_list narrows a group's goals by epic and review state \u2014 the same filter the step's tool sees. The socket answers a bare ARRAY of goal rows (store.Goal's own JSON: componentId is the root the goal hangs on), not an object.",
+  "method": "goal.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "method": "goal.list",
+    "params": {
+      "root_id": "prj-7a1f",
+      "state": "draft"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "result": [
+      {
+        "id": "goal-7a1f",
+        "version": 1,
+        "title": "Ship the org board",
+        "type": "feature",
+        "bodyNote": "criteria 6-11",
+        "sourceKind": "manual",
+        "sourceRef": "",
+        "reviewState": "draft",
+        "createdByKind": "agent",
+        "createdById": "brainstormer",
+        "createdAt": "2026-10-26T09:00:00Z",
+        "updatedAt": "2026-10-26T09:00:00Z",
+        "componentId": "prj-7a1f"
+      }
+    ]
+  }
+}

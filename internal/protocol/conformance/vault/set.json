@@ -1,0 +1,27 @@
+{
+  "description": "vault.set is the person's write (human door only; the actor is the connection's peer and a params-supplied actor is refused by name). A NEW variable is a secret hidden from agents unless the person says otherwise; omitted fields keep what is stored, so a flags-only edit never re-enters the value. The answer never echoes a secret's value.",
+  "method": "vault.set",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 952,
+    "method": "vault.set",
+    "params": {
+      "name": "GITHUB_PERSONAL_ACCESS_TOKEN",
+      "value": "ghp_example",
+      "description": "CI token for the github MCP server"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 952,
+    "result": {
+      "variable": {
+        "name": "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "description": "CI token for the github MCP server",
+        "secret": true,
+        "agentVisible": false,
+        "updatedAt": "2026-11-08T12:00:00Z"
+      }
+    }
+  }
+}

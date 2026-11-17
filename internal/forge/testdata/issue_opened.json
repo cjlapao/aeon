@@ -1,0 +1,8 @@
+{
+ "__status": 201,
+ "body": {
+  "number": 5,
+  "title": "Add version endpoint",
+  "state": "open"
+ }
+}

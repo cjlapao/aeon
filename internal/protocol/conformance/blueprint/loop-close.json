@@ -1,0 +1,20 @@
+{
+  "description": "Ends a RESTING loop (S39 CR1): the store claims idle→done, the loop emits loop.finished, and the command answers with the new status. A loop that is not idle is refused as data (refused.kind=not-idle) by the daemon, never as a socket error.",
+  "method": "loop.close",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "method": "loop.close",
+    "params": {
+      "id": "loop-9"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "result": {
+      "id": "loop-9",
+      "status": "done"
+    }
+  }
+}

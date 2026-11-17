@@ -1,0 +1,32 @@
+{
+  "description": "history.show is the drill-down (T2): a live entry asked of the RIGHT door returns its live transcript \u2014 the message sequence the loop's steps produced, oldest-first, never an empty read (DB19). The kind is 'live', so the app reads the transcript, not the cold-stored files; the wrong door would be a refusal, not an empty transcript, so a live loop is never read as 'no transcript'.",
+  "method": "history.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 412,
+    "method": "history.show",
+    "params": {
+      "id": "live"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 412,
+    "result": {
+      "kind": "live",
+      "id": "live",
+      "transcript": [
+        {
+          "role": "user",
+          "content": [
+            {
+              "kind": "text",
+              "text": "build the live loop",
+              "isError": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

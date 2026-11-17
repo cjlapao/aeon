@@ -1,0 +1,34 @@
+{
+  "description": "MQ13 at the wire: `actor` in params is refused BY KEY, before the lenient decode and before the service is touched \u2014 the actor is the CONNECTION's person (peer credentials), and a queue row whose author a caller could type is a queue with forged history. The same key-ban covers status, reason and every stamped column.",
+  "method": "mergequeue.enqueue",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 732,
+    "method": "mergequeue.enqueue",
+    "params": {
+      "componentRoot": "/srv/components/alpha",
+      "featureBranch": "feature/nightly-sweep",
+      "headSha": "cccc3333dddd4444eeee5555ffff6666aaaa7777",
+      "attended": false,
+      "actor": {
+        "kind": "user",
+        "id": "someone-else"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 732,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: mergequeue.enqueue params carry \"actor\" \u2014 the caller names what to act on, never who acted, what state the row is in, or what evidence it carries (S60 MQ13)",
+      "data": {
+        "what": null,
+        "means": null,
+        "todo": null,
+        "fatal": false
+      }
+    }
+  },
+  "fromDoor": true
+}

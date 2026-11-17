@@ -1,0 +1,35 @@
+{
+  "description": "task_show answers one board row by its surrogate id \u2014 rows are the source of truth, events only announce.",
+  "method": "task.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "method": "task.show",
+    "params": {
+      "id": "task-7a1f"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "result": {
+      "taskid": "T1",
+      "loopSlug": "briefing",
+      "componentRoot": "/home/p/aeon",
+      "ord": 1,
+      "title": "Wire the board",
+      "tech": "go",
+      "engineer": "golang-engineer",
+      "dependsOn": [],
+      "status": "todo",
+      "id": "task-7a1f",
+      "manual": false,
+      "assigneeKind": "agent",
+      "assignee": "golang-engineer",
+      "componentId": "cmp-7a1f",
+      "approvalState": "none",
+      "createdByKind": "agent",
+      "createdById": "planner"
+    }
+  }
+}

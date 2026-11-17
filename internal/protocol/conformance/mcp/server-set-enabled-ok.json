@@ -1,0 +1,66 @@
+{
+  "description": "mcp.server.setEnabled false (MG4): the server leaves the next offer while its rows, tools and EVERY declaration naming them STAND \u2014 disabled is not deleted data, and re-enabling restores the offer without any re-declaring. Setting the same value is a no-op: changed:false and no audit row.",
+  "method": "mcp.server.setEnabled",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 925,
+    "method": "mcp.server.setEnabled",
+    "params": {
+      "name": "github",
+      "enabled": false
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 925,
+    "result": {
+      "server": {
+        "name": "github",
+        "tier": "public",
+        "enabled": false,
+        "origin": "user",
+        "transport": {
+          "type": "stdio",
+          "command": "gh-mcp",
+          "args": [],
+          "env": [
+            "GITHUB_TOKEN"
+          ],
+          "url": ""
+        },
+        "tools": [
+          {
+            "name": "list_issues",
+            "rerun": "safe",
+            "effect": "local"
+          }
+        ],
+        "declaredBy": 0,
+        "status": "unprobed",
+        "updatedAt": "2026-11-01T17:00:00Z"
+      },
+      "grants": [
+        {
+          "agent": "golang-engineer",
+          "before": [
+            {
+              "qualified": "github.list_issues",
+              "tier": "public",
+              "state": "unavailable",
+              "reason": "declared; server disabled (MG4)"
+            }
+          ],
+          "after": [
+            {
+              "qualified": "github.list_issues",
+              "tier": "public",
+              "state": "unavailable",
+              "reason": "declared; server disabled (MG4)"
+            }
+          ]
+        }
+      ],
+      "changed": true
+    }
+  }
+}

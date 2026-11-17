@@ -1,0 +1,24 @@
+{
+  "description": "Reports three-state validation diagnostics for supplied YAML before a user saves or starts a new loop.",
+  "method": "blueprint.validate",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "method": "blueprint.validate",
+    "params": {
+      "name": "two-step",
+      "content": "id: two-step\nschemaVersion: 1\nversion: 1\nlanes:\n  - id: survey\n    step: {kind: model-step, agent: default}\n"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "result": {
+      "blueprint": "two-step",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 6,
+      "diagnostics": []
+    }
+  }
+}

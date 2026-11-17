@@ -1,0 +1,21 @@
+{
+  "description": "`step.steer` with attachments (S69 AT3): the steer row keeps the person's PURE text and the receipts ride beside it; at the next turn boundary the pinned revisions expand to content blocks immediately beside the steer's words in the same user turn — a revision the store lost speaks its absence as its own block rather than vanishing silently (ruling 3).",
+  "method": "step.steer",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 119,
+    "method": "step.steer",
+    "params": {
+      "stepId": 41,
+      "text": "aim at the parser — the trace is attached",
+      "attachments": [
+        { "document": "@attachments/b1a4c9de-trace.txt", "rev": 1 }
+      ]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 119,
+    "result": { "steerId": 12, "state": "pending" }
+  }
+}

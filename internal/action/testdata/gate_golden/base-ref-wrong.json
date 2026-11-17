@@ -1,0 +1,9 @@
+{
+  "case": "base-ref-wrong",
+  "refused": true,
+  "sentence": "refused: phantom-merge guard: PR #3 is based on \"main\", not the feature branch \"feature/4a17-version\" — merging it would land work where nobody is looking (D5)\n  why:  the forge understood the call and declined it — a domain refusal, not a transient fault\n  do:   fix the request so it satisfies the refusal; resending it unchanged will fail again",
+  "calls": [
+    "PostReview",
+    "ReadPR"
+  ]
+}

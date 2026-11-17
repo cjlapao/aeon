@@ -1,0 +1,26 @@
+{
+  "description": "An unknown rootId on the overview door is the SAME typed refusal the inbox carries (ErrInboxScope, -31926 — one scope convention, SV1): the mission plane never invents a second way to say 'that tree does not exist live here', and an overview of nothing is never returned for a typo.",
+  "method": "mission.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1451,
+    "method": "mission.status",
+    "params": {
+      "rootId": "cmp-does-not-exist"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1451,
+    "error": {
+      "code": -31926,
+      "message": "unknown inbox scope",
+      "data": {
+        "what": "the inbox scope named a component this store does not carry live (rootId \"cmp-does-not-exist\")",
+        "means": "an empty inbox would have looked like 'nothing needs you' — this refusal says the scope itself was the unknown thing, so an empty list can never be a lie about a typo",
+        "todo": "check the id against `component.list` (archived components are out of scope like unknown ones), or call inbox.list/inbox.summary with no rootId to see every tree",
+        "fatal": false
+      }
+    }
+  }
+}

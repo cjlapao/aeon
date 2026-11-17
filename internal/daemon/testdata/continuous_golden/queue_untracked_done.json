@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "position": 1,
+      "goal": "untouched",
+      "status": "ready",
+      "loopSlug": ""
+    }
+  ],
+  "starts": null,
+  "question": null,
+  "sizingLoop": false
+}

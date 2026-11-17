@@ -1,0 +1,22 @@
+{
+  "description": "File a row and its scratch under the person's hand (P4): the answer is the row, and the loop belongs to T9.",
+  "method": "intake.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "intake.start",
+    "params": {
+      "name": "Goal intake demo"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "id": "int-abc123",
+      "name": "Goal intake demo",
+      "scratchPath": "/home/person/.local/state/aeon/intake",
+      "createdAt": "2026-11-05T10:00:00Z"
+    }
+  }
+}

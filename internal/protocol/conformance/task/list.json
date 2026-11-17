@@ -1,0 +1,44 @@
+{
+  "description": "task.list answers the board over the socket: rows with their floor-flagged cost composed by the store (P32) and the loops an org task is worked by \u2014 names cross the wire, ids stay the store's.",
+  "method": "task.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 342,
+    "method": "task.list",
+    "params": {
+      "component": "aeon",
+      "manual": false,
+      "status": "in_progress"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 342,
+    "result": {
+      "tasks": [
+        {
+          "id": "task-7a1f",
+          "taskid": "T1",
+          "loopSlug": "briefing",
+          "componentRoot": "/home/p/aeon",
+          "componentId": "cmp-7a1f",
+          "title": "Wire the board",
+          "type": "feature",
+          "tech": "go",
+          "status": "in-progress",
+          "manual": false,
+          "assigneeKind": "agent",
+          "assignee": "golang-engineer",
+          "approvalState": "none",
+          "loopSlugs": [
+            "briefing"
+          ],
+          "costUsd": 0.42,
+          "costIsFloor": false,
+          "createdAt": "2026-10-26T09:00:00Z",
+          "updatedAt": "2026-10-26T10:00:00Z"
+        }
+      ]
+    }
+  }
+}

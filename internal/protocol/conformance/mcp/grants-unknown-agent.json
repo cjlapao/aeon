@@ -1,0 +1,18 @@
+{
+  "description": "S46 T3 (MG8): mcp.grants {agent} for an agent the roster does not carry is the TYPED mcp.unknown refusal (-31852) — the same named-thing fact as an unknown server, now for the AGENT member (the store does not carry the name; the seam knows the names). Never an empty grants view, which would read as \"this agent has no tools\" when the truth is \"that agent does not exist\" — MG8's output-honesty runs BOTH ways here, and a phantom agent's empty view is exactly the plausible wrong answer a management console must not render. The `what` names the unknown agent and the known slugs (the seam's sentence via the typed-error pass-through).",
+  "method": "mcp.grants",
+  "request": {"jsonrpc": "2.0", "id": 909, "method": "mcp.grants", "params": {"agent": "reddit-agentz"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 909,
+    "error": {
+      "code": -31852,
+      "message": "no such MCP server or agent",
+      "data": {
+        "what": "the mcp.grants read named agent \"reddit-agentz\", which is not an agent this store carries; the nearest names are: \"reddit-agent\", \"reviewer\", \"boss\"",
+        "means": "the read answered cleanly and the name is simply absent — this is not the MCP domain declining an operation (that refusal is the mcp.refused code), and nothing was written",
+        "todo": "read one of the near names in `what`, or `mcp.servers` (or `aeon mcp list`) to see what exists — server names and agent slugs are authored, not generated, so typos are the usual cause",
+        "fatal": false
+      }
+    }
+  }
+}

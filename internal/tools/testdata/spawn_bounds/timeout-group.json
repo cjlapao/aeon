@@ -1,0 +1,4 @@
+{
+  "command": "'\u003ctestbin\u003e' \u0026 sleep 30",
+  "render": "$ '\u003ctestbin\u003e' \u0026 sleep 30\nTIMED OUT after 42ms. The output below is what it produced before being stopped — it is partial, and the command may not have finished what it was doing.\n"
+}

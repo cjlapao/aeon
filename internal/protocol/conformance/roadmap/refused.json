@@ -1,0 +1,15 @@
+{
+  "description": "A roadmap refusal names BOTH the reason and the thing refused (T2's discipline) and moves NOTHING: R1's table says a `running` item has no off-ramp — its loop is the loop's own record, and the loop verbs stop it (S24's identical rule for a running queue item). The row keeps the state it had; the client's remedy is the board, not a retry: roadmap.list to see, roadmap.show to read WHY (show names which D4 condition is missing from a stuck item). Every state-law refusal in S26 rides this one code — the reason lives in `what`, the law lives in the reason.",
+  "method": "roadmap.cancel",
+  "request": {"jsonrpc": "2.0", "id": 350, "method": "roadmap.cancel", "params": {"id": 13}},
+  "response": {"jsonrpc": "2.0", "id": 350, "error": {
+    "code": -31900,
+    "message": "the roadmap refused the act",
+    "data": {
+      "what": "roadmap item 13 is running — a loop in flight is the loop's own record; close the loop, not the item",
+      "means": "nothing moved — the row keeps the state it had",
+      "todo": "read the reason in `what`, then roadmap.list to see the board as the daemon sees it",
+      "fatal": false
+    }
+  }}
+}

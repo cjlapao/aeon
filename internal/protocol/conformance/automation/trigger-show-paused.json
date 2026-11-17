@@ -1,0 +1,33 @@
+{
+  "description": "A paused trigger, shown honestly: lastFire null means it never fired (not broken, not hidden), maxCostPerDayUsd null means no cap (not zero), enabled false with the spoken disabledReason.",
+  "method": "automation.trigger.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 204,
+    "method": "automation.trigger.show",
+    "params": {"id": "tr-nightly"}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 204,
+    "result": {
+      "id": "tr-nightly",
+      "name": "Nightly triage",
+      "source": "manual",
+      "rootId": "prj-platform",
+      "componentId": "",
+      "match": {"event": "task.approved", "task_type": ["triage"]},
+      "blueprint": "dev-loop",
+      "kickoff": "",
+      "maxRunsPerHour": 4,
+      "maxCostPerDayUsd": null,
+      "enabled": false,
+      "disabledReason": "operator paused it",
+      "createdByKind": "user",
+      "createdById": "operator",
+      "createdAt": "2026-10-25T09:00:00Z",
+      "updatedAt": "2026-10-26T18:00:00Z",
+      "lastFire": null
+    }
+  }
+}

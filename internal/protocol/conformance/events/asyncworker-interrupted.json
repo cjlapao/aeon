@@ -1,0 +1,20 @@
+{
+  "description": "The third state, kept separate on purpose (S64): this worker was running when the daemon died or shut down, and the next daemon's recovery sweep wrote the row — the process that owned the work is gone, so nobody knows what it half-did, and NOTHING re-fires it (the registry is code, and a silently restarted ten-minute parse is a loop nobody agreed to). The row is the invitation to retry deliberately from the app; `error` says who said no — the daemon by dying, not the work by refusing (that is asyncworker.failed).",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c", "seq": 12, "kind": "asyncworker.interrupted",
+      "at": "2026-10-30T18:02:11.123456789Z",
+      "payload": {
+        "workerId": "aw_5566778899aabbccddeeff0011223344",
+        "workerType": "graph.build",
+        "componentRoot": "/home/dev/shop",
+        "state": "interrupted",
+        "error": "daemon stopped before the worker finished",
+        "queuedAt": "2026-10-30T17:41:02.000Z",
+        "startedAt": "2026-10-30T17:41:02.000Z",
+        "finishedAt": "2026-10-30T18:02:11.000Z"
+      }
+    }
+  }
+}

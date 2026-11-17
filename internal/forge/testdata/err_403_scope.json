@@ -1,0 +1,12 @@
+{
+ "__status": 403,
+ "body": {
+  "message": "Must have admin rights to Repository.",
+  "errors": [
+   {
+    "message": "Requires the admin:repo environment scope."
+   }
+  ],
+  "documentation_url": "https://docs.github.com/rest"
+ }
+}

@@ -1,0 +1,34 @@
+{
+  "description": "DO NOT DELETE THIS FILE. It is the only standing test of T3, the property that makes additive evolution safe: a request carrying a field no current code knows must SUCCEED, and a result carrying one must be ACCEPTED. A client that rejects an unknown field turns every additive change into a breaking one. This file looks like a mistake — `somethingFromTheFuture` is not in any type — and that is exactly why it is named this way and explained here. See conformance/README.md.",
+  "method": "initialize",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+      "clientName": "aeon-cli",
+      "clientVersion": "0.1.0",
+      "protocolVersion": 2,
+      "somethingFromTheFuture": {
+        "nested": [
+          1,
+          2,
+          3
+        ],
+        "why": "a later slice added this and you have not rebuilt yet"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "protocolVersion": 2,
+      "daemonVersion": "0.1.0",
+      "capabilities": [
+        "subscribe"
+      ],
+      "featureWeHaveNotWrittenYet": true
+    }
+  }
+}

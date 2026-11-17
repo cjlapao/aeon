@@ -1,0 +1,18 @@
+{
+  "description": "The final position committed and the runner emitted a finish event immediately, without another call.",
+  "event": "loop.finished",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1606,
+      "kind": "loop.finished",
+      "at": "2026-10-17T16:00:00Z",
+      "payload": {
+        "loopId": "loop-1",
+        "status": "done"
+      }
+    }
+  }
+}

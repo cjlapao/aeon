@@ -1,0 +1,31 @@
+{
+  "description": "`routes.trace` (test bench): one request on a route, sent once, with the JSON body the adapter built and the raw reply the server sent, plus what the adapter read out of that reply. `thinkingChars` 0 beside a raw reply that carries reasoning is the bug this method exists to show. The per-call `reasoningEffort` and `extraBody` change the request for this call only and store nothing; the credential is never in the result.",
+  "method": "routes.trace",
+  "request": {
+    "jsonrpc": "2.0", "id": 79, "method": "routes.trace",
+    "params": {
+      "route": "local-qwen",
+      "prompt": "Say hello",
+      "reasoningEffort": "low",
+      "extraBody": { "chat_template_kwargs": { "enable_thinking": false } }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 79,
+    "result": {
+      "route": "local-qwen",
+      "effort": "low",
+      "extraBody": "{\"chat_template_kwargs\":{\"enable_thinking\":false}}",
+      "url": "http://127.0.0.1:8000/v1/chat/completions",
+      "requestBody": { "model": "qwen", "stream": true, "reasoning_effort": "low", "chat_template_kwargs": { "enable_thinking": false } },
+      "status": 200,
+      "contentType": "text/event-stream",
+      "raw": "data: {\"choices\":[{\"delta\":{\"content\":\"Hello\"}}]}\n\ndata: [DONE]\n",
+      "thinkingChars": 0,
+      "textChars": 5,
+      "text": "Hello",
+      "toolCalls": 0,
+      "durationMs": 412
+    }
+  }
+}

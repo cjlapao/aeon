@@ -1,0 +1,43 @@
+# plan-build — the dev-loop cut down to the part that keeps going wrong: plan, approve, build.
+#
+# No clarify, discovery, legal, git, forge, security, review, QA or memory lanes. The planner files its tasks as task rows, a
+# person approves the plan, and the build lane walks those rows with two rungs each: implement, then verify. Nothing outward
+# happens (no branch, issue, PR or merge), so a run takes minutes and what it shows is the plan -> gate -> build hand-off alone.
+# Use it to check that the build lane runs over the tasks the plan filed; the full dev-loop is the real protocol.
+---
+id: plan-build
+schemaVersion: 1
+version: 1
+
+lanes:
+  - id: plan
+    step: { kind: model-step, agent: project-planner, produces: plan.md }
+
+  - id: plan-gate
+    step: { kind: gate, question: approve-plan }
+    on_reject:
+      goto: plan
+      with: { mode: revise }
+      counter: plan_rounds
+      max: 2
+      then: escalate
+
+  - id: build
+    iterate: tasks
+    rework: implement
+    on_reject: { counter: retries, max: 2, then: escalate }
+    ladder:
+      - id: implement
+        kind: model-step
+        agent: by-tech-tag
+        sets: in-progress
+
+      - id: verify
+        kind: model-step
+        agent: verifier-engineer
+        sets: verified
+
+questions:
+  approve-plan:
+    prompt: Approve the plan and start building?
+    answers: [approve, revise, abort]

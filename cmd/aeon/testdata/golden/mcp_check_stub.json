@@ -1,0 +1,11 @@
+{
+  "server": "search",
+  "ok": true,
+  "tools": [
+    {
+      "name": "ping"
+    }
+  ],
+  "ms": 0,
+  "checkedAt": "\u003cTIME\u003e"
+}

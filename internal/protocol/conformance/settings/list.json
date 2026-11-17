@@ -1,0 +1,34 @@
+{
+  "description": "The settings.list happy path (S44 T5, the door the Settings UI T8 walks and the CLI T7 is a client of, P34): a list scoped to the \"test\" area returns every declared key in that area, each a full SettingView — the declaration (key/area/type/default/description/sensitive and the type's bounds) plus the EFFECTIVE value and the layer that won (source). A declared, never-written key answers its default with source=\"default\" and stored=null; null is the honest \"never set\", which a bare absent field cannot say. The UI renders the list by area; the CLI lists the same rows (one protocol, N projections).",
+  "method": "settings.list",
+  "request": {"jsonrpc": "2.0", "id": 300, "method": "settings.list", "params": {"area": "test"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 300,
+    "result": {
+      "settings": [
+        {
+          "key": "test.flag", "area": "test", "type": "bool", "default": "false",
+          "description": "A test boolean setting.", "sensitive": false,
+          "value": "false", "source": "default", "stored": null,
+          "shadowedBy": "", "envInvalid": "", "storedInvalid": false,
+          "updatedAt": "", "updatedBy": ""
+        },
+        {
+          "key": "test.count", "area": "test", "type": "int", "default": "3",
+          "description": "A test count setting.", "sensitive": false, "min": 1, "max": 10,
+          "value": "7", "source": "database", "stored": "7",
+          "shadowedBy": "", "envInvalid": "", "storedInvalid": false,
+          "updatedAt": "2026-10-30T12:00:00Z", "updatedBy": "user:1000"
+        },
+        {
+          "key": "test.mode", "area": "test", "type": "enum", "default": "auto",
+          "description": "A test mode setting.", "sensitive": false,
+          "enumValues": ["auto", "manual"],
+          "value": "auto", "source": "default", "stored": null,
+          "shadowedBy": "", "envInvalid": "", "storedInvalid": false,
+          "updatedAt": "", "updatedBy": ""
+        }
+      ]
+    }
+  }
+}

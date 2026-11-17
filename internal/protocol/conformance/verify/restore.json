@@ -1,0 +1,31 @@
+{
+  "description": "verify.restore: an archived gate returns to the live set, position and all — the archived stamp is cleared and the gate runs again on the next rung. Restoring a gate that is already active is refused (gate-not-archived): the refusal names the state it found, and the gate is left exactly as it was.",
+  "method": "verify.restore",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1014,
+    "method": "verify.restore",
+    "params": {
+      "id": "vcm-2"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1014,
+    "result": {
+      "gate": {
+        "id": "vcm-2",
+        "componentId": "c-aeon",
+        "name": "lint",
+        "command": "golangci-lint run",
+        "requirement": "advisory",
+        "timeoutS": 600,
+        "position": 2,
+        "enabled": true,
+        "origin": "user",
+        "createdAt": "2026-11-01T09:05:00Z",
+        "updatedAt": "2026-11-02T13:20:00Z"
+      }
+    }
+  }
+}

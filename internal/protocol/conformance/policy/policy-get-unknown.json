@@ -1,0 +1,18 @@
+{
+  "description": "S45 T2 (PM5): a policy.get for an id the store does not carry is a TYPED refusal naming the id AND the nearest ids it did find (up to three, ranked by edit distance) — never an empty success, which would read as \"an empty rule\" when the truth is \"that id does not exist\", and never ErrPolicyReadRefused, whose fact is the boundary refusing to answer a row it cannot vouch for (DB19's discrimination: a clean read answering that a name is absent is a different fact). Ids are authored names, not generated, so the nearest-ids pointer turns the usual cause — a typo — into a pick.",
+  "method": "policy.get",
+  "request": {"jsonrpc": "2.0", "id": 68, "method": "policy.get", "params": {"id": "grant-bashh"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 68,
+    "error": {
+      "code": -31840,
+      "message": "no such policy",
+      "data": {
+        "what": "the policy.get read named \"grant-bashh\", which is not a policy this store carries; the nearest ids are: \"grant-bash\", \"grant-read-tool\", \"no-shell-anywhere\"",
+        "means": "the read answered cleanly and the id is simply absent — this is not the boundary refusing a row it cannot vouch for (that refusal is the policy.read-refused code), and nothing was written",
+        "todo": "read one of the nearest ids named below, or `aeon policy list` (or `policy.list`) to see what exists — ids are authored names, not generated, so typos are the usual cause",
+        "fatal": false
+      }
+    }
+  }
+}

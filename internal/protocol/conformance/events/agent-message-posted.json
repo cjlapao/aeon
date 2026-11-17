@@ -1,0 +1,22 @@
+{
+  "description": "MB6: a row landed in the mailbox \u2014 ask or reply, the row itself says which (expectReply, resultOf). The thread header (thread) and both agents ride the payload so the exchange can render one line without a read-back; delivery is a separate event, never assumed.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 1502,
+      "kind": "agent.message.posted",
+      "at": "2026-10-31T10:00:00.000000001Z",
+      "payload": {
+        "messageId": 13,
+        "thread": 12,
+        "loopId": "l-7",
+        "from": "writer",
+        "to": "planner",
+        "fromStepId": 7,
+        "expectReply": false
+      }
+    }
+  }
+}

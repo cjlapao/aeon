@@ -1,0 +1,28 @@
+{
+  "description": "S51 T1 (TM2): triage.file is the bug's filing door and its author is the CONNECTION's peer stamped by Table.ActorFor (the kernel's uid, the roadmap/blueprint shape), NEVER a param. This fixture pins the refusal when the connection resolves to no identity at all (no actor stamp wired, uid 0, or a blank id): ErrTriageNoActor (-31933), the twin of the roadmap write's -31931 — an unattributable file is the bug_change audit row that cannot name who filed, the exact gap S51 closes. Nothing is read and nothing is written: the bug never enters `unvalidated` and no audit row lands.",
+  "method": "triage.file",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 432,
+    "method": "triage.file",
+    "params": {
+      "componentRoot": "/srv/projects/ledger",
+      "title": "retry counter over-counts on the second attempt",
+      "body": "the retry counter adds two on the second attempt; expected one"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 432,
+    "error": {
+      "code": -31933,
+      "message": "the triage write could not name its author",
+      "data": {
+        "what": "the triage write is a person's door and no identity is available on this connection \u2014 the daemon stamped none",
+        "means": "nothing moved \u2014 the bug keeps the state it had and no audit row was written",
+        "todo": "connect as the person who owns the change (the endpoint is 0600, peer-credentialed); an agent files through its own twin (S51 T5), never by claiming an identity here",
+        "fatal": false
+      }
+    }
+  }
+}

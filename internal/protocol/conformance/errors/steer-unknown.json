@@ -1,0 +1,21 @@
+{
+  "description": "A cancel naming a steerId that no row carries answers `no such steer` — nothing was withdrawn, and the reader is pointed at step.steers, which lists a step's rows with their ids and states.",
+  "method": "step.steer.cancel",
+  "request": {
+    "jsonrpc": "2.0", "id": 100, "method": "step.steer.cancel",
+    "params": { "steerId": 999 }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 100,
+    "error": {
+      "code": -31522,
+      "message": "no such steer",
+      "data": {
+        "what": "no steer row carries steerId 999",
+        "means": "nothing was cancelled — the id named no queue, so no instruction was withdrawn",
+        "todo": "`step.steers {stepId}` lists a step's rows with their ids and states",
+        "fatal": false
+      }
+    }
+  }
+}

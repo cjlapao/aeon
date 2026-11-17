@@ -1,0 +1,44 @@
+{
+  "description": "mergequeue.enqueue appends to the lane: the ONE shared validation (MQ14) ran before the row (branch exists locally or on the remote, base is a known branch of THIS repository, branch is not the base, one open item per branch), the position is the queue's assignment, the row is stamped enqueuedBy user/<peer>, and the actor came from the connection \u2014 a params actor is refused by key before this door ever runs (see enqueue-params-actor.json).",
+  "method": "mergequeue.enqueue",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 837,
+    "method": "mergequeue.enqueue",
+    "params": {
+      "componentRoot": "/srv/components/alpha",
+      "baseBranch": "main",
+      "featureBranch": "feature/nightly-sweep",
+      "headSha": "cccc3333dddd4444eeee5555ffff6666aaaa7777",
+      "attended": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 837,
+    "result": {
+      "id": "mq-2b3c4d5e6f708192a3b4c5d6e7f8091a",
+      "componentRoot": "/srv/components/alpha",
+      "base": "main",
+      "branch": "feature/nightly-sweep",
+      "status": "queued",
+      "position": 3,
+      "attended": true,
+      "headSha": "cccc3333dddd4444eeee5555ffff6666aaaa7777",
+      "baseSha": "9999aaaa8888bbbb7777cccc6666dddd5555eeee4444",
+      "catchUps": 0,
+      "enqueuedBy": {
+        "kind": "user",
+        "id": "cjlapao"
+      },
+      "staleness": {
+        "state": "not-yet",
+        "reason": "the queue has not read its base for this state yet"
+      },
+      "nextStep": "queued: waiting its turn on main behind 1 item",
+      "digest": "53680c25774230a01faa086223ac0fc164b642795e354857193cea8ff23abce6",
+      "createdAt": "2026-11-04T08:00:00Z",
+      "updatedAt": "2026-11-04T08:00:00Z"
+    }
+  }
+}

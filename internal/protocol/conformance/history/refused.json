@@ -1,0 +1,15 @@
+{
+  "description": "A history read refused by name (DB19): the drill-down cannot find the id in scope, or a live entry is asked of the archived door (or vice versa) — a wrong fetch, never an empty read. The reason travels in `what` verbatim so the app shows 'not found / wrong door', not a confident empty transcript: an archived loop read as empty would lie, a live one asked of the archive door would lie. The code is the history read's own (-31800), not the framework's store-absence.",
+  "method": "history.show",
+  "request": {"jsonrpc": "2.0", "id": 413, "method": "history.show", "params": {"id": "no-such-loop"}},
+  "response": {"jsonrpc": "2.0", "id": 413, "error": {
+    "code": -31800,
+    "message": "the history read was refused",
+    "data": {
+      "what": "no loop or archive with id \"no-such-loop\" in scope",
+      "means": "the id names no loop or archive in scope, or a live entry was asked of the archived door (or vice versa) — the refusal travels verbatim, never read as empty (DB19)",
+      "todo": "the message carries the id or the door at fault; `aeon history show` reads the same drill-down from a terminal",
+      "fatal": false
+    }
+  }}
+}

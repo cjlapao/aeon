@@ -1,0 +1,34 @@
+{
+  "description": "Append a revision under the connection's person (P4): the view carries the stamped actor and the new revision number.",
+  "method": "charter.save",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "charter.save",
+    "params": {
+      "rootId": "cmp-root",
+      "body": {
+        "goal": "ship the intake plane"
+      },
+      "note": "s61 walk"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "rootId": "cmp-root",
+      "revision": 4,
+      "body": {
+        "goal": "ship the intake plane"
+      },
+      "summary": "charter r4 by user:peer-1 (person)",
+      "actorKind": "user",
+      "actorId": "peer-1",
+      "source": "person",
+      "sourceRef": "",
+      "createdAt": "2026-11-05T10:00:00Z",
+      "totalRevisions": 4
+    }
+  }
+}

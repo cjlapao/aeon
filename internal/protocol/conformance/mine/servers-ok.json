@@ -1,0 +1,31 @@
+{
+  "description": "S46 T8 (MG8/MC2): mcp.mine.servers is the AGENT-SCOPED own view — the caller's private servers plus the public ones it declares tools from, transport summarized with env NAMES only (no value has a field to travel in). A peer's private server is not filtered out of this answer; it was never in the input — the answer carries the caller's own two servers and no counts or names that could reveal anyone else's world.",
+  "method": "mcp.mine.servers",
+  "request": {"jsonrpc": "2.0", "id": 931, "method": "mcp.mine.servers", "params": {}},
+  "response": {
+    "jsonrpc": "2.0", "id": 931,
+    "result": {
+      "servers": [
+        {
+          "name": "acme-crud",
+          "tier": "public",
+          "transport": {"type": "http", "url": "https://mcp.acme.dev/tools"},
+          "enabled": true,
+          "tools": [
+            {"name": "list_issues", "rerun": "safe", "effect": "local"},
+            {"name": "create_issue", "rerun": "detectable", "effect": "outward"}
+          ]
+        },
+        {
+          "name": "reddit",
+          "tier": "private",
+          "transport": {"type": "stdio", "command": "npx", "args": ["-y", "@acme/mcp-reddit"], "env": ["REDDIT_TOKEN"]},
+          "enabled": true,
+          "tools": [
+            {"name": "search", "rerun": "safe", "effect": "local"}
+          ]
+        }
+      ]
+    }
+  }
+}

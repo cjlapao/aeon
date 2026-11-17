@@ -1,0 +1,23 @@
+{
+  "description": "A person resumes a stopped loop (S55 T5, LC3) that has a PARKED step: the daemon cold-restarts that step from its checkpoint through the step-continue seam (the person's message, if any, reaches the transcript exactly once), then compare-and-set moves the loop back to running with a fresh runner. how is the daemon's decision, reported so the client is never guessing which resume a parked loop got: \"step\" here, \"runner\" for a between-steps stop or a watchdog stuck-block.",
+  "method": "loop.resume",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 502,
+    "method": "loop.resume",
+    "params": {
+      "id": "loop-9",
+      "message": "carry on — the goal is the new one"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 502,
+    "result": {
+      "loopId": "loop-9",
+      "resumed": true,
+      "status": "running",
+      "how": "step"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "description": "S49 T7 (AN9, TD2) — the agent's ONE ask, answered. automation_propose_disable is a catalog tool and this is its socket twin: the same records service that answers the tool answers the method, so the bytes are the same answer rather than a second rendering of it (rule 4). What the answer is: a PROPOSAL row, `status: proposed`, authored by the AGENT the step belongs to (`createdByKind: agent` — the ask is the model's, and saying so is the audit), carrying WHICH automation (the source is part of the name — AN1), and the agent's reason. The `note` is the fixed inertness statement — `protocol.PolicyProposeInertNote`, one definition in the code and this fixture its wire copy — because an ask constrains nothing: no schedule paused, no trigger switched, nothing is enforced until a person runs the `command` this answer names. An ask that is not a narrowing — an automation already off, unknown, archived — is refused at create by the same door (see propose-disable-refuses-a-smuggled-enabled.json for the door's other half), and there is no propose-enable, -update or -archive ask to file at all: the disable can only take authority away (AN9).",
+  "method": "automation.proposeDisable",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 941,
+    "method": "automation.proposeDisable",
+    "params": {
+      "source": "schedule",
+      "id": "nightly-index",
+      "reason": "the embedder is out of quota and every nightly run since Tuesday burns the retry budget"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 941,
+    "result": {
+      "proposal": {
+        "id": 74,
+        "kind": "automation_disable",
+        "payload": {
+          "source": "schedule",
+          "id": "nightly-index",
+          "reason": "the embedder is out of quota and every nightly run since Tuesday burns the retry budget"
+        },
+        "status": "proposed",
+        "createdAt": "2026-11-04T02:00:00Z",
+        "createdByKind": "agent",
+        "createdById": "implementer",
+        "command": "aeon proposal commit 74"
+      },
+      "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+    }
+  }
+}

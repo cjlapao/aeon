@@ -1,0 +1,10 @@
+# V15 ban table (T5): tokens the indexer's INPUTS may never reference.
+# Externalised because the hunter cannot contain the hunted (fifth
+# occurrence of the lesson: even assembled, the token bytes live in the
+# scanner's own file). Floor >= 5 is asserted by bannedTokens.
+step_message
+FROM step
+step_mess
+TranscriptDigest
+ReadStepMessages
+ContinueStepWithMessages

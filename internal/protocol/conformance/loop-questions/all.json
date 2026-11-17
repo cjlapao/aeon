@@ -1,0 +1,35 @@
+{
+  "description": "loop.questions with all=true on a loop that has finished: every question the loop ever asked, across its steps, oldest first, each with the answer given and the id of the tool call that asked it, so a reopened chat replays the answered card where the call was and nothing about the conversation is lost with the live event ring.",
+  "method": "loop.questions",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2002,
+    "method": "loop.questions",
+    "params": {
+      "id": "loop-dmp17018896b",
+      "all": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 2002,
+    "result": {
+      "questions": [
+        {
+          "id": 11,
+          "stepId": 34,
+          "toolUseId": "call_5hK2",
+          "kind": "clarify",
+          "prompt": "There is no AGENTS.md in this workspace. Which direction should the goal capture?",
+          "answers": [
+            "A — one concise root AGENTS.md",
+            "B — a more operational guide"
+          ],
+          "answer": "A — one concise root AGENTS.md",
+          "askedAt": "2026-11-07T14:00:20.409Z",
+          "answeredAt": "2026-11-07T14:08:39.517Z"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "kind": "watchdog.fired",
+  "componentRoot": "comp-golden",
+  "payload": {
+    "action": "notify",
+    "episode": "loop-golden:wd-stalled:1",
+    "loopId": "loop-golden",
+    "metric": "minutes-since-step",
+    "ruleId": "wd-stalled",
+    "signal": "stall"
+  },
+  "notify": {
+    "title": "The watchdog needs your attention",
+    "body": "",
+    "tone": "warning"
+  }
+}

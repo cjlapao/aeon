@@ -1,0 +1,21 @@
+{
+  "description": "The S31 method table registers at slice open; handlers arrive with their tasks. A stub refuses by name rather than half-working — the same rule S10's stub policy types follow. The `what` names the task that lands the handler.",
+  "method": "terminal.open",
+  "request": {
+    "jsonrpc": "2.0", "id": 97, "method": "terminal.open",
+    "params": { "componentRoot": "/home/dev/code/aeon-qa-workspace", "cols": 100, "rows": 24 }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 97,
+    "error": {
+      "code": -31500,
+      "message": "this method is not wired yet",
+      "data": {
+        "what": "terminal.open lands with S31 T7 (PTY sessions in the daemon)",
+        "means": "the S31 method table registered at slice open; handlers arrive with their tasks, and this call reached a stub",
+        "todo": "the stub's own `what` names the task that lands this handler — see docs/aeon/S31-loop-workspace/tasks/",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "description": "`initialize` is mandatory and FIRST. Any other method before it is refused, and the refusal names the method so a client author knows which call was too early.",
+  "method": "ping",
+  "request": {"jsonrpc": "2.0", "id": 11, "method": "ping"},
+  "response": {
+    "jsonrpc": "2.0", "id": 11,
+    "error": {
+      "code": -31001,
+      "message": "connection is not initialized",
+      "data": {
+        "what": "method \"ping\" was called before `initialize` on connection conn-1",
+        "means": "version negotiation has not happened, so the daemon does not know which protocol version to speak",
+        "todo": "call `initialize` first, with the protocol version your client needs",
+        "fatal": true
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "description": "The component tier read — the sizing door TL10 designs as THE way this data is reached (an agent and the app's tab get the store's own struct, field for identical field, so drift between wire and store is structurally unavailable, P34's rule at its retrieval twin). All eighteen totals ride with the floored cost_state: 'partial' here means costUsdTotal is a USD-at-least sum, never an exact figure (D9/TL11). A totals row exists only once counted work wrote it — an unknown id refuses with the id in the sentence instead of answering zeroes.",
+  "method": "telemetry.component",
+  "request": {"jsonrpc": "2.0", "id": 262, "method": "telemetry.component", "params": {"componentId": "cmp-shop"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 262,
+    "result": {
+      "componentId": "cmp-shop",
+      "loopsRun": 3, "wallMsTotal": 9100,
+      "inputTokensTotal": 1200, "outputTokensTotal": 340, "cacheReadTokensTotal": 800, "cacheWriteTokensTotal": 12, "reasoningTokensTotal": 60,
+      "costUsdTotal": 0.034, "costState": "partial",
+      "filesTouchedTotal": 5, "filesReadTotal": 4, "filesWrittenTotal": 2, "linesAddedTotal": 90, "linesRemovedTotal": 11,
+      "commandsRunTotal": 7, "commandsFailedTotal": 1, "commandWallMsTotal": 4200,
+      "updatedAt": "2026-10-30T09:05:00Z", "exists": true
+    }
+  }
+}

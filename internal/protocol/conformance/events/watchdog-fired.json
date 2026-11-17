@@ -1,0 +1,23 @@
+{
+  "description": "watchdog.fired: the watchdog's notify arm fired — a running loop crossed one of the seeded rules (no-activity here, past its threshold) and nothing about it has moved. This kind is the notify arm only: the stop and block arms act through the loop's own kinds (loop.stopped / loop.blocked, actor {system,watchdog}), so this one means 'a rule asked a person to look'. A firing is once per (loop, rule, episode) — progress resets the episode and a second tick does not refire. The episode string is the signal's own progress marker (act:/pos:/run:/step:), so a client can tell a repeat of old quiet from fresh silence. Carries the notify hint (warning tone, title 'The watchdog needs your attention').",
+  "event": "watchdog.fired",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1901,
+      "kind": "watchdog.fired",
+      "componentRoot": "/home/p/repo-a",
+      "at": "2026-11-01T11:45:00Z",
+      "payload": {
+        "loopId": "loop-1",
+        "ruleId": "wd-1",
+        "signal": "no-activity",
+        "action": "notify",
+        "metric": 930000,
+        "episode": "act:2026-11-01T10:30:00Z"
+      }
+    }
+  }
+}

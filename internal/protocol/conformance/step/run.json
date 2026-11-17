@@ -1,0 +1,29 @@
+{
+  "description": "`step` returns the STEP ID immediately and streams `step.*` events — a step takes tens of seconds, so returning the whole result would mean a request that hangs for the duration and a client that lost its connection would lose the answer. `workspaceRoot` is required with no default: the daemon multiplexes projects, so its own working directory is not the client's.",
+  "method": "step",
+  "request": {
+    "jsonrpc": "2.0", "id": 70, "method": "step",
+    "params": {
+      "prompt": "read the README and tell me what a newcomer would still not know",
+      "tools": ["read"],
+      "workspaceRoot": "/home/p/repo-a",
+      "subscriptionId": "s-1"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 70,
+    "result": {
+      "stepId": 4,
+      "kind": "complete",
+      "outcome": "ok",
+      "handoff": {
+        "status": "ok",
+        "summary": "The README covers installation and the three commands, and says nothing about where state is kept or how to run the tests.",
+        "evidence": ["README.md:1-40", "README.md has no `Testing` section"]
+      },
+      "usage": {"inputTokens": 2140, "outputTokens": 318},
+      "cost": {"state": "known", "usd": 0.0021},
+      "iterations": 3
+    }
+  }
+}

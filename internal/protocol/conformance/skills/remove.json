@@ -1,0 +1,13 @@
+{
+  "description": "Remove deletes one MANAGED skill (S65) — the managed root is this door's only reach. Revealed says what the next list will show: a same-named skill in the user root that the removed copy had been shadowing. The user's own files are never deleted here, by construction; a name that lives only there answers as a refusal, not a silent no-op.",
+  "method": "skills.remove",
+  "request": {"jsonrpc": "2.0", "id": 324, "method": "skills.remove", "params": {"name": "pdf"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 324,
+    "result": {
+      "name": "pdf",
+      "path": "/home/dev/.local/share/aeon/skills/pdf",
+      "revealed": true
+    }
+  }
+}

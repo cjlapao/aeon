@@ -1,0 +1,33 @@
+{
+  "description": "goal_create files a goal from a step's loop and project \u2014 authorship and coordinates are stamped from the step (OL3); a person calling it is refused by name and pointed at goal.decide (S39 opens the chat authoring door).",
+  "method": "goal.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "method": "goal.create",
+    "params": {
+      "title": "Ship the org board",
+      "type": "feature",
+      "body_note": "criteria 6-11"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "result": {
+      "id": "goal-7a1f",
+      "rootId": "prj-7a1f",
+      "version": 1,
+      "title": "Ship the org board",
+      "type": "feature",
+      "bodyNote": "criteria 6-11",
+      "sourceKind": "manual",
+      "sourceRef": "",
+      "reviewState": "draft",
+      "createdByKind": "agent",
+      "createdById": "brainstormer",
+      "createdAt": "2026-10-26T09:00:00Z",
+      "updatedAt": "2026-10-26T09:00:00Z"
+    }
+  }
+}

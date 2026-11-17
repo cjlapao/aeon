@@ -1,0 +1,68 @@
+{
+  "description": "S46 T5's mcp.server.add — the human adds a server. Success shape: the updated MCPServerView rides with the before/after grants for every affected agent and changed:true. Adding a PUBLIC server grants nothing (MC5): the grants list is empty because nobody's view moved. Env entries are NAMES (MG13 — the type has nowhere to put a value); an unclassified tool earns the fixed MC6 warning. Params never carry actor/origin/id/timestamps — the identity keys are a shape error. Every env name is bound to a stored variable (envFrom: process name -> variable name) or given a typed value (envValues, write-only: it is kept in the variable manager as a hidden secret and only the binding is stored); an environment variable cannot be empty.",
+  "method": "mcp.server.add",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 921,
+    "method": "mcp.server.add",
+    "params": {
+      "name": "github",
+      "tier": "public",
+      "transport": {
+        "type": "stdio",
+        "command": "gh-mcp",
+        "env": [
+          "GITHUB_TOKEN"
+        ],
+        "envFrom": {
+          "GITHUB_TOKEN": "GITHUB_TOKEN"
+        }
+      },
+      "tools": [
+        {
+          "name": "list_issues",
+          "rerun": "safe",
+          "effect": "local"
+        }
+      ],
+      "title": "GitHub",
+      "description": "Issues and pull requests."
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 921,
+    "result": {
+      "server": {
+        "name": "github",
+        "tier": "public",
+        "enabled": true,
+        "origin": "user",
+        "transport": {
+          "type": "stdio",
+          "command": "gh-mcp",
+          "args": [],
+          "env": [
+            "GITHUB_TOKEN"
+          ],
+          "url": "",
+          "envFrom": {
+            "GITHUB_TOKEN": "GITHUB_TOKEN"
+          }
+        },
+        "tools": [
+          {
+            "name": "list_issues",
+            "rerun": "safe",
+            "effect": "local"
+          }
+        ],
+        "declaredBy": 0,
+        "status": "unprobed",
+        "updatedAt": "2026-11-01T17:00:00Z"
+      },
+      "grants": [],
+      "changed": true
+    }
+  }
+}

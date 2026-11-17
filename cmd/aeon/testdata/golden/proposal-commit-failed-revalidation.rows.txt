@@ -1,0 +1,6 @@
+policy rows: 0
+proposal rows: 1
+  proposal <ID> kind=mcp_server_add status=proposed created_by=user:1000 created_at=<TIME> payload={"tier":"public","server":{"name":"github","transport":{"type":"stdio","command":"gh-mcp","args":null,"env":null,"url":""},"tools":[{"name":"list_repos","rerun":"safe","effect":"local"}]}} decided_by=: decided_at= decide_reason= applied_error=mcp: server "github" already exists in public — server names are one namespace across every tier (MC8)
+policy_event rows: 0
+mcp.json:
+{"public":[{"name":"github","transport":{"type":"stdio","command":"a-different-gh-mcp"}}],"agents":{}}

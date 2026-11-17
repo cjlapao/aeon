@@ -1,0 +1,15 @@
+{
+  "description": "agent.disable — stops an agent without re-trusting the package (no Rehydrate re-check; disabling never asks the question enabling does).",
+  "method": "agent.disable",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 96,
+    "method": "agent.disable",
+    "params": {"name": "reviewer"}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 96,
+    "result": {"agent": "reviewer", "state": "disabled"}
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "description": "S45 T5 (TD5): reject demands its reason — required, non-empty (the audit trail's only sentence for the decision) and ≤ 512 bytes (the audit column's budget). The refusal applies nothing: the row stays `proposed`, unjudged, waiting for a reasoned decision or a commit. The socket door is the stricter one: the CLI's reject keeps S35's optional-reason ruling (golden-pinned); the app-facing door states the reason or the reject does not happen.",
+  "method": "proposal.reject",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "method": "proposal.reject",
+    "params": {
+      "id": 42
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "error": {
+      "code": -31844,
+      "message": "proposal decision refused",
+      "data": {
+        "what": "refused: proposal.reject requires a reason — say why the proposal is refused (TD5: the audit trail's only sentence for the decision)",
+        "means": "a proposal decision is bound to what was read (the digest), decided once (a decided row is immutable history), re-validated at commit, and every refusal leaves the row exactly where it was — a refusal here changed nothing",
+        "todo": "read the sentence in `what`; if the digest moved, re-read with proposal.get and commit what you actually saw; if the row is already decided, the refusal names who decided it",
+        "fatal": false
+      }
+    }
+  }
+}

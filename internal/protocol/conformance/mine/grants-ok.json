@@ -1,0 +1,36 @@
+{
+  "description": "S46 T8 (MG8/MC2): mcp.mine.grants is this agent's own grant view \u2014 every tool of the servers it may use, each with its S12 state and the one-sentence reason, through the SAME MCPGrantView the person's mcp.grants answers (one view type, two doors). Declaring is not granting (MC5): an ask state with its reason is the honest answer here, and a peer's grants are invisible by construction.",
+  "method": "mcp.mine.grants",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 932,
+    "method": "mcp.mine.grants",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 932,
+    "result": {
+      "agent": "implementer",
+      "grants": [
+        {
+          "qualified": "acme-crud.list_issues",
+          "tier": "public",
+          "state": "available"
+        },
+        {
+          "qualified": "acme-crud.create_issue",
+          "tier": "public",
+          "state": "ask",
+          "reason": "policy: command_access asks for outward writes (ask is not a permission)"
+        },
+        {
+          "qualified": "reddit.search",
+          "tier": "private",
+          "state": "unavailable",
+          "reason": "server disabled by the operator (MG4: disabled is not offered)"
+        }
+      ]
+    }
+  }
+}

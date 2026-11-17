@@ -1,0 +1,12 @@
+{
+  "description": "`step.stop` interrupts a running step. It reports whether anything was actually running — stopping one that already finished, or stopping it a second time, is not an error (the same courtesy `unsubscribe` gives a client racing its own teardown).",
+  "method": "step.stop",
+  "request": {
+    "jsonrpc": "2.0", "id": 71, "method": "step.stop",
+    "params": { "stepId": 4 }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 71,
+    "result": { "stepId": 4, "stopped": true }
+  }
+}

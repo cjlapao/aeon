@@ -1,0 +1,32 @@
+{
+  "description": "The template set with the wizard's facts: origin, version, stack tags, file count, diverged (derived, never stored).",
+  "method": "template.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "template.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "templates": [
+        {
+          "slug": "base",
+          "title": "Base",
+          "description": "the shipped floor",
+          "stackTags": [
+            "golang"
+          ],
+          "origin": "system",
+          "version": 1,
+          "fileCount": 4,
+          "diverged": false,
+          "createdAt": "2026-11-05T00:00:00Z",
+          "updatedAt": "2026-11-05T00:00:00Z"
+        }
+      ]
+    }
+  }
+}

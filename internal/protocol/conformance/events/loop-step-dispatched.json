@@ -1,0 +1,23 @@
+{
+  "description": "S31 D2: the orchestrator names the step it dispatched BEFORE the step's first event, so the loop view can link a ladder move to the stream it started — and S32 inherits this shape unchanged when steps run in parallel (P33).",
+  "event": "loop.step.dispatched",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1603,
+      "kind": "loop.step.dispatched",
+      "at": "2026-10-24T10:00:00Z",
+      "payload": {
+        "loopId": "loop-1",
+        "lane": "survey",
+        "step": "survey",
+        "stepId": 12,
+        "agent": "surveyor",
+        "route": "anthropic/claude-sonnet",
+        "reasoningEffort": "medium"
+      }
+    }
+  }
+}

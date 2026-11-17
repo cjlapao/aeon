@@ -1,0 +1,6 @@
+{
+  "description": "CG4's explicit door: materializing the next item is ALWAYS an explicit call — this method (or the CLI verb that dials it) is the design's cold-start call, and in `ask` mode the call itself IS the human decision, so nothing is asked on top of it. `started=false` is an honest answer, not a failure: D2's one-running-per-project slot being taken, a `blocked` row halting the queue unconditionally (CG2), or nothing eligible — the daemon never promises a loop it has not started.",
+  "method": "queue.advance",
+  "request": {"jsonrpc": "2.0", "id": 306, "method": "queue.advance", "params": {"componentRoot": "/srv/projects/ledger"}},
+  "response": {"jsonrpc": "2.0", "id": 306, "result": {"started": true}}
+}

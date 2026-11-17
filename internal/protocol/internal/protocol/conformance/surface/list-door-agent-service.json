@@ -1,0 +1,161 @@
+{
+  "description": "TODO",
+  "method": "surface.list",
+  "request": {
+    "id": 702,
+    "jsonrpc": "2.0",
+    "method": "surface.list",
+    "params": {
+      "door": "agentService"
+    }
+  },
+  "response": {
+    "id": 702,
+    "jsonrpc": "2.0",
+    "result": {
+      "methods": [
+        {
+          "method": "agent.card",
+          "kind": "read",
+          "summary": "One agent card as the load path serves it; what is enumerable is what is invokable.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": false,
+          "doors": {
+            "socket": true,
+            "public": true,
+            "narrow": "none",
+            "agentService": true
+          }
+        },
+        {
+          "method": "agent.discover",
+          "kind": "read",
+          "summary": "Lists invokable agent candidates — tags, examples, the name spelled the way the door reads them.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": false,
+          "doors": {
+            "socket": true,
+            "public": true,
+            "narrow": "none",
+            "agentService": true
+          }
+        },
+        {
+          "method": "agent.invoke",
+          "kind": "diagnostic",
+          "summary": "Files an agent-to-agent ask as a WAITING task and returns; suspension is rows, not a blocked call.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": true,
+          "doors": {
+            "socket": true,
+            "public": false,
+            "narrow": "none",
+            "agentService": true
+          }
+        },
+        {
+          "method": "agent.list",
+          "kind": "read",
+          "summary": "S34 T1's one read: the roster as identity — first-party bodies and imported plugins alike, with provenance and the REAL state vocabulary.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": false,
+          "doors": {
+            "socket": true,
+            "public": true,
+            "narrow": "none",
+            "agentService": true
+          }
+        },
+        {
+          "method": "agent.plugins",
+          "kind": "read",
+          "summary": "The plugin ledger: what is installed, in which state, from where — management stays CLI and app only.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": false,
+          "doors": {
+            "socket": true,
+            "public": true,
+            "narrow": "none",
+            "agentService": true
+          }
+        },
+        {
+          "method": "agent.task.complete",
+          "kind": "diagnostic",
+          "summary": "The callee settles its task and reports its cost; a settled task answers by naming its state.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": true,
+          "doors": {
+            "socket": true,
+            "public": false,
+            "narrow": "none",
+            "agentService": true
+          }
+        },
+        {
+          "method": "agent.task.fail",
+          "kind": "diagnostic",
+          "summary": "The callee fails its task with a required reason, recorded verbatim in the task envelope.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": true,
+          "doors": {
+            "socket": true,
+            "public": false,
+            "narrow": "none",
+            "agentService": true
+          }
+        },
+        {
+          "method": "agent.task.list",
+          "kind": "read",
+          "summary": "Lists the asks and their chain edges as the rows hold them, never the callee toolset.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": false,
+          "doors": {
+            "socket": true,
+            "public": true,
+            "narrow": "none",
+            "agentService": true
+          }
+        },
+        {
+          "method": "agent.task.show",
+          "kind": "read",
+          "summary": "One task with its chain and a cost rollup that degrades to partial when a child did not report.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": false,
+          "doors": {
+            "socket": true,
+            "public": true,
+            "narrow": "none",
+            "agentService": true
+          }
+        }
+      ],
+      "counts": {
+        "total": 9,
+        "unfiltered": 208,
+        "byKind": {
+          "control": 0,
+          "diagnostic": 3,
+          "read": 6,
+          "write": 0
+        },
+        "byDoor": {
+          "agentService": 9,
+          "public": 6,
+          "socket": 9
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "description": "S34 T2's read: what one named agent may use, already decided once — internal/mcp.Registry.GrantView's own authority view, shipped verbatim rather than re-derived (never a second visibility×authority join). Core tools are judged by the step's own S11 policy gate and always answer available here (S12 does not re-decide core); a declared MCP tool with no matching ToolAccess allow answers unavailable (MC10); a rule that explicitly denies it answers refused with the engine's own sentence; an outward or irreversible effect that is otherwise allowed answers ask (L22) even though nothing denied it; a plain external tool that is simply allowed, with no ask-worthy effect, answers available with an EMPTY reason (GrantView's own default branch) — this fixture omits that row's reason field on purpose, so protogen records it as optional rather than always-present.",
+  "method": "tools.grants",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "method": "tools.grants",
+    "params": { "agent": "reviewer" }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "result": {
+      "agent": "reviewer",
+      "grants": [
+        {
+          "qualified": "read",
+          "tier": "core",
+          "state": "available",
+          "reason": "core: judged by the step's S11 policy gate (S12 does not re-decide core)"
+        },
+        {
+          "qualified": "github.list_issues",
+          "tier": "public",
+          "state": "unavailable",
+          "reason": "unavailable: no ToolAccess allow rule grants github.list_issues (MC10)"
+        },
+        {
+          "qualified": "github.merge_pull_request",
+          "tier": "public",
+          "state": "ask",
+          "reason": "ask: github.merge_pull_request has effect irreversible — an outward or irreversible effect asks at use even when allowed (L22)"
+        },
+        {
+          "qualified": "github.search_code",
+          "tier": "public",
+          "state": "available"
+        }
+      ]
+    }
+  }
+}

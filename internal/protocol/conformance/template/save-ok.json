@@ -1,0 +1,49 @@
+{
+  "description": "Save lays row+revision as one under the connection's person; diverged becomes true and origin never moves.",
+  "method": "template.save",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "template.save",
+    "params": {
+      "slug": "base",
+      "title": "Base",
+      "description": "the shipped floor",
+      "stackTags": [
+        "golang"
+      ],
+      "files": [
+        {
+          "path": "README.md",
+          "mode": 420,
+          "content": "# {{.Name}} \u2014 mine\n"
+        }
+      ]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "slug": "base",
+      "title": "Base",
+      "description": "the shipped floor",
+      "stackTags": [
+        "golang"
+      ],
+      "origin": "user",
+      "version": 2,
+      "fileCount": 4,
+      "diverged": true,
+      "createdAt": "2026-11-05T00:00:00Z",
+      "updatedAt": "2026-11-05T00:00:00Z",
+      "files": [
+        {
+          "path": "README.md",
+          "mode": 420,
+          "content": "# {{.Name}} \u2014 mine\n"
+        }
+      ]
+    }
+  }
+}

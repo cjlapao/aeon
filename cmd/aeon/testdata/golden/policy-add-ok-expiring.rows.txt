@@ -1,0 +1,4 @@
+policy rows: 1
+  policy ok-expiring type=tool_access target=agent:frank action=deny source=operator subject=agent:frank spec={"state":"deny","toolName":"grep"} not_after=<TIME> not_after_epoch=1793577600 created_at=<TIME>
+proposal rows: 0
+policy_event rows: 0

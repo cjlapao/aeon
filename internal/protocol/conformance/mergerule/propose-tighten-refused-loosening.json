@@ -1,0 +1,37 @@
+{
+  "description": "S57 T9 (VG19), the tightening-only law at create: the component's EFFECTIVE rule already demands a pass verify run on the PR head (RequireLocal), and the proposed rule turns that field off — one loosening among otherwise tighter fields is still a loosening, and mergerule.Tightens refuses it naming the loosened field, VERBATIM across the wire as JSON-RPC's own -32602. A loosening is a person's act (the mergerule.set human door); the schema admits only tightening-direction values on its enums, and the validator is the second line when the schema is bypassed. Nothing was written — a refused proposal leaves no row (TD3).",
+  "method": "mergerule.proposeTighten",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1104,
+    "method": "mergerule.proposeTighten",
+    "params": {
+      "fields": {
+        "enabled": true,
+        "requireLocal": false,
+        "requireDod": "all_met",
+        "requiredChecks": [
+          "build",
+          "test"
+        ],
+        "checksPolicy": "reported_green",
+        "noChecks": "refuse",
+        "reviewMode": "both",
+        "aeonReviewAgents": [
+          "code-reviewer"
+        ],
+        "requireThreadsResolved": true,
+        "method": "squash"
+      },
+      "reason": "the PR head check is slow — drop the local-run requirement while the flake is investigated"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1104,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: refused: the proposed rule loosens RequireLocal — a merge_rule proposal may only tighten, and a loosening is a person's act (S57 T8)"
+    }
+  }
+}

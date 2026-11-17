@@ -1,0 +1,19 @@
+{
+  "description": "`loop.steps`: one loop's step summaries, newest first. The daemon keeps one summary row per step (model turns, tool calls and errors, tokens, cost with its state, model time), updated as the step's events are written, so a page opens with every step's totals instead of rebuilding them from thousands of journal events. `before` is a step id and pages older steps; `hasOlder` says more exist. The loop's own totals ride the first page only. A cost nobody reported is `unknown`, never zero.",
+  "method": "loop.steps",
+  "request": {
+    "jsonrpc": "2.0", "id": 81, "method": "loop.steps",
+    "params": { "id": "loop-7f3a", "limit": 2 }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 81,
+    "result": {
+      "steps": [
+        { "stepId": 9, "loopId": "loop-7f3a", "lane": "plan", "agent": "project-planner", "status": "running", "turns": 3, "toolCalls": 7, "toolErrors": 1, "inputTokens": 69873, "outputTokens": 1689, "reasoningTokens": 527, "wallMs": 42000, "costState": "known", "costUsd": 0.1566, "firstEvent": 4400, "lastEvent": 4411, "contextTokens": 69873, "route": "qwen", "contextWindow": 131072 },
+        { "stepId": 8, "loopId": "loop-7f3a", "lane": "discovery", "agent": "investigator", "status": "ok", "turns": 22, "toolCalls": 31, "toolErrors": 0, "inputTokens": 410000, "outputTokens": 9000, "reasoningTokens": 4100, "wallMs": 380000, "costState": "unknown", "firstEvent": 4100, "lastEvent": 4399, "contextTokens": 25211, "route": "qwen", "contextWindow": 131072 }
+      ],
+      "hasOlder": true,
+      "totals": { "steps": 9, "turns": 41, "toolCalls": 60, "toolErrors": 2, "inputTokens": 900000, "outputTokens": 20000, "reasoningTokens": 9000, "wallMs": 900000, "costUsd": 6.763, "costState": "partial" }
+    }
+  }
+}

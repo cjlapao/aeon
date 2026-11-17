@@ -1,0 +1,37 @@
+{
+  "description": "mcp.grant.declare is the grant (MC5) \u2014 and MG7's two-step stands: declaring does NOT author a policy allow. The after-view answers the tool unavailable with MC10's sentence and the fixed warning says declaring is not a permission. The validator judges visibility (the one implementation of MC2: unknown tools and another agent's private tools refuse with its own verbatim sentences). Re-declaring what stands is changed:false with no audit row.",
+  "method": "mcp.grant.declare",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 926,
+    "method": "mcp.grant.declare",
+    "params": {
+      "agent": "golang-engineer",
+      "qualified": "github.list_issues"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 926,
+    "result": {
+      "grants": [
+        {
+          "agent": "golang-engineer",
+          "before": [],
+          "after": [
+            {
+              "qualified": "github.list_issues",
+              "tier": "public",
+              "state": "unavailable",
+              "reason": "declared; no policy allow exists for golang-engineer (MC10)"
+            }
+          ]
+        }
+      ],
+      "changed": true,
+      "warnings": [
+        "the declaration is not a permission \u2014 the tool stays unavailable until a policy allow exists (MC7/MC10)"
+      ]
+    }
+  }
+}

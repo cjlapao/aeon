@@ -1,0 +1,24 @@
+{
+  "description": "S49 T7 (AN9) at the DOOR, before the records plane is consulted: the agent's one ask names WHO to switch off and WHY, never WHAT the switch should become. `enabled` in automation.proposeDisable params is refused at the strict parse and the refusal NAMES the field — a payload that could name the state it wants is a payload that proposes a write, and the only thing this door can propose is a disable, decided by a person. The same parse refuses a smuggled `actor` (the author is the STEP the connection belongs to, stamped from the step context — OL3), a `status`, a `kind` and an `archived` for the same reason: the kind is implied (automation_disable) and the state is not a choice. fromDoor is why the walker dispatches this against a HEALTHY records seam — the claim of a door refusal is that it happened before the plane was consulted, and the walker asserts the seam was never called. The refusal is a transport-level condition, so it keeps JSON-RPC's own code and carries no `data` (conformance/README).",
+  "method": "automation.proposeDisable",
+  "fromDoor": true,
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 942,
+    "method": "automation.proposeDisable",
+    "params": {
+      "source": "schedule",
+      "id": "nightly-index",
+      "reason": "quota is spent but I want it switched back on next month",
+      "enabled": false
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 942,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: refused: json: unknown field \"enabled\" — identity fields (project, loop, component, author) are stamped by the step, and every other field belongs in the schema"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "case": "empty-command",
+  "summary": "",
+  "content": "`bash` needs a command",
+  "isError": true,
+  "exitCode": null
+}

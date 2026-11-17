@@ -1,0 +1,43 @@
+{
+  "description": "mergerule.changes: the rule's audit trail, newest first, capped. Each row is a revision with its op (set or clear), who made it (the connection's actor, never a param), when, the summary, and the before/after images as RAW JSON strings — the ledger's own encoding, the reader's to parse, because the wire does not promise a shape the ledger may reshape.",
+  "method": "mergerule.changes",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1034,
+    "method": "mergerule.changes",
+    "params": {
+      "componentId": "c-aeon",
+      "limit": 20
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1034,
+    "result": {
+      "changes": [
+        {
+          "componentId": "c-aeon",
+          "revision": 4,
+          "op": "set",
+          "actorKind": "user",
+          "actorId": "1000",
+          "summary": "require_dod: none → all_met; required_checks: +ci/lint; require_threads: off → on",
+          "before": "{\"enabled\":true,\"requireLocal\":true,\"requireDod\":\"none\",\"requiredChecks\":[\"ci/build\"],\"checksPolicy\":\"reported_green\",\"noChecks\":\"refuse\",\"reviewMode\":\"forge\",\"aeonReviewAgents\":[\"code-reviewer\"],\"requireThreadsResolved\":false,\"method\":\"squash\"}",
+          "after": "{\"enabled\":true,\"requireLocal\":true,\"requireDod\":\"all_met\",\"requiredChecks\":[\"ci/build\",\"ci/lint\"],\"checksPolicy\":\"reported_green\",\"noChecks\":\"refuse\",\"reviewMode\":\"forge\",\"aeonReviewAgents\":[\"code-reviewer\"],\"requireThreadsResolved\":true,\"method\":\"squash\"}",
+          "at": "2026-11-02T12:10:00Z"
+        },
+        {
+          "componentId": "c-aeon",
+          "revision": 3,
+          "op": "set",
+          "actorKind": "user",
+          "actorId": "1000",
+          "summary": "no_checks: allow → refuse",
+          "before": "{\"enabled\":true,\"requireLocal\":true,\"requireDod\":\"none\",\"requiredChecks\":[\"ci/build\"],\"checksPolicy\":\"reported_green\",\"noChecks\":\"allow\",\"reviewMode\":\"forge\",\"aeonReviewAgents\":[\"code-reviewer\"],\"requireThreadsResolved\":false,\"method\":\"squash\"}",
+          "after": "{\"enabled\":true,\"requireLocal\":true,\"requireDod\":\"none\",\"requiredChecks\":[\"ci/build\"],\"checksPolicy\":\"reported_green\",\"noChecks\":\"refuse\",\"reviewMode\":\"forge\",\"aeonReviewAgents\":[\"code-reviewer\"],\"requireThreadsResolved\":false,\"method\":\"squash\"}",
+          "at": "2026-11-01T15:00:00Z"
+        }
+      ]
+    }
+  }
+}

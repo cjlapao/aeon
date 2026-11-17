@@ -1,0 +1,9 @@
+{
+  "description": "A historical missing-handler block retried after S13 registered the handler: one transition committed, one step dispatched, the daemon reports the ladder's answer. The app renders eligibility and refusal from the daemon's own fields, never its own guess.",
+  "method": "loop.retry_handler_block",
+  "request": { "jsonrpc": "2.0", "id": 96, "method": "loop.retry_handler_block", "params": { "id": "loop-9" } },
+  "response": { "jsonrpc": "2.0", "id": 96, "result": {
+    "retried": true, "status": "running",
+    "position": { "lane": "implement" }
+  } }
+}

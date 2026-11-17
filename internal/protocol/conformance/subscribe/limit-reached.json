@@ -1,0 +1,18 @@
+{
+  "description": "The bounds are reported, never a silent drop. A subscription that vanished looks exactly like a filter that matches nothing.",
+  "method": "subscribe",
+  "request": {"jsonrpc": "2.0", "id": 9, "method": "subscribe", "params": {"filter": {}}},
+  "response": {
+    "jsonrpc": "2.0", "id": 9,
+    "error": {
+      "code": -31011,
+      "message": "subscription limit reached",
+      "data": {
+        "what": "connection conn-1 already holds 32 subscriptions, which is the per-connection limit",
+        "means": "the daemon bounds subscriptions per connection and in total; an unbounded registry on a daemon meant to run for weeks is a leak with a client-shaped cause",
+        "todo": "unsubscribe what is no longer needed, or widen one filter instead of opening many subscriptions",
+        "fatal": false
+      }
+    }
+  }
+}

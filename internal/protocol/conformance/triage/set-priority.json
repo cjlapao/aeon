@@ -1,0 +1,18 @@
+{
+  "description": "A priority write travels state-with-label as ONE decision (D2): the label rides only when the state is not unknown, and the CHECK refuses a label on an unknown priority. This write is independent of validation entirely — it may move at any validation state, including unvalidated, because the two fields never gate each other. The result is the row as it now stands. The state is its own word (known/assumed/unknown), never a number.",
+  "method": "triage.set-priority",
+  "request": {"jsonrpc": "2.0", "id": 434, "method": "triage.set-priority", "params": {"id": 7, "componentRoot": "/srv/projects/ledger", "state": "assumed", "label": "P2"}},
+  "response": {"jsonrpc": "2.0", "id": 434, "result": {
+    "id": 7,
+    "componentRoot": "/srv/projects/ledger",
+    "title": "retry counter over-counts on the second attempt",
+    "body": "the retry counter adds two on the second attempt; expected one",
+    "validation": "unvalidated",
+    "priorityState": "assumed",
+    "priorityLabel": "P2",
+    "filedBy": "golang-engineer",
+    "validated": false,
+    "createdAt": "2026-10-30T10:00:00Z",
+    "updatedAt": "2026-10-30T10:15:00Z"
+  }}
+}

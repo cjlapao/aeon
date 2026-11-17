@@ -1,0 +1,19 @@
+{
+  "description": "The digest is per-component: an absent id is refused at the door, before any read runs.",
+  "method": "digest.learned",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "digest.learned",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: digest.learned needs a component id (an unregistered id is read as a component_root verbatim)"
+    }
+  },
+  "fromDoor": true
+}

@@ -1,0 +1,22 @@
+{
+  "case": "listreviews",
+  "method": "GET",
+  "path": "/repos/acme/widget/pulls/7/reviews",
+  "authShape": "Bearer \u003credacted\u003e",
+  "accept": "application/vnd.github+json",
+  "attempts": 1,
+  "wire": "[\n  {\n   \"id\": 41,\n   \"body\": \"first\",\n   \"state\": \"APPROVED\",\n   \"user\": {\n    \"login\": \"steward\"\n   }\n  },\n  {\n   \"id\": 42,\n   \"body\": \"second\",\n   \"state\": \"COMMENTED\",\n   \"user\": {\n    \"login\": \"bot\"\n   }\n  }\n ]",
+  "mapped": "[{\"ID\":41,\"PR\":7,\"Body\":\"first\",\"Verdict\":\"approve\",\"Author\":\"steward\",\"SubmittedAt\":\"\"},{\"ID\":42,\"PR\":7,\"Body\":\"second\",\"Verdict\":\"comment\",\"Author\":\"bot\",\"SubmittedAt\":\"\"}]",
+  "wireHas": [
+    "id",
+    "body",
+    "state",
+    "user.login"
+  ],
+  "mappedHas": [
+    "id",
+    "body",
+    "state",
+    "user.login"
+  ]
+}

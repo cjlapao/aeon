@@ -1,0 +1,102 @@
+{
+  "description": "tools.vocabulary in the same drifted world: the words a catalog screen renders, sent by the code that declares them (TC3). `capabilities` is the CLOSED capability vocabulary with the daemon's own one-line meaning beside each name — the meaning exists because a pill that shows only `spawn_process` asks the person to guess what they are allowing, and it is the daemon's sentence rather than the screen's because two definitions of a vocabulary is the failure this slice was commissioned to end. `families` and `sources` are read out of the entries this world can actually render, which is why `acme` (one enabled server, whose tools are listed under that family) is here and `off` (disabled) is not: an option a filter can never match is a lie in a select. `rerunClasses` is the closed three as `internal/tools` declares them, the same spellings the committed `rerun_classes.json` pins for the rows. Note what did NOT move because two rows drifted: the vocabulary is a fact about the words, and a drift report is a fact about the rows — the two doors answer independently and neither flatters the other.",
+  "method": "tools.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 652,
+    "method": "tools.vocabulary"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 652,
+    "result": {
+      "capabilities": [
+        {
+          "name": "asks_human",
+          "meaning": "Suspends the step until a person answers."
+        },
+        {
+          "name": "graph_read",
+          "meaning": "Reads the code graph."
+        },
+        {
+          "name": "index_read",
+          "meaning": "Reads the retrieval index."
+        },
+        {
+          "name": "messages_agent",
+          "meaning": "Files a durable inter-agent message and may suspend the step awaiting the answer."
+        },
+        {
+          "name": "network_egress",
+          "meaning": "Bytes leave the process toward the network."
+        },
+        {
+          "name": "org_records_read",
+          "meaning": "Reads the management records."
+        },
+        {
+          "name": "org_records_write",
+          "meaning": "Writes the management records."
+        },
+        {
+          "name": "spawn_process",
+          "meaning": "Starts a process, and only behind a policy-issued allow token."
+        },
+        {
+          "name": "starts_loop",
+          "meaning": "Starts a loop."
+        },
+        {
+          "name": "workspace_read",
+          "meaning": "Reads bytes under the step's workspace root through the one resolver."
+        },
+        {
+          "name": "workspace_write",
+          "meaning": "Writes bytes under the step's workspace root."
+        }
+      ],
+      "families": [
+        "acme",
+        "attachment",
+        "autonomy",
+        "brief",
+        "budget",
+        "code-graph",
+        "collaboration",
+        "component",
+        "egress",
+        "epic",
+        "goal",
+        "interaction",
+        "loop",
+        "loopcontrol",
+        "mcp",
+        "planning",
+        "policy",
+        "process",
+        "proposal",
+        "retrieval",
+        "seed",
+        "sizing",
+        "task",
+        "tools",
+        "watchdog",
+        "workspace"
+      ],
+      "sources": [
+        "mcp",
+        "system"
+      ],
+      "rerunClasses": [
+        "detectable",
+        "safe",
+        "unsafe"
+      ],
+      "accesses": [
+        "read",
+        "write"
+      ]
+    }
+  }
+}

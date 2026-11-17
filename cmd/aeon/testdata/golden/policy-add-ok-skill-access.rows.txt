@@ -1,0 +1,4 @@
+policy rows: 1
+  policy ok-skill type=skill_access target=agent:erin action=ask source=operator subject=agent:erin spec={"skill":"web","state":"ask"} not_after=none not_after_epoch=- created_at=<TIME>
+proposal rows: 0
+policy_event rows: 0

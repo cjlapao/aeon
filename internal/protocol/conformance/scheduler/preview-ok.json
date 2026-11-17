@@ -1,0 +1,44 @@
+{
+  "description": "CN15 preview: the tick RUN — every line the tick would write with its reason, and the would-start subset. The read writes nothing (row counts are equal before and after: TestPreviewReadIsSideEffectFree).",
+  "method": "scheduler.preview",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 402,
+    "method": "scheduler.preview",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 402,
+    "result": {
+      "now": "2026-11-04T13:00:00Z",
+      "decisions": [
+        {
+          "componentRoot": "/srv/components/alpha",
+          "subjectKind": "queue",
+          "subjectId": "7",
+          "verdict": "start",
+          "reason": ""
+        },
+        {
+          "componentRoot": "/srv/components/alpha",
+          "subjectKind": "roadmap",
+          "subjectId": "12",
+          "verdict": "defer",
+          "reason": "repo-occupied",
+          "detail": "roadmap-materialize-9 (running)"
+        }
+      ],
+      "wouldStart": [
+        {
+          "componentRoot": "/srv/components/alpha",
+          "subjectKind": "queue",
+          "subjectId": "7",
+          "verdict": "start",
+          "reason": ""
+        }
+      ]
+    }
+  },
+  "fromDoor": true
+}

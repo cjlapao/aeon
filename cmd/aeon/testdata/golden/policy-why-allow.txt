@@ -1,0 +1,2 @@
+$ aeon policy why --agent alice --tool read
+allowed: agent:alice · tool_access "grant-read" · target agent:alice · source operator · no expiry

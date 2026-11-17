@@ -1,0 +1,14 @@
+{
+  "description": "S52 T2 (LM6): the vocabulary read from the code instead of remembered from the docs — three scopes, the FOUR provenances in honesty order (Provenances(), the M1 set with relayed last), the four actor kinds, M1's ordering law quoted from its one constant, the retract law in words, and every limit as the named Go constant the door enforces (reason 1..256, audit summary 1..1024, forAgent 20 default / 100 max). The app fills its controls from here; no second list exists.",
+  "method": "learnings.vocabulary",
+  "request": {"jsonrpc": "2.0", "id": 370, "method": "learnings.vocabulary", "params": {}},
+  "response": {"jsonrpc": "2.0", "id": 370, "result": {
+    "scopes": ["person", "project", "agent"],
+    "provenances": ["told", "observed", "assumed", "relayed"],
+    "actorKinds": ["user", "cli", "agent", "system"],
+    "m1Ordering": "relayed ranks below told, observed and assumed — a channel fact never outscores a person's word or a loop's seeing (M1's honesty ordering, unchanged by S52)",
+    "retractLaw": "retract is a stamp, never a delete: the body, its audit and its history survive; every default read and the similarity index exclude it until a restore (S52 LM2/LM5)",
+    "limits": {"reasonMin": 1, "reasonMax": 256, "summaryMax": 1024, "forAgentLimitDefault": 20, "forAgentLimitMax": 100},
+    "tagGrammar": {"exact": true, "prefix": true}
+  }}
+}

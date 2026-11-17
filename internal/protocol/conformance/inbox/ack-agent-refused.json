@@ -1,0 +1,20 @@
+{
+  "description": "inbox.ack over a connection whose peer identity is an AGENT is refused before anything is written: acknowledging that your own problem needs you is the game an agent can always win, so SV12 makes hiding a person's act. The sentence names the peer it refused, and no actor is read from params anywhere (the identity-key rejection is the sibling lock).",
+  "method": "inbox.ack",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 907,
+    "method": "inbox.ack",
+    "params": {
+      "key": "questions:41:2026-11-03T09:00:00Z"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 907,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: acknowledging is a person's act — this connection acts as agent \"step-9\", and an agent cannot hide what needs a person (SV12)"
+    }
+  }
+}

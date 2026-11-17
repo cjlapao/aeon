@@ -1,0 +1,58 @@
+{
+  "description": "blueprint.model reads a flow's text into the structure a form edits. It judges nothing: an unknown key or a refused value is still shown so the person can fix it.",
+  "method": "blueprint.model",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 90,
+    "method": "blueprint.model",
+    "params": {
+      "content": "id: triage\ndescription: Sort an incoming report, then ask a person to approve the plan.\nschemaVersion: 1\nversion: 1\nlanes:\n  - id: sort\n    step:\n      kind: model-step\n      agent: investigator\n      produces:\n        - notes.md\n  - id: approve\n    step:\n      kind: gate\n      question: go\n    on_reject:\n      goto: sort\n      counter: rounds\n      max: 2\n      then: escalate\nquestions:\n  go:\n    prompt: Approve the plan?\n    answers:\n      - approve\n      - reject\n"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 90,
+    "result": {
+      "model": {
+        "id": "triage",
+        "description": "Sort an incoming report, then ask a person to approve the plan.",
+        "schemaVersion": 1,
+        "version": 1,
+        "lanes": [
+          {
+            "id": "sort",
+            "step": {
+              "kind": "model-step",
+              "agent": "investigator",
+              "produces": [
+                "notes.md"
+              ]
+            }
+          },
+          {
+            "id": "approve",
+            "step": {
+              "kind": "gate",
+              "question": "go"
+            },
+            "onReject": {
+              "goto": "sort",
+              "counter": "rounds",
+              "max": 2,
+              "then": "escalate"
+            }
+          }
+        ],
+        "questions": {
+          "go": {
+            "prompt": "Approve the plan?",
+            "answers": [
+              "approve",
+              "reject"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

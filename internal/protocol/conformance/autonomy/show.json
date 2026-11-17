@@ -1,0 +1,37 @@
+{
+  "description": "The autonomy.show happy path (S56 T6): one grant's full view, its LAST change row (lastChange null when the audit holds none), the count of begun uses (a completed/failed row is an outcome, not a new effect — AL10's receipt-first shape), and the running loops currently pinned with the grant. An unknown id is a refusal (-31833), never an empty success: a fabricated id reading as an empty grant would be a confident wrong answer.",
+  "method": "autonomy.show",
+  "request": {"jsonrpc": "2.0", "id": 402, "method": "autonomy.show", "params": {"id": "g-8c21"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 402,
+    "result": {
+      "grant": {
+        "id": "g-8c21",
+        "nodeId": "aeon",
+        "rootId": "aeon",
+        "subject": {"kind": "action", "name": "forge.openPR"},
+        "state": "allow",
+        "conditions": {"requireGates": false, "requireBudget": true, "labels": ["release"], "maxPerDay": 4},
+        "note": "nightly release lane",
+        "expiresAt": "2026-12-01T00:00:00Z",
+        "createdAt": "2026-11-01T09:00:00Z",
+        "createdBy": {"kind": "user", "id": "1000"},
+        "revoked": null,
+        "active": true,
+        "describe": "g-8c21 allows forge.openPR for unattended loops on aeon — expires 2026-12-01T00:00:00Z"
+      },
+      "lastChange": {
+        "id": 118,
+        "at": "2026-11-01T09:00:00Z",
+        "rootId": "aeon",
+        "grantId": "g-8c21",
+        "changeKind": "grant",
+        "actorKind": "user",
+        "actorId": "1000",
+        "summary": "autonomy grant of forge.openPR on root aeon by 1000"
+      },
+      "usedCount": 2,
+      "pinnedLoops": ["loop-42"]
+    }
+  }
+}

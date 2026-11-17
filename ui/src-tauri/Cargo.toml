@@ -1,0 +1,27 @@
+[package]
+name = "aeon-ui"
+version = "0.0.0"
+description = "Aeon — the desktop shell"
+edition = "2021"
+rust-version = "1.77"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-deep-link = "2"
+tauri-plugin-shell = "2"
+tauri-plugin-notification = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+base64 = "0.22"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+glib = "0.18"
+# The webview Tauri already uses on Linux; named here only to let Orion ask for the microphone (media_permissions.rs).
+webkit2gtk = "=2.0.2"
+
+[features]
+# Tauri v2 only. Never v1.
+default = []

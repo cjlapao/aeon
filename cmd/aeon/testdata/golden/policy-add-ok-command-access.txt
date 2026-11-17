@@ -1,0 +1,4 @@
+$ aeon policy add --type command_access --id ok-command --target agent:alice --action allow --command git status
+policy ok-command stored — the daemon's next read sees it (N8 forbids caching)
+$ aeon policy list
+ok-command               command_access agent:alice                  allow  operator     no expiry

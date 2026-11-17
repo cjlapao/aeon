@@ -1,0 +1,28 @@
+{
+  "description": "LW10's bound refused out loud: the ninth terminal on one component root is refused with the root and the count named — a silent failure to open would leave the window staring at a spinner forever.",
+  "method": "terminal.open",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "method": "terminal.open",
+    "params": {
+      "componentRoot": "/home/dev/code/aeon-qa-workspace",
+      "cols": 100,
+      "rows": 24
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "error": {
+      "code": -31512,
+      "message": "too many terminals for this component root",
+      "data": {
+        "what": "component root \"/home/dev/code/aeon-qa-workspace\" already has 8 terminals; the bound is 8 per root",
+        "means": "no shell was started — the bound is what keeps a churning window from filling the daemon with shells nobody reads",
+        "todo": "close an idle session (`terminal.close`) or reuse one (`terminal.attach`); detached sessions are reaped automatically after their grace",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "description": "budget.hit: a dimension's spend floor has reached its cap (or the cost is unproven and the unknown policy is stop) — the loop is about to park, or was just refused a start. The payload names the budget, the dimension, the floor that tripped it and the cap, with exact saying whether the floor was a total (P31: a floor with unknowns beside it is not one, and the stream says so rather than the reader guessing); loopId is present for the E1/E2 hits (a loop in flight) and absent for the E3 refused start (the loop does not exist yet, so the event rides the workspace root it was aimed at).",
+  "event": "budget.hit",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1802,
+      "kind": "budget.hit",
+      "componentRoot": "/home/p/repo-a",
+      "at": "2026-11-01T14:05:00Z",
+      "payload": {
+        "budgetId": "bud-epc-1",
+        "scope": "epic",
+        "subjectId": "epc-1",
+        "dimension": "usd",
+        "spendFloor": 900,
+        "cap": 900,
+        "exact": true,
+        "loopId": "loop-1"
+      }
+    }
+  }
+}

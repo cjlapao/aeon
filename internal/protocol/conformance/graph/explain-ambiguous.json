@@ -1,0 +1,15 @@
+{
+  "description": "D8's ambiguous answer, and the one that most proves four states are four: two `Validate` functions live under this root, so the answer LISTS BOTH — id, symbol, file, line — and picks neither (CG5: no silently-chosen candidate), traverses no edges past the ambiguity, and carries no prose anywhere in it. Collapsing this into found (a silent pick) or not-found (a shrug) are both lies this shape cannot tell; the caller disambiguates by re-asking with the qualified name.",
+  "method": "graph.explain",
+  "request": {"jsonrpc": "2.0", "id": 249, "method": "graph.explain", "params": {"componentRoot": "/home/dev/shop", "symbol": "Validate"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 249,
+    "result": {
+      "state": "ambiguous",
+      "candidates": [
+        {"id": 12, "symbol": "order.Validate", "kind": "function", "filePath": "internal/order/validate.go", "startLine": 8, "endLine": 12, "language": "go"},
+        {"id": 26, "symbol": "billing.Validate", "kind": "function", "filePath": "internal/billing/validate.go", "startLine": 6, "endLine": 9, "language": "go"}
+      ]
+    }
+  }
+}

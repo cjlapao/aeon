@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Transparent Background / Pure Vector Mark Designed for currentColor Painting -->
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Continuous Infinite Loop Ribbon -->
+    <path d="M 256,256 C 298,318 344,352 400,352 C 456,352 492,308 492,256 C 492,204 456,160 400,160 C 344,160 298,194 256,256 C 214,318 168,352 112,352 C 56,352 20,308 20,256 C 20,204 56,160 112,160 C 168,160 214,194 256,256 Z"
+          stroke-width="44"/>
+
+    <!-- Overlapping Ribbon Layer for Mobius Cross -->
+    <path d="M 214,194 C 238,230 274,282 298,318"
+          stroke-width="44"/>
+
+    <!-- Left Agent Dispatched Dot -->
+    <circle cx="112" cy="160" r="12" fill="currentColor" stroke="none"/>
+
+    <!-- Right Synthesis / Learning Dot -->
+    <circle cx="400" cy="352" r="12" fill="currentColor" stroke="none"/>
+
+    <!-- Central Orchestration Kernel Ring -->
+    <circle cx="256" cy="256" r="18" fill="none" stroke-width="12"/>
+    <circle cx="256" cy="256" r="6" fill="currentColor" stroke="none"/>
+  </g>
+</svg>

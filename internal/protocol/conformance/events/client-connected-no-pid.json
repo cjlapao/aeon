@@ -1,0 +1,22 @@
+{
+  "description": "Where the platform reports no pid, `peerPid` is 0 and `peerPidAvailable` is FALSE. The flag exists because a bare 0 cannot distinguish \"pid is zero\" from \"no pid on this platform\", and inventing a pid would send somebody to kill the wrong process.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 1422,
+      "kind": "client.connected",
+      "at": "2026-10-15T09:14:53.000000000Z",
+      "payload": {
+        "connId": "conn-8",
+        "clientName": "some-editor",
+        "clientVersion": "1.2.3",
+        "protocolVersion": 1,
+        "peerUid": 1000,
+        "peerPid": 0,
+        "peerPidAvailable": false
+      }
+    }
+  }
+}

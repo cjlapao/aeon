@@ -1,0 +1,21 @@
+{
+  "description": "A loop with no mailbox reads an EXISTING empty list \u2014 `messages: []`, never null (MB8: nil never marshals). `absent` is false because no thread was named: the whole loop simply holds no rows.",
+  "method": "agent.messages",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 91,
+    "method": "agent.messages",
+    "params": {
+      "loopId": "l-7"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 91,
+    "result": {
+      "loopId": "l-7",
+      "absent": false,
+      "messages": []
+    }
+  }
+}

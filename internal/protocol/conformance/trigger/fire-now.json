@@ -1,0 +1,16 @@
+{
+  "description": "`trigger.fireNow` is the honest convenience (TR2): it fires AS A TRIGGER — same fireAt walk a tick takes, window then overlap then governance then the start, with the starter's hard-coded unattendedness. No parameter names the invoking caller, over socket or CLI alike: a person watching is not a party the loop runs for, and an attended fire-now would be an attendedness override through the back door. A webhook row REFUSES (its signature is its whole authentication — the convenience never becomes the bypass). The five answers travel in the result.",
+  "method": "trigger.fireNow",
+  "request": { "jsonrpc": "2.0", "id": 71, "method": "trigger.fireNow", "params": { "id": "nightly-survey" } },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 71,
+    "result": {
+      "triggerId": "nightly-survey",
+      "outcome": "fired",
+      "loopId": "nightly-survey-20261027-0915",
+      "paused": false,
+      "found": true
+    }
+  }
+}

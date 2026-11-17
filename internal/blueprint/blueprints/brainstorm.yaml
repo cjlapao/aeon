@@ -1,0 +1,23 @@
+# brainstorm — the S38 capture lane (criterion 2): a conversation's product
+# becomes a goal ROW with the two files pinned to it. The model writes the
+# files, files the goal, and attaches both documents; the contract (T12)
+# refuses the lane ok until the rows exist — files alone are not the
+# deliverable. S39 T6 (CR1) makes it rest: after its capture run the loop
+# goes idle — the conversation that produced the goal CONTINUES (a message
+# starts a turn with the same conversation agent, brainstormer), and a
+# person closes the rest with loop.close when the thread is truly over.
+id: brainstorm
+schemaVersion: 1
+version: 1
+after: converse
+converse: brainstormer
+output: [goal, proposal.md, brief.md]
+lanes:
+  - id: capture
+    step:
+      kind: model-step
+      agent: brainstormer
+      produces: [proposal.md, brief.md]
+      emits:
+        - { type: goal, attach: [proposal.md, brief.md] }
+questions: {}

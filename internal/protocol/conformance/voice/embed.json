@@ -1,0 +1,6 @@
+{
+  "description": "`voice.embed` embeds one short text with a route that declares the `embedding` capability and answers how many numbers the text became. It is the check the model page runs to see an embedding route answers; it changes nothing.",
+  "method": "voice.embed",
+  "request": { "jsonrpc": "2.0", "id": 92, "method": "voice.embed", "params": { "route": "embedder", "text": "Aeon runs agents on your code." } },
+  "response": { "jsonrpc": "2.0", "id": 92, "result": { "dimensions": 3 } }
+}

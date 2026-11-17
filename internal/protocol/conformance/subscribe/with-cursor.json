@@ -1,0 +1,9 @@
+{
+  "description": "`after` is how a reconnecting client finds out what it missed. `from` is where it ACTUALLY resumed: if from is greater than after+1, the daemon no longer retains that far back and the client knows it has a gap rather than assuming continuity.",
+  "method": "subscribe",
+  "request": {
+    "jsonrpc": "2.0", "id": 6, "method": "subscribe",
+    "params": {"filter": {"kinds": ["loop.*"]}, "after": 1420}
+  },
+  "response": {"jsonrpc": "2.0", "id": 6, "result": {"subscriptionId": "s-9e8d7c6b", "from": 1421}}
+}

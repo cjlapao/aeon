@@ -1,0 +1,40 @@
+{
+  "description": "mergequeue.retry is failed \u2192 queued: the driver re-advances the row on its next round and the reason clears. From any other state the door refuses with ErrMergeQueueConflictState naming the state the row is actually in.",
+  "method": "mergequeue.retry",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 655,
+    "method": "mergequeue.retry",
+    "params": {
+      "id": "mq-1a2b3c4d5e6f708192a3b4c5d6e7f809"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 655,
+    "result": {
+      "id": "mq-1a2b3c4d5e6f708192a3b4c5d6e7f809",
+      "componentRoot": "/srv/components/alpha",
+      "base": "main",
+      "branch": "feature/export-csv",
+      "status": "queued",
+      "position": 3,
+      "attended": false,
+      "headSha": "bbbb2222cccc3333dddd4444eeee5555ffff6666",
+      "baseSha": "9999aaaa8888bbbb7777cccc6666dddd5555eeee4444",
+      "catchUps": 0,
+      "enqueuedBy": {
+        "kind": "cli",
+        "id": "aeon-cli"
+      },
+      "staleness": {
+        "state": "not-yet",
+        "reason": "the queue has not read its base for this state yet"
+      },
+      "nextStep": "queued: retried, waiting its turn on main",
+      "digest": "a20b27d60bda90b6e834fbad06626e8246b089af56e27d9b06e48a2d9d944dd5",
+      "createdAt": "2026-11-04T08:00:00Z",
+      "updatedAt": "2026-11-04T10:20:00Z"
+    }
+  }
+}

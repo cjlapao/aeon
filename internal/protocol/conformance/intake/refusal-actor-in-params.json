@@ -1,0 +1,24 @@
+{
+  "description": "The commit takes no actor either: the key is refused by name before decode, and the seam is never reached.",
+  "method": "intake.commit",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "intake.commit",
+    "params": {
+      "intakeId": "int-abc123",
+      "proposalId": "7",
+      "digest": "d",
+      "actor": "someone-else"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: intake.commit takes no \"actor\" \u2014 an intake row and every ledger row carry the connection's person, never a typed actor"
+    }
+  },
+  "fromDoor": true
+}

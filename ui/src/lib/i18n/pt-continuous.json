@@ -1,0 +1,158 @@
+{
+  "settings": {
+    "continuous": {
+      "actions": {
+        "addRepo": "Adicionar repositório",
+        "cancel": "Cancelar",
+        "clearFilters": "Limpar filtros",
+        "disable": "Desativar",
+        "disableRepo": "Desativar repositório",
+        "edit": "Editar",
+        "enable": "Ativar trabalho contínuo",
+        "enableRepo": "Ativar repositório",
+        "pause": "Pausar",
+        "resume": "Retomar",
+        "retry": "Tentar novamente",
+        "save": "Guardar",
+        "saveEnable": "Guardar e ativar",
+        "stopAll": "Parar tudo"
+      },
+      "attentionCount": "Precisa de si: {open}",
+      "col": {
+        "kind": "Tipo",
+        "lastStart": "Último início",
+        "loop": "Loop",
+        "note": "O que fazer",
+        "repository": "Repositório",
+        "since": "Desde",
+        "status": "Estado",
+        "subject": "Item de trabalho",
+        "template": "Inicia",
+        "verdict": "Veredito",
+        "why": "Porquê",
+        "window": "Horário"
+      },
+      "decisions": {
+        "all": "Todas",
+        "col": {
+          "actor": "Ator",
+          "at": "Quando",
+          "decision": "Decisão",
+          "reason": "Razão",
+          "repository": "Repositório",
+          "subject": "Sujeito",
+          "summary": "Resumo"
+        },
+        "decision": "Decisão",
+        "empty": "Nenhuma decisão nesta janela corresponde.",
+        "failed": "O registo de decisões não pôde ser lido",
+        "footer": "A mostrar {shown} das {limit} decisões mais recentes",
+        "reason": "Razão",
+        "repository": "Repositório",
+        "subject": "Sujeito",
+        "subjectHint": "Pesquisar item de trabalho…"
+      },
+      "disabled": "As escritas aguardam enquanto o daemon não estiver atualizado.",
+      "form": {
+        "briefPath": "Caminho do brief",
+        "minPriority": "Prioridade mínima",
+        "newTitle": "Adicionar repositório",
+        "pickRepo": "Repositório",
+        "tech": "Tecnologia",
+        "title": "Linha do agendador",
+        "windowDays": "Dias",
+        "windowEmpty": "Deixe a janela vazia para permitir trabalho a qualquer hora.",
+        "windowEnd": "Fim da janela",
+        "windowStart": "Início da janela",
+        "windowZone": "Zona"
+      },
+      "help": {
+        "body": "**O trabalho contínuo deixa o Aeon pegar sozinho no trabalho que está pronto.** Normalmente um loop começa quando você o inicia. Com isto ligado, um agendador olha para os repositórios inscritos, encontra trabalho pronto (itens da fila e do roadmap) e inicia um loop para ele — sem que ninguém peça nesse momento.\n\n### Como decide\nA cada poucos segundos o agendador faz um *tick*. Para cada repositório inscrito verifica, por ordem: o mestre está ligado e sem pausa, o repositório está ativo, o modelo carrega, a hora está dentro da janela, o repositório já está ocupado, ainda há orçamento, há trabalho pronto. A primeira verificação que falha é o **motivo** mostrado junto ao repositório. A aba **Próximo tick** corre essa mesma verificação sem iniciar nada.\n\n### O que controla\n- **Interruptor mestre** — desligado até você ligar. Ligar confirma exatamente o que está a conceder.\n- **Pausa** — deixa de escolher trabalho novo; os loops em curso continuam. **Parar tudo** pausa e também para os loops em curso.\n- **Repositórios** — só os inscritos e ativos são tocados. Cada um tem um blueprint (o loop a correr), uma prioridade mínima e uma janela de horas.\n- **Vagas** — um limite de quantos loops correm ao mesmo tempo.\n\n### Seguro por construção\nOs loops iniciados assim correm **sem supervisão**: uma ação que precisaria da aprovação de uma pessoa é negada de imediato, por isso não conseguem abrir nem fundir um pull request sozinhos. Quando um loop fica bloqueado e precisa de si, aparece em **Precisa de si**.\n\nTodos os atos nesta página ficam auditados para a pessoa que os fez.",
+        "title": "O que é o trabalho contínuo?"
+      },
+      "hint": {
+        "attention": "Loops iniciados pelo agendador que estão bloqueados à espera de uma pessoa.",
+        "decisions": "Tudo o que o agendador decidiu, do mais recente para o mais antigo, com quem ou o que o desencadeou.",
+        "preview": "O que o próximo tick faria, corrido agora sem iniciar nada — e, para cada linha que não iniciaria, porquê.",
+        "repositories": "Os repositórios onde o agendador pode iniciar trabalho. Clique num para mudar o que inicia e quando."
+      },
+      "loading": "A perguntar ao daemon…",
+      "master": "Mestre",
+      "needsYou": {
+        "empty": {
+          "body": "Nenhum loop bloqueado espera por uma pessoa.",
+          "title": "Nada precisa de si"
+        },
+        "failed": "As linhas de atenção não puderam ser lidas",
+        "since": "desde {at}"
+      },
+      "nextTick": "Próximo tick: {at}",
+      "pause": {
+        "title": "Pausar o agendador — a razão dada pela pessoa segue na linha de auditoria"
+      },
+      "pausedToast": "Em pausa",
+      "preview": {
+        "failed": "A pré-visualização não pôde ser executada",
+        "footer": "{starting} iniciariam, {holding} não — a lista tem no máximo a profundidade do limite de vagas: uma contagem de vagas, não uma medição de memória.",
+        "now": "O daemon executou o seu tick em {now} — nada foi iniciado.",
+        "wouldStartEmpty": "Nada seria iniciado neste tick."
+      },
+      "q": {
+        "what": "O que inicia aqui?",
+        "when": "Quando pode trabalhar?",
+        "working": "Está a trabalhar aqui?"
+      },
+      "reconnecting": "A reconectar ao daemon — as respostas do agendador estão em pausa, nada pode ser alterado.",
+      "refused": "O agendador recusou",
+      "repo": {
+        "anytime": "a qualquer hora",
+        "lastStart": "último início {at}",
+        "minPriority": "mín. {state}",
+        "off": "inativo",
+        "on": "ativo",
+        "window": "{start}–{end} {days} ({zone})"
+      },
+      "repositories": {
+        "count": "{count} repositórios inscritos",
+        "empty": {
+          "body": "Adicione uma linha do agendador para uma raiz de componente e o seu modelo; até aí o tick não tem onde começar.",
+          "title": "Nenhum repositório inscrito"
+        },
+        "failed": "As linhas do agendador não puderam ser lidas",
+        "noneFree": "Todos os repositórios que o daemon conhece já estão inscritos"
+      },
+      "s20Paused": "S20 em pausa",
+      "settings": {
+        "subtitle": "Só de leitura — os valores com que o agendador corre",
+        "title": "Definições do agendador"
+      },
+      "slots": "Slots em uso: {used} de {cap}",
+      "state": {
+        "off": "desligado",
+        "on": "ligado",
+        "paused": "em pausa"
+      },
+      "stateLine": {
+        "off": "O agendador está desligado. Nada começa sozinho até você ligar.",
+        "on": "O agendador está a correr: a cada tick inicia trabalho pronto nos repositórios ativos abaixo.",
+        "paused": "O agendador está em pausa. Não escolhe trabalho novo; os loops em curso continuam."
+      },
+      "status": {
+        "failed": "O estado do agendador não pôde ser lido",
+        "unreadable": "A resposta de estado não chegou com a forma que o contrato descreve."
+      },
+      "stopAll": {
+        "note": "Loops em uso agora: {used}",
+        "title": "Parar tudo — pausar e parar os loops em execução"
+      },
+      "subtitle": "Deixa os agentes pegar sozinhos no trabalho pronto dos seus repositórios, dentro dos horários e limites que definir.",
+      "tabs": {
+        "attention": "Precisa de si",
+        "decisions": "Decisões",
+        "preview": "Próximo tick",
+        "repositories": "Repositórios"
+      },
+      "title": "Trabalho contínuo"
+    }
+  }
+}

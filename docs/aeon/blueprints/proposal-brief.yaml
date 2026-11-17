@@ -1,0 +1,95 @@
+# proposal-brief — derived from opencode/skills/proposal-brief-protocol/SKILL.md (833 lines)
+#
+# Driven by brief-author and proposal-author. It is also the protocol that produced every
+# document in docs/aeon/ — which makes it the one whose output this repository is made of.
+#
+# A THIRD STRUCTURAL SHAPE. dev-loop and development-map both END IN A MERGE. This one ends in
+# an approved document and a handoff: there is nothing to merge, no iterating lane, and no code
+# action anywhere. See README.md.
+---
+id: proposal-brief
+schemaVersion: 1
+version: 1
+
+lanes:
+  # ---- part 1: the proposal, optional ---------------------------------------
+  - id: proposal
+    # "Part 1 — The proposal schema": NN — Title / What it is / Why it matters /
+    # What exists today / Proposed shape / Risks / notes.
+    # Conditional because the brief's §7 is "Overrides to the proposal — Fill, or DELETE IF
+    # NONE": a brief may implement a proposal, or stand alone.
+    when: { field: flags.has_proposal, op: eq, value: true }
+    step: { kind: model-step, agent: proposal-author, produces: proposal.md }
+
+  - id: proposal-gate
+    when: { field: flags.has_proposal, op: eq, value: true }
+    step: { kind: gate, question: approve-proposal }
+    on_reject:
+      goto: proposal
+      counter: proposal_rounds
+      max: 2
+      then: escalate
+
+  # ---- part 2: the brief ---------------------------------------------------
+  - id: brief
+    # The 14-section template. Four sections are "Constant — copy verbatim": §1, §9, §12, §13.
+    # GAP-6: `produces:` asserts a path EXISTS. It cannot assert §1 was copied verbatim or that
+    # §9's constant rows survived — and the skill is explicit about why that matters: "do not
+    # trim them per project — they are short, and each one exists because its absence caused a
+    # specific failure." A trimmed brief is the failure mode, and it passes `produces:`.
+    step: { kind: model-step, agent: brief-author, produces: brief.md }
+
+  - id: self-check
+    # "§13 Pre-dispatch self-check" — six groups, A through F, and A is "Mechanical — paste the
+    # command and its output". The author runs it against its OWN finished brief, so this is a
+    # step validating the previous step's product, the same relationship `verify` has to a task
+    # in dev-loop.
+    step: { kind: model-step, agent: brief-author }
+    on_reject:
+      goto: brief
+      counter: selfcheck_rounds
+      max: 2
+      then: escalate
+
+  - id: brief-gate
+    # The human reads the brief. This is the protocol's only unconditional gate, and its terminal
+    # one — there is no merge after it.
+    step: { kind: gate, question: approve-brief }
+    on_reject:
+      goto: brief
+      with: { mode: revise }
+      counter: brief_rounds
+      max: 2
+      then: escalate
+
+# The protocol's product is an APPROVED BRIEF. What happens next is another protocol's —
+# dev-loops-brief runs dev-loop against it — so this blueprint terminates on the gate rather
+# than on an action. Nothing is merged, nothing is pushed, and no code action appears anywhere.
+
+questions:
+  approve-proposal:
+    prompt: Approve the proposal, or send it back?
+    answers: [approve, revise, abort]
+  approve-brief:
+    prompt: Approve the brief and hand it to a planner?
+    answers: [approve, revise, abort]
+
+# NOT EXPRESSED, deliberately — these are handler-body content, not lanes:
+#
+#   The shared discipline (§0 asking is a tool call · §0b show it before you ask about it ·
+#   §1 verify before claiming · §2 name the near-miss · §3 numbers and truth tables, never bare
+#   negatives · §4 paths). Six rules that shape HOW a document is written, which is exactly
+#   S11's DOMAIN category — judgement the model still needs, in the body of brief-author and
+#   proposal-author.
+#
+#   §12 "How to decompose" is instructions IN the brief, to a later planner. It is content this
+#   protocol produces, not a step it performs.
+#
+# AND ONE CONSTRAINT THAT LOOKS LIKE A CONFLICT AND IS NOT:
+#
+#   "the plan is a numbered sequence, NEVER a dependency graph (R11)"
+#
+#   S13's L31 topologically sorts a plan's tasks. That is not a contradiction: L31's sort is
+#   STABLE, so a plan with no `depends_on` sorts to its declared order and R11 is satisfied for
+#   free. Two protocols with different task models, one sorting rule. Recorded because it reads
+#   like a conflict on first look.

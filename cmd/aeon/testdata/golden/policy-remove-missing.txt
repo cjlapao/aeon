@@ -1,0 +1,2 @@
+$ aeon policy remove --id never-existed
+no policy called "never-existed" — nothing was removed

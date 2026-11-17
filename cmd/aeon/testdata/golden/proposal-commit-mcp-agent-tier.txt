@@ -1,0 +1,8 @@
+$ aeon proposal commit 1
+proposal <ID> committed
+$ aeon proposal commit 2
+proposal <ID> committed
+$ aeon proposal list
+ID    KIND               STATUS     CREATED BY               COMMAND
+<ID> mcp_server_remove  committed  user:1000                aeon proposal commit 2
+<ID> mcp_server_add     committed  user:1000                aeon proposal commit 1

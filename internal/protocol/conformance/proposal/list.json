@@ -1,0 +1,41 @@
+{
+  "description": "proposal.list — newest first, every row carrying its own commit command as copyable text. A decided row (committed here) carries its decided_* fields; a still-open one leaves them absent rather than empty strings (MC11's discipline extended to this table).",
+  "method": "proposal.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "method": "proposal.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "result": {
+      "proposals": [
+        {
+          "id": 8,
+          "kind": "policy_add",
+          "payload": {"id": "ask-git-status", "type": "command_access", "target": {"kind": "agent", "id": "reviewer"}, "action": "ask", "source": "agent", "spec": {"command": "git status", "state": "ask"}},
+          "status": "proposed",
+          "createdAt": "2026-10-29T15:05:10Z",
+          "createdByKind": "user",
+          "createdById": "1000",
+          "command": "aeon proposal commit 8"
+        },
+        {
+          "id": 7,
+          "kind": "mcp_server_add",
+          "payload": {"tier": "public", "server": {"name": "github", "transport": {"type": "stdio", "command": "gh-mcp"}}},
+          "status": "committed",
+          "createdAt": "2026-10-29T15:04:02Z",
+          "createdByKind": "user",
+          "createdById": "1000",
+          "decidedAt": "2026-10-29T15:10:00Z",
+          "decidedByKind": "user",
+          "decidedById": "1000",
+          "command": "aeon proposal commit 7"
+        }
+      ]
+    }
+  }
+}

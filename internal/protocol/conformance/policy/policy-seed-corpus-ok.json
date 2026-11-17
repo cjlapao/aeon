@@ -1,0 +1,19 @@
+{
+  "description": "S45 T4 (PM1) over the T12 (PM15) engine door: policy.seedCorpus is a THIN method over policyseed.ApplyCorpus — the same engine path seed.apply and the CLI verb use. The per-agent counts are the door's honest pair (seeded + unchanged always add up to the agent's corpus rules — a count never silently omits what was left alone); dryRun:true writes NOTHING and audits NOTHING (a dry run is a read — no policy rows, no policy_change row, no RecordAuthored), and a second real run of the same corpus returns dryRun:false with everything under unchanged and audits nothing new (idempotence, D4's convergence). The ONE per-run policy_change row (op='seed') is written by T12's own door beside the engine's seed_event — this answer never implies a second one.",
+  "method": "policy.seedCorpus",
+  "request": {"jsonrpc": "2.0", "id": 86, "method": "policy.seedCorpus", "params": {
+    "agents": ["brief-author"],
+    "dryRun": false
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 86,
+    "result": {
+      "perAgent": [
+        {"agent": "brief-author", "seeded": 20, "unchanged": 0}
+      ],
+      "seeded": 20,
+      "unchanged": 0,
+      "dryRun": false
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "description": "Construction failures happen BEFORE any model call — a handler asking for a tool the step was not granted, a missing output cap, a declared file that does not exist. The alternative is a failure three turns in, where it reads as a model working around a mistake rather than as a mistake. A `Client` spy at zero calls is the test.",
+  "method": "step",
+  "request": {
+    "jsonrpc": "2.0", "id": 74, "method": "step",
+    "params": {
+      "prompt": "check the plan",
+      "workspaceRoot": "/home/p/repo-a"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 74,
+    "error": {
+      "code": -31203,
+      "message": "the step could not be compiled",
+      "data": {
+        "what": "the declared file \"docs/plan.md\" could not be read: no such file or directory. A missing declared file is a construction error rather than an empty section, because an empty section reads to a model as \"this file is empty\" and it will reason from that",
+        "means": "construction checks the tool grants, the output cap and every declared file. Catching it here means no money was spent and the error names the cause rather than looking like a model mistake",
+        "todo": "the message names the specific failure — a missing file, an ungranted tool, or a missing output cap",
+        "fatal": false
+      }
+    }
+  }
+}

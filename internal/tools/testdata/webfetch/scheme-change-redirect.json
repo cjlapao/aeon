@@ -1,0 +1,28 @@
+{
+  "description": "http to https on the same host is an origin change, and is refused",
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "http://docs.test/secure",
+        "header": {
+          "Accept": [
+            "text/plain, text/markdown, application/json, application/xml"
+          ],
+          "User-Agent": [
+            "aeon-webfetch/1.0 (Aeon daemon; GET-only; sends no credentials)"
+          ]
+        }
+      },
+      "response": {
+        "status": 302,
+        "header": {
+          "Location": [
+            "https://docs.test/secure"
+          ]
+        },
+        "body": ""
+      }
+    }
+  ]
+}

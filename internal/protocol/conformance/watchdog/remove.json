@@ -1,0 +1,12 @@
+{
+  "description": "watchdog.remove with the digest of the removal statement: a removal always loosens a safeguard (a rule that is gone will never fire), so it always confirms, any origin — the system seed's provenance does not make its removal free. The digest here is the SHA-256 of the statement the daemon rendered from the row, the same one a confirm-required refusal hands the client, so the removal completes in one round trip. The row is disabled, never deleted (LC11): the audit and the id outlive the removal, so the seed's ledger and a fire's rule reference keep resolving.",
+  "method": "watchdog.remove",
+  "request": {
+    "jsonrpc": "2.0", "id": 626, "method": "watchdog.remove",
+    "params": {"id": "wdr-3", "confirm": "4118faa22a2f54d5f40afa55160d5f29446f87956f4391d92a7a72978500e770"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 626,
+    "result": {"id": "wdr-3", "removed": true}
+  }
+}

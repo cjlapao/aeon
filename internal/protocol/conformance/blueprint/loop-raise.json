@@ -1,0 +1,18 @@
+{
+  "description": "loop.raise: a person lifts the cap the loop is parked on and the loop moves in the same act. Raised names the budget, the dimension lifted, and the cap it moved from (the pin's CapHit cap) to (the new value); Resumed says the loop moved (a fresh runner for a parked step, the re-run for a waiting one — How names which); the person's reason rides the audit's raised event, not this result. A raise is not a budget write: it lifts the one dimension the hit tripped and nothing else.",
+  "method": "loop.raise",
+  "request": {
+    "jsonrpc": "2.0", "id": 610, "method": "loop.raise",
+    "params": {"id": "loop-1", "budgetId": "bud-epc-1", "usdCap": 1200, "reason": "the estimate was off — the cap is right, give it the room"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 610,
+    "result": {
+      "loopId": "loop-1",
+      "raised": {"budgetId": "bud-epc-1", "dimension": "usd", "from": 900, "to": 1200},
+      "resumed": true,
+      "status": "active",
+      "how": "step"
+    }
+  }
+}

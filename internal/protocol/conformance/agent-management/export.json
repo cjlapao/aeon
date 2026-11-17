@@ -1,0 +1,6 @@
+{
+  "description": "agent.export renders an agent to a card and writes it to the named path, returning the path it wrote (or, when no path is given, the card JSON as the result). It is an unsigned export — the card is the operator's own, and the signature is the signer's, not the exporter's — so the importer verifies whatever is there. A slug with no row is refused by name, never a blank file.",
+  "method": "agent.export",
+  "request": {"jsonrpc": "2.0", "id": 113, "method": "agent.export", "params": {"slug": "reviewer-plus", "path": "/tmp/exports/reviewer-plus.card.json"}},
+  "response": {"jsonrpc": "2.0", "id": 113, "result": "/tmp/exports/reviewer-plus.card.json"}
+}

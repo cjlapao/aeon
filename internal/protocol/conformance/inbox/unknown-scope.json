@@ -1,0 +1,21 @@
+{
+  "description": "An unknown rootId is a typed refusal (ErrInboxScope, -31926), never an empty list: an empty inbox would read as 'nothing needs you', which is how a typo makes the attention plane lie. The id the caller sent rides in data.what. S58 T2 opened the -31923...-31929 block (after S47's reservation comment claimed -31914...-31922).",
+  "method": "inbox.list",
+  "request": {
+    "jsonrpc": "2.0", "id": 903, "method": "inbox.list",
+    "params": {"rootId": "cmp-does-not-exist"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 903,
+    "error": {
+      "code": -31926,
+      "message": "unknown inbox scope",
+      "data": {
+        "what": "the inbox scope named a component this store does not carry live (rootId \"cmp-does-not-exist\")",
+        "means": "an empty inbox would have looked like 'nothing needs you' — this refusal says the scope itself was the unknown thing, so an empty list can never be a lie about a typo",
+        "todo": "check the id against `component.list` (archived components are out of scope like unknown ones), or call inbox.list/inbox.summary with no rootId to see every tree",
+        "fatal": false
+      }
+    }
+  }
+}

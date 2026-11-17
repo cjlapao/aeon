@@ -1,0 +1,36 @@
+{
+  "description": "notify.channel.disable is a switch, never a deletion: events still resolve and the delivery log keeps its rows, and the audit names the flip and its actor. The disabled channel answers with enabled=false and everything else it always knew.",
+  "method": "notify.channel.disable",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 943,
+    "method": "notify.channel.disable",
+    "params": {
+      "id": "nc-01JTEST0000000000000000001"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 943,
+    "result": {
+      "id": "nc-01JTEST0000000000000000001",
+      "name": "ops-room",
+      "kind": "webhook",
+      "host": "hooks.example.com",
+      "enabled": false,
+      "allowPrivate": false,
+      "secretPresent": true,
+      "subscriptions": [
+        {
+          "channelId": "nc-01JTEST0000000000000000001",
+          "minSeverity": "blocked",
+          "kinds": null,
+          "maxPerHour": 30
+        }
+      ],
+      "createdAt": "2026-11-03T09:00:00Z",
+      "updatedAt": "2026-11-03T09:00:00Z",
+      "consecutiveFailures": 0
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "description": "CN13: every needs-you whose loop is STILL blocked or waiting (derived at read from the loop row — DB6's no-stored-flag rule), the kind displayed verbatim, cap-hit the one kind carrying S55's raise sentence.",
+  "method": "scheduler.attention",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 404,
+    "method": "scheduler.attention",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 404,
+    "result": {
+      "items": [
+        {
+          "decisionId": 91,
+          "loopSlug": "aeon-sweep-3",
+          "componentRoot": "/srv/components/alpha",
+          "subjectKind": "roadmap",
+          "subjectId": 12,
+          "kind": "cap-hit",
+          "note": "the budget cap stopped this loop — raising the cap is a different act than retrying (loop.raise, S55)",
+          "since": "2026-11-04T12:44:19Z"
+        }
+      ],
+      "open": 1
+    }
+  },
+  "fromDoor": true
+}

@@ -1,0 +1,40 @@
+{
+  "description": "S27 T3 (CN7): the graph door. `depend` records that item 12 waits for item 9 \u2014 an EDGE OF INTENT, not a status move: the item's own fields do not change, and the answer carries the graph beside the row (`dependencies` names the upstream items with their CURRENT status and title; `dependents` counts who waits on this one). Both fields are additive and omitempty: an edge-less item answers with exactly the bytes it answered with before S27. Readiness is never a field here \u2014 the next attempt re-reads the graph (D4: decided now, never cached).",
+  "method": "roadmap.depend",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 347,
+    "method": "roadmap.depend",
+    "params": {
+      "id": 12,
+      "dependsOn": 9
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 347,
+    "result": {
+      "item": {
+        "id": 12,
+        "componentRoot": "/srv/projects/ledger",
+        "title": "export monthly statements",
+        "status": "planned",
+        "priorityState": "known",
+        "priorityLabel": "P1",
+        "provenance": "manual",
+        "briefPath": "briefs/ledger.md",
+        "planPath": "plans/ledger.md",
+        "createdAt": "2026-10-29T09:00:00Z",
+        "updatedAt": "2026-10-29T12:00:00Z",
+        "dependencies": [
+          {
+            "id": 9,
+            "status": "running",
+            "title": "collect statement templates"
+          }
+        ],
+        "dependents": 0
+      }
+    }
+  }
+}

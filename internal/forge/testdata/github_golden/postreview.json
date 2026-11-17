@@ -1,0 +1,23 @@
+{
+  "case": "postreview",
+  "method": "POST",
+  "path": "/repos/acme/widget/pulls/7/reviews",
+  "authShape": "Bearer \u003credacted\u003e",
+  "accept": "application/vnd.github+json",
+  "body": "{\"body\":\"Verified against the daemon.\",\"event\":\"APPROVE\"}",
+  "attempts": 1,
+  "wire": "{\n  \"id\": 43,\n  \"body\": \"Verified against the daemon.\",\n  \"state\": \"APPROVED\",\n  \"user\": {\n   \"login\": \"steward\"\n  }\n }",
+  "mapped": "{\"ID\":43,\"PR\":7,\"Body\":\"Verified against the daemon.\",\"Verdict\":\"approve\",\"Author\":\"steward\",\"SubmittedAt\":\"\"}",
+  "wireHas": [
+    "id",
+    "body",
+    "state",
+    "user.login"
+  ],
+  "mappedHas": [
+    "id",
+    "body",
+    "state",
+    "user.login"
+  ]
+}

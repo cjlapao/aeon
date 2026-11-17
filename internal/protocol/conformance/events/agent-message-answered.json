@@ -1,0 +1,19 @@
+{
+  "description": "MB6: a reply settled an ask through its result_of link \u2014 the ask's row now carries the answer's words. The payload names the ask (messageId), its thread, and who answered; a subscriber that races this reads the same truth through agent.messages.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 1504,
+      "kind": "agent.message.answered",
+      "at": "2026-10-31T10:00:00.000000001Z",
+      "payload": {
+        "messageId": 12,
+        "thread": 12,
+        "loopId": "l-7",
+        "answeredBy": "writer"
+      }
+    }
+  }
+}

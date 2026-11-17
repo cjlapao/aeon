@@ -1,0 +1,15 @@
+{
+  "name": "blocked_holds",
+  "rows": [
+    {
+      "status": "blocked",
+      "goal": "halted"
+    },
+    {
+      "status": "ready",
+      "goal": "waits behind"
+    }
+  ],
+  "personLoop": false,
+  "head": ""
+}

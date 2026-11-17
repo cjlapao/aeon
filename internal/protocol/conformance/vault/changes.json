@@ -1,0 +1,39 @@
+{
+  "description": "vault.changes is the append-only ledger, newest first: who set or deleted a variable, and which agent read one. Names and flags only; a value never rides a ledger row.",
+  "method": "vault.changes",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 954,
+    "method": "vault.changes",
+    "params": {
+      "name": "GITHUB_PERSONAL_ACCESS_TOKEN",
+      "limit": 20
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 954,
+    "result": {
+      "changes": [
+        {
+          "id": 7,
+          "name": "GITHUB_PERSONAL_ACCESS_TOKEN",
+          "op": "agent_read",
+          "summary": "read variable GITHUB_PERSONAL_ACCESS_TOKEN",
+          "actorKind": "agent",
+          "actorId": "github-engineer",
+          "occurredAt": "2026-11-08T12:05:00Z"
+        },
+        {
+          "id": 6,
+          "name": "GITHUB_PERSONAL_ACCESS_TOKEN",
+          "op": "set",
+          "summary": "created variable GITHUB_PERSONAL_ACCESS_TOKEN (secret=true, agentVisible=true)",
+          "actorKind": "user",
+          "actorId": "1000",
+          "occurredAt": "2026-11-08T12:00:00Z"
+        }
+      ]
+    }
+  }
+}

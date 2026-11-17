@@ -1,0 +1,18 @@
+{
+  "description": "`loop.delete` removes a loop and what hangs from it (steps, chat, journal, questions, memory, its documents except those a goal owns or an attachment pins) and keeps what was already counted and the work. The component's telemetry rollups are never touched; a tombstone keeps the loop's own totals; a task, roadmap item or queue item stays with its link to the loop cut (a task becomes a standalone task and keeps the cost it had spent), and `loop.tombstones` reports which loop each one lost. `confirm` must be the loop's slug, checked by the daemon. The person's door; refused for a running loop.",
+  "method": "loop.delete",
+  "request": {
+    "jsonrpc": "2.0", "id": 87, "method": "loop.delete",
+    "params": { "id": "loop-7f3a", "confirm": "loop-dmvwadf8d4rc", "note": "broken run" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 87,
+    "result": {
+      "tombstone": {
+        "loopId": "loop-7f3a", "slug": "loop-dmvwadf8d4rc", "componentRoot": "/home/me/code/qa", "title": "Hello CLI", "goal": "Turn hello into a CLI",
+        "status": "waiting", "startedAt": "2026-11-15T20:00:00.000Z", "deletedAt": "2026-11-16T12:05:00.000Z", "deletedBy": "user:me", "note": "broken run",
+        "steps": 4, "turns": 41, "toolCalls": 169, "inputTokens": 900000, "outputTokens": 20000, "wallMs": 900000, "costUsd": 6.763, "costState": "known"
+      }
+    }
+  }
+}

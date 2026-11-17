@@ -1,0 +1,86 @@
+{
+  "description": "blueprint.vocabulary states every closed set a flow form offers, so the form never invents a step kind, an operator or a code action.",
+  "method": "blueprint.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "method": "blueprint.vocabulary",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "result": {
+      "stepKinds": [
+        "model-step",
+        "code-action",
+        "gate"
+      ],
+      "after": [
+        "finish",
+        "converse"
+      ],
+      "thenActions": [
+        "escalate",
+        "fail-item",
+        "block"
+      ],
+      "operators": [
+        "eq",
+        "neq",
+        "in",
+        "gt",
+        "gte",
+        "lt",
+        "lte"
+      ],
+      "decides": [
+        "goal",
+        "brief"
+      ],
+      "emitTypes": [
+        "goal",
+        "epic",
+        "brief",
+        "task"
+      ],
+      "requireTypes": [
+        "goal",
+        "task"
+      ],
+      "requireStates": [
+        "approved"
+      ],
+      "fields": [
+        {
+          "path": "mode",
+          "type": "enum",
+          "enum": [
+            "simple",
+            "standard",
+            "poc"
+          ],
+          "operators": [
+            "eq",
+            "neq",
+            "in"
+          ],
+          "doc": "Loop execution mode"
+        }
+      ],
+      "actions": [
+        {
+          "name": "git.createBranch",
+          "args": [
+            {
+              "name": "which",
+              "type": "string",
+              "required": false,
+              "source": "code"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

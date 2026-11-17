@@ -1,0 +1,27 @@
+{
+  "description": "Input to a session whose shell already exited refuses: the kept session is scrollback history, not a shell. It stays attachable until closed or reaped — the exit is not a deletion (LW9).",
+  "method": "terminal.input",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "method": "terminal.input",
+    "params": {
+      "terminalId": "t-7f3a",
+      "data": "echo hi\n"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "error": {
+      "code": -31513,
+      "message": "the terminal has already exited",
+      "data": {
+        "what": "the shell of terminal \"t-7f3a\" exited on its own; the session is kept only to serve its scrollback",
+        "means": "nothing was typed and nothing will run — the kept session is history, not a shell",
+        "todo": "open a new terminal, or `terminal.attach` to read what the exited one printed",
+        "fatal": false
+      }
+    }
+  }
+}

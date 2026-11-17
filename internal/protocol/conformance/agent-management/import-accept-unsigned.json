@@ -1,0 +1,28 @@
+{
+  "description": "agent.import admits a card that carries no signature only when the person says yes: `acceptUnsigned: true` is that yes, for this one import (the app asks them to confirm in a dialog), and the daemon imports it marked `signed: false` and `origin: import`, so it stays marked as the unsigned import it is. Without the yes — and with the operator's standing `agents.allowUnsignedImport` off — the card is refused by name. The yes is never remembered: the next unsigned card asks again.",
+  "method": "agent.import",
+  "request": {"jsonrpc": "2.0", "id": 118, "method": "agent.import", "params": {"content": "{\"card\":{\"slug\":\"groot\",\"name\":\"Groot\",\"version\":\"1\"}}", "acceptUnsigned": true}},
+  "response": {"jsonrpc": "2.0", "id": 118, "result": {
+    "agent": {
+      "id": 14,
+      "slug": "groot",
+      "name": "Groot",
+      "description": "",
+      "functionality": "",
+      "metadata": "",
+      "prompt": "",
+      "skills": "[]",
+      "version": "1",
+      "internal": false,
+      "avatarType": "minion",
+      "avatarColor": "",
+      "avatarMood": "idle",
+      "signature": "",
+      "certificate": "",
+      "signed": false,
+      "createdAt": "2026-11-11T09:00:00Z",
+      "updatedAt": "2026-11-11T09:00:00Z"
+    },
+    "result": "created"
+  }}
+}

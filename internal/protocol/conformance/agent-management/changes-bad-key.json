@@ -1,0 +1,9 @@
+{
+  "description": "agent.changes refused as a shape error for the one word this read cannot honour: `sort` (S73 AR6). It is a key of the sibling read `agent.rows`, so the caller is not confused — they sent the obvious paging request — and that is exactly why the door refuses it by NAME instead of decoding past it: a history accepted `sort` and answered newest-first anyway, so the panel would render a sort the daemon never performed. The refused set is CLOSED (limit, cursor, offset, order, search, actor, actorKind, sort, dir, q) and it is NOT unknown-key rejection: conformance/README.md's T3 makes unknown keys in params be IGNORED, so a client that sends `pageFromTheFuture` tomorrow must succeed, and `forward-compat.json` is the standing test that says so. The voice is −32602, the daemon's own \"that is not one of the values\", and the message carries the alternative rather than only the no.",
+  "method": "agent.changes",
+  "request": {"jsonrpc": "2.0", "id": 126, "method": "agent.changes", "params": {"sort": "occurredAt"}},
+  "response": {"jsonrpc": "2.0", "id": 126, "error": {
+    "code": -32602,
+    "message": "invalid params: \"sort\" is not a parameter of agent.changes — this read pages by page and pageSize and narrows by slug, and a history has one order — newest first — and a sort the daemon cannot honour is not offered"
+  }}
+}

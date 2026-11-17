@@ -1,0 +1,28 @@
+{
+  "description": "LC15's request desk bound refused out loud (S55 T5): a sixth open stop request on one loop is refused with the count and the limit named in the what, data.kind 'request-limit'. A silent drop would leave an agent's ask unheard with no row and no event; the refusal is the person's signal that the desk is full and the loop is the one that is stuck.",
+  "method": "loop.requestStop",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 514,
+    "method": "loop.requestStop",
+    "params": {
+      "loopId": "loop-9",
+      "reason": "stop it — it is churning"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 514,
+    "error": {
+      "code": -31860,
+      "message": "the loop control refused the operation",
+      "data": {
+        "kind": "request-limit",
+        "what": "loop stop request refused: the loop already has 5 open stop requests (the limit is 5)",
+        "means": "the daemon understood and declined — nothing was written and nothing moved",
+        "todo": "do what the what sentence names",
+        "fatal": false
+      }
+    }
+  }
+}

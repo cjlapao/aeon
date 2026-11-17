@@ -1,0 +1,23 @@
+{
+ "__status": 200,
+ "body": {
+  "total_count": 15,
+  "check_runs": [
+   {"id": 1, "name": "build", "status": "completed", "conclusion": "success"},
+   {"id": 2, "name": "lint-neutral", "status": "completed", "conclusion": "neutral"},
+   {"id": 3, "name": "gen-skipped", "status": "completed", "conclusion": "skipped"},
+   {"id": 4, "name": "test-fail", "status": "completed", "conclusion": "failure"},
+   {"id": 5, "name": "cancelled-run", "status": "completed", "conclusion": "cancelled"},
+   {"id": 6, "name": "timed-out-run", "status": "completed", "conclusion": "timed_out"},
+   {"id": 7, "name": "manual-run", "status": "completed", "conclusion": "action_required"},
+   {"id": 8, "name": "stale-run", "status": "completed", "conclusion": "stale"},
+   {"id": 9, "name": "no-conclusion", "status": "completed", "conclusion": ""},
+   {"id": 10, "name": "queued-run", "status": "queued", "conclusion": ""},
+   {"id": 11, "name": "running-run", "status": "in_progress", "conclusion": ""},
+   {"id": 12, "name": "waiting-run", "status": "waiting", "conclusion": ""},
+   {"id": 13, "name": "requested-run", "status": "requested", "conclusion": ""},
+   {"id": 14, "name": "api-pending-run", "status": "pending", "conclusion": ""},
+   {"id": 15, "name": "unknown-status-run", "status": "teleporting", "conclusion": ""}
+  ]
+ }
+}

@@ -1,0 +1,26 @@
+{
+  "description": "mcp.process.stop terminates one server's process group and keeps it stopped until a start; a daemon restart starts everything enabled afresh. Human door only.",
+  "method": "mcp.process.stop",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 965,
+    "method": "mcp.process.stop",
+    "params": {
+      "name": "github"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 965,
+    "result": {
+      "process": {
+        "name": "github",
+        "transport": "stdio",
+        "state": "stopped",
+        "restarts": 1,
+        "tools": 26,
+        "lastExit": "terminated by the daemon (requested by user:1000)"
+      }
+    }
+  }
+}

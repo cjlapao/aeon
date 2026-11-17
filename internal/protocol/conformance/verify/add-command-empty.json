@@ -1,0 +1,34 @@
+{
+  "description": "verify.add refuses a gate whose command is empty: a gate with an empty command runs nothing, so the name is admitted nowhere — a discriminated refusal (code -31870, kind command-empty) with the store's own sentence, the gate set exactly as it was.",
+  "method": "verify.add",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1022,
+    "method": "verify.add",
+    "params": {
+      "componentId": "c-aeon",
+      "name": "shell",
+      "command": "",
+      "requirement": "required",
+      "timeoutS": 600,
+      "memoryMb": null,
+      "position": null,
+      "enabled": null
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1022,
+    "error": {
+      "code": -31870,
+      "message": "the verify operation was refused",
+      "data": {
+        "kind": "command-empty",
+        "what": "verify add refused: a gate with an empty command runs nothing",
+        "means": "the daemon understood and declined — the gate set is exactly as it was (no row written, no run recorded, no template copied), and the kind in data kind says which law it refused against",
+        "todo": "do what the what sentence names — fix the field it refused, clear the name it says is taken, or ask for the root it says is missing",
+        "fatal": false
+      }
+    }
+  }
+}

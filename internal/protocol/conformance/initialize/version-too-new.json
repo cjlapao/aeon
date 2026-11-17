@@ -1,0 +1,21 @@
+{
+  "description": "A client needing a version the daemon does not have is REFUSED, naming both numbers. A daemon that silently downgraded it would fail later, somewhere else, with an error about something unrelated.",
+  "method": "initialize",
+  "request": {
+    "jsonrpc": "2.0", "id": 1, "method": "initialize",
+    "params": {"clientName": "from-the-future", "clientVersion": "9.0.0", "protocolVersion": 99}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 1,
+    "error": {
+      "code": -31002,
+      "message": "protocol version not supported",
+      "data": {
+        "what": "client needs protocol version 99; this daemon speaks 1 (oldest supported: 1)",
+        "means": "the client and the daemon are from incompatible releases; nothing further on this connection will work",
+        "todo": "upgrade whichever side is older — the message names both version numbers",
+        "fatal": true
+      }
+    }
+  }
+}

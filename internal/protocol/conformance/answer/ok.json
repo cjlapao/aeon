@@ -1,0 +1,6 @@
+{
+  "description": "An answer records the selected question and queues the resumed step without waiting for its model call.",
+  "method": "answer",
+  "request": {"jsonrpc":"2.0","id":80,"method":"answer","params":{"stepId":4,"answer":"use the new table"}},
+  "response": {"jsonrpc":"2.0","id":80,"result":{"stepId":4,"questionId":9,"answeredAt":"2026-10-17T10:00:00Z","status":"running"}}
+}

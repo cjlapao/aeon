@@ -1,0 +1,56 @@
+{
+  "description": "mergerule.set: the component's rule in full — the human door at which any rule is a person's to set (the restrictive-only tightening is the PROPOSAL path's law, never the human door's). The actor is stamped from the connection, and the rule param may not name the ledger's fields (componentId, revision, source, updatedAt — a param that names them is a param that forges the ledger; the socket refuses the shape as -32602). The answer is the rule as written, with the revision the ledger issued.",
+  "method": "mergerule.set",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1036,
+    "method": "mergerule.set",
+    "params": {
+      "componentId": "c-aeon",
+      "rule": {
+        "enabled": true,
+        "requireLocal": true,
+        "requireDod": "all_met",
+        "requiredChecks": [
+          "ci/build",
+          "ci/lint"
+        ],
+        "checksPolicy": "reported_green",
+        "noChecks": "refuse",
+        "reviewMode": "forge",
+        "aeonReviewAgents": [
+          "code-reviewer"
+        ],
+        "requireThreadsResolved": true,
+        "method": "squash"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1036,
+    "result": {
+      "rule": {
+        "componentId": "c-aeon",
+        "enabled": true,
+        "requireLocal": true,
+        "requireDod": "all_met",
+        "requiredChecks": [
+          "ci/build",
+          "ci/lint"
+        ],
+        "checksPolicy": "reported_green",
+        "noChecks": "refuse",
+        "reviewMode": "forge",
+        "aeonReviewAgents": [
+          "code-reviewer"
+        ],
+        "requireThreadsResolved": true,
+        "method": "squash",
+        "revision": 4,
+        "source": "own",
+        "updatedAt": "2026-11-02T12:10:00Z"
+      }
+    }
+  }
+}

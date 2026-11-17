@@ -1,0 +1,22 @@
+{
+  "description": "A write is CONFIRMED: the same door that previews refuses to write silently, and the refusal happens before the service runs (RT13).",
+  "method": "retro.backfill",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "retro.backfill",
+    "params": {
+      "root": "aeon",
+      "dryRun": false
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: retro.backfill would write rows: resend with \"yes\": true to confirm \u2014 the preview (dryRun default) shows the counts by outcome first"
+    }
+  },
+  "fromDoor": true
+}

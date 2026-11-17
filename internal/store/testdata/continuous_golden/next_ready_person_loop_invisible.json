@@ -1,0 +1,11 @@
+{
+  "name": "person_loop_invisible",
+  "rows": [
+    {
+      "status": "ready",
+      "goal": "queue says go"
+    }
+  ],
+  "personLoop": true,
+  "head": "queue says go"
+}

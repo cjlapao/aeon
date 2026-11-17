@@ -1,0 +1,28 @@
+{
+  "description": "LC2's stop on a loop that is already stopped (S55 T5): one code for the whole plane (-31860), the state found in data.kind, and the remedy in the what sentence — a client that cannot branch on kind would have to parse prose it cannot trust, and a lost stop is never an error with a dead end.",
+  "method": "loop.stop",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 511,
+    "method": "loop.stop",
+    "params": {
+      "id": "loop-9",
+      "reason": "it keeps retrying the same failing build"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 511,
+    "error": {
+      "code": -31860,
+      "message": "the loop control refused the operation",
+      "data": {
+        "kind": "stopped",
+        "what": "loop stop refused: the loop is stopped — resume it (or cancel it)",
+        "means": "the daemon understood and declined — nothing was written and nothing moved",
+        "todo": "do what the what sentence names",
+        "fatal": false
+      }
+    }
+  }
+}

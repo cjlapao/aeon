@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "position": 1,
+      "goal": "stalling thing",
+      "status": "blocked",
+      "loopSlug": "loop-one"
+    },
+    {
+      "id": 2,
+      "position": 2,
+      "goal": "waiting thing",
+      "status": "ready",
+      "loopSlug": ""
+    }
+  ],
+  "starts": null,
+  "question": {
+    "kind": "gate",
+    "body": "queued item \"stalling thing\" is blocked — loop ceiling reached; the queue is halted until a person says otherwise (cancel the item to let the next one run)"
+  },
+  "sizingLoop": false
+}

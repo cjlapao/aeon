@@ -1,0 +1,16 @@
+# S8 test bench blueprint: two model steps with a human gate between them.
+id: two-step
+schemaVersion: 1
+version: 2
+lanes:
+  - id: survey
+    step: {kind: model-step, agent: default, produces: SURVEY.md}
+  - id: approve
+    step: {kind: gate, question: approve-survey}
+    on_reject: {goto: survey, counter: survey_revisions, max: 2, then: block}
+  - id: summarise
+    step: {kind: model-step, agent: default, produces: SUMMARY.md}
+questions:
+  approve-survey:
+    prompt: Approve the survey and continue?
+    answers: [approve, revise, abort]

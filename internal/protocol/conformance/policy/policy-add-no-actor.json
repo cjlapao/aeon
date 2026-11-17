@@ -1,0 +1,25 @@
+{
+  "description": "S45 T4 (PM7.3): an authoring write whose peer cannot be resolved is REFUSED, never stamped with a placeholder. The daemon's peer credential answers uid 0 for an unattributable connection (T0 item 3.4); stamping the audit \"user 0\" would dress an unattributable widening of a guard in a real-looking identity, so the door stops before params are even read and answers ErrPolicyNoActor. The actor is the kernel's, never a claim: params carrying actor/status/createdBy are refused as the shape error (-32602) by the door's strict key check, and no params content can replace what this fixture's refusal says is missing.",
+  "method": "policy.add",
+  "request": {"jsonrpc": "2.0", "id": 83, "method": "policy.add", "params": {
+    "id": "gate-open",
+    "type": "tool_access",
+    "target": {"kind": "all-agents", "id": ""},
+    "action": "allow",
+    "spec": {"toolName": "webfetch", "state": "allow"},
+    "source": "operator"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 83,
+    "error": {
+      "code": -31843,
+      "message": "no actor for a policy authoring write",
+      "data": {
+        "what": "the authoring write needs a person, and this connection resolved to no peer identity (uid 0) — or the runtime wired no actor stamp at all",
+        "means": "the actor comes from the connection's peer credential, never from params, and an unresolvable peer is refused rather than stamped with a placeholder — an unattributed policy write is the audit row that cannot name who changed a guard",
+        "todo": "write from a connection the daemon can attribute to a peer (the peer credential, not a claim); params never carry the actor — an actor key is refused as a shape error",
+        "fatal": false
+      }
+    }
+  }
+}

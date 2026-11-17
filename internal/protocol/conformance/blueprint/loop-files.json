@@ -1,0 +1,9 @@
+{
+  "description": "List one directory from the pinned loop workspace. Paths are relative to that root and entries are ordered with directories first.",
+  "method": "loop.files",
+  "request": { "jsonrpc": "2.0", "id": 91, "method": "loop.files", "params": { "id": "loop-1", "path": "." } },
+  "response": { "jsonrpc": "2.0", "id": 91, "result": { "path": ".", "files": [
+    { "path": "tasks", "name": "tasks", "kind": "directory" },
+    { "path": "discovery.md", "name": "discovery.md", "kind": "file" }
+  ] } }
+}

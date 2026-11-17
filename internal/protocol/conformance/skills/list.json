@@ -1,0 +1,77 @@
+{
+  "description": "The catalog answers the page-mount question (S65): every skill from both roots, winners before the entries they shadow, with the roots named and the summary counted. The bench lists what the agents will have available WITHOUT anything being injected into a chat \u2014 validation shown is validation done. The user root is the operator's own folder and never writable; managed is Aeon's install target. An invalid skill stays LISTED with its issues: broken is visible, never silently dropped. (S66: watching/watchError carry the watcher's honest state \u2014 true with an empty watchError means both roots are watched; false means the answer came from a scan the filesystem cannot refresh.)",
+  "method": "skills.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 320,
+    "method": "skills.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 320,
+    "result": {
+      "skills": [
+        {
+          "name": "pdf",
+          "frontmatterName": "pdf",
+          "description": "Extract text and tables from PDF files, fill forms, merge documents.",
+          "license": "Complete terms in LICENSE.txt",
+          "metadata": {
+            "author": "operator",
+            "version": "1.0.0"
+          },
+          "status": "valid",
+          "source": "user",
+          "root": "/home/dev/.agents/skills",
+          "path": "/home/dev/.agents/skills/pdf",
+          "files": {
+            "scripts": 2,
+            "references": 3,
+            "assets": 0,
+            "other": 1
+          },
+          "bodyBytes": 4213,
+          "bodyLines": 88,
+          "totalBytes": 51240,
+          "scannedAt": "2026-10-30T18:00:00Z"
+        },
+        {
+          "name": "broken",
+          "status": "invalid",
+          "issues": [
+            {
+              "field": "name",
+              "detail": "the frontmatter has no name \u2014 the spec makes it required, and a skill nobody can be addressed by name cannot be invoked",
+              "severity": "error"
+            }
+          ],
+          "source": "managed",
+          "root": "/home/dev/.local/share/aeon/skills",
+          "path": "/home/dev/.local/share/aeon/skills/broken",
+          "files": {
+            "scripts": 0,
+            "references": 0,
+            "assets": 0,
+            "other": 1
+          },
+          "bodyBytes": 41,
+          "bodyLines": 3,
+          "totalBytes": 220,
+          "scannedAt": "2026-10-30T18:00:00Z"
+        }
+      ],
+      "userRoot": "/home/dev/.agents/skills",
+      "managedRoot": "/home/dev/.local/share/aeon/skills",
+      "scannedAt": "2026-10-30T18:00:00Z",
+      "summary": {
+        "valid": 1,
+        "warn": 0,
+        "invalid": 1,
+        "shadowed": 0
+      },
+      "watching": true,
+      "watchError": "the managed root is not there to watch (/srv/aeon/skills) \u2014 a root created later is discovered by the next scan"
+    }
+  }
+}

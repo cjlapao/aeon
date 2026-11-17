@@ -1,0 +1,4 @@
+policy rows: 1
+  policy ask-shell type=tool_access target=agent:alice action=ask source=operator subject=agent:alice spec={"toolName":"bash","state":"ask"} not_after=none not_after_epoch=- created_at=<TIME>
+proposal rows: 0
+policy_event rows: 0

@@ -1,0 +1,50 @@
+{
+  "description": "History newest first, paged below the cursor revision; nextCursor is the revision to pass to see MORE.",
+  "method": "charter.revisions",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "charter.revisions",
+    "params": {
+      "rootId": "cmp-root",
+      "limit": 2
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "revisions": [
+        {
+          "rootId": "cmp-root",
+          "revision": 2,
+          "body": {
+            "goal": "first pass"
+          },
+          "summary": "charter r2 by user:peer-1 (person)",
+          "actorKind": "user",
+          "actorId": "peer-1",
+          "source": "person",
+          "sourceRef": "",
+          "createdAt": "2026-11-04T09:00:00Z",
+          "totalRevisions": 3
+        },
+        {
+          "rootId": "cmp-root",
+          "revision": 1,
+          "body": {
+            "goal": "the statement"
+          },
+          "summary": "charter r1 by user:peer-1 (person)",
+          "actorKind": "user",
+          "actorId": "peer-1",
+          "source": "person",
+          "sourceRef": "",
+          "createdAt": "2026-11-03T09:00:00Z",
+          "totalRevisions": 3
+        }
+      ],
+      "nextCursor": "1"
+    }
+  }
+}

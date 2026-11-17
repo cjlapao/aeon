@@ -1,0 +1,27 @@
+{
+  "description": "A blueprint write from a connection the daemon cannot attribute is refused BEFORE anything is read or written (kind absent): the actor is the peer's, never a param and never a placeholder.",
+  "method": "blueprint.save",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 86,
+    "method": "blueprint.save",
+    "params": {
+      "name": "anonymous-idea",
+      "content": "id: anonymous-idea\nschemaVersion: 1\nversion: 1\nlanes:\n  - id: survey\n    step: {kind: model-step, agent: default}\n"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 86,
+    "error": {
+      "code": -31874,
+      "message": "the blueprint write has no resolvable person behind it",
+      "data": {
+        "what": "the connection carries no nameable person (no identity seam, a blank id, or the uid 0 a connection the transport never recorded reads as)",
+        "means": "a blueprint write is a person's door \u2014 the actor on the row, the revision and the audit is the peer's, never a guess and never a param (S48 BP12); nothing was read as them and nothing was written",
+        "todo": "speak from a connection the daemon can attribute \u2014 the socket's peer credential is the identity",
+        "fatal": false
+      }
+    }
+  }
+}

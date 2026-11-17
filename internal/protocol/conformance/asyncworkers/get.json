@@ -1,0 +1,19 @@
+{
+  "description": "One worker by its handle (S64 T3) — the door the CLI follows a graph.build through and the app reads the finished BuildReport from: the result column travels as raw JSON so the runner's own accounting (files, nodes, edges, unresolvedEdges) arrives exactly as written, no second rendering of it anywhere. `started` never appears on a View: it said whether YOUR call began the pass, and it lives in graph.build's answer instead.",
+  "method": "asyncworkers.get",
+  "request": {"jsonrpc": "2.0", "id": 261, "method": "asyncworkers.get", "params": {"workerId": "aw_3c9f0a1b2c3d4e5f60718293a4b5c6d7"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 261,
+    "result": {
+      "workerId": "aw_3c9f0a1b2c3d4e5f60718293a4b5c6d7",
+      "workerType": "graph.build",
+      "componentRoot": "/home/dev/shop",
+      "state": "finished",
+      "progress": 1,
+      "result": {"root": "/home/dev/shop", "files": 214, "filesSkipped": 9, "nodes": 1893, "edges": 5310, "unresolvedEdges": 412},
+      "queuedAt": "2026-10-30T17:41:02.000Z",
+      "startedAt": "2026-10-30T17:41:02.000Z",
+      "finishedAt": "2026-10-30T17:51:47.000Z"
+    }
+  }
+}

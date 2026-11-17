@@ -1,0 +1,28 @@
+{
+  "description": "One named revision with its stored bytes verbatim \u2014 the diff and the restore read from here.",
+  "method": "blueprint.revision",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 90,
+    "method": "blueprint.revision",
+    "params": {
+      "name": "two-step",
+      "rev": 1
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 90,
+    "result": {
+      "rev": 1,
+      "version": 2,
+      "op": "seed",
+      "note": "",
+      "actorKind": "system",
+      "actorId": "blueprints.standard",
+      "occurredAt": "2026-11-02T12:00:00Z",
+      "contentHash": "ab10e668ab10e668ab10e668ab10e668ab10e668ab10e668ab10e668ab10e668",
+      "content": "id: two-step\nschemaVersion: 1\nversion: 2\nlanes:\n  - id: survey\n    step: {kind: model-step, agent: default}\n"
+    }
+  }
+}

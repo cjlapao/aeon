@@ -1,0 +1,21 @@
+{
+  "description": "A list with neither a componentRoot nor `all: true` is REFUSED rather than defaulted. Defaulting to the daemon's working directory would list a component nobody chose — the daemon's directory is not the client's.",
+  "method": "loop.list",
+  "request": {
+    "jsonrpc": "2.0", "id": 43, "method": "loop.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 43,
+    "error": {
+      "code": -31105,
+      "message": "the call needs a complete scope",
+      "data": {
+        "what": "listing loops needs either a componentRoot or all: true, because a daemon serves every component on the machine",
+        "means": "the daemon serves every component on the machine, and a loop slug alone is ambiguous — `refactor` exists in two checkouts on most machines",
+        "todo": "send both `slug` and `componentRoot`; for a list, send `componentRoot` or `all: true`",
+        "fatal": false
+      }
+    }
+  }
+}

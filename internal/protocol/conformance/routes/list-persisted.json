@@ -1,0 +1,40 @@
+{
+  "description": "`routes.list` after S4: `persisted` is TRUE, and a stored route's source says `stored`. The credential is still absent from the shape — `hasKey` and a four-character `keyHint`, never a key field (AGENTS §4c). The key does not live in the database at all: it is a 0600 file beside the store, because C17 allows the environment or a dedicated path and nothing else.",
+  "method": "routes.list",
+  "request": {
+    "jsonrpc": "2.0", "id": 61, "method": "routes.list"
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 61,
+    "result": {
+      "persisted": true,
+      "providers": ["anthropic", "openai"],
+      "routes": [
+        {
+          "id": "anthropic",
+          "provider": "anthropic",
+          "model": "claude-sonnet-5",
+          "hasKey": true,
+          "keyHint": "7f3a",
+          "source": "stored",
+          "maxOutputTokens": 4096,
+          "priced": true,
+          "prices": {
+            "inputUsdPerMTok": 3.0,
+            "outputUsdPerMTok": 15.0
+          }
+        },
+        {
+          "id": "openai",
+          "provider": "openai",
+          "model": "gpt-5",
+          "hasKey": true,
+          "keyHint": "9b21",
+          "source": "environment",
+          "maxOutputTokens": 4096,
+          "priced": false
+        }
+      ]
+    }
+  }
+}

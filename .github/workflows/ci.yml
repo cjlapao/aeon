@@ -1,0 +1,181 @@
+# PARKED — see README.md in this directory. Not active until aeon moves to its
+# own repository root.
+name: CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main, master, develop, "feature/**"]
+  push:
+    branches: [main, master, "feature/**"]
+
+permissions:
+  contents: read
+
+env:
+  # The checksum database cannot verify the framework module; see UPSTREAM.md.
+  GOPRIVATE: github.com/cjlapao/*
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: [self-hosted, linux]
+    defaults:
+      run:
+        working-directory: aeon
+    steps:
+      - uses: actions/checkout@v7.0.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-go@v6.5.0
+        with:
+          go-version-file: aeon/go.mod
+          cache: true
+          cache-dependency-path: aeon/go.sum
+
+      - run: go mod download
+
+      - name: Format check
+        run: make fmt-check
+
+      - name: Vet
+        run: make vet
+
+      # B1: no copy of the framework, no replace directive, no vendor/. The
+      # compiler cannot catch a COPY — it compiles fine and quietly breaks the
+      # clean subtree split the extraction depends on (P24).
+      - name: No-upstream-copy guard
+        run: make guard
+
+      - name: Test
+        # sqlite_fts5: FTS5 is compiled into the driver behind this tag and
+        # migration 0040 creates an FTS5 table — the Makefile carries the tag
+        # on every go command (GO_TAGS), and CI spells it too so a step that
+        # bypasses make cannot pass a build the Makefile would refuse.
+        run: go test -tags sqlite_fts5 -race -coverprofile=coverage.txt -covermode=atomic ./...
+
+      - name: Test without retrieval (S22 D1 — the optionality claim, built, not claimed)
+        # D1/O1: "the whole product's test suite passes with the package
+        # deleted" is only true if somebody runs it. -tags noretrieval compiles
+        # internal/retrieval down to the interface and the no-op; the whole
+        # suite runs against that. A convenience import that makes the slice
+        # load-bearing fails HERE, in CI, and not in front of a user.
+        env:
+          AEON_GO_TAGS: sqlite_fts5 noretrieval
+        run: go test -tags 'sqlite_fts5 noretrieval' -count=1 ./...
+
+      - name: Build (host)
+        run: make build
+
+      - name: Build without retrieval (D1 compile half)
+        run: make build-noretrieval
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: aeon-coverage
+          path: aeon/coverage.txt
+
+  # The guard that earns its place on every routine version bump.
+  #
+  # Separate from `build` so its failure is unambiguous in the checks list: this
+  # job red means THE DAEMON'S COMPOSITION CHANGED, which is a different
+  # conversation from a test breaking.
+  registry:
+    name: Service set unchanged
+    runs-on: [self-hosted, linux]
+    defaults:
+      run:
+        working-directory: aeon
+    steps:
+      - uses: actions/checkout@v7.0.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-go@v6.5.0
+        with:
+          go-version-file: aeon/go.mod
+          cache: true
+          cache-dependency-path: aeon/go.sum
+
+      - name: Registered services match services.golden
+        run: |
+          go test -tags sqlite_fts5 ./internal/bootstrap/ -v \
+            -run 'TestRegisteredSetEqualsGolden|TestGoldenRejectsAnAddition|TestLocalRPCIsRegistered|TestRefusedServicesAreNotRegistered'
+
+  # Six targets, and the release gate fails on any one of them (B9).
+  #
+  # NATIVE RUNNER PER OS — see aeon/docs/BUILD.md for the decision. macOS cannot
+  # be cross-compiled without its SDK, and the SDK's licence does not permit
+  # redistributing it; once darwin needs a native runner, a universal
+  # cross-compiler has stopped being universal.
+  #
+  # Each job builds ONE target on its own OS, so CGO_ENABLED=1 needs no CC, no
+  # sysroot and no SDK. And each one RUNS the artefact: a binary that builds and
+  # cannot open a database is worse than one that fails to build, because the
+  # failure moves from CI to a user.
+  cross:
+    name: ${{ matrix.target }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { target: linux/amd64,   runs-on: ubuntu-latest,    goos: linux,   goarch: amd64, run: true }
+          - { target: linux/arm64,   runs-on: ubuntu-24.04-arm, goos: linux,   goarch: arm64, run: true }
+          - { target: darwin/amd64,  runs-on: macos-13,         goos: darwin,  goarch: amd64, run: true }
+          - { target: darwin/arm64,  runs-on: macos-latest,     goos: darwin,  goarch: arm64, run: true }
+          - { target: windows/amd64, runs-on: windows-latest,   goos: windows, goarch: amd64, run: true }
+          - { target: windows/arm64, runs-on: windows-11-arm,   goos: windows, goarch: arm64, run: true }
+    runs-on: ${{ matrix.runs-on }}
+    defaults:
+      run:
+        working-directory: aeon
+    steps:
+      - uses: actions/checkout@v7.0.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-go@v6.5.0
+        with:
+          go-version-file: aeon/go.mod
+          cache: true
+          cache-dependency-path: aeon/go.sum
+
+      - name: Build
+        env:
+          CGO_ENABLED: "1"
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+        run: go build -o aeon-${{ matrix.goos }}-${{ matrix.goarch }} ./cmd/aeon
+
+      # The artefact check. An exit code alone has reported 5 of 6 and 3 of 6 on
+      # a tree where the real answer was 1 of 6 — twice, because Go silently
+      # drops cgo when it cannot find a compiler.
+      - name: The extension is actually linked
+        if: matrix.run
+        run: ./aeon-${{ matrix.goos }}-${{ matrix.goarch }} --vectors
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: aeon-${{ matrix.goos }}-${{ matrix.goarch }}
+          path: aeon/aeon-${{ matrix.goos }}-${{ matrix.goarch }}*
+
+  vulncheck:
+    name: govulncheck
+    runs-on: [self-hosted, linux]
+    defaults:
+      run:
+        working-directory: aeon
+    steps:
+      - uses: actions/checkout@v7.0.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-go@v6.5.0
+        with:
+          go-version-file: aeon/go.mod
+          cache: true
+          cache-dependency-path: aeon/go.sum
+
+      - run: go install golang.org/x/vuln/cmd/govulncheck@latest
+      - run: govulncheck ./...

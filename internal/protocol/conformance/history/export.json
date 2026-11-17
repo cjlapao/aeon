@@ -1,0 +1,41 @@
+{
+  "description": "history.export is the SAME query as history.list (H3) \u2014 the only difference is the rows are returned for NDJSON emission, not a table. It shares historyQuery, so the two cannot produce different rows: a second query here could drop a loop or re-floor a cost the list shows, and this fixture is the one that would catch it. It carries the same rows shape and no statement, for an exported set that is non-empty.",
+  "method": "history.export",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 411,
+    "method": "history.export",
+    "params": {
+      "projectRoot": "/proj"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 411,
+    "result": {
+      "rows": [
+        {
+          "kind": "archived",
+          "id": "ghost",
+          "slug": "ghost",
+          "title": "build the archived loop",
+          "status": "archived",
+          "cost": "0.000",
+          "describe": {
+            "lane": "archived",
+            "outcome": "archived",
+            "cost": "0.000",
+            "costState": "unknown",
+            "links": [
+              {
+                "kind": "loop",
+                "id": "ghost"
+              }
+            ]
+          },
+          "timeline": "2026-11-01T09:00:00Z"
+        }
+      ]
+    }
+  }
+}

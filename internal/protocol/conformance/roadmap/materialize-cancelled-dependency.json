@@ -1,0 +1,29 @@
+{
+  "description": "S27 T3 rule 3: a CANCELLED dependency is its own sentence at the attempt \u2014 'remove the dependency or cancel this item', because waiting on a dead item is a different human problem than waiting on a live one. The item is never silently stuck: the board's blocker, the preview and this door's refusal all carry the same words, and the fix is `roadmap.undepend`.",
+  "method": "roadmap.materialize",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 351,
+    "method": "roadmap.materialize",
+    "params": {
+      "id": 12,
+      "blueprint": "dev-loop",
+      "goal": "export monthly statements",
+      "workspaceRoot": "/srv/ledger"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 351,
+    "error": {
+      "code": -31900,
+      "message": "the roadmap refused the act",
+      "data": {
+        "what": "item 12 is not ready at the attempt \u2014 not ready: item 9 was cancelled \u2014 remove the dependency or cancel this item (D4 is decided now, never cached)",
+        "means": "nothing moved \u2014 the row keeps the state it had",
+        "todo": "read the reason in `what`, then roadmap.list to see the board as the daemon sees it",
+        "fatal": false
+      }
+    }
+  }
+}

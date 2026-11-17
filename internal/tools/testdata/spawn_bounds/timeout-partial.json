@@ -1,0 +1,4 @@
+{
+  "command": "printf 'partial\\n'; sleep 30",
+  "render": "$ printf 'partial\\n'; sleep 30\nTIMED OUT after 42ms. The output below is what it produced before being stopped — it is partial, and the command may not have finished what it was doing.\n\n--- stdout ---\npartial\n"
+}

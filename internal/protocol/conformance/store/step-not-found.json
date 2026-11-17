@@ -1,0 +1,21 @@
+{
+  "description": "Step ids are allocated by the store and are NEVER REUSED (AUTOINCREMENT), so an id that is not there was never created or belongs to a different store — which is why the remedy names the store path.",
+  "method": "step.show",
+  "request": {
+    "jsonrpc": "2.0", "id": 48, "method": "step.show",
+    "params": {"id": 9999}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 48,
+    "error": {
+      "code": -31107,
+      "message": "no such step",
+      "data": {
+        "what": "no step with that id is in the store",
+        "means": "step ids are allocated by the store and are not reused, so an id that is not there was never created or belongs to a different store",
+        "todo": "`aeon db info` prints the store path; `loop list` and `step list` show what is in it",
+        "fatal": false
+      }
+    }
+  }
+}

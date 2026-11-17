@@ -1,0 +1,21 @@
+{
+  "description": "A route naming a provider with no adapter is refused WHEN SAVED, not when called. The alternative is a route that saves cleanly and fails an hour later on a different screen, after a prompt has been typed — at which point nobody connects the failure to the settings. Like every other not-found in this protocol, it lists what IS available.",
+  "method": "routes.set",
+  "request": {
+    "jsonrpc": "2.0", "id": 33, "method": "routes.set",
+    "params": {"id": "gemini-route", "provider": "gemini", "model": "gemini-2.0"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 33,
+    "error": {
+      "code": -31103,
+      "message": "invalid route",
+      "data": {
+        "what": "route \"gemini-route\" names provider \"gemini\", which has no adapter; the registered providers are anthropic, openai",
+        "means": "a route needs an id, a model name and a provider that has an adapter; it is checked now rather than at call time, so a bad route cannot fail later on a different screen",
+        "todo": "the message says which part is wrong, and lists the registered providers where the provider is at fault",
+        "fatal": false
+      }
+    }
+  }
+}

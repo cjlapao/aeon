@@ -1,0 +1,28 @@
+{
+  "description": "The validator's own sentence rides the plane's one refusal voice, code and three parts intact.",
+  "method": "charter.save",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "charter.save",
+    "params": {
+      "rootId": "cmp-root",
+      "body": {}
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -31964,
+      "message": "the charter request was refused",
+      "data": {
+        "what": "charter: body does not parse: the charter needs a goal \u2014 an empty body is refused",
+        "means": "nothing was written: no revision was appended, no charter moved. A charter is a promise, and a promise that half-lands is not a promise",
+        "todo": "do what the what says \u2014 fix the body against charter.vocabulary, ask from a person's connection, name a project root rather than a child, or read charter.revisions for what does exist",
+        "fatal": false
+      }
+    }
+  },
+  "fromSeam": true
+}

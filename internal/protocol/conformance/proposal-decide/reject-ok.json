@@ -1,0 +1,24 @@
+{
+  "description": "S45 T5 (TD5/PM7/PM8): proposal.reject {id, reason} — the reasoned no. It carries NO digest (the refusal needs no binding to what was read: nothing is applied, so there is nothing to bind — the row can only be refused once, and a decided row is immutable history whatever its payload became) and produces NO effect: no policy row, no MCP change, no consent prompt. The reason is required, non-empty, and ≤ 512 bytes (the audit column's budget), and the answer is just the row: decided once, decided_by_kind='user', decided_by_id the connection's peer uid (never a param), decide_reason exactly the sentence the human typed. One policy_change row stands behind it (op='reject', ids-only summary, the proposal named) — the audit trail's only sentence for the decision.",
+  "method": "proposal.reject",
+  "request": {"jsonrpc":"2.0","id":96,"method":"proposal.reject","params":{"id":42,"reason":"the target loop is still live — this removal would blind it"}},
+  "response": {
+    "jsonrpc":"2.0","id":96,
+    "result": {
+      "proposal": {
+        "id": 42,
+        "kind": "mcp_server_add",
+        "payload": {"agent":"boss","server":{"name":"github","command":"gh-mcp","args":["--stdio"]}},
+        "status": "rejected",
+        "createdAt": "2026-11-02T08:55:00Z",
+        "createdByKind": "agent",
+        "createdById": "boss",
+        "decidedAt": "2026-11-02T09:00:00Z",
+        "decidedByKind": "user",
+        "decidedById": "4321",
+        "decideReason": "the target loop is still live — this removal would blind it",
+        "command": "aeon proposal commit 42"
+      }
+    }
+  }
+}

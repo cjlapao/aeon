@@ -1,0 +1,41 @@
+{
+  "description": "S57 T9 (VG19): the agent's gate door — verify.proposeAdd files an INERT verify_command proposal, op add-only (an agent adds a gate; update, archive and try are the human doors), on the caller's OWN component — the componentId in the stored payload is the stamp from the step's identity, never a param (OL3). The request carries no source, actor, createdBy, status or kind member; the answer is the stored inert row with the copyable commit command and the fixed inertness note (TD2/TD3) — nothing on the gate plane moves until a person commits it at the socket's human door, and the second line of defence is the shared validator: the desk's half (the slug, the command's bounds, the requirement's closed set, the timeout's range, the reason) and the store's half (the component exists and is not archived, the name is free among its live gates).",
+  "method": "verify.proposeAdd",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1101,
+    "method": "verify.proposeAdd",
+    "params": {
+      "name": "vet",
+      "command": "go vet ./...",
+      "requirement": "advisory",
+      "timeoutS": 300,
+      "reason": "the loop's type-check gate passes, but vet findings keep piling up unrecorded — an advisory gate so a finding warns, never blocks"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1101,
+    "result": {
+      "proposal": {
+        "id": 41,
+        "kind": "verify_command",
+        "payload": {
+          "op": "add",
+          "name": "vet",
+          "command": "go vet ./...",
+          "requirement": "advisory",
+          "timeoutS": 300,
+          "componentId": "c-aeon",
+          "reason": "the loop's type-check gate passes, but vet findings keep piling up unrecorded — an advisory gate so a finding warns, never blocks"
+        },
+        "status": "proposed",
+        "createdAt": "2026-11-03T06:00:00Z",
+        "createdByKind": "agent",
+        "createdById": "implementer",
+        "command": "aeon proposal commit 41"
+      },
+      "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+    }
+  }
+}

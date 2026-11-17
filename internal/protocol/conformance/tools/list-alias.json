@@ -1,0 +1,322 @@
+{
+  "description": "tools.list with a `q` that reaches `write`, the honest name of the tool the hidden `write_file` alias also addresses: the row carries `aliases`, because the listing is where a person learns that one executor answers to two spellings (SEC-051) — and the alias is never a row of its own (TC11: the same executor rendered twice is the drift this table exists to prevent). `twin` rides on the records-management rows in this same answer: it names the socket method the same executor serves, which is how a screen links a tool to the door a person would use instead of the model.",
+  "method": "tools.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 653,
+    "method": "tools.list",
+    "params": {
+      "q": "write"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 653,
+    "result": {
+      "tools": [
+        {
+          "name": "brief_create",
+          "family": "brief",
+          "source": "system",
+          "description": "File a new brief VERSION for THIS step's loop (rewrites never overwrite). The old version keeps meaning.",
+          "schema": {
+            "additionalProperties": false,
+            "properties": {
+              "acceptance_criteria": {
+                "description": "how a person judges done",
+                "items": {
+                  "description": "one testable criterion",
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "constraints": {
+                "description": "rules the work must respect",
+                "items": {
+                  "description": "one constraint",
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "document": {
+                "description": "a loop document attached as the brief's prose",
+                "type": "string"
+              },
+              "goal_id": {
+                "description": "the goal this brief contracts to, if known",
+                "type": "string"
+              },
+              "out_of_scope": {
+                "description": "what it is explicitly not",
+                "type": "string"
+              },
+              "scope": {
+                "description": "what this loop is for — required, the brief's spine",
+                "type": "string"
+              },
+              "test_plan": {
+                "description": "how correctness is shown",
+                "type": "string"
+              }
+            },
+            "required": [
+              "scope"
+            ],
+            "type": "object"
+          },
+          "schemaHash": "c9c5960d415b1d00769434abc087b8912a18a3e3d51eec0e2fbf86e3e755852b",
+          "rerunClass": "detectable",
+          "capabilities": [
+            "org_records_write",
+            "workspace_read"
+          ],
+          "governed": [
+            "tool_access"
+          ],
+          "twin": "brief.create",
+          "conditional": false,
+          "available": true,
+          "classified": false,
+          "version": 1,
+          "origin": "system",
+          "rowCurrent": true,
+          "category": "brief",
+          "access": "write",
+          "address": "brief.brief_create.write"
+        },
+        {
+          "name": "budget_effective",
+          "family": "budget",
+          "source": "system",
+          "description": "The budgets that would apply to THIS loop's spend, tightest first (loop, epic, component, root, workspace) — the tiers a spend is checked against, listed in the order the engine checks them. A read; budget writes are a human door.",
+          "schema": {
+            "additionalProperties": false,
+            "properties": {},
+            "type": "object"
+          },
+          "schemaHash": "99334726611ccf58a148b0814696bfa6fe08c1b2d027e946beccf5a74331c9aa",
+          "rerunClass": "safe",
+          "capabilities": [
+            "org_records_read"
+          ],
+          "governed": [
+            "tool_access"
+          ],
+          "twin": "budget.effective",
+          "conditional": false,
+          "available": true,
+          "classified": false,
+          "version": 1,
+          "origin": "system",
+          "rowCurrent": true,
+          "category": "budget",
+          "access": "read",
+          "address": "budget.budget_effective.read"
+        },
+        {
+          "name": "budget_list",
+          "family": "budget",
+          "source": "system",
+          "description": "List budgets (or those matching one scope, subject or status) with their live status, spend against each capped dimension, and the last change. A read; budget writes are a human door.",
+          "schema": {
+            "additionalProperties": false,
+            "properties": {
+              "enabled": {
+                "description": "true = enabled only, false = disabled only, absent = both",
+                "type": "boolean"
+              },
+              "scope": {
+                "description": "filter to one scope (workspace, component, root, epic or loop)",
+                "type": "string"
+              },
+              "status": {
+                "description": "filter to one live status (ok, warn or hit)",
+                "type": "string"
+              },
+              "subject_id": {
+                "description": "filter to one subject id",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "schemaHash": "9f7a1862b0e2d3ecb987e013a444e9d06834bce6fe3f5b01d098d7c4fd396e45",
+          "rerunClass": "safe",
+          "capabilities": [
+            "org_records_read"
+          ],
+          "governed": [
+            "tool_access"
+          ],
+          "twin": "budget.list",
+          "conditional": false,
+          "available": true,
+          "classified": false,
+          "version": 1,
+          "origin": "system",
+          "rowCurrent": true,
+          "category": "budget",
+          "access": "read",
+          "address": "budget.budget_list.read"
+        },
+        {
+          "name": "budget_show",
+          "family": "budget",
+          "source": "system",
+          "description": "Show one budget by id: caps, floor, the live spend per dimension, the status, the audit's last change, and the worst-case overshoot note. A read; budget writes are a human door.",
+          "schema": {
+            "additionalProperties": false,
+            "properties": {
+              "budget_id": {
+                "description": "the budget's id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "budget_id"
+            ],
+            "type": "object"
+          },
+          "schemaHash": "2cd249e2d25aa430d2c6d935806d527c53026a5385648a81140a032a7365e2c8",
+          "rerunClass": "safe",
+          "capabilities": [
+            "org_records_read"
+          ],
+          "governed": [
+            "tool_access"
+          ],
+          "twin": "budget.show",
+          "conditional": false,
+          "available": true,
+          "classified": false,
+          "version": 1,
+          "origin": "system",
+          "rowCurrent": true,
+          "category": "budget",
+          "access": "read",
+          "address": "budget.budget_show.read"
+        },
+        {
+          "name": "seed_status",
+          "family": "seed",
+          "source": "system",
+          "description": "Read the seed ledger and status for a set (or every set): the applied version and the per-record state. A read; a seed write is a human door, never a tool.",
+          "schema": {
+            "additionalProperties": false,
+            "properties": {
+              "set": {
+                "description": "the set id; empty lists every set",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "schemaHash": "122451ade687bb0b71dbdd0b73bb89f6de752caedb7946af9f4f398cae353415",
+          "rerunClass": "safe",
+          "capabilities": [
+            "org_records_read"
+          ],
+          "governed": [
+            "tool_access"
+          ],
+          "twin": "seed.status",
+          "conditional": false,
+          "available": true,
+          "classified": false,
+          "version": 1,
+          "origin": "system",
+          "rowCurrent": true,
+          "category": "seed",
+          "access": "read",
+          "address": "seed.seed_status.read"
+        },
+        {
+          "name": "watchdog_list",
+          "family": "watchdog",
+          "source": "system",
+          "description": "List the watchdog rules (or those matching one scope, subject or enabled state) with their thresholds in human units, origin, last fire and fire count. A read; rule writes are a human door.",
+          "schema": {
+            "additionalProperties": false,
+            "properties": {
+              "enabled": {
+                "description": "true = enabled only, false = disabled only, absent = both",
+                "type": "boolean"
+              },
+              "scope": {
+                "description": "filter to one scope (workspace or component)",
+                "type": "string"
+              },
+              "subject_id": {
+                "description": "filter to one subject id ('workspace' or a component id)",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "schemaHash": "1f3b6ff121ac2842eb89a13e83785cd0fbf2d998cc6548d206c7c3202806ca89",
+          "rerunClass": "safe",
+          "capabilities": [
+            "org_records_read"
+          ],
+          "governed": [
+            "tool_access"
+          ],
+          "twin": "watchdog.list",
+          "conditional": false,
+          "available": true,
+          "classified": false,
+          "version": 1,
+          "origin": "system",
+          "rowCurrent": true,
+          "category": "watchdog",
+          "access": "read",
+          "address": "watchdog.watchdog_list.read"
+        },
+        {
+          "name": "write",
+          "aliases": [
+            "write_file"
+          ],
+          "family": "workspace",
+          "source": "system",
+          "description": "Create or replace a UTF-8 file inside the workspace (up to 1 MiB). Parent directories must exist. Paths are workspace-relative; absolute paths, `..` segments and symlink escapes are refused before anything is written.",
+          "schema": {
+            "additionalProperties": false,
+            "properties": {
+              "content": {
+                "description": "complete new file content",
+                "type": "string"
+              },
+              "path": {
+                "description": "workspace-relative file path",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ],
+            "type": "object"
+          },
+          "schemaHash": "9006cdb3a8a1ac653cb297f27c5f36bbf121045031f7855ba5049e6630d54496",
+          "rerunClass": "detectable",
+          "capabilities": [
+            "workspace_write"
+          ],
+          "governed": [
+            "tool_access"
+          ],
+          "conditional": false,
+          "available": true,
+          "classified": false,
+          "version": 1,
+          "origin": "system",
+          "rowCurrent": true,
+          "category": "workspace",
+          "access": "write",
+          "address": "workspace.write.write"
+        }
+      ]
+    }
+  }
+}

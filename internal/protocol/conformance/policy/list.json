@@ -1,0 +1,12 @@
+{
+  "description": "The EMPTY list is a statement, not a silence (D4): `policies` is a present, empty array and `statement` carries the default-deny sentence byte for byte as the CLI prints it — a guard whose empty state reads as \"fine\" is the guard that fails open in the reader's head. `statement` is non-nil EXACTLY when the set is empty (D4): a populated list answers with rows, not a caption. Every row that IS listed was re-read through the boundary's fail-closed decode — one escaped row refuses the whole read rather than being dropped, because dropping a row can drop a Deny.",
+  "method": "policy.list",
+  "request": {"jsonrpc": "2.0", "id": 60, "method": "policy.list"},
+  "response": {
+    "jsonrpc": "2.0", "id": 60,
+    "result": {
+      "policies": [],
+      "statement": "no policies. default is DENY (PL5) — nothing is granted until something grants it."
+    }
+  }
+}

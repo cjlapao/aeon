@@ -1,0 +1,86 @@
+{
+  "description": "Two cards over two windows, written down twice and never subtracted: the result has no delta field to fill (RT8).",
+  "method": "scorecard.compare",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "scorecard.compare",
+    "params": {
+      "kind": "component",
+      "subject": "aeon",
+      "windowA": {
+        "since": "2026-10-05T00:00:00Z",
+        "until": "2026-11-04T00:00:00Z"
+      },
+      "windowB": {
+        "since": "2026-09-05T00:00:00Z",
+        "until": "2026-10-05T00:00:00Z"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "a": {
+        "subject": {
+          "kind": "component",
+          "id": "aeon",
+          "includeChildren": true
+        },
+        "window": {
+          "since": "2026-10-05T00:00:00Z",
+          "until": "2026-11-04T00:00:00Z"
+        },
+        "coverage": {
+          "recordedSince": "2026-10-12T08:00:00Z",
+          "loopsInHistory": 54,
+          "loopsRecorded": 54,
+          "loopsNotRecorded": 0
+        },
+        "statement": "Outcome recording covers 54 of 54 loops since 2026-10-12T08:00:00Z.",
+        "metrics": {
+          "doneRate": {
+            "value": 0.74,
+            "n": 54,
+            "state": "ok"
+          }
+        }
+      },
+      "b": {
+        "subject": {
+          "kind": "component",
+          "id": "aeon",
+          "includeChildren": true
+        },
+        "window": {
+          "since": "2026-09-05T00:00:00Z",
+          "until": "2026-10-05T00:00:00Z"
+        },
+        "coverage": {
+          "recordedSince": "2026-10-12T08:00:00Z",
+          "loopsInHistory": 22,
+          "loopsRecorded": 14,
+          "loopsNotRecorded": 8
+        },
+        "statement": "Outcome recording covers 14 of 22 loops since 2026-10-12T08:00:00Z; the 8 earlier loops are counted, never measured.",
+        "metrics": {
+          "doneRate": {
+            "value": null,
+            "n": 14,
+            "state": "too-few"
+          }
+        }
+      },
+      "windowA": {
+        "since": "2026-10-05T00:00:00Z",
+        "until": "2026-11-04T00:00:00Z"
+      },
+      "windowB": {
+        "since": "2026-09-05T00:00:00Z",
+        "until": "2026-10-05T00:00:00Z"
+      },
+      "statement": "A score is a measurement of what happened. It does not change what any agent, blueprint or project is allowed or asked to do."
+    }
+  }
+}

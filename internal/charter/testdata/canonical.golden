@@ -1,0 +1,1 @@
+{"goal":"ship","constraints":["c"],"nonGoals":["no ui"],"acceptance":[{"id":"ac-1","text":"door answers","check":"command","ref":"aeon intake"}],"stack":["go"],"proposed":{"budgetUsd":10,"environmentRef":"env-x","verify":["go test ./..."]}}

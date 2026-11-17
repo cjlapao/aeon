@@ -1,0 +1,4 @@
+{
+  "description": "Recovery begins after the socket opens and announces how many running steps the startup scan found.",
+  "notification": {"jsonrpc":"2.0","method":"event","params":{"subscriptionId":"s-1","seq":2001,"kind":"recovery.started","at":"2026-10-17T11:00:00Z","payload":{"total":2}}}
+}

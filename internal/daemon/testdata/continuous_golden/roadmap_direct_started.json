@@ -1,0 +1,26 @@
+{
+  "answer": {
+    "loopSlug": "roadmap-item-1",
+    "stamped": true,
+    "started": true,
+    "status": "running"
+  },
+  "error": "",
+  "item": {
+    "status": "running",
+    "loopSlug": "roadmap-item-1"
+  },
+  "starts": [
+    {
+      "blueprint": "dev-loop",
+      "goal": "export the statements",
+      "workspaceRoot": "\u003ctest-root\u003e",
+      "slug": "roadmap-item-1",
+      "attended": null,
+      "with": {
+        "roadmap_item": "1",
+        "roadmap_role": "materialization"
+      }
+    }
+  ]
+}

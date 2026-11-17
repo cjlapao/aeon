@@ -1,0 +1,54 @@
+{
+  "description": "tools.list narrowed to the records-management tool `loop_list`, the row that carries `twin`: the socket method its executor also answers (`loop.list`), paired in the one records catalog rather than remembered beside the tool (TC5's one catalog, no second table). A management tool is therefore TWO doors onto one read — the model's tool and the person's method — and the row says so, which is what makes the drawer's socket-twin line render a fact instead of a guess. The twin is empty for a pure runtime tool, absent from the JSON entirely rather than an empty string pretending to name something.",
+  "method": "tools.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 654,
+    "method": "tools.list",
+    "params": {
+      "q": "loop_list"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 654,
+    "result": {
+      "tools": [
+        {
+          "name": "loop_list",
+          "family": "loop",
+          "source": "system",
+          "description": "List the loops this agent's component works: slug, title, status, phase. Reading, never steering.",
+          "schema": {
+            "additionalProperties": false,
+            "properties": {
+              "root_id": {
+                "description": "filter to one root group",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "schemaHash": "9069aac34b99e7ca2cce6865ce1048e8f9d4a6490f108c11c56c08f9867b6416",
+          "rerunClass": "safe",
+          "capabilities": [
+            "org_records_read"
+          ],
+          "governed": [
+            "tool_access"
+          ],
+          "twin": "loop.list",
+          "conditional": false,
+          "available": true,
+          "classified": false,
+          "version": 1,
+          "origin": "system",
+          "rowCurrent": true,
+          "category": "loop",
+          "access": "read",
+          "address": "loop.loop_list.read"
+        }
+      ]
+    }
+  }
+}

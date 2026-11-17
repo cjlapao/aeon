@@ -1,0 +1,2 @@
+$ aeon policy why --agent nobody --tool bash
+refused: agent:nobody · no allow matched · default deny (PL5)

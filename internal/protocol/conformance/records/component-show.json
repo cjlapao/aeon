@@ -1,0 +1,25 @@
+{
+  "description": "component.show answers one registered workspace through the catalog's projected door \u2014 the same arm the step's tool calls, the same row either caller reads.",
+  "method": "component.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 300,
+    "method": "component.show",
+    "params": {
+      "component_id": "cmp-7a1f"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 300,
+    "result": {
+      "id": "cmp-7a1f",
+      "rootId": "prj-7a1f",
+      "name": "aeon",
+      "slug": "aeon",
+      "root": "/home/p/aeon",
+      "createdAt": "2026-10-26T09:00:00Z",
+      "updatedAt": "2026-10-26T09:00:00Z"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "description": "S57 T9 (VG19): the agent's DoD door — dod.markAsAgent marks an item of the caller's OWN loop met, naming the passing verify run that is the evidence (evidenceRunId, in verify_runs). The service checks the scope (the item is in the caller's loop), the run (it exists, it passed, it is this loop's) and the currency (it sits on the component's CURRENT head — a run on an old sha is stale evidence, VG10's rule applied to the mark); the store re-checks the same facts in the database with its own sentences and refuses an agent's manual evidence before SQL (a manual mark is the person's). The actor is the stamped agent, never a param (OL3). The answer is the item as it now stands.",
+  "method": "dod.markAsAgent",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1105,
+    "method": "dod.markAsAgent",
+    "params": {
+      "itemId": "dod-3",
+      "state": "met",
+      "evidenceRunId": "vr-101",
+      "note": "the e2e run covers the 401 path on the current head"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1105,
+    "result": {
+      "item": {
+        "id": "dod-3",
+        "loopSlug": "fix-the-login",
+        "componentRoot": "/home/cjlapao/src/aeon",
+        "briefId": "brief-1",
+        "briefVersion": 2,
+        "idx": 2,
+        "text": "the 401 path is covered in the e2e suite",
+        "state": "met",
+        "evidenceKind": "verify_run",
+        "evidenceRef": "vr-101",
+        "actorKind": "agent",
+        "actorId": "implementer",
+        "updatedAt": "2026-11-03T06:10:00Z"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "description": "Cancel lands and never deletes (D7): the row stays, `list` still shows it, and the status reads `cancelled` — the off-ramp R1 allows from every pre-loop rung. Note what cancel CANNOT do in this slice: a `running` item refuses (its loop is the loop's own record — the loop verbs stop it; the refusal fixture `refused.json` shows that answer). The item's fields are untouched beside the status: the estimate, the pointers, the provenance all still read what they read before.",
+  "method": "roadmap.cancel",
+  "request": {"jsonrpc": "2.0", "id": 344, "method": "roadmap.cancel", "params": {"id": 12}},
+  "response": {"jsonrpc": "2.0", "id": 344, "result": {"item": {
+    "id": 12,
+    "componentRoot": "/srv/projects/ledger",
+    "title": "export monthly statements",
+    "status": "cancelled",
+    "priorityState": "unknown",
+    "priorityLabel": null,
+    "estimateMin": null,
+    "estimateMax": null,
+    "estimateBasis": null,
+    "provenance": "triggered",
+    "createdAt": "2026-10-29T09:00:00Z",
+    "updatedAt": "2026-10-29T12:00:00Z"
+  }}}
+}

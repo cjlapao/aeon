@@ -1,0 +1,29 @@
+{
+  "description": "The fifth human door (T9, 2026-11-05): close the interview, reject the open plans through the desk's own path; the scratch stays on disk and the answer says exactly what closed.",
+  "method": "intake.abandon",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "intake.abandon",
+    "params": {
+      "intakeId": "int-3f7c81ad",
+      "reason": "the interview stalled; we restart it next week"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "intakeId": "int-3f7c81ad",
+      "loopClosed": true,
+      "rejectedProposals": ["9"],
+      "intake": {
+        "id": "int-3f7c81ad",
+        "name": "Goal intake demo",
+        "scratchPath": "/home/person/.local/state/aeon/intake/goal-intake-demo-a91f0c",
+        "loopSlug": "intake-3f7c81ad",
+        "createdAt": "2026-11-05T10:00:00Z"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "A daemon with no git reader wired refuses `workspace.git.status` by name rather than answering. Note what is NOT an error: `not-a-repo` and `unavailable` are STATES inside a successful answer — the daemon asked git and git answered. This refusal is the case where the daemon cannot ask at all, and guessing is the one answer it may not give (D7/P31).",
+  "method": "workspace.git.status",
+  "request": {
+    "jsonrpc": "2.0", "id": 86, "method": "workspace.git.status",
+    "params": { "componentRoot": "/home/dev/code/aeon-qa-workspace" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 86,
+    "error": {
+      "code": -31523,
+      "message": "git state cannot be read",
+      "data": {
+        "what": "no git reader is wired into this daemon",
+        "means": "the answer would have been a guess — `ok`, `not-a-repo` and `unavailable` each claim to KNOW something, and a daemon that cannot exec git knows nothing",
+        "todo": "run the daemon with its workspace tools (`internal/workspace` is the bounded git reader the daemon wires)",
+        "fatal": false
+      }
+    }
+  }
+}

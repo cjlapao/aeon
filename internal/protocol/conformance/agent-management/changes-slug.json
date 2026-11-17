@@ -1,0 +1,40 @@
+{
+  "description": "agent.changes narrowed to one agent's slug, which is what the management page's History tab asks when it opens one row's history. Two things the whole-ledger answer cannot show. First, the `slug` the caller sent is echoed back beside the rows: a panel that asked for `code-reviewer` and was answered someone else's history is a routing bug, and the echo is how the panel notices. Second, `total` counts the FILTERED set — 7 changes exist in the ledger, 3 of them are this agent's — so the page control under a filtered table says 3 and not 7, which is the number that agrees with the rows underneath it (PG3). The three rows are the three kinds of actor this ledger knows: a person on the socket, the seed engine writing its own content, and the same person deleting the row — and the last one names an agent that no longer exists, because the ledger is where a deleted agent's name survives.",
+  "method": "agent.changes",
+  "request": {"jsonrpc": "2.0", "id": 124, "method": "agent.changes", "params": {"slug": "code-reviewer", "page": 1, "pageSize": 20}},
+  "response": {"jsonrpc": "2.0", "id": 124, "result": {
+    "changes": [
+      {
+        "id": 9,
+        "op": "delete",
+        "slug": "code-reviewer",
+        "summary": "delete code-reviewer (\"Code Reviewer\")",
+        "actorKind": "user",
+        "actorId": "1000",
+        "occurredAt": "2026-11-07T10:04:00Z"
+      },
+      {
+        "id": 6,
+        "op": "seed",
+        "slug": "code-reviewer",
+        "summary": "seed code-reviewer updated",
+        "actorKind": "system",
+        "actorId": "seed-engine",
+        "occurredAt": "2026-11-06T08:00:00Z"
+      },
+      {
+        "id": 4,
+        "op": "create",
+        "slug": "code-reviewer",
+        "summary": "create code-reviewer (\"Code Reviewer\")",
+        "actorKind": "user",
+        "actorId": "1000",
+        "occurredAt": "2026-11-05T19:30:00Z"
+      }
+    ],
+    "page": 1,
+    "pageSize": 20,
+    "total": 3,
+    "slug": "code-reviewer"
+  }}
+}

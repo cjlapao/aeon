@@ -1,0 +1,15 @@
+{
+  "name": "plain_ready",
+  "rows": [
+    {
+      "status": "ready",
+      "goal": "first"
+    },
+    {
+      "status": "ready",
+      "goal": "second"
+    }
+  ],
+  "personLoop": false,
+  "head": "first"
+}

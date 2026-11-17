@@ -1,0 +1,31 @@
+{
+  "description": "Who changed which automation, newest first \u2014 the unified audit across both families; an empty audit says so in a sentence, an empty filter does not.",
+  "method": "automation.changes",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8205,
+    "method": "automation.changes",
+    "params": {
+      "source": "event",
+      "id": "trg-bugs"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8205,
+    "result": {
+      "changes": [
+        {
+          "id": 9,
+          "source": "event",
+          "triggerId": "trg-bugs",
+          "op": "update",
+          "summary": "raised the hourly cap to 6",
+          "actorKind": "user",
+          "actorId": "operator",
+          "occurredAt": "2026-10-20T10:00:00Z"
+        }
+      ]
+    }
+  }
+}

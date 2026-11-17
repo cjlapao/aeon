@@ -1,0 +1,30 @@
+{
+  "description": "epic_list lists a group's epics over the socket \u2014 the board's ladder of aims, read without a step.",
+  "method": "epic.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "method": "epic.list",
+    "params": {
+      "root_id": "prj-7a1f"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "result": {
+      "epics": [
+        {
+          "id": "epic-7a1f",
+          "rootId": "prj-7a1f",
+          "title": "Org layers",
+          "objective": "one definition, two doors",
+          "owner": "cjlapao",
+          "reviewState": "draft",
+          "createdAt": "2026-10-26T09:00:00Z",
+          "updatedAt": "2026-10-26T09:00:00Z"
+        }
+      ]
+    }
+  }
+}

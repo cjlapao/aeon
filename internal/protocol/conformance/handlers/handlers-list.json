@@ -1,0 +1,80 @@
+{
+  "description": "The registry answered from the embedded bytes the process booted with: bodies, the daemon's two presets labelled so the 27-vs-25 truth reads off the answer, and the closed resolver list.",
+  "method": "handlers.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 97,
+    "method": "handlers.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 97,
+    "result": {
+      "handlers": [
+        {
+          "name": "golang-engineer",
+          "kind": "body",
+          "tools": [
+            "read",
+            "list",
+            "write",
+            "edit"
+          ],
+          "tech": [
+            "backend",
+            "go"
+          ]
+        },
+        {
+          "name": "default",
+          "kind": "preset",
+          "tools": [
+            "read",
+            "list",
+            "write",
+            "question"
+          ]
+        }
+      ],
+      "resolvers": [
+        "by-tech-tag"
+      ],
+      "techTags": [
+        {
+          "tag": "go",
+          "label": "Go",
+          "group": "language"
+        },
+        {
+          "tag": "react",
+          "label": "React",
+          "group": "framework"
+        }
+      ],
+      "toolKits": [
+        {
+          "id": "read-code",
+          "label": "Read the code",
+          "description": "Open and search files in the repository, and search for text in them.",
+          "effect": "reads",
+          "tools": [
+            "read",
+            "list",
+            "glob",
+            "grep"
+          ]
+        },
+        {
+          "id": "run-commands",
+          "label": "Run commands",
+          "description": "Run shell commands, such as builds and tests. Policy decides which commands are allowed.",
+          "effect": "runs",
+          "tools": [
+            "bash"
+          ]
+        }
+      ]
+    }
+  }
+}

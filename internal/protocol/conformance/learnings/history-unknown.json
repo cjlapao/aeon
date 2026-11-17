@@ -1,0 +1,15 @@
+{
+  "description": "S52 T2 (LM3), the named nothing: learnings.history of an id with no row refuses with ErrLearningUnknown — an EMPTY history belongs to a learning that EXISTS and predates the audit, and collapsing the two lets a typo'd id read as a pristine memory. retract and restore answer the same absence through the same error; the refusal quotes the id it looked for, and nothing was written. (The task text itself named this error; T0 recorded it as not-yet-existing — here it is, beside the refusal, with its own code.)",
+  "method": "learnings.history",
+  "request": {"jsonrpc": "2.0", "id": 372, "method": "learnings.history", "params": {"id": 9999}},
+  "response": {"jsonrpc": "2.0", "id": 372, "error": {
+    "code": -31951,
+    "message": "no learning answers to that id",
+    "data": {
+      "what": "history was asked for learning 9999; no row answers to that id",
+      "means": "nothing was written or read — the learning is not in the store",
+      "todo": "learnings.list or learnings.board to see what IS there (retracted rows show on learnings.show and the board with includeRetracted)",
+      "fatal": false
+    }
+  }}
+}

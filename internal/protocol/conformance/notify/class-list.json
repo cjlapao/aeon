@@ -1,0 +1,109 @@
+{
+  "description": "notify.class.list answers the whole event-class table in (kind, variant) order: every curated kind and variant with its tone, its template, whether it is enabled, and its provenance — 'system' rows came from the shipped seed set, and the version is the engine's counter an edit bumps, so the app can show 'edited' without a flag of its own (SV4).",
+  "method": "notify.class.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 930,
+    "method": "notify.class.list"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 930,
+    "result": {
+      "classes": [
+        {
+          "kind": "budget.hit",
+          "tone": "warning",
+          "titleTemplate": "A budget cap is exhausted",
+          "enabled": true,
+          "origin": "system",
+          "version": 1,
+          "updatedAt": "2026-11-03T09:00:00Z"
+        },
+        {
+          "kind": "budget.warn",
+          "tone": "warning",
+          "titleTemplate": "A budget is near its cap",
+          "enabled": true,
+          "origin": "system",
+          "version": 1,
+          "updatedAt": "2026-11-03T09:00:00Z"
+        },
+        {
+          "kind": "loop.blocked",
+          "tone": "warning",
+          "titleTemplate": "Loop blocked",
+          "enabled": true,
+          "origin": "system",
+          "version": 1,
+          "updatedAt": "2026-11-03T09:00:00Z"
+        },
+        {
+          "kind": "loop.blocked",
+          "tone": "warning",
+          "titleTemplate": "Loop blocked",
+          "enabled": true,
+          "origin": "system",
+          "version": 1,
+          "updatedAt": "2026-11-03T09:00:00Z",
+          "variant": "action-denied"
+        },
+        {
+          "kind": "loop.finished",
+          "tone": "success",
+          "titleTemplate": "Loop finished",
+          "enabled": true,
+          "origin": "system",
+          "version": 2,
+          "updatedAt": "2026-11-03T09:00:00Z"
+        },
+        {
+          "kind": "loop.stop.requested",
+          "tone": "warning",
+          "titleTemplate": "An agent asked you to stop a loop",
+          "enabled": true,
+          "origin": "system",
+          "version": 1,
+          "updatedAt": "2026-11-03T09:00:00Z"
+        },
+        {
+          "kind": "loop.waiting",
+          "tone": "info",
+          "titleTemplate": "Loop waiting on you",
+          "enabled": true,
+          "origin": "system",
+          "version": 1,
+          "updatedAt": "2026-11-03T09:00:00Z"
+        },
+        {
+          "kind": "loop.waiting",
+          "tone": "info",
+          "titleTemplate": "Loop waiting on you",
+          "enabled": false,
+          "origin": "system",
+          "version": 2,
+          "updatedAt": "2026-11-03T09:00:00Z",
+          "variant": "stopped"
+        },
+        {
+          "kind": "question.asked",
+          "tone": "info",
+          "titleTemplate": "A question is waiting for you",
+          "enabled": true,
+          "origin": "system",
+          "version": 1,
+          "updatedAt": "2026-11-03T09:00:00Z"
+        },
+        {
+          "kind": "watchdog.fired",
+          "tone": "warning",
+          "titleTemplate": "The watchdog needs your attention",
+          "enabled": true,
+          "origin": "system",
+          "version": 1,
+          "updatedAt": "2026-11-03T09:00:00Z"
+        }
+      ]
+    }
+  }
+}

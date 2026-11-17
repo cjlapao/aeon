@@ -1,0 +1,23 @@
+{
+  "description": "S59 T6 (EV12): environment.provisions is the ledger, read the same way whether or not a container exists — id, the environment and root it belongs to, the backend, the driver's handle, its STATE from the closed set (provisioning, ready, tearing_down, removed, failed), and the timestamps of each transition. `lastError` carries the driver's own sentence when a removal failed: the ledger records the failure it could not complete rather than pretending.",
+  "method": "environment.provisions",
+  "request": { "jsonrpc": "2.0", "id": 922, "method": "environment.provisions", "params": { "state": "ready", "limit": 50 } },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 922,
+    "result": [
+      {
+        "id": "prv_2c4d6e8a",
+        "environmentId": "env_9a8b7c6d",
+        "componentRoot": "/home/cjlapao/code/acme/api",
+        "loopSlug": "release-2026-11",
+        "backend": "container",
+        "handle": "aeon-s59-acme-api-8f2b1c",
+        "owner": "daemon:1000",
+        "state": "ready",
+        "createdAt": "2026-11-03T09:30:00Z",
+        "readyAt": "2026-11-03T09:30:04Z"
+      }
+    ]
+  }
+}

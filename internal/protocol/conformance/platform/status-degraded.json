@@ -1,0 +1,29 @@
+{
+  "description": "`platform.status` when the platform is half-broken (S54 T2): a subsystem refusing is a STATE the panel carries, not a failed read of the platform — the door answers 200 and each block says its own truth. Retrieval's read refused, so its block is error with the source's own sentence riding VERBATIM (paraphrase would be a second voice, O3's rule inverted); the graph block is unwired — the seam is absent on this daemon, which is a different fact from broken and gets a different word; usage remains available, its partial cost riding with the floor as the store said it (three cost states, S33, never a fabricated figure). The panel never hides a half-refusing subsystem behind the blocks that answered.",
+  "method": "platform.status",
+  "request": {"jsonrpc": "2.0", "id": 341, "method": "platform.status", "params": {}},
+  "response": {
+    "jsonrpc": "2.0", "id": 341,
+    "result": {
+      "evaluatedAt": "2026-11-04T14:33:02Z",
+      "retrieval": {
+        "state": "error",
+        "error": "read status for /home/dev/aeon: index walk refused: open /home/dev/.aeon/index: permission denied"
+      },
+      "graph": {
+        "state": "unwired"
+      },
+      "usage": {
+        "state": "available",
+        "workspace": {
+          "loopsRun": 3,
+          "inputTokensTotal": 10024,
+          "outputTokensTotal": 2051,
+          "costUsdTotal": 0.09,
+          "costState": "partial",
+          "recorded": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "case": "success",
+  "summary": "bash \"printf 'hi\\n'\" · exit 0 · N",
+  "content": "$ printf 'hi\n'\nexit 0 · N\n\n--- stdout ---\nhi\n",
+  "isError": false,
+  "exitCode": 0
+}

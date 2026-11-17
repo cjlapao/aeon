@@ -1,0 +1,9 @@
+{
+  "description": "A filter scoped to one component and one kind prefix. The filter is the point: one daemon multiplexes every component on the machine, and an editor open on one repository must not receive every event from every other.",
+  "method": "subscribe",
+  "request": {
+    "jsonrpc": "2.0", "id": 5, "method": "subscribe",
+    "params": {"filter": {"componentRoot": "/home/me/repo", "kinds": ["loop.*", "step.*"]}}
+  },
+  "response": {"jsonrpc": "2.0", "id": 5, "result": {"subscriptionId": "s-7f3a1b2c", "from": 1}}
+}

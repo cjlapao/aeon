@@ -1,0 +1,3 @@
+  MCP server "gitforge" did not answer — its tools are reported absent, not silently dropped: mcp: server "gitforge": spawning aeon-golden-nonexistent: exec: "aeon-golden-nonexistent": executable file not found in $PATH
+  MCP server "search" did not answer — its tools are reported absent, not silently dropped: mcp: server "search": initialize: Post "http://127.0.0.1:1/mcp": dial tcp 127.0.0.1:1: connect: connection refused
+  MCP server "labnote" did not answer — its tools are reported absent, not silently dropped: mcp: server "labnote": spawning aeon-golden-private: exec: "aeon-golden-private": executable file not found in $PATH

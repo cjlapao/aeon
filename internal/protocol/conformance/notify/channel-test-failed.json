@@ -1,0 +1,26 @@
+{
+  "description": "notify.channel.test ran and the delivery did not land: the receiver answered 404 after one attempt (a 4xx is final — no retry storm against a receiver that has said no), the row records the outcome, and the error mirrors it honestly. This is NOT a refusal to run: -31929 says the attempt happened and what it learned.",
+  "method": "notify.channel.test",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 954,
+    "method": "notify.channel.test",
+    "params": {
+      "id": "nc-01JTEST0000000000000000001"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 954,
+    "error": {
+      "code": -31929,
+      "message": "channel test failed",
+      "data": {
+        "what": "the test delivery ended \"failed\" (error kind \"status\", HTTP 404, 1 attempt(s) at 2026-11-03T09:12:00Z)",
+        "means": "a test is a real delivery, logged like any other; its failure is a fact about the receiver or the network, recorded honestly instead of hidden behind a green write",
+        "todo": "read the error kind (notify.delivery.list shows every attempt): a refused-address means the SSRF guard refused the destination, a status means the receiver said no, transport/timeout means the network said no",
+        "fatal": false
+      }
+    }
+  }
+}

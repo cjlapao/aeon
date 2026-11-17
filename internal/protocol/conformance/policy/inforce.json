@@ -1,0 +1,30 @@
+{
+  "description": "policy.inForce answers three states un-collapsed (D14): one answer per governing policy, each `render` the T11 sentence VERBATIM. The acknowledged and unacknowledged lines share their head — that sharing IS the claim that both are in force (PL10: an unacknowledged rule still binds); could-not-determine shares nothing with either, because a reader who confuses \"nobody can answer\" with \"not binding\" stops trusting the answer. `state` travels beside the sentence so the app branches on a field, never on parsing prose. Exactly one of `agent`/`loop` names the party.",
+  "method": "policy.inForce",
+  "request": {
+    "jsonrpc": "2.0", "id": 62, "method": "policy.inForce",
+    "params": {"agent": "boss"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 62,
+    "result": {
+      "answers": [
+        {
+          "policyID": "grant-read-tool",
+          "state": "enforced_acknowledged",
+          "render": "in force · acknowledged by agent:boss since 2026-10-01T09:00:00Z"
+        },
+        {
+          "policyID": "no-bash",
+          "state": "enforced_unacknowledged",
+          "render": "in force · unacknowledged — still enforced (PL10)"
+        },
+        {
+          "policyID": "per-token-budget",
+          "state": "could_not_determine",
+          "render": "could not determine · no evaluator for cost_cap yet (D10)"
+        }
+      ]
+    }
+  }
+}

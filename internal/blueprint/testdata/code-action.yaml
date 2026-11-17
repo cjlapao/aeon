@@ -1,0 +1,6 @@
+id: code-action-refusal
+schemaVersion: 1
+version: 1
+lanes:
+  - id: publish
+    step: {kind: code-action, action: forge.openPR}

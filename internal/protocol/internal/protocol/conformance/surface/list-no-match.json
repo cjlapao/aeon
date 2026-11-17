@@ -1,0 +1,31 @@
+{
+  "description": "TODO",
+  "method": "surface.list",
+  "request": {
+    "id": 704,
+    "jsonrpc": "2.0",
+    "method": "surface.list",
+    "params": {
+      "q": "no-method-can-carry-this-word"
+    }
+  },
+  "response": {
+    "id": 704,
+    "jsonrpc": "2.0",
+    "result": {
+      "methods": [],
+      "counts": {
+        "total": 0,
+        "unfiltered": 208,
+        "byKind": {
+          "control": 0,
+          "diagnostic": 0,
+          "read": 0,
+          "write": 0
+        },
+        "byDoor": {}
+      },
+      "statement": "no methods match this filter."
+    }
+  }
+}

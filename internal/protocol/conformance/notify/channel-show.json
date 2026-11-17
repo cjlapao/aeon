@@ -1,0 +1,36 @@
+{
+  "description": "notify.channel.show answers one channel with its subscription rows in full: the same never-a-url, never-a-secret rule as the listing, plus the quiet windows and kind filters as they are enforced. An unknown id is refused, not answered empty — an empty view for a typo would read as a channel that delivers nothing.",
+  "method": "notify.channel.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 949,
+    "method": "notify.channel.show",
+    "params": {
+      "id": "nc-01JTEST0000000000000000001"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 949,
+    "result": {
+      "id": "nc-01JTEST0000000000000000001",
+      "name": "ops-room",
+      "kind": "webhook",
+      "host": "hooks.example.com",
+      "enabled": false,
+      "allowPrivate": false,
+      "secretPresent": true,
+      "subscriptions": [
+        {
+          "channelId": "nc-01JTEST0000000000000000001",
+          "minSeverity": "blocked",
+          "kinds": null,
+          "maxPerHour": 30
+        }
+      ],
+      "createdAt": "2026-11-03T09:00:00Z",
+      "updatedAt": "2026-11-03T09:00:00Z",
+      "consecutiveFailures": 0
+    }
+  }
+}

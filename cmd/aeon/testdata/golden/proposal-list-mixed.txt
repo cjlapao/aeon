@@ -1,0 +1,16 @@
+$ aeon proposal list
+ID    KIND               STATUS     CREATED BY               COMMAND
+<ID> mcp_server_add     discarded  user:1000                aeon proposal commit 5
+<ID> mcp_server_remove  rejected   user:1000                aeon proposal commit 4
+<ID> seed_corpus        committed  user:1000                aeon proposal commit 3
+<ID> policy_remove      proposed   user:1000                aeon proposal commit 2
+<ID> policy_add         proposed   user:1000                aeon proposal commit 1
+$ aeon proposal list --status proposed
+ID    KIND               STATUS     CREATED BY               COMMAND
+<ID> policy_remove      proposed   user:1000                aeon proposal commit 2
+<ID> policy_add         proposed   user:1000                aeon proposal commit 1
+$ aeon proposal list --status committed
+ID    KIND               STATUS     CREATED BY               COMMAND
+<ID> seed_corpus        committed  user:1000                aeon proposal commit 3
+$ aeon proposal list --status bogus
+! list proposals: refused: proposal status "bogus" is not in [proposed committed rejected discarded]

@@ -1,0 +1,31 @@
+{
+  "description": "`remote.complete` with the optional cost claim (S21 T8, RA10): a peer MAY report its own spend beside the result, and the number is the peer's claim, not our measurement — it lands as partial-with-provenance at best, and the whole field's ABSENCE is the normal case, which records as unknown (`peer-reported-no-usage`), never as zero. This fixture exists so the generated TypeScript carries `cost?` as genuinely optional: a single fixture omitting it would leave the field un-described, and a single fixture carrying it would teach a required field that senders must not have to send.",
+  "method": "remote.complete",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 69,
+    "method": "remote.complete",
+    "params": {
+      "task": "743",
+      "peer": "docs-peer",
+      "result": "{\"findings\":2}",
+      "signature": "sha256=3f1a8c92d6b44e07ab1258ce9f3d7016b5e4c2a9087f613d5b4a0e9c72f18d34",
+      "timestamp": "2026-10-28T12:06:02Z",
+      "deliveryId": "cb1d3e5a-2",
+      "cost": {
+        "usd": 0.02,
+        "currency": "usd"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 69,
+    "result": {
+      "taskId": "743",
+      "peer": "docs-peer",
+      "outcome": "landed",
+      "httpStatus": 200
+    }
+  }
+}

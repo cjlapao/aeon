@@ -1,0 +1,9 @@
+{
+  "description": "`terminal.detach` unbinds the calling connection; output stops flowing to it but the shell keeps running. A detached session is reaped after 15 minutes with nobody attached (LW9) — a window reload is safe, a forgotten shell is not forever.",
+  "method": "terminal.detach",
+  "request": {
+    "jsonrpc": "2.0", "id": 94, "method": "terminal.detach",
+    "params": { "terminalId": "t-7f3a" }
+  },
+  "response": { "jsonrpc": "2.0", "id": 94, "result": {} }
+}

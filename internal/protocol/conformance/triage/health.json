@@ -1,0 +1,18 @@
+{
+  "description": "S51 T3 (TM4): triage.health takes exactly the empty object and answers the one blueprint setting — key, effective NAME, state (ok | missing | invalid | unverifiable), and the analyzer's counts beside the verdict they decided. The states themselves are pinned daemon-side (they need settings and blueprint rows); this fixture pins the shape and the no-params law. A read, never a gate: a green line and a refused attempt honestly coexist one second apart.",
+  "method": "triage.health",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 447,
+    "method": "triage.health",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 447,
+    "result": {
+      "settings": [],
+      "evaluatedAt": "2026-01-01T00:00:00Z"
+    }
+  }
+}

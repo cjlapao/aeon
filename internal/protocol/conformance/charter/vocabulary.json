@@ -1,0 +1,39 @@
+{
+  "description": "The charter package's own closed sets \u2014 check kinds, caps, the autonomy words the S56 plane answers; the caps published are the caps enforced.",
+  "method": "charter.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "charter.vocabulary",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "checkKinds": [
+        "manual",
+        "command",
+        "test"
+      ],
+      "caps": {
+        "bodyBytes": 65536,
+        "goal": 2000,
+        "item": 200,
+        "list": 50,
+        "acceptance": 50,
+        "tags": 30,
+        "tag": 64,
+        "verify": 20,
+        "verifyBytes": 1024,
+        "envRef": 200,
+        "note": 2000
+      },
+      "autonomy": [
+        "forge.merge",
+        "git.publishIntegration"
+      ],
+      "autonomyNote": "the autonomy words are the S56 plane's live vocabulary; a charter body names one of these in proposed.autonomy or is refused \u2014 this plane grants nothing (GI8)"
+    }
+  }
+}

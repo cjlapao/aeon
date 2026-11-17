@@ -1,0 +1,18 @@
+{
+  "description": "The settings.set happy path (S44 T5): a value that parses under the key's type and bounds writes the row and reports changed=true with the new SettingView. The audit actor is the CONNECTION's (the daemon's ActorFor, \"user:1000\"), never a params field — a caller cannot forge the identity of a write to its own rules (CS8). set is the only door that changes a value; the event it records (CS12) is what a client that lists later sees. A value that fails the type/bounds refuses with settings.set's invalid-value code before any write.",
+  "method": "settings.set",
+  "request": {"jsonrpc": "2.0", "id": 303, "method": "settings.set", "params": {"key": "test.count", "value": "7"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 303,
+    "result": {
+      "setting": {
+        "key": "test.count", "area": "test", "type": "int", "default": "3",
+        "description": "A test count setting.", "sensitive": false, "min": 1, "max": 10,
+        "value": "7", "source": "database", "stored": "7",
+        "shadowedBy": "", "envInvalid": "", "storedInvalid": false,
+        "updatedAt": "2026-10-30T12:00:00Z", "updatedBy": "user:1000"
+      },
+      "changed": true
+    }
+  }
+}

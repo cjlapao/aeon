@@ -1,0 +1,17 @@
+{
+  "description": "The settings.get environment-shadow case (S44 T5, CS4): a process environment in force beats the stored row, so the EFFECTIVE value is the environment's with source=\"environment\", but the stored row is NOT hidden — stored is the table's value and shadowedBy names the env var that overrides it (\"your saved value is being overridden\"). Three-state honesty: the app shows the environment value AND the shadowed row AND the name, rather than collapsing \"the env won\" into a bare value. A client that lists later may still see the shadow until the env clears.",
+  "method": "settings.get",
+  "request": {"jsonrpc": "2.0", "id": 302, "method": "settings.get", "params": {"key": "test.flag"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 302,
+    "result": {
+      "setting": {
+        "key": "test.flag", "area": "test", "type": "bool", "default": "false",
+        "description": "A test boolean setting.", "sensitive": false,
+        "value": "true", "source": "environment", "stored": "false",
+        "shadowedBy": "AEON_SETTING_TEST_FLAG", "envInvalid": "", "storedInvalid": false,
+        "updatedAt": "2026-10-30T11:00:00Z", "updatedBy": "user:1000"
+      }
+    }
+  }
+}

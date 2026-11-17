@@ -1,0 +1,50 @@
+{
+  "description": "Lists the blueprints — `names` stays byte-compatible (the test bench reads it) and the summaries join: origin, revision, content hash, usage count, and for system rows the seed ledger's diverged answer (omitted, never a silent false, when the daemon has no shipped-record authority).",
+  "method": "blueprint.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "method": "blueprint.list",
+    "params": {
+      "origin": "system"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "result": {
+      "names": [
+        "dev-loop",
+        "two-step"
+      ],
+      "blueprints": [
+        {
+          "name": "dev-loop",
+          "origin": "system",
+          "version": 1,
+          "revision": 1,
+          "contentHash": "8af923d78af923d78af923d78af923d78af923d78af923d78af923d78af923d7",
+          "divergedFromShipped": false,
+          "updatedAt": "2026-11-02T12:00:00Z",
+          "updatedBy": "blueprints.standard",
+          "usedByCount": 4,
+          "title": "Dev Loop",
+          "description": "What this flow is for."
+        },
+        {
+          "name": "two-step",
+          "origin": "system",
+          "version": 2,
+          "revision": 1,
+          "contentHash": "ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669",
+          "divergedFromShipped": false,
+          "updatedAt": "2026-11-02T12:00:00Z",
+          "updatedBy": "blueprints.standard",
+          "usedByCount": 0,
+          "title": "Two Step",
+          "description": "What this flow is for."
+        }
+      ]
+    }
+  }
+}

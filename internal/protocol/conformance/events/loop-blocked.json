@@ -1,0 +1,23 @@
+{
+  "description": "An unimplemented code action blocks visibly with a structured reason and does not continue past the position.",
+  "event": "loop.blocked",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1605,
+      "kind": "loop.blocked",
+      "at": "2026-10-17T16:00:00Z",
+      "payload": {
+        "loopId": "loop-1",
+        "reason": {
+          "kind": "unimplemented-action",
+          "detail": "code action waits for S16",
+          "action": "forge.openPR",
+          "slice": "S16"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "description": "S51 T2 (TM5), the named nothing: triage.history of an id with no bug row refuses with ErrTriageUnknown — an EMPTY history belongs to a bug that exists and has no rows, and collapsing the two would let a typo'd id read as a pristine bug (and a bug's audit read say 'clean' about a row nobody ever filed). The refusal quotes the id it looked for; nothing was read, nothing was written. triage.update answers the same fact through the door's ordinary refusal.",
+  "method": "triage.history",
+  "request": {"jsonrpc": "2.0", "id": 443, "method": "triage.history", "params": {"id": 9999}},
+  "response": {"jsonrpc": "2.0", "id": 443, "error": {
+    "code": -31934,
+    "message": "the triage read named no bug",
+    "data": {
+      "what": "triage: bug 9999 does not exist",
+      "means": "nothing was read about a nonexistent bug — an EMPTY history is a real bug with no rows; this is a different fact, which is why it is a different error",
+      "todo": "list or show first and use an id the backlog actually holds",
+      "fatal": false
+    }
+  }}
+}

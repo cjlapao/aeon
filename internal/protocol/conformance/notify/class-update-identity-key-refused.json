@@ -1,0 +1,28 @@
+{
+  "description": "notify.class.update naming an actor in params is refused before parsing: what notifies a person is that person's decision, and the person is the peer the socket authenticated — a param that names the actor would let any caller forge whose hand edited the notify plane (SV13, the same wire rule as the inbox writes).",
+  "method": "notify.class.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 933,
+    "method": "notify.class.update",
+    "params": {
+      "kind": "loop.finished",
+      "enabled": false,
+      "actor": "someone-else"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 933,
+    "error": {
+      "code": -32602,
+      "message": "invalid params",
+      "data": {
+        "what": "notify.class.update params carry \"actor\" — what notifies is a person's decision and the person is the peer the socket authenticated, never a name in the request (SV13)",
+        "means": "the actor is the identity the daemon stamped at the socket, not a field a request can set",
+        "todo": "remove actor/actorKind from params and send the request over the connection whose peer is the person",
+        "fatal": false
+      }
+    }
+  }
+}

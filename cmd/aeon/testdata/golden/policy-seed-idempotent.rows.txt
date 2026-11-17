@@ -1,0 +1,13 @@
+policy rows: 5
+  policy corpus.memory-steward-loop.123056d4fe20 type=command_access target=agent:memory-steward-loop action=allow source=operator subject=agent:memory-steward-loop spec={"command":"ls*","state":"allow"} not_after=none not_after_epoch=- created_at=<TIME>
+  policy corpus.memory-steward-loop.5dc3b26cd2a2 type=command_access target=agent:memory-steward-loop action=allow source=operator subject=agent:memory-steward-loop spec={"command":"stat*","state":"allow"} not_after=none not_after_epoch=- created_at=<TIME>
+  policy corpus.memory-steward-loop.684888c0ebb1 type=command_access target=agent:memory-steward-loop action=deny source=operator subject=agent:memory-steward-loop spec={"command":"*","state":"deny"} not_after=none not_after_epoch=- created_at=<TIME>
+  policy corpus.memory-steward-loop.97a1850fefe5 type=command_access target=agent:memory-steward-loop action=allow source=operator subject=agent:memory-steward-loop spec={"command":"grep*","state":"allow"} not_after=none not_after_epoch=- created_at=<TIME>
+  policy corpus.memory-steward-loop.a1159e9df367 type=command_access target=agent:memory-steward-loop action=allow source=operator subject=agent:memory-steward-loop spec={"command":"pwd","state":"allow"} not_after=none not_after_epoch=- created_at=<TIME>
+proposal rows: 0
+policy_event rows: 5
+  event <ID> at=<TIME> outcome=authored subject=agent:memory-steward-loop policy_id=corpus.memory-steward-loop.97a1850fefe5 detail=authored: the write boundary stored this rule for this subject; the policy_id and subject columns name what was authored (PL15 — authoring is CLI-only)
+  event <ID> at=<TIME> outcome=authored subject=agent:memory-steward-loop policy_id=corpus.memory-steward-loop.5dc3b26cd2a2 detail=authored: the write boundary stored this rule for this subject; the policy_id and subject columns name what was authored (PL15 — authoring is CLI-only)
+  event <ID> at=<TIME> outcome=authored subject=agent:memory-steward-loop policy_id=corpus.memory-steward-loop.123056d4fe20 detail=authored: the write boundary stored this rule for this subject; the policy_id and subject columns name what was authored (PL15 — authoring is CLI-only)
+  event <ID> at=<TIME> outcome=authored subject=agent:memory-steward-loop policy_id=corpus.memory-steward-loop.a1159e9df367 detail=authored: the write boundary stored this rule for this subject; the policy_id and subject columns name what was authored (PL15 — authoring is CLI-only)
+  event <ID> at=<TIME> outcome=authored subject=agent:memory-steward-loop policy_id=corpus.memory-steward-loop.684888c0ebb1 detail=authored: the write boundary stored this rule for this subject; the policy_id and subject columns name what was authored (PL15 — authoring is CLI-only)

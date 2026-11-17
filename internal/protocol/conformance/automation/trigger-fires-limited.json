@@ -1,0 +1,23 @@
+{
+  "description": "The outcome filter in action: only the named outcome's rows come back, and the counts still speak all five — the pills never lie about a zero.",
+  "method": "automation.trigger.fires",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 205,
+    "method": "automation.trigger.fires",
+    "params": {"triggerId": "tr1", "outcome": "limited", "limit": 50}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 205,
+    "result": {
+      "fires": [
+        {"id": 2, "triggerId": "tr1", "outboxId": 7, "subjectKind": "goal", "subjectId": "g1", "depth": 0,
+         "outcome": "limited", "reason": "max-runs-per-hour: 2 started since 2026-10-27T08:00:00Z, limit 2",
+         "loopId": "", "loopSlug": "", "costNote": "cost-floor",
+         "claimedAt": "2026-10-27T08:30:00Z", "decidedAt": "2026-10-27T08:30:00Z"}
+      ],
+      "counts": {"started": 1, "refused": 0, "limited": 1, "skipped": 0, "could-not-say": 0}
+    }
+  }
+}

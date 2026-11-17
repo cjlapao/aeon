@@ -1,0 +1,33 @@
+{
+  "description": "mergequeue.settings writes one repository's settings through the ONE service door. This is the COMPLETED round trip: the first attempt (settings-widen-refused.json) carried no acknowledged digest and was refused with the statement; this request re-sent with `acknowledged` equal to sha256 of that exact sentence, and the daemon applied it. The answer carries the sentence now in force beside the row \u2014 every surface quotes the same formatter (mergequeue.Statement), byte for byte. (params sampled complete: the settings write can carry the whole config at once)",
+  "method": "mergequeue.settings",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 275,
+    "method": "mergequeue.settings",
+    "params": {
+      "componentRoot": "/srv/components/alpha",
+      "mode": "auto",
+      "conflictPolicy": "ask",
+      "landMethod": "squash",
+      "maxCatchUps": 3,
+      "acknowledged": "<the refusal's digest>"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 275,
+    "result": {
+      "config": {
+        "componentRoot": "/srv/components/alpha",
+        "mode": "auto",
+        "conflictPolicy": "ask",
+        "landMethod": "squash",
+        "maxCatchUps": 3,
+        "updatedAt": "2026-11-04T11:00:00Z",
+        "updatedBy": "user/cjlapao"
+      },
+      "statement": "MERGE QUEUE \u2014 /srv/components/alpha: setting the queue to AUTO widens authority. The daemon will then land items that are green and match the S57 merge rule with NO further person in the loop, using the S56 `merge` grants (git.publishIntegration, forge.openLandingPR, forge.land) exactly as pinned. Conflict policy stays ask. Land method squash. Max catch-ups 3."
+    }
+  }
+}

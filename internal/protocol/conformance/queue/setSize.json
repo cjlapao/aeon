@@ -1,0 +1,14 @@
+{
+  "description": "D7's `manual` half: the person writes the size by hand and the item becomes eligible in the SAME claimed statement — range and basis present together (D8: the three fields are all-present-or-all-absent, a bare number is not expressible), status `pending` → `ready`. In `skill` mode this exact act is refused BY NAME because report_size is the only writer there (D9); a silent no-op would let the person believe their number landed. The claim rides the store's door, whose WHERE refuses if the item moved under the write.",
+  "method": "queue.setSize",
+  "request": {"jsonrpc": "2.0", "id": 304, "method": "queue.setSize", "params": {"id": 2, "sizeMin": 2, "sizeMax": 5, "sizeBasis": "one handler, one store door, one blueprint hook; tests ride the existing fixture"}},
+  "response": {"jsonrpc": "2.0", "id": 304, "result": {"item": {
+    "id": 2, "position": 2, "status": "ready",
+    "blueprint": "dev-loop",
+    "goal": "Surface the retry counter in the run view",
+    "workspaceRoot": "/srv/projects/ledger",
+    "attended": null,
+    "sizeMin": 2, "sizeMax": 5, "sizeBasis": "one handler, one store door, one blueprint hook; tests ride the existing fixture",
+    "createdAt": "2026-10-29T12:01:00Z", "updatedAt": "2026-10-29T12:07:00Z"
+  }}}
+}

@@ -1,0 +1,12 @@
+# TestNoSecondProviderPath: tokens that would mean retrieval grew its own
+# provider path (I8, N9). One per line; # lines are comments. Read at
+# runtime so the ban table is not itself a banned token inside the scanned
+# sources (the hunter cannot contain the hunted — measured twice now).
+net/http
+http.Client
+NewRequest
+os.Getenv
+Getenv(
+APIKey
+USDPerMTok
+Bearer

@@ -1,0 +1,18 @@
+{
+  "description": "S34 T3's MC11 state: no MCP config file is the legitimate absence, not a refusal — present:false names the exact path mcp.status looked at, so a page can quote it rather than guess. The real loader (internal/mcp.LoadConfigFile) is all-or-nothing: there is no per-server refused field here, because a config that fails to load never produces a partial list of servers to report from.",
+  "method": "mcp.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "method": "mcp.status"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "result": {
+      "configPath": "/home/operator/.config/aeon/mcp.json",
+      "present": false,
+      "probes": {}
+    }
+  }
+}

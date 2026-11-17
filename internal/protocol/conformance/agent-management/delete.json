@@ -1,0 +1,6 @@
+{
+  "description": "agent.delete removes an agent row by slug and returns the slug it deleted — a daemon write (the agent table, not the closed policy set), so it is registered like loop.create rather than the human-only door. A slug with no row is refused by name, so a delete cannot reach an agent that never existed.",
+  "method": "agent.delete",
+  "request": {"jsonrpc": "2.0", "id": 115, "method": "agent.delete", "params": {"slug": "reviewer-plus"}},
+  "response": {"jsonrpc": "2.0", "id": 115, "result": {"deleted": "reviewer-plus"}}
+}

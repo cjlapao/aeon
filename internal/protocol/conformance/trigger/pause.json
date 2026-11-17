@@ -1,0 +1,15 @@
+{
+  "description": "`trigger.pause` is the OPERATIONAL off (TR12): 'not right now', someone's to undo this afternoon — distinct from TriggerAccess, the governance rule with an author and a lifetime. It answers Found/Reason as facts in the result, not transport errors: an unknown id gets one sentence that leaks nothing. It is NOT on the narrow surface (R6: operational control there hands a caller the means to bypass the guards written to constrain it).",
+  "method": "trigger.pause",
+  "request": { "jsonrpc": "2.0", "id": 69, "method": "trigger.pause", "params": { "id": "nightly-survey" } },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 69,
+    "result": {
+      "triggerId": "nightly-survey",
+      "reason": "paused — the clock will skip this trigger until it is resumed (TR12's operational off; governance said nothing)",
+      "paused": true,
+      "found": true
+    }
+  }
+}

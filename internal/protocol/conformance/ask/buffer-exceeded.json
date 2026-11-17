@@ -1,0 +1,21 @@
+{
+  "description": "The error form of the buffer bound, for a caller that would rather fail than receive a truncated reply. `ask` itself truncates and reports (see buffered-truncated.json); this code exists because a later caller may want the stricter behaviour, and allocating it now means it never gets allocated twice for two meanings.",
+  "method": "ask",
+  "request": {
+    "jsonrpc": "2.0", "id": 26, "method": "ask",
+    "params": {"route": "openai-gpt4o", "prompt": "Write a novel."}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 26,
+    "error": {
+      "code": -31101,
+      "message": "buffered reply exceeded its bound",
+      "data": {
+        "what": "the reply grew past the 262144-byte buffer bound for a non-streaming `ask`",
+        "means": "`ask` without a subscriptionId buffers the whole reply in memory, and an unbounded buffer is a memory hole with a prompt-shaped cause",
+        "todo": "pass a `subscriptionId` and read the reply as `ask.delta` events, which has no bound",
+        "fatal": false
+      }
+    }
+  }
+}

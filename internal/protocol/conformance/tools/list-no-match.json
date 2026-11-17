@@ -1,0 +1,20 @@
+{
+  "description": "tools.list with a `q` that can match nothing. The list is EMPTY (`[]`, never null) and the table's own sentence rides with it, byte for byte, because a filter that matched nothing and a build with no tools are different answers and only the reader knows which it is looking at. The sentence belongs to the layer that saw the filter: an UNFILTERED empty list carries no statement at all, and a non-empty one never does — a decoration on every answer would make the sentence mean nothing.",
+  "method": "tools.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 643,
+    "method": "tools.list",
+    "params": {
+      "q": "zzz-nothing"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 643,
+    "result": {
+      "tools": [],
+      "statement": "no tools match this filter."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "A telemetry read naming a subject with no row refuses with the id IN THE SENTENCE (TB2's rule at a new surface): an empty-everything result would let a caller mistake 'there is no such component here' for 'this component did nothing', and those are different sentences the app renders differently. Telemetry is written only by the runtime's capture seams, so a missing row can never be backfilled by a caller — the refusal says what to list instead.",
+  "method": "telemetry.component",
+  "request": {
+    "jsonrpc": "2.0", "id": 265, "method": "telemetry.component",
+    "params": { "componentId": "cmp-typo" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 265,
+    "error": {
+      "code": -31801,
+      "message": "no telemetry for that subject",
+      "data": {
+        "what": "no telemetry row exists for component \"cmp-typo\" — either it has produced no counted work yet or no such component is in this store; `aeon component list` names what does",
+        "means": "either it has produced no counted work since telemetry began, or the id names nothing here — telemetry is only written by the runtime's own capture seams, so it cannot be backfilled by a caller",
+        "todo": "the message names the id refused; `aeon component list`, `aeon project list` and `aeon step list` name what does exist",
+        "fatal": false
+      }
+    }
+  }
+}

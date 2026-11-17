@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "position": 1,
+      "goal": "shipped",
+      "status": "done",
+      "loopSlug": "loop-one"
+    },
+    {
+      "id": 2,
+      "position": 2,
+      "goal": "unstartable",
+      "status": "blocked",
+      "loopSlug": ""
+    }
+  ],
+  "starts": [
+    {
+      "blueprint": "dev-loop",
+      "goal": "unstartable",
+      "workspaceRoot": "\u003ctest-root\u003e",
+      "slug": "",
+      "attended": null,
+      "with": null
+    }
+  ],
+  "question": null,
+  "sizingLoop": false
+}

@@ -1,0 +1,77 @@
+{
+  "history": {
+    "manage": {
+      "title": "History",
+      "subtitle": "What the daemon can show about runs it has finished — and what it cannot say.",
+      "back": "Projects",
+      "reconnecting": "The daemon is reconnecting — the history view asks nothing until the connection is current.",
+      "reconnectingHint": "No rows are held over from the last answer: an answer that never arrived is not a fact.",
+      "offline": "The daemon is not reachable — nothing can be shown until it is talking again.",
+      "actions": {
+        "retry": "ask the daemon again"
+      },
+      "vocabulary": {
+        "failed": "The daemon’s vocabulary could not be read — until it answers, this screen names no lanes and offers no grouping."
+      },
+      "scope": {
+        "title": "Scope",
+        "subtitle": "One scope, one way: the daemon is asked with its own filter words, never with a sweep of this screen’s.",
+        "rootLabel": "Component root",
+        "rootHint": "Pick a root, or leave the span whole — the screen never names a component you did not pick.",
+        "rootPicked": "The roots below are the ones the daemon lists today; an empty answer offers only the whole span.",
+        "rootAll": "every component (the whole span)",
+        "laneLabel": "Lane",
+        "laneHint": "The lane words are the daemon’s, served by history.vocabulary — this screen types none of them.",
+        "laneDefault": "the daemon’s default lane",
+        "laneWaiting": "No lanes yet — nothing can be chosen until history.vocabulary answers.",
+        "sinceLabel": "Since",
+        "sinceHint": "An optional lower bound, sent only when you type one."
+      },
+      "coverage": {
+        "title": "Coverage",
+        "scopeAll": "every component",
+        "live": "live: {count}",
+        "archived": "archived: {count}",
+        "span": "span {oldest} → {newest}",
+        "healthy": "Nothing here is undecodable.",
+        "cannotSay": "This view cannot say what {count} archived entries contain — they are neither shown nor absent.",
+        "cannotSayHint": "The ids named below are the ones the daemon could point at; the count is the whole of them, and the list is capped by the daemon’s own limit.",
+        "notShown": "Not shown",
+        "notShownCount": "{count}",
+        "floorLabel": "Cost floor",
+        "failed": "The coverage read was refused — the rows below stand unqualified until it answers.",
+        "loading": "Asking the daemon what it covers…",
+        "none": "No coverage answer has arrived yet — what follows is unqualified."
+      },
+      "rows": {
+        "title": "Rows",
+        "subtitle": "The rows the daemon grouped and filtered, in its answer’s own order.",
+        "loading": "Asking the daemon…",
+        "failed": "The rows were refused.",
+        "noStatement": "The daemon answered with no rows and sent no statement — this screen writes none of its own."
+      },
+      "row": {
+        "show": "open the entry",
+        "lane": "lane",
+        "outcome": "outcome",
+        "cost": "cost",
+        "duration": "duration",
+        "reason": "reason"
+      },
+      "export": {
+        "label": "Export",
+        "working": "Asking the daemon…",
+        "personOnly": "Export is a person’s door — it is disabled while you are read-only or the daemon is not answering.",
+        "done": "Saved {count} rows to your downloads.",
+        "refused": "The export was refused."
+      },
+      "drilldown": {
+        "title": "The entry, through its own door",
+        "loading": "Asking the daemon for this entry…",
+        "refused": "The daemon refused this entry",
+        "nothing": "The answer carried no transcript and no files — there is nothing to show, and nothing is invented.",
+        "close": "close"
+      }
+    }
+  }
+}

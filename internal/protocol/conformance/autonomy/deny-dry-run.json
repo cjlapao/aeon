@@ -1,0 +1,12 @@
+{
+  "description": "The autonomy.deny dry run (S56 T10, behaviours 3/4): the same veto as deny.json with dryRun:true — every validation runs (the node door, the pure validator's subject rules), nothing is written, and the result is the daemon's own sentence of what would be vetoed. The grant field is null — there is no row, and a dry run that carried a view would be a decision made twice. dryRun is a param on grant, deny and revoke only.",
+  "method": "autonomy.deny",
+  "request": {"jsonrpc": "2.0", "id": 415, "method": "autonomy.deny", "params": {"nodeId": "pkg/web", "subject": "outward", "dryRun": true}},
+  "response": {
+    "jsonrpc": "2.0", "id": 415,
+    "result": {
+      "grant": null,
+      "confirmation": "dry run: this would veto outward on pkg/web — nothing was written"
+    }
+  }
+}

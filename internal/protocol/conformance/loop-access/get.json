@@ -1,0 +1,30 @@
+{
+  "description": "A loop's permission mode: ask is the default (no stored mode), so setBy and setAt are absent and tools is an empty list, never null.",
+  "method": "loop.access",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 410,
+    "method": "loop.access",
+    "params": {
+      "id": "l-7"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 410,
+    "result": {
+      "id": "l-7",
+      "mode": "ask",
+      "tools": [],
+      "askingTools": [
+        "bash",
+        "write",
+        "edit",
+        "doc_write",
+        "doc_edit",
+        "webfetch",
+        "ask_agent"
+      ]
+    }
+  }
+}

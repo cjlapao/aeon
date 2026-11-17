@@ -1,0 +1,24 @@
+{
+  "description": "S59 T6 (EV7) at the DOOR: a reference is a POINTER, and the vocabulary a credential arrives under is refused on every method of this plane \u2014 write OR read \u2014 with the transport's bad-params code and the key named. This is the shape of the leak the whole plane exists to close: a client that can post a secret can also log it, proxy it and replay it. The sanctioned way in is the daemon's environment variable, a key file, or the daemon's own credential store. The refusal is a transport-level condition, so it keeps JSON-RPC's own code and carries no `data` (conformance/README): the shape of params is a protocol fact, not an Aeon refusal with a kind a client branches on.",
+  "method": "secretref.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 918,
+    "method": "secretref.create",
+    "params": {
+      "name": "deploy-token",
+      "sourceKind": "daemon-env",
+      "source": "DEPLOY_TOKEN",
+      "token": "sk-live-0123456789abcdef"
+    }
+  },
+  "fromDoor": true,
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 918,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: secretref.create params carry \"token\" \u2014 a secret reference is a name and a pointer; this plane has no field for a value, in this or any other key \u2014 the value lives in the source the reference names (S59 EV7)"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "description": "tools.byAgent for `atlas`: the whole view one agent may call, in one read, and the answer the gate itself would give (TC5 — the same `GrantedSet` union and the same evaluator the step's builder uses, checked row by row against both in the daemon's own suite). All five states are here: `granted_allowed` (the allow that decides, `read`, and the effect class that decides for an MCP tool), `granted_ask` (`webfetch`, an ask that outranks the allow and is NOT a permission — S11), `granted_denied` (bash, refused by a named row), `granted_no_rule` (acme.post, held and unclassified: no rule spoke, which is a different fact from a denial and from \"nobody declared it\"), and `not_granted` (`todo`, outside the grant set, with no reason because none was sought). MCP names are qualified and appear ONLY for the servers this agent declared against — an agent cannot ask about another agent, and there is no field in which to try (TC9). The list is every tool that EXISTS, not only the granted ones: \"may call nothing\" and \"this tool was never granted to you\" are the two answers a grants screen exists to tell apart.",
+  "method": "tools.byAgent",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 648,
+    "method": "tools.byAgent",
+    "params": {
+      "agent": "atlas"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 648,
+    "result": {
+      "agent": "atlas",
+      "dispatchable": true,
+      "tools": [
+        {
+          "tool": "acme.post",
+          "agent": "atlas",
+          "state": "granted_no_rule",
+          "reason": "refused: an unclassified tool cannot be called (MC6)",
+          "granted_by": [
+            "mcp-declare"
+          ],
+          "dispatchable": true
+        },
+        {
+          "tool": "acme.search",
+          "agent": "atlas",
+          "state": "granted_allowed",
+          "reason": "allow · effect_class · acme.search · agent:atlas",
+          "granted_by": [
+            "mcp-declare"
+          ],
+          "dispatchable": true
+        },
+        {
+          "tool": "bash",
+          "agent": "atlas",
+          "state": "granted_denied",
+          "reason": "refused: agent:atlas · tool_access \"deny-bash-atlas\" · target agent:atlas · source operator · no expiry",
+          "granted_by": [
+            "handler"
+          ],
+          "dispatchable": true
+        },
+        {
+          "tool": "read",
+          "agent": "atlas",
+          "state": "granted_allowed",
+          "reason": "allowed: agent:atlas · tool_access \"allow-read-all\" · target all-agents · source operator · no expiry",
+          "granted_by": [
+            "default",
+            "handler"
+          ],
+          "dispatchable": true
+        },
+        {
+          "tool": "todo",
+          "agent": "atlas",
+          "state": "not_granted",
+          "dispatchable": true
+        },
+        {
+          "tool": "webfetch",
+          "agent": "atlas",
+          "state": "granted_ask",
+          "reason": "asked: agent:atlas · tool_access \"ask-webfetch-atlas\" · target agent:atlas · source operator · no expiry",
+          "granted_by": [
+            "handler"
+          ],
+          "dispatchable": true
+        }
+      ]
+    }
+  }
+}

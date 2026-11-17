@@ -1,0 +1,75 @@
+{
+  "description": "Lists both families on one page \u2014 the schedule and the event trigger side by side, each carrying its last answer, the unified list AN1 promised: one name, one row, one place.",
+  "method": "automation.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8201,
+    "method": "automation.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8201,
+    "result": {
+      "automations": [
+        {
+          "source": "schedule",
+          "id": "sch-morning",
+          "name": "Morning standup",
+          "blueprint": "morning-standup",
+          "workspace": "/home/p/ops",
+          "goal": "Daily morning sweep",
+          "expr": "0 7 * * *",
+          "zone": "Europe/Lisbon",
+          "enabled": true,
+          "createdByKind": "user",
+          "createdById": "operator",
+          "createdAt": "2026-10-01T08:00:00Z",
+          "updatedAt": "2026-10-01T08:00:00Z",
+          "lastFire": {
+            "source": "schedule",
+            "triggerId": "sch-morning",
+            "fireId": 41,
+            "at": "2026-11-03T07:00:00.000Z",
+            "outcome": "started",
+            "reason": "",
+            "loopId": "loop-9b2c1010",
+            "loopSlug": "morning-2026-11-03-0700"
+          }
+        },
+        {
+          "source": "event",
+          "id": "trg-bugs",
+          "name": "Bug squad",
+          "blueprint": "bug-triage",
+          "match": {
+            "event": "task.created",
+            "task_type": [
+              "bug"
+            ]
+          },
+          "kickoff": "Triage {{task.title}}",
+          "maxRunsPerHour": 6,
+          "enabled": true,
+          "createdByKind": "user",
+          "createdById": "operator",
+          "createdAt": "2026-10-20T10:00:00Z",
+          "updatedAt": "2026-10-20T10:00:00Z",
+          "lastFire": {
+            "source": "event",
+            "triggerId": "trg-bugs",
+            "fireId": 12,
+            "at": "2026-11-02T18:04:11.000Z",
+            "outcome": "started",
+            "reason": "",
+            "loopId": "loop-4d2e2020",
+            "loopSlug": "triage-tsk-61aa",
+            "subjectKind": "task",
+            "subjectId": "tsk-61aa",
+            "depth": 1
+          }
+        }
+      ]
+    }
+  }
+}

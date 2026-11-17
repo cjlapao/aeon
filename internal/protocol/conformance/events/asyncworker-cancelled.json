@@ -1,0 +1,21 @@
+{
+  "description": "A worker the caller asked to stop, stopped (S64): someone pressed cancel, the live context closed, the runner returned context.Canceled, and the worker's own goroutine wrote this ending — cancelRequested true on the way out is the trace of who asked. Cancelled is chosen, not suffered: failed is the work refusing, interrupted is the daemon dying, and a screen that conflates them tells the user a lie about what happened.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c", "seq": 1434, "kind": "asyncworker.cancelled",
+      "at": "2026-10-30T17:47:03.123456789Z",
+      "payload": {
+        "workerId": "aw_11223344556677889900aabbccddeeff",
+        "workerType": "graph.build",
+        "componentRoot": "/home/dev/shop",
+        "state": "cancelled",
+        "cancelRequested": true,
+        "error": "cancelled",
+        "queuedAt": "2026-10-30T17:41:02.000Z",
+        "startedAt": "2026-10-30T17:41:02.000Z",
+        "finishedAt": "2026-10-30T17:47:03.000Z"
+      }
+    }
+  }
+}

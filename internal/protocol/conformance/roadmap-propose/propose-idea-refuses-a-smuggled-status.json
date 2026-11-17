@@ -1,0 +1,24 @@
+{
+  "description": "S50 T5 (RM8) at the DOOR: the agent's one ask names WHICH IDEA and NOTE, never WHERE on the ladder it lands. A `status` in roadmap.proposeIdea params is refused at the strict parse and the refusal NAMES the field — a payload that could name the rung it wants is a payload that proposes a write, and an idea that arrived ranked would be an idea that arrived decided: the status, the priority, the estimate and the provenance are the person's to give at add or later (RM8), the door can only carry the ask. The same parse refuses a smuggled `priorityState`, `estimate`, `provenance`, `actor` (the author is the STEP the connection belongs to, stamped from the step context — OL3) or `epic`-shaped authority for the same reason. The refusal is a transport-level condition, so it keeps JSON-RPC's own code and carries no `data` (conformance/README), and it happens before the records plane is consulted — a door refusal that already touched the store is a refusal that already acted.",
+  "method": "roadmap.proposeIdea",
+  "fromDoor": true,
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 971,
+    "method": "roadmap.proposeIdea",
+    "params": {
+      "componentRoot": "/srv/aeon",
+      "title": "carry the roadmap health line into the doctor report",
+      "note": "this one is clearly ready, just needs a row",
+      "status": "ready"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 971,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: refused: json: unknown field \"status\" — identity fields (project, loop, component, author) are stamped by the step, and every other field belongs in the schema"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "description": "budget.show is the single-budget read: the view, the spend breakdown with P31's honesty marks (the floor, the partial/unknown counts beside it, exact saying when the floor is a total), the OPEN loops the budget currently covers, the audit trail (oldest first, the screen's window), and the worst-case overshoot note — how far past the cap ONE MORE STEP could spend before the next check fires, honest arithmetic over the priced routes' bounds, never a promise.",
+  "method": "budget.show",
+  "request": {
+    "jsonrpc": "2.0", "id": 602, "method": "budget.show",
+    "params": {"id": "bud-epc-1"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 602,
+    "result": {
+      "view": {
+        "id": "bud-epc-1",
+        "scope": "epic",
+        "subjectId": "epc-1",
+        "window": "lifetime",
+        "enabled": true,
+        "unknownPolicy": "proceed",
+        "warnPct": 80,
+        "origin": "user",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z",
+        "status": "warn",
+        "dimensions": [
+          {"dimension": "usd", "cap": 900, "spendFloor": 745.5, "exact": false, "unknownCount": 2}
+        ],
+        "lastChanged": {"at": "2026-11-01T09:00:00.000Z", "kind": "created", "byKind": "user", "byId": "1000"}
+      },
+      "spend": {
+        "usdFloor": 745.5,
+        "usdPartial": 1,
+        "usdUnknown": 2,
+        "exact": false,
+        "tokens": 182000,
+        "tokensUnknown": 2,
+        "wallMs": 512000,
+        "steps": 41
+      },
+      "openLoops": ["loop-1", "loop-2"],
+      "history": [
+        {"at": "2026-11-01T09:00:00.000Z", "kind": "created", "actorKind": "user", "actorId": "1000"},
+        {"at": "2026-11-01T11:30:00.000Z", "kind": "warned", "actorKind": "system", "actorId": "engine", "dimension": "usd", "newValue": 900, "spendFloor": 720.25}
+      ],
+      "overshootNote": "one more step can spend up to $12.42 before the next check fires (worst case over priced routes: claude-opus)"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "description": "A queue refusal names BOTH the reason and the thing refused (T2's discipline) and moves NOTHING: D11 says a `running` item's cancel is refused — the loop owns its own stopping, and the queue does not outrank it. The row keeps the state it had; the client's remedy is the board, not a retry: queue.list to see, then act on what IS there. Every state-law refusal in S24 rides this one code — the reason lives in `what`, the law lives in the reason.",
+  "method": "queue.remove",
+  "request": {"jsonrpc": "2.0", "id": 307, "method": "queue.remove", "params": {"id": 9}},
+  "response": {"jsonrpc": "2.0", "id": 307, "error": {
+    "code": -31700,
+    "message": "the queue refused the act",
+    "data": {
+      "what": "a running item cannot be removed (D11) — item 9 is running; stop its loop if it must stop",
+      "means": "nothing moved — the row keeps the state it had",
+      "todo": "read the reason in `what`, then queue.list to see the board as the daemon sees it",
+      "fatal": false
+    }
+  }}
+}

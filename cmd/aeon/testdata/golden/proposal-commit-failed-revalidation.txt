@@ -1,0 +1,2 @@
+$ aeon proposal commit 1
+! refused: proposal <ID> failed re-validation at commit — mcp: server "github" already exists in public — server names are one namespace across every tier (MC8) (nothing was applied; the row stays proposed for a human to reconsider)

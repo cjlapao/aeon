@@ -1,0 +1,25 @@
+{
+  "description": "backup.prune refused: the engine's fence met a name it will not delete (here a file in the family's name that is not a regular file the fence admits) and the refusal rides the family's one code with the closed-set kind in data.kind and the fence's sentence verbatim in data.what. The plan is not applied and no row says success — the prune either fully happened or it is refused, and the refused answer says what it found. The wire carries the shape the handler renders for ANY refusal the seam returns.",
+  "method": "backup.prune",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 960,
+    "method": "backup.prune",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 950,
+    "error": {
+      "code": -31863,
+      "message": "the backup was refused",
+      "data": {
+        "kind": "io",
+        "what": "backup prune refused: the fence will not delete aeon-state-20261003T120000Z-v70.aeonbak — it is not a regular file the fence admits, and the plan is not applied",
+        "means": "the daemon understood and declined — the database was left exactly as it was, no partial published, and the ledger row (where one was written) says refused with its error_kind",
+        "todo": "do what the what sentence names — free space, fix the dir, wait for the lock, or update the binary",
+        "fatal": false
+      }
+    }
+  }
+}

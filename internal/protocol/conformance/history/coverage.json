@@ -1,0 +1,16 @@
+{
+  "description": "history.coverage is S53's honesty read (HV1): for a scope it answers what the history view SHOWS (live and archived counts with the span they actually cover), what it CANNOT SAY (undecodable archives — a count plus at most 20 named ids, never silently absent) and what it DOES NOT SHOW (notShown: on a step lane, the archived loops that lane leaves out). floor.statement is S25's own P32 sentence verbatim — the view states the cost floor in the slice's own words. An empty scope is the every-component span, exactly like history.list; projectRoot and componentRoot name the same scope and naming both is refused by name.",
+  "method": "history.coverage",
+  "request": {"jsonrpc": "2.0", "id": 414, "method": "history.coverage", "params": {"projectRoot": "/proj"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 414,
+    "result": {
+      "scope": "/proj",
+      "live": {"loops": 1, "oldest": "2026-11-04T10:00:00Z", "newest": "2026-11-04T10:00:00Z"},
+      "archived": {"loops": 1, "oldest": "2026-11-01T09:00:00Z", "newest": "2026-11-01T09:00:00Z"},
+      "undecodable": {"count": 0, "ids": []},
+      "floor": {"statement": "A cost is a floor, never a bare number (\"at least $X (K of N steps unknown)\");"},
+      "notShown": []
+    }
+  }
+}

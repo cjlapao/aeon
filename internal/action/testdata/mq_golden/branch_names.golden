@@ -1,0 +1,4 @@
+feature.on-main: branch=feature/4a17-version reused=false checkedOutAfter=main startsAt=$SHA (== HEAD $SHA)
+feature.again: reused=true checkedOutAfter=main
+task.on-main: branch=task/4a17-version/fix-parse-order reused=false checkedOutAfter=task/4a17-version/fix-parse-order startsAt=$SHA (== HEAD $SHA)
+feature.on-side: startsAt=$SHA (== side HEAD $SHA — today the base is HEAD, never the default branch)

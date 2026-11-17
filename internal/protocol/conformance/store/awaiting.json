@@ -1,0 +1,17 @@
+{
+  "description": "`store.awaiting` returns THE QUERY as well as the answer. Anyone arriving from v1 will look for an `awaiting_user` column and not find one; showing the derivation is how they learn why it is not stored (DB6) — a flag and an unanswered question can disagree, and when they do nothing says which is right.",
+  "method": "store.awaiting",
+  "request": {
+    "jsonrpc": "2.0", "id": 49, "method": "store.awaiting",
+    "params": {"all": true}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 49,
+    "result": {
+      "sql": "SELECT 1 FROM question\nWHERE component_root = ? AND loop_slug = ? AND answered_at IS NULL LIMIT 1",
+      "loops": [
+        {"slug": "refactor", "componentRoot": "/home/p/repo-b"}
+      ]
+    }
+  }
+}

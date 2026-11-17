@@ -1,0 +1,16 @@
+{
+  "description": "A loop blocked after a revise answer keeps the completed gate step but marks the active lane blocked and exposes the durable reason.",
+  "method": "loop.show",
+  "request": { "jsonrpc": "2.0", "id": 93, "method": "loop.show", "params": { "id": "loop-2", "includeBlueprint": false } },
+  "response": { "jsonrpc": "2.0", "id": 93, "result": {
+    "id": "loop-2", "slug": "loop-2", "blueprint": "two-step", "version": 2,
+    "goal": "Survey", "root": "/repo", "status": "blocked",
+    "position": { "lane": "approve" }, "lastReason": "gate answer revise: reject has no rework target",
+    "startedAt": "2026-10-19T08:00:00Z", "updatedAt": "2026-10-19T08:01:00Z",
+    "lanes": [
+      { "id": "survey", "status": "ok", "steps": [{ "id": "survey", "kind": "model-step", "status": "done", "outcome": "ok" }] },
+      { "id": "approve", "status": "blocked", "steps": [{ "id": "approve", "kind": "gate", "status": "done", "outcome": "revise" }] },
+      { "id": "summarise", "status": "pending", "steps": [{ "id": "summarise", "kind": "model-step", "status": "pending" }] }
+    ]
+  } }
+}

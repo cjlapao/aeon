@@ -1,0 +1,15 @@
+{
+  "description": "The learning enters through its ONLY door and the honesty is on full display: provenance is REQUIRED on the wire (the column has no default at the database) and here it is `observed`, so `observedCount` rides beside it — M3's strength, set once at write time, the count is the strength. The agent scope is validated by a Go-level check (design §3), so `scopeKey` names a real agent, and `provenance` is `observed`, never `relaxed` (M1: relayed is refused at this door — a hand-authored board answer makes the label lie about its own source). The tags travel with the write (M5).",
+  "method": "learnings.add",
+  "request": {"jsonrpc": "2.0", "id": 361, "method": "learnings.add", "params": {"scope": "agent", "scopeKey": "golang-engineer", "body": "nil-map writes panic — checked once, remembered forever", "provenance": "observed", "observedCount": 3, "tags": ["go", "concurrency"]}},
+  "response": {"jsonrpc": "2.0", "id": 361, "result": {"learning": {
+    "id": 7,
+    "scope": "agent",
+    "scopeKey": "golang-engineer",
+    "body": "nil-map writes panic — checked once, remembered forever",
+    "provenance": "observed",
+    "observedCount": 3,
+    "tags": ["go", "concurrency"],
+    "createdAt": "2026-10-30T06:17:25Z"
+  }}}
+}

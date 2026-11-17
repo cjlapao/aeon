@@ -1,0 +1,18 @@
+{
+  "description": "The autonomy.grant refusal for a merge grant whose expiry runs too far out (S56 T6, the -31833 family): a merge grant may not outlive the closed bound (90 days from now, from the vocabulary's limits) — an unbounded-in-practice merge authority is the same failure the expiry rule exists to stop, wearing a far-future date. The bound is the closed set's, not a judgment: the validator compares against the limit, and the sentence names the number.",
+  "method": "autonomy.grant",
+  "request": {"jsonrpc": "2.0", "id": 426, "method": "autonomy.grant", "params": {"rootId": "aeon", "subject": "forge.merge", "conditions": {"requireGates": true, "requireBudget": true}, "expiresAt": "2027-02-15T00:00:00Z"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 426,
+    "error": {
+      "code": -31833,
+      "message": "autonomy write refused",
+      "data": {
+        "what": "a merge grant may not outlive 90 days from now",
+        "means": "a grant is a human-authored authority record with closed rules (subject, conditions, expiry, the node it may sit on); a request outside them is refused, not silently corrected — nothing was written",
+        "todo": "the refusal names the rule it broke and the thing it broke it on; `autonomy.vocabulary` lists the closed sets a request may name",
+        "fatal": false
+      }
+    }
+  }
+}

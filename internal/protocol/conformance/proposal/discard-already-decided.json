@@ -1,0 +1,15 @@
+{
+  "description": "proposal.discard against a row somebody already committed — T1's guarded UPDATE (the same claimed-FROM pattern TransitionPluginAgent uses) changed zero rows, and the store's own refusal names who decided it and when, verbatim. ok:false in the RESULT, never a thrown RPC error (design.md §2's worked example).",
+  "method": "proposal.discard",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 94,
+    "method": "proposal.discard",
+    "params": {"id": 7}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 94,
+    "result": {"ok": false, "error": "already committed by 1000 at 2026-10-29T15:10:00Z"}
+  }
+}

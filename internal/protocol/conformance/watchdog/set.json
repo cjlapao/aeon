@@ -1,0 +1,29 @@
+{
+  "description": "watchdog.set that CREATES (scope/subjectId/signal/action/threshold names no row yet): a rule that did not exist now restricts work, so a create tightens a safeguard — no confirmation is needed, the commit lands directly. The result carries the view (the threshold already in its human unit) and the effect, and no statement, because nothing loosened. The key is fixed (scope, subject, signal, action, threshold): a set at an existing key flips only the enabled field, and a create whose (scope, subject, signal, action) already has a rule at ANOTHER threshold is a duplicate refusal — one threshold per combination, and a threshold change is a removal (confirmed) plus a fresh create (free).",
+  "method": "watchdog.set",
+  "request": {
+    "jsonrpc": "2.0", "id": 624, "method": "watchdog.set",
+    "params": {"scope": "component", "subjectId": "/repos/aeon", "signal": "same-position", "threshold": 5, "action": "stop"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 624,
+    "result": {
+      "view": {
+        "id": "wdr-3",
+        "scope": "component",
+        "subjectId": "/repos/aeon",
+        "signal": "same-position",
+        "threshold": 5,
+        "thresholdHuman": "5",
+        "action": "stop",
+        "enabled": true,
+        "origin": "user",
+        "createdAt": "2026-11-01T12:00:00.000Z",
+        "updatedAt": "2026-11-01T12:00:00.000Z",
+        "fireCount": 0,
+        "loopsInEpisode": []
+      },
+      "effect": "created"
+    }
+  }
+}

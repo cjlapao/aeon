@@ -1,0 +1,59 @@
+{
+  "description": "The fire log of one trigger: every outcome is a row with its reason, and the counts always carry all five outcomes (zero included) so the page can show five pills.",
+  "method": "automation.trigger.fires",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 201,
+    "method": "automation.trigger.fires",
+    "params": {
+      "triggerId": "tr1",
+      "beforeId": 100,
+      "limit": 50
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 201,
+    "result": {
+      "fires": [
+        {
+          "id": 2,
+          "triggerId": "tr1",
+          "outboxId": 7,
+          "subjectKind": "goal",
+          "subjectId": "g1",
+          "depth": 0,
+          "outcome": "limited",
+          "reason": "max-runs-per-hour: 2 started since 2026-10-27T08:00:00Z, limit 2",
+          "loopId": "",
+          "loopSlug": "",
+          "costNote": "cost-unknown",
+          "claimedAt": "2026-10-27T08:30:00Z",
+          "decidedAt": "2026-10-27T08:30:00Z"
+        },
+        {
+          "id": 1,
+          "triggerId": "tr1",
+          "outboxId": 4,
+          "subjectKind": "goal",
+          "subjectId": "g0",
+          "depth": 0,
+          "outcome": "started",
+          "reason": "",
+          "loopId": "l1",
+          "loopSlug": "auto-tr1-4",
+          "costNote": "",
+          "claimedAt": "2026-10-27T08:10:00Z",
+          "decidedAt": "2026-10-27T08:10:01Z"
+        }
+      ],
+      "counts": {
+        "started": 1,
+        "refused": 0,
+        "limited": 1,
+        "skipped": 0,
+        "could-not-say": 0
+      }
+    }
+  }
+}

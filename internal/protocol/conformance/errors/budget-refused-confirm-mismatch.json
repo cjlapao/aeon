@@ -1,0 +1,24 @@
+{
+  "description": "A budget.remove whose confirm digest does not match the statement the daemon renders from the row AS IT IS NOW: the row moved between the read and the commit (or the client computed against a stale read), and the act is refused rather than silently loosened. data.kind is confirm-mismatch, and the refusal carries the current statement and its correct digest (the S45 PM7.1 pattern: a commit is bound to what was read) — the remedy is one re-read, not a guess.",
+  "method": "budget.remove",
+  "request": {
+    "jsonrpc": "2.0", "id": 613, "method": "budget.remove",
+    "params": {"id": "bud-epc-1", "confirm": "0000000000000000000000000000000000000000000000000000000000000000"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 613,
+    "error": {
+      "code": -31861,
+      "message": "the budget refused the operation",
+      "data": {
+        "kind": "confirm-mismatch",
+        "what": "budget remove refused: the digest does not match the statement rendered from the row as it is now (it moved since you read it) — read it again and remove with the new digest",
+        "means": "the daemon understood and declined — no budget row was written and nothing moved",
+        "todo": "do what the what sentence names",
+        "statement": "remove budget bud-epc-1 (epic epc-1, lifetime): in-force caps usd=900 — after this, no cap applies at this subject",
+        "confirm": "0d0e9e5f01d0c09945a124dbd0286b558fc1e2f1a790580b79901ff7663ff7c5",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "description": "budget.set with dryRun: the effect it WOULD take, the canonical statement and its digest when the act loosens authority, and NO view — nothing was written (LC11's honest absence). The client uses this one round trip to show the person the statement and to harvest the digest the confirmed commit (set-raise-confirmed.json) needs.",
+  "method": "budget.set",
+  "request": {
+    "jsonrpc": "2.0", "id": 607, "method": "budget.set",
+    "params": {"scope": "epic", "subjectId": "epc-1", "window": "lifetime", "usdCap": 1200, "dryRun": true}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 607,
+    "result": {
+      "effect": "updated",
+      "dryRun": true,
+      "statement": "budget bud-epc-1: set the usd cap from 900 to 1200",
+      "digest": "34dc99b6f5aa59aed400781751f49f43d7d95f5f17df1826d6b58ec7a9d40bd2"
+    }
+  }
+}

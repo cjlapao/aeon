@@ -1,0 +1,27 @@
+{
+  "description": "backup.verify refused because the configured backup dirs hold no file by that name: the service's own refusal, kind unknown (the closed-set voice for 'I looked and it is not there'), the sentence naming the absence by the NAME the caller gave — never a path. This is the refusal that keeps the door honest: a verify of a file that does not exist is not a pass, and the ledger row says failed with the kind, so the status can see the attempt.",
+  "method": "backup.verify",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 955,
+    "method": "backup.verify",
+    "params": {
+      "file": "aeon-state-20261101T090000Z-v74.aeonbak"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 950,
+    "error": {
+      "code": -31863,
+      "message": "the backup was refused",
+      "data": {
+        "kind": "unknown",
+        "what": "backup verify refused: no backup file named \"aeon-state-20261101T090000Z-v74.aeonbak\" — the configured backup dirs hold no such file",
+        "means": "the daemon understood and declined — the database was left exactly as it was, no partial published, and the ledger row (where one was written) says refused with its error_kind",
+        "todo": "do what the what sentence names — free space, fix the dir, wait for the lock, or update the binary",
+        "fatal": false
+      }
+    }
+  }
+}

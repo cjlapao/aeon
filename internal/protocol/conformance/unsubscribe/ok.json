@@ -1,0 +1,9 @@
+{
+  "description": "Unsubscribing an id that is already gone is NOT an error: a client racing its own teardown is ordinary, and making it an error would mean every client needs code for a race it did not cause. This fixture is the same for a live id and a dead one.",
+  "method": "unsubscribe",
+  "request": {
+    "jsonrpc": "2.0", "id": 10, "method": "unsubscribe",
+    "params": {"subscriptionId": "s-7f3a1b2c"}
+  },
+  "response": {"jsonrpc": "2.0", "id": 10, "result": {}}
+}

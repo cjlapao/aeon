@@ -1,0 +1,27 @@
+{
+  "description": "The vocabulary is the plane's, not the caller's: mergequeue.vocabulary takes no params, and asking it for 'your own' is the shape of mistake this refusal exists to end.",
+  "method": "mergequeue.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 152,
+    "method": "mergequeue.vocabulary",
+    "params": {
+      "componentRoot": "/srv/components/alpha"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 152,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: mergequeue.vocabulary takes no params \u2014 the vocabulary is the plane's, not the caller's",
+      "data": {
+        "what": null,
+        "means": null,
+        "todo": null,
+        "fatal": false
+      }
+    }
+  },
+  "fromDoor": true
+}

@@ -1,0 +1,35 @@
+{
+  "description": "S50 T2 (RM1): the edit door, narrow by design \u2014 the row is retitled and EVERY column the call did not name rides on unchanged (priorityState, priorityLabel, estimate, status, provenance all byte-identical; the type cannot name them, so no caller can reach them). The audit gets ONE `update` row naming the FIELDS, never the values, never user text (RM2). `changed:true` says a row moved; the same call with the CURRENT title answers changed:false with no audit row at all \u2014 an edit that changed nothing is not an event. Status, priority, estimate and provenance are refused by key (see update-unknown-key-refused.json); artifact paths ride this door only until the item starts, and only under its own component root.",
+  "method": "roadmap.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 967,
+    "method": "roadmap.update",
+    "params": {
+      "id": 12,
+      "title": "export monthly statements (retitled)"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 967,
+    "result": {
+      "item": {
+        "id": 12,
+        "componentRoot": "/srv/projects/ledger",
+        "title": "export monthly statements (retitled)",
+        "epic": "reports",
+        "status": "idea",
+        "priorityState": "assumed",
+        "priorityLabel": "P1",
+        "estimateMin": null,
+        "estimateMax": null,
+        "estimateBasis": null,
+        "provenance": "authored",
+        "createdAt": "2026-10-29T09:00:00Z",
+        "updatedAt": "2026-10-29T09:05:00Z"
+      },
+      "changed": true
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "description": "The second DEBUG method (S14 T3): the daemon's goroutine stacks, so `aeon debug goroutines | grep -c agentsvc` answering 0 can be SHOWN — an async Task is a suspension (AS4/P2), and the stacks are the evidence. Debug-marked so S19's narrowed surface excludes it: goroutine dumps on a public surface are an information leak by another name.",
+  "method": "debug.goroutines",
+  "request": {"jsonrpc": "2.0", "id": 15, "method": "debug.goroutines"},
+  "response": {
+    "jsonrpc": "2.0", "id": 15,
+    "result": {
+      "goroutines": 12,
+      "stacks": "goroutine 1 [running]:\nmain.main()\n\t/home/aeon/cmd/aeon/main.go:24 +0x40\n\ngoroutine 18 [chan receive]:\ngithub.com/cjlapao/go-backend-scaffolding/framework/services/localrpc.(*server).acceptLoop()\n\t/…/localrpc/server.go:210 +0x88\n"
+    }
+  }
+}

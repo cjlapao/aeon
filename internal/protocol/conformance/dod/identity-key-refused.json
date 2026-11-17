@@ -1,0 +1,29 @@
+{
+  "description": "dod.mark refused as a shape error because its params name an identity key: the actor is stamped by the daemon from the CONNECTION, never read from params — and a DoD mark is the person's act (the pairing backstop says a manual mark is a user's), so a param that names the actor would let a caller forge the very identity the backstop checks. The refusal happens before the seam is even asked.",
+  "method": "dod.mark",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1065,
+    "method": "dod.mark",
+    "params": {
+      "actor": {
+        "id": "1000",
+        "kind": "user"
+      },
+      "evidence": {
+        "kind": "manual",
+        "ref": "the test exists, see brief-1"
+      },
+      "id": "dod-2",
+      "state": "met"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1065,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: dod.mark params carry \"actor\" — the actor is stamped by the daemon from the connection, never named by the caller"
+    }
+  }
+}

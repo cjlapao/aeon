@@ -1,0 +1,56 @@
+# land-feature — the merge queue's landing run (S60 T7). The queue's driver
+# starts exactly one of these per item that enters the landing lane, and the
+# lanes are MQ12's five steps as data: merge forward, verify, publish, open
+# the landing PR, and land ONLY on the authority the run was started under.
+# Every identity (item, branches, positions, land method) rides the loop's
+# pinned `with` — code composed it from the item row; no lane takes a model's
+# word for anything, and forge.land's own dispatch re-derives the branch it
+# lands (MQ8). The gate lane is the manual-mode person: it is SKIPPED by
+# CODE for an auto-mode run (flags.auto_land is stamped at pin from the
+# queue mode the reactor read — never from a model's handoff).
+id: land-feature
+schemaVersion: 1
+version: 1
+lanes:
+  # catch-up: MQ6.1's merge-forward — fetch base, cut/reattach the
+  # integrate ref at the base tip, merge the item's branch in. A conflict
+  # leaves the merge IN PROGRESS here and blocks the loop; the queue reads
+  # the block as the item's conflicted state (the resolution loop's work
+  # continues in this same worktree).
+  - id: catch-up
+    step: { kind: code-action, action: git.integrate }
+  # verify: the repository's own effective gate set, run against the
+  # integration head — evidence (verify_head_sha, verify_state) is what
+  # the queue's ready-state binds (MQ11), not a model's summary.
+  - id: verify
+    step: { kind: code-action, action: verify.run }
+  # publish: the ONE outward git half — a plain push of the integrate ref
+  # the queue named. Never force, never a person's branch (MQ6.4).
+  - id: publish
+    step: { kind: code-action, action: git.publishIntegration }
+  # pr: the landing PR, base = the item's base branch, head = the
+  # integrate ref; its number enters evidence and nothing else opens it.
+  - id: pr
+    step: { kind: code-action, action: forge.openLandingPR }
+  # land-check: manual/auto-without-grant mode stops for the person here.
+  # merge-now advances; abort is the person's NO (AnswerGate's special
+  # word — the loop ends aborted and the queue ends the item with it);
+  # any other answer is junk the engine refuses without deciding.
+  - id: land-check
+    when: { field: flags.auto_land, op: neq, value: true }
+    step: { kind: gate, question: land-now }
+  # land: runs ONLY on the authority that got written — the auto-mode
+  # stamp, or the person's merge-now at the gate above. A skipped gate
+  # leaves the answer unset, so this lane stays unrun: silence never
+  # lands anything. forge.land then re-checks S56 live (a grant revoked
+  # since denies HERE) and post-guards the ancestry (D5/F7).
+  - id: land
+    when:
+      any:
+        - { field: flags.auto_land, op: eq, value: true }
+        - { field: answers.land-now, op: eq, value: merge-now }
+    step: { kind: code-action, action: forge.land, sets: merged }
+questions:
+  land-now:
+    prompt: A queued item has caught up, verified, opened its landing PR, and waits in the landing slot. Merge it now, or abort this landing?
+    answers: [merge-now, abort]

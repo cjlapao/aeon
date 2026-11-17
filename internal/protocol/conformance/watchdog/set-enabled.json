@@ -1,0 +1,32 @@
+{
+  "description": "watchdog.setEnabled that DISABLES (true -> false) with the digest of the disable statement: a disable loosens a safeguard (a rule that will no longer fire), so it commits only against the digest of the canonical statement the daemon rendered from the row AS READ — the S45 PM7.1 pattern, the T8 budget shape. The digest here is the SHA-256 of the statement text in this fixture, so a client can recompute it; a digest that does not match rides confirm-mismatch (the row moved since the read), and the same request without a confirm rides the confirm-required refusal (errors/watchdog-refused-confirm-required.json). A re-enable in the other direction tightens and is free; a set that changes nothing is a noop that writes no audit row.",
+  "method": "watchdog.setEnabled",
+  "request": {
+    "jsonrpc": "2.0", "id": 625, "method": "watchdog.setEnabled",
+    "params": {"id": "wdr-2", "enabled": false, "confirm": "eaf14f2fb93826a115d563cbb2d7bd162f20fe404d9d4f36fcdce86947f10593"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 625,
+    "result": {
+      "view": {
+        "id": "wdr-2",
+        "scope": "workspace",
+        "subjectId": "workspace",
+        "signal": "step-over-deadline",
+        "threshold": 3600000,
+        "thresholdHuman": "1h",
+        "action": "stop",
+        "enabled": false,
+        "origin": "system",
+        "createdAt": "2026-11-01T08:00:00.000Z",
+        "updatedAt": "2026-11-01T12:30:00.000Z",
+        "fireCount": 1,
+        "loopsInEpisode": []
+      },
+      "effect": "disabled",
+      "statement": "disable watchdog rule wdr-2 (workspace workspace, step-over-deadline stop, threshold 1h): after this it will no longer fire",
+      "digest": "eaf14f2fb93826a115d563cbb2d7bd162f20fe404d9d4f36fcdce86947f10593",
+      "confirmed": true
+    }
+  }
+}

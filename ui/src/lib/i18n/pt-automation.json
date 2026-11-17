@@ -1,0 +1,226 @@
+{
+  "settings": {
+    "automation": {
+      "title": "Automação",
+      "subtitle": "Tudo o que inicia agentes sozinho: agendamentos, webhooks e gatilhos de eventos.",
+      "reconnecting": "O daemon está reconectando — leituras funcionam, escritas aguardam.",
+      "reload": "Recarregar",
+      "tabs": {
+        "automations": "Automações",
+        "fireLog": "Registro de disparos",
+        "audit": "Auditoria",
+        "proposals": "Propostas"
+      },
+      "filter": {
+        "source": "Origem",
+        "enabled": "Estado",
+        "archived": "Arquivadas",
+        "q": "Busca",
+        "qHint": "nome, id ou a frase em palavras simples",
+        "all": "todas as famílias",
+        "any": "qualquer",
+        "hidden": "ocultas (padrão)"
+      },
+      "create": {
+        "schedule": "agenda",
+        "webhook": "webhook",
+        "event": "evento"
+      },
+      "list": {
+        "title": "Automações",
+        "subtitle": "O que cada uma faz, nas palavras do próprio daemon.",
+        "needsAttention": "precisam de atenção:",
+        "loading": "Carregando automações…",
+        "noStatement": "O daemon respondeu uma lista vazia sem declaração.",
+        "neverFired": "nunca disparou"
+      },
+      "state": {
+        "enabled": "Ativada",
+        "disabled": "Desativada",
+        "paused": "Pausada",
+        "archived": "Arquivada"
+      },
+      "outcome": {
+        "started": "iniciado",
+        "refused": "recusado",
+        "limited": "limitado",
+        "skipped": "ignorado",
+        "could-not-say": "não foi possível dizer"
+      },
+      "health": {
+        "blueprint": "blueprint",
+        "webhook": "segredo",
+        "workspace": "workspace",
+        "scope": "escopo",
+        "cannotFire": "não pode disparar"
+      },
+      "firelog": {
+        "title": "Registro de disparos",
+        "subtitle": "Cada resposta que o motor deu, nas três famílias — os cinco resultados mantidos distintos.",
+        "outcomeFilter": "Resultado",
+        "allOutcomes": "todos os resultados",
+        "reload": "Recarregar",
+        "empty": "Nada disparou ainda.",
+        "emptyBody": "Um registro vazio numa página com filtro é a resposta do filtro — estreite o filtro para ter certeza.",
+        "older": "Mais antigos"
+      },
+      "audit": {
+        "title": "Auditoria",
+        "subtitle": "Quem mudou o quê, por automação — o registro carimbado pelo peer, não uma reconstrução.",
+        "pick": "Automação",
+        "empty": "Nenhuma mudança registrada para esta automação."
+      },
+      "proposals": {
+        "title": "Propostas",
+        "subtitle": "Um agente só pode PROPOR estreitar uma automação; nada é aplicado até uma pessoa confirmá-la.",
+        "empty": "Nenhuma proposta de automação aguardando."
+      },
+      "drawer": {
+        "loading": "Carregando a automação…",
+        "edit": "Editar",
+        "enable": "Ativar",
+        "disable": "Desativar",
+        "pause": "Pausar",
+        "resume": "Retomar",
+        "fireNow": "Disparar agora",
+        "archive": "Arquivar",
+        "unarchive": "Desarquivar",
+        "close": "Fechar",
+        "blueprint": "Blueprint",
+        "schedule": "Agenda",
+        "zone": "Fuso horário",
+        "secretEnv": "Variável de ambiente do segredo (nome)",
+        "match": "Correspondência",
+        "kickoff": "Abertura",
+        "component": "Componente",
+        "workspace": "Workspace",
+        "goal": "Objetivo",
+        "limits": "Limites",
+        "createdBy": "Criada por",
+        "updated": "Atualizada",
+        "lastFires": "Últimos disparos",
+        "loopsStarted": "Loops iniciados",
+        "total": "loops no total",
+        "changes": "Mudanças",
+        "archivedReason": "Arquivada porque",
+        "archiveNotDelete": "Arquivar esconde a automação do motor e mantém todas as linhas; nada aqui pode apagar.",
+        "unarchiveDisarmed": "Desarquivar deixa desarmada — ativar continua um ato separado e deliberado.",
+        "refused": "O daemon recusou isto"
+      },
+      "form": {
+        "newTitle": "Nova agenda",
+        "editTitle": "Editar agenda",
+        "newWebhookTitle": "Novo webhook",
+        "editWebhookTitle": "Editar webhook",
+        "newEventTitle": "Nova automação de evento",
+        "editEventTitle": "Editar automação de evento",
+        "id": "Id",
+        "name": "Nome",
+        "blueprint": "Blueprint",
+        "cron": "Cron",
+        "zone": "Fuso horário",
+        "windowTitle": "Janela (opcional)",
+        "windowStart": "Início",
+        "windowEnd": "Fim",
+        "windowDays": "Dias",
+        "workspace": "Workspace",
+        "goal": "Objetivo",
+        "secretEnv": "NOME da variável de ambiente do segredo",
+        "secretNameRule": "digite o nome da variável — o daemon lê o valor do próprio ambiente",
+        "secretEnvHint": "O valor nunca viaja até aqui: o daemon o lê do próprio processo, e um nome errado só falha na checagem de presença.",
+        "createArmed": "Criar armada (ato deliberado)",
+        "disarmedByDefault": "padrão: criada desarmada",
+        "createdDisarmed": "Criada desarmada — ativar é um ato separado e deliberado.",
+        "confirmArm": "Armar",
+        "cancel": "Cancelar",
+        "save": "Salvar",
+        "create": "Criar",
+        "event": "Evento",
+        "maxRuns": "Execuções por hora",
+        "component": "Componente (escopo)",
+        "kickoff": "Modelo de abertura",
+        "kickoffHint": "O modelo com que o loop iniciado abre — guardado como modelo, renderizado pelo motor.",
+        "refused": "O daemon recusou isto"
+      },
+      "preview": {
+        "pending": "Perguntando ao daemon o que este cron significa…",
+        "none": "Os próximos instantes de disparo aparecem aqui, nas palavras do daemon."
+      },
+      "match": {
+        "emptyMeansAny": "não escolha nada para casar com qualquer",
+        "picked": "selecionados"
+      },
+      "tester": {
+        "title": "Testar um evento de exemplo",
+        "sampleTaskType": "Tipo de tarefa da amostra",
+        "run": "Testar correspondência",
+        "matches": "iniciaria um loop",
+        "noMatch": "não casaria"
+      },
+      "dryrun": {
+        "run": "Verificar os últimos eventos",
+        "summary": "teria casado (dos lidos)"
+      },
+      "confirm": {
+        "cancel": "Cancelar"
+      },
+      "reason": {
+        "label": "Motivo (obrigatório)"
+      },
+      "help": {
+        "title": "Para que serve a automação?",
+        "body": "## O que é uma automação?\n\nUma **automação** inicia um ciclo sozinha, com um blueprint que escolheu, para não ter de o iniciar à mão. Há três tipos:\n\n- **Agendamento**: inicia a uma hora cron, num fuso horário, opcionalmente só dentro de uma janela de tempo.\n- **Webhook**: inicia quando algo chama o daemon com o segredo certo. Aqui só se guarda o *nome* da variável do segredo, nunca o valor.\n- **Evento**: inicia quando algo acontece dentro do Aeon, como uma tarefa terminar, e corresponde ao filtro definido.\n\n## Seguro por omissão\n\n- Uma automação nova é criada **desarmada**. Ativá-la é um ato deliberado à parte, e o daemon declara exatamente o que está a autorizar.\n- Pode **arquivar** uma automação, mas nunca apagá-la. Desarquivar devolve-a desarmada.\n- Cada tentativa de arranque fica no **registo de disparos** com um de cinco resultados: iniciada, recusada, limitada, ignorada ou sem resposta.\n- Um agente só pode *propor* restringir uma automação. Nada é aplicado até o confirmar em **Propostas**."
+      },
+      "hint": {
+        "automations": "Abra uma para ver o que faz, o estado de saúde e o histórico, ou para a ativar, pausar, disparar ou arquivar.",
+        "firelog": "Cada resposta do motor quando algo tentou iniciar um ciclo. Os cinco resultados mantêm-se distintos.",
+        "audit": "Quem alterou o quê, por automação: o registo carimbado pelo par, não uma reconstrução.",
+        "proposals": "Um agente só pode propor restringir uma automação. Nada é aplicado até uma pessoa confirmar."
+      },
+      "col": {
+        "automation": "Automação",
+        "kind": "Tipo",
+        "state": "Estado",
+        "blueprint": "Blueprint",
+        "last": "Último disparo"
+      },
+      "footer": "A mostrar {shown} de {total}",
+      "q": {
+        "what": "O que faz?",
+        "health": "Consegue disparar?",
+        "shape": "Quando começa?",
+        "limits": "Com que frequência e para quem?",
+        "actions": "O que pode fazer com ela?",
+        "fires": "O que fez da última vez?",
+        "loops": "Que ciclos iniciou?",
+        "changes": "O que mudou?",
+        "who": "Como se chama e o que executa?",
+        "when": "Quando deve disparar?",
+        "match": "Que eventos a iniciam?",
+        "arm": "Deve começar armada?",
+        "limitsForm": "Quanto pode executar?"
+      },
+      "actions": {
+        "newSchedule": "Novo agendamento",
+        "newWebhook": "Webhook",
+        "newEvent": "Evento"
+      },
+      "webhook": {
+        "listenTitle": "Que entregas o iniciam?",
+        "preset": "Escutar",
+        "presetGithubIssue": "GitHub: uma issue nova é aberta",
+        "presetGithubPr": "GitHub: um pull request é aberto",
+        "presetAny": "Qualquer entrega assinada",
+        "presetCustom": "Outro evento…",
+        "customLabel": "Evento e, se quiser, as suas ações",
+        "customHint": "Indique o evento como o remetente lhe chama (X-GitHub-Event do GitHub) e, opcionalmente, as ações depois de dois pontos, por exemplo issues:opened,reopened. Qualquer outra entrega assinada é respondida e ignorada.",
+        "ignoredHint": "Qualquer outra entrega assinada (um ping, um push, uma issue editada) é respondida e ignorada, por isso nunca inicia um loop.",
+        "goalHint": "Os campos da entrega vão entre chavetas e são preenchidos quando ela chega. Entram como texto curto numa só linha; a entrega inteira continua a chegar ao loop como dados não confiáveis. Por exemplo:",
+        "authTitle": "Como é autenticado?",
+        "connectTitle": "Ligar ao GitHub",
+        "connectUrl": "URL do payload",
+        "connectSteps": "No repositório: Settings, Webhooks, Add webhook. Use o URL acima com o endereço do seu daemon, content type application/json e o mesmo segredo que está na variável indicada acima; em eventos escolha o que definiu aqui. O daemon tem de ser iniciado com --http e estar acessível ao GitHub."
+      }
+    }
+  }
+}

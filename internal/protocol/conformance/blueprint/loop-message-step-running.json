@@ -1,0 +1,24 @@
+{
+  "description": "A message while a step runs is refused as data with the steer remedy — the running step is spoken to with step.steer, never talked over. Success-shaped response, refusal inside; the socket never errored.",
+  "method": "loop.message",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 98,
+    "method": "loop.message",
+    "params": {
+      "id": "loop-9",
+      "text": "actually make it brief"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 98,
+    "result": {
+      "refused": {
+        "kind": "step-running",
+        "stepId": 12,
+        "detail": "step 12 is running in this loop — message it with step.steer {stepId, text}"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "_comment": "RECORDED fixture (S22 T3): an OpenAI-shape /v1/embeddings answer, captured from the documented response shape — no live provider is contacted by any test; this file is the wire. The vectors are 4-dimensional on purpose: small enough to eyeball, real enough to bind to vec0 FLOAT[4]. The fake seam in embed_test.go replays THIS body, sliced to the batch in flight, so what the test parses is byte-shape-identical to production.",
+  "object": "list",
+  "model": "text-embedding-3-small",
+  "data": [
+    { "object": "embedding", "index": 0, "embedding": [0.011, -0.023, 0.104, 0.037] },
+    { "object": "embedding", "index": 1, "embedding": [-0.042, 0.077, 0.019, -0.066] },
+    { "object": "embedding", "index": 2, "embedding": [0.133, 0.005, -0.091, 0.048] }
+  ],
+  "usage": { "prompt_tokens": 42, "total_tokens": 42 }
+}

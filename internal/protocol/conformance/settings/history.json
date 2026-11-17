@@ -1,0 +1,24 @@
+{
+  "description": "The settings.history happy path (S44 T5): the audit of a key, newest first, bounded by the limit the service clamps to (default 50, max 500). Each entry is a SettingEventView — id/key/op (set|unset)/oldValue/newValue (nulls are honest \"there was none\"): an unset's newValue is null, a first set's oldValue is null. The actor is the connection that wrote (CS8), the op the door that did it, and occurredAt the wall time. history is the read the UI and CLI use to show a setting's provenance; it never writes (CS10: a read is never a write by another name).",
+  "method": "settings.history",
+  "request": {"jsonrpc": "2.0", "id": 306, "method": "settings.history", "params": {"key": "test.count", "limit": 50}},
+  "response": {
+    "jsonrpc": "2.0", "id": 306,
+    "result": {
+      "events": [
+        {
+          "id": 2, "key": "test.count", "op": "set",
+          "oldValue": "3", "newValue": "7",
+          "sensitive": false, "shadowedBy": "",
+          "actor": "user:1000", "occurredAt": "2026-10-30T12:00:00Z"
+        },
+        {
+          "id": 1, "key": "test.count", "op": "set",
+          "oldValue": null, "newValue": "3",
+          "sensitive": false, "shadowedBy": "",
+          "actor": "user:1000", "occurredAt": "2026-10-30T11:00:00Z"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1676 @@
+{
+  "generated_by": "aeon/tools/corpusgen",
+  "source": "opencode/agents",
+  "properties": {
+    "wildcard_chars": [
+      "*"
+    ],
+    "has_mid_star_pattern": true,
+    "has_exact_pattern": true,
+    "conflicting_patterns": [
+      "*",
+      "gh pr merge*",
+      "git push*"
+    ]
+  },
+  "agents": [
+    {
+      "agent": "brief-author",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "pwd",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "ls*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "cat*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "head*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "tail*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "wc*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "grep*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "rg*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "find*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "sed -n*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "realpath*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "stat*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "dirname*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "basename*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "date*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git rev-parse*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git status*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git log*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git ls-files*",
+          "verdict": "allow"
+        }
+      ]
+    },
+    {
+      "agent": "code-reviewer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "gh",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "gh *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "debugger-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "dev-loops",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "pwd",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "ls*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "realpath*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "readlink*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "stat*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "dirname*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "basename*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git rev-parse*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git status*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git remote get-url*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "date*",
+          "verdict": "allow"
+        }
+      ]
+    },
+    {
+      "agent": "dev-loops-aeon",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "pwd",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "ls*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "realpath*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "readlink*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "stat*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "dirname*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "basename*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git rev-parse*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git status*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git remote get-url*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "date*",
+          "verdict": "allow"
+        }
+      ]
+    },
+    {
+      "agent": "dev-loops-brief",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "pwd",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "ls*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "realpath*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "readlink*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "stat*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "dirname*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "basename*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git rev-parse*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git status*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git remote get-url*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "date*",
+          "verdict": "allow"
+        }
+      ]
+    },
+    {
+      "agent": "dev-loops-poc",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "pwd",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "ls*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "stat*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "realpath*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git status*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git rev-parse*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git remote get-url*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git branch --show-current",
+          "verdict": "allow"
+        }
+      ]
+    },
+    {
+      "agent": "docker-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "docker push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "docker buildx build*--push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "docker buildx bake*--push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "git-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git reset --hard*",
+          "verdict": "ask"
+        },
+        {
+          "pattern": "git clean*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git branch -D*",
+          "verdict": "ask"
+        },
+        {
+          "pattern": "git push --force*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git push --force-with-lease*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "gh pr merge*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "github-steward",
+      "rules": [
+        {
+          "pattern": "git push*",
+          "verdict": "ask"
+        },
+        {
+          "pattern": "git push --force*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git reset --hard*",
+          "verdict": "ask"
+        },
+        {
+          "pattern": "git branch -D*",
+          "verdict": "ask"
+        },
+        {
+          "pattern": "gh pr merge*",
+          "verdict": "ask"
+        },
+        {
+          "pattern": "gh pr close*",
+          "verdict": "ask"
+        },
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        }
+      ]
+    },
+    {
+      "agent": "golang-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "intent-clarifier-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "rm *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "investigator-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "rm *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "javascript-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "legal-advisor-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "rm *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "legal-scan",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "memory-steward-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "pwd",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "ls*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "stat*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "grep*",
+          "verdict": "allow"
+        }
+      ]
+    },
+    {
+      "agent": "project-initializer",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git reset*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "gh pr create*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "gh pr merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "proposal-author",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "pwd",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "ls*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "cat*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "head*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "tail*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "wc*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "grep*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "rg*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "find*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "sed -n*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "realpath*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "stat*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "dirname*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "basename*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "date*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git rev-parse*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git status*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git log*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git ls-files*",
+          "verdict": "allow"
+        }
+      ]
+    },
+    {
+      "agent": "python-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "qa-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "qa-runner",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "qa-test-spec-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git checkout*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "react-typescript-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "repo-docs-steward",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "rust-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "security-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "security-scan",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "sql-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "tauri-react-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "tauri-vue-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "technical-writer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "terraform-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "terraform apply*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "tofu apply*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "terraform destroy*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "tofu destroy*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "ui-design-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "ui-designer",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "verifier-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "vue-typescript-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    },
+    {
+      "agent": "websocket-engineer-loop",
+      "rules": [
+        {
+          "pattern": "*",
+          "verdict": "allow"
+        },
+        {
+          "pattern": "git push*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git commit*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git merge*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "git rebase*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -rf*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -fr*",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm -r *",
+          "verdict": "deny"
+        },
+        {
+          "pattern": "rm --recursive*",
+          "verdict": "deny"
+        }
+      ]
+    }
+  ]
+}

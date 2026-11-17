@@ -1,0 +1,44 @@
+{
+  "description": "loop.todos.close by the person (S75 TD8): the active list closes with closedBy person and the answer is the list as it now stands. The actor is the connection's peer credential; a params-supplied actor is refused by name, and an agent has no door to this method at all.",
+  "method": "loop.todos.close",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1904,
+    "method": "loop.todos.close",
+    "params": {
+      "id": "loop-dmo91lspzwch"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1904,
+    "result": {
+      "active": false,
+      "revision": 3,
+      "items": [
+        {
+          "id": "inspect",
+          "content": "Look at the repository for an existing AGENTS.md",
+          "status": "done"
+        },
+        {
+          "id": "scope",
+          "content": "Ask the person which scope they want",
+          "status": "in_progress"
+        },
+        {
+          "id": "write",
+          "content": "Write the file",
+          "status": "pending"
+        }
+      ],
+      "counts": {
+        "pending": 1,
+        "inProgress": 1,
+        "done": 1
+      },
+      "closedAt": "2026-11-07T12:12:00Z",
+      "closedBy": "person"
+    }
+  }
+}

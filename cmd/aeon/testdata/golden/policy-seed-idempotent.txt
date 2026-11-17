@@ -1,0 +1,12 @@
+$ aeon policy seed-corpus --agent memory-steward-loop
+agent "memory-steward-loop": seeded 5 · unchanged 0
+seeded 5 rule(s) across 1 agent(s) · unchanged 0 · every seeded row carries one authored audit event
+$ aeon policy seed-corpus --agent memory-steward-loop
+agent "memory-steward-loop": seeded 0 · unchanged 5
+seeded 0 rule(s) across 1 agent(s) · unchanged 5 · every seeded row carries one authored audit event
+$ aeon policy list --type command_access
+corpus.memory-steward-loop.123056d4fe20 command_access agent:memory-steward-loop    allow  operator     no expiry
+corpus.memory-steward-loop.5dc3b26cd2a2 command_access agent:memory-steward-loop    allow  operator     no expiry
+corpus.memory-steward-loop.684888c0ebb1 command_access agent:memory-steward-loop    deny   operator     no expiry
+corpus.memory-steward-loop.97a1850fefe5 command_access agent:memory-steward-loop    allow  operator     no expiry
+corpus.memory-steward-loop.a1159e9df367 command_access agent:memory-steward-loop    allow  operator     no expiry

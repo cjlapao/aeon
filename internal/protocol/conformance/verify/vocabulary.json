@@ -1,0 +1,54 @@
+{
+  "description": "verify.vocabulary: the closed sets the gate forms render from — requirement classes, run states, run reasons — the env allowlist's NAMES (what may cross into a gate's environment; credentials are the rule, and the allowlist is its positive half), and the daemon's own statement of what verify.try does, so a client never guesses the semantics of a spawn from its name.",
+  "method": "verify.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1005,
+    "method": "verify.vocabulary"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1005,
+    "result": {
+      "requirements": [
+        "required",
+        "advisory"
+      ],
+      "states": [
+        "pass",
+        "fail",
+        "unverified",
+        "skipped"
+      ],
+      "reasons": [
+        "policy",
+        "timeout",
+        "killed",
+        "start-failed",
+        "cancelled",
+        "no-gates-configured"
+      ],
+      "envAllowlist": [
+        "PATH",
+        "HOME",
+        "USER",
+        "LOGNAME",
+        "SHELL",
+        "LANG",
+        "TERM",
+        "TMPDIR",
+        "TZ",
+        "GOPATH",
+        "GOCACHE",
+        "GOMODCACHE",
+        "GOFLAGS",
+        "CARGO_HOME",
+        "RUSTUP_HOME",
+        "NPM_CONFIG_CACHE",
+        "PNPM_HOME",
+        "VIRTUAL_ENV"
+      ],
+      "tryStatement": "verify.try runs the named gate now, in the component's primary root, as the verifier-engineer under the policy gate and a scrubbed environment (the allowlist and the LC* locale family only); the run is recorded as manual with your identity, and the answer names the path it ran in and the loops still active there (a try may race a loop's tree — the response says so, OD8)."
+    }
+  }
+}

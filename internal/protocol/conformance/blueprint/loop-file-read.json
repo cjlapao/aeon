@@ -1,0 +1,6 @@
+{
+  "description": "Read a UTF-8 workspace file through its pinned loop ID without allowing a client to provide a new workspace root.",
+  "method": "loop.file.read",
+  "request": { "jsonrpc": "2.0", "id": 92, "method": "loop.file.read", "params": { "id": "loop-1", "path": "discovery.md" } },
+  "response": { "jsonrpc": "2.0", "id": 92, "result": { "path": "discovery.md", "content": "# Discovery\n", "bytes": 12 } }
+}

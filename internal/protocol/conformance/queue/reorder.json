@@ -1,0 +1,14 @@
+{
+  "description": "D1: a reordering disturbs NOTHING but the moved row's place — placed items keep their positions, and the answer names the item as it now stands (`position` 2). `done` and `running` rows hold their positions like everything else; the queue is the backlog, not a graveyard to sweep. This answers with the row, never a re-render of the whole board — the board is queue.list's job (one method, one fact).",
+  "method": "queue.reorder",
+  "request": {"jsonrpc": "2.0", "id": 302, "method": "queue.reorder", "params": {"id": 4, "position": 2}},
+  "response": {"jsonrpc": "2.0", "id": 302, "result": {"item": {
+    "id": 4, "position": 2, "status": "ready",
+    "blueprint": "dev-loop",
+    "goal": "Backfill the audit column for pre-S20 rows",
+    "workspaceRoot": "/srv/projects/ledger",
+    "attended": null,
+    "sizeMin": 1, "sizeMax": 2, "sizeBasis": "two column edits and one migration; no API surface moves",
+    "createdAt": "2026-10-29T12:02:00Z", "updatedAt": "2026-10-29T12:05:00Z"
+  }}}
+}

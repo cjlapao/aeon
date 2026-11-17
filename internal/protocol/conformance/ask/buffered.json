@@ -1,0 +1,18 @@
+{
+  "description": "Buffered mode: WITHOUT a subscriptionId the whole reply comes back in the result. This path is for a script and for testing, and it is explicitly a different mode rather than an accident (O5) — it is the one that would hide a streaming bug, because a buffered reply looks the same whether the deltas arrived one at a time or all at once.",
+  "method": "ask",
+  "request": {
+    "jsonrpc": "2.0", "id": 21, "method": "ask",
+    "params": {"route": "openai-gpt4o", "prompt": "Say hello in five words."}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 21,
+    "result": {
+      "askId": "a-8",
+      "text": "Hello there, how are you?",
+      "usage": {"inputTokens": 14, "outputTokens": 7},
+      "cost": {"state": "known", "usd": 0.000147},
+      "stopReason": "stop"
+    }
+  }
+}

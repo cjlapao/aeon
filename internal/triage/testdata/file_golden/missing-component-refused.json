@@ -1,0 +1,5 @@
+{
+  "case": "missing-component-refused",
+  "refused": true,
+  "sentence": "triage: the store refused the create: store: create bug in /repo/not-seeded: FOREIGN KEY constraint failed"
+}

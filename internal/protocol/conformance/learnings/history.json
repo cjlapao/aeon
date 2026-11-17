@@ -1,0 +1,10 @@
+{
+  "description": "S52 T2 (LM3): one learning's audit career, oldest first — the add, the retraction, the restore, each a fixed-template sentence in the daemon's own words (never the body, never the human's reason text), each stamped with WHO: actor kind and id from the connection, not from params. An empty list is its own honest fact — a row that predates S52's audit; a row that never existed refuses instead (see history-unknown.json).",
+  "method": "learnings.history",
+  "request": {"jsonrpc": "2.0", "id": 369, "method": "learnings.history", "params": {"id": 7}},
+  "response": {"jsonrpc": "2.0", "id": 369, "result": {"changes": [
+    {"id": 1, "learningId": 7, "op": "add", "summary": "added told learning scoped to project//srv/repo", "actorKind": "user", "actorId": "1000", "occurredAt": "2026-10-30T06:00:00Z"},
+    {"id": 2, "learningId": 7, "op": "retract", "summary": "retracted learning 7 (scope project//srv/repo)", "actorKind": "user", "actorId": "1000", "occurredAt": "2026-11-04T12:00:00Z"},
+    {"id": 3, "learningId": 7, "op": "restore", "summary": "restored learning 7 (scope project//srv/repo)", "actorKind": "cli", "actorId": "cli", "occurredAt": "2026-11-04T13:30:00Z"}
+  ]}}
+}

@@ -1,0 +1,20 @@
+{
+  "description": "S50 T2 (RM2's read): one item's audit trail, newest first, read from the append-only roadmap_change rows exactly as written \u2014 op, the fixed-template summary, and WHO (actorKind + actorId: the connection's person on a hand edit, `system/reactor` on a machine move). `limit` pages (0 or absent is the default page). An id that names no row answers -31932 naming the miss, never an empty list wearing not-found.",
+  "method": "roadmap.history",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 966,
+    "method": "roadmap.history",
+    "params": {
+      "id": 12,
+      "limit": 50
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 966,
+    "result": {
+      "changes": []
+    }
+  }
+}

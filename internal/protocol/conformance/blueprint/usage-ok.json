@@ -1,0 +1,51 @@
+{
+  "description": "Both directions of use at once \u2014 the live schedules, triggers and OPEN queue items naming it, and the agents, actions and skills its steps name. A blueprint nothing uses answers with empty arrays, never an error.",
+  "method": "blueprint.usage",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 88,
+    "method": "blueprint.usage",
+    "params": {
+      "name": "nightly-triage"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 88,
+    "result": {
+      "schedules": [
+        {
+          "kind": "schedule",
+          "id": "sched-nightly",
+          "name": "sched-nightly"
+        }
+      ],
+      "triggers": [
+        {
+          "kind": "trigger",
+          "id": "trg-7",
+          "name": "pr-opened"
+        }
+      ],
+      "queueItems": [
+        {
+          "kind": "queue",
+          "id": "41",
+          "name": "",
+          "status": "running"
+        }
+      ],
+      "loopsStarted": 3,
+      "agents": [
+        "default",
+        "triage"
+      ],
+      "actions": [
+        "git.commit"
+      ],
+      "skills": [
+        "review"
+      ]
+    }
+  }
+}

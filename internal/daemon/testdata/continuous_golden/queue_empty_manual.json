@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "position": 1,
+      "goal": "watched",
+      "status": "done",
+      "loopSlug": "loop-one"
+    },
+    {
+      "id": 2,
+      "position": 2,
+      "goal": "never sized",
+      "status": "pending",
+      "loopSlug": ""
+    }
+  ],
+  "starts": null,
+  "question": null,
+  "sizingLoop": false
+}

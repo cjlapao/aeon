@@ -1,0 +1,26 @@
+{
+  "description": "A bash call's `step.tool.end` carries `output` — the command's result content, capped at 4096 bytes on a rune boundary — and `outputTruncated` when it was cut. The transcript keeps the full result; the stream carries enough to read what the command did. Bash only.",
+  "event": "step.tool.end",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "seq": 15,
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1491,
+      "kind": "step.tool.end",
+      "at": "2026-10-25T10:00:00.400Z",
+      "payload": {
+        "stepId": 12,
+        "agent": "linter",
+        "tool": "bash",
+        "summary": "cd /home/me/aeon && grep -n 'func Test\\|len(\\|Names()' int…",
+        "toolUseId": "toolu_12",
+        "result": "14:func TestRegistryResolvesByName(t *testing.T) {",
+        "output": "14:func TestRegistryResolvesByName(t *testing.T) {\n27:func TestUnknownHandlerIsADomainRefusal(t *testing.T) {\n32:func TestRegistryCannotGrantTools(t *testing.T) {\n",
+        "outputTruncated": false,
+        "iteration": 2
+      }
+    }
+  }
+}

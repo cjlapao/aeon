@@ -1,0 +1,21 @@
+{
+  "description": "A background worker's ending, delivered through the ordinary subscription machinery (S64): same envelope, same seq, same cursor as every other event, payload the full View so a subscribed screen paints the finish without a read-back. The durable log carries it, which is the slice's whole promise in one row: close the app during a ten-minute graph build, reopen, and asyncworkers.list still holds the truth this event announced.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c", "seq": 1432, "kind": "asyncworker.finished",
+      "at": "2026-10-30T17:51:47.123456789Z",
+      "payload": {
+        "workerId": "aw_3c9f0a1b2c3d4e5f60718293a4b5c6d7",
+        "workerType": "graph.build",
+        "componentRoot": "/home/dev/shop",
+        "state": "finished",
+        "progress": 1,
+        "result": {"root": "/home/dev/shop", "files": 214, "filesSkipped": 9, "nodes": 1893, "edges": 5310, "unresolvedEdges": 412},
+        "queuedAt": "2026-10-30T17:41:02.000Z",
+        "startedAt": "2026-10-30T17:41:02.000Z",
+        "finishedAt": "2026-10-30T17:51:47.000Z"
+      }
+    }
+  }
+}

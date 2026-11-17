@@ -1,0 +1,53 @@
+{
+  "description": "The asks of one step and their chain edges, as the rows hold them \u2014 keyed by stepId, never by loop (D12/P33). It cannot rank or filter by fit, and it cannot leak the callee's toolset to the caller (MC2): the listing names callees and skills and NEVER what a callee can run. Costs travel in their honest states \u2014 `unknown \u00b7 cost-not-reported` is an answer, not a missing field (three-state honesty).",
+  "method": "agent.task.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 74,
+    "method": "agent.task.list",
+    "params": {
+      "callerLoopSlug": "l-reddit",
+      "componentRoot": "/home/p/aeon",
+      "callerStepId": 41
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 74,
+    "result": {
+      "tasks": [
+        {
+          "taskId": 12,
+          "callerLoopId": "l-77",
+          "callerLane": "work",
+          "callerStepId": 41,
+          "calleeAgent": "reddit-agent",
+          "skillId": "summarise-sentiment",
+          "mode": "async",
+          "status": "waiting",
+          "text": "what do people say about aeon?",
+          "cost": {
+            "state": "unknown",
+            "reason": "cost-not-reported"
+          },
+          "policiesHash": "9f2c41ab77e5d0a3c61b8f4e2d9a7054cc3318b6ef7d2401a5c9be37d4f0e218",
+          "createdAt": "2026-10-25T09:20:00Z",
+          "completedAt": ""
+        }
+      ],
+      "edges": [
+        {
+          "id": 7,
+          "callerLoopId": "l-77",
+          "callerStepId": 41,
+          "callerAgent": "project-planner",
+          "calleeAgent": "reddit-agent",
+          "skillId": "summarise-sentiment",
+          "depth": 1,
+          "createdAt": "2026-10-25T09:20:00Z"
+        }
+      ],
+      "count": 1
+    }
+  }
+}

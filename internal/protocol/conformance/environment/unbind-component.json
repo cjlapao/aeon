@@ -1,0 +1,6 @@
+{
+  "description": "S59 T6 (EV15): environment.unbind removes a COMPONENT binding and answers whether anything was removed — `unbound:false` is the honest answer for a scope that held nothing, distinct from an error, because \"nothing was bound\" is a fact a panel must be able to print. A WORKSPACE binding cannot be unbound through this door at all: the system floor is replaced by binding another environment, never by removing the floor.",
+  "method": "environment.unbind",
+  "request": { "jsonrpc": "2.0", "id": 926, "method": "environment.unbind", "params": { "componentId": "cmp_42" } },
+  "response": { "jsonrpc": "2.0", "id": 926, "result": { "unbound": true } }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "agent.rows refused as a shape error for carrying `limit`, one key of a CLOSED refused vocabulary — limit, cursor, offset, order, search, actor, actorKind (S73 deviation 9). This is NOT unknown-key rejection: conformance/README.md's T3 makes unknown keys in params and results be IGNORED, so a future client may add pageFromTheFuture to this request and must succeed. What is refused instead is a small named set whose silence would be a lie: a caller that sent limit 5000 and got a 20-row page back would believe it had asked for 20, when it had asked a different question entirely. That is S59's move with its identity vocabulary (rejectMCPIdentityKeys), taken before semantic validation, and the message carries the alternative rather than only the no. The actor pair rides the same list for the S46/S59 reason — the actor is the connection's peer credential, never a parameter, and a read stamps nobody anyway.",
+  "method": "agent.rows",
+  "request": {"jsonrpc": "2.0", "id": 122, "method": "agent.rows", "params": {"limit": 5000}},
+  "response": {"jsonrpc": "2.0", "id": 122, "error": {
+    "code": -32602,
+    "message": "invalid params: \"limit\" is not a parameter of agent.rows — this read pages by page, pageSize, sort, dir and q, and pageSize is how many rows a page holds (20 by default, 100 at most)"
+  }}
+}

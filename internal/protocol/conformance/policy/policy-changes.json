@@ -1,0 +1,48 @@
+{
+  "description": "S45 T3 (PM8): policy.changes answers the append-only authoring audit — one row per policy authoring write, naming the kernel-stamped actor (actorKind user for a socket peer, cli for the offline door), newest-first (id DESC — the audit's listing order is total, never a coin flip). The two NULLs are visible here and are NOT \"\": policyId is absent for the seed row (seed names many rules, reject names none) and proposalId is absent except on the row that decided a proposal (NULL is not 0 — a 0 would name a row that does not exist). summary is the fixed-template sentence the writer built from ids (SEC-033: never free text), printed untouched. unauditedPolicyIds is ALWAYS present ([] states this door has not looked — T4's reconciliation field); the empty-table statement is ABSENT because this table holds rows — that sentence belongs to the empty audit alone.",
+  "method": "policy.changes",
+  "request": {"jsonrpc": "2.0", "id": 71, "method": "policy.changes"},
+  "response": {
+    "jsonrpc": "2.0", "id": 71,
+    "result": {
+      "changes": [
+        {
+          "id": 4,
+          "op": "seed",
+          "summary": "seeded the corpus rules for agent \"boss\" (367 rules)",
+          "actorKind": "cli",
+          "actorId": "cli",
+          "occurredAt": "2026-10-31T11:00:00Z"
+        },
+        {
+          "id": 3,
+          "op": "reject",
+          "proposalId": 8,
+          "summary": "rejected proposal 8: duplicates an existing rule",
+          "actorKind": "user",
+          "actorId": "1000",
+          "occurredAt": "2026-10-31T10:30:00Z"
+        },
+        {
+          "id": 2,
+          "op": "remove",
+          "policyId": "grant-bash",
+          "summary": "removed policy \"grant-bash\"",
+          "actorKind": "user",
+          "actorId": "1000",
+          "occurredAt": "2026-10-31T10:12:00Z"
+        },
+        {
+          "id": 1,
+          "op": "add",
+          "policyId": "grant-bash",
+          "summary": "added policy \"grant-bash\" (tool_access allow)",
+          "actorKind": "cli",
+          "actorId": "cli",
+          "occurredAt": "2026-10-30T09:00:00Z"
+        }
+      ],
+      "unauditedPolicyIds": []
+    }
+  }
+}

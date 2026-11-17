@@ -1,0 +1,26 @@
+{
+  "description": "A route that works and will not survive a restart. The route IS usable — it is in memory and the next `ask` will use it — so this is NOT a provider failure and must not send anybody to check their API key. What failed is durability: a full disk, a permission on the state directory, a closed store. `fatal: false`, because the person can carry on; what they must not do is restart believing it was saved.",
+  "method": "routes.set",
+  "request": {
+    "jsonrpc": "2.0", "id": 60, "method": "routes.set",
+    "params": {
+      "id": "anthropic",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "apiKey": "<redacted>"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 60,
+    "error": {
+      "code": -31108,
+      "message": "the route was not saved",
+      "data": {
+        "what": "route \"anthropic\" is usable now but was not saved: write the credential for route \"anthropic\": open /home/p/.local/state/aeon/credentials/anthropic.key: permission denied",
+        "means": "the route works until the daemon restarts; the configuration is in memory and the credential may not have been filed. This is a disk or permission problem, not a problem with the route or the provider",
+        "todo": "check `aeon db info` for the store path, and that the state directory is writable — then set the route again",
+        "fatal": false
+      }
+    }
+  }
+}

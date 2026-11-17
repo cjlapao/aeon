@@ -1,0 +1,34 @@
+{
+  "description": "The audit read, newest first, bounded (limit defaults 100, ceiling 500 refused at the door): the decision ledger row exactly as written — the subject halves, the stamped actor, the loop slug the start left behind.",
+  "method": "scheduler.decisions",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 403,
+    "method": "scheduler.decisions",
+    "params": {
+      "componentRoot": "/srv/components/alpha",
+      "limit": 50
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 403,
+    "result": [
+      {
+        "id": 88,
+        "at": "2026-11-04T12:31:02Z",
+        "componentRoot": "/srv/components/alpha",
+        "subjectKind": "queue",
+        "subjectId": 7,
+        "decision": "started",
+        "reason": "",
+        "summary": "started queue/7 by user:carlos (loop roadmap-materialize-12)",
+        "grantRevision": "",
+        "actorKind": "user",
+        "actorId": "carlos",
+        "loopSlug": "roadmap-materialize-12"
+      }
+    ]
+  },
+  "fromDoor": true
+}

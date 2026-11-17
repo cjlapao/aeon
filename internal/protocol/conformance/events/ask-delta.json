@@ -1,0 +1,11 @@
+{
+  "description": "One increment of a reply, delivered through the ordinary subscription machinery (M23) — same envelope, same seq, same cursor as every other event. `kind` distinguishes assistant text from reasoning so a client can render thinking differently rather than inline. A client subscribes BEFORE calling ask, which is what makes a missed early delta impossible without buffering.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c", "seq": 1431, "kind": "ask.delta",
+      "at": "2026-10-15T09:20:01.123456789Z",
+      "payload": {"askId": "a-7", "kind": "text", "text": "The repository holds "}
+    }
+  }
+}

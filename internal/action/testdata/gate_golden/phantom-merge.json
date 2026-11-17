@@ -1,0 +1,12 @@
+{
+  "case": "phantom-merge",
+  "refused": true,
+  "postMerge": true,
+  "sentence": "phantom merge (D5): PR #3 reported merged at 00000000000000000000000000000000002dc6df but that commit is not an ancestor of feature/4a17-version — the work is NOT where the loop believes it is; verify the squash SHA (the task branch's originals are never ancestors after a squash — checking them would call every correct merge a failure)",
+  "calls": [
+    "PostReview",
+    "ReadPR",
+    "ListReviews",
+    "MergePR"
+  ]
+}

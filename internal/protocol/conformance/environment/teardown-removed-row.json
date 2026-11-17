@@ -1,0 +1,22 @@
+{
+  "description": "S59 T6 (EV12): environment.teardown's success answer is the LEDGER ROW after the driver ran — state removed and removed_at set — and the row SURVIVES. Nothing in this plane deletes the record that a resource existed; a container that came and went still says when it came and when it went, because a ledger you can lose rows from is not evidence. A host-backend provision is refused instead (provision-nothing-to-remove): there was never a resource to remove, and pretending otherwise would put a removal in the audit for an event that never happened.",
+  "method": "environment.teardown",
+  "request": { "jsonrpc": "2.0", "id": 931, "method": "environment.teardown", "params": { "provisionId": "prv_2c4d6e8a" } },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 931,
+    "result": {
+      "id": "prv_2c4d6e8a",
+      "environmentId": "env_9a8b7c6d",
+      "componentRoot": "/home/cjlapao/code/acme/api",
+      "loopSlug": "release-2026-11",
+      "backend": "container",
+      "handle": "aeon-s59-acme-api-8f2b1c",
+      "owner": "daemon:1000",
+      "state": "removed",
+      "createdAt": "2026-11-03T09:30:00Z",
+      "readyAt": "2026-11-03T09:30:04Z",
+      "removedAt": "2026-11-03T10:05:00Z"
+    }
+  }
+}

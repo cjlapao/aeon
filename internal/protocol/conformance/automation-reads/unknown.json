@@ -1,0 +1,27 @@
+{
+  "description": "An id no family carries answers with the ids that nearly matched \u2014 never an empty object, which would read as a confident wrong answer about a typo (AN5).",
+  "method": "automation.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8211,
+    "method": "automation.show",
+    "params": {
+      "source": "schedule",
+      "id": "sch-mornin"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8211,
+    "error": {
+      "code": -31890,
+      "message": "unknown automation",
+      "data": {
+        "what": "no schedule automation \"sch-mornin\" exists \u2014 nearest \"sch-morning\"",
+        "means": "the id was the unknown thing, not the answer \u2014 an empty result here would be a confident wrong answer about a typo",
+        "todo": "run `automation.list` (add archived:\"include\" to see the archive too) and use one of the ids it prints",
+        "fatal": false
+      }
+    }
+  }
+}

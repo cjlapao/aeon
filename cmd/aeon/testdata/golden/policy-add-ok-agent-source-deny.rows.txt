@@ -1,0 +1,4 @@
+policy rows: 1
+  policy ok-agent-deny type=tool_access target=agent:grace action=deny source=agent subject=agent:grace spec={"state":"deny","toolName":"webfetch"} not_after=none not_after_epoch=- created_at=<TIME>
+proposal rows: 0
+policy_event rows: 0

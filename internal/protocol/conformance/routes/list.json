@@ -1,0 +1,35 @@
+{
+  "description": "Every route, with NO credential anywhere. `hasKey` and `keyHint` are all a client is told — the hint is the LAST four characters, because a prefix identifies the key's type and sometimes its project, where the suffix only answers `which key is this`. There is no field here that could carry a key: the request type and the response type are different types, which is stronger than redacting on the way out. `persisted: false` is the daemon telling the UI that nothing was saved — the store is S4 — because a settings page that looks like it saved is worse than one that admits it did not.",
+  "method": "routes.list",
+  "request": {"jsonrpc": "2.0", "id": 30, "method": "routes.list"},
+  "response": {
+    "jsonrpc": "2.0", "id": 30,
+    "result": {
+      "routes": [
+        {
+          "id": "anthropic",
+          "provider": "anthropic",
+          "model": "claude-sonnet-5",
+          "hasKey": true,
+          "keyHint": "…wxyz",
+          "source": "environment",
+          "maxOutputTokens": 4096,
+          "prices": {"inputUsdPerMTok": 3, "outputUsdPerMTok": 15, "cacheReadUsdPerMTok": 0.3, "cacheWriteUsdPerMTok": 3.75},
+          "priced": true
+        },
+        {
+          "id": "local",
+          "provider": "openai",
+          "model": "llama3",
+          "baseUrl": "http://127.0.0.1:11434/v1",
+          "hasKey": false,
+          "source": "runtime",
+          "maxOutputTokens": 4096,
+          "priced": false
+        }
+      ],
+      "providers": ["anthropic", "openai"],
+      "persisted": false
+    }
+  }
+}

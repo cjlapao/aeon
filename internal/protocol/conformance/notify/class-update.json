@@ -1,0 +1,26 @@
+{
+  "description": "notify.class.update turning one class off: the person at the socket is the actor (never a param), the row answers as it NOW reads with version bumped, and the store writes row-plus-one-audit-row in one transaction. A disabled class renders no hint — the events keep flowing, only the notification goes silent, and a re-seed never re-enables it (SV4, P8).",
+  "method": "notify.class.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 931,
+    "method": "notify.class.update",
+    "params": {
+      "kind": "loop.finished",
+      "enabled": false
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 931,
+    "result": {
+      "kind": "loop.finished",
+      "tone": "success",
+      "titleTemplate": "Loop finished",
+      "enabled": false,
+      "origin": "system",
+      "version": 2,
+      "updatedAt": "2026-11-03T09:00:00Z"
+    }
+  }
+}

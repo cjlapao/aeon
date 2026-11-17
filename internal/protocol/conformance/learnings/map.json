@@ -1,0 +1,24 @@
+{
+  "description": "The knowledge map: where each learning sits when laid out by what it means, read through the board's own filters. Positions are a deterministic 2-D projection of the stored vectors scaled into ±300 (a hint about distance); links join each learning to its nearest neighbours by cosine similarity in the full space (the evidence). A learning with no stored vector is counted (embedded of total) and left off — never positioned by a guess — and the daemon's own sentence says what the positions are.",
+  "method": "learnings.map",
+  "request": {"jsonrpc": "2.0", "id": 380, "method": "learnings.map", "params": {"project": "/home/cjlapao/aeon"}},
+  "response": {"jsonrpc": "2.0", "id": 380, "result": {
+    "projected": true,
+    "model": "text-embedding-3-small",
+    "dim": 4,
+    "total": 4,
+    "embedded": 3,
+    "omitted": 0,
+    "canEmbed": true,
+    "points": [
+      {"id": 1, "x": -300, "y": 12.5},
+      {"id": 2, "x": 150.25, "y": -300},
+      {"id": 3, "x": 149.75, "y": 287.5}
+    ],
+    "links": [
+      {"a": 1, "b": 2, "similarity": 0.91},
+      {"a": 2, "b": 3, "similarity": 0.62}
+    ],
+    "basis": "positions are a 2-D principal-component projection of the stored 4-dimensional vectors (deterministic); lines join each learning to its nearest neighbours by cosine similarity in the full space, above 0.50; 1 of 4 learnings have no vector yet and are not on the map"
+  }}
+}

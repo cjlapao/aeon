@@ -1,0 +1,31 @@
+{
+  "description": "The door's own sentence, verbatim in `what` (ErrAgentRefused adds no interpretation \u2014 refusals are values, carried to the socket). This one is the SkillAccess default deny (PL5) for the caller's half of the ask: no allow rule matched the ref, so the ask never reached the chain, wrote no edge, and made no task. The remedy is not in this payload on purpose: `aeon policy list --type skill_access` and `agent.discover` answer it.",
+  "method": "agent.invoke",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 73,
+    "method": "agent.invoke",
+    "params": {
+      "callerLoopSlug": "l-reddit",
+      "componentRoot": "/home/p/aeon",
+      "callerStepId": 41,
+      "calleeAgent": "reddit-agent",
+      "skillId": "summarise-sentiment",
+      "text": "what do people say about aeon?"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 73,
+    "error": {
+      "code": -31600,
+      "message": "the agent-services boundary refused",
+      "data": {
+        "what": "refused: agent:project-planner \u00b7 skill_access \u00b7 no allow matched \u00b7 default deny (PL5)",
+        "means": "an agent ask is judged by doors with names \u2014 the card door (AS2), the skill enumeration, the SkillAccess verdict for BOTH halves of the ask, the caller-identity read, the chain bound (A13's) \u2014 and the refusal above is that door's own words, not a summary of them",
+        "todo": "the `what` names the door and the thing refused; `aeon agents discover` lists what IS invokable, and `aeon policy list --type skill_access` shows the rules the door judged with",
+        "fatal": false
+      }
+    }
+  }
+}

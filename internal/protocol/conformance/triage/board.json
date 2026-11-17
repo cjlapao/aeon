@@ -1,0 +1,44 @@
+{
+  "description": "S51 T2 (TM5), the backlog seen whole — and a READ that writes nothing (TestBoardCandidatesAreReadOnly): the suggest path stores an embedding because asking computes one; the board of a whole backlog stores NOTHING. Each row carries the bug (validation and priority as TWO fields, D2), the two rendered sentences (validation: … and priority: … — unvalidated and could-not-tell read DIFFERENT sentences, never one merged badge), the attempt digest from the audit rows (attempts counts the validate rows; lastAttemptAt names the newest), the duplicate candidates WITH their distances (a suggestion with its nearness — smaller is nearer — never a link; only a human confirmation links, D5), and the roadmap item's CURRENT status when the bug was handed off (D8). Every filter word is one of the closed sets — triage.vocabulary answers which; a word outside them (including the hidden brainstorm, a setting word and never a bug state) is refused by name.",
+  "method": "triage.board",
+  "request": {"jsonrpc": "2.0", "id": 441, "method": "triage.board", "params": {"componentRoot": "/srv/projects/ledger", "validation": "unvalidated"}},
+  "response": {"jsonrpc": "2.0", "id": 441, "result": [
+    {
+      "bug": {
+        "id": 7,
+        "componentRoot": "/srv/projects/ledger",
+        "title": "retry counter over-counts on the third attempt",
+        "body": "the counter adds the attempt number, not one",
+        "validation": "unvalidated",
+        "priorityState": "known",
+        "priorityLabel": "P1",
+        "filedBy": "person",
+        "validated": false,
+        "createdAt": "2026-10-30T10:10:00Z",
+        "updatedAt": "2026-11-04T12:00:00Z"
+      },
+      "describe": {
+        "validationSentence": "validation: \"unvalidated\" — no attempt has run (D1)",
+        "prioritySentence": "priority: \"known\" (\"P1\")"
+      },
+      "attempts": 0,
+      "candidates": [
+        {
+          "bug": {
+            "id": 9,
+            "componentRoot": "/srv/projects/ledger",
+            "title": "same over-count, one attempt later",
+            "body": "third try counted twice",
+            "validation": "could-not-tell",
+            "priorityState": "unknown",
+            "filedBy": "golang-engineer",
+            "validated": false,
+            "createdAt": "2026-11-01T08:00:00Z",
+            "updatedAt": "2026-11-01T08:00:00Z"
+          },
+          "distance": 0.21
+        }
+      ]
+    }
+  ]}
+}

@@ -1,0 +1,20 @@
+{
+  "description": "The historical missing-handler block was retried once (S13 T10).",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 2001,
+      "dseq": 14,
+      "kind": "loop.retried",
+      "at": "2026-11-17T06:20:00.123456789Z",
+      "payload": {
+        "loopId": "loop-9",
+        "lane": "implement",
+        "step": "implement",
+        "agent": "golang-engineer"
+      }
+    }
+  }
+}

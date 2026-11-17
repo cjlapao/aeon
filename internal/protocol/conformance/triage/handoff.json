@@ -1,0 +1,9 @@
+{
+  "description": "The S26 hand-off (T6, D8): a validated, non-unknown-priority bug with no roadmap_item_id yet becomes an `idea`-status roadmap item through internal/roadmap's OWN Create (provenance 'triaged'), and its ideation is kicked through the roadmap's own seam — ZERO changes to S26, the whole point of the hand-off's design. The answer is the daemon's seam result: the roadmap item id it handed off to. One hand-off per bug; a second is refused.",
+  "method": "triage.handoff",
+  "request": {"jsonrpc": "2.0", "id": 437, "method": "triage.handoff", "params": {"id": 7}},
+  "response": {"jsonrpc": "2.0", "id": 437, "result": {
+    "roadmapItem": 42,
+    "note": "bug 7 handed off to roadmap item 42 (provenance triaged, D8; S26's own door, zero changes to it)"
+  }}
+}

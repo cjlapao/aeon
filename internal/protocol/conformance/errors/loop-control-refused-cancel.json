@@ -1,0 +1,28 @@
+{
+  "description": "LC4's cancel on a finished loop (S55 T5): a terminal loop has no control to apply, and the refusal names the state it found (data.kind 'terminal', the status in the what) instead of pretending the cancel happened — a cancel that 'succeeds' on a done loop would write an abort event for work that is already over, which the audit must not do.",
+  "method": "loop.cancel",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 513,
+    "method": "loop.cancel",
+    "params": {
+      "id": "loop-9",
+      "reason": "the loop is finished — cancel the rest"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 513,
+    "error": {
+      "code": -31860,
+      "message": "the loop control refused the operation",
+      "data": {
+        "kind": "terminal",
+        "what": "loop cancel refused: the loop is done — it has no control to apply",
+        "means": "the daemon understood and declined — nothing was written and nothing moved",
+        "todo": "do what the what sentence names",
+        "fatal": false
+      }
+    }
+  }
+}

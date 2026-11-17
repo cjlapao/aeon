@@ -1,0 +1,21 @@
+{
+  "description": "The failure path, and it cannot be silent: `reason` is REQUIRED and recorded verbatim in the task's envelope \u2014 a refusal you cannot read is a refusal you cannot fix. Like complete, socket-only (Debug) and once-only: a settled task answers by naming its state, and the answer the first report delivered stands.",
+  "method": "agent.task.fail",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 77,
+    "method": "agent.task.fail",
+    "params": {
+      "taskId": 13,
+      "reason": "rate limited by the upstream API after 3 retries"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 77,
+    "result": {
+      "taskId": 13,
+      "status": "failed"
+    }
+  }
+}

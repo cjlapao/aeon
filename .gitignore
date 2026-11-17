@@ -1,0 +1,59 @@
+# Build output
+/dist/
+/aeon
+/aeon.exe
+
+# Local state — never committed. The daemon's real store lives outside the repo
+# ($XDG_STATE_HOME/aeon); these are only what a stray test or manual run drops.
+*.db
+*.db-wal
+*.db-shm
+/state.db*
+
+# Local config, which carries credentials by definition (C17: never a config
+# file, never argv, never a log — the environment or a dedicated path)
+.env
+.env.local
+
+# Coverage
+coverage.out
+coverage.txt
+cobertura-coverage.xml
+
+# Delve writes its debug binary beside the package it is debugging, so every
+# VS Code debug session drops one of these. Found by running one.
+__debug_bin*
+
+# The dev endpoint `make dev` and the VS Code launch configs share. A socket is
+# not a file you can commit, and .dev is per-machine by definition.
+/.dev/
+
+# Tauri / UI
+/ui/node_modules/
+/ui/dist/
+/ui/src-tauri/target/
+/ui/tsconfig.tsbuildinfo
+
+# The sidecar daemon binary tauri.conf.json's externalBin expects at
+# binaries/aeon-<target-triple>[.exe] (S41) — built per-platform, never
+# committed. `cargo build`/`tauri dev`/`tauri build` all refuse to run
+# without one matching the host's own triple present here; see
+# docs/aeon/S41-workspaces/design.md for how it gets there.
+/ui/src-tauri/binaries/
+
+# Uncached Go test timings from make test-profile.
+/test-results.json
+
+# Local scratch and caches, ported here 2026-11-17 when Aeon became its own
+# repository. These lived in the monorepo's ROOT .gitignore, so as a
+# subdirectory Aeon inherited them from above; standalone, nothing above
+# covers them any more and `git add -A` would otherwise commit 161M of it.
+#
+# Any node_modules, not only ui's — Vite/vitest drops a cache at the root too.
+node_modules/
+# Scratch binaries, headers and one-off notes from test walks. Unanchored, as
+# the monorepo had it: `ui/.tmp/` is a vitest compile cache and needs it too.
+.tmp/
+# Per-slice working scratch from the S72/S73 loops.
+.s72-scratch/
+.s73-scratch/

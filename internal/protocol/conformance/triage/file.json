@@ -1,0 +1,18 @@
+{
+  "description": "A person's file (D7, S51 TM3 shape): the bug arrives UNVALIDATED — the schema carries no validation_state or priority_state from the caller (the store's default is the backstop; a crafted call cannot pre-label a claim). The priority a person decided may ride (known + a label); the validation stays unvalidated until the attempt runs (D1). There is NO filedBy param: filed_by is DERIVED from the stamped actor — a person at the socket files as 'person' (TM3; the old param let anyone name anyone). The result is the row as it now stands, the one the app and CLI both read.",
+  "method": "triage.file",
+  "request": {"jsonrpc": "2.0", "id": 431, "method": "triage.file", "params": {"componentRoot": "/srv/projects/ledger", "title": "retry counter over-counts on the second attempt", "body": "the retry counter adds two on the second attempt; expected one", "priorityState": "known", "priorityLabel": "P1"}},
+  "response": {"jsonrpc": "2.0", "id": 431, "result": {
+    "id": 7,
+    "componentRoot": "/srv/projects/ledger",
+    "title": "retry counter over-counts on the second attempt",
+    "body": "the retry counter adds two on the second attempt; expected one",
+    "validation": "unvalidated",
+    "priorityState": "known",
+    "priorityLabel": "P1",
+    "filedBy": "person",
+    "validated": false,
+    "createdAt": "2026-10-30T10:00:00Z",
+    "updatedAt": "2026-10-30T10:00:00Z"
+  }}
+}

@@ -1,0 +1,17 @@
+{
+  "kind": "loop.blocked",
+  "componentRoot": "",
+  "payload": {
+    "loopId": "loop-golden",
+    "reason": {
+      "kind": "action-denied",
+      "detail": "action \"deploy production\" denied by policy",
+      "action": "deploy production"
+    }
+  },
+  "notify": {
+    "title": "Loop blocked",
+    "body": "",
+    "tone": "warning"
+  }
+}

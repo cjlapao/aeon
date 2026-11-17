@@ -1,0 +1,90 @@
+{
+  "description": "goal.show answers the whole picture of one goal at once: the row, its components, its pinned documents, its decision ledger, the loops working it \u2014 plus the DERIVED execution state and the floor-flagged cost, both composed from rows and never stored (criterion 10).",
+  "method": "goal.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 343,
+    "method": "goal.show",
+    "params": {
+      "id": "goal-7a1f"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 343,
+    "result": {
+      "goal": {
+        "id": "goal-7a1f",
+        "rootId": "prj-7a1f",
+        "version": 1,
+        "title": "Ship the org board",
+        "type": "feature",
+        "bodyNote": "criteria 6-11",
+        "sourceKind": "manual",
+        "sourceRef": "",
+        "reviewState": "draft",
+        "createdByKind": "agent",
+        "createdById": "brainstormer",
+        "createdAt": "2026-10-26T09:00:00Z",
+        "updatedAt": "2026-10-26T09:00:00Z"
+      },
+      "components": [
+        {
+          "componentId": "cmp-7a1f",
+          "confidence": 3,
+          "note": "the daemon and the store"
+        }
+      ],
+      "documents": [
+        {
+          "name": "proposal.md",
+          "rev": 1,
+          "bytes": 2048,
+          "loopSlug": "brainstorm-7a1f",
+          "componentRoot": "/repo/alpha",
+          "writtenBy": "brainstormer",
+          "writtenAt": "2026-10-26T09:00:00Z"
+        }
+      ],
+      "attachments": [
+        {
+          "id": 9,
+          "subjectKind": "goal",
+          "subjectId": "goal-7a1f",
+          "document": "proposal.md",
+          "rev": 1,
+          "currency": "current",
+          "headRev": 1,
+          "createdAt": "2026-10-26T09:00:00Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": 3,
+          "subjectKind": "goal",
+          "subjectId": "goal-7a1f",
+          "subjectVersion": 1,
+          "decision": "approved",
+          "byKind": "user",
+          "byId": "1000",
+          "reason": "the brief matches the ask",
+          "decidedAt": "2026-10-26T10:00:00Z"
+        }
+      ],
+      "loops": [
+        {
+          "id": "d19f-7a1f",
+          "slug": "briefing",
+          "componentRoot": "/home/p/aeon",
+          "status": "waiting",
+          "blueprint": "brainstorm"
+        }
+      ],
+      "executionState": "blocked",
+      "cost": {
+        "usd": 0.42,
+        "isFloor": false
+      }
+    }
+  }
+}

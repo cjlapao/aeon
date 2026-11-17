@@ -1,0 +1,34 @@
+{
+  "description": "a connection that drops mid-body: the kept bytes are everything that arrived",
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "http://docs.test/dropped",
+        "header": {
+          "Accept": [
+            "text/plain, text/markdown, application/json, application/xml"
+          ],
+          "User-Agent": [
+            "aeon-webfetch/1.0 (Aeon daemon; GET-only; sends no credentials)"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "header": {
+          "Content-Type": [
+            "text/plain"
+          ]
+        },
+        "body": "",
+        "body_repeat": {
+          "text": "abcdefghij",
+          "times": 230000
+        },
+        "chunked": true,
+        "abort_after": 1000000
+      }
+    }
+  ]
+}

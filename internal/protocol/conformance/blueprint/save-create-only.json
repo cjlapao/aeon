@@ -1,0 +1,38 @@
+{
+  "description": "createOnly saves a new named blueprint (the copy flow) and refuses to overwrite one that already exists.",
+  "method": "blueprint.save",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "method": "blueprint.save",
+    "params": {
+      "name": "two-step-copy",
+      "content": "id: two-step-copy\nschemaVersion: 1\nversion: 1\nlanes:\n  - id: survey\n    step: {kind: model-step, agent: default}\n",
+      "createOnly": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "result": {
+      "name": "two-step-copy",
+      "changed": true,
+      "revision": 1,
+      "origin": "user",
+      "version": 1,
+      "report": {
+        "blueprint": "two-step-copy",
+        "schemaVersion": 1,
+        "version": 1,
+        "validCount": 6,
+        "diagnostics": []
+      },
+      "references": [
+        {
+          "kind": "agent",
+          "target": "default"
+        }
+      ]
+    }
+  }
+}

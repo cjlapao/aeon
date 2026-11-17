@@ -1,0 +1,15 @@
+{
+  "description": "A heartbeat on a subscription that has been delivered something. It is a delivery like any other and carries the subscription's own counter, so a client that lost the LAST event before a quiet spell sees the jump here and re-reads. Not persisted.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 2001,
+      "dseq": 14,
+      "kind": "subscription.tick",
+      "at": "2026-11-17T06:20:00.123456789Z",
+      "payload": {}
+    }
+  }
+}

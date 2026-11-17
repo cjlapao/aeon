@@ -1,0 +1,26 @@
+{
+  "description": "S47 T7 (MC2, rule 3): tool_show on a name the caller does NOT hold. This is the answer an agent gets for a tool somebody else was granted, for a peer's private MCP tool, and for a name that never existed — ONE sentence, produced by ONE code path, with the nearest names drawn from the caller's OWN held set (`read` and `write` here, because those are what this agent holds). That identity is the whole rule: if an unheld name answered differently from a nonexistent one, this door would answer \"does that tool exist?\" for anyone who could spell, which is the oracle S46 closed for the MCP own-view reads and which a withheld grant must not hand back. The daemon's TestToolShowOfUnheldEqualsNonexistentSentence pins the byte-identity; this fixture pins the sentence a client sees.",
+  "method": "tools.mine.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 943,
+    "method": "tools.mine.show",
+    "params": {
+      "name": "acme.post"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 943,
+    "error": {
+      "code": -31911,
+      "message": "no such tool",
+      "data": {
+        "what": "the own-view read named \"acme.post\", which is not a tool in your set; the nearest names are: \"read\", \"write\"",
+        "means": "the read answered cleanly and the name is simply absent — nothing was written, and this is not the catalog declining to answer (it answers everything it has)",
+        "todo": "pick one of the near names in `what`, or `tools.list` (or `aeon tools list`) to see what exists — tool names are authored in code, not generated, so a spelling from memory is the usual cause",
+        "fatal": false
+      }
+    }
+  }
+}

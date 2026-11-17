@@ -1,0 +1,31 @@
+{
+ "description": "S19 T6's per-loop outward opt-in on the wire (D10, O2): `allowOutward` is declared at start by the person who starts THIS run — here attended:false, the scripted-start shape the narrow trigger always pins (its one transform overwrites any claimed true). The grant is in the loop's row, read at the decision site, and there is no key-level or configuration version anywhere for this fixture to be the proof of. protogen is fixture-derived, so this file is what puts allowOutward on the app's loop.start params type — the field the CI author reaches for must be as typed as the field the terminal sends.",
+ "method": "loop.start",
+ "request": {
+  "jsonrpc": "2.0",
+  "id": 82,
+  "method": "loop.start",
+  "params": {
+   "blueprint": "dev-loop",
+   "goal": "Open the release PR",
+   "workspaceRoot": "/repo",
+   "attended": false,
+   "allowOutward": true,
+   "with": {
+    "task": "4a17",
+    "task_title": "Add version endpoint",
+    "pr_summary": "Release notes carried from the task row."
+   }
+  }
+ },
+ "response": {
+  "jsonrpc": "2.0",
+  "id": 82,
+  "result": {
+   "id": "loop-3",
+   "slug": "loop-3",
+   "blueprint": "dev-loop",
+   "status": "running"
+  }
+ }
+}

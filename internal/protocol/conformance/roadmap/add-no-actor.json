@@ -1,0 +1,31 @@
+{
+  "description": "S50 T1 (RM2): roadmap.add is the item's ONLY door and it is the person's door \u2014 the actor is the connection's peer stamped by Table.ActorFor (the kernel's uid, the mcp/blueprint shape), NEVER a param. This fixture pins the refusal when the connection resolves to no identity at all (no actor stamp wired, uid 0, or a blank id): ErrRoadmapNoActor (-31931), the twin of the mcp write's -31854 and the blueprint write's no-actor rule \u2014 an unattributable roadmap write is the roadmap_change audit row that cannot name who moved the item, which is the exact gap S50 closes. Nothing is read and nothing is written: the item never enters `idea` and no audit row lands.",
+  "method": "roadmap.add",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 962,
+    "method": "roadmap.add",
+    "params": {
+      "componentRoot": "/srv/projects/ledger",
+      "title": "export monthly statements",
+      "priorityState": "assumed",
+      "priorityLabel": "P1",
+      "provenance": "authored",
+      "epic": "reports"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 962,
+    "error": {
+      "code": -31931,
+      "message": "the roadmap write could not name its author",
+      "data": {
+        "what": "the roadmap write is a person's door and no identity is available on this connection \u2014 the daemon stamped none",
+        "means": "nothing moved \u2014 the item keeps the state it had and no audit row was written",
+        "todo": "connect as the person who owns the change (the endpoint is 0600, peer-credentialed); an agent never writes the roadmap (RM4) \u2014 it reads and proposes only",
+        "fatal": false
+      }
+    }
+  }
+}

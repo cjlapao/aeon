@@ -1,0 +1,27 @@
+{
+  "description": "proposal.create's refusal shape (TD3): T2's registry runs the SAME validator `aeon proposal commit` re-runs, and a bad payload is refused here with that validator's reason verbatim — no row is written, never one carrying an error flag. This example mirrors MC12 (a public server name colliding with one already configured), but the shape is identical for every kind's own validator.",
+  "method": "proposal.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 91,
+    "method": "proposal.create",
+    "params": {
+      "kind": "mcp_server_add",
+      "payload": {"tier": "public", "server": {"name": "github", "transport": {"type": "stdio", "command": "other-mcp"}}}
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 91,
+    "error": {
+      "code": -31710,
+      "message": "the proposal was refused",
+      "data": {
+        "what": "mcp: server \"github\" is configured twice (public and public) — the same server cannot be two tiers or two agents' (MC12)",
+        "means": "nothing was written — a refused proposal leaves no row, never one carrying an error flag",
+        "todo": "the `what` names the exact reason; fix the payload and create again",
+        "fatal": false
+      }
+    }
+  }
+}

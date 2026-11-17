@@ -1,0 +1,27 @@
+{
+  "description": "mergequeue.show (or any id-taking door) for an id no row answers: ErrMergeQueueNotFound repeats the id that missed. Never an empty row, never a guess at a near-miss id.",
+  "method": "mergequeue.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 769,
+    "method": "mergequeue.show",
+    "params": {
+      "id": "mq-does-not-exist"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 769,
+    "error": {
+      "code": -31953,
+      "message": "no merge-queue item has that id",
+      "data": {
+        "what": "no merge_queue_item row answers id \"mq-does-not-exist\"",
+        "means": "the item may never have enqueued, or its id was mistyped, or it belongs to another daemon's database. Nothing was read and nothing was written",
+        "todo": "run mergequeue.list (or mergequeue.status for one repository) and take the id from the answer",
+        "fatal": false
+      }
+    }
+  },
+  "fromSeam": true
+}

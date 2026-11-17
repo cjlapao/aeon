@@ -1,0 +1,21 @@
+{
+  "description": "`kinds` matches exactly or by ONE TRAILING star. Every other wildcard form is a named error rather than a literal match, because a filter that silently matches nothing is the hardest bug in this slice to diagnose from outside: the client is connected and simply never receives anything.",
+  "method": "subscribe",
+  "request": {
+    "jsonrpc": "2.0", "id": 8, "method": "subscribe",
+    "params": {"filter": {"kinds": ["*.started"]}}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 8,
+    "error": {
+      "code": -31010,
+      "message": "invalid subscription filter",
+      "data": {
+        "what": "kind pattern \"*.started\" has a `*` that is not a single trailing one; use an exact kind or one trailing star, as in `loop.*`",
+        "means": "`kinds` matches exactly or by a single trailing `*`; any other wildcard form is refused rather than treated as a literal, because a filter that matches nothing looks identical to a working subscription",
+        "todo": "use an exact kind (`loop.started`) or one trailing star (`loop.*`)",
+        "fatal": false
+      }
+    }
+  }
+}

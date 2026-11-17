@@ -1,0 +1,95 @@
+[
+  {
+    "name": "aeon_loop_list",
+    "socketMethod": "loop.list",
+    "kind": "read",
+    "cannot": [
+      "cannot reveal loops the daemon's own filesystem access control (P26) would not show this caller",
+      "cannot return provider credentials or secrets held by a route",
+      "cannot enumerate sessions or other callers"
+    ]
+  },
+  {
+    "name": "aeon_loop_show",
+    "socketMethod": "loop.show",
+    "kind": "read",
+    "cannot": [
+      "cannot expose the step transcript — read it with aeon_step_show",
+      "cannot resolve a question the loop is asking — it shows the ask, never the answer",
+      "cannot present cost as more than the measured floor it is (D5)"
+    ]
+  },
+  {
+    "name": "aeon_step_show",
+    "socketMethod": "step.show",
+    "kind": "read",
+    "cannot": [
+      "cannot run, continue or steer the step — the transcript is what it reads",
+      "cannot hide dropped thinking — the drop count is reported, never silently omitted (S18 T5)"
+    ]
+  },
+  {
+    "name": "aeon_blueprint_validate",
+    "socketMethod": "blueprint.validate",
+    "kind": "read",
+    "cannot": [
+      "cannot save or alter a blueprint — no save projection exists on this surface",
+      "cannot start a loop with what it validates (that is aeon_loop_start, a separate decision)"
+    ]
+  },
+  {
+    "name": "aeon_questions_pending",
+    "socketMethod": "store.awaiting",
+    "kind": "read",
+    "cannot": [
+      "cannot answer a question — a gate exists to reach a human and a key is not one (N16, permanent)",
+      "cannot create a question — a fabricated question is a fabricated human (N6, permanent)",
+      "cannot tell a caller whom to ask"
+    ]
+  },
+  {
+    "name": "aeon_questions_open",
+    "socketMethod": "question.pending",
+    "kind": "read",
+    "cannot": [
+      "cannot answer the question it shows — answering requires a person, and a key authenticates a caller rather than one (N16, permanent)",
+      "cannot create or alter a question — questions arise from steps, never from callers (N6, permanent)",
+      "cannot choose whom to ask, and cannot notify anyone"
+    ]
+  },
+  {
+    "name": "aeon_webhook_deliver",
+    "socketMethod": "webhook.deliver",
+    "kind": "webhook",
+    "cannot": [
+      "cannot start anything without a signature that verifies over these exact bytes — and a signature that DOES verify proves who sent it, never what they may cause (TR9; governance runs after authentication, not instead of it)",
+      "cannot let its payload speak as instructions — the text rides the loop labelled third-party DATA (TR10, the W23/MC7/AS12 rule with no agent in the room)",
+      "cannot deliver twice — a replayed delivery is refused and recorded (a resend is not an event)",
+      "cannot steer, pause, resume, retry, or stop the loop a delivery starts — deliveries are one-way like every trigger here",
+      "cannot reveal whether an unknown id is paused, configured, or real — 404 is the whole answer, so the endpoint cannot be enumerated"
+    ]
+  },
+  {
+    "name": "aeon_remote_complete",
+    "socketMethod": "remote.complete",
+    "kind": "callback",
+    "cannot": [
+      "cannot land a completion whose signature does not verify against the CONFIGURED peer's own key — and a signature that verifies proves who sent it, never what they may cause (TR9's discipline one layer up: the BINDING decides that)",
+      "cannot land a completion for a Task this daemon never created — an unsolicited skill result is a fabricated answer, the injection N6 refuses for questions (RA8)",
+      "cannot land a completion whose callee is not the sender — peer A answering peer B's task is refused no matter what its signature proves",
+      "cannot deliver twice — a completion lands once, the first record wins; a resend is not an event",
+      "cannot start, steer, pause, resume, retry or stop any loop — it answers one Task that its own outbound call created, and touches nothing else",
+      "cannot accept a peer that was configured by discovery — peers are configured explicitly with a pinned identity and a key, or they do not exist (RA9)"
+    ]
+  },
+  {
+    "name": "aeon_loop_start",
+    "socketMethod": "loop.start",
+    "kind": "trigger",
+    "cannot": [
+      "cannot steer, pause, resume, retry, or stop the loop it starts — the trigger is one-way (TestTriggerIsOneWay)",
+      "cannot answer gates the started loop reaches (N16)",
+      "cannot grant outward effects beyond what the start request itself declared (T6, per-loop and per-moment)"
+    ]
+  }
+]

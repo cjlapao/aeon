@@ -1,0 +1,16 @@
+{
+  "description": "the ask exists \u2014 the invocation wrote the task and its chain edge before this fan-out (AS6), so a subscriber that races the event and reads agent.task.show sees the same truth. The payload is the taskId and NOTHING else (P25: events announce, rows are the source of truth). Same envelope, seq and cursor as every other event (M23).",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 1502,
+      "kind": "task.created",
+      "at": "2026-10-25T09:20:02.5Z",
+      "payload": {
+        "taskId": 12
+      }
+    }
+  }
+}

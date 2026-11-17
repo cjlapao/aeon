@@ -1,0 +1,106 @@
+{
+  "description": "CN18 status: master, pause, the repository rows with their live state word, the effective settings with sources, slots the next tick would spend, the CN2 statement, and the descriptor that carries every closed vocabulary the forms draw from (rule 4).",
+  "method": "scheduler.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 401,
+    "method": "scheduler.status",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 401,
+    "result": {
+      "enabled": true,
+      "paused": false,
+      "settings": [
+        {
+          "key": "scheduler.maxAgentSlots",
+          "value": "4",
+          "source": "declared-default"
+        },
+        {
+          "key": "scheduler.tickSeconds",
+          "value": "15",
+          "source": "declared-default"
+        },
+        {
+          "key": "scheduler.maxStartsPerRootPerHour",
+          "value": "6",
+          "source": "declared-default"
+        },
+        {
+          "key": "scheduler.agingHours",
+          "value": "24",
+          "source": "declared-default"
+        }
+      ],
+      "slots": {
+        "used": 1,
+        "cap": 4
+      },
+      "nextTickAt": "2026-11-04T13:00:15Z",
+      "repos": [
+        {
+          "componentRoot": "/srv/components/alpha",
+          "rootId": "cmp_01",
+          "enabled": true,
+          "template": {
+            "blueprint": "aeon-build",
+            "tech": "go",
+            "with": {
+              "brief_path": "docs/brief.md"
+            }
+          },
+          "window": {
+            "start": "09:00",
+            "end": "17:30",
+            "days": "1,2,3,4,5",
+            "zone": "Europe/Lisbon"
+          },
+          "minPriority": "assumed",
+          "lastStartAt": "2026-11-04T12:31:02Z",
+          "state": {
+            "kind": "occupied",
+            "reason": "repo-occupied",
+            "detail": "roadmap-materialize-12 (running)"
+          }
+        }
+      ],
+      "attention": {
+        "open": 0
+      },
+      "statement": "enabling lets the scheduler start loops unattended in the repositories whose rows it holds, under the permissions those loops carry; it grants nothing beyond these rows, inherits nothing down the tree, and every act is audited to the person who enabled it (S27 CN2)",
+      "descriptor": {
+        "priorityStates": [
+          "known",
+          "assumed"
+        ],
+        "reasons": [
+          "master-off",
+          "paused",
+          "repo-off",
+          "repo-occupied",
+          "window-closed",
+          "queue-live",
+          "attended-item",
+          "priority-unknown",
+          "not-ready",
+          "dependency-open",
+          "dependency-cancelled",
+          "already-claimed",
+          "capacity",
+          "weight-exceeds-cap",
+          "rate-limit",
+          "budget-exhausted",
+          "grant-absent",
+          "template-invalid"
+        ],
+        "windowGrammar": "start and end are an HH:MM pair (\"09:00\",\"17:30\"); days is a comma list of ISO weekdays (\"1,3,5\", 1 is Monday); zone is an IANA name (\"Europe/Lisbon\"); absent means always",
+        "blueprintsFrom": "blueprint.list"
+      },
+      "s20Paused": false
+    }
+  },
+  "fromDoor": true
+}

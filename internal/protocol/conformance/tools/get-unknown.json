@@ -1,0 +1,26 @@
+{
+  "description": "tools.get on a name that does not exist: -31911, and the refusal NAMES the nearest tool. A bare not-found would be a dead end, and the usual cause is a typo or an alias spelled from memory — tool names are authored in code, so there is a fixed set to be near. The sentence is the ADAPTER's, produced by the one layer that has read the registry and the rows, and the protocol door ships it untouched under its own code (a paraphrase at the door would be a second authority over a fact it cannot see). The same answer must never be an empty entry: an empty tool would be the plausible wrong answer, readable as \"this tool does nothing\".",
+  "method": "tools.get",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 647,
+    "method": "tools.get",
+    "params": {
+      "name": "reed"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 647,
+    "error": {
+      "code": -31911,
+      "message": "no such tool",
+      "data": {
+        "what": "the tools.get read named \"reed\", which is neither a tool this build implements nor a declared MCP tool; the nearest names are: \"read\"",
+        "means": "the read answered cleanly and the name is simply absent — nothing was written, and this is not the catalog declining to answer (it answers everything it has)",
+        "todo": "pick one of the near names in `what`, or `tools.list` (or `aeon tools list`) to see what exists — tool names are authored in code, not generated, so a spelling from memory is the usual cause",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "description": "The ONE place a credential travels, and it travels inward only. `apiKey` is write-only: the result is a RouteView, which has nowhere to put one. An EMPTY `apiKey` on an existing route means *keep the credential as it is* — which is what lets a UI edit a model name without ever holding one, and is why `clearKey` exists as a separate flag: `unset the key` and `do not change the key` are different intentions that one empty string cannot express.",
+  "method": "routes.set",
+  "request": {
+    "jsonrpc": "2.0", "id": 31, "method": "routes.set",
+    "params": {
+      "id": "anthropic",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "apiKey": "<the credential; never echoed back>",
+      "maxOutputTokens": 4096,
+      "prices": {"inputUsdPerMTok": 3, "outputUsdPerMTok": 15}
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 31,
+    "result": {
+      "route": {
+        "id": "anthropic",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5",
+        "hasKey": true,
+        "keyHint": "…wxyz",
+        "source": "runtime",
+        "maxOutputTokens": 4096,
+        "prices": {"inputUsdPerMTok": 3, "outputUsdPerMTok": 15},
+        "priced": true
+      }
+    }
+  }
+}

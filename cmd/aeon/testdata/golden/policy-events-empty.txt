@@ -1,0 +1,3 @@
+$ aeon policy events
+depth 0 · cap 90 days · oldest (none)
+honesty  an empty events log is NOT "nothing was refused": a refusal whose audit row the record boundary refused still stands, and only the daemon log names those refusals

@@ -1,0 +1,6 @@
+{
+  "description": "agent.migrate back-fills agent rows from the legacy on-disk agent definitions the daemon still reads, creating one row per definition and returning how many it created — a daemon write, not policy authoring, so it is registered like loop.create. It is idempotent: a re-run creates nothing new, and the count is the honest answer (zero is 'everything already migrated', not 'the store is empty').",
+  "method": "agent.migrate",
+  "request": {"jsonrpc": "2.0", "id": 117, "method": "agent.migrate"},
+  "response": {"jsonrpc": "2.0", "id": 117, "result": {"created": 3}}
+}

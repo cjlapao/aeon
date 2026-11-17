@@ -1,0 +1,60 @@
+# development-map, Direct mode — derived from opencode/skills/development-map/SKILL.md
+#
+# The other half of the same skill, and STRUCTURALLY DIFFERENT rather than a trimmed Pipeline.
+#
+# What makes it different is not fewer steps. It is that Direct mode creates NO ARTEFACTS:
+# "No Issue or file is created." No `produces:` anywhere, no issues, no task ladder, and three
+# lanes that are optional at the user's discretion rather than by a project flag.
+#
+# This is the shape that proves L10's claim. `hotfix` at 115 lines is a compressed dev-loop;
+# this is a different thing.
+---
+id: development-map-direct
+schemaVersion: 1
+version: 1
+
+lanes:
+  - id: triage
+    # Step 1: "Coordinator classifies the request as Direct."
+    # No artefact. The classification is the outcome.
+    step: { kind: model-step, agent: task-coordinator }
+
+  - id: investigate
+    # Step 2: "If root cause is unclear, coordinator delegates to debugger-engineer first and
+    # waits for the report path."
+    when: { field: flags.root_cause_unclear, op: eq, value: true }
+    step: { kind: model-step, agent: debugger-engineer }
+
+  - id: brief
+    # Step 3: "Coordinator builds the Brief … citing any debugger-engineer report."
+    # Step 4: "hands the Brief to the specialist inline. No Issue or file is created."
+    # The brief is a handoff field, not a file — which is why there is no `produces:`.
+    step: { kind: model-step, agent: task-coordinator }
+
+  - id: implement
+    # Step 5: "Specialist follows the Brief, runs local verification (build/test/lint), and
+    # reports back inline with files changed, verification output summary, and any surprises."
+    # Verification is INSIDE the step here, not a separate lane — the specialist runs it.
+    step: { kind: model-step, agent: by-tech-tag }
+    on_reject: { goto: implement, counter: retries, max: 2, then: escalate }
+
+  - id: review
+    # Step 6: "If the user wants a review … Review is inline, no review file."
+    when: { field: flags.wants_review, op: eq, value: true }
+    step: { kind: model-step, agent: code-reviewer }
+    on_reject: { goto: implement, counter: review_rounds, max: 2, then: escalate }
+
+  - id: git
+    # Step 7: "If the user wants the change committed or a PR opened … Otherwise the
+    # specialist's work stands as local changes."
+    when: { field: flags.wants_commit, op: eq, value: true }
+    step: { kind: code-action, action: git.commitAndPush }
+
+  - id: pr
+    when: { field: flags.wants_pr, op: eq, value: true }
+    step: { kind: code-action, action: forge.openPR }
+
+# No questions. Direct mode has NO GATES — which is the point of it, and worth noticing:
+# every other blueprint here has at least one. A flow with no human gate is a flow whose
+# safety comes entirely from S12's effect classes, since `outward` and `irreversible` still ask.
+questions: {}

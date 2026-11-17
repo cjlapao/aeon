@@ -1,0 +1,37 @@
+{
+  "description": "verify.update: the named fields of one gate change; the fields not named keep their values (the param carries pointers, and a pointer that is absent is a field left alone). The revision counts the gate's own shape changes, and the event trail records the summary — \"timeout 300s → 600s\" — so the audit answers what changed, not just that it changed.",
+  "method": "verify.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1012,
+    "method": "verify.update",
+    "params": {
+      "id": "vcm-2",
+      "command": null,
+      "requirement": null,
+      "timeoutS": 600,
+      "memoryMb": null,
+      "position": null,
+      "enabled": null
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1012,
+    "result": {
+      "gate": {
+        "id": "vcm-2",
+        "componentId": "c-aeon",
+        "name": "lint",
+        "command": "golangci-lint run",
+        "requirement": "advisory",
+        "timeoutS": 600,
+        "position": 2,
+        "enabled": true,
+        "origin": "user",
+        "createdAt": "2026-11-01T09:05:00Z",
+        "updatedAt": "2026-11-02T13:05:00Z"
+      }
+    }
+  }
+}

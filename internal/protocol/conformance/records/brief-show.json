@@ -1,0 +1,33 @@
+{
+  "description": "brief_show reads the step's own loop's brief over the projected door; a person calling it is refused by name and pointed at goal.show's attachments.",
+  "method": "brief.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "method": "brief.show",
+    "params": {
+      "slug": "briefing"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "result": {
+      "id": "brief-7a1f",
+      "loopSlug": "briefing",
+      "componentRoot": "/home/p/aeon",
+      "version": 1,
+      "goalId": "goal-7a1f",
+      "scope": "the board only",
+      "outOfScope": "triggers",
+      "acceptanceCriteria": [
+        "board renders"
+      ],
+      "constraints": [],
+      "testPlan": "QA suite",
+      "reviewState": "in_review",
+      "createdAt": "2026-10-26T09:00:00Z",
+      "updatedAt": "2026-10-26T09:00:00Z"
+    }
+  }
+}

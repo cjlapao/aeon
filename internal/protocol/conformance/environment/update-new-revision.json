@@ -1,0 +1,40 @@
+{
+  "description": "S59 T6 (EV17): environment.update takes the expected revision and returns the row at the NEXT one — optimistic concurrency, so two panels open on the same environment cannot both believe they saved. A stale expectedRevision is a refusal that names the revision it saw, and writes neither the row nor its audit entry.",
+  "method": "environment.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 923,
+    "method": "environment.update",
+    "params": {
+      "id": "env_7f2a9b8c6d5e",
+      "expectedRevision": 1,
+      "spec": "{\"env\":{\"passthrough\":[\"PATH\",\"HOME\",\"USER\"],\"set\":{\"TERM\":\"dumb\"},\"secrets\":[\"deploy-token\"]},\"home\":\"real\",\"egress\":{\"mode\":\"unenforced\"}}"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 923,
+    "result": {
+      "id": "env_7f2a9b8c6d5e",
+      "slug": "ci-default",
+      "name": "CI default",
+      "backend": "host-scrubbed",
+      "origin": "user",
+      "legacy": false,
+      "revision": 2,
+      "spec": {
+        "env": { "passthrough": ["HOME", "PATH", "TERM", "USER"], "set": { "TERM": "dumb" }, "secrets": ["deploy-token"] },
+        "home": "real",
+        "limits": { "timeout": "10m", "output": 1048576 },
+        "egress": { "mode": "unenforced", "allow": [] },
+        "image": null,
+        "services": [],
+        "preview": null
+      },
+      "createdAt": "2026-11-03T09:12:00Z",
+      "updatedAt": "2026-11-03T09:20:00Z",
+      "capabilities": ["wall-limit", "env-allowlist", "secrets-redacted"],
+      "secretRefNames": ["deploy-token"]
+    }
+  }
+}

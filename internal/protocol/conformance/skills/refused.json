@@ -1,0 +1,15 @@
+{
+  "description": "The installer's refusal travels verbatim (S65, DB19): what was refused and why, from internal/skills' own sentence, never a summary — the operator fixes the FILE, so they must read the file's fault. Nothing landed and nothing moved: a refused install stages, validates and discards; the managed root keeps exactly what it held before. This is the code for overwrite-without-force, for a source whose SKILL.md breaks a spec rule, and for a remove aimed at the user root.",
+  "method": "skills.install",
+  "request": {"jsonrpc": "2.0", "id": 325, "method": "skills.install", "params": {"source": "/home/dev/downloads/old-pdf"}},
+  "response": {"jsonrpc": "2.0", "id": 325, "error": {
+    "code": -31820,
+    "message": "the skills operation was refused",
+    "data": {
+      "what": "skills.install refused: a managed skill named \"pdf\" already exists at /home/dev/.local/share/aeon/skills/pdf — re-run with force to replace it",
+      "means": "the skills install or remove refused the request",
+      "todo": "fix the source or add force; files under the user root are never removed here",
+      "fatal": false
+    }
+  }}
+}

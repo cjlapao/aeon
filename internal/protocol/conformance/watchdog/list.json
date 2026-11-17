@@ -1,0 +1,31 @@
+{
+  "description": "watchdog.list is a list-with-details (rule 3): each rule carries its threshold in the signal's own human unit (the unit the vocabulary serves — ms for the two time signals, the bare count for the two count signals — never a client assumption), its fire side (how often it has fired and when — the loops' own control audit), and the loops currently in an episode under it: the loops its once-per-episode memory says it will not re-fire for until they make progress. The scope filter narrows to one tree, so a client that asks for a component's rules gets exactly the rules that cover it and its tree.",
+  "method": "watchdog.list",
+  "request": {
+    "jsonrpc": "2.0", "id": 621, "method": "watchdog.list",
+    "params": {"scope": "component", "subjectId": "/repos/aeon"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 621,
+    "result": {
+      "rules": [
+        {
+          "id": "wdr-1",
+          "scope": "component",
+          "subjectId": "/repos/aeon",
+          "signal": "no-activity",
+          "threshold": 1800000,
+          "thresholdHuman": "30m",
+          "action": "notify",
+          "enabled": true,
+          "origin": "system",
+          "createdAt": "2026-11-01T08:00:00.000Z",
+          "updatedAt": "2026-11-01T08:00:00.000Z",
+          "lastFiredAt": "2026-11-01T11:45:00.000Z",
+          "fireCount": 3,
+          "loopsInEpisode": ["loop-7"]
+        }
+      ]
+    }
+  }
+}

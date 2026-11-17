@@ -1,0 +1,16 @@
+{
+  "description": "the callee failed with a reason \u2014 the payload still names only the taskId because the reason lives in the record, where the transcript reads it; an event is not a second copy of the truth. Same envelope, seq and cursor as every other event (M23).",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 1502,
+      "kind": "task.failed",
+      "at": "2026-10-25T09:20:02.5Z",
+      "payload": {
+        "taskId": 13
+      }
+    }
+  }
+}

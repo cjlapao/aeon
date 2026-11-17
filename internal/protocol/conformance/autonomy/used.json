@@ -1,0 +1,12 @@
+{
+  "description": "The autonomy.used event (S56 T6, R5): published by the loop's decision site AFTER a completed/failed use row is recorded — the event is the signal of a row that exists, so a failed write publishes nothing (an event for a row that is not there is a second truth). The payload names the loop, the grant it ran under, the action, the phase and the begun row it closes: ids and enums only. It is filed under the loop's OWN project root (S31 D1), so a subscriber filtered by Filter{ComponentRoot} gets one project's uses and not the machine's. No notify hint (R5).",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-4c1f9a2b", "seq": 9004, "kind": "autonomy.used",
+      "componentRoot": "/repo/aeon",
+      "at": "2026-11-01T09:20:04.000000000Z",
+      "payload": {"loopId": "loop-42", "grantId": "g-8c21", "action": "forge.openPR", "phase": "completed", "begunId": 301}
+    }
+  }
+}

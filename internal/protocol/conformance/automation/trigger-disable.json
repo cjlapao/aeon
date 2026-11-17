@@ -1,0 +1,33 @@
+{
+  "description": "A pause names its reason — a switch has no reason, a decision does. The row keeps enabled=false with the sentence; the fire log stays untouched history.",
+  "method": "automation.trigger.disable",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 209,
+    "method": "automation.trigger.disable",
+    "params": {"id": "trg-intake", "reason": "operator paused it during the migration"}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 209,
+    "result": {
+      "id": "trg-intake",
+      "name": "Intake",
+      "source": "event",
+      "rootId": "prj-platform",
+      "componentId": "cmp-alpha",
+      "match": {"event": "goal.approved", "goal_type": ["feature"]},
+      "blueprint": "dev-loop",
+      "kickoff": "Approved: {{.Goal}}",
+      "maxRunsPerHour": 20,
+      "maxCostPerDayUsd": 25.5,
+      "enabled": false,
+      "disabledReason": "operator paused it during the migration",
+      "createdByKind": "user",
+      "createdById": "501",
+      "createdAt": "2026-10-28T09:00:00Z",
+      "updatedAt": "2026-10-28T09:15:00Z",
+      "lastFire": null
+    }
+  }
+}

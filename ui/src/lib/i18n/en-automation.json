@@ -1,0 +1,226 @@
+{
+  "settings": {
+    "automation": {
+      "title": "Automation",
+      "subtitle": "Everything that starts agents on its own: schedules, webhooks and event triggers.",
+      "reconnecting": "The daemon is reconnecting — reads still work, writes wait.",
+      "reload": "Reload",
+      "tabs": {
+        "automations": "Automations",
+        "fireLog": "Fire log",
+        "audit": "Audit",
+        "proposals": "Proposals"
+      },
+      "filter": {
+        "source": "Source",
+        "enabled": "State",
+        "archived": "Archived",
+        "q": "Search",
+        "qHint": "name, id or the plain-words sentence",
+        "all": "all families",
+        "any": "any",
+        "hidden": "hidden (default)"
+      },
+      "create": {
+        "schedule": "schedule",
+        "webhook": "webhook",
+        "event": "event"
+      },
+      "list": {
+        "title": "Automations",
+        "subtitle": "What each one does, in the daemon''s own words.",
+        "needsAttention": "needs attention:",
+        "loading": "Loading automations…",
+        "noStatement": "The daemon answered an empty list without a statement.",
+        "neverFired": "never fired"
+      },
+      "state": {
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "paused": "Paused",
+        "archived": "Archived"
+      },
+      "outcome": {
+        "started": "started",
+        "refused": "refused",
+        "limited": "limited",
+        "skipped": "skipped",
+        "could-not-say": "could-not-say"
+      },
+      "health": {
+        "blueprint": "blueprint",
+        "webhook": "secret",
+        "workspace": "workspace",
+        "scope": "scope",
+        "cannotFire": "cannot fire"
+      },
+      "firelog": {
+        "title": "Fire log",
+        "subtitle": "Every answer the engine gave, across all three families — the five outcomes kept distinct.",
+        "outcomeFilter": "Outcome",
+        "allOutcomes": "all outcomes",
+        "reload": "Reload",
+        "empty": "Nothing has fired yet.",
+        "emptyBody": "A fire log that stays empty on a page that filters is the filter''s answer — narrow the filter to be sure.",
+        "older": "Older"
+      },
+      "audit": {
+        "title": "Audit",
+        "subtitle": "Who changed what, per automation — the peer-stamped record, not a reconstruction.",
+        "pick": "Automation",
+        "empty": "No changes recorded for this automation."
+      },
+      "proposals": {
+        "title": "Proposals",
+        "subtitle": "An agent may only PROPOSE narrowing an automation; nothing is applied until a person commits it.",
+        "empty": "No automation proposals waiting."
+      },
+      "drawer": {
+        "loading": "Loading the automation…",
+        "edit": "Edit",
+        "enable": "Enable",
+        "disable": "Disable",
+        "pause": "Pause",
+        "resume": "Resume",
+        "fireNow": "Fire now",
+        "archive": "Archive",
+        "unarchive": "Unarchive",
+        "close": "Close",
+        "blueprint": "Blueprint",
+        "schedule": "Schedule",
+        "zone": "Timezone",
+        "secretEnv": "Secret env (name)",
+        "match": "Match",
+        "kickoff": "Kickoff",
+        "component": "Component",
+        "workspace": "Workspace",
+        "goal": "Goal",
+        "limits": "Limits",
+        "createdBy": "Created by",
+        "updated": "Updated",
+        "lastFires": "Last fires",
+        "loopsStarted": "Loops started",
+        "total": "loops in total",
+        "changes": "Changes",
+        "archivedReason": "Archived because",
+        "archiveNotDelete": "Archive hides the automation from the engine and keeps every row; nothing here can delete.",
+        "unarchiveDisarmed": "Unarchiving leaves it disarmed — enabling stays a separate deliberate act.",
+        "refused": "The daemon refused this"
+      },
+      "form": {
+        "newTitle": "New schedule",
+        "editTitle": "Edit schedule",
+        "newWebhookTitle": "New webhook",
+        "editWebhookTitle": "Edit webhook",
+        "newEventTitle": "New event automation",
+        "editEventTitle": "Edit event automation",
+        "id": "Id",
+        "name": "Name",
+        "blueprint": "Blueprint",
+        "cron": "Cron",
+        "zone": "Timezone",
+        "windowTitle": "Window (optional)",
+        "windowStart": "Start",
+        "windowEnd": "End",
+        "windowDays": "Days",
+        "workspace": "Workspace",
+        "goal": "Goal",
+        "secretEnv": "Secret env var NAME",
+        "secretNameRule": "enter the variable''s name — the daemon reads its value from its own environment",
+        "secretEnvHint": "The value never travels here: the daemon reads it from its own process, and a wrong name only fails the presence check.",
+        "createArmed": "Create armed (deliberate act)",
+        "disarmedByDefault": "default: created disarmed",
+        "createdDisarmed": "Created disarmed — enabling is a separate deliberate act.",
+        "confirmArm": "Arm it",
+        "cancel": "Cancel",
+        "save": "Save",
+        "create": "Create",
+        "event": "Event",
+        "maxRuns": "Max runs per hour",
+        "component": "Component (scope)",
+        "kickoff": "Kickoff template",
+        "kickoffHint": "The template the started loop opens with — stored as a template, rendered by the engine.",
+        "refused": "The daemon refused this"
+      },
+      "preview": {
+        "pending": "Asking the daemon what this cron means…",
+        "none": "The next fire instants appear here, in the daemon''s words."
+      },
+      "match": {
+        "emptyMeansAny": "pick none to match any",
+        "picked": "selected"
+      },
+      "tester": {
+        "title": "Test a sample event",
+        "sampleTaskType": "Sample task type",
+        "run": "Test match",
+        "matches": "would start a loop",
+        "noMatch": "would not match"
+      },
+      "dryrun": {
+        "run": "Check the last events",
+        "summary": "would have matched (of scanned)"
+      },
+      "confirm": {
+        "cancel": "Cancel"
+      },
+      "reason": {
+        "label": "Reason (required)"
+      },
+      "help": {
+        "title": "What is automation for?",
+        "body": "## What is an automation?\n\nAn **automation** starts a loop on its own, using a blueprint you chose, so you do not have to start it by hand. There are three kinds:\n\n- **Schedule**: starts on a cron time, in a timezone, optionally only inside a time window.\n- **Webhook**: starts when something calls the daemon with the right secret. Only the *name* of the secret variable is stored here, never its value.\n- **Event**: starts when something happens inside Aeon, such as a task finishing, that matches the filter you set.\n\n## Safe by default\n\n- A new automation is created **disarmed**. Enabling it is a separate, deliberate act, and the daemon states exactly what you are authorising.\n- You can **archive** an automation, but never delete it. Unarchiving brings it back disarmed.\n- Every start attempt is recorded in the **fire log** with one of five outcomes: started, refused, limited, skipped, or could-not-say.\n- An agent may only *propose* narrowing an automation. Nothing is applied until you commit it under **Proposals**."
+      },
+      "hint": {
+        "automations": "Open one to see what it does, its health and its history, or to enable, pause, fire or archive it.",
+        "firelog": "Every answer the engine gave when something tried to start a loop. The five outcomes are kept distinct.",
+        "audit": "Who changed what, per automation: the peer-stamped record, not a reconstruction.",
+        "proposals": "An agent may only propose narrowing an automation. Nothing is applied until a person commits it."
+      },
+      "col": {
+        "automation": "Automation",
+        "kind": "Kind",
+        "state": "State",
+        "blueprint": "Blueprint",
+        "last": "Last fire"
+      },
+      "footer": "Showing {shown} of {total}",
+      "q": {
+        "what": "What does it do?",
+        "health": "Can it fire?",
+        "shape": "When does it start?",
+        "limits": "How often, and for whom?",
+        "actions": "What can you do with it?",
+        "fires": "What did it last do?",
+        "loops": "Which loops did it start?",
+        "changes": "What changed?",
+        "who": "What is it called, and what does it run?",
+        "when": "When should it fire?",
+        "match": "Which events start it?",
+        "arm": "Should it start armed?",
+        "limitsForm": "How much may it run?"
+      },
+      "actions": {
+        "newSchedule": "New schedule",
+        "newWebhook": "Webhook",
+        "newEvent": "Event"
+      },
+      "webhook": {
+        "listenTitle": "Which deliveries start it?",
+        "preset": "Listen for",
+        "presetGithubIssue": "GitHub: a new issue is opened",
+        "presetGithubPr": "GitHub: a pull request is opened",
+        "presetAny": "Any signed delivery",
+        "presetCustom": "Another event…",
+        "customLabel": "Event, and optionally its actions",
+        "customHint": "Name the event as the sender calls it (the X-GitHub-Event header for GitHub), then optionally its actions after a colon, for example issues:opened,reopened. Any other signed delivery is answered and ignored.",
+        "ignoredHint": "Any other signed delivery (a ping, a push, an issue being edited) is answered and ignored, so it never starts a loop.",
+        "goalHint": "Fields of the delivery go in curly brackets and are filled in when it arrives. They go in as short single-line text; the whole delivery still reaches the loop as untrusted data. For example:",
+        "authTitle": "How is it authenticated?",
+        "connectTitle": "Connect it to GitHub",
+        "connectUrl": "Payload URL",
+        "connectSteps": "In the repository: Settings, Webhooks, Add webhook. Use the payload URL above with the address of your daemon, content type application/json, and the same secret that is in the variable named above; under events pick the one you chose here. The daemon must be started with --http and be reachable from GitHub."
+      }
+    }
+  }
+}

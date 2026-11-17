@@ -1,0 +1,23 @@
+{
+  "description": "`loop.message` with the operator's CHOSEN skills (S68 B6): the names are validated against the live catalog at the door — an unknown name refuses the whole call naming every offender, adding nothing to the thread — the names that rode are filed on the human thread row beside the person's PURE words, and each chosen skill's canonical instruction line renders into THIS turn's system message only. The next turn chooses again, or nothing.",
+  "method": "loop.message",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 98,
+    "method": "loop.message",
+    "params": {
+      "id": "loop-9",
+      "text": "now draft the migration notes",
+      "skills": ["verify-before-done"]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 98,
+    "result": {
+      "messageId": 42,
+      "seq": 8,
+      "turn": "started"
+    }
+  }
+}

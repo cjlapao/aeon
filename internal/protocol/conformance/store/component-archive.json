@@ -1,0 +1,35 @@
+{
+  "description": "Archiving a component hides it from listings and refuses it for new work; the id and history stay (a hidden node, not a deleted one), so a restore can bring it back.",
+  "method": "component.archive",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 96,
+    "method": "component.archive",
+    "params": {
+      "id": "abc123"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 96,
+    "result": {
+      "id": "abc123",
+      "name": "Aeon QA",
+      "slug": "aeon-qa",
+      "root": "/home/p/aeon-qa",
+      "remote": "https://example.com/team/aeon-qa.git",
+      "remoteKey": "example/team/aeon-qa",
+      "repoKey": "aeon-qa",
+      "owner": "team",
+      "icon": "🧪",
+      "tags": ["go", "qa"],
+      "shortDescription": "",
+      "description": "",
+      "defaultBranch": "main",
+      "branchPrefix": "aeon",
+      "maxParallelAgents": 1,
+      "createdAt": "2026-10-20T08:00:00Z",
+      "updatedAt": "2026-10-21T11:00:00Z"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "description": "S60 T9 (MQ14.3, MQ15) at the DOOR: the agent's one ask names WHICH REPOSITORY, WHICH BRANCH and WHY — never what the queue is supposed to do with them afterward. A `baseBranch` in mergequeue.proposeEnqueue params is refused at the plane's own key gate, BEFORE the records service and before the decode, and the refusal NAMES the field: the base is the daemon's to resolve at enqueue from the repository's settings and its remote (MQ15), and an ask that could aim a branch at a base its author was never shown is a write wearing a proposal's clothes. The same gate refuses `attended` (MQ14.3 fixes it FALSE for every committed ask — asking never buys a watched landing), a smuggled `actor` (the author is the STEP the connection belongs to, stamped from the step context — OL3), and `status`/`position` (the state and the place in the lane are the queue's assignments, S60 MQ13's gate). The refusal is a transport-level condition, so it keeps JSON-RPC's own code and carries no `data` (conformance/README), and it happens before the records plane is consulted — a door refusal that already touched the store is a refusal that already acted.",
+  "method": "mergequeue.proposeEnqueue",
+  "fromDoor": true,
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 981,
+    "method": "mergequeue.proposeEnqueue",
+    "params": {
+      "componentRoot": "/srv/components/alpha",
+      "branch": "feature/login-retry",
+      "reason": "green and ready — just needs a row",
+      "baseBranch": "release/2026-11"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 981,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: mergequeue.proposeEnqueue params carry \"baseBranch\" — an ask names a repository, a branch and a reason; the attendedness is the kind's (always false, MQ14.3) and the base is the daemon's to resolve (MQ15)"
+    }
+  }
+}

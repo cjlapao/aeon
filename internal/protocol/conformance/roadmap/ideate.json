@@ -1,0 +1,6 @@
+{
+  "description": "Ideation dispatch (T3, D1): the claim `idea → ideating` rides the door (claimed-FROM — a second caller finds the rung gone) and the loop that starts is an ORDINARY loop through the existing loop.start door, running an EXISTING blueprint that declares produces: brief.md. The answer names the ideation loop; the item's arrival at `brief-agreed` happens later on the loop's own terminal event — the engine's existing produces check is the gate (R3), and nothing here polls or watches. The item's loop_slug stays unset: D6 says an item's loop pointer means MATERIALIZATION, never an ideation conversation.",
+  "method": "roadmap.ideate",
+  "request": {"jsonrpc": "2.0", "id": 347, "method": "roadmap.ideate", "params": {"id": 12, "workspaceRoot": "/srv/projects/ledger", "blueprint": "brainstorm"}},
+  "response": {"jsonrpc": "2.0", "id": 347, "result": {"started": true, "loopSlug": "ideate-item-12", "status": "ideating"}}
+}

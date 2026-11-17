@@ -1,0 +1,31 @@
+{
+  "description": "agent.changes is the agent ledger's window and the paging convention's second adopter (S73 AR6, docs/aeon/PAGING.md PG1–PG5): two keys in, `page` and `pageSize`, plus the optional `slug` that narrows the whole thing to one agent — and here it is absent, which asks for EVERYTHING. The answer is the window newest first, the two paging keys as the daemon applied them, `total` for the filtered set, and `slug` echoed so a caller can never be shown someone else's history by a routing bug. Row 0 is a person editing a card; row 1 is the upgrade's back-fill, whose `slug` is `null` — the one row AR1 lets carry no name, because a run that derived forty agents belongs to no single one of them and appears in nobody's history. Its nullability is on the wire, not in a comment: an app that typed `slug` non-null would break on exactly this row. No `sort`, no `dir`, no `q`: a history has one order, and a read refuses a key it cannot honour instead of accepting it and ignoring it.",
+  "method": "agent.changes",
+  "request": {"jsonrpc": "2.0", "id": 123, "method": "agent.changes", "params": {"page": 1, "pageSize": 2}},
+  "response": {"jsonrpc": "2.0", "id": 123, "result": {
+    "changes": [
+      {
+        "id": 7,
+        "op": "edit",
+        "slug": "code-reviewer",
+        "summary": "edit code-reviewer (9 content fields)",
+        "actorKind": "user",
+        "actorId": "1000",
+        "occurredAt": "2026-11-06T09:12:00Z"
+      },
+      {
+        "id": 1,
+        "op": "migrate",
+        "slug": null,
+        "summary": "migrate derived 38 rows from plugin_agent",
+        "actorKind": "cli",
+        "actorId": "cli",
+        "occurredAt": "2026-11-05T18:00:00Z"
+      }
+    ],
+    "page": 1,
+    "pageSize": 2,
+    "total": 7,
+    "slug": ""
+  }}
+}

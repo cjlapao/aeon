@@ -1,0 +1,12 @@
+{
+  "description": "`step.steer.cancel` withdraws a steer that is still pending; a delivered or already-cancelled steer is refused with its state named (a discriminated result, not an error). Cancelling never un-injects a delivered steer — the transcript already carries it.",
+  "method": "step.steer.cancel",
+  "request": {
+    "jsonrpc": "2.0", "id": 82, "method": "step.steer.cancel",
+    "params": { "steerId": 3 }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 82,
+    "result": { "state": "cancelled" }
+  }
+}

@@ -1,0 +1,4 @@
+$ aeon policy add --type tool_access --id ok-tool --target agent:alice --action deny --tool bash --spec {"state":"deny"}
+policy ok-tool stored — the daemon's next read sees it (N8 forbids caching)
+$ aeon policy list
+ok-tool                  tool_access    agent:alice                  deny   operator     no expiry

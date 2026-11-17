@@ -1,0 +1,61 @@
+{
+  "description": "A rolled-up component card carries the count-only breakdown: integers per child, nothing to rank (RT8/RT11).",
+  "method": "scorecard.component",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "scorecard.component",
+    "params": {
+      "id": "opencode-agents",
+      "includeChildren": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "card": {
+        "subject": {
+          "kind": "component",
+          "id": "opencode-agents",
+          "includeChildren": true
+        },
+        "window": {
+          "since": "2026-10-05T00:00:00Z",
+          "until": "2026-11-04T00:00:00Z"
+        },
+        "coverage": {
+          "recordedSince": "2026-10-12T08:00:00Z",
+          "loopsInHistory": 96,
+          "loopsRecorded": 91,
+          "loopsNotRecorded": 5
+        },
+        "statement": "Outcome recording covers 91 of 96 loops since 2026-10-12T08:00:00Z; the 5 earlier loops are counted, never measured.",
+        "metrics": {
+          "loops": {
+            "value": 91,
+            "n": 91,
+            "state": "ok"
+          }
+        }
+      },
+      "breakdown": [
+        {
+          "component": "aeon",
+          "root": "aeon",
+          "loops": 54,
+          "done": 40,
+          "blocked": 3
+        },
+        {
+          "component": "helper",
+          "root": "helper",
+          "loops": 7,
+          "done": 5,
+          "blocked": 0
+        }
+      ],
+      "statement": "A score is a measurement of what happened. It does not change what any agent, blueprint or project is allowed or asked to do."
+    }
+  }
+}

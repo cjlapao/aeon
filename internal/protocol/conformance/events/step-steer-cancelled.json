@@ -1,0 +1,21 @@
+{
+  "description": "A pending row was withdrawn before any boundary read it; nothing entered the transcript. Only `pending` rows cancel — an already-settled row is refused by name with the state it was found in (step.steer.cancel names the state found).",
+  "event": "step.steer.cancelled",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "seq": 11,
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1470,
+      "kind": "step.steer.cancelled",
+      "at": "2026-10-24T12:00:00.000Z",
+      "payload": {
+        "stepId": 12,
+        "agent": "default",
+        "loopId": "loop-7f3a",
+        "steerId": 42
+      }
+    }
+  }
+}

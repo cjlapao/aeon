@@ -1,0 +1,26 @@
+{
+  "description": "tools.byAgent on an agent the roster does not carry: -31912 with the known slugs in the sentence. The code is DISTINCT from -31911 because the two facts have different repairs — a missing tool is a spelling the catalog can nearly correct, a missing agent is a name nobody stored — and a client branches on the number, never the prose. An empty tool list here would be the worst answer this door can give: it reads as \"this agent may call nothing\", which sends someone to write grants for an agent that does not exist.",
+  "method": "tools.byAgent",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 650,
+    "method": "tools.byAgent",
+    "params": {
+      "agent": "nobody"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 650,
+    "error": {
+      "code": -31912,
+      "message": "no such agent",
+      "data": {
+        "what": "the tools.byAgent read named \"nobody\", which is not an agent this store carries; the known agents are: \"atlas\", \"brief-author\", \"cursitor\", \"sentry\"",
+        "means": "the read answered cleanly and the agent is simply absent — no grant row exists for it, so no tool view can be built, and nothing was written",
+        "todo": "pick one of the known agent slugs in `what`, or `agent.list` (or `aeon agent list`) to see who exists — slugs are authored, so a typo is the usual cause",
+        "fatal": false
+      }
+    }
+  }
+}

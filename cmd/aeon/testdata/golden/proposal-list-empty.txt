@@ -1,0 +1,2 @@
+$ aeon proposal list
+no proposals — the normal state when nobody has staged one

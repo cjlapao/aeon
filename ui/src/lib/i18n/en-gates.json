@@ -1,0 +1,235 @@
+{
+  "settings": {
+    "gates": {
+      "title": "Verification gates",
+      "subtitle": "Commands that check a loop’s work before it can be merged, and the rule that decides when it may be.",
+      "reconnecting": "Writes, tries and rule edits are disabled while the daemon is not current.",
+      "pick": {
+        "component": "Component",
+        "none": "Choose a component…",
+        "emptyTitle": "No component chosen",
+        "emptyBody": "Pick a component to see its gates, its merge rule and its runs.",
+        "label": "Showing gates for"
+      },
+      "components": {
+        "failed": "The component list could not be read."
+      },
+      "tabs": {
+        "gates": "Gates",
+        "merge": "Merge rule",
+        "runs": "Runs"
+      },
+      "word": {
+        "required": "required",
+        "advisory": "advisory",
+        "pass": "pass",
+        "fail": "fail",
+        "unverified": "unverified",
+        "skipped": "skipped",
+        "loop": "from a loop",
+        "manual": "by hand"
+      },
+      "filter": {
+        "requirement": "Requirement",
+        "any": "Any",
+        "includeArchived": "Include archived"
+      },
+      "actions": {
+        "add": "Add a gate",
+        "copyFromRoot": "Copy inherited gates",
+        "retry": "Retry",
+        "edit": "Edit",
+        "archive": "Archive",
+        "restore": "Restore",
+        "try": "Try",
+        "addFromTemplate": "From a template"
+      },
+      "list": {
+        "failed": "The gate list could not be read.",
+        "emptyTitle": "No gates",
+        "emptyBody": "This component has no gates yet — add one, apply a template, or copy what it inherits."
+      },
+      "row": {
+        "inheritedFrom": "inherited from {component}",
+        "disabled": "disabled",
+        "archived": "archived",
+        "neverRun": "never run",
+        "command": "Command",
+        "timeout": "timeout {seconds} s",
+        "memory": "memory {mb} MB — declared, not enforced",
+        "lastRunReason": "last run: {reason}",
+        "archiveFailed": "Archiving was refused.",
+        "restoreFailed": "Restoring was refused."
+      },
+      "copy": {
+        "summary": "{copied} copied, {failed} refused"
+      },
+      "try": {
+        "confirmTitle": "Try “{name}” now?",
+        "confirm": "Run it now",
+        "decline": "Not now",
+        "failed": "The try was refused.",
+        "ranIn": "Ran in {path}",
+        "activeLoops": "Loops also running here while it ran: {slugs}",
+        "rootQuiet": "No loop was working in this root while it ran."
+      },
+      "write": {
+        "refused": "The daemon refused the write"
+      },
+      "form": {
+        "addTitle": "New gate",
+        "editTitle": "Edit gate — {name}",
+        "name": "Name",
+        "command": "Command",
+        "requirement": "Requirement",
+        "timeout": "Timeout (s)",
+        "memory": "Memory (MB)",
+        "memoryHint": "Declared, not enforced — the runner reports it, it does not limit the process.",
+        "enabled": "Enabled",
+        "save": "Save",
+        "cancel": "Cancel",
+        "addFailed": "Adding the gate was refused.",
+        "updateFailed": "Updating the gate was refused.",
+        "noteTitle": "The daemon added a note"
+      },
+      "templates": {
+        "open": "Apply templates",
+        "title": "Seed templates",
+        "subtitle": "The daemon''s own starting gates, by stack. A name that collides refuses the whole apply — nothing lands half-set.",
+        "apply": "Apply {count}",
+        "close": "Close",
+        "failed": "The templates could not be read.",
+        "empty": "The daemon offered no templates.",
+        "applied": "{count} gates added",
+        "applyFailed": "Applying the templates was refused."
+      },
+      "merge": {
+        "title": "Merge rule",
+        "subtitle": "When a loop''s work here may be merged, and what stands in the way.",
+        "failed": "The merge rule could not be read.",
+        "source": {
+          "own": "the component''s own rule",
+          "root": "inherited from the root",
+          "baseline": "the shipped baseline",
+          "none": "no rule yet"
+        },
+        "revision": "revision {revision}",
+        "lastChange": "last change: {summary}",
+        "floorTitle": "Autonomy floor — could an unattended merge ever arm here?",
+        "floorOk": "ok — every floor ingredient is present",
+        "fields": {
+          "enabled": "Enabled",
+          "requireLocal": "Local gates required",
+          "requireDod": "Definition of done",
+          "requiredChecks": "Required checks",
+          "checksPolicy": "Checks policy",
+          "noChecks": "When no checks exist",
+          "reviewMode": "Review mode",
+          "aeonReviewAgents": "Aeon review agents",
+          "requireThreadsResolved": "Threads must be resolved",
+          "method": "Merge method"
+        },
+        "save": "Save rule",
+        "saveFailed": "Saving the rule was refused.",
+        "clear": "Remove this component''s rule",
+        "clearFailed": "Removing the rule was refused.",
+        "saved": "Rule saved at revision {revision}",
+        "confirmSetTitle": "Change the merge rule",
+        "confirmSetBody": "This replaces the component''s merge rule. The fields that change:",
+        "confirmClearTitle": "Remove this component''s rule",
+        "confirmClearBody": "This removes the component''s own rule row. Which rule applies afterwards is whatever the daemon''s next effective read answers — nothing here predicts it.",
+        "confirmGo": "Save it",
+        "preview": {
+          "title": "Preview a merge",
+          "pr": "PR number",
+          "ask": "Evaluate",
+          "allowed": "allowed",
+          "refused": "refused",
+          "failed": "The preview was refused.",
+          "head": "at head {sha}"
+        }
+      },
+      "runs": {
+        "title": "Runs",
+        "subtitle": "Every verification the daemon recorded for this component.",
+        "filterLoop": "Loop",
+        "filterState": "State",
+        "failed": "The run ledger could not be read.",
+        "emptyTitle": "No runs",
+        "emptyBody": "Nothing has been verified here yet.",
+        "noLoop": "not from a loop",
+        "attempt": "task {position} · attempt {attempt}",
+        "head": "head {sha}",
+        "detailFailed": "The run detail could not be read.",
+        "loading": "Reading the run…",
+        "gateResults": "Per-gate results",
+        "timedOut": "timed out",
+        "exit": "exit {code}",
+        "bytes": "{out} out · {err} err",
+        "showTails": "Show output tails",
+        "secretNotice": "Output may contain secrets — the tail is the runner''s scrubbed excerpt, shown best-effort.",
+        "truncated": "The output was truncated — the byte counts above are the truth; the tail is an excerpt."
+      },
+      "hint": {
+        "gates": "The commands Aeon runs to check this component’s work. Open one to try it now, edit it or archive it.",
+        "merge": "When a loop’s work here may be merged, and what stands in the way.",
+        "runs": "Every verification the daemon recorded for this component. Open a run to see each gate’s result."
+      },
+      "col": {
+        "gate": "Gate",
+        "requirement": "Requirement",
+        "lastRun": "Last run",
+        "status": "Notes",
+        "state": "Result",
+        "loop": "Loop",
+        "attempt": "Attempt",
+        "head": "Commit",
+        "when": "When"
+      },
+      "footer": "Showing {shown} of {total}",
+      "q": {
+        "what": "What is it called, and what does it run?",
+        "must": "Does it have to pass?",
+        "limits": "How long may it take, and how much memory?",
+        "runs": "What does it run?",
+        "last": "How did it last go?",
+        "on": "Is the rule on?",
+        "pass": "What must pass first?",
+        "review": "Who reviews the work?",
+        "how": "How is it merged?",
+        "floor": "Could an unattended merge ever arm here?",
+        "try": "What would it say about a pull request?",
+        "templates": "Which starting gates do you want?"
+      },
+      "help": {
+        "title": "What are verification gates?",
+        "body": "## What is a gate?\n\nA **gate** is a command, such as your tests, linter or build, that Aeon runs inside a component’s checkout to check a loop’s work.\n\n- **Required** gates must pass before the work can be merged.\n- **Advisory** gates are reported but never block.\n\n## How the parts fit\n\n1. **Gates**: the commands that check the work.\n2. **Merge rule**: what must be true before the work may be merged.\n3. **Runs**: what actually ran, and how it went.\n\nGates belong to a component. A component also inherits its root’s gates; copy them if you want to change them."
+      }
+    }
+  },
+  "loops": {
+    "dod": {
+      "title": "Definition of done",
+      "subtitle": "The checklist the loop''s brief committed. Only a person marks it through this card.",
+      "failed": "The definition of done could not be read.",
+      "retry": "Retry",
+      "empty": "This loop''s brief carries no DoD checklist.",
+      "refused": "The daemon refused the mark",
+      "word": {
+        "met": "met",
+        "unmet": "unmet",
+        "unverifiable": "unverifiable",
+        "unchecked": "unchecked"
+      },
+      "evidence": "evidence: {kind} {ref}",
+      "markMet": "Mark met",
+      "markUnmet": "Mark unmet",
+      "markFailed": "The mark was refused.",
+      "confirmTitle": "Mark this item “{state}”?",
+      "confirm": "Mark it",
+      "note": "What proves it? (stored as the evidence)",
+      "noteRequired": "A human “met” needs the note — the daemon refuses it empty.",
+      "confirmHuman": "This mark is yours, the person at the socket — the daemon stamps it with your peer identity."
+    }
+  }
+}

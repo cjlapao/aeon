@@ -1,0 +1,21 @@
+{
+  "description": "mcp.check's honest failure shape — same fields as success, ok:false and error naming what went wrong (here, a stdio server whose command could not be started). A timed-out check carries the same shape with a timeout-flavored error instead; both are TB2's answer to \"nothing invented, no silent hang.\"",
+  "method": "mcp.check",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 84,
+    "method": "mcp.check",
+    "params": { "server": "scratch" }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 84,
+    "result": {
+      "server": "scratch",
+      "ok": false,
+      "error": "mcp: server \"scratch\": initialize: exec: \"gh-mcp-missing\": executable file not found in $PATH",
+      "ms": 3,
+      "checkedAt": "2026-10-26T14:03:00Z"
+    }
+  }
+}

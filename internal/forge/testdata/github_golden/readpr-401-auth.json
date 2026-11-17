@@ -1,0 +1,10 @@
+{
+  "case": "readpr-401-auth",
+  "method": "GET",
+  "path": "/repos/acme/widget/pulls/7",
+  "authShape": "Bearer \u003credacted\u003e",
+  "accept": "application/vnd.github+json",
+  "attempts": 1,
+  "errKind": "auth",
+  "errSentence": "auth: auth: Bad credentials\n  why:  the forge token did not authenticate\n  do:   set the forge token in the environment or a key file (aeon init --key-file)"
+}

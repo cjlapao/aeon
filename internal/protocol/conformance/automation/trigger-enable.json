@@ -1,0 +1,33 @@
+{
+  "description": "Re-enabling clears the spoken reason — a resume erases the pause's sentence because the pause is over, and the fire log keeps every word of it anyway.",
+  "method": "automation.trigger.enable",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 208,
+    "method": "automation.trigger.enable",
+    "params": {"id": "trg-nightly"}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 208,
+    "result": {
+      "id": "trg-nightly",
+      "name": "Nightly triage",
+      "source": "event",
+      "rootId": "prj-platform",
+      "componentId": "",
+      "match": {"event": "task.approved", "task_type": ["triage"]},
+      "blueprint": "dev-loop",
+      "kickoff": "",
+      "maxRunsPerHour": 4,
+      "maxCostPerDayUsd": null,
+      "enabled": true,
+      "disabledReason": "",
+      "createdByKind": "user",
+      "createdById": "501",
+      "createdAt": "2026-10-25T09:00:00Z",
+      "updatedAt": "2026-10-28T09:10:00Z",
+      "lastFire": null
+    }
+  }
+}

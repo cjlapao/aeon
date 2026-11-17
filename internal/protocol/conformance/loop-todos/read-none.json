@@ -1,0 +1,27 @@
+{
+  "description": "loop.todos on a loop that never had a list (S75 P31): an empty list and the daemon's statement, not an error and not an invented 'nothing to do'. The statement is the daemon's sentence, quoted verbatim by the client.",
+  "method": "loop.todos",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1903,
+    "method": "loop.todos",
+    "params": {
+      "id": "loop-dmo91lspzwch"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1903,
+    "result": {
+      "active": false,
+      "revision": 0,
+      "items": [],
+      "counts": {
+        "pending": 0,
+        "inProgress": 0,
+        "done": 0
+      },
+      "statement": "this loop has never had a todo list"
+    }
+  }
+}

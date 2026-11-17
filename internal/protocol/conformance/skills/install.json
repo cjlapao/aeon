@@ -1,0 +1,25 @@
+{
+  "description": "Install places one skill in the managed root (S65): the source — here a local folder — is staged, validated and named by its frontmatter BEFORE it lands, so an installed skill is a VALID skill by construction (D-rule: never half-installed). Replaced says whether --force swapped an existing managed folder. The user root is never the target of this door's writes.",
+  "method": "skills.install",
+  "request": {"jsonrpc": "2.0", "id": 323, "method": "skills.install", "params": {"source": "/home/dev/downloads/pdf", "force": true}},
+  "response": {
+    "jsonrpc": "2.0", "id": 323,
+    "result": {
+      "skill": {
+        "name": "pdf",
+        "frontmatterName": "pdf",
+        "description": "Extract text and tables from PDF files, fill forms, merge documents.",
+        "status": "valid",
+        "source": "managed",
+        "root": "/home/dev/.local/share/aeon/skills",
+        "path": "/home/dev/.local/share/aeon/skills/pdf",
+        "files": {"scripts": 2, "references": 3, "assets": 0, "other": 1},
+        "bodyBytes": 4213,
+        "bodyLines": 88,
+        "totalBytes": 51240,
+        "scannedAt": "2026-10-30T18:06:00Z"
+      },
+      "replaced": true
+    }
+  }
+}

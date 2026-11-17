@@ -1,0 +1,19 @@
+{
+  "description": "S34 T3's third state: present+broken. The real loader (internal/mcp.Config.Validate) refuses the whole file on one error — there is no partial Config to report servers from, so this state carries loadError and no servers key, never a half-populated list.",
+  "method": "mcp.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 83,
+    "method": "mcp.status"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 83,
+    "result": {
+      "configPath": "/home/operator/.config/aeon/mcp.json",
+      "present": true,
+      "loadError": "mcp: server \"scratch\" is configured twice (public and reviewer) — the same server cannot be two tiers or two agents' (MC12)",
+      "probes": {}
+    }
+  }
+}

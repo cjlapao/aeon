@@ -1,0 +1,39 @@
+{
+  "description": "S52 T2 (LM5): the question memory management exists to answer — what would THIS agent be shown. The door resolves the scopes (the agent's own, the person's, the projects this agent has run in) and reads them through the SAME Query every surface reads through; each hit carries the why: rank, M1's ordering law quoted whole, and the honest match basis — here no query was given, so scope order stands and no embedding call was made. Reads write nothing and cost nothing unqueried.",
+  "method": "learnings.forAgent",
+  "request": {"jsonrpc": "2.0", "id": 371, "method": "learnings.forAgent", "params": {"agent": "golang-engineer"}},
+  "response": {"jsonrpc": "2.0", "id": 371, "result": {"hits": [
+    {
+      "learning": {
+        "id": 11,
+        "scope": "agent",
+        "scopeKey": "golang-engineer",
+        "body": "the CGO shim header must match go-sqlite3's version",
+        "provenance": "observed",
+        "observedCount": 3,
+        "tags": ["cgo"],
+        "createdAt": "2026-10-31T09:15:00Z"
+      },
+      "why": {
+        "rank": 1,
+        "m1Note": "relayed ranks below told, observed and assumed — a channel fact never outscores a person's word or a loop's seeing (M1's honesty ordering, unchanged by S52)",
+        "basis": "no query — scope order (own scope, person, projects this agent has run in); no embedding call was made"
+      }
+    },
+    {
+      "learning": {
+        "id": 7,
+        "scope": "project",
+        "scopeKey": "/srv/repo",
+        "body": "the build needs the sqlite_fts5 tag",
+        "provenance": "told",
+        "createdAt": "2026-10-30T06:00:00Z"
+      },
+      "why": {
+        "rank": 2,
+        "m1Note": "relayed ranks below told, observed and assumed — a channel fact never outscores a person's word or a loop's seeing (M1's honesty ordering, unchanged by S52)",
+        "basis": "no query — scope order (own scope, person, projects this agent has run in); no embedding call was made"
+      }
+    }
+  ]}}
+}

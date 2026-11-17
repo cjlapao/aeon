@@ -1,0 +1,41 @@
+{
+ "description": "S61 T8 (GI17): the agent's charter ask — charter.propose files an INERT proposal row of kind charter_save (no revision is appended, nothing is current or enforced until a person commits it at charter.save). The request carries no actor, status, kind, path or target member: the actor is the step's stamp, and the charter body rides as DATA the desk reads (GI2). The answer is the stored row with THE copyable commit command and the fixed inertness note — the same PolicyProposeResult the policy and autonomy twins answer with: one machinery, one sentence.",
+ "method": "charter.propose",
+ "request": {
+  "jsonrpc": "2.0",
+  "id": 425,
+  "method": "charter.propose",
+  "params": {
+   "root_id": "cmp_7a31",
+   "body": {
+    "goal": "ship the goal-intake plane",
+    "proposed": {"verify": ["make test"], "autonomy": ["merge"]}
+   },
+   "reason": "the person described this goal in the intake interview and asked me to draft the charter"
+  }
+ },
+ "response": {
+  "jsonrpc": "2.0",
+  "id": 425,
+  "result": {
+   "proposal": {
+    "id": 47,
+    "kind": "charter_save",
+    "payload": {
+     "rootId": "cmp_7a31",
+     "body": {
+      "goal": "ship the goal-intake plane",
+      "proposed": {"verify": ["make test"], "autonomy": ["merge"]}
+     },
+     "reason": "the person described this goal in the intake interview and asked me to draft the charter"
+    },
+    "status": "proposed",
+    "createdAt": "2026-11-05T12:00:00Z",
+    "createdByKind": "agent",
+    "createdById": "intake-architect",
+    "command": "aeon proposal commit 47"
+   },
+   "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+  }
+ }
+}

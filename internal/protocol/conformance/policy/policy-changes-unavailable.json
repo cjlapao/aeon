@@ -1,0 +1,18 @@
+{
+  "description": "S45 T3 (PM8): the audit's third state — a FAULT reading the append-only table is the typed refusal -31841, never the empty listing and never the empty-table statement. A store fault while reading the audit is neither a refusal (nothing was declined — that is the policy.read-refused code) nor an empty audit (nothing was proven absent — that answer is Count's, and it carries a sentence). Collapsing the fault into either is how \"nobody has ever authored policy\" gets believed beside a table full of authoring: DEF-041's rule, carried from policy_event's audit onto this one. The store's own sentence travels verbatim in what; the door wrote nothing and trimmed nothing.",
+  "method": "policy.changes",
+  "request": {"jsonrpc": "2.0", "id": 72, "method": "policy.changes", "params": {}},
+  "response": {
+    "jsonrpc": "2.0", "id": 72,
+    "error": {
+      "code": -31841,
+      "message": "the authoring audit could not be read",
+      "data": {
+        "what": "the policy.changes read could not reach the authoring audit: database is locked",
+        "means": "the audit table still holds whatever it held and nothing was written or trimmed; this is a store fault, not a refusal (the read-refused code) and not the empty-table answer (that one carries a statement, this one carries the store's own sentence)",
+        "todo": "the message names the fault — fix the store and read again; until it answers, no authoring reading beats a wrong one, and an empty listing here must never be read as \"nobody has authored policy\"",
+        "fatal": false
+      }
+    }
+  }
+}

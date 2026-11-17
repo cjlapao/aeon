@@ -1,0 +1,12 @@
+{
+  "description": "`terminal.attach` binds the calling connection to a terminal's output and returns the bounded scrollback (1 MiB ring, tail kept — LW10) so a reloaded window catches up; seq is per-terminal and monotonic. A window reload must not kill a running make test (LW9).",
+  "method": "terminal.attach",
+  "request": {
+    "jsonrpc": "2.0", "id": 93, "method": "terminal.attach",
+    "params": { "terminalId": "t-7f3a" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 93,
+    "result": { "scrollback": "JHR5cGluZyBvdXQgaGVyZQo=", "seq": 41 }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "specs": [
+    {
+      "name": "gitforge.read_pr",
+      "description": "reads one pull request",
+      "parameters": {
+        "type": "object"
+      }
+    }
+  ],
+  "withheld": [
+    {
+      "Qualified": "search.query",
+      "Sentence": "unavailable: no ToolAccess allow rule grants search.query (MC10)"
+    },
+    {
+      "Qualified": "labnote.scratch",
+      "Sentence": "unavailable: no ToolAccess allow rule grants labnote.scratch (MC10)"
+    }
+  ]
+}

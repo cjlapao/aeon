@@ -1,0 +1,19 @@
+{
+  "description": "S52 T2 (LM2): the stamp reverses. restore clears the INSTANT (retractedAt is gone — the row is live again and every default read will answer with it); what the last retraction said (reason, by) survives beside the row as recent history, and changed:true says this call is the one that moved it. An already-live id answers changed:false, writing nothing — the same honest idempotence as retract.",
+  "method": "learnings.restore",
+  "request": {"jsonrpc": "2.0", "id": 367, "method": "learnings.restore", "params": {"id": 7}},
+  "response": {"jsonrpc": "2.0", "id": 367, "result": {
+    "learning": {
+      "id": 7,
+      "scope": "project",
+      "scopeKey": "/srv/repo",
+      "body": "the build needs the sqlite_fts5 tag",
+      "provenance": "told",
+      "tags": ["build"],
+      "createdAt": "2026-10-30T06:00:00Z",
+      "retractedReason": "the sqlite_fts5 tag requirement moved into BUILD.md; the memory is now a stale duplicate of documentation",
+      "retractedBy": "user/1000"
+    },
+    "changed": true
+  }}
+}

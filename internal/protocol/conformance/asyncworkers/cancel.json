@@ -1,0 +1,19 @@
+{
+  "description": "Cancel answers with the row's CURRENT truth after the request (S64 T3): a queued worker reads cancelled outright (no goroutine ever ran — the manager wrote the ending); a running one reads running WITH cancelRequested, because its own goroutine owns the terminal write and the event carries the ending a moment later. Cancel is the family's only write — it names a row the caller can already see, never a Go function to fire, which is why no asyncworkers.start exists and never will.",
+  "method": "asyncworkers.cancel",
+  "request": {"jsonrpc": "2.0", "id": 262, "method": "asyncworkers.cancel", "params": {"workerId": "aw_3c9f0a1b2c3d4e5f60718293a4b5c6d7"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 262,
+    "result": {
+      "workerId": "aw_3c9f0a1b2c3d4e5f60718293a4b5c6d7",
+      "workerType": "graph.build",
+      "componentRoot": "/home/dev/shop",
+      "state": "running",
+      "cancelRequested": true,
+      "progress": 0.31,
+      "progressNote": "parsing cmd/aeon/serve.go",
+      "queuedAt": "2026-10-30T17:41:02.000Z",
+      "startedAt": "2026-10-30T17:41:02.000Z"
+    }
+  }
+}

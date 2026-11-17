@@ -1,0 +1,32 @@
+{
+  "description": "policy.events carries the audit rows WITH the visibility triple (D15): a silently-trimming log is one that loses the row somebody came looking for and never says so, so every answer states its `depth`, the `capDays` that TrimEvents enforces (derived from PolicyEventAgeCap itself, so the wire number cannot drift from what deletes rows), and the `oldest` instant still retained — null exactly when the table is empty, a stated fact rather than a gap. Rows are byte-for-byte what decodeEvent re-verified; one escaped row refuses the whole report, naming itself.",
+  "method": "policy.events",
+  "request": {
+    "jsonrpc": "2.0", "id": 63, "method": "policy.events",
+    "params": {"limit": 20}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 63,
+    "result": {
+      "rows": [
+        {
+          "kind": "refusal",
+          "subject": "agent:boss",
+          "policyID": "no-bash",
+          "detail": "refused: agent:boss · tool_access \"no-bash\" · target agent:boss · source operator · no expiry",
+          "at": "2026-10-18T14:05:12.500Z"
+        },
+        {
+          "kind": "refusal",
+          "subject": "loop:s10-policy",
+          "policyID": "",
+          "detail": "refused: loop:s10-policy · no allow matched · default deny (PL5)",
+          "at": "2026-10-17T09:31:00Z"
+        }
+      ],
+      "depth": 2,
+      "capDays": 90,
+      "oldest": "2026-10-17T09:31:00Z"
+    }
+  }
+}

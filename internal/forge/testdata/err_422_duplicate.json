@@ -1,0 +1,7 @@
+{
+ "__status": 422,
+ "body": {
+  "message": "A pull request already exists for acme:task/4a17-version/4a17.",
+  "documentation_url": "https://docs.github.com/rest"
+ }
+}

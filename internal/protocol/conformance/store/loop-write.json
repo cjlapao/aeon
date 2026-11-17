@@ -1,0 +1,28 @@
+{
+  "description": "A document write returns the revision it created. `unchanged: true` is the third outcome: a write whose content matches the head is dropped rather than stored twice, because `plan.md` is rewritten on a task split and a duplicate revision makes the history lie.",
+  "method": "loop.write",
+  "request": {
+    "jsonrpc": "2.0", "id": 44, "method": "loop.write",
+    "params": {
+      "slug": "refactor",
+      "componentRoot": "/home/p/repo-a",
+      "name": "plan",
+      "content": "# Plan\n\nsplit the store.\n",
+      "writtenBy": "project-manager"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 44,
+    "result": {
+      "unchanged": false,
+      "document": {
+        "file": "plan.md",
+        "rev": 1,
+        "bytes": 26,
+        "sha256": "8f14e45fceea167a5a36dedd4bea2543c2b0e0b0f7f6e1f1a9a2c3d4e5f60718",
+        "writtenBy": "project-manager",
+        "writtenAt": "2026-10-15T09:41:12.345Z"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "description": "A loop's todo list was written or closed (S75 TD5). Every `todo set` from an agent and every close by the person publishes this event with the loop's id and slug, the whole list, its counts and whether it is still active, so a live client never parses a tool result to learn the list. closedBy is empty while the list is active and one of all-done, cleared or person once it closed.",
+  "event": "todo.updated",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1801,
+      "kind": "todo.updated",
+      "at": "2026-11-07T11:34:48Z",
+      "payload": {
+        "loopId": "loop-dmo91lspzwch",
+        "loop": "loop-dmo91lspzwch",
+        "step": 27,
+        "revision": 2,
+        "items": [
+          {
+            "id": "inspect",
+            "content": "Look at the repository for an existing AGENTS.md",
+            "status": "done"
+          },
+          {
+            "id": "scope",
+            "content": "Ask the person which scope they want",
+            "status": "in_progress"
+          }
+        ],
+        "counts": {
+          "pending": 0,
+          "inProgress": 1,
+          "done": 1
+        },
+        "active": true,
+        "closedBy": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "The deliberate index build — S64's contract change on S30's door: a HANDLE, not a report (the pre-flight's CRUD gap stays closed — the call is still the only schedule, V21 unchanged). The ten-minute walk belongs to the async-worker ledger now: the daemon runs it, the row records it, asyncworker.* events carry its ending; the caller reads the finished BuildReport from the row's result through asyncworkers.get. `started` says whether THIS call began the pass: false means one was already flying for this root (the durable flight index), and workerId names THAT pass — how a double-clicked button stays one build.",
+  "method": "graph.build",
+  "request": {"jsonrpc": "2.0", "id": 242, "method": "graph.build", "params": {"componentRoot": "/home/dev/shop"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 242,
+    "result": {"workerId": "aw_3c9f0a1b2c3d4e5f60718293a4b5c6d7", "state": "queued", "started": true}
+  }
+}

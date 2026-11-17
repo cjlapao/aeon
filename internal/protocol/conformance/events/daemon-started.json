@@ -1,0 +1,11 @@
+{
+  "description": "Emitted once at startup. componentRoot is absent because it is daemon-wide rather than about one repository — a component-scoped subscriber still receives it, since withholding it would make a client's view of the daemon's lifecycle depend on whether it had scoped itself.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c", "seq": 1, "kind": "daemon.started",
+      "at": "2026-10-15T09:00:00.000000000Z",
+      "payload": {"daemonVersion": "0.1.0", "protocolVersion": 1, "endpoint": "/run/user/1000/aeon/rpc.sock"}
+    }
+  }
+}

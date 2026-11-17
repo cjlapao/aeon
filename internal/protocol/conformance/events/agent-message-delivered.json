@@ -1,0 +1,19 @@
+{
+  "description": "MB6 (D4): a step boundary drained a row into a turn \u2014 the pair stamp (delivered_at, delivered_to_step_id) landed on the row in the SAME write as the transcript fold, so this event announces a fact already settled, never one about to happen.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 1503,
+      "kind": "agent.message.delivered",
+      "at": "2026-10-31T10:00:00.000000001Z",
+      "payload": {
+        "stepId": 4,
+        "messageId": 13,
+        "agent": "planner",
+        "loopId": "l-7"
+      }
+    }
+  }
+}

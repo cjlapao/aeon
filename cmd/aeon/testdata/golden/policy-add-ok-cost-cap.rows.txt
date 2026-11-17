@@ -1,0 +1,4 @@
+policy rows: 1
+  policy ok-cost type=cost_cap target=all-agents action=deny source=operator subject=all-agents spec={"max":250,"token":"session"} not_after=none not_after_epoch=- created_at=<TIME>
+proposal rows: 0
+policy_event rows: 0

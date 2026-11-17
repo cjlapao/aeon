@@ -1,0 +1,38 @@
+{
+  "description": "notify.channel.list answers the configuration as host-plus-bools: enabled, allowPrivate, secretPresent, the subscription count and the delivery log's two honest facts (last outcome, consecutive failures) — never a url and never a secret, which is what lets this stay a plain read over an authority plane (SV7).",
+  "method": "notify.channel.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 948,
+    "method": "notify.channel.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 948,
+    "result": {
+      "channels": [
+        {
+          "id": "nc-01JTEST0000000000000000001",
+          "name": "ops-room",
+          "kind": "webhook",
+          "host": "hooks.example.com",
+          "enabled": false,
+          "allowPrivate": false,
+          "secretPresent": true,
+          "subscriptions": [
+            {
+              "channelId": "nc-01JTEST0000000000000000001",
+              "minSeverity": "blocked",
+              "kinds": null,
+              "maxPerHour": 30
+            }
+          ],
+          "createdAt": "2026-11-03T09:00:00Z",
+          "updatedAt": "2026-11-03T09:00:00Z",
+          "consecutiveFailures": 0
+        }
+      ]
+    }
+  }
+}

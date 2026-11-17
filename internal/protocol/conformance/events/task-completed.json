@@ -1,0 +1,16 @@
+{
+  "description": "the callee reported \u2014 the first report won, the answer reached the suspended step through the question machinery (T3), and the cost the callee carried (or declined to carry) is in the row this event announces. Same envelope, seq and cursor as every other event (M23).",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 1502,
+      "kind": "task.completed",
+      "at": "2026-10-25T09:20:02.5Z",
+      "payload": {
+        "taskId": 12
+      }
+    }
+  }
+}

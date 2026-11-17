@@ -1,0 +1,40 @@
+{
+  "description": "Revisions newest-first, content-free \u2014 a deleted blueprint's history stays readable (the revision table is append-only).",
+  "method": "blueprint.history",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 89,
+    "method": "blueprint.history",
+    "params": {
+      "name": "two-step",
+      "limit": 50
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 89,
+    "result": {
+      "revisions": [
+        {
+          "rev": 2,
+          "version": 2,
+          "op": "save",
+          "note": "tighten the survey gate",
+          "actorKind": "user",
+          "actorId": "operator",
+          "occurredAt": "2026-11-02T13:00:00Z",
+          "contentHash": "ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669"
+        },
+        {
+          "rev": 1,
+          "version": 2,
+          "op": "seed",
+          "actorKind": "system",
+          "actorId": "blueprints.standard",
+          "occurredAt": "2026-11-02T12:00:00Z",
+          "contentHash": "ab10e668ab10e668ab10e668ab10e668ab10e668ab10e668ab10e668ab10e668"
+        }
+      ]
+    }
+  }
+}

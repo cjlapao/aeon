@@ -1,0 +1,14 @@
+{
+  "description": "The autonomy.uses happy path (S56 T6, AL10): the use-log rows with begun/outcome PAIRED in. A begun row carries the outcome of the completed/failed row that closed it; a begun row the process stopped before closing reports the fixed unknown sentence rather than a silent missing outcome (the receipt-first shape made readable). A completed/failed row is an outcome, not a use — its outcome is null on the wire. The caller's limit applies as the newest N, ascending; the full filtered set is paired before the limit, so a cut cannot orphan a begun from its outcome.",
+  "method": "autonomy.uses",
+  "request": {"jsonrpc": "2.0", "id": 407, "method": "autonomy.uses", "params": {"loopId": "loop-42", "limit": 10}},
+  "response": {
+    "jsonrpc": "2.0", "id": 407,
+    "result": {
+      "uses": [
+        {"id": 301, "at": "2026-11-01T09:20:00Z", "loopId": "loop-42", "grantId": "g-8c21", "grantRev": 3, "action": "forge.openPR", "phase": "begun", "begunId": null, "outcome": "completed"},
+        {"id": 302, "at": "2026-11-01T09:20:04Z", "loopId": "loop-42", "grantId": "g-8c21", "grantRev": 3, "action": "forge.openPR", "phase": "completed", "begunId": 301, "outcome": null}
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "case": "already-merged",
+  "refused": false,
+  "alreadyMerged": true,
+  "sha": "deadbeefcafe",
+  "calls": [
+    "ReadPR"
+  ]
+}

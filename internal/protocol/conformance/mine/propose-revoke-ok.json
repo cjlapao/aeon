@@ -1,0 +1,31 @@
+{
+  "description": "S46 T8 (MG9/TD2): mcp.mine.proposeRevoke creates an INERT proposal to revoke a grant the CALLER currently holds \u2014 the pair is split in the request (server, tool) so a smuggled dot cannot forge a boundary, and the payload's agent field is the stamp, never the input: no proposal on this door can name another agent. An unheld pair and a pair nobody holds answer the same sentence; here the pair IS held, so the inert row is created.",
+  "method": "mcp.mine.proposeRevoke",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 935,
+    "method": "mcp.mine.proposeRevoke",
+    "params": {
+      "server": "acme-crud",
+      "tool": "create_issue",
+      "reason": "this loop never writes issues; the ask only slows it down"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 935,
+    "result": {
+      "proposal": {
+        "id": 13,
+        "kind": "mcp_grant_revoke",
+        "payload": "{\"agent\":\"implementer\",\"qualified\":\"acme-crud.create_issue\",\"reason\":\"this loop never writes issues; the ask only slows it down\"}",
+        "createdByKind": "agent",
+        "status": "proposed",
+        "command": "aeon proposal commit 13",
+        "createdById": "implementer",
+        "createdAt": "2026-11-01T12:00:00Z"
+      },
+      "note": "the proposal is inert: it constrains nothing until a person commits it (S35 TD2)"
+    }
+  }
+}

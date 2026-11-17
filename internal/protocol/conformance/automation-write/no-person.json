@@ -1,0 +1,26 @@
+{
+  "description": "A trigger write on a connection with no person behind it is refused before any state is touched — the honest absence is its own code, not a shape error in disguise (S49 T4).",
+  "method": "trigger.pause",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8305,
+    "method": "trigger.pause",
+    "params": {
+      "id": "sch-morning"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8305,
+    "error": {
+      "code": -31892,
+      "message": "no person on this connection",
+      "data": {
+        "what": "triggers are written by a person; no identity is available on this connection",
+        "means": "the write can carry no authorship, so it was refused before any row was read, written, or audited",
+        "todo": "reconnect as a person (the CLI's peer stamp) — an agent connection has no door onto trigger writes (AU1)",
+        "fatal": false
+      }
+    }
+  }
+}

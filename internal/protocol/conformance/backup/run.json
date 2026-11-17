@@ -1,0 +1,43 @@
+{
+  "description": "backup.run answers the manual run: the run view names what was made (the file's NAME, never its path — BK12), the level its own verify reached (a run never drills), the free-space state the check found, and whether the ledger took the row; the backup view is the SAME file in backup.list's own shape, so a client sees its fresh backup the way every other backup is shown, without a second call. verify:true is the per-call override of backup.verifyAfter; the reason is manual from this door by definition, and a caller naming another reason is refused (the identity keys likewise, before the actor is asked).",
+  "method": "backup.run",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 950,
+    "method": "backup.run",
+    "params": {
+      "reason": "manual",
+      "verify": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 950,
+    "result": {
+      "run": {
+        "file": "aeon-state-20261102T115930Z-v76.aeonbak",
+        "sizeBytes": 1845504,
+        "sha256": "9c2f8b1e4d7a63509c8b2e1f4a7d63509c8b2e1f4a7d63509c8b2e1f4a7d6350",
+        "applied": 76,
+        "lastMigration": "00000000000076_add_backup_run",
+        "verifyLevel": "verified",
+        "freeSpace": "ok",
+        "lockReclaimed": false,
+        "recorded": true
+      },
+      "backup": {
+        "file": "aeon-state-20261102T115930Z-v76.aeonbak",
+        "createdAt": "2026-11-02T11:59:30.000Z",
+        "ageSeconds": 1800,
+        "reason": "manual",
+        "aeonVersion": "9.9.9-test",
+        "applied": 76,
+        "lastMigration": "00000000000076_add_backup_run",
+        "sizeBytes": 1845504,
+        "sha256": "9c2f8b1e4d7a63509c8b2e1f4a7d63509c8b2e1f4a7d63509c8b2e1f4a7d6350",
+        "verified": "verified",
+        "canRestoreWithThisBinary": true
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "description": "The current charter of one root: canonical body, the one description line, the audit words, and body.proposed verbatim \u2014 read, runs nothing (GI8).",
+  "method": "charter.get",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "charter.get",
+    "params": {
+      "rootId": "cmp-root"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "rootId": "cmp-root",
+      "revision": 3,
+      "body": {
+        "goal": "ship the intake plane"
+      },
+      "summary": "charter r3 by user:peer-1 (person)",
+      "actorKind": "user",
+      "actorId": "peer-1",
+      "source": "person",
+      "sourceRef": "",
+      "createdAt": "2026-11-05T09:00:00Z",
+      "proposed": {
+        "verify": [
+          "make test"
+        ]
+      },
+      "description": {
+        "summary": "charter r3 by user:peer-1 (person)",
+        "lines": [
+          "goal: ship the intake plane"
+        ]
+      },
+      "totalRevisions": 3
+    }
+  }
+}

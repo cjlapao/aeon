@@ -1,0 +1,51 @@
+{
+  "description": "backup.list answers what files exist in the configured dirs, newest first: each view is the manifest's facts (created, reason, the binary version that made it, the migrations applied) joined with the ledger's verdict (verified when the newest verify row for that file succeeded at a restore level, unverified otherwise — no row at all is a state, not a failure) and canRestoreWithThisBinary. dirs names the places scanned — the one place a dir appears on this family's wire, as a setting — and the pre-migration subdir is included only when asked.",
+  "method": "backup.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 952,
+    "method": "backup.list",
+    "params": {
+      "limit": 2,
+      "includePreMigration": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 952,
+    "result": {
+      "backups": [
+        {
+          "file": "aeon-state-20261102T115930Z-v76.aeonbak",
+          "createdAt": "2026-11-02T11:59:30.000Z",
+          "ageSeconds": 1800,
+          "reason": "manual",
+          "aeonVersion": "9.9.9-test",
+          "applied": 76,
+          "lastMigration": "00000000000076_add_backup_run",
+          "sizeBytes": 1845504,
+          "sha256": "9c2f8b1e4d7a63509c8b2e1f4a7d63509c8b2e1f4a7d63509c8b2e1f4a7d6350",
+          "verified": "verified",
+          "canRestoreWithThisBinary": true
+        },
+        {
+          "file": "aeon-state-20261101T120000Z-v75.aeonbak",
+          "createdAt": "2026-11-01T12:00:00.000Z",
+          "ageSeconds": 86400,
+          "reason": "scheduled",
+          "aeonVersion": "9.9.9-test",
+          "applied": 75,
+          "lastMigration": "00000000000075_add_watchdog_rule",
+          "sizeBytes": 1802240,
+          "sha256": "4a7d63509c8b2e1f4a7d63509c8b2e1f4a7d63509c8b2e1f4a7d63509c8b2e1f",
+          "verified": "unverified",
+          "canRestoreWithThisBinary": true
+        }
+      ],
+      "dirs": [
+        "/home/user/.local/state/aeon/backups",
+        "/home/user/.local/state/aeon/backups/pre-migration"
+      ]
+    }
+  }
+}

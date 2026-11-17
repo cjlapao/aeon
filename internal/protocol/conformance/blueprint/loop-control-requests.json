@@ -1,0 +1,30 @@
+{
+  "description": "Reading the stop-request desk (S55 T5, LC15): filtered by loop and/or status (both optional — an empty filter reads the whole desk), open first and oldest first (the store's order, so the client never re-sorts the audit). The rows are INERT records of agents that asked a person to stop a loop: who asked, from which step, why, and how the person settled it (or that it is still open). Nothing here moves a loop.",
+  "method": "loop.control.requests",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 506,
+    "method": "loop.control.requests",
+    "params": {
+      "loopId": "loop-9",
+      "status": "open"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 506,
+    "result": {
+      "requests": [
+        {
+          "id": 12,
+          "loopId": "loop-9",
+          "requestedAt": "2026-11-01T09:15:00Z",
+          "byAgent": "builder",
+          "byStepId": 41,
+          "reason": "this loop is going in circles — a person should stop it",
+          "status": "open"
+        }
+      ]
+    }
+  }
+}

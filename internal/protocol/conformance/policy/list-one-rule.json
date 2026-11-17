@@ -1,0 +1,28 @@
+{
+  "description": "The populated half of D4: with rules stored, `policies` lists what the boundary re-decoded (every row through the closed-set fail-closed read) and the `statement` field is ABSENT — the default-deny sentence belongs to the empty case only, so its presence here would claim a table that is not this one. `notAfter` renders as the instant the row carries, or null for a rule that never expires (PL7: no expiry is said, never skipped). No `spec` crosses the socket: the read window renders identity, not policy content.",
+  "method": "policy.list",
+  "request": {"jsonrpc": "2.0", "id": 65, "method": "policy.list"},
+  "response": {
+    "jsonrpc": "2.0", "id": 65,
+    "result": {
+      "policies": [
+        {
+          "id": "grant-read-tool",
+          "type": "tool_access",
+          "target": "agent:boss",
+          "action": "allow",
+          "source": "operator",
+          "notAfter": null
+        },
+        {
+          "id": "until-halloween",
+          "type": "command_access",
+          "target": "lane-type:review",
+          "action": "deny",
+          "source": "operator",
+          "notAfter": "2026-11-01T00:00:00Z"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "description": "S51 T2 (TM5), the closed sets AS ANSWERED — assembled from ValidationStates(), PriorityStates() and AllowedTransitions(), never restated into a second list that could drift. The two sets print separately because D2 says they are different questions; legalNext names, for each validation state, the states a move may legally land on (D1: nothing moves back to unvalidated, ever — a re-attempt is a NEW attempt record). The board's filters and every write's state words are only ever these words. S51 T6 (TM9) added the two authority statements: the words the daemon puts BEFORE an enabling verb, carried in the SAME answer so the CLI and the UI quote ONE string (S50 RM9's law). `aeon triage validate` and `handoff` print theirs and act only on --yes.",
+  "method": "triage.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 442,
+    "method": "triage.vocabulary",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 442,
+    "result": {
+      "validationStates": [
+        "unvalidated",
+        "reproduced",
+        "not-reproduced",
+        "could-not-tell"
+      ],
+      "priorityStates": [
+        "known",
+        "assumed",
+        "unknown"
+      ],
+      "legalNext": {
+        "unvalidated": [
+          "reproduced",
+          "not-reproduced",
+          "could-not-tell"
+        ],
+        "reproduced": [],
+        "not-reproduced": [],
+        "could-not-tell": []
+      },
+      "validateStatement": "This starts a validation attempt — an ordinary loop under the blueprint triage.validationBlueprint names, run by the daemon; the bug stays unvalidated until its reactor lands the outcome (S51 TM9).",
+      "handoffStatement": "This hands the bug off to the roadmap — a validated, prioritized bug becomes a roadmap item under provenance triaged, through S26's own door (S51 TM9, D8)."
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "A subscriptionId that does not exist on this connection is a NAMED error. Ignoring it would leave the client waiting for a stream that will never arrive — which looks identical to a slow model, and is the one failure a timeout cannot tell from success. The same error covers a subscription belonging to another connection: subscriptions are per-connection and are not shared.",
+  "method": "ask",
+  "request": {
+    "jsonrpc": "2.0", "id": 24, "method": "ask",
+    "params": {"route": "anthropic-sonnet", "prompt": "hello", "subscriptionId": "s-belongs-elsewhere"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 24,
+    "error": {
+      "code": -31012,
+      "message": "unknown subscription",
+      "data": {
+        "what": "subscription \"s-belongs-elsewhere\" does not exist on connection conn-3",
+        "means": "either it was never created, it has already ended with its connection, or it belongs to a different connection — subscriptions are per-connection and are not shared",
+        "todo": "call `subscribe` on this connection and use the id it returns",
+        "fatal": false
+      }
+    }
+  }
+}

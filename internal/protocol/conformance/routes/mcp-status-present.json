@@ -1,0 +1,36 @@
+{
+  "description": "S34 T3's ordinary state: the configured servers exactly as internal/mcp sees them, with tier and declaredBy DERIVED rather than stored — a server under \"public\" is tier public and declaredBy lists every agent whose declares names a qualified tool under its namespace; a server under an agent's own \"private\" list is tier private and declaredBy is that one agent (MC2: invisible to every other agent, not merely unauthorized). mcp.status never dials anything on its own (TB9) — probes only ever reflects what T4's mcp.check already cached, which is why this fixture carries one example row (github, checked earlier) alongside scratch's never-checked absence, rather than an all-empty probes object that would teach protogen the wrong shape for the field.",
+  "method": "mcp.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 82,
+    "method": "mcp.status"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 82,
+    "result": {
+      "configPath": "/home/operator/.config/aeon/mcp.json",
+      "present": true,
+      "servers": [
+        {
+          "name": "github",
+          "tier": "public",
+          "transport": "stdio",
+          "command": "gh-mcp",
+          "declaredBy": ["reviewer"]
+        },
+        {
+          "name": "scratch",
+          "tier": "private",
+          "transport": "http",
+          "url": "http://127.0.0.1:9100",
+          "declaredBy": ["reviewer"]
+        }
+      ],
+      "probes": {
+        "github": { "ok": true, "tools": 12, "ms": 480, "checkedAt": "2026-10-26T14:02:11Z" }
+      }
+    }
+  }
+}

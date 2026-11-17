@@ -1,0 +1,42 @@
+{
+  "description": "A person files a standing instruction (AU1): the view comes back whole, source is the store's own stamp, createdBy names the kernel uid behind the connection — never a params claim (S38's identity rule, applied to triggers).",
+  "method": "automation.trigger.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 206,
+    "method": "automation.trigger.create",
+    "params": {
+      "name": "Intake",
+      "rootId": "prj-platform",
+      "componentId": "cmp-alpha",
+      "match": {"event": "goal.approved", "goal_type": ["feature"]},
+      "blueprint": "dev-loop",
+      "kickoff": "Approved: {{.Goal}}",
+      "maxRunsPerHour": 20,
+      "maxCostPerDayUsd": 25.5
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 206,
+    "result": {
+      "id": "trg-intake",
+      "name": "Intake",
+      "source": "event",
+      "rootId": "prj-platform",
+      "componentId": "cmp-alpha",
+      "match": {"event": "goal.approved", "goal_type": ["feature"]},
+      "blueprint": "dev-loop",
+      "kickoff": "Approved: {{.Goal}}",
+      "maxRunsPerHour": 20,
+      "maxCostPerDayUsd": 25.5,
+      "enabled": true,
+      "disabledReason": "",
+      "createdByKind": "user",
+      "createdById": "501",
+      "createdAt": "2026-10-28T09:00:00Z",
+      "updatedAt": "2026-10-28T09:00:00Z",
+      "lastFire": null
+    }
+  }
+}

@@ -1,0 +1,5 @@
+$ aeon policy events
+<ID> <TIME>  refusal       agent:bob  -                         refused: agent:bob · no allow matched · default deny (PL5)
+<ID> <TIME>  refusal       agent:alice  "no-bash"                 refused: agent:alice · tool_access "no-bash" · target agent:alice · source operator · no expiry
+<ID> <TIME>  authored      agent:alice  "no-bash"                 authored: the write boundary stored this rule for this subject; the policy_id and subject columns name what was authored (PL15 — authoring is CLI-only)
+depth 3 · cap 90 days · oldest <TIME>

@@ -1,0 +1,27 @@
+{
+  "description": "S59 T7 (EV16, EV17) at the DOOR, before the records plane is consulted: the agent's one ask carries no identity. `actor` in environment.proposeRestrict's params is refused with the transport's bad-params code and the refusal NAMES the key — the author of an environment proposal is the STEP the connection belongs to, stamped from the step context (OL3), and a caller that could name an author could file a tightening as an agent that was never there. `backend` and `revision` are refused by the same door for the same reason: the backend an environment runs on moves only through environment.update, by a person, and the baseline an ask is written against is the one the service READS, not one a model can type. fromDoor is why the walker dispatches this against a HEALTHY records seam — the claim of a door refusal is that it happened before the plane was consulted, and the walker asserts the seam was never called. The refusal is a transport-level condition, so it keeps JSON-RPC's own code and carries no `data` (conformance/README).",
+  "method": "environment.proposeRestrict",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 931,
+    "method": "environment.proposeRestrict",
+    "params": {
+      "environmentId": "ci-default",
+      "spec": "{\"home\":\"real\",\"env\":{\"passthrough\":[\"PATH\"]}}",
+      "reason": "HOME is not read by the build and every name passed is a name exposed",
+      "actor": {
+        "kind": "agent",
+        "id": "step-7"
+      }
+    }
+  },
+  "fromDoor": true,
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 931,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: environment.proposeRestrict params carry \"actor\" — the caller names what to act on, never who acted, when it happened, which origin it carries, or where a value lives (S59 EV7, EV17)"
+    }
+  }
+}

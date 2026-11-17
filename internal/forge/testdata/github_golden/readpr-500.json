@@ -1,0 +1,10 @@
+{
+  "case": "readpr-500",
+  "method": "GET",
+  "path": "/repos/acme/widget/pulls/7",
+  "authShape": "Bearer \u003credacted\u003e",
+  "accept": "application/vnd.github+json",
+  "attempts": 4,
+  "errKind": "transport",
+  "errSentence": "transport: transport: server answered 500\n  why:  the forge could not be reached — a transient fault\n  do:   retry; if it persists, run aeon doctor"
+}

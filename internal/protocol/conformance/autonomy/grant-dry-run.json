@@ -1,0 +1,12 @@
+{
+  "description": "The autonomy.grant dry run (S56 T10, behaviour 4): the same request as grant.json with dryRun:true — every validation runs, nothing is written, and the result is the daemon's OWN sentence of what the grant would allow: the root, each action it would cover in plain words, the cap, the budget, the expiry, and the absence of the merge (the S57 rule is a separate decision, so a grant that does not cover it says so). The grant field is null — there is no row, and a dry run that carried a view would be a decision made twice.",
+  "method": "autonomy.grant",
+  "request": {"jsonrpc": "2.0", "id": 414, "method": "autonomy.grant", "params": {"rootId": "aeon", "subject": "forge.openPR", "conditions": {"requireGates": false, "requireBudget": true, "maxPerDay": 5}, "expiresAt": "2026-12-01T00:00:00Z", "dryRun": true}},
+  "response": {
+    "jsonrpc": "2.0", "id": 414,
+    "result": {
+      "grant": null,
+      "confirmation": "dry run: this would let an unattended loop started on aeon open a pull request, up to 5 a day, while the budget has room, until 2026-12-01T00:00:00Z — nothing was written. It does not let it merge."
+    }
+  }
+}

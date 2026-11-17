@@ -1,0 +1,42 @@
+{
+  "description": "loop.todos on a loop with an active list (S75 TD6): the items in the order the agent wrote them, the three-term counts counted from those rows, and active true with no closedBy. The chat's pinned strip asks this once when a loop is opened and then follows todo.updated, so the list is on screen before the agent does anything new.",
+  "method": "loop.todos",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1901,
+    "method": "loop.todos",
+    "params": {
+      "id": "loop-dmo91lspzwch"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1901,
+    "result": {
+      "active": true,
+      "revision": 2,
+      "items": [
+        {
+          "id": "inspect",
+          "content": "Look at the repository for an existing AGENTS.md",
+          "status": "done"
+        },
+        {
+          "id": "scope",
+          "content": "Ask the person which scope they want",
+          "status": "in_progress"
+        },
+        {
+          "id": "write",
+          "content": "Write the file",
+          "status": "pending"
+        }
+      ],
+      "counts": {
+        "pending": 1,
+        "inProgress": 1,
+        "done": 1
+      }
+    }
+  }
+}

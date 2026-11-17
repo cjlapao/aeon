@@ -1,0 +1,36 @@
+{
+  "answer": null,
+  "error": "",
+  "item": {
+    "status": "running",
+    "loopSlug": "roadmap-item-1"
+  },
+  "starts": [
+    {
+      "blueprint": "dev-loop",
+      "goal": "export the statements",
+      "workspaceRoot": "\u003ctest-root\u003e",
+      "slug": "roadmap-item-1",
+      "attended": null,
+      "with": {
+        "roadmap_item": "1",
+        "roadmap_role": "materialization"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "answer": null,
+      "error": "item 1 still claims running and started no loop — no runner wired; if a loop for this item DOES exist this refusal is the truth (D6), otherwise the claim waits for a person"
+    },
+    {
+      "answer": {
+        "loopSlug": "roadmap-item-1",
+        "stamped": true,
+        "started": true,
+        "status": "running"
+      },
+      "error": ""
+    }
+  ]
+}

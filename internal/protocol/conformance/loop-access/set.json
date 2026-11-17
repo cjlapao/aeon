@@ -1,0 +1,33 @@
+{
+  "description": "Turn a loop's full access on, as the human door: the actor is the connection's peer and never a param. The answer is the mode as loop.access would now return it, with who set it and when.",
+  "method": "loop.setAccess",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 411,
+    "method": "loop.setAccess",
+    "params": {
+      "id": "l-7",
+      "mode": "full"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 411,
+    "result": {
+      "id": "l-7",
+      "mode": "full",
+      "tools": [],
+      "setBy": "user:1000",
+      "setAt": "2026-11-15T10:00:00Z",
+      "askingTools": [
+        "bash",
+        "write",
+        "edit",
+        "doc_write",
+        "doc_edit",
+        "webfetch",
+        "ask_agent"
+      ]
+    }
+  }
+}

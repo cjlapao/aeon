@@ -1,0 +1,58 @@
+{
+  "description": "S45 T10 supersedes commit-refused-agent-import.json (T5's by-name refusal stood only until S43 merged): proposal.commit now runs the GENERIC path for agent_import too — digest-bound, effect-then-flip, decided_by = the connection's peer uid. The effect reaches the plugin layer through cmd/aeon's one injected seam map (the daemon links no plugin code). before/after speak for the AGENT, never the policy table: before is S37's own preview renderer (the consent bytes verbatim), after is the import body's own post-import print (consent re-rendered from the fresh read plus the AP2 roster line) — captured at the door, never streamed by the daemon (a socket answer is data). The same print rides back on warnings as data for every surface. NO policy_change row: the authoring audit is policy's vocabulary; this decision's record is the row's decided_by_* stamp. The row left `proposed`: committed.",
+  "method": "proposal.commit",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "method": "proposal.commit",
+    "params": {
+      "id": 45,
+      "digest": "0b7d3e94c2a8651f4d90b3ce7a1f5826d4e9c0b37af2681d5e4c9b0a632f7d18"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "result": {
+      "proposal": {
+        "id": 45,
+        "kind": "agent_import",
+        "payload": {
+          "pkgPath": "/srv/agents/groot"
+        },
+        "status": "committed",
+        "createdAt": "2026-11-02T08:55:00Z",
+        "createdByKind": "agent",
+        "createdById": "boss",
+        "command": "aeon proposal commit 45",
+        "decidedAt": "2026-11-02T09:00:00Z",
+        "decidedByKind": "user",
+        "decidedById": "4321"
+      },
+      "effectApplied": true,
+      "before": {
+        "target": "agent:groot",
+        "answers": [
+          {
+            "policyID": "groot",
+            "render": "agent \"groot\" requests: tools read\n  prompts: 1\n  carries: 0 denials",
+            "state": ""
+          }
+        ]
+      },
+      "after": {
+        "target": "agent:groot",
+        "answers": [
+          {
+            "policyID": "groot",
+            "render": "imported groot as DISABLED (AP2: import runs the check and stops — arrival is not permission)",
+            "state": ""
+          }
+        ]
+      },
+      "warnings": [
+        "imported groot as DISABLED (AP2: import runs the check and stops — arrival is not permission)"
+      ]
+    }
+  }
+}

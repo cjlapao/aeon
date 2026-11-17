@@ -1,0 +1,20 @@
+{
+  "kind": "loop.waiting",
+  "componentRoot": "",
+  "payload": {
+    "answers": [
+      "yes",
+      "no"
+    ],
+    "lane": "ship",
+    "loopId": "loop-golden",
+    "prompt": "Deploy to production?",
+    "questionId": 7,
+    "step": "step-7"
+  },
+  "notify": {
+    "title": "Loop waiting on you",
+    "body": "",
+    "tone": "info"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "description": "`voice.turn` runs ONE model call for the voice operator. The caller sends the conversation so far (the person's words, the assistant's replies with the tools it asked for, and tool results) and the tools it offers; the answer is what the model said and the tools it asked for. The daemon runs no tool: the app runs them as the person, through the doors it already uses, and calls again with the results.",
+  "method": "voice.turn",
+  "request": {
+    "jsonrpc": "2.0", "id": 92, "method": "voice.turn",
+    "params": {
+      "route": "qwen", "system": "You are Orion.",
+      "messages": [ { "role": "user", "text": "how many agents are running" } ],
+      "tools": [ { "name": "loops_list", "description": "List loops.", "parameters": { "type": "object", "properties": {} } } ]
+    }
+  },
+  "response": { "jsonrpc": "2.0", "id": 92, "result": { "text": "", "toolCalls": [ { "id": "c1", "name": "loops_list", "input": {} } ] } }
+}

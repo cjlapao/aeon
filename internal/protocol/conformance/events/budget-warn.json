@@ -1,0 +1,24 @@
+{
+  "description": "budget.warn: the spend crossed the budget's warn line (floor*100/cap >= warnPct, a cap that exists and is positive). The spend keeps going — a warn is not a stop — and this is the moment the person the cap is over sees the line cross in the stream rather than at the hit. The engine's once-per-period dedup (last warned row per budget+dimension) means each warn is emitted exactly once; a day-windowed warn can fire again only after the rolling window has passed. Carries the notify hint (warning tone) — the one delivery-time annotation a toast-worthy budget moment gets.",
+  "event": "budget.warn",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1801,
+      "kind": "budget.warn",
+      "componentRoot": "/home/p/repo-a",
+      "at": "2026-11-01T11:30:00Z",
+      "payload": {
+        "budgetId": "bud-epc-1",
+        "scope": "epic",
+        "subjectId": "epc-1",
+        "dimension": "usd",
+        "spendFloor": 745.5,
+        "cap": 900,
+        "pct": 80
+      }
+    }
+  }
+}

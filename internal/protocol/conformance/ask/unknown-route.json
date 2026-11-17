@@ -1,0 +1,21 @@
+{
+  "description": "An unknown route LISTS the configured ids (O6). `route not found` on its own is a support question, and at this stage the list is short enough to print.",
+  "method": "ask",
+  "request": {
+    "jsonrpc": "2.0", "id": 23, "method": "ask",
+    "params": {"route": "gpt-5-turbo-ultra", "prompt": "hello"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 23,
+    "error": {
+      "code": -31100,
+      "message": "unknown route",
+      "data": {
+        "what": "route \"gpt-5-turbo-ultra\" is not configured; the configured routes are anthropic-sonnet, openai-gpt4o",
+        "means": "a route names a provider, a model and its prices; without one there is nothing to call",
+        "todo": "use one of the configured route ids, which the message lists",
+        "fatal": false
+      }
+    }
+  }
+}

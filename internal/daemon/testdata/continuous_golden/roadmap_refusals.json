@@ -1,0 +1,23 @@
+{
+  "answer": null,
+  "error": "",
+  "item": {
+    "status": "running",
+    "loopSlug": "roadmap-item-1"
+  },
+  "starts": null,
+  "attempts": [
+    {
+      "answer": null,
+      "error": "only a ready item materializes; item 1 is \"idea\" (D4: ready means brief, plan, and a priority that is not unknown — roadmap.show names what is missing)"
+    },
+    {
+      "answer": null,
+      "error": "item 1 is not ready at the attempt — not ready: priority is unknown (D2 — an unknown priority never becomes ready by waiting) (D4 is decided now, never cached)"
+    },
+    {
+      "answer": null,
+      "error": "item 1 is already materialized in loop roadmap-item-1 — the loop's own record is the truth now (D6)"
+    }
+  ]
+}

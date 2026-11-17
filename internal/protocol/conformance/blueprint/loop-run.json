@@ -1,0 +1,30 @@
+{
+  "description": "loop.run (S39 T9): a human peer starts a NEW run of a blueprint inside a resting loop \u2014 the claim, the pin and the run row are one transaction, the answer is the run. The human door carries no ask (CR4): the typing IS the confirmation.",
+  "method": "loop.run",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 410,
+    "method": "loop.run",
+    "params": {
+      "id": "loop-9",
+      "blueprint": "goal-to-brief",
+      "goalId": "g1",
+      "with": {
+        "ticket": "A-1"
+      },
+      "message": "go",
+      "route": "r1"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 410,
+    "result": {
+      "id": "loop-9",
+      "runSeq": 2,
+      "blueprint": "goal-to-brief",
+      "version": 1,
+      "status": "running"
+    }
+  }
+}

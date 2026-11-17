@@ -1,0 +1,6 @@
+{
+  "description": "The embedding-pass door (T3's EmbedPending, surfaced as a trigger the app and the CLI call — the analogue of retrieval.reindex). It runs one scope's learnings through EmbedPending: every learning without a vector yet gets one, idempotently. Here three learnings in the project scope get a vector on the first run. A second run with nothing new embeds nothing (a zero is a real answer, not a silence); the no-route case is a refusal the daemon names (D5 — no route is the normal state), so a caller never reads 'nothing to embed' as 'embeddings failed'.",
+  "method": "learnings.embed",
+  "request": {"jsonrpc": "2.0", "id": 365, "method": "learnings.embed", "params": {"scope": "project", "scopeKey": "/home/cjlapao/aeon"}},
+  "response": {"jsonrpc": "2.0", "id": 365, "result": {"embedded": 3}}
+}

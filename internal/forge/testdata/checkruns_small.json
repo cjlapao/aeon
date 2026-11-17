@@ -1,0 +1,10 @@
+{
+ "__status": 200,
+ "body": {
+  "total_count": 2,
+  "check_runs": [
+   {"id": 201, "name": "build", "status": "completed", "conclusion": "success"},
+   {"id": 202, "name": "test", "status": "completed", "conclusion": "success"}
+  ]
+ }
+}

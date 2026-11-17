@@ -1,0 +1,18 @@
+{
+  "description": "S50 T2 (RM6): the board with an empty store \u2014 rows and groups both present and empty, the same statement-not-silence roadmap.list answers with. When rows exist each carries the full item view, the ONE-SENTENCE describe (D8's honesty, three priority states never collapsed to a badge), ready with the exact sentence IsReady produced in `blocker` when false (never re-derived), the loop block only once the item was materialized, and `groups` counting epic tags over the FILTERED rows. componentRoot is OPTIONAL here \u2014 the board is deliberately the whole-view roadmap.list is not (RM6; N2 stays on list).",
+  "method": "roadmap.board",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 965,
+    "method": "roadmap.board",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 965,
+    "result": {
+      "rows": [],
+      "groups": {}
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "kind": "question.asked",
+  "componentRoot": "",
+  "payload": {
+    "body": "Deploy to production?",
+    "id": 7,
+    "kind": "clarify",
+    "stepId": 41
+  },
+  "notify": {
+    "title": "A question is waiting for you",
+    "body": "",
+    "tone": "info"
+  }
+}

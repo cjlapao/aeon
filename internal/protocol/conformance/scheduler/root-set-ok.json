@@ -1,0 +1,52 @@
+{
+  "description": "The CN5 template authored: validated at the door (exists, validates, ENDS; the window pair, days and zone in the trigger's own grammar; minPriority D2's closed pair) and stored stamped with the peer — an invalid template never reaches a row (TestRootSetRefusesInvalidTemplates).",
+  "method": "scheduler.root.set",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 409,
+    "method": "scheduler.root.set",
+    "params": {
+      "componentRoot": "/srv/components/alpha",
+      "enabled": true,
+      "blueprint": "aeon-build",
+      "tech": "go",
+      "with": {
+        "brief_path": "docs/brief.md"
+      },
+      "window": {
+        "start": "09:00",
+        "end": "17:30",
+        "days": "1,2,3,4,5",
+        "zone": "Europe/Lisbon"
+      },
+      "minPriority": "assumed"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 409,
+    "result": {
+      "componentRoot": "/srv/components/alpha",
+      "rootId": "cmp_01",
+      "enabled": true,
+      "template": {
+        "blueprint": "aeon-build",
+        "tech": "go",
+        "with": {
+          "brief_path": "docs/brief.md"
+        }
+      },
+      "window": {
+        "start": "09:00",
+        "end": "17:30",
+        "days": "1,2,3,4,5",
+        "zone": "Europe/Lisbon"
+      },
+      "minPriority": "assumed",
+      "state": {
+        "kind": "idle"
+      }
+    }
+  },
+  "fromDoor": true
+}

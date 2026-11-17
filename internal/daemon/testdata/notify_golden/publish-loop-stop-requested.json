@@ -1,0 +1,13 @@
+{
+  "kind": "loop.stop.requested",
+  "componentRoot": "",
+  "payload": {
+    "loopId": "loop-golden",
+    "reason": "the agent asks: the work is done"
+  },
+  "notify": {
+    "title": "An agent asked you to stop a loop",
+    "body": "",
+    "tone": "warning"
+  }
+}

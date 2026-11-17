@@ -1,0 +1,61 @@
+{
+  "description": "tools.list with one filter: the `process` family is `bash` alone, and the entry is the whole TC10 shape — `schema` is the canonical schema the EXECUTOR parses against (TC2, not the row's copy), `schemaHash` its digest, `rerunClass` unsafe because a shell command cannot be re-run without consequence, `capabilities` the closed vocabulary word `spawn_process`, and `governed` naming the two policy types that judge every call (tool_access AND command_access — a tool governed by more than one type is the common case, and a panel that showed only the first would hide the rule that actually refuses it). An absent filter is a nil pointer at the seam and the family is matched case-insensitively against the code's own family, never a client-side guess.",
+  "method": "tools.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 640,
+    "method": "tools.list",
+    "params": {
+      "family": "process"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 640,
+    "result": {
+      "tools": [
+        {
+          "name": "bash",
+          "family": "process",
+          "source": "system",
+          "description": "Run a shell command in the workspace. It runs with a mandatory timeout, with stdin closed, and with stdout and stderr capped — truncation is reported with the true size. Command policy is decided by the engine over the WHOLE string: it splits on `&&`, `||`, `;` and newlines, and every segment must be allowed. It does NOT analyse quoting, `bash -c` (or `sh -c`), command substitution `$()`, backticks, heredocs, a single `|`, a single `&`, or `()` subshells — such a string is ONE command to the matcher, and evading the policy that way violates the policy regardless of whether the matcher catches it. Commands longer than 65536 bytes are refused at this boundary.",
+          "schema": {
+            "additionalProperties": false,
+            "properties": {
+              "command": {
+                "description": "the shell command to run",
+                "type": "string"
+              },
+              "timeoutSeconds": {
+                "description": "shorten the timeout; it cannot be lengthened",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "command"
+            ],
+            "type": "object"
+          },
+          "schemaHash": "bd4d88d8b930615eb14cf00ec8aa0457c5a99ce7ac046942ae7dd82ff0cac6b5",
+          "rerunClass": "unsafe",
+          "capabilities": [
+            "spawn_process"
+          ],
+          "governed": [
+            "tool_access",
+            "command_access"
+          ],
+          "conditional": false,
+          "available": true,
+          "classified": false,
+          "version": 1,
+          "origin": "system",
+          "rowCurrent": true,
+          "category": "process",
+          "access": "write",
+          "address": "process.bash.write"
+        }
+      ]
+    }
+  }
+}

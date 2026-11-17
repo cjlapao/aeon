@@ -1,0 +1,70 @@
+{
+  "description": "S47 T7 (TC9/MC2): tool_show on a tool the caller HOLDS. The schema is the code's own — the one the model is already offered for a tool it holds (rule 7: no second schema to drift, and no row's copy served as truth, TC2) — and `policies` holds only the rows that could change whether THIS agent may call it: the `agent:atlas` row and an `all-agents` row are here, and an `agent:sentry` row that also speaks about `acme.search` is absent, because showing it would report another agent's restrictions to somebody they say nothing about (rule 5). `mcp` is present because the name is qualified, and it is a link, not a re-decision.",
+  "method": "tools.mine.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 942,
+    "method": "tools.mine.show",
+    "params": {
+      "name": "acme.search"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 942,
+    "result": {
+      "tool": {
+        "name": "acme.search",
+        "family": "acme",
+        "source": "mcp",
+        "description": "",
+        "schema": {},
+        "schemaHash": "",
+        "rerunClass": "safe",
+        "capabilities": [],
+        "governed": [],
+        "conditional": false,
+        "available": false,
+        "server": "acme",
+        "tier": "public",
+        "effect": "local",
+        "classified": true,
+        "version": 0,
+        "origin": "user",
+        "rowCurrent": true
+      },
+      "state": "granted_allowed",
+      "reason": "allow · effect_class · acme.search · agent:atlas",
+      "granted_by": ["mcp-declare"],
+      "policies": [
+        {
+          "id": "pol_01ABC",
+          "action": "allow",
+          "source": "operator",
+          "origin": "user",
+          "target": "agent:atlas",
+          "toolName": "acme.search",
+          "describe": "allow · effect_class · acme.search · agent:atlas",
+          "expired": false,
+          "link": {"kind": "policy", "id": "pol_01ABC"}
+        },
+        {
+          "id": "pol_02DEF",
+          "action": "allow",
+          "source": "operator",
+          "origin": "system",
+          "target": "all-agents",
+          "toolName": "acme.search",
+          "describe": "allow · effect_class · acme.search · all-agents",
+          "expired": false,
+          "link": {"kind": "policy", "id": "pol_02DEF"}
+        }
+      ],
+      "mcp": {
+        "server": "acme",
+        "tier": "public",
+        "link": {"kind": "mcp_server", "id": "acme"}
+      }
+    }
+  }
+}

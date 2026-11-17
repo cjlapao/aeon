@@ -1,0 +1,23 @@
+{
+  "description": "S51 T1 (TM3), the forged-filer refusal on the wire: triage.file params carry \"filedBy\" — refused by KEY before the lenient decode (decodeParams ignores unknown keys, so the refusal lives here or nowhere; the roadmap identity-key precedent). Who filed a bug is now DERIVED from the stamped actor — 'person' for a person at the socket, the agent's own slug for its twin — and a param that carried a filer let anyone name anyone, the unchecked free-text filed_by this migration-closing removal ends. \"actor\" and \"actorKind\" carry the same refusal on every triage write.",
+  "method": "triage.file",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 433,
+    "method": "triage.file",
+    "params": {
+      "componentRoot": "/srv/projects/ledger",
+      "title": "retry counter over-counts on the second attempt",
+      "body": "the retry counter adds two on the second attempt; expected one",
+      "filedBy": "someone-else"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 433,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: triage.file refuses the param \"filedBy\" \u2014 the actor is stamped from the connection and filed_by is derived from it, never carried in params (S51 TM3)"
+    }
+  }
+}

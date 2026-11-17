@@ -1,0 +1,27 @@
+{
+  "description": "S27 T3 rule 5 / I4: edges are same-repository only \u2014 a roadmap is one repository's promises and a dependency that crosses roots makes readiness depend on a graph the other repository owns. The refusal comes from the store's trigger and names both items.",
+  "method": "roadmap.depend",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 350,
+    "method": "roadmap.depend",
+    "params": {
+      "id": 12,
+      "dependsOn": 44
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 350,
+    "error": {
+      "code": -31900,
+      "message": "the roadmap refused the act",
+      "data": {
+        "what": "roadmap: items 12 and 44 live in different repositories (/srv/projects/ledger vs /srv/projects/other) \u2014 one item's dependencies belong to one repository",
+        "means": "nothing moved \u2014 the row keeps the state it had",
+        "todo": "if the edge must go, roadmap.undepend {id, dependsOn} removes exactly the named pair and nothing else; roadmap.board shows what waits on what",
+        "fatal": false
+      }
+    }
+  }
+}

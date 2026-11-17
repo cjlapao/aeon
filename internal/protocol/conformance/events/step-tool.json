@@ -1,0 +1,21 @@
+{
+  "description": "`step.tool.start` and `step.tool.end` are S5's additions to the event vocabulary — the superseded names are unchanged, because S9 was specced against them. Without these a tool call is invisible in the stream, and a step that spends forty seconds reading files looks like a step that hung. The `summary` is an ARGUMENT summary, never the arguments: a `read` of a 2 MiB file would otherwise put its content in the stream as well as the transcript.",
+  "event": "step.tool.end",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "seq": 7,
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1453,
+      "kind": "step.tool.end",
+      "at": "2026-10-15T09:41:14.882Z",
+      "payload": {
+        "tool": "read",
+        "summary": "README.md",
+        "result": "read README.md · 2.1 KiB",
+        "iteration": 2
+      }
+    }
+  }
+}

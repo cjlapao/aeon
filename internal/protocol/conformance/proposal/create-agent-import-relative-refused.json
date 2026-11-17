@@ -1,0 +1,27 @@
+{
+  "description": "proposal.create's agent_import refusal for a relative path (S37 T4, AD2): the payload decode refuses a relative path BEFORE the seam is ever called — a relative path resolves against whoever's working directory is running at the time, and create and commit are not guaranteed to be the same process — so no row is written. The reason is this slice's own words (never the plugin layer's), and the shape is identical to every other kind's refusal (one Aeon code, three parts).",
+  "method": "proposal.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 93,
+    "method": "proposal.create",
+    "params": {
+      "kind": "agent_import",
+      "payload": {"pkgPath": "agents/reviewer-plus"}
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 93,
+    "error": {
+      "code": -31710,
+      "message": "the proposal was refused",
+      "data": {
+        "what": "refused: pkgPath must be absolute — a relative path resolves against whoever's working directory is running at the time, and create and commit are not guaranteed to be the same process",
+        "means": "nothing was written — a refused proposal leaves no row, never one carrying an error flag",
+        "todo": "pass an absolute path; the plugin layer words the package itself, not the path",
+        "fatal": false
+      }
+    }
+  }
+}

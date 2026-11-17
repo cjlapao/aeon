@@ -1,0 +1,10 @@
+data: {"id":"chatcmpl-FIXTURE","object":"chat.completion.chunk","created":1760000000,"model":"gpt-4o-2024-08-06","choices":[{"index":0,"delta":{"role":"assistant","content":""},"finish_reason":null}]}
+
+data: {"id":"chatcmpl-FIXTURE","object":"chat.completion.chunk","created":1760000000,"model":"gpt-4o-2024-08-06","choices":[{"index":0,"delta":{"content":"Only the prompt tokens were counted."},"finish_reason":null}]}
+
+data: {"id":"chatcmpl-FIXTURE","object":"chat.completion.chunk","created":1760000000,"model":"gpt-4o-2024-08-06","choices":[{"index":0,"delta":{},"finish_reason":"stop"}]}
+
+data: {"id":"chatcmpl-FIXTURE","object":"chat.completion.chunk","created":1760000000,"model":"gpt-4o-2024-08-06","choices":[],"usage":{"prompt_tokens":12}}
+
+data: [DONE]
+

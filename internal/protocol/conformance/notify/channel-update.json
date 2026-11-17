@@ -1,0 +1,37 @@
+{
+  "description": "notify.channel.update edits name, url, allowPrivate or the secret in place; the https rule is re-checked before anything is written and the audit names fields and hosts, never bodies (SV12). A present-and-different field is what earns the audit row; nil means do not touch.",
+  "method": "notify.channel.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 944,
+    "method": "notify.channel.update",
+    "params": {
+      "id": "nc-01JTEST0000000000000000001",
+      "name": "ops-room-v2"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 944,
+    "result": {
+      "id": "nc-01JTEST0000000000000000001",
+      "name": "ops-room-v2",
+      "kind": "webhook",
+      "host": "hooks.example.com",
+      "enabled": false,
+      "allowPrivate": false,
+      "secretPresent": true,
+      "subscriptions": [
+        {
+          "channelId": "nc-01JTEST0000000000000000001",
+          "minSeverity": "blocked",
+          "kinds": null,
+          "maxPerHour": 30
+        }
+      ],
+      "createdAt": "2026-11-03T09:00:00Z",
+      "updatedAt": "2026-11-03T09:05:00Z",
+      "consecutiveFailures": 0
+    }
+  }
+}

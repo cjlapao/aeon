@@ -1,0 +1,71 @@
+{
+  "description": "mergequeue.list across the machine: the open rows in (root, base, position) order, the driver's own Describe sentence as nextStep, and the three-state staleness \u2014 'current' where refs were read, 'not-yet' where the state does not ask for a base read. Terminal history rides only when includeTerminal is asked for.",
+  "method": "mergequeue.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 172,
+    "method": "mergequeue.list",
+    "params": {
+      "includeTerminal": false
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 172,
+    "result": [
+      {
+        "id": "mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+        "componentRoot": "/srv/components/alpha",
+        "base": "main",
+        "branch": "feature/login-retry",
+        "loop": "loop-mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+        "status": "ready",
+        "position": 1,
+        "attended": true,
+        "headSha": "aaaa1111bbbb2222cccc3333dddd4444eeee5555",
+        "baseSha": "9999aaaa8888bbbb7777cccc6666dddd5555eeee4444",
+        "integrationBranch": "integrate/mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+        "integrationSha": "1212aaaa3434bbbb5656cccc7878dddd9090efff",
+        "prNumber": 412,
+        "verifiedSha": "1212aaaa3434bbbb5656cccc7878dddd9090efff",
+        "landingLoop": "loop-mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+        "catchUps": 1,
+        "enqueuedBy": {
+          "kind": "user",
+          "id": "cjlapao"
+        },
+        "staleness": {
+          "state": "current"
+        },
+        "nextStep": "ready: the gate is green for 1212aaaa3434bbbb5656cccc7878dddd9090efff",
+        "digest": "fbe6fd7af3920ad4c2de6d9a15dbafb685a3b388d4125a78bfc1f217b7b79bf2",
+        "createdAt": "2026-11-03T10:00:00Z",
+        "updatedAt": "2026-11-04T09:00:00Z"
+      },
+      {
+        "id": "mq-1a2b3c4d5e6f708192a3b4c5d6e7f809",
+        "componentRoot": "/srv/components/alpha",
+        "base": "main",
+        "branch": "feature/export-csv",
+        "status": "queued",
+        "position": 2,
+        "attended": false,
+        "headSha": "bbbb2222cccc3333dddd4444eeee5555ffff6666",
+        "baseSha": "9999aaaa8888bbbb7777cccc6666dddd5555eeee4444",
+        "catchUps": 0,
+        "enqueuedBy": {
+          "kind": "cli",
+          "id": "aeon-cli"
+        },
+        "staleness": {
+          "state": "not-yet",
+          "reason": "the queue has not read its base for this state yet"
+        },
+        "nextStep": "queued: waiting its turn on main behind 1 item",
+        "digest": "fdb980db96024799f680d9c34dcd192350fb899a513dbe7b86b7903cf1d1ffb0",
+        "createdAt": "2026-11-04T08:00:00Z",
+        "updatedAt": "2026-11-04T08:00:00Z"
+      }
+    ]
+  }
+}

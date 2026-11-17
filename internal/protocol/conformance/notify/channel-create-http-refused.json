@@ -1,0 +1,27 @@
+{
+  "description": "notify.channel.create refused: an http url without allow_private never becomes a row. The refusal is the whole SV7 shape-check — scheme, userinfo, size caps, the local-only http rule — and every member of the family says the same thing about a different field: this channel as written may not exist or may not send.",
+  "method": "notify.channel.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 951,
+    "method": "notify.channel.create",
+    "params": {
+      "name": "insecure",
+      "url": "http://hooks.example.com/aeon"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 951,
+    "error": {
+      "code": -31923,
+      "message": "channel refused",
+      "data": {
+        "what": "notify: http is accepted only with allow_private=1 and a loopback or private host — for a local receiver, both",
+        "means": "a channel is standing authority to send machine facts off this machine, so its shape is refused before any row exists; nothing half-valid is persisted, and the refusal carries the validator's own sentence",
+        "todo": "fix the named field (https url without userinfo, name <= 80 bytes, subscriptions inside the closed vocabularies) and send the write again",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "protocolVersion here is the NEGOTIATED version for this connection, not the daemon's maximum. A client printing it as `negotiated` is telling the truth only because of that.",
+  "method": "version",
+  "request": {"jsonrpc": "2.0", "id": 4, "method": "version"},
+  "response": {
+    "jsonrpc": "2.0", "id": 4,
+    "result": {"daemonVersion": "0.1.0", "protocolVersion": 1, "buildTime": "2026-10-15T00:00:00Z", "gitCommit": "abc1234"}
+  }
+}

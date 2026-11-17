@@ -1,0 +1,18 @@
+{
+  "description": "The backup.stale event, owned by the daemon's backup service (T6), fired ONCE per transition into stale — the arm is the service's state, shared by the ticker and the status door, and it re-arms when the machine leaves stale, so the next transition fires again. The daemon that was down through the stale window is the one that most needs the notice, and the first wake after the downtime finds out. The payload is typed: the state's name, the age, the threshold — ids/enums/numbers, no strings the engine did not own; daemon-wide.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-62backup01",
+      "seq": 9103,
+      "kind": "backup.stale",
+      "at": "2026-11-04T12:01:00.000000000Z",
+      "payload": {
+        "state": "stale",
+        "age_seconds": 176400,
+        "stale_after_seconds": 172800
+      }
+    }
+  }
+}

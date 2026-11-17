@@ -1,0 +1,27 @@
+{
+  "description": "LC3's resume on a running loop (S55 T5): a resume needs a parked loop, and the refusal says stop-first — one code, data.kind 'running', the remedy in the what. A resume that silently succeeded on a running loop would be a second runner on one loop; one that errored without the remedy would leave the person guessing.",
+  "method": "loop.resume",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 512,
+    "method": "loop.resume",
+    "params": {
+      "id": "loop-9"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 512,
+    "error": {
+      "code": -31860,
+      "message": "the loop control refused the operation",
+      "data": {
+        "kind": "running",
+        "what": "loop resume refused: the loop is running — stop it first (a resume needs a parked loop)",
+        "means": "the daemon understood and declined — nothing was written and nothing moved",
+        "todo": "do what the what sentence names",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "description": "`loop.documents` lists the documents a loop's agents have filed in the database — plan.md, discovery.md, answers.md, tasks/T1.md — newest first, each at its current revision with its size and who wrote it. They are the loop's internal files: they live in the store, so `loop.files` (the workspace directory) never shows them. Read one's text with `loop.read`.",
+  "method": "loop.documents",
+  "request": {
+    "jsonrpc": "2.0", "id": 89, "method": "loop.documents",
+    "params": { "id": "loop-7f3a" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 89,
+    "result": {
+      "slug": "loop-dmvwadf8d4rc",
+      "componentRoot": "/home/me/code/qa",
+      "documents": [
+        { "file": "discovery.md", "rev": 2, "bytes": 8123, "sha256": "ab12", "writtenBy": "investigator", "writtenAt": "2026-11-16T12:30:00.000Z" },
+        { "file": "answers.md", "rev": 1, "bytes": 1530, "sha256": "cd34", "writtenBy": "operator", "writtenAt": "2026-11-16T12:10:00.000Z" }
+      ]
+    }
+  }
+}

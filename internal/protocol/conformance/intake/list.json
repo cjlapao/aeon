@@ -1,0 +1,25 @@
+{
+  "description": "Every intake with its honest state read from the engine's rows \u2014 interviewing before any plan, committed after the link.",
+  "method": "intake.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "intake.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "intakes": [
+        {
+          "id": "int-abc123",
+          "name": "Goal intake demo",
+          "scratchPath": "/home/person/.local/state/aeon/intake",
+          "createdAt": "2026-11-05T10:00:00Z",
+          "state": "interviewing"
+        }
+      ]
+    }
+  }
+}

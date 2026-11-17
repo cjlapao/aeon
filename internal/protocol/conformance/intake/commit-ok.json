@@ -1,0 +1,43 @@
+{
+  "description": "The commit's answer is the engine's Result: evidence per component, the records census, resumed true on the second run.",
+  "method": "intake.commit",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "intake.commit",
+    "params": {
+      "intakeId": "int-abc123",
+      "proposalId": "7",
+      "digest": "s61.intake.v1:3f2a9c1b4d5e6f70a1b2c3d4e5f60718293a4b5c6d7e8f9012345678901abcdef",
+      "targetPath": "/home/person/projects/alpha",
+      "publish": "none"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "intakeId": "int-abc123",
+      "proposalId": "7",
+      "rootId": "cmp-newroot",
+      "targetPath": "/home/person/projects/alpha",
+      "resumed": true,
+      "components": [
+        {
+          "slug": "alpha",
+          "role": "",
+          "name": "",
+          "targetPath": "",
+          "blueprint": "",
+          "files": null,
+          "actions": null,
+          "remoteCreated": false,
+          "commitSha": "0123456789abcdef0123456789abcdef01234567"
+        }
+      ],
+      "goals": 2,
+      "epics": 1,
+      "items": 1
+    }
+  }
+}

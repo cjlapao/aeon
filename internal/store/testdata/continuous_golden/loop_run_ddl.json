@@ -1,0 +1,12 @@
+[
+  {
+    "name": "loop_run",
+    "type": "table",
+    "sql": "CREATE TABLE \"loop_run\" (\n  loop_id            TEXT    NOT NULL REFERENCES loop (id) ON DELETE CASCADE,\n  run_seq            INTEGER NOT NULL CHECK (run_seq \u003e= 1),\n  blueprint          TEXT    NOT NULL,\n  blueprint_version  INTEGER NOT NULL,\n  content            TEXT    NOT NULL,\n  runtime_json       TEXT,\n  state              TEXT    NOT NULL CHECK (state IN ('running','done','failed','cancelled')),\n  started_by_kind    TEXT    NOT NULL CHECK (started_by_kind IN ('user','agent','trigger','event','scheduler')),\n  started_by_id      TEXT    NOT NULL DEFAULT '',\n  kickoff_message_id INTEGER,\n  goal_id            TEXT,\n  goal_version       INTEGER,\n  task_id            TEXT,\n  started_at         TEXT    NOT NULL,\n  ended_at           TEXT,\n  PRIMARY KEY (loop_id, run_seq),\n  CONSTRAINT ck_loop_run_end CHECK (\n       (state = 'running' AND ended_at IS NULL)\n    OR (state \u003c\u003e 'running' AND ended_at IS NOT NULL))\n)"
+  },
+  {
+    "name": "idx_loop_run_state",
+    "type": "index",
+    "sql": "CREATE INDEX idx_loop_run_state ON loop_run (loop_id, state)"
+  }
+]

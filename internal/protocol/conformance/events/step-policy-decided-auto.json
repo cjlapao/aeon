@@ -1,0 +1,17 @@
+{
+  "description": "An asked call let through by a standing pre-approval, not by a question: `approvedBy` is `auto` and the reason names why (full access, or this tool pre-approved for the loop). A call a person answered carries `approvedBy: person`; a call a rule allowed on its own carries `policy`. A reopened loop labels the call from this field: \"approved by you\" only for a person, \"approved by you, auto\" for this.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 4413,
+      "kind": "step.policy.decided",
+      "at": "2026-11-15T13:50:49.000000001Z",
+      "payload": {
+        "stepId": 9, "loopId": "l-7", "agent": "investigator", "tool": "bash", "toolUseId": "toolu_1",
+        "verdict": "allowed", "reason": "allowed: full access is on for this loop (user:1000)", "approvedBy": "auto"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "case": "readpr-422-duplicate",
+  "method": "GET",
+  "path": "/repos/acme/widget/pulls/7",
+  "authShape": "Bearer \u003credacted\u003e",
+  "accept": "application/vnd.github+json",
+  "attempts": 1,
+  "errKind": "conflict",
+  "errSentence": "conflict: conflict: A pull request already exists for acme:task/4a17-version/4a17.\n  why:  a concurrent change the forge refused to reconcile\n  do:   re-read the forge and retry; the conflict is the current state, not a fault"
+}

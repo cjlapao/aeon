@@ -1,0 +1,27 @@
+{
+  "description": "S52 T4 (LM7, LM8): an agent CANNOT retract a memory — retract and restore are the person's doors — but it can ASK, through the inert learning_retract proposal kind this door files. The answer is the same PolicyProposeResult the other proposal doors answer with: the row at status proposed and the fixed inertness note; nothing is stamped, nothing is audited as a retraction until a person commits it, and the commit's actor is the COMMITTER, never the proposer. The id must be inside the agent's readable set — one outside answers the same no-such sentence learnings.mine.show answers, so an ask cannot probe what exists but is not the asker's (LM5).",
+  "method": "learnings.mine.proposeRetract",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 455,
+    "method": "learnings.mine.proposeRetract",
+    "params": { "id": 34, "reason": "superseded: the struct-tag reading above replaces the guess about the writer loop" }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 455,
+    "result": {
+      "proposal": {
+        "id": 12,
+        "kind": "learning_retract",
+        "payload": { "id": 34, "reason": "superseded: the struct-tag reading above replaces the guess about the writer loop" },
+        "status": "proposed",
+        "createdAt": "2026-11-04T09:24:00Z",
+        "createdByKind": "agent",
+        "createdById": "golang-engineer",
+        "command": "aeon proposal commit 12"
+      },
+      "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+    }
+  }
+}

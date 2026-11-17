@@ -1,0 +1,67 @@
+### list
+{
+  "out": "brainstorm\nchat\nconversational-map\ndev-loop\ndevelopment-map-direct\ndevelopment-map-pipeline\ngoal-to-brief\ngolden-custom\nproposal-brief\nresearch-map\nroadmap-plan\ntag-only\ntwo-step\n"
+}
+### fields
+{
+  "out": "mode               enum       eq,neq,in                Loop execution mode\nflags.*            bool       eq,neq                   Boolean facts declared by prior steps\ncounters.*         int        eq,neq,gt,gte,lt,lte,in  Named retry and round counters\nanswers.*          string     eq,neq,in                Answer to a named gate\ntasks              collection eq,neq                   Task identifiers for iterate\ntasks.count        int        eq,neq,gt,gte,lt,lte,in  Number of tasks\n"
+}
+### path-two-step
+{
+  "error": "blueprints live in the database — use `aeon blueprint export` for a file copy or `aeon blueprint edit NAME` to change one",
+  "out": ""
+}
+### path-custom
+{
+  "error": "blueprints live in the database — use `aeon blueprint export` for a file copy or `aeon blueprint edit NAME` to change one",
+  "out": ""
+}
+### path-missing
+{
+  "error": "blueprints live in the database — use `aeon blueprint export` for a file copy or `aeon blueprint edit NAME` to change one",
+  "out": ""
+}
+### validate-name
+{
+  "out": "two-step schema 1 version 2: 13 valid checks, 0 invalid, 0 unverifiable\n"
+}
+### validate-name-json
+{
+  "out": "{\n  \"blueprint\": \"two-step\",\n  \"schemaVersion\": 1,\n  \"version\": 2,\n  \"validCount\": 13,\n  \"diagnostics\": []\n}\n"
+}
+### validate-custom
+{
+  "out": "golden-custom schema 1 version 1: 6 valid checks, 0 invalid, 0 unverifiable\n"
+}
+### validate-path-arg
+{
+  "out": "research-map schema 1 version 1: 12 valid checks, 0 invalid, 1 unverifiable\n  unverifiable agentsvc             lanes[survey].step.skill: the skill target \"reddit-agent/summarise-sentiment\" cannot be checked — agent services are not configured on this process; starting a loop with this lane is refused until they are (S14)\n"
+}
+### validate-strict
+{
+  "out": "two-step schema 1 version 2: 13 valid checks, 0 invalid, 0 unverifiable\n"
+}
+### validate-mode-simple
+{
+  "out": "two-step schema 1 version 2: 13 valid checks, 0 invalid, 0 unverifiable\n"
+}
+### validate-bad-mode
+{
+  "error": "unknown mode \"nonsense\"; accepted: simple, standard, poc",
+  "out": ""
+}
+### validate-missing
+{
+  "error": "blueprint \"no-such-blueprint\" is not shipped and not in this project\n  why:  it must be a shipped name or a file in ./aeon/blueprints\n  do:   aeon blueprint list",
+  "out": ""
+}
+### unknown-verb
+{
+  "error": "unknown blueprint subcommand \"nope\"",
+  "out": "aeon blueprint — the database is the source; a file is a transport\n\n  blueprint list [--origin system|user] [--q TEXT] [--json]\n  blueprint show NAME [--json]\n  blueprint fields [--json]\n  blueprint validate [NAME | --file F] [--mode simple|standard|poc] [--strict] [--json]\n  blueprint save NAME --file F [--create-only] [--mode M] [--note N]\n  blueprint edit NAME [--note N]                     ($EDITOR → save)\n  blueprint duplicate FROM NAME [--note N]\n  blueprint delete NAME --yes\n  blueprint revert NAME --rev N --yes [--note N]\n  blueprint override NAME LANE FIELD [VALUE]         (a shipped flow's one open choice; no VALUE clears it)\n  blueprint history NAME [--limit N]\n  blueprint diff NAME [--a REV|current|shipped] [--b REV|current|shipped]\n  blueprint usage NAME [--json]\n  blueprint lint [NAME | --file F] [--json]\n  blueprint export [NAME ...] [--out DIR]            (a disposable mirror)\n  blueprint path NAME                                (retired: blueprints live in the database)\n\nWith no daemon running the same code applies directly to the store, and says so.\n"
+}
+### list-with-arg
+{
+  "error": "blueprint list takes no arguments (filters are flags: --origin, --q)",
+  "out": ""
+}

@@ -1,0 +1,13 @@
+{
+  "description": "S45 T3 (PM8): the EMPTY TABLE's own answer — changes [] (never null), the statement \"no authoring changes recorded.\" (D4's discipline for this audit: a guard whose empty state reads as \"fine\" is the guard that fails open in the reader's head), and unauditedPolicyIds [] present. The statement is Count's answer (the whole table holds no rows), never the filtered-empty one: the same door, asked beside a populated table, returns an empty list WITHOUT this sentence (policy-changes-filtered.json's discipline). No row was written, nothing was trimmed; a fault reading the audit would be the -31841 refusal instead (policy-changes-unavailable.json), never this honest emptiness.",
+  "method": "policy.changes",
+  "request": {"jsonrpc": "2.0", "id": 74, "method": "policy.changes"},
+  "response": {
+    "jsonrpc": "2.0", "id": 74,
+    "result": {
+      "changes": [],
+      "statement": "no authoring changes recorded.",
+      "unauditedPolicyIds": []
+    }
+  }
+}

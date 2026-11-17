@@ -1,0 +1,9 @@
+{
+  "description": "One named file, re-indexed (S30 T4 §3, D6): the incremental maintenance door — delete that file's rows, re-parse that file alone, and re-link the edges OTHER files held into it by symbol (re-resolution by name is a cross-file guess by construction, so re-linked edges arrive `inferred`). The counters are touched-rows for THIS file only: a reparse that reports the project's row count is a whole rebuild wearing an incremental costume. Files the grammar registry does not claim are skipped, not errored.",
+  "method": "graph.reparse",
+  "request": {"jsonrpc": "2.0", "id": 246, "method": "graph.reparse", "params": {"componentRoot": "/home/dev/shop", "path": "internal/order/process.go"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 246,
+    "result": {"root": "/home/dev/shop", "files": 1, "filesSkipped": 0, "nodes": 9, "edges": 14, "unresolvedEdges": 2}
+  }
+}

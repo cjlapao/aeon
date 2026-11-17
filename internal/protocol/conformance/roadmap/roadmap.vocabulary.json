@@ -1,0 +1,97 @@
+{
+  "description": "S50 T2 (RM6): the roadmap's whole vocabulary in one read — the eight statuses with the next states the TRANSITION MACHINE allows (this answer is read from AllowedTransitions, never restated, so the day the table grows an edge this fixture grows with it or the pin fails), the three priority words, the three provenance words, and RM1's rules in the daemon's own sentences with its bounds, so a form renders the law from the daemon instead of copying it and going stale. S50 T6 adds `dispatchStatement`: the fixed authority sentence every surface prints BEFORE a dispatch (RM9's CLI seatbelt, RM10's UI confirm) — a const of the roadmap package, and the <item> slot is filled ONLY by placing the item's own Describe beside it.",
+  "method": "roadmap.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 964,
+    "method": "roadmap.vocabulary",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 964,
+    "result": {
+      "statuses": [
+        {
+          "status": "idea",
+          "next": [
+            "ideating",
+            "cancelled"
+          ],
+          "terminal": false
+        },
+        {
+          "status": "ideating",
+          "next": [
+            "brief-agreed",
+            "cancelled"
+          ],
+          "terminal": false
+        },
+        {
+          "status": "brief-agreed",
+          "next": [
+            "planned",
+            "cancelled"
+          ],
+          "terminal": false
+        },
+        {
+          "status": "planned",
+          "next": [
+            "ready",
+            "cancelled"
+          ],
+          "terminal": false
+        },
+        {
+          "status": "ready",
+          "next": [
+            "running",
+            "cancelled"
+          ],
+          "terminal": false
+        },
+        {
+          "status": "running",
+          "next": [
+            "done"
+          ],
+          "terminal": false
+        },
+        {
+          "status": "done",
+          "next": null,
+          "terminal": true
+        },
+        {
+          "status": "cancelled",
+          "next": null,
+          "terminal": true
+        }
+      ],
+      "priorities": [
+        "known",
+        "assumed",
+        "unknown"
+      ],
+      "provenances": [
+        "authored",
+        "triggered",
+        "triaged"
+      ],
+      "estimateRule": "an estimate is the whole range and its basis together, or absent — never a bare number (D3/D8)",
+      "pathRule": "artifact paths must be absolute under the item's component_root, and are editable only while the item has not started (statuses idea, ideating, brief-agreed, planned, ready); from running they are history",
+      "pathEditableStatuses": [
+        "idea",
+        "ideating",
+        "brief-agreed",
+        "planned",
+        "ready"
+      ],
+      "titleMaxBytes": 200,
+      "epicMaxBytes": 64,
+      "dispatchStatement": "This starts agents with no one present unless the loop is declared attended. Outward actions follow the standing policy — nothing here widens it. The rung moves only when the dispatched work itself lands; a failed run leaves the item exactly where it stands. It is about: <item>"
+    }
+  }
+}

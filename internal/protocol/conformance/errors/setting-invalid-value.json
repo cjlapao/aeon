@@ -1,0 +1,18 @@
+{
+  "description": "A settings.set whose value fails the key's type or bounds refuses with settings.set's invalid-value code (S44 T5, the -31811 a loud default would hide): a value that is not a valid int/bool/string/enum under the declaration's min/max/maxLen/enumValues is NOT written — writing it would store a value the next read could not resolve, and a quiet default there would make a caller believe a bad value took effect. The three-part data names the key, the type, and the value that failed (got vs expected), so the caller can correct it; the set never stamps a row it then cannot read back.",
+  "method": "settings.set",
+  "request": {"jsonrpc": "2.0", "id": 308, "method": "settings.set", "params": {"key": "test.count", "value": "11"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 308,
+    "error": {
+      "code": -31811,
+      "message": "value \"11\" is invalid for setting \"test.count\" (int, 1..10)",
+      "data": {
+        "what": "the value \"11\" fails the declaration of setting \"test.count\" — it is an int in [1..10] and 11 is outside that range",
+        "means": "a value that does not pass the type and bounds is not written: storing it would leave a row the next read cannot resolve, so the set refuses rather than fall back to a default a caller could mistake for the value taking effect (CS10's loud-default rule)",
+        "todo": "the message names the key, the type (int, 1..10) and the value that failed; set a value that passes — e.g. 1..10 for test.count",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "description": "S46 T3 (MG5-reads): mcp.grants {agent} is the person's per-agent authority view — S12's GrantView VERBATIM (qualified/tier/state/reason, MG7: a second derivation is the bug this slice exists to prevent), plus the two facts that explain it: `core` (NULL = no narrowing — the whole core set; [] = core narrowed to nothing, two distinct facts the mcp_agent.core column's own discipline carries to the wire) and `declares` (MC5: declaring is the grant; usability still needs S10's allow — the two facts shown SEPARATELY, never silently combined). A withheld row carries missingClasses (the S12 Refusal pointer distinction: absent = this refusal is not about classification). An unknown agent refuses with the typed named-thing code, not this success.",
+  "method": "mcp.grants",
+  "request": {"jsonrpc": "2.0", "id": 904, "method": "mcp.grants", "params": {"agent": "reddit-agent"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 904,
+    "result": {
+      "agent": "reddit-agent",
+      "core": null,
+      "declares": ["reddit.search"],
+      "grants": [
+        {"qualified": "read", "tier": "core", "state": "available", "reason": "core: judged by the step's S11 policy gate (S12 does not re-decide core)"},
+        {"qualified": "reddit.search", "tier": "private", "state": "available"},
+        {"qualified": "acme-crud.delete_issue", "tier": "public", "state": "refused", "reason": "refused: tool \"acme-crud.delete_issue\" is unclassified — its rerun and effect classes must be declared before it can be offered (MC6)"},
+        {"qualified": "acme-crud.create_issue", "tier": "public", "state": "refused", "reason": "refused: tool \"acme-crud.create_issue\" is unclassified (MC6)", "missingClasses": ["rerun", "effect"]}
+      ]
+    }
+  }
+}

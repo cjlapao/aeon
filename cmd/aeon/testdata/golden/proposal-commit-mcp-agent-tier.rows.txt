@@ -1,0 +1,7 @@
+policy rows: 0
+proposal rows: 2
+  proposal <ID> kind=mcp_server_remove status=committed created_by=user:1000 created_at=<TIME> payload={"name":"sentry"} decided_by=user:cli decided_at=<TIME> decide_reason= applied_error=
+  proposal <ID> kind=mcp_server_add status=committed created_by=user:1000 created_at=<TIME> payload={"tier":"private","agent":"ops","server":{"name":"linear","transport":{"type":"stdio","command":"linear-mcp","args":null,"env":null,"url":""},"tools":[{"name":"list_issues","rerun":"safe","effect":"local"}]}} decided_by=user:cli decided_at=<TIME> decide_reason= applied_error=
+policy_event rows: 0
+mcp.json:
+{"public":[],"agents":{"ops":{"private":[{"name":"sentry","transport":{"type":"stdio","command":"sentry-mcp"}}]}}}

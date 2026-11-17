@@ -1,0 +1,28 @@
+{
+  "description": "mcp.process.restart (and .start and .stop, same shape) is the person's act on one server's process \u2014 human door only, the actor is the connection's peer. Restart terminates the process group and starts it again; stop keeps it stopped until a start; a disabled or http server answers a plain refusal.",
+  "method": "mcp.process.restart",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 963,
+    "method": "mcp.process.restart",
+    "params": {
+      "name": "github"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 963,
+    "result": {
+      "process": {
+        "name": "github",
+        "transport": "stdio",
+        "state": "running",
+        "pid": 48213,
+        "startedAt": "2026-11-08T12:00:03Z",
+        "restarts": 1,
+        "tools": 26,
+        "lastExit": "terminated by the daemon (restart requested by user:1000)"
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "description": "A loop start whose mode is outside the closed vocabulary simple|standard|poc is a REFUSAL, not an infrastructure failure (S19 T7): the daemon understood the call and declined it. The narrow surface answers 409 refused for this class, never 503-retry \u2014 a resend of the same junk mode fails identically.",
+  "method": "loop.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 85,
+    "method": "loop.start",
+    "params": {
+      "blueprint": "pr.yaml",
+      "goal": "open the PR",
+      "workspaceRoot": "/home/dev/prj/checkout",
+      "mode": "turbo"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 85,
+    "error": {
+      "code": -31110,
+      "message": "unsupported loop mode",
+      "data": {
+        "what": "mode \"turbo\" is not one of simple, standard, poc",
+        "means": "modes select which lanes the blueprint's steps actually run; an unknown mode would silently run the wrong subset",
+        "todo": "omit mode for standard, or send simple/standard/poc",
+        "fatal": false
+      }
+    }
+  }
+}

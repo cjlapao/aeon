@@ -1,0 +1,28 @@
+{
+  "description": "No door takes a STATUS from params \u2014 status is the driver's, written through the edge table and nowhere else. The key is refused on reads too, so a client cannot even try to ask for 'merged' by typing it into the wrong place (includeTerminal is the honest door for history).",
+  "method": "mergequeue.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 812,
+    "method": "mergequeue.list",
+    "params": {
+      "status": "merged",
+      "includeTerminal": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 812,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: mergequeue.list params carry \"status\" \u2014 the caller names what to act on, never who acted, what state the row is in, or what evidence it carries (S60 MQ13)",
+      "data": {
+        "what": null,
+        "means": null,
+        "todo": null,
+        "fatal": false
+      }
+    }
+  },
+  "fromDoor": true
+}

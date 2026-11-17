@@ -1,0 +1,21 @@
+{
+ "__status": 200,
+ "body": [
+  {
+   "id": 41,
+   "body": "first",
+   "state": "APPROVED",
+   "user": {
+    "login": "steward"
+   }
+  },
+  {
+   "id": 42,
+   "body": "second",
+   "state": "COMMENTED",
+   "user": {
+    "login": "bot"
+   }
+  }
+ ]
+}

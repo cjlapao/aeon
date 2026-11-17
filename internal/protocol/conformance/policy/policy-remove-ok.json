@@ -1,0 +1,28 @@
+{
+  "description": "S45 T4 (PM1/PM16): policy.remove captures the row AND its in-force state BEFORE the boundary deletes it and returns both after — the row as it was (the evidence the CLI verb prints and forgets; policy.get can no longer return it) plus before/after in-force renderings (D14 verbatim). A real removal lands exactly one audit row (op='remove', ids-only fixed-template summary; a system-origin row's summary says PM16's choice out loud); removing an ABSENT id is {removed:false, policy:null} with no audit row and no error (DB19 — an idempotent delete is not a failure). The actor key is again nowhere: the audit row is stamped from the connection.",
+  "method": "policy.remove",
+  "request": {"jsonrpc": "2.0", "id": 84, "method": "policy.remove", "params": {"id": "deny-deploy"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 84,
+    "result": {
+      "removed": true,
+      "before": {"target": "loop:aeon-s45-review", "answers": [
+        {"policyID": "deny-deploy", "state": "in-force", "render": "deny-deploy: deny — command pattern \"git push*\" bound this loop"}
+      ]},
+      "after": {"target": "loop:aeon-s45-review", "answers": []},
+      "policy": {
+        "id": "deny-deploy",
+        "type": "command_access",
+        "target": "loop:aeon-s45-review",
+        "action": "deny",
+        "source": "operator",
+        "notAfter": null,
+        "describe": "deny command pattern \"git push*\"",
+        "createdAt": "2026-11-02T09:00:00Z",
+        "origin": "user",
+        "spec": {"command": "git push*"},
+        "authored": false
+      }
+    }
+  }
+}

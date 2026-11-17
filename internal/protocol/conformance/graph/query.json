@@ -1,0 +1,15 @@
+{
+  "description": "The structural browse (S30 T5 §3): filter by kind, name prefix, or file — the caller that does not yet know the exact symbol. Like every graph answer: four-state (a root with no rows is `not-built`, a root whose rows match nothing is `not-found`) and references ONLY — the node listing is the whole product, and chaining into `search.query` or `read` on a chosen node is the caller's next move, never this method's (D11's boundary). `limit` bounds the page; browse never costs the whole table.",
+  "method": "graph.query",
+  "request": {"jsonrpc": "2.0", "id": 245, "method": "graph.query", "params": {"componentRoot": "/home/dev/shop", "kind": "function", "prefix": "order.", "limit": 2}},
+  "response": {
+    "jsonrpc": "2.0", "id": 245,
+    "result": {
+      "state": "found",
+      "nodes": [
+        {"id": 41, "symbol": "order.ProcessOrder", "kind": "function", "filePath": "internal/order/process.go", "startLine": 16, "endLine": 24, "language": "go"},
+        {"id": 12, "symbol": "order.validateOrder", "kind": "function", "filePath": "internal/order/validate.go", "startLine": 18, "endLine": 20, "language": "go"}
+      ]
+    }
+  }
+}

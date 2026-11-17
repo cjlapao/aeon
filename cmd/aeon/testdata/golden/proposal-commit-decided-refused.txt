@@ -1,0 +1,6 @@
+$ aeon proposal commit 1
+proposal <ID> committed
+$ aeon proposal commit 1
+! refused: proposal <ID> is committed, not proposed — a decided row is immutable history
+$ aeon policy list
+committed-twice          tool_access    all-agents                   deny   operator     no expiry

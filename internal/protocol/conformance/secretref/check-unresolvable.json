@@ -1,0 +1,22 @@
+{
+  "description": "S59 T6 (EV7, EV8): secretref.check answers whether the reference WOULD resolve, and never what it resolves to. Two booleans plus the refusal's kind and sentence; the value is read (or not) inside the resolver and dropped on the floor, so a check that could leak is not a check the daemon can offer. sourcePresent:false is the diagnostic that matters — the variable is unset, the file is not there, or the credential record was deleted.",
+  "method": "secretref.check",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 917,
+    "method": "secretref.check",
+    "params": { "name": "deploy-token" }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 917,
+    "result": {
+      "name": "deploy-token",
+      "sourceKind": "daemon-env",
+      "resolvable": false,
+      "sourcePresent": false,
+      "refusalKind": "secret-unresolvable",
+      "refusalSentence": "refused: secret-unresolvable · the daemon's environment has no DEPLOY_TOKEN to read · do: set it in the daemon's environment, or point the reference at a key file or a stored credential"
+    }
+  }
+}

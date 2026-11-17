@@ -1,0 +1,9 @@
+-- S44 T10 (S43 adoption, path B): adopt agents.allowUnsignedImport onto the
+-- config store. S43 stored this value as an env var (AEON_AGENTMANAGE_ALLOW_UNSIGNED_IMPORT),
+-- not a row, so there is nothing to carry via SQL — the carry is at read time
+-- (the read site honours the old env var for one release; its name differs from
+-- this key's env, AEON_SETTING_AGENTS_ALLOWUNSIGNEDIMPORT). This migration is a
+-- forward-only, idempotent no-op: it writes nothing, so re-running it changes
+-- nothing and it never overwrites an operator's stored value. A comment-only
+-- file is a no-op in SQLite (the -- lines are ignored), exactly what is wanted
+-- when a value lived in the environment and has no source row to migrate.

@@ -1,0 +1,14 @@
+{
+  "description": "The retrieval read (S22 T6, D15/I10): a NAMED corpus (O8 — there is no default), locations with scores, NEVER content (D8 — `hits[].source` + line range is the whole product; read the file for truth). The same resolver function value answers the `search` tool and this method — one implementation, two transports. An empty index is NOT this shape: it refuses with a named reason (D2), and the no-retrieval build does not answer at all (V13). `score` is the fusion score — an ordering signal, not a probability; consumers sort by it and never interpret it.",
+  "method": "search.query",
+  "request": {"jsonrpc": "2.0", "id": 231, "method": "search.query", "params": {"componentRoot": "/home/dev/aeon", "corpus": "code", "query": "where is the retry policy"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 231,
+    "result": {
+      "hits": [
+        {"source": "internal/policy/match.go", "lineStart": 41, "lineEnd": 66, "score": 0.0328},
+        {"source": "internal/loop/escalate.go", "lineStart": 120, "lineEnd": 131, "score": 0.0164}
+      ]
+    }
+  }
+}

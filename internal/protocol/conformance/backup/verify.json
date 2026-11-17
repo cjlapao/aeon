@@ -1,0 +1,30 @@
+{
+  "description": "backup.verify at level 2 (verified — the restore-level check, drill omitted) answers the report (the level asked, whether it held, the engine's sentence) together with the run: the ledger row the verify wrote (BK10 — the verdict lives in the ledger, the file is immutable once published), outcome ok. A level that failed SOFTLY (the counts disagree) is a report with ok:false and its sentence — an answer, not an error — while a file the configured dirs do not hold, or a hard open failure, is a refusal with its kind.",
+  "method": "backup.verify",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 953,
+    "method": "backup.verify",
+    "params": {
+      "file": "aeon-state-20261102T115930Z-v76.aeonbak"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 953,
+    "result": {
+      "run": {
+        "outcome": "ok",
+        "startedAt": "2026-11-02T12:00:00.000Z",
+        "finishedAt": "2026-11-02T12:00:04.000Z"
+      },
+      "report": {
+        "file": "aeon-state-20261102T115930Z-v76.aeonbak",
+        "level": 2,
+        "ok": true,
+        "newerSchema": false,
+        "sentence": "verified: the extracted copy passes integrity_check, the fingerprint matches, and the counts agree — a restore of this file would open"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "description": "The autonomy.grant refusal for a merge grant missing the forced condition (S56 T6, the -31833 family): an irreversible action (forge.merge) must carry the merge rule (requireGates) — it is forced on and cannot be turned off, because a merge that skips the rule is the exact failure the authority exists to prevent. The validator refuses a request that turns the condition off rather than silently correcting it; a grant is never fixed up, it is accepted or refused.",
+  "method": "autonomy.grant",
+  "request": {"jsonrpc": "2.0", "id": 424, "method": "autonomy.grant", "params": {"rootId": "aeon", "subject": "forge.merge", "conditions": {"requireGates": false, "requireBudget": true}, "expiresAt": "2026-11-30T00:00:00Z"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 424,
+    "error": {
+      "code": -31833,
+      "message": "autonomy write refused",
+      "data": {
+        "what": "forge.merge must carry the merge rule (requireGates); it is forced on and cannot be turned off",
+        "means": "a grant is a human-authored authority record with closed rules (subject, conditions, expiry, the node it may sit on); a request outside them is refused, not silently corrected — nothing was written",
+        "todo": "the refusal names the rule it broke and the thing it broke it on; `autonomy.vocabulary` lists the closed sets a request may name",
+        "fatal": false
+      }
+    }
+  }
+}

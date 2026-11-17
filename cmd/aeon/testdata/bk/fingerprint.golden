@@ -1,0 +1,2322 @@
+index async_worker_flight on async_worker unique=1 partial=1 (worker_type asc, dedupe_key asc)
+index async_worker_query on async_worker unique=0 partial=0 (worker_type asc, state asc, component_root asc)
+index automation_event_subject on automation_event unique=0 partial=0 (subject_kind asc, subject_id asc)
+index environment_binding_component on environment_binding unique=1 partial=1 (component_id asc)
+index environment_binding_workspace on environment_binding unique=1 partial=1 (scope_kind asc)
+index environment_provision_live on environment_provision unique=1 partial=1 (component_root asc, loop_slug asc, owner asc)
+index event_trigger_fire_by_trigger on event_trigger_fire unique=0 partial=0 (trigger_id asc, id desc)
+index graph_edge_from on graph_edge unique=0 partial=0 (component_root asc, from_node_id asc)
+index graph_edge_to on graph_edge unique=0 partial=0 (component_root asc, to_node_id asc)
+index graph_node_file on graph_node unique=0 partial=0 (component_root asc, file_path asc)
+index graph_node_symbol on graph_node unique=0 partial=0 (component_root asc, symbol asc)
+index idx_action_intent_pr on action_intent unique=0 partial=0 (pr asc, step_id asc)
+index idx_agent_chain_caller on agent_chain unique=0 partial=0 (caller_loop_id asc, caller_step_id asc)
+index idx_agent_change_slug on agent_change unique=0 partial=0 (slug asc, id asc)
+index idx_agent_message_delivered on agent_message unique=0 partial=0 (delivered_to_step_id asc)
+index idx_agent_message_loop on agent_message unique=0 partial=0 (component_root asc, loop_slug asc, id asc)
+index idx_agent_message_step on agent_message unique=0 partial=0 (from_step_id asc)
+index idx_agent_message_thread on agent_message unique=0 partial=0 (thread asc, id asc)
+index idx_agent_name on agent unique=0 partial=0 (name asc)
+index idx_agent_slug on agent unique=1 partial=0 (slug asc)
+index idx_agent_task_caller on agent_task unique=0 partial=0 (caller_loop_id asc, caller_step_id asc)
+index idx_agent_task_status on agent_task unique=0 partial=0 (status asc, id asc)
+index idx_archive_project on loop_archive unique=0 partial=0 (component_root asc, archived_at asc)
+index idx_attention_ack_subject on attention_ack unique=0 partial=0 (subject_key asc, id asc)
+index idx_automation_change_trigger on automation_change unique=0 partial=0 (source asc, trigger_id asc, id asc)
+index idx_autonomy_change_root on autonomy_change unique=0 partial=0 (root_id asc, id asc)
+index idx_autonomy_grant_node on autonomy_grant unique=0 partial=0 (node_id asc, state asc)
+index idx_autonomy_use_grant on autonomy_use unique=0 partial=0 (grant_id asc, at asc)
+index idx_autonomy_use_loop on autonomy_use unique=0 partial=0 (loop_id asc)
+index idx_backup_run_kind_outcome on backup_run unique=0 partial=0 (kind asc, outcome asc, finished_at asc)
+index idx_blueprint_import_hash on blueprint_import unique=1 partial=1 (sha256 asc)
+index idx_blueprint_ref_target on blueprint_ref unique=0 partial=0 (kind asc, target asc)
+index idx_blueprint_revision_name on blueprint_revision unique=0 partial=0 (name asc, rev asc)
+index idx_budget_event_budget on budget_event unique=0 partial=0 (budget_id asc, id asc)
+index idx_bug_change_bug on bug_change unique=0 partial=0 (bug_id asc, id asc)
+index idx_bug_root_priority on bug unique=0 partial=0 (component_root asc, priority_state asc)
+index idx_bug_root_validation on bug unique=0 partial=0 (component_root asc, validation_state asc)
+index idx_charter_revision_current on charter_revision unique=0 partial=0 (root_id asc, revision desc)
+index idx_component_parent on component unique=0 partial=0 (parent_id asc)
+index idx_component_remote_key on component unique=0 partial=0 (remote_key asc)
+index idx_component_repo_key on component unique=0 partial=0 (repo_key asc)
+index idx_component_root_component on component_root unique=0 partial=0 (component_id asc)
+index idx_document_head on loop_document unique=0 partial=0 (component_root asc, loop_slug asc, file asc, rev desc)
+index idx_document_loop on loop_document unique=0 partial=0 (component_root asc, loop_slug asc)
+index idx_document_owner_goal on loop_document unique=0 partial=1 (owner_goal_id asc, file asc, rev desc)
+index idx_document_project_key on loop_document unique=0 partial=0 (project_key asc, loop_slug asc)
+index idx_dod_event_item on dod_event unique=0 partial=0 (item_id asc, id asc)
+index idx_dod_item_scope on dod_item unique=0 partial=0 (component_root asc, loop_slug asc)
+index idx_env_var_change_name on env_var_change unique=0 partial=0 (name asc, id asc)
+index idx_env_var_scope on env_var unique=1 partial=0 (name asc, <expr> asc)
+index idx_environment_change_action on environment_change unique=0 partial=0 (action asc, id asc)
+index idx_environment_change_subject on environment_change unique=0 partial=0 (subject_kind asc, subject_id asc, id asc)
+index idx_environment_provision_loop on environment_provision unique=0 partial=0 (component_root asc, loop_slug asc, id asc)
+index idx_epic_component on epic unique=0 partial=0 (component_id asc)
+index idx_event_kind on event unique=0 partial=0 (kind asc, id asc)
+index idx_event_loop on event unique=0 partial=0 (loop_id asc, id asc)
+index idx_event_scope on event unique=0 partial=0 (component_root asc, loop_slug asc, id asc)
+index idx_goal_component on goal unique=0 partial=0 (component_id asc)
+index idx_intake_root on intake unique=0 partial=0 (root_id asc)
+index idx_learning_change_learning on learning_change unique=0 partial=0 (learning_id asc, id asc)
+index idx_learning_provenance on learning unique=0 partial=0 (provenance asc)
+index idx_learning_scope_key on learning unique=0 partial=0 (scope asc, scope_key asc)
+index idx_learning_tag_learning on learning_tag unique=0 partial=0 (learning_id asc)
+index idx_learning_tag_tag on learning_tag unique=0 partial=0 (tag asc, learning_id asc)
+index idx_loop_control_event_loop on loop_control_event unique=0 partial=0 (loop_id asc, id asc)
+index idx_loop_control_request_open on loop_control_request unique=0 partial=0 (loop_id asc, status asc)
+index idx_loop_run_state on loop_run unique=0 partial=0 (loop_id asc, state asc)
+index idx_loop_todo_list_active on loop_todo_list unique=1 partial=1 (component_root asc, loop_slug asc)
+index idx_loop_todo_list_loop on loop_todo_list unique=0 partial=0 (component_root asc, loop_slug asc, id asc)
+index idx_loop_tombstone_component on loop_tombstone unique=0 partial=0 (component_root asc, deleted_at asc)
+index idx_loop_updated on loop unique=0 partial=0 (updated_at desc)
+index idx_mcp_change_server on mcp_change unique=0 partial=0 (server asc, id asc)
+index idx_mcp_import_hash on mcp_import unique=1 partial=1 (sha256 asc)
+index idx_mcp_server_agent on mcp_server unique=0 partial=0 (agent_slug asc)
+index idx_mcp_server_name on mcp_server unique=1 partial=0 (name asc)
+index idx_memory_loop on memory unique=0 partial=0 (component_root asc, loop_slug asc, id asc)
+index idx_merge_event_scope on merge_event unique=0 partial=0 (component_root asc, loop_slug asc)
+index idx_merge_rule_event_component on merge_rule_event unique=0 partial=0 (component_id asc, id asc)
+index idx_merge_watch_due on merge_watch unique=0 partial=0 (state asc, next_check_at asc)
+index idx_notify_delivery_channel on notify_delivery unique=0 partial=0 (channel_id asc, at asc)
+index idx_platform_change_subject on platform_change unique=0 partial=0 (subject asc, id asc)
+index idx_plugin_refusal_agent on plugin_refusal unique=0 partial=0 (agent asc, id asc)
+index idx_plugin_transition_agent on plugin_transition unique=0 partial=0 (agent asc, id asc)
+index idx_policy_acceptance_target on policy_acceptance unique=0 partial=0 (target_kind asc, target_id asc)
+index idx_policy_change_policy on policy_change unique=0 partial=0 (policy_id asc, id asc)
+index idx_policy_change_time on policy_change unique=0 partial=0 (occurred_at asc)
+index idx_policy_event_policy on policy_event unique=0 partial=0 (policy_id asc, at asc)
+index idx_policy_origin on policy unique=0 partial=0 (origin asc)
+index idx_policy_target on policy unique=0 partial=0 (target_kind asc, target_id asc)
+index idx_question_pending on question unique=0 partial=0 (component_root asc, loop_slug asc, answered_at asc, id asc)
+index idx_queue_item_root_position on queue_item unique=0 partial=0 (component_root asc, position asc)
+index idx_retrieval_chunk_corpus on retrieval_chunk unique=0 partial=0 (corpus_id asc, content_hash asc)
+index idx_retrieval_corpus_root on retrieval_corpus unique=0 partial=0 (component_root asc)
+index idx_retro_agent on retro_agent unique=0 partial=0 (agent asc)
+index idx_retro_outcome_blueprint on retro_outcome unique=0 partial=0 (blueprint_id asc, recorded_at asc)
+index idx_retro_outcome_kind on retro_outcome unique=0 partial=0 (component_root asc, outcome_kind asc)
+index idx_retro_outcome_recorded on retro_outcome unique=0 partial=0 (recorded_at asc)
+index idx_roadmap_change_item on roadmap_change unique=0 partial=0 (item_id asc, id asc)
+index idx_roadmap_item_root_status on roadmap_item unique=0 partial=0 (component_root asc, status asc)
+index idx_scheduler_decision_kind on scheduler_decision unique=0 partial=0 (decision asc, id asc)
+index idx_scheduler_decision_root on scheduler_decision unique=0 partial=0 (component_root asc, id asc)
+index idx_scheduler_decision_subject on scheduler_decision unique=0 partial=0 (subject_kind asc, subject_id asc, id asc)
+index idx_seed_event_set on seed_event unique=0 partial=0 (set_id asc, record_key asc, id asc)
+index idx_setting_event_key on setting_event unique=0 partial=0 (key asc, id asc)
+index idx_step_command_activity_step on step_command_activity unique=0 partial=0 (step_id asc)
+index idx_step_compaction_step on step_compaction unique=0 partial=0 (step_id asc)
+index idx_step_file_activity_step on step_file_activity unique=0 partial=0 (step_id asc)
+index idx_step_loop on step unique=0 partial=0 (component_root asc, loop_slug asc, id asc)
+index idx_step_status on step unique=0 partial=0 (status asc, id asc)
+index idx_step_steer_step_state on step_steer unique=0 partial=0 (step_id asc, state asc)
+index idx_step_summary_loop on step_summary unique=0 partial=0 (loop_id asc, step_id asc)
+index idx_step_turn_step on step_turn unique=0 partial=0 (step_id asc)
+index idx_task_component on task unique=0 partial=0 (component_id asc, manual asc)
+index idx_task_loop_key on task unique=1 partial=1 (component_root asc, loop_slug asc, taskid asc)
+index idx_task_status on task unique=0 partial=0 (status asc)
+index idx_tool_family on tool unique=0 partial=0 (family asc)
+index idx_tool_receipt_step on tool_receipt unique=0 partial=0 (step_id asc)
+index idx_trigger_gap_schedule on trigger_gap unique=0 partial=0 (schedule_id asc, covered_to desc)
+index idx_verify_command_component_position on verify_command unique=0 partial=0 (component_id asc, position asc)
+index idx_verify_command_event_component on verify_command_event unique=0 partial=0 (component_id asc, id asc)
+index idx_verify_run_head_sha on verify_run unique=0 partial=0 (head_sha asc)
+index idx_verify_run_loop_slug on verify_run unique=0 partial=0 (loop_slug asc)
+index idx_verify_run_root_ended on verify_run unique=0 partial=0 (component_root asc, ended_at asc)
+index idx_verify_template_stack on verify_template unique=0 partial=0 (stack asc)
+index idx_watchdog_event_rule on watchdog_event unique=0 partial=0 (rule_id asc, id asc)
+index idx_watchdog_rule_scope on watchdog_rule unique=0 partial=0 (scope asc, subject_id asc)
+index idx_work_closure_loop on work_closure unique=0 partial=0 (component_root asc, loop_slug asc)
+index merge_queue_one_open on merge_queue_item unique=1 partial=1 (component_root asc, branch asc)
+index merge_queue_one_slot on merge_queue_item unique=1 partial=1 (component_root asc, base_branch asc)
+index merge_queue_order on merge_queue_item unique=0 partial=0 (component_root asc, base_branch asc, position asc)
+index plugin_agent_live on plugin_agent unique=1 partial=1 (name asc)
+index step_environment_step on step_environment unique=0 partial=0 (step_id asc)
+index uq_merge_rule_event_revision on merge_rule_event unique=1 partial=0 (component_id asc, revision asc)
+index uq_verify_command_component_name on verify_command unique=1 partial=1 (component_id asc, name asc)
+index uq_verify_command_event_revision on verify_command_event unique=1 partial=0 (command_id asc, revision asc)
+index uq_verify_run_loop on verify_run unique=1 partial=1 (loop_slug asc, component_root asc, position asc, attempt asc)
+index uq_verify_template_stack_name on verify_template unique=1 partial=1 (stack asc, name asc)
+table action_intent check attempt >= 1
+table action_intent check length(action) > 0
+table action_intent check pr >= 1
+table action_intent check pre_review_id >= 0
+table action_intent column 0 id INTEGER notnull=0 default="" pk=1
+table action_intent column 1 loop_slug TEXT notnull=1 default="" pk=0
+table action_intent column 2 step_id INTEGER notnull=1 default="" pk=0
+table action_intent column 3 attempt INTEGER notnull=1 default="" pk=0
+table action_intent column 4 action TEXT notnull=1 default="" pk=0
+table action_intent column 5 pr INTEGER notnull=1 default="" pk=0
+table action_intent column 6 pre_review_id INTEGER notnull=1 default="0" pk=0
+table action_intent column 7 review_id INTEGER notnull=0 default="" pk=0
+table action_intent column 8 opened_at TEXT notnull=1 default="" pk=0
+table action_intent column 9 recorded_at TEXT notnull=0 default="" pk=0
+table action_intent fk action_intent(step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table agent check avatar_mood IN ('', 'idle', 'hi', 'thinking', 'working', 'stuck', 'done')
+table agent check avatar_type IN ('', 'minion', 'cat')
+table agent check internal IN (0, 1)
+table agent check origin IN ('system','user','import')
+table agent check signed IN (0, 1)
+table agent column 0 id INTEGER notnull=0 default="" pk=1
+table agent column 1 slug TEXT notnull=1 default="" pk=0
+table agent column 10 avatar_type TEXT notnull=1 default="'minion'" pk=0
+table agent column 11 avatar_color TEXT notnull=1 default="''" pk=0
+table agent column 12 avatar_mood TEXT notnull=1 default="'idle'" pk=0
+table agent column 13 signature TEXT notnull=1 default="''" pk=0
+table agent column 14 signer_certificate TEXT notnull=1 default="''" pk=0
+table agent column 15 signed INTEGER notnull=1 default="0" pk=0
+table agent column 16 created_at TEXT notnull=1 default="" pk=0
+table agent column 17 updated_at TEXT notnull=1 default="" pk=0
+table agent column 18 tools TEXT notnull=1 default="'[]'" pk=0
+table agent column 19 temperature REAL notnull=1 default="0" pk=0
+table agent column 2 name TEXT notnull=1 default="" pk=0
+table agent column 20 handoff TEXT notnull=1 default="'{}'" pk=0
+table agent column 21 policy_agent TEXT notnull=1 default="''" pk=0
+table agent column 22 body_hash TEXT notnull=1 default="''" pk=0
+table agent column 23 origin TEXT notnull=1 default="'user'" pk=0
+table agent column 3 description TEXT notnull=1 default="''" pk=0
+table agent column 4 functionality TEXT notnull=1 default="''" pk=0
+table agent column 5 metadata TEXT notnull=1 default="''" pk=0
+table agent column 6 prompt TEXT notnull=1 default="''" pk=0
+table agent column 7 skills TEXT notnull=1 default="''" pk=0
+table agent column 8 version TEXT notnull=1 default="'1'" pk=0
+table agent column 9 internal INTEGER notnull=1 default="0" pk=0
+table agent_chain check depth >= 1
+table agent_chain column 0 id INTEGER notnull=0 default="" pk=1
+table agent_chain column 1 caller_loop_id TEXT notnull=1 default="" pk=0
+table agent_chain column 2 caller_step_id INTEGER notnull=1 default="" pk=0
+table agent_chain column 3 callee_agent TEXT notnull=1 default="" pk=0
+table agent_chain column 4 skill_id TEXT notnull=1 default="" pk=0
+table agent_chain column 5 depth INTEGER notnull=1 default="" pk=0
+table agent_chain column 6 created_at TEXT notnull=1 default="" pk=0
+table agent_chain fk agent_chain(caller_step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table agent_change check actor_kind IN ('user','cli','system')
+table agent_change check length(actor_id) BETWEEN 1 AND 256
+table agent_change check length(summary) BETWEEN 1 AND 1024
+table agent_change check op IN ('create','duplicate','edit','delete','import','migrate','seed')
+table agent_change check slug IS NOT NULL OR op = 'migrate'
+table agent_change check slug IS NULL OR length(slug) BETWEEN 1 AND 256
+table agent_change column 0 id INTEGER notnull=0 default="" pk=1
+table agent_change column 1 op TEXT notnull=1 default="" pk=0
+table agent_change column 2 slug TEXT notnull=0 default="" pk=0
+table agent_change column 3 summary TEXT notnull=1 default="" pk=0
+table agent_change column 4 actor_kind TEXT notnull=1 default="" pk=0
+table agent_change column 5 actor_id TEXT notnull=1 default="" pk=0
+table agent_change column 6 occurred_at TEXT notnull=1 default="" pk=0
+table agent_message check (delivered_at IS NULL) = (delivered_to_step_id IS NULL)
+table agent_message check expect_reply IN (0, 1)
+table agent_message check from_agent <> to_agent
+table agent_message check length (body) > 0
+table agent_message check result_of IS NULL OR expect_reply = 0
+table agent_message column 0 id INTEGER notnull=0 default="" pk=1
+table agent_message column 1 loop_slug TEXT notnull=1 default="" pk=0
+table agent_message column 10 delivered_at TEXT notnull=0 default="" pk=0
+table agent_message column 11 delivered_to_step_id INTEGER notnull=0 default="" pk=0
+table agent_message column 12 created_at TEXT notnull=1 default="" pk=0
+table agent_message column 2 component_root TEXT notnull=1 default="" pk=0
+table agent_message column 3 thread INTEGER notnull=1 default="" pk=0
+table agent_message column 4 from_agent TEXT notnull=1 default="" pk=0
+table agent_message column 5 to_agent TEXT notnull=1 default="" pk=0
+table agent_message column 6 from_step_id INTEGER notnull=1 default="" pk=0
+table agent_message column 7 body TEXT notnull=1 default="" pk=0
+table agent_message column 8 expect_reply INTEGER notnull=1 default="0" pk=0
+table agent_message column 9 result_of INTEGER notnull=0 default="" pk=0
+table agent_message fk agent_message(delivered_to_step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table agent_message fk agent_message(from_step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table agent_message fk agent_message(result_of) -> agent_message(id) on_delete=RESTRICT on_update=NO ACTION
+table agent_task check (mode = 'async' AND status <> 'running' AND question_id IS NOT NULL) OR (mode = 'sync')
+table agent_task check (status IN ('running','waiting') AND completed_at IS NULL) OR (status IN ('completed','failed','refused') AND completed_at IS NOT NULL)
+table agent_task check mode IN ('sync','async')
+table agent_task check status IN ('running','waiting','completed','failed','refused')
+table agent_task column 0 id INTEGER notnull=0 default="" pk=1
+table agent_task column 1 caller_loop_id TEXT notnull=1 default="" pk=0
+table agent_task column 10 result_json TEXT notnull=0 default="" pk=0
+table agent_task column 11 policies_json TEXT notnull=1 default="" pk=0
+table agent_task column 12 policies_hash TEXT notnull=1 default="" pk=0
+table agent_task column 13 created_at TEXT notnull=1 default="" pk=0
+table agent_task column 14 completed_at TEXT notnull=0 default="" pk=0
+table agent_task column 2 caller_lane TEXT notnull=1 default="" pk=0
+table agent_task column 3 caller_step_id INTEGER notnull=1 default="" pk=0
+table agent_task column 4 question_id INTEGER notnull=0 default="" pk=0
+table agent_task column 5 callee_agent TEXT notnull=1 default="" pk=0
+table agent_task column 6 skill_id TEXT notnull=1 default="" pk=0
+table agent_task column 7 mode TEXT notnull=1 default="" pk=0
+table agent_task column 8 status TEXT notnull=1 default="" pk=0
+table agent_task column 9 params_json TEXT notnull=1 default="'{}'" pk=0
+table agent_task fk agent_task(caller_step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table agent_task fk agent_task(question_id) -> question(id) on_delete=NO ACTION on_update=NO ACTION
+table async_worker check cancel_requested IN (0,1)
+table async_worker check json_valid(metadata)
+table async_worker check length(worker_id) > 0
+table async_worker check length(worker_type) > 0
+table async_worker check progress IS NULL OR (progress >= 0 AND progress <= 1)
+table async_worker check state IN ('queued','running','finished','failed','cancelled','interrupted')
+table async_worker column 0 id INTEGER notnull=0 default="" pk=1
+table async_worker column 1 worker_id TEXT notnull=1 default="" pk=0
+table async_worker column 10 result TEXT notnull=0 default="" pk=0
+table async_worker column 11 error TEXT notnull=0 default="" pk=0
+table async_worker column 12 queued_at TEXT notnull=1 default="" pk=0
+table async_worker column 13 started_at TEXT notnull=0 default="" pk=0
+table async_worker column 14 finished_at TEXT notnull=0 default="" pk=0
+table async_worker column 2 worker_type TEXT notnull=1 default="" pk=0
+table async_worker column 3 state TEXT notnull=1 default="'queued'" pk=0
+table async_worker column 4 cancel_requested INTEGER notnull=1 default="0" pk=0
+table async_worker column 5 component_root TEXT notnull=0 default="" pk=0
+table async_worker column 6 dedupe_key TEXT notnull=1 default="" pk=0
+table async_worker column 7 metadata TEXT notnull=1 default="'{}'" pk=0
+table async_worker column 8 progress REAL notnull=0 default="" pk=0
+table async_worker column 9 progress_note TEXT notnull=0 default="" pk=0
+table attachment check subject_kind IN ('goal','brief','epic','task')
+table attachment column 0 id INTEGER notnull=0 default="" pk=1
+table attachment column 1 subject_kind TEXT notnull=1 default="" pk=0
+table attachment column 2 subject_id TEXT notnull=1 default="" pk=0
+table attachment column 3 loop_slug TEXT notnull=1 default="" pk=0
+table attachment column 4 component_root TEXT notnull=1 default="" pk=0
+table attachment column 5 document TEXT notnull=1 default="" pk=0
+table attachment column 6 rev INTEGER notnull=1 default="" pk=0
+table attachment column 7 step_id INTEGER notnull=0 default="" pk=0
+table attachment column 8 created_at TEXT notnull=1 default="" pk=0
+table attention_ack check (op='snooze') = (until IS NOT NULL)
+table attention_ack check op IN ('ack','snooze','unack')
+table attention_ack column 0 id INTEGER notnull=0 default="" pk=1
+table attention_ack column 1 subject_key TEXT notnull=1 default="" pk=0
+table attention_ack column 2 op TEXT notnull=1 default="" pk=0
+table attention_ack column 3 until TEXT notnull=0 default="" pk=0
+table attention_ack column 4 actor_kind TEXT notnull=1 default="" pk=0
+table attention_ack column 5 actor_id TEXT notnull=1 default="" pk=0
+table attention_ack column 6 occurred_at TEXT notnull=1 default="" pk=0
+table automation_change check actor_kind IN ('user','cli')
+table automation_change check length(actor_id) BETWEEN 1 AND 256
+table automation_change check length(summary) BETWEEN 1 AND 1024
+table automation_change check length(trigger_id) BETWEEN 1 AND 128
+table automation_change check op IN ('create','update','enable','disable','pause','resume','fire_now','archive','unarchive')
+table automation_change check source IN ('schedule','webhook','event')
+table automation_change column 0 id INTEGER notnull=0 default="" pk=1
+table automation_change column 1 source TEXT notnull=1 default="" pk=0
+table automation_change column 2 trigger_id TEXT notnull=1 default="" pk=0
+table automation_change column 3 op TEXT notnull=1 default="" pk=0
+table automation_change column 4 summary TEXT notnull=1 default="" pk=0
+table automation_change column 5 actor_kind TEXT notnull=1 default="" pk=0
+table automation_change column 6 actor_id TEXT notnull=1 default="" pk=0
+table automation_change column 7 occurred_at TEXT notnull=1 default="" pk=0
+table automation_cursor column 0 name TEXT notnull=0 default="" pk=1
+table automation_cursor column 1 last_id INTEGER notnull=1 default="0" pk=0
+table automation_cursor column 2 updated_at TEXT notnull=1 default="" pk=0
+table automation_event check (event LIKE 'goal.%' AND subject_kind = 'goal') OR (event LIKE 'task.%' AND subject_kind = 'task')
+table automation_event check depth >= 0
+table automation_event check event IN ('goal.approved','task.created','task.approved','task.completed')
+table automation_event check subject_kind IN ('goal','task')
+table automation_event column 0 id INTEGER notnull=0 default="" pk=1
+table automation_event column 1 event TEXT notnull=1 default="" pk=0
+table automation_event column 10 depth INTEGER notnull=1 default="0" pk=0
+table automation_event column 11 caused_by_trigger TEXT notnull=1 default="''" pk=0
+table automation_event column 12 created_at TEXT notnull=1 default="" pk=0
+table automation_event column 2 subject_kind TEXT notnull=1 default="" pk=0
+table automation_event column 3 subject_id TEXT notnull=1 default="" pk=0
+table automation_event column 4 subject_version INTEGER notnull=1 default="0" pk=0
+table automation_event column 5 root_id TEXT notnull=1 default="''" pk=0
+table automation_event column 6 component_id TEXT notnull=1 default="''" pk=0
+table automation_event column 7 goal_type TEXT notnull=1 default="''" pk=0
+table automation_event column 8 task_type TEXT notnull=1 default="''" pk=0
+table automation_event column 9 source_kind TEXT notnull=1 default="''" pk=0
+table autonomy_change check actor_kind IN ('user','cli')
+table autonomy_change check change_kind IN ('grant','deny','revoke')
+table autonomy_change column 0 id INTEGER notnull=0 default="" pk=1
+table autonomy_change column 1 at TEXT notnull=1 default="" pk=0
+table autonomy_change column 2 root_id TEXT notnull=1 default="" pk=0
+table autonomy_change column 3 grant_id TEXT notnull=1 default="" pk=0
+table autonomy_change column 4 change_kind TEXT notnull=1 default="" pk=0
+table autonomy_change column 5 actor_kind TEXT notnull=1 default="" pk=0
+table autonomy_change column 6 actor_id TEXT notnull=1 default="" pk=0
+table autonomy_change column 7 proposed_by TEXT notnull=1 default="''" pk=0
+table autonomy_change column 8 summary TEXT notnull=1 default="" pk=0
+table autonomy_grant check (revoked_at IS NULL) = (revoked_by_id IS NULL)
+table autonomy_grant check (revoked_at IS NULL) = (revoked_reason IS NULL)
+table autonomy_grant check created_by_kind = 'user' OR (state = 'deny' AND created_by_kind = 'cli')
+table autonomy_grant check json_valid(conditions)
+table autonomy_grant check length(note) <= 512
+table autonomy_grant check revoked_by_kind IS NULL OR revoked_by_kind IN ('user','cli')
+table autonomy_grant check state = 'allow' OR (expires_at IS NULL AND conditions = '{}')
+table autonomy_grant check state IN ('allow','deny')
+table autonomy_grant check subject_kind = 'action' OR subject = 'outward'
+table autonomy_grant check subject_kind IN ('action','class')
+table autonomy_grant column 0 id TEXT notnull=0 default="" pk=1
+table autonomy_grant column 1 node_id TEXT notnull=1 default="" pk=0
+table autonomy_grant column 10 proposed_by TEXT notnull=1 default="''" pk=0
+table autonomy_grant column 11 created_at TEXT notnull=1 default="" pk=0
+table autonomy_grant column 12 revoked_at TEXT notnull=0 default="" pk=0
+table autonomy_grant column 13 revoked_by_kind TEXT notnull=0 default="" pk=0
+table autonomy_grant column 14 revoked_by_id TEXT notnull=0 default="" pk=0
+table autonomy_grant column 15 revoked_reason TEXT notnull=0 default="" pk=0
+table autonomy_grant column 2 subject_kind TEXT notnull=1 default="" pk=0
+table autonomy_grant column 3 subject TEXT notnull=1 default="" pk=0
+table autonomy_grant column 4 state TEXT notnull=1 default="" pk=0
+table autonomy_grant column 5 conditions TEXT notnull=1 default="'{}'" pk=0
+table autonomy_grant column 6 note TEXT notnull=1 default="''" pk=0
+table autonomy_grant column 7 expires_at TEXT notnull=0 default="" pk=0
+table autonomy_grant column 8 created_by_kind TEXT notnull=1 default="" pk=0
+table autonomy_grant column 9 created_by_id TEXT notnull=1 default="" pk=0
+table autonomy_grant fk autonomy_grant(node_id) -> component(id) on_delete=NO ACTION on_update=NO ACTION
+table autonomy_use check (phase = 'begun') = (begun_id IS NULL)
+table autonomy_use check phase IN ('begun','completed','failed')
+table autonomy_use column 0 id INTEGER notnull=0 default="" pk=1
+table autonomy_use column 1 at TEXT notnull=1 default="" pk=0
+table autonomy_use column 2 loop_id TEXT notnull=1 default="" pk=0
+table autonomy_use column 3 grant_id TEXT notnull=1 default="" pk=0
+table autonomy_use column 4 grant_rev INTEGER notnull=1 default="" pk=0
+table autonomy_use column 5 action TEXT notnull=1 default="" pk=0
+table autonomy_use column 6 phase TEXT notnull=1 default="" pk=0
+table autonomy_use column 7 begun_id INTEGER notnull=0 default="" pk=0
+table autonomy_use column 8 evidence_ref TEXT notnull=1 default="''" pk=0
+table backup_run check actor_kind IN ('user','daemon','cli')
+table backup_run check applied_migrations IS NULL OR applied_migrations >= 0
+table backup_run check error_kind IS NULL OR error_kind IN ('disk-full','dir-unwritable','busy','lock-held','integrity','fk','checksum','newer-schema','io','cancelled','unknown')
+table backup_run check file_name IS NULL OR file_name GLOB 'aeon-state-????????T??????Z-v*.aeonbak'
+table backup_run check free_space_state IN ('ok','low','unknown')
+table backup_run check kind IN ('backup','verify','prune','restore-plan','export')
+table backup_run check length(detail) <= 512
+table backup_run check outcome IN ('ok','failed','refused','skipped')
+table backup_run check reason IN ('manual','scheduled','pre-migration','post-restore-check')
+table backup_run check sha256 IS NULL OR length(sha256) = 64
+table backup_run check size_bytes IS NULL OR size_bytes >= 0
+table backup_run check verify_level IS NULL OR verify_level IN ('written','verified','drill')
+table backup_run column 0 id INTEGER notnull=0 default="" pk=1
+table backup_run column 1 kind TEXT notnull=1 default="" pk=0
+table backup_run column 10 size_bytes INTEGER notnull=0 default="" pk=0
+table backup_run column 11 sha256 TEXT notnull=0 default="" pk=0
+table backup_run column 12 applied_migrations INTEGER notnull=0 default="" pk=0
+table backup_run column 13 verify_level TEXT notnull=0 default="" pk=0
+table backup_run column 14 free_space_state TEXT notnull=1 default="" pk=0
+table backup_run column 2 reason TEXT notnull=1 default="" pk=0
+table backup_run column 3 actor_kind TEXT notnull=1 default="" pk=0
+table backup_run column 4 started_at TEXT notnull=1 default="" pk=0
+table backup_run column 5 finished_at TEXT notnull=1 default="" pk=0
+table backup_run column 6 outcome TEXT notnull=1 default="" pk=0
+table backup_run column 7 error_kind TEXT notnull=0 default="" pk=0
+table backup_run column 8 detail TEXT notnull=1 default="''" pk=0
+table backup_run column 9 file_name TEXT notnull=0 default="" pk=0
+table blueprint check length(content) BETWEEN 1 AND 1048576
+table blueprint check length(content_hash) = 64
+table blueprint check length(name) BETWEEN 1 AND 64 AND name NOT GLOB '*[^a-z0-9_-]*' AND name GLOB '[a-z0-9]*'
+table blueprint check length(updated_by) BETWEEN 1 AND 256
+table blueprint check origin IN ('system','user')
+table blueprint check version >= 1
+table blueprint column 0 name TEXT notnull=0 default="" pk=1
+table blueprint column 1 version INTEGER notnull=1 default="" pk=0
+table blueprint column 2 content TEXT notnull=1 default="" pk=0
+table blueprint column 3 content_hash TEXT notnull=1 default="" pk=0
+table blueprint column 4 origin TEXT notnull=1 default="" pk=0
+table blueprint column 5 created_at TEXT notnull=1 default="" pk=0
+table blueprint column 6 updated_at TEXT notnull=1 default="" pk=0
+table blueprint column 7 updated_by TEXT notnull=1 default="" pk=0
+table blueprint_import check length(detail) <= 4096
+table blueprint_import check length(sha256) = 64
+table blueprint_import check result IN ('imported','refused')
+table blueprint_import column 0 id INTEGER notnull=0 default="" pk=1
+table blueprint_import column 1 path TEXT notnull=1 default="" pk=0
+table blueprint_import column 2 sha256 TEXT notnull=1 default="" pk=0
+table blueprint_import column 3 name TEXT notnull=1 default="" pk=0
+table blueprint_import column 4 result TEXT notnull=1 default="" pk=0
+table blueprint_import column 5 detail TEXT notnull=1 default="" pk=0
+table blueprint_import column 6 imported_at TEXT notnull=1 default="" pk=0
+table blueprint_override check field IN ('route')
+table blueprint_override check length(blueprint) BETWEEN 1 AND 64
+table blueprint_override check length(lane_id) BETWEEN 1 AND 128
+table blueprint_override check length(updated_by) BETWEEN 1 AND 256
+table blueprint_override check length(value) BETWEEN 1 AND 128
+table blueprint_override column 0 blueprint TEXT notnull=1 default="" pk=1
+table blueprint_override column 1 lane_id TEXT notnull=1 default="" pk=2
+table blueprint_override column 2 field TEXT notnull=1 default="" pk=3
+table blueprint_override column 3 value TEXT notnull=1 default="" pk=0
+table blueprint_override column 4 updated_at TEXT notnull=1 default="" pk=0
+table blueprint_override column 5 updated_by TEXT notnull=1 default="" pk=0
+table blueprint_ref check kind IN ('agent','converse','skill','action','resolver')
+table blueprint_ref check length(target) BETWEEN 1 AND 128
+table blueprint_ref column 0 name TEXT notnull=1 default="" pk=1
+table blueprint_ref column 1 kind TEXT notnull=1 default="" pk=2
+table blueprint_ref column 2 target TEXT notnull=1 default="" pk=3
+table blueprint_revision check actor_kind IN ('user','cli','system')
+table blueprint_revision check length(actor_id) BETWEEN 1 AND 256
+table blueprint_revision check length(content) BETWEEN 1 AND 1048576
+table blueprint_revision check length(content_hash) = 64
+table blueprint_revision check length(note) <= 256
+table blueprint_revision check op IN ('create','save','duplicate','revert','seed','update','restore','adopt')
+table blueprint_revision check rev >= 1
+table blueprint_revision check version >= 1
+table blueprint_revision column 0 id INTEGER notnull=0 default="" pk=1
+table blueprint_revision column 1 name TEXT notnull=1 default="" pk=0
+table blueprint_revision column 10 occurred_at TEXT notnull=1 default="" pk=0
+table blueprint_revision column 2 rev INTEGER notnull=1 default="" pk=0
+table blueprint_revision column 3 version INTEGER notnull=1 default="" pk=0
+table blueprint_revision column 4 content TEXT notnull=1 default="" pk=0
+table blueprint_revision column 5 content_hash TEXT notnull=1 default="" pk=0
+table blueprint_revision column 6 op TEXT notnull=1 default="" pk=0
+table blueprint_revision column 7 note TEXT notnull=1 default="''" pk=0
+table blueprint_revision column 8 actor_kind TEXT notnull=1 default="" pk=0
+table blueprint_revision column 9 actor_id TEXT notnull=1 default="" pk=0
+table brief check review_state IN ('draft','in_review','approved','rejected','parked')
+table brief column 0 id TEXT notnull=0 default="" pk=1
+table brief column 1 loop_slug TEXT notnull=1 default="" pk=0
+table brief column 10 test_plan TEXT notnull=1 default="''" pk=0
+table brief column 11 review_state TEXT notnull=1 default="'in_review'" pk=0
+table brief column 12 source_step INTEGER notnull=0 default="" pk=0
+table brief column 13 created_at TEXT notnull=1 default="" pk=0
+table brief column 14 updated_at TEXT notnull=1 default="" pk=0
+table brief column 2 component_root TEXT notnull=1 default="" pk=0
+table brief column 3 goal_id TEXT notnull=0 default="" pk=0
+table brief column 4 goal_version INTEGER notnull=0 default="" pk=0
+table brief column 5 version INTEGER notnull=1 default="" pk=0
+table brief column 6 scope TEXT notnull=1 default="''" pk=0
+table brief column 7 out_of_scope TEXT notnull=1 default="''" pk=0
+table brief column 8 acceptance TEXT notnull=1 default="'[]'" pk=0
+table brief column 9 constraints TEXT notnull=1 default="'[]'" pk=0
+table brief fk brief(component_root) -> loop(component_root) on_delete=CASCADE on_update=NO ACTION
+table brief fk brief(loop_slug) -> loop(slug) on_delete=CASCADE on_update=NO ACTION
+table budget check enabled IN (0,1)
+table budget check origin IN ('user','migrated')
+table budget check scope <> 'workspace' OR subject_id = 'workspace'
+table budget check scope IN ('workspace','component','epic','loop')
+table budget check steps_cap IS NULL OR steps_cap >= 0
+table budget check tokens_cap IS NULL OR tokens_cap >= 0
+table budget check unknown_policy IN ('proceed','stop')
+table budget check usd_cap IS NOT NULL OR tokens_cap IS NOT NULL OR wall_ms_cap IS NOT NULL OR steps_cap IS NOT NULL
+table budget check usd_cap IS NULL OR usd_cap >= 0
+table budget check wall_ms_cap IS NULL OR wall_ms_cap >= 0
+table budget check warn_pct IS NULL OR warn_pct BETWEEN 1 AND 99
+table budget check window IN ('lifetime','day')
+table budget column 0 id TEXT notnull=0 default="" pk=1
+table budget column 1 scope TEXT notnull=1 default="" pk=0
+table budget column 10 enabled INTEGER notnull=1 default="1" pk=0
+table budget column 11 origin TEXT notnull=1 default="'user'" pk=0
+table budget column 12 created_at TEXT notnull=1 default="" pk=0
+table budget column 13 updated_at TEXT notnull=1 default="" pk=0
+table budget column 2 subject_id TEXT notnull=1 default="" pk=0
+table budget column 3 window TEXT notnull=1 default="" pk=0
+table budget column 4 usd_cap REAL notnull=0 default="" pk=0
+table budget column 5 tokens_cap INTEGER notnull=0 default="" pk=0
+table budget column 6 wall_ms_cap INTEGER notnull=0 default="" pk=0
+table budget column 7 steps_cap INTEGER notnull=0 default="" pk=0
+table budget column 8 unknown_policy TEXT notnull=1 default="'proceed'" pk=0
+table budget column 9 warn_pct INTEGER notnull=0 default="" pk=0
+table budget_event check actor_kind IN ('user','cli','system')
+table budget_event check kind IN ('created','changed','removed','raised','hit','warned')
+table budget_event column 0 id INTEGER notnull=0 default="" pk=1
+table budget_event column 1 budget_id TEXT notnull=1 default="" pk=0
+table budget_event column 10 spend_floor REAL notnull=0 default="" pk=0
+table budget_event column 11 exact INTEGER notnull=0 default="" pk=0
+table budget_event column 2 at TEXT notnull=1 default="" pk=0
+table budget_event column 3 kind TEXT notnull=1 default="" pk=0
+table budget_event column 4 actor_kind TEXT notnull=1 default="" pk=0
+table budget_event column 5 actor_id TEXT notnull=1 default="''" pk=0
+table budget_event column 6 loop_id TEXT notnull=1 default="''" pk=0
+table budget_event column 7 dimension TEXT notnull=1 default="''" pk=0
+table budget_event column 8 old_value REAL notnull=0 default="" pk=0
+table budget_event column 9 new_value REAL notnull=0 default="" pk=0
+table bug check priority_state <> 'unknown' OR priority_label IS NULL
+table bug check priority_state IN ('known','assumed','unknown')
+table bug check validation_state IN ('unvalidated','reproduced','not-reproduced','could-not-tell')
+table bug column 0 id INTEGER notnull=0 default="" pk=1
+table bug column 1 component_root TEXT notnull=1 default="" pk=0
+table bug column 10 created_at TEXT notnull=1 default="" pk=0
+table bug column 11 updated_at TEXT notnull=1 default="" pk=0
+table bug column 2 title TEXT notnull=1 default="" pk=0
+table bug column 3 body TEXT notnull=1 default="" pk=0
+table bug column 4 validation_state TEXT notnull=1 default="'unvalidated'" pk=0
+table bug column 5 priority_state TEXT notnull=1 default="'unknown'" pk=0
+table bug column 6 priority_label TEXT notnull=0 default="" pk=0
+table bug column 7 filed_by TEXT notnull=1 default="" pk=0
+table bug column 8 duplicate_of INTEGER notnull=0 default="" pk=0
+table bug column 9 roadmap_item_id INTEGER notnull=0 default="" pk=0
+table bug fk bug(component_root) -> component_root(component_root) on_delete=NO ACTION on_update=NO ACTION
+table bug fk bug(duplicate_of) -> bug(id) on_delete=NO ACTION on_update=NO ACTION
+table bug_change check actor_kind <> 'agent' OR op = 'file'
+table bug_change check actor_kind IN ('user','cli','agent','system')
+table bug_change check length(actor_id) BETWEEN 1 AND 256
+table bug_change check length(summary) BETWEEN 1 AND 1024
+table bug_change check op IN ('file','update','priority','duplicate','validate','handoff','transition')
+table bug_change column 0 id INTEGER notnull=0 default="" pk=1
+table bug_change column 1 bug_id INTEGER notnull=1 default="" pk=0
+table bug_change column 2 op TEXT notnull=1 default="" pk=0
+table bug_change column 3 summary TEXT notnull=1 default="" pk=0
+table bug_change column 4 actor_kind TEXT notnull=1 default="" pk=0
+table bug_change column 5 actor_id TEXT notnull=1 default="" pk=0
+table bug_change column 6 occurred_at TEXT notnull=1 default="" pk=0
+table charter_revision check actor_kind IN ('user','agent','trigger')
+table charter_revision check json_valid(body)
+table charter_revision check revision >= 1
+table charter_revision check source IN ('person','proposal','intake')
+table charter_revision column 0 id TEXT notnull=0 default="" pk=1
+table charter_revision column 1 root_id TEXT notnull=1 default="" pk=0
+table charter_revision column 2 revision INTEGER notnull=1 default="" pk=0
+table charter_revision column 3 body TEXT notnull=1 default="" pk=0
+table charter_revision column 4 summary TEXT notnull=1 default="" pk=0
+table charter_revision column 5 actor_kind TEXT notnull=1 default="" pk=0
+table charter_revision column 6 actor_id TEXT notnull=1 default="" pk=0
+table charter_revision column 7 source TEXT notnull=1 default="" pk=0
+table charter_revision column 8 source_ref TEXT notnull=1 default="''" pk=0
+table charter_revision column 9 created_at TEXT notnull=1 default="" pk=0
+table charter_revision fk charter_revision(root_id) -> component(id) on_delete=NO ACTION on_update=NO ACTION
+table chat_message check author IN ('human','agent','system')
+table chat_message check kind IN ('note','steer','question','answer','summary')
+table chat_message check source IS NULL OR source IN ('user','template','automation','blueprint')
+table chat_message column 0 id INTEGER notnull=0 default="" pk=1
+table chat_message column 1 loop_slug TEXT notnull=1 default="" pk=0
+table chat_message column 10 source_ref TEXT notnull=0 default="" pk=0
+table chat_message column 11 skills TEXT notnull=0 default="" pk=0
+table chat_message column 12 attachments TEXT notnull=0 default="" pk=0
+table chat_message column 2 component_root TEXT notnull=1 default="" pk=0
+table chat_message column 3 seq INTEGER notnull=1 default="" pk=0
+table chat_message column 4 author TEXT notnull=1 default="" pk=0
+table chat_message column 5 kind TEXT notnull=1 default="" pk=0
+table chat_message column 6 body TEXT notnull=1 default="" pk=0
+table chat_message column 7 question_id INTEGER notnull=0 default="" pk=0
+table chat_message column 8 created_at TEXT notnull=1 default="" pk=0
+table chat_message column 9 source TEXT notnull=0 default="" pk=0
+table chat_message fk chat_message(component_root) -> loop(component_root) on_delete=CASCADE on_update=NO ACTION
+table chat_message fk chat_message(loop_slug) -> loop(slug) on_delete=CASCADE on_update=NO ACTION
+table chat_message fk chat_message(question_id) -> question(id) on_delete=SET NULL on_update=NO ACTION
+table component check max_parallel_agents IS NULL OR max_parallel_agents BETWEEN 1 AND 16
+table component check queue_advance IS NULL OR queue_advance IN ('auto','ask')
+table component check sizing_mode IS NULL OR sizing_mode IN ('manual','skill')
+table component column 0 id TEXT notnull=0 default="" pk=1
+table component column 1 name TEXT notnull=1 default="" pk=0
+table component column 10 icon TEXT notnull=1 default="''" pk=0
+table component column 11 short_description TEXT notnull=1 default="''" pk=0
+table component column 12 description TEXT notnull=1 default="''" pk=0
+table component column 13 parent_id TEXT notnull=0 default="" pk=0
+table component column 14 archived_at TEXT notnull=0 default="" pk=0
+table component column 15 default_branch TEXT notnull=0 default="''" pk=0
+table component column 16 branch_prefix TEXT notnull=0 default="''" pk=0
+table component column 17 queue_advance TEXT notnull=0 default="'ask'" pk=0
+table component column 18 sizing_mode TEXT notnull=0 default="'manual'" pk=0
+table component column 19 max_parallel_agents INTEGER notnull=0 default="1" pk=0
+table component column 2 slug TEXT notnull=1 default="" pk=0
+table component column 3 remote TEXT notnull=0 default="" pk=0
+table component column 4 remote_key TEXT notnull=0 default="" pk=0
+table component column 5 repo_key TEXT notnull=0 default="" pk=0
+table component column 6 owner TEXT notnull=0 default="" pk=0
+table component column 7 tags TEXT notnull=1 default="'[]'" pk=0
+table component column 8 created_at TEXT notnull=1 default="" pk=0
+table component column 9 updated_at TEXT notnull=1 default="" pk=0
+table component fk component(parent_id) -> component(id) on_delete=NO ACTION on_update=NO ACTION
+table component_root column 0 component_root TEXT notnull=0 default="" pk=1
+table component_root column 1 component_id TEXT notnull=1 default="" pk=0
+table component_root column 2 remote_key TEXT notnull=0 default="" pk=0
+table component_root column 3 repo_key TEXT notnull=0 default="" pk=0
+table component_root column 4 is_primary INTEGER notnull=1 default="0" pk=0
+table component_root column 5 added_at TEXT notnull=1 default="" pk=0
+table component_root fk component_root(component_id) -> component(id) on_delete=CASCADE on_update=NO ACTION
+table component_telemetry check cost_state IN ('known','partial','unknown')
+table component_telemetry column 0 component_id TEXT notnull=0 default="" pk=1
+table component_telemetry column 1 loops_run INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 10 files_touched_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 11 files_read_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 12 files_written_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 13 lines_added_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 14 lines_removed_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 15 commands_run_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 16 commands_failed_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 17 command_wall_ms_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 18 updated_at TEXT notnull=1 default="" pk=0
+table component_telemetry column 2 wall_ms_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 3 input_tokens_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 4 output_tokens_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 5 cache_read_tokens_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 6 cache_write_tokens_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 7 reasoning_tokens_total INTEGER notnull=1 default="0" pk=0
+table component_telemetry column 8 cost_usd_total REAL notnull=1 default="0" pk=0
+table component_telemetry column 9 cost_state TEXT notnull=1 default="'known'" pk=0
+table component_telemetry fk component_telemetry(component_id) -> component(id) on_delete=CASCADE on_update=NO ACTION
+table detached_link check entity_kind IN ('task','roadmap','queue')
+table detached_link column 0 entity_kind TEXT notnull=1 default="" pk=1
+table detached_link column 1 entity_id TEXT notnull=1 default="" pk=2
+table detached_link column 2 loop_slug TEXT notnull=1 default="" pk=0
+table detached_link column 3 component_root TEXT notnull=1 default="" pk=0
+table detached_link column 4 detached_at TEXT notnull=1 default="" pk=0
+table detached_link column 5 cost_usd REAL notnull=0 default="" pk=0
+table detached_link column 6 cost_floor INTEGER notnull=1 default="0" pk=0
+table dod_event check op IN ('materialize','mark','reset')
+table dod_event column 0 id INTEGER notnull=0 default="" pk=1
+table dod_event column 1 item_id TEXT notnull=1 default="" pk=0
+table dod_event column 2 op TEXT notnull=1 default="" pk=0
+table dod_event column 3 from_state TEXT notnull=0 default="" pk=0
+table dod_event column 4 to_state TEXT notnull=0 default="" pk=0
+table dod_event column 5 evidence TEXT notnull=0 default="" pk=0
+table dod_event column 6 actor_kind TEXT notnull=0 default="" pk=0
+table dod_event column 7 actor_id TEXT notnull=0 default="" pk=0
+table dod_event column 8 at TEXT notnull=1 default="" pk=0
+table dod_item check evidence_kind IN ('','verify_run','manual')
+table dod_item check state IN ('unchecked','met','unmet','unverifiable')
+table dod_item column 0 id TEXT notnull=0 default="" pk=1
+table dod_item column 1 loop_slug TEXT notnull=1 default="" pk=0
+table dod_item column 10 actor_kind TEXT notnull=0 default="" pk=0
+table dod_item column 11 actor_id TEXT notnull=0 default="" pk=0
+table dod_item column 12 updated_at TEXT notnull=1 default="" pk=0
+table dod_item column 2 component_root TEXT notnull=1 default="" pk=0
+table dod_item column 3 brief_id TEXT notnull=1 default="" pk=0
+table dod_item column 4 brief_version INTEGER notnull=1 default="" pk=0
+table dod_item column 5 idx INTEGER notnull=1 default="" pk=0
+table dod_item column 6 text TEXT notnull=1 default="" pk=0
+table dod_item column 7 state TEXT notnull=1 default="'unchecked'" pk=0
+table dod_item column 8 evidence_kind TEXT notnull=1 default="''" pk=0
+table dod_item column 9 evidence_ref TEXT notnull=1 default="''" pk=0
+table env_var check agent_visible IN (0,1)
+table env_var check is_secret IN (0,1)
+table env_var check length(description) <= 512
+table env_var check length(name) BETWEEN 1 AND 128 AND name NOT GLOB '*[^A-Za-z0-9_]*' AND name NOT GLOB '[0-9]*'
+table env_var check length(value) > 0
+table env_var column 0 id TEXT notnull=0 default="" pk=1
+table env_var column 1 name TEXT notnull=1 default="" pk=0
+table env_var column 2 project_id TEXT notnull=0 default="" pk=0
+table env_var column 3 description TEXT notnull=1 default="''" pk=0
+table env_var column 4 is_secret INTEGER notnull=1 default="1" pk=0
+table env_var column 5 agent_visible INTEGER notnull=1 default="0" pk=0
+table env_var column 6 value BLOB notnull=1 default="" pk=0
+table env_var column 7 created_at TEXT notnull=1 default="" pk=0
+table env_var column 8 updated_at TEXT notnull=1 default="" pk=0
+table env_var fk env_var(project_id) -> component(id) on_delete=CASCADE on_update=NO ACTION
+table env_var_change check actor_kind IN ('user','agent','trigger')
+table env_var_change check length(actor_id) > 0
+table env_var_change check op IN ('set','delete','agent_read')
+table env_var_change column 0 id INTEGER notnull=0 default="" pk=1
+table env_var_change column 1 name TEXT notnull=1 default="" pk=0
+table env_var_change column 2 project_id TEXT notnull=0 default="" pk=0
+table env_var_change column 3 op TEXT notnull=1 default="" pk=0
+table env_var_change column 4 summary TEXT notnull=1 default="" pk=0
+table env_var_change column 5 actor_kind TEXT notnull=1 default="" pk=0
+table env_var_change column 6 actor_id TEXT notnull=1 default="" pk=0
+table env_var_change column 7 occurred_at TEXT notnull=1 default="" pk=0
+table environment check backend IN ('host-inherit','host-scrubbed','container','vm')
+table environment check json_valid(spec)
+table environment check legacy IN (0,1)
+table environment check origin IN ('system','user')
+table environment column 0 id TEXT notnull=0 default="" pk=1
+table environment column 1 slug TEXT notnull=1 default="" pk=0
+table environment column 10 updated_at TEXT notnull=1 default="" pk=0
+table environment column 11 archived_at TEXT notnull=0 default="" pk=0
+table environment column 2 name TEXT notnull=1 default="" pk=0
+table environment column 3 description TEXT notnull=1 default="''" pk=0
+table environment column 4 backend TEXT notnull=1 default="" pk=0
+table environment column 5 spec TEXT notnull=1 default="" pk=0
+table environment column 6 origin TEXT notnull=1 default="'user'" pk=0
+table environment column 7 legacy INTEGER notnull=1 default="0" pk=0
+table environment column 8 revision INTEGER notnull=1 default="1" pk=0
+table environment column 9 created_at TEXT notnull=1 default="" pk=0
+table environment_binding check (scope_kind = 'workspace' AND component_id IS NULL) OR (scope_kind = 'component' AND component_id IS NOT NULL)
+table environment_binding check scope_kind IN ('workspace','component')
+table environment_binding column 0 scope_kind TEXT notnull=1 default="" pk=0
+table environment_binding column 1 component_id TEXT notnull=0 default="" pk=0
+table environment_binding column 2 environment_id TEXT notnull=1 default="" pk=0
+table environment_binding column 3 bound_at TEXT notnull=1 default="" pk=0
+table environment_binding fk environment_binding(component_id) -> component(id) on_delete=NO ACTION on_update=NO ACTION
+table environment_binding fk environment_binding(environment_id) -> environment(id) on_delete=NO ACTION on_update=NO ACTION
+table environment_change check (subject_kind = 'environment') = (revision IS NOT NULL)
+table environment_change check action IN ('create','update','archive','restore','bind','unbind')
+table environment_change check actor_kind IN ('user','cli','system','agent','trigger','daemon')
+table environment_change check revision IS NULL OR revision >= 1
+table environment_change check spec_after IS NULL OR json_valid(spec_after)
+table environment_change check subject_kind IN ('environment','secret_ref','binding')
+table environment_change column 0 id INTEGER notnull=0 default="" pk=1
+table environment_change column 1 at TEXT notnull=1 default="" pk=0
+table environment_change column 2 actor_kind TEXT notnull=1 default="" pk=0
+table environment_change column 3 actor_id TEXT notnull=1 default="" pk=0
+table environment_change column 4 subject_kind TEXT notnull=1 default="" pk=0
+table environment_change column 5 subject_id TEXT notnull=1 default="" pk=0
+table environment_change column 6 action TEXT notnull=1 default="" pk=0
+table environment_change column 7 revision INTEGER notnull=0 default="" pk=0
+table environment_change column 8 spec_after TEXT notnull=0 default="" pk=0
+table environment_change column 9 summary TEXT notnull=1 default="" pk=0
+table environment_provision check backend IN ('host-inherit','host-scrubbed','container','vm')
+table environment_provision check owner = 'loop' OR owner = 'network' OR owner GLOB 'service:*'
+table environment_provision check ready_at IS NULL OR state <> 'provisioning'
+table environment_provision check removed_at IS NULL OR state = 'removed'
+table environment_provision check state IN ('provisioning','ready','tearing_down','removed','failed')
+table environment_provision column 0 id TEXT notnull=0 default="" pk=1
+table environment_provision column 1 environment_id TEXT notnull=1 default="" pk=0
+table environment_provision column 10 removed_at TEXT notnull=0 default="" pk=0
+table environment_provision column 11 last_error TEXT notnull=0 default="" pk=0
+table environment_provision column 2 component_root TEXT notnull=1 default="" pk=0
+table environment_provision column 3 loop_slug TEXT notnull=1 default="" pk=0
+table environment_provision column 4 backend TEXT notnull=1 default="" pk=0
+table environment_provision column 5 handle TEXT notnull=1 default="''" pk=0
+table environment_provision column 6 owner TEXT notnull=1 default="'loop'" pk=0
+table environment_provision column 7 state TEXT notnull=1 default="" pk=0
+table environment_provision column 8 created_at TEXT notnull=1 default="" pk=0
+table environment_provision column 9 ready_at TEXT notnull=0 default="" pk=0
+table environment_provision fk environment_provision(environment_id) -> environment(id) on_delete=NO ACTION on_update=NO ACTION
+table epic column 0 id TEXT notnull=0 default="" pk=1
+table epic column 1 component_id TEXT notnull=1 default="" pk=0
+table epic column 2 title TEXT notnull=1 default="" pk=0
+table epic column 3 objective TEXT notnull=1 default="''" pk=0
+table epic column 4 owner TEXT notnull=1 default="''" pk=0
+table epic column 5 target_date TEXT notnull=0 default="" pk=0
+table epic column 6 budget_usd REAL notnull=0 default="" pk=0
+table epic column 7 source_step INTEGER notnull=0 default="" pk=0
+table epic column 8 created_at TEXT notnull=1 default="" pk=0
+table epic column 9 updated_at TEXT notnull=1 default="" pk=0
+table epic fk epic(component_id) -> component(id) on_delete=NO ACTION on_update=NO ACTION
+table event column 0 id INTEGER notnull=0 default="" pk=1
+table event column 1 loop_slug TEXT notnull=0 default="" pk=0
+table event column 2 component_root TEXT notnull=0 default="" pk=0
+table event column 3 kind TEXT notnull=1 default="" pk=0
+table event column 4 payload TEXT notnull=1 default="" pk=0
+table event column 5 created_at TEXT notnull=1 default="" pk=0
+table event column 6 loop_id TEXT notnull=0 default="" pk=0
+table event column 7 step_id INTEGER notnull=0 default="" pk=0
+table event_trigger check blueprint <> ''
+table event_trigger check created_by_kind = 'user'
+table event_trigger check enabled IN (0,1)
+table event_trigger check json_valid(match_json)
+table event_trigger check max_cost_per_day_usd IS NULL OR max_cost_per_day_usd >= 0
+table event_trigger check max_runs_per_hour BETWEEN 1 AND 1000
+table event_trigger check name <> ''
+table event_trigger check source = 'event'
+table event_trigger column 0 id TEXT notnull=0 default="" pk=1
+table event_trigger column 1 name TEXT notnull=1 default="" pk=0
+table event_trigger column 10 enabled INTEGER notnull=1 default="1" pk=0
+table event_trigger column 11 disabled_reason TEXT notnull=1 default="''" pk=0
+table event_trigger column 12 from_outbox_id INTEGER notnull=1 default="" pk=0
+table event_trigger column 13 created_by_kind TEXT notnull=1 default="" pk=0
+table event_trigger column 14 created_by_id TEXT notnull=1 default="" pk=0
+table event_trigger column 15 created_at TEXT notnull=1 default="" pk=0
+table event_trigger column 16 updated_at TEXT notnull=1 default="" pk=0
+table event_trigger column 17 archived_at TEXT notnull=0 default="" pk=0
+table event_trigger column 18 archived_reason TEXT notnull=1 default="''" pk=0
+table event_trigger column 2 source TEXT notnull=1 default="'event'" pk=0
+table event_trigger column 3 root_id TEXT notnull=1 default="''" pk=0
+table event_trigger column 4 component_id TEXT notnull=1 default="''" pk=0
+table event_trigger column 5 match_json TEXT notnull=1 default="" pk=0
+table event_trigger column 6 blueprint TEXT notnull=1 default="" pk=0
+table event_trigger column 7 kickoff TEXT notnull=1 default="''" pk=0
+table event_trigger column 8 max_runs_per_hour INTEGER notnull=1 default="" pk=0
+table event_trigger column 9 max_cost_per_day_usd REAL notnull=0 default="" pk=0
+table event_trigger_fire check cost_note IN ('','cost-unknown','cost-floor')
+table event_trigger_fire check outcome IS NULL OR outcome IN ('started','refused','limited','skipped','could-not-say')
+table event_trigger_fire check source = 'event'
+table event_trigger_fire column 0 id INTEGER notnull=0 default="" pk=1
+table event_trigger_fire column 1 trigger_id TEXT notnull=1 default="" pk=0
+table event_trigger_fire column 10 loop_slug TEXT notnull=0 default="" pk=0
+table event_trigger_fire column 11 cost_note TEXT notnull=1 default="''" pk=0
+table event_trigger_fire column 12 claimed_at TEXT notnull=1 default="" pk=0
+table event_trigger_fire column 13 decided_at TEXT notnull=0 default="" pk=0
+table event_trigger_fire column 2 outbox_id INTEGER notnull=1 default="" pk=0
+table event_trigger_fire column 3 source TEXT notnull=1 default="'event'" pk=0
+table event_trigger_fire column 4 subject_kind TEXT notnull=1 default="" pk=0
+table event_trigger_fire column 5 subject_id TEXT notnull=1 default="" pk=0
+table event_trigger_fire column 6 depth INTEGER notnull=1 default="" pk=0
+table event_trigger_fire column 7 outcome TEXT notnull=0 default="" pk=0
+table event_trigger_fire column 8 reason TEXT notnull=1 default="''" pk=0
+table event_trigger_fire column 9 loop_id TEXT notnull=0 default="" pk=0
+table gate_filing check kind IN ('verify','merge-watch','merge-refused')
+table gate_filing column 0 subject TEXT notnull=0 default="" pk=1
+table gate_filing column 1 bug_id INTEGER notnull=0 default="" pk=0
+table gate_filing column 2 kind TEXT notnull=1 default="" pk=0
+table gate_filing column 3 first_seen_at TEXT notnull=1 default="" pk=0
+table gate_filing column 4 count INTEGER notnull=1 default="1" pk=0
+table goal check created_by_kind IN ('user','agent','trigger')
+table goal check review_state IN ('draft','in_review','approved','rejected','parked')
+table goal check source_kind IN ('manual','brainstorm','webhook','cron','event','intake')
+table goal check type IN ('bug','feature','chore','refactor','investigation')
+table goal column 0 id TEXT notnull=0 default="" pk=1
+table goal column 1 component_id TEXT notnull=1 default="" pk=0
+table goal column 10 source_step INTEGER notnull=0 default="" pk=0
+table goal column 11 review_state TEXT notnull=1 default="'draft'" pk=0
+table goal column 12 created_by_kind TEXT notnull=1 default="" pk=0
+table goal column 13 created_by_id TEXT notnull=1 default="" pk=0
+table goal column 14 created_at TEXT notnull=1 default="" pk=0
+table goal column 15 updated_at TEXT notnull=1 default="" pk=0
+table goal column 2 epic_id TEXT notnull=0 default="" pk=0
+table goal column 3 version INTEGER notnull=1 default="1" pk=0
+table goal column 4 title TEXT notnull=1 default="" pk=0
+table goal column 5 type TEXT notnull=1 default="" pk=0
+table goal column 6 body_note TEXT notnull=1 default="''" pk=0
+table goal column 7 source_kind TEXT notnull=1 default="" pk=0
+table goal column 8 source_ref TEXT notnull=1 default="''" pk=0
+table goal column 9 source_loop TEXT notnull=0 default="" pk=0
+table goal fk goal(component_id) -> component(id) on_delete=NO ACTION on_update=NO ACTION
+table goal fk goal(epic_id) -> epic(id) on_delete=NO ACTION on_update=NO ACTION
+table goal_component check confidence IS NULL OR confidence IN (1,2,3)
+table goal_component column 0 goal_id TEXT notnull=1 default="" pk=1
+table goal_component column 1 goal_version INTEGER notnull=1 default="" pk=2
+table goal_component column 2 component_id TEXT notnull=1 default="" pk=3
+table goal_component column 3 rationale TEXT notnull=1 default="''" pk=0
+table goal_component column 4 estimate_usd REAL notnull=0 default="" pk=0
+table goal_component column 5 confidence INTEGER notnull=0 default="" pk=0
+table goal_component column 6 basis TEXT notnull=1 default="'[]'" pk=0
+table goal_component fk goal_component(component_id) -> component(id) on_delete=NO ACTION on_update=NO ACTION
+table goal_component fk goal_component(goal_id) -> goal(id) on_delete=CASCADE on_update=NO ACTION
+table goal_criterion check check_kind IS NULL OR check_kind IN ('manual','command','test')
+table goal_criterion check check_ref IS NULL OR length(check_ref) <= 512
+table goal_criterion check goal_version >= 1
+table goal_criterion check length(text) <= 512
+table goal_criterion check ordinal >= 1
+table goal_criterion column 0 goal_id TEXT notnull=1 default="" pk=1
+table goal_criterion column 1 goal_version INTEGER notnull=1 default="" pk=2
+table goal_criterion column 2 ordinal INTEGER notnull=1 default="" pk=3
+table goal_criterion column 3 criterion_id TEXT notnull=1 default="" pk=0
+table goal_criterion column 4 text TEXT notnull=1 default="" pk=0
+table goal_criterion column 5 check_kind TEXT notnull=0 default="" pk=0
+table goal_criterion column 6 check_ref TEXT notnull=0 default="" pk=0
+table goal_criterion fk goal_criterion(goal_id) -> goal(id) on_delete=CASCADE on_update=NO ACTION
+table graph_edge check kind IN ('calls', 'imports', 'inherits', 'mixes_in', 'uses', 'references')
+table graph_edge check length(component_root) > 0
+table graph_edge check resolution IN ('extracted', 'inferred')
+table graph_edge column 0 id INTEGER notnull=0 default="" pk=1
+table graph_edge column 1 component_root TEXT notnull=1 default="" pk=0
+table graph_edge column 2 from_node_id INTEGER notnull=1 default="" pk=0
+table graph_edge column 3 to_node_id INTEGER notnull=1 default="" pk=0
+table graph_edge column 4 kind TEXT notnull=1 default="" pk=0
+table graph_edge column 5 resolution TEXT notnull=1 default="" pk=0
+table graph_edge fk graph_edge(from_node_id) -> graph_node(id) on_delete=CASCADE on_update=NO ACTION
+table graph_edge fk graph_edge(to_node_id) -> graph_node(id) on_delete=CASCADE on_update=NO ACTION
+table graph_node check end_line >= start_line
+table graph_node check length(component_root) > 0
+table graph_node check length(file_path) > 0
+table graph_node check length(kind) > 0
+table graph_node check length(language) > 0
+table graph_node check length(symbol) > 0
+table graph_node check start_line >= 1
+table graph_node column 0 id INTEGER notnull=0 default="" pk=1
+table graph_node column 1 component_root TEXT notnull=1 default="" pk=0
+table graph_node column 2 file_path TEXT notnull=1 default="" pk=0
+table graph_node column 3 start_line INTEGER notnull=1 default="" pk=0
+table graph_node column 4 end_line INTEGER notnull=1 default="" pk=0
+table graph_node column 5 kind TEXT notnull=1 default="" pk=0
+table graph_node column 6 symbol TEXT notnull=1 default="" pk=0
+table graph_node column 7 language TEXT notnull=1 default="" pk=0
+table intake check created_by_kind IN ('user')
+table intake column 0 id TEXT notnull=0 default="" pk=1
+table intake column 1 name TEXT notnull=1 default="" pk=0
+table intake column 2 target_path TEXT notnull=0 default="" pk=0
+table intake column 3 scratch_path TEXT notnull=1 default="" pk=0
+table intake column 4 loop_slug TEXT notnull=0 default="" pk=0
+table intake column 5 root_id TEXT notnull=0 default="" pk=0
+table intake column 6 created_by_kind TEXT notnull=1 default="" pk=0
+table intake column 7 created_by_id TEXT notnull=1 default="" pk=0
+table intake column 8 created_at TEXT notnull=1 default="" pk=0
+table intake fk intake(root_id) -> component(id) on_delete=NO ACTION on_update=NO ACTION
+table intake_step check length(detail) <= 1024
+table intake_step check length(step) <= 64
+table intake_step check ordinal >= 1
+table intake_step check outcome IN ('done','skipped','failed')
+table intake_step column 0 intake_id TEXT notnull=1 default="" pk=0
+table intake_step column 1 ordinal INTEGER notnull=1 default="" pk=0
+table intake_step column 2 step TEXT notnull=1 default="" pk=0
+table intake_step column 3 outcome TEXT notnull=1 default="" pk=0
+table intake_step column 4 detail TEXT notnull=1 default="" pk=0
+table intake_step column 5 at TEXT notnull=1 default="" pk=0
+table intake_step fk intake_step(intake_id) -> intake(id) on_delete=CASCADE on_update=NO ACTION
+table learning check provenance IN ('told','observed','assumed','relayed')
+table learning check scope IN ('person','project','agent')
+table learning column 0 id INTEGER notnull=0 default="" pk=1
+table learning column 1 scope TEXT notnull=1 default="" pk=0
+table learning column 10 retracted_reason TEXT notnull=1 default="''" pk=0
+table learning column 11 retracted_by TEXT notnull=1 default="''" pk=0
+table learning column 2 scope_key TEXT notnull=1 default="" pk=0
+table learning column 3 body TEXT notnull=1 default="" pk=0
+table learning column 4 provenance TEXT notnull=1 default="" pk=0
+table learning column 5 observed_count INTEGER notnull=0 default="" pk=0
+table learning column 6 source_loop_slug TEXT notnull=0 default="" pk=0
+table learning column 7 source_step_id INTEGER notnull=0 default="" pk=0
+table learning column 8 created_at TEXT notnull=1 default="" pk=0
+table learning column 9 retracted_at TEXT notnull=0 default="" pk=0
+table learning_change check actor_kind <> 'agent' OR op = 'add'
+table learning_change check actor_kind IN ('user', 'cli', 'agent', 'system')
+table learning_change check length(actor_id) BETWEEN 1 AND 256
+table learning_change check length(summary) BETWEEN 1 AND 1024
+table learning_change check op IN ('add', 'retract', 'restore')
+table learning_change column 0 id INTEGER notnull=0 default="" pk=1
+table learning_change column 1 learning_id INTEGER notnull=1 default="" pk=0
+table learning_change column 2 op TEXT notnull=1 default="" pk=0
+table learning_change column 3 summary TEXT notnull=1 default="" pk=0
+table learning_change column 4 actor_kind TEXT notnull=1 default="" pk=0
+table learning_change column 5 actor_id TEXT notnull=1 default="" pk=0
+table learning_change column 6 occurred_at TEXT notnull=1 default="" pk=0
+table learning_tag check tag != ''
+table learning_tag column 0 learning_id INTEGER notnull=1 default="" pk=0
+table learning_tag column 1 tag TEXT notnull=1 default="" pk=0
+table learning_tag fk learning_tag(learning_id) -> learning(id) on_delete=CASCADE on_update=NO ACTION
+table loop check scope IN ('component','project')
+table loop column 0 id TEXT notnull=1 default="" pk=1
+table loop column 1 slug TEXT notnull=1 default="" pk=0
+table loop column 10 default_branch TEXT notnull=0 default="" pk=0
+table loop column 11 base_branch TEXT notnull=0 default="" pk=0
+table loop column 12 branch_mode TEXT notnull=0 default="" pk=0
+table loop column 13 feature_branch TEXT notnull=0 default="" pk=0
+table loop column 14 total_failed_gates INTEGER notnull=1 default="0" pk=0
+table loop column 15 splits_done INTEGER notnull=1 default="0" pk=0
+table loop column 16 qa_rounds INTEGER notnull=1 default="0" pk=0
+table loop column 17 now_task TEXT notnull=0 default="" pk=0
+table loop column 18 now_agent TEXT notnull=0 default="" pk=0
+table loop column 19 now_step TEXT notnull=0 default="" pk=0
+table loop column 2 title TEXT notnull=1 default="" pk=0
+table loop column 20 now_dispatched_at TEXT notnull=0 default="" pk=0
+table loop column 21 started_at TEXT notnull=1 default="" pk=0
+table loop column 22 updated_at TEXT notnull=1 default="" pk=0
+table loop column 23 attended INTEGER notnull=0 default="" pk=0
+table loop column 24 allow_outward INTEGER notnull=1 default="0" pk=0
+table loop column 25 started_by TEXT notnull=1 default="''" pk=0
+table loop column 26 trigger_id TEXT notnull=1 default="''" pk=0
+table loop column 27 goal_id TEXT notnull=0 default="" pk=0
+table loop column 28 goal_version INTEGER notnull=0 default="" pk=0
+table loop column 29 scope TEXT notnull=1 default="'component'" pk=0
+table loop column 3 goal TEXT notnull=1 default="" pk=0
+table loop column 30 automation_depth INTEGER notnull=1 default="0" pk=0
+table loop column 4 root TEXT notnull=1 default="" pk=0
+table loop column 5 component_root TEXT notnull=1 default="" pk=0
+table loop column 6 project_key TEXT notnull=0 default="" pk=0
+table loop column 7 mode TEXT notnull=1 default="" pk=0
+table loop column 8 phase TEXT notnull=1 default="" pk=0
+table loop column 9 status TEXT notnull=1 default="" pk=0
+table loop_access check mode IN ('tools','full')
+table loop_access check set_by_kind IN ('user','cli','system')
+table loop_access column 0 loop_id TEXT notnull=0 default="" pk=1
+table loop_access column 1 mode TEXT notnull=1 default="" pk=0
+table loop_access column 2 tools_json TEXT notnull=1 default="'[]'" pk=0
+table loop_access column 3 set_by_kind TEXT notnull=1 default="" pk=0
+table loop_access column 4 set_by_id TEXT notnull=1 default="" pk=0
+table loop_access column 5 set_at TEXT notnull=1 default="" pk=0
+table loop_access fk loop_access(loop_id) -> loop(id) on_delete=CASCADE on_update=NO ACTION
+table loop_archive column 0 id TEXT notnull=0 default="" pk=1
+table loop_archive column 1 slug TEXT notnull=1 default="" pk=0
+table loop_archive column 10 state_bytes INTEGER notnull=1 default="" pk=0
+table loop_archive column 11 file_count INTEGER notnull=1 default="" pk=0
+table loop_archive column 12 file_bytes INTEGER notnull=1 default="" pk=0
+table loop_archive column 13 note TEXT notnull=0 default="" pk=0
+table loop_archive column 2 component_root TEXT notnull=1 default="" pk=0
+table loop_archive column 3 title TEXT notnull=1 default="" pk=0
+table loop_archive column 4 goal TEXT notnull=1 default="" pk=0
+table loop_archive column 5 status TEXT notnull=1 default="" pk=0
+table loop_archive column 6 started_at TEXT notnull=0 default="" pk=0
+table loop_archive column 7 ended_at TEXT notnull=0 default="" pk=0
+table loop_archive column 8 archived_at TEXT notnull=1 default="" pk=0
+table loop_archive column 9 state BLOB notnull=1 default="" pk=0
+table loop_archive_file column 0 archive_id TEXT notnull=1 default="" pk=1
+table loop_archive_file column 1 path TEXT notnull=1 default="" pk=2
+table loop_archive_file column 2 bytes INTEGER notnull=1 default="" pk=0
+table loop_archive_file column 3 sha256 TEXT notnull=1 default="" pk=0
+table loop_archive_file column 4 modified TEXT notnull=0 default="" pk=0
+table loop_archive_file column 5 content BLOB notnull=1 default="" pk=0
+table loop_archive_file fk loop_archive_file(archive_id) -> loop_archive(id) on_delete=CASCADE on_update=NO ACTION
+table loop_archived column 0 loop_id TEXT notnull=0 default="" pk=1
+table loop_archived column 1 archived_at TEXT notnull=1 default="" pk=0
+table loop_archived column 2 note TEXT notnull=1 default="''" pk=0
+table loop_archived fk loop_archived(loop_id) -> loop(id) on_delete=CASCADE on_update=NO ACTION
+table loop_autonomy_pin check json_valid(allowed)
+table loop_autonomy_pin check json_valid(labels)
+table loop_autonomy_pin check origin IN ('schedule','webhook','event','scheduler')
+table loop_autonomy_pin column 0 loop_id TEXT notnull=0 default="" pk=1
+table loop_autonomy_pin column 1 root_id TEXT notnull=1 default="" pk=0
+table loop_autonomy_pin column 2 rev INTEGER notnull=1 default="" pk=0
+table loop_autonomy_pin column 3 origin TEXT notnull=1 default="" pk=0
+table loop_autonomy_pin column 4 labels TEXT notnull=1 default="'[]'" pk=0
+table loop_autonomy_pin column 5 allowed TEXT notnull=1 default="" pk=0
+table loop_autonomy_pin column 6 pinned_at TEXT notnull=1 default="" pk=0
+table loop_blueprint column 0 loop_id TEXT notnull=0 default="" pk=1
+table loop_blueprint column 1 blueprint_id TEXT notnull=1 default="" pk=0
+table loop_blueprint column 2 blueprint_version INTEGER notnull=1 default="" pk=0
+table loop_blueprint column 3 content TEXT notnull=1 default="" pk=0
+table loop_blueprint column 4 runtime_json TEXT notnull=1 default="" pk=0
+table loop_blueprint column 5 updated_at TEXT notnull=1 default="" pk=0
+table loop_blueprint fk loop_blueprint(loop_id) -> loop(id) on_delete=CASCADE on_update=NO ACTION
+table loop_control_event check actor_kind IN ('user','cli','system','agent')
+table loop_control_event check kind IN ('stop','resume','cancel','raise','cap_hit','watchdog','request','dismiss')
+table loop_control_event check length(reason) <= 512
+table loop_control_event column 0 id INTEGER notnull=0 default="" pk=1
+table loop_control_event column 1 loop_id TEXT notnull=1 default="" pk=0
+table loop_control_event column 2 at TEXT notnull=1 default="" pk=0
+table loop_control_event column 3 kind TEXT notnull=1 default="" pk=0
+table loop_control_event column 4 actor_kind TEXT notnull=1 default="" pk=0
+table loop_control_event column 5 actor_id TEXT notnull=1 default="''" pk=0
+table loop_control_event column 6 step_id INTEGER notnull=0 default="" pk=0
+table loop_control_event column 7 rule_id TEXT notnull=1 default="''" pk=0
+table loop_control_event column 8 reason TEXT notnull=1 default="''" pk=0
+table loop_control_event column 9 detail TEXT notnull=1 default="'{}'" pk=0
+table loop_control_request check length(reason) BETWEEN 1 AND 512
+table loop_control_request check status IN ('open','honored','dismissed')
+table loop_control_request column 0 id INTEGER notnull=0 default="" pk=1
+table loop_control_request column 1 loop_id TEXT notnull=1 default="" pk=0
+table loop_control_request column 2 requested_at TEXT notnull=1 default="" pk=0
+table loop_control_request column 3 by_agent TEXT notnull=1 default="" pk=0
+table loop_control_request column 4 by_step_id INTEGER notnull=0 default="" pk=0
+table loop_control_request column 5 reason TEXT notnull=1 default="" pk=0
+table loop_control_request column 6 status TEXT notnull=1 default="'open'" pk=0
+table loop_control_request column 7 decided_at TEXT notnull=0 default="" pk=0
+table loop_control_request column 8 decided_by TEXT notnull=1 default="''" pk=0
+table loop_document column 0 id TEXT notnull=0 default="" pk=1
+table loop_document column 1 component_root TEXT notnull=1 default="" pk=0
+table loop_document column 10 written_at TEXT notnull=1 default="" pk=0
+table loop_document column 11 owner_goal_id TEXT notnull=0 default="" pk=0
+table loop_document column 2 project_key TEXT notnull=0 default="" pk=0
+table loop_document column 3 loop_slug TEXT notnull=1 default="" pk=0
+table loop_document column 4 file TEXT notnull=1 default="" pk=0
+table loop_document column 5 rev INTEGER notnull=1 default="" pk=0
+table loop_document column 6 content BLOB notnull=1 default="" pk=0
+table loop_document column 7 bytes INTEGER notnull=1 default="" pk=0
+table loop_document column 8 sha256 TEXT notnull=1 default="" pk=0
+table loop_document column 9 written_by TEXT notnull=0 default="" pk=0
+table loop_model_option check thinking IN ('', 'on', 'off')
+table loop_model_option column 0 loop_id TEXT notnull=0 default="" pk=1
+table loop_model_option column 1 reasoning_effort TEXT notnull=1 default="''" pk=0
+table loop_model_option column 2 thinking TEXT notnull=1 default="''" pk=0
+table loop_model_option column 3 set_at TEXT notnull=1 default="" pk=0
+table loop_model_option fk loop_model_option(loop_id) -> loop(id) on_delete=CASCADE on_update=NO ACTION
+table loop_phase column 0 loop_slug TEXT notnull=1 default="" pk=2
+table loop_phase column 1 component_root TEXT notnull=1 default="" pk=1
+table loop_phase column 2 phase TEXT notnull=1 default="" pk=3
+table loop_phase column 3 status TEXT notnull=1 default="" pk=0
+table loop_phase column 4 ord INTEGER notnull=1 default="" pk=0
+table loop_phase column 5 created_at TEXT notnull=0 default="" pk=0
+table loop_phase column 6 updated_at TEXT notnull=1 default="" pk=0
+table loop_phase fk loop_phase(component_root) -> loop(component_root) on_delete=CASCADE on_update=NO ACTION
+table loop_phase fk loop_phase(loop_slug) -> loop(slug) on_delete=CASCADE on_update=NO ACTION
+table loop_run check (state = 'running' AND ended_at IS NULL) OR (state <> 'running' AND ended_at IS NOT NULL)
+table loop_run check run_seq >= 1
+table loop_run check started_by_kind IN ('user','agent','trigger','event','scheduler')
+table loop_run check state IN ('running','done','failed','cancelled')
+table loop_run column 0 loop_id TEXT notnull=1 default="" pk=1
+table loop_run column 1 run_seq INTEGER notnull=1 default="" pk=2
+table loop_run column 10 goal_id TEXT notnull=0 default="" pk=0
+table loop_run column 11 goal_version INTEGER notnull=0 default="" pk=0
+table loop_run column 12 task_id TEXT notnull=0 default="" pk=0
+table loop_run column 13 started_at TEXT notnull=1 default="" pk=0
+table loop_run column 14 ended_at TEXT notnull=0 default="" pk=0
+table loop_run column 2 blueprint TEXT notnull=1 default="" pk=0
+table loop_run column 3 blueprint_version INTEGER notnull=1 default="" pk=0
+table loop_run column 4 content TEXT notnull=1 default="" pk=0
+table loop_run column 5 runtime_json TEXT notnull=0 default="" pk=0
+table loop_run column 6 state TEXT notnull=1 default="" pk=0
+table loop_run column 7 started_by_kind TEXT notnull=1 default="" pk=0
+table loop_run column 8 started_by_id TEXT notnull=1 default="''" pk=0
+table loop_run column 9 kickoff_message_id INTEGER notnull=0 default="" pk=0
+table loop_run fk loop_run(loop_id) -> loop(id) on_delete=CASCADE on_update=NO ACTION
+table loop_todo check position >= 1
+table loop_todo check status IN ('pending','in_progress','done')
+table loop_todo column 0 list_id INTEGER notnull=1 default="" pk=1
+table loop_todo column 1 position INTEGER notnull=1 default="" pk=2
+table loop_todo column 2 item_id TEXT notnull=1 default="" pk=0
+table loop_todo column 3 content TEXT notnull=1 default="" pk=0
+table loop_todo column 4 status TEXT notnull=1 default="" pk=0
+table loop_todo fk loop_todo(list_id) -> loop_todo_list(id) on_delete=CASCADE on_update=NO ACTION
+table loop_todo_list check (closed_at IS NULL) = (closed_by IS NULL)
+table loop_todo_list check closed_by IS NULL OR closed_by IN ('all-done','cleared','person')
+table loop_todo_list check revision >= 1
+table loop_todo_list column 0 id INTEGER notnull=0 default="" pk=1
+table loop_todo_list column 1 loop_slug TEXT notnull=1 default="" pk=0
+table loop_todo_list column 2 component_root TEXT notnull=1 default="" pk=0
+table loop_todo_list column 3 revision INTEGER notnull=1 default="1" pk=0
+table loop_todo_list column 4 opened_at TEXT notnull=1 default="" pk=0
+table loop_todo_list column 5 updated_at TEXT notnull=1 default="" pk=0
+table loop_todo_list column 6 last_step INTEGER notnull=0 default="" pk=0
+table loop_todo_list column 7 closed_at TEXT notnull=0 default="" pk=0
+table loop_todo_list column 8 closed_by TEXT notnull=0 default="" pk=0
+table loop_todo_list fk loop_todo_list(component_root) -> loop(component_root) on_delete=CASCADE on_update=NO ACTION
+table loop_todo_list fk loop_todo_list(loop_slug) -> loop(slug) on_delete=CASCADE on_update=NO ACTION
+table loop_tombstone column 0 loop_id TEXT notnull=0 default="" pk=1
+table loop_tombstone column 1 slug TEXT notnull=1 default="" pk=0
+table loop_tombstone column 10 steps INTEGER notnull=1 default="0" pk=0
+table loop_tombstone column 11 turns INTEGER notnull=1 default="0" pk=0
+table loop_tombstone column 12 tool_calls INTEGER notnull=1 default="0" pk=0
+table loop_tombstone column 13 input_tokens INTEGER notnull=1 default="0" pk=0
+table loop_tombstone column 14 output_tokens INTEGER notnull=1 default="0" pk=0
+table loop_tombstone column 15 wall_ms INTEGER notnull=1 default="0" pk=0
+table loop_tombstone column 16 cost_usd REAL notnull=0 default="" pk=0
+table loop_tombstone column 17 cost_state TEXT notnull=1 default="'unknown'" pk=0
+table loop_tombstone column 2 component_root TEXT notnull=1 default="" pk=0
+table loop_tombstone column 3 title TEXT notnull=1 default="" pk=0
+table loop_tombstone column 4 goal TEXT notnull=1 default="''" pk=0
+table loop_tombstone column 5 status TEXT notnull=1 default="''" pk=0
+table loop_tombstone column 6 started_at TEXT notnull=1 default="''" pk=0
+table loop_tombstone column 7 deleted_at TEXT notnull=1 default="" pk=0
+table loop_tombstone column 8 deleted_by TEXT notnull=1 default="''" pk=0
+table loop_tombstone column 9 note TEXT notnull=1 default="''" pk=0
+table loop_worktree check owner_kind IN ('lane','task','integration')
+table loop_worktree column 0 id INTEGER notnull=0 default="" pk=1
+table loop_worktree column 1 component_root TEXT notnull=1 default="" pk=0
+table loop_worktree column 2 loop_slug TEXT notnull=1 default="" pk=0
+table loop_worktree column 3 owner_kind TEXT notnull=1 default="" pk=0
+table loop_worktree column 4 owner_id TEXT notnull=1 default="" pk=0
+table loop_worktree column 5 path TEXT notnull=1 default="" pk=0
+table loop_worktree column 6 branch TEXT notnull=1 default="" pk=0
+table loop_worktree column 7 base_sha TEXT notnull=1 default="" pk=0
+table loop_worktree column 8 created_at TEXT notnull=1 default="" pk=0
+table loop_worktree column 9 removed_at TEXT notnull=0 default="" pk=0
+table loop_worktree fk loop_worktree(component_root) -> loop(component_root) on_delete=CASCADE on_update=NO ACTION
+table loop_worktree fk loop_worktree(loop_slug) -> loop(slug) on_delete=CASCADE on_update=NO ACTION
+table mcp_agent check core IS NULL OR (json_valid(core) AND json_type(core) = 'array')
+table mcp_agent column 0 agent_slug TEXT notnull=0 default="" pk=1
+table mcp_agent column 1 core TEXT notnull=0 default="" pk=0
+table mcp_agent fk mcp_agent(agent_slug) -> agent(slug) on_delete=RESTRICT on_update=NO ACTION
+table mcp_change check actor_kind IN ('user','cli','system')
+table mcp_change check length(actor_id) BETWEEN 1 AND 256
+table mcp_change check length(summary) BETWEEN 1 AND 1024
+table mcp_change check op IN ('server_add','server_update','server_remove','server_enable','server_disable','grant_declare','grant_revoke','core_set','import','seed')
+table mcp_change column 0 id INTEGER notnull=0 default="" pk=1
+table mcp_change column 1 op TEXT notnull=1 default="" pk=0
+table mcp_change column 2 server TEXT notnull=0 default="" pk=0
+table mcp_change column 3 agent_slug TEXT notnull=0 default="" pk=0
+table mcp_change column 4 qualified TEXT notnull=0 default="" pk=0
+table mcp_change column 5 summary TEXT notnull=1 default="" pk=0
+table mcp_change column 6 actor_kind TEXT notnull=1 default="" pk=0
+table mcp_change column 7 actor_id TEXT notnull=1 default="" pk=0
+table mcp_change column 8 occurred_at TEXT notnull=1 default="" pk=0
+table mcp_declare check instr(qualified, '.') > 1
+table mcp_declare column 0 agent_slug TEXT notnull=1 default="" pk=1
+table mcp_declare column 1 qualified TEXT notnull=1 default="" pk=2
+table mcp_declare fk mcp_declare(agent_slug) -> agent(slug) on_delete=RESTRICT on_update=NO ACTION
+table mcp_import check length(detail) <= 1024
+table mcp_import check length(sha256) = 64
+table mcp_import check result IN ('imported','refused')
+table mcp_import column 0 id INTEGER notnull=0 default="" pk=1
+table mcp_import column 1 path TEXT notnull=1 default="" pk=0
+table mcp_import column 2 sha256 TEXT notnull=1 default="" pk=0
+table mcp_import column 3 result TEXT notnull=1 default="" pk=0
+table mcp_import column 4 detail TEXT notnull=1 default="" pk=0
+table mcp_import column 5 servers INTEGER notnull=1 default="0" pk=0
+table mcp_import column 6 imported_at TEXT notnull=1 default="" pk=0
+table mcp_server check (tier = 'public') = (agent_slug IS NULL)
+table mcp_server check enabled IN (0,1)
+table mcp_server check json_valid(args) AND json_type(args) = 'array'
+table mcp_server check json_valid(env) AND json_type(env) = 'array'
+table mcp_server check json_valid(env_from) AND json_type(env_from) = 'object'
+table mcp_server check length(name) BETWEEN 1 AND 64 AND name NOT GLOB '*[^a-z0-9_-]*' AND name GLOB '[a-z]*'
+table mcp_server check origin IN ('system','user','import')
+table mcp_server check tier IN ('public','private')
+table mcp_server check transport_type IN ('stdio','http')
+table mcp_server column 0 id INTEGER notnull=0 default="" pk=1
+table mcp_server column 1 name TEXT notnull=1 default="" pk=0
+table mcp_server column 10 origin TEXT notnull=1 default="'user'" pk=0
+table mcp_server column 11 created_at TEXT notnull=1 default="" pk=0
+table mcp_server column 12 updated_at TEXT notnull=1 default="" pk=0
+table mcp_server column 13 env_from TEXT notnull=1 default="'{}'" pk=0
+table mcp_server column 14 title TEXT notnull=1 default="''" pk=0
+table mcp_server column 15 description TEXT notnull=1 default="''" pk=0
+table mcp_server column 2 tier TEXT notnull=1 default="" pk=0
+table mcp_server column 3 agent_slug TEXT notnull=0 default="" pk=0
+table mcp_server column 4 transport_type TEXT notnull=1 default="" pk=0
+table mcp_server column 5 command TEXT notnull=1 default="''" pk=0
+table mcp_server column 6 args TEXT notnull=1 default="'[]'" pk=0
+table mcp_server column 7 env TEXT notnull=1 default="'[]'" pk=0
+table mcp_server column 8 url TEXT notnull=1 default="''" pk=0
+table mcp_server column 9 enabled INTEGER notnull=1 default="1" pk=0
+table mcp_server fk mcp_server(agent_slug) -> agent(slug) on_delete=RESTRICT on_update=NO ACTION
+table mcp_server_tool check length(name) BETWEEN 1 AND 128
+table mcp_server_tool column 0 server_id INTEGER notnull=1 default="" pk=1
+table mcp_server_tool column 1 name TEXT notnull=1 default="" pk=2
+table mcp_server_tool column 2 rerun TEXT notnull=1 default="''" pk=0
+table mcp_server_tool column 3 effect TEXT notnull=1 default="''" pk=0
+table mcp_server_tool fk mcp_server_tool(server_id) -> mcp_server(id) on_delete=CASCADE on_update=NO ACTION
+table mcp_share column 0 server_id INTEGER notnull=0 default="" pk=1
+table mcp_share fk mcp_share(server_id) -> mcp_server(id) on_delete=CASCADE on_update=NO ACTION
+table memory column 0 id INTEGER notnull=0 default="" pk=1
+table memory column 1 loop_slug TEXT notnull=1 default="" pk=0
+table memory column 2 component_root TEXT notnull=1 default="" pk=0
+table memory column 3 ts TEXT notnull=1 default="" pk=0
+table memory column 4 agent TEXT notnull=0 default="" pk=0
+table memory column 5 taskid TEXT notnull=0 default="" pk=0
+table memory column 6 note TEXT notnull=1 default="" pk=0
+table memory fk memory(component_root) -> loop(component_root) on_delete=CASCADE on_update=NO ACTION
+table memory fk memory(loop_slug) -> loop(slug) on_delete=CASCADE on_update=NO ACTION
+table merge_event column 0 id TEXT notnull=0 default="" pk=1
+table merge_event column 1 loop_slug TEXT notnull=1 default="" pk=0
+table merge_event column 10 evidence TEXT notnull=1 default="" pk=0
+table merge_event column 11 verify_run_id TEXT notnull=0 default="" pk=0
+table merge_event column 12 merged_at TEXT notnull=1 default="" pk=0
+table merge_event column 13 actor_kind TEXT notnull=0 default="" pk=0
+table merge_event column 14 actor_id TEXT notnull=0 default="" pk=0
+table merge_event column 2 component_root TEXT notnull=1 default="" pk=0
+table merge_event column 3 component_id TEXT notnull=0 default="" pk=0
+table merge_event column 4 pr INTEGER notnull=1 default="" pk=0
+table merge_event column 5 merge_sha TEXT notnull=1 default="" pk=0
+table merge_event column 6 method TEXT notnull=0 default="" pk=0
+table merge_event column 7 base_ref TEXT notnull=0 default="" pk=0
+table merge_event column 8 head_sha TEXT notnull=0 default="" pk=0
+table merge_event column 9 rule_revision INTEGER notnull=0 default="" pk=0
+table merge_queue_config check conflict_policy IN ('ask','resolve','block')
+table merge_queue_config check land_method IN ('squash','merge')
+table merge_queue_config check max_catch_ups BETWEEN 1 AND 10
+table merge_queue_config check mode IN ('off','manual','auto')
+table merge_queue_config column 0 component_root TEXT notnull=0 default="" pk=1
+table merge_queue_config column 1 mode TEXT notnull=1 default="'off'" pk=0
+table merge_queue_config column 2 conflict_policy TEXT notnull=1 default="'ask'" pk=0
+table merge_queue_config column 3 land_method TEXT notnull=1 default="'squash'" pk=0
+table merge_queue_config column 4 max_catch_ups INTEGER notnull=1 default="3" pk=0
+table merge_queue_config column 5 updated_at TEXT notnull=1 default="" pk=0
+table merge_queue_config column 6 updated_by_kind TEXT notnull=1 default="" pk=0
+table merge_queue_config column 7 updated_by_id TEXT notnull=1 default="" pk=0
+table merge_queue_config fk merge_queue_config(component_root) -> component_root(component_root) on_delete=NO ACTION on_update=NO ACTION
+table merge_queue_event check actor_kind IN ('user','cli','blueprint','daemon','agent')
+table merge_queue_event check kind IN ('transition','reorder','config')
+table merge_queue_event column 0 id INTEGER notnull=0 default="" pk=1
+table merge_queue_event column 1 component_root TEXT notnull=1 default="" pk=0
+table merge_queue_event column 10 at TEXT notnull=1 default="" pk=0
+table merge_queue_event column 2 item_id TEXT notnull=0 default="" pk=0
+table merge_queue_event column 3 kind TEXT notnull=1 default="" pk=0
+table merge_queue_event column 4 from_status TEXT notnull=0 default="" pk=0
+table merge_queue_event column 5 to_status TEXT notnull=0 default="" pk=0
+table merge_queue_event column 6 reason_kind TEXT notnull=0 default="" pk=0
+table merge_queue_event column 7 actor_kind TEXT notnull=1 default="" pk=0
+table merge_queue_event column 8 actor_id TEXT notnull=1 default="" pk=0
+table merge_queue_event column 9 detail TEXT notnull=1 default="'{}'" pk=0
+table merge_queue_item check attended IN (0,1)
+table merge_queue_item check enqueued_by_kind IN ('user','cli','blueprint','daemon','proposal')
+table merge_queue_item check reason_kind IS NULL OR reason_kind IN ('denied','conflict','gate-failed','head-moved','protected','forge','git','stale-exhausted','removed-by-person','loop-stopped','unknown')
+table merge_queue_item check status IN ('queued','catching_up','verifying','ready','merging','merged','conflicted','failed','removed')
+table merge_queue_item column 0 id TEXT notnull=0 default="" pk=1
+table merge_queue_item column 1 component_root TEXT notnull=1 default="" pk=0
+table merge_queue_item column 10 verified_sha TEXT notnull=0 default="" pk=0
+table merge_queue_item column 11 landed_sha TEXT notnull=0 default="" pk=0
+table merge_queue_item column 12 landing_loop_slug TEXT notnull=0 default="" pk=0
+table merge_queue_item column 13 resolve_loop_slug TEXT notnull=0 default="" pk=0
+table merge_queue_item column 14 status TEXT notnull=1 default="" pk=0
+table merge_queue_item column 15 reason_kind TEXT notnull=0 default="" pk=0
+table merge_queue_item column 16 position INTEGER notnull=1 default="" pk=0
+table merge_queue_item column 17 attended INTEGER notnull=1 default="0" pk=0
+table merge_queue_item column 18 catch_ups INTEGER notnull=1 default="0" pk=0
+table merge_queue_item column 19 enqueued_by_kind TEXT notnull=1 default="" pk=0
+table merge_queue_item column 2 base_branch TEXT notnull=1 default="" pk=0
+table merge_queue_item column 20 enqueued_by_id TEXT notnull=1 default="" pk=0
+table merge_queue_item column 21 created_at TEXT notnull=1 default="" pk=0
+table merge_queue_item column 22 updated_at TEXT notnull=1 default="" pk=0
+table merge_queue_item column 3 branch TEXT notnull=1 default="" pk=0
+table merge_queue_item column 4 loop_slug TEXT notnull=0 default="" pk=0
+table merge_queue_item column 5 head_sha TEXT notnull=1 default="" pk=0
+table merge_queue_item column 6 base_sha TEXT notnull=1 default="" pk=0
+table merge_queue_item column 7 integration_branch TEXT notnull=0 default="" pk=0
+table merge_queue_item column 8 integration_sha TEXT notnull=0 default="" pk=0
+table merge_queue_item column 9 pr_number INTEGER notnull=0 default="" pk=0
+table merge_queue_item fk merge_queue_item(component_root) -> component_root(component_root) on_delete=NO ACTION on_update=NO ACTION
+table merge_rule check checks_policy IN ('reported_green','required_only')
+table merge_rule check enabled IN (0,1)
+table merge_rule check json_valid(aeon_review_agents)
+table merge_rule check json_valid(required_checks)
+table merge_rule check method IN ('squash','merge','rebase')
+table merge_rule check no_checks IN ('refuse','allow')
+table merge_rule check require_dod IN ('none','all_met')
+table merge_rule check require_local IN (0,1)
+table merge_rule check require_threads_resolved IN (0,1)
+table merge_rule check review_mode IN ('forge','aeon','either','both')
+table merge_rule column 0 component_id TEXT notnull=0 default="" pk=1
+table merge_rule column 1 enabled INTEGER notnull=1 default="1" pk=0
+table merge_rule column 10 method TEXT notnull=1 default="'squash'" pk=0
+table merge_rule column 11 revision INTEGER notnull=1 default="1" pk=0
+table merge_rule column 12 updated_at TEXT notnull=1 default="" pk=0
+table merge_rule column 2 require_local INTEGER notnull=1 default="0" pk=0
+table merge_rule column 3 require_dod TEXT notnull=1 default="'none'" pk=0
+table merge_rule column 4 required_checks TEXT notnull=1 default="'[]'" pk=0
+table merge_rule column 5 checks_policy TEXT notnull=1 default="'reported_green'" pk=0
+table merge_rule column 6 no_checks TEXT notnull=1 default="'allow'" pk=0
+table merge_rule column 7 review_mode TEXT notnull=1 default="'forge'" pk=0
+table merge_rule column 8 aeon_review_agents TEXT notnull=1 default="'[\"code-reviewer\"]'" pk=0
+table merge_rule column 9 require_threads_resolved INTEGER notnull=1 default="0" pk=0
+table merge_rule fk merge_rule(component_id) -> component(id) on_delete=NO ACTION on_update=NO ACTION
+table merge_rule_event check actor_kind IN ('user','cli','agent')
+table merge_rule_event check after_json IS NULL OR json_valid(after_json)
+table merge_rule_event check before_json IS NULL OR json_valid(before_json)
+table merge_rule_event check op IN ('set','clear')
+table merge_rule_event column 0 id INTEGER notnull=0 default="" pk=1
+table merge_rule_event column 1 component_id TEXT notnull=1 default="" pk=0
+table merge_rule_event column 2 revision INTEGER notnull=1 default="" pk=0
+table merge_rule_event column 3 op TEXT notnull=1 default="" pk=0
+table merge_rule_event column 4 actor_kind TEXT notnull=1 default="" pk=0
+table merge_rule_event column 5 actor_id TEXT notnull=1 default="" pk=0
+table merge_rule_event column 6 summary TEXT notnull=1 default="" pk=0
+table merge_rule_event column 7 before_json TEXT notnull=0 default="" pk=0
+table merge_rule_event column 8 after_json TEXT notnull=0 default="" pk=0
+table merge_rule_event column 9 at TEXT notnull=1 default="" pk=0
+table merge_watch check state IN ('pending','green','red','unknown','expired')
+table merge_watch column 0 merge_event_id TEXT notnull=0 default="" pk=1
+table merge_watch column 1 component_id TEXT notnull=1 default="" pk=0
+table merge_watch column 2 base_ref TEXT notnull=1 default="" pk=0
+table merge_watch column 3 sha TEXT notnull=1 default="" pk=0
+table merge_watch column 4 state TEXT notnull=1 default="'pending'" pk=0
+table merge_watch column 5 attempts INTEGER notnull=1 default="0" pk=0
+table merge_watch column 6 next_check_at TEXT notnull=1 default="" pk=0
+table merge_watch column 7 last_checked_at TEXT notnull=0 default="" pk=0
+table merge_watch column 8 detail TEXT notnull=1 default="''" pk=0
+table merge_watch column 9 created_at TEXT notnull=1 default="" pk=0
+table merge_watch fk merge_watch(merge_event_id) -> merge_event(id) on_delete=NO ACTION on_update=NO ACTION
+table notify_change check subject_kind IN ('channel','subscription','class')
+table notify_change column 0 id INTEGER notnull=0 default="" pk=1
+table notify_change column 1 subject_kind TEXT notnull=1 default="" pk=0
+table notify_change column 2 subject_id TEXT notnull=1 default="" pk=0
+table notify_change column 3 op TEXT notnull=1 default="" pk=0
+table notify_change column 4 actor_kind TEXT notnull=1 default="" pk=0
+table notify_change column 5 actor_id TEXT notnull=1 default="" pk=0
+table notify_change column 6 occurred_at TEXT notnull=1 default="" pk=0
+table notify_change column 7 summary TEXT notnull=1 default="" pk=0
+table notify_channel check allow_private IN (0,1)
+table notify_channel check created_by_kind = 'user'
+table notify_channel check kind IN ('webhook')
+table notify_channel column 0 id TEXT notnull=0 default="" pk=1
+table notify_channel column 1 kind TEXT notnull=1 default="" pk=0
+table notify_channel column 10 updated_at TEXT notnull=1 default="" pk=0
+table notify_channel column 11 archived_at TEXT notnull=0 default="" pk=0
+table notify_channel column 12 archive_reason TEXT notnull=0 default="" pk=0
+table notify_channel column 2 name TEXT notnull=1 default="" pk=0
+table notify_channel column 3 enabled INTEGER notnull=1 default="0" pk=0
+table notify_channel column 4 url TEXT notnull=1 default="" pk=0
+table notify_channel column 5 secret_ref TEXT notnull=1 default="" pk=0
+table notify_channel column 6 allow_private INTEGER notnull=1 default="0" pk=0
+table notify_channel column 7 created_by_kind TEXT notnull=1 default="" pk=0
+table notify_channel column 8 created_by_id TEXT notnull=1 default="" pk=0
+table notify_channel column 9 created_at TEXT notnull=1 default="" pk=0
+table notify_delivery check error_kind IS NULL OR error_kind IN ('transport','timeout','status','refused-address','secret-missing','url-invalid')
+table notify_delivery check outcome IN ('sent','failed','suppressed-quiet','suppressed-rate','suppressed-dedup','suppressed-disabled','suppressed-overflow')
+table notify_delivery column 0 id INTEGER notnull=0 default="" pk=1
+table notify_delivery column 1 channel_id TEXT notnull=1 default="" pk=0
+table notify_delivery column 2 event_seq INTEGER notnull=0 default="" pk=0
+table notify_delivery column 3 attention_key TEXT notnull=0 default="" pk=0
+table notify_delivery column 4 outcome TEXT notnull=1 default="" pk=0
+table notify_delivery column 5 error_kind TEXT notnull=0 default="" pk=0
+table notify_delivery column 6 http_status INTEGER notnull=0 default="" pk=0
+table notify_delivery column 7 attempts INTEGER notnull=1 default="0" pk=0
+table notify_delivery column 8 at TEXT notnull=1 default="" pk=0
+table notify_event_class check enabled IN (0,1)
+table notify_event_class check origin IN ('system','user','import')
+table notify_event_class check tone IN ('info','success','warning','danger')
+table notify_event_class column 0 kind TEXT notnull=1 default="" pk=1
+table notify_event_class column 1 variant TEXT notnull=1 default="''" pk=2
+table notify_event_class column 2 tone TEXT notnull=1 default="" pk=0
+table notify_event_class column 3 title_template TEXT notnull=1 default="" pk=0
+table notify_event_class column 4 body_template TEXT notnull=1 default="''" pk=0
+table notify_event_class column 5 enabled INTEGER notnull=1 default="1" pk=0
+table notify_event_class column 6 origin TEXT notnull=1 default="'user'" pk=0
+table notify_event_class column 7 version INTEGER notnull=1 default="1" pk=0
+table notify_event_class column 8 updated_at TEXT notnull=1 default="" pk=0
+table notify_subscription check (quiet_start IS NULL) = (quiet_end IS NULL) AND (quiet_start IS NULL) = (quiet_zone IS NULL)
+table notify_subscription check max_per_hour BETWEEN 1 AND 1000
+table notify_subscription column 0 channel_id TEXT notnull=1 default="" pk=1
+table notify_subscription column 1 root_id TEXT notnull=1 default="''" pk=2
+table notify_subscription column 2 min_severity TEXT notnull=1 default="" pk=0
+table notify_subscription column 3 kinds TEXT notnull=0 default="" pk=0
+table notify_subscription column 4 quiet_start TEXT notnull=0 default="" pk=0
+table notify_subscription column 5 quiet_end TEXT notnull=0 default="" pk=0
+table notify_subscription column 6 quiet_zone TEXT notnull=0 default="" pk=0
+table notify_subscription column 7 max_per_hour INTEGER notnull=1 default="30" pk=0
+table notify_subscription fk notify_subscription(channel_id) -> notify_channel(id) on_delete=NO ACTION on_update=NO ACTION
+table platform_change check actor_kind IN ('user','cli')
+table platform_change check length(actor_id) BETWEEN 1 AND 256
+table platform_change check length(subject) BETWEEN 1 AND 256
+table platform_change check length(summary) BETWEEN 1 AND 1024
+table platform_change check op IN ('reindex','graph_build','graph_reparse','graph_delete')
+table platform_change column 0 id INTEGER notnull=0 default="" pk=1
+table platform_change column 1 op TEXT notnull=1 default="" pk=0
+table platform_change column 2 subject TEXT notnull=1 default="" pk=0
+table platform_change column 3 outcome_ref TEXT notnull=1 default="''" pk=0
+table platform_change column 4 summary TEXT notnull=1 default="" pk=0
+table platform_change column 5 actor_kind TEXT notnull=1 default="" pk=0
+table platform_change column 6 actor_id TEXT notnull=1 default="" pk=0
+table platform_change column 7 occurred_at TEXT notnull=1 default="" pk=0
+table plugin_agent check state <> 'not-installed'
+table plugin_agent check state IN ('disabled','enabled','revoked')
+table plugin_agent column 0 id INTEGER notnull=0 default="" pk=1
+table plugin_agent column 1 name TEXT notnull=1 default="" pk=0
+table plugin_agent column 2 source TEXT notnull=1 default="" pk=0
+table plugin_agent column 3 state TEXT notnull=1 default="" pk=0
+table plugin_agent column 4 imported_at TEXT notnull=1 default="" pk=0
+table plugin_refusal check (cost_known = 1 AND cost_json IS NOT NULL) OR (cost_known = 0 AND cost_json IS NULL)
+table plugin_refusal check cost_known IN (0,1)
+table plugin_refusal check length(trim(reason)) > 0
+table plugin_refusal column 0 id INTEGER notnull=0 default="" pk=1
+table plugin_refusal column 1 agent TEXT notnull=1 default="" pk=0
+table plugin_refusal column 2 task_id INTEGER notnull=0 default="" pk=0
+table plugin_refusal column 3 revoked_at TEXT notnull=1 default="" pk=0
+table plugin_refusal column 4 reason TEXT notnull=1 default="" pk=0
+table plugin_refusal column 5 cost_json TEXT notnull=0 default="" pk=0
+table plugin_refusal column 6 cost_known INTEGER notnull=1 default="" pk=0
+table plugin_refusal column 7 recorded_at TEXT notnull=1 default="" pk=0
+table plugin_refusal column 8 reached_prompt INTEGER notnull=1 default="0" pk=0
+table plugin_transition check (from_state = '' AND to_state = 'disabled') OR (from_state = 'disabled' AND to_state IN ('enabled','revoked')) OR (from_state = 'enabled' AND to_state IN ('disabled','revoked'))
+table plugin_transition check from_state IN ('','disabled','enabled')
+table plugin_transition check to_state <> 'revoked' OR length(trim(reason)) > 0
+table plugin_transition check to_state IN ('disabled','enabled','revoked')
+table plugin_transition column 0 id INTEGER notnull=0 default="" pk=1
+table plugin_transition column 1 agent TEXT notnull=1 default="" pk=0
+table plugin_transition column 2 from_state TEXT notnull=1 default="" pk=0
+table plugin_transition column 3 to_state TEXT notnull=1 default="" pk=0
+table plugin_transition column 4 reason TEXT notnull=1 default="''" pk=0
+table plugin_transition column 5 at TEXT notnull=1 default="" pk=0
+table policy check action <> 'allow' OR source = 'operator'
+table policy check action IN ('allow','deny','ask')
+table policy check source IN ('operator','agent','mcp_server','import')
+table policy check target_kind IN ('all-agents','agent','loop','lane-type','mcp')
+table policy check type IN ('tool_access','command_access','route_access','effect_class','cost_cap','skill_access','trigger_access')
+table policy column 0 id TEXT notnull=0 default="" pk=1
+table policy column 1 type TEXT notnull=1 default="" pk=0
+table policy column 10 origin TEXT notnull=1 default="'user'" pk=0
+table policy column 2 target_kind TEXT notnull=1 default="" pk=0
+table policy column 3 target_id TEXT notnull=0 default="" pk=0
+table policy column 4 action TEXT notnull=1 default="" pk=0
+table policy column 5 spec TEXT notnull=1 default="'{}'" pk=0
+table policy column 6 source TEXT notnull=1 default="" pk=0
+table policy column 7 not_after TEXT notnull=0 default="" pk=0
+table policy column 8 created_at TEXT notnull=1 default="" pk=0
+table policy column 9 updated_at TEXT notnull=1 default="" pk=0
+table policy_acceptance column 0 policy_id TEXT notnull=1 default="" pk=1
+table policy_acceptance column 1 target_kind TEXT notnull=1 default="" pk=2
+table policy_acceptance column 2 target_id TEXT notnull=1 default="" pk=3
+table policy_acceptance column 3 accepted_by TEXT notnull=1 default="" pk=0
+table policy_acceptance column 4 accepted_at TEXT notnull=1 default="" pk=0
+table policy_acceptance fk policy_acceptance(policy_id) -> policy(id) on_delete=CASCADE on_update=NO ACTION
+table policy_change check (op IN ('add','remove') AND policy_id IS NOT NULL) OR op IN ('seed','commit','reject')
+table policy_change check actor_kind IN ('user','cli')
+table policy_change check length(actor_id) BETWEEN 1 AND 256
+table policy_change check length(summary) BETWEEN 1 AND 1024
+table policy_change check op IN ('add','remove','seed','commit','reject')
+table policy_change column 0 id INTEGER notnull=0 default="" pk=1
+table policy_change column 1 op TEXT notnull=1 default="" pk=0
+table policy_change column 2 policy_id TEXT notnull=0 default="" pk=0
+table policy_change column 3 proposal_id INTEGER notnull=0 default="" pk=0
+table policy_change column 4 summary TEXT notnull=1 default="" pk=0
+table policy_change column 5 actor_kind TEXT notnull=1 default="" pk=0
+table policy_change column 6 actor_id TEXT notnull=1 default="" pk=0
+table policy_change column 7 occurred_at TEXT notnull=1 default="" pk=0
+table policy_event column 0 id INTEGER notnull=0 default="" pk=1
+table policy_event column 1 policy_id TEXT notnull=0 default="" pk=0
+table policy_event column 2 subject_kind TEXT notnull=1 default="" pk=0
+table policy_event column 3 subject_id TEXT notnull=1 default="" pk=0
+table policy_event column 4 outcome TEXT notnull=1 default="" pk=0
+table policy_event column 5 detail TEXT notnull=0 default="" pk=0
+table policy_event column 6 at TEXT notnull=1 default="" pk=0
+table policy_event fk policy_event(policy_id) -> policy(id) on_delete=SET NULL on_update=NO ACTION
+table proposal check created_by_kind IN ('user','agent','trigger')
+table proposal check decided_by_kind IS NULL OR decided_by_kind = 'user'
+table proposal check kind IN ('policy_add','policy_remove','seed_corpus','mcp_server_add','mcp_server_remove','agent_import','autonomy_revoke','autonomy_deny','mcp_grant_revoke','verify_command','merge_rule','blueprint_save','environment_restrict','automation_disable','roadmap_idea','learning_retract','mergequeue_enqueue','charter_save','intake_plan')
+table proposal check status IN ('proposed','committed','rejected','discarded')
+table proposal column 0 id INTEGER notnull=0 default="" pk=1
+table proposal column 1 kind TEXT notnull=1 default="" pk=0
+table proposal column 10 decide_reason TEXT notnull=0 default="" pk=0
+table proposal column 11 applied_error TEXT notnull=0 default="" pk=0
+table proposal column 2 payload TEXT notnull=1 default="" pk=0
+table proposal column 3 status TEXT notnull=1 default="'proposed'" pk=0
+table proposal column 4 created_at TEXT notnull=1 default="" pk=0
+table proposal column 5 created_by_kind TEXT notnull=1 default="" pk=0
+table proposal column 6 created_by_id TEXT notnull=1 default="" pk=0
+table proposal column 7 decided_at TEXT notnull=0 default="" pk=0
+table proposal column 8 decided_by_kind TEXT notnull=0 default="" pk=0
+table proposal column 9 decided_by_id TEXT notnull=0 default="" pk=0
+table question check kind IN ('clarify','gate','permission','free')
+table question column 0 id INTEGER notnull=0 default="" pk=1
+table question column 1 loop_slug TEXT notnull=1 default="" pk=0
+table question column 10 answered_at TEXT notnull=0 default="" pk=0
+table question column 2 component_root TEXT notnull=1 default="" pk=0
+table question column 3 step_id INTEGER notnull=0 default="" pk=0
+table question column 4 tool_use_id TEXT notnull=0 default="" pk=0
+table question column 5 kind TEXT notnull=1 default="" pk=0
+table question column 6 body TEXT notnull=1 default="" pk=0
+table question column 7 options TEXT notnull=0 default="" pk=0
+table question column 8 answer TEXT notnull=0 default="" pk=0
+table question column 9 asked_at TEXT notnull=1 default="" pk=0
+table question fk question(component_root) -> loop(component_root) on_delete=CASCADE on_update=NO ACTION
+table question fk question(loop_slug) -> loop(slug) on_delete=CASCADE on_update=NO ACTION
+table question fk question(step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table queue_item check (size_min IS NULL AND size_max IS NULL AND size_basis IS NULL) OR (size_min IS NOT NULL AND size_max IS NOT NULL AND size_basis IS NOT NULL AND size_basis <> '' AND size_min <= size_max)
+table queue_item check attended IS NULL OR attended IN (0,1)
+table queue_item check autonomy_cap IN ('grant','none','outward')
+table queue_item check status IN ('pending','sizing','ready','running','done','blocked','cancelled')
+table queue_item column 0 id INTEGER notnull=0 default="" pk=1
+table queue_item column 1 component_root TEXT notnull=1 default="" pk=0
+table queue_item column 10 size_min INTEGER notnull=0 default="" pk=0
+table queue_item column 11 size_max INTEGER notnull=0 default="" pk=0
+table queue_item column 12 size_basis TEXT notnull=0 default="" pk=0
+table queue_item column 13 loop_slug TEXT notnull=0 default="" pk=0
+table queue_item column 14 created_at TEXT notnull=1 default="" pk=0
+table queue_item column 15 updated_at TEXT notnull=1 default="" pk=0
+table queue_item column 16 autonomy_cap TEXT notnull=1 default="'grant'" pk=0
+table queue_item column 2 position INTEGER notnull=1 default="" pk=0
+table queue_item column 3 status TEXT notnull=1 default="" pk=0
+table queue_item column 4 blueprint TEXT notnull=1 default="" pk=0
+table queue_item column 5 goal TEXT notnull=1 default="" pk=0
+table queue_item column 6 workspace_root TEXT notnull=1 default="" pk=0
+table queue_item column 7 tech TEXT notnull=0 default="" pk=0
+table queue_item column 8 with_json TEXT notnull=0 default="" pk=0
+table queue_item column 9 attended INTEGER notnull=0 default="" pk=0
+table queue_item fk queue_item(component_root) -> component_root(component_root) on_delete=NO ACTION on_update=NO ACTION
+table queue_item fk queue_item(component_root) -> loop(component_root) on_delete=NO ACTION on_update=NO ACTION
+table queue_item fk queue_item(loop_slug) -> loop(slug) on_delete=NO ACTION on_update=NO ACTION
+table retrieval_chunk column 0 id INTEGER notnull=0 default="" pk=1
+table retrieval_chunk column 1 corpus_id INTEGER notnull=1 default="" pk=0
+table retrieval_chunk column 2 source TEXT notnull=1 default="" pk=0
+table retrieval_chunk column 3 line_start INTEGER notnull=1 default="" pk=0
+table retrieval_chunk column 4 line_end INTEGER notnull=1 default="" pk=0
+table retrieval_chunk column 5 content_hash TEXT notnull=1 default="" pk=0
+table retrieval_chunk column 6 body TEXT notnull=1 default="" pk=0
+table retrieval_chunk fk retrieval_chunk(corpus_id) -> retrieval_corpus(id) on_delete=CASCADE on_update=NO ACTION
+table retrieval_chunk_fts column 0 body  notnull=0 default="" pk=0
+table retrieval_chunk_fts_config column 0 k  notnull=1 default="" pk=1
+table retrieval_chunk_fts_config column 1 v  notnull=0 default="" pk=0
+table retrieval_chunk_fts_data column 0 id INTEGER notnull=0 default="" pk=1
+table retrieval_chunk_fts_data column 1 block BLOB notnull=0 default="" pk=0
+table retrieval_chunk_fts_docsize column 0 id INTEGER notnull=0 default="" pk=1
+table retrieval_chunk_fts_docsize column 1 sz BLOB notnull=0 default="" pk=0
+table retrieval_chunk_fts_idx column 0 segid  notnull=1 default="" pk=1
+table retrieval_chunk_fts_idx column 1 term  notnull=1 default="" pk=2
+table retrieval_chunk_fts_idx column 2 pgno  notnull=0 default="" pk=0
+table retrieval_corpus check (kind = 'retrieved' AND provenance IS NULL AND observation_count IS NULL) OR (kind = 'concluded' AND provenance IS NOT NULL AND observation_count IS NOT NULL)
+table retrieval_corpus check kind IN ('retrieved', 'concluded')
+table retrieval_corpus check name <> ''
+table retrieval_corpus check provenance IS NULL OR provenance IN ('told', 'observed', 'assumed')
+table retrieval_corpus column 0 id INTEGER notnull=0 default="" pk=1
+table retrieval_corpus column 1 component_root TEXT notnull=1 default="" pk=0
+table retrieval_corpus column 2 name TEXT notnull=1 default="" pk=0
+table retrieval_corpus column 3 kind TEXT notnull=1 default="'retrieved'" pk=0
+table retrieval_corpus column 4 embed_model TEXT notnull=0 default="" pk=0
+table retrieval_corpus column 5 embed_dim INTEGER notnull=0 default="" pk=0
+table retrieval_corpus column 6 provenance TEXT notnull=0 default="" pk=0
+table retrieval_corpus column 7 observation_count INTEGER notnull=0 default="" pk=0
+table retrieval_source_mtime column 0 corpus_id INTEGER notnull=1 default="" pk=1
+table retrieval_source_mtime column 1 source TEXT notnull=1 default="" pk=2
+table retrieval_source_mtime column 2 mtime INTEGER notnull=1 default="" pk=0
+table retro_agent check agent_ms IS NULL OR agent_ms >= 0
+table retro_agent check agent_slug_known IN (0,1)
+table retro_agent check cost_partial_steps IS NULL OR cost_partial_steps >= 0
+table retro_agent check cost_unknown_steps IS NULL OR cost_unknown_steps >= 0
+table retro_agent check cost_usd_floor IS NULL OR cost_usd_floor >= 0
+table retro_agent check steps IS NULL OR steps >= 0
+table retro_agent check steps_blocked IS NULL OR steps_blocked >= 0
+table retro_agent check steps_done IS NULL OR steps_done >= 0
+table retro_agent check steps_rejected IS NULL OR steps_rejected >= 0
+table retro_agent check verify_fail IS NULL OR verify_fail >= 0
+table retro_agent check verify_pass IS NULL OR verify_pass >= 0
+table retro_agent check verify_unverified IS NULL OR verify_unverified >= 0
+table retro_agent column 0 id INTEGER notnull=0 default="" pk=1
+table retro_agent column 1 outcome_id INTEGER notnull=1 default="" pk=0
+table retro_agent column 10 verify_unverified INTEGER notnull=0 default="" pk=0
+table retro_agent column 11 cost_usd_floor REAL notnull=0 default="" pk=0
+table retro_agent column 12 cost_partial_steps INTEGER notnull=0 default="" pk=0
+table retro_agent column 13 cost_unknown_steps INTEGER notnull=0 default="" pk=0
+table retro_agent column 14 agent_ms INTEGER notnull=0 default="" pk=0
+table retro_agent column 2 agent TEXT notnull=1 default="" pk=0
+table retro_agent column 3 agent_slug_known INTEGER notnull=1 default="1" pk=0
+table retro_agent column 4 steps INTEGER notnull=0 default="" pk=0
+table retro_agent column 5 steps_done INTEGER notnull=0 default="" pk=0
+table retro_agent column 6 steps_rejected INTEGER notnull=0 default="" pk=0
+table retro_agent column 7 steps_blocked INTEGER notnull=0 default="" pk=0
+table retro_agent column 8 verify_pass INTEGER notnull=0 default="" pk=0
+table retro_agent column 9 verify_fail INTEGER notnull=0 default="" pk=0
+table retro_agent fk retro_agent(outcome_id) -> retro_outcome(id) on_delete=NO ACTION on_update=NO ACTION
+table retro_learning column 0 outcome_id INTEGER notnull=0 default="" pk=1
+table retro_learning column 1 learning_id INTEGER notnull=1 default="" pk=0
+table retro_learning column 2 written_at TEXT notnull=1 default="" pk=0
+table retro_learning fk retro_learning(outcome_id) -> retro_outcome(id) on_delete=NO ACTION on_update=NO ACTION
+table retro_outcome check attended IS NULL OR attended IN (0,1)
+table retro_outcome check blueprint_version IS NULL OR blueprint_version >= 0
+table retro_outcome check complete IN (0,1)
+table retro_outcome check cost_partial_steps IS NULL OR cost_partial_steps >= 0
+table retro_outcome check cost_steps IS NULL OR cost_steps >= 0
+table retro_outcome check cost_unknown_steps IS NULL OR cost_unknown_steps >= 0
+table retro_outcome check escalations IS NULL OR escalations >= 0
+table retro_outcome check goal_version IS NULL OR goal_version >= 0
+table retro_outcome check length(outcome_kind) <= 48
+table retro_outcome check qa_rounds IS NULL OR qa_rounds >= 0
+table retro_outcome check retries IS NULL OR retries >= 0
+table retro_outcome check review_rounds IS NULL OR review_rounds >= 0
+table retro_outcome check security_rounds IS NULL OR security_rounds >= 0
+table retro_outcome check source IN ('recorder','backfill')
+table retro_outcome check splits_done IS NULL OR splits_done >= 0
+table retro_outcome check tasks_done IS NULL OR tasks_done >= 0
+table retro_outcome check tasks_failed IS NULL OR tasks_failed >= 0
+table retro_outcome check total_failed_gates IS NULL OR total_failed_gates >= 0
+table retro_outcome check unverified_steps IS NULL OR unverified_steps >= 0
+table retro_outcome check verified_fail IS NULL OR verified_fail >= 0
+table retro_outcome check verified_pass IS NULL OR verified_pass >= 0
+table retro_outcome check wall_ms IS NULL OR wall_ms >= 0
+table retro_outcome column 0 id INTEGER notnull=0 default="" pk=1
+table retro_outcome column 1 component_root TEXT notnull=1 default="" pk=0
+table retro_outcome column 10 goal_version INTEGER notnull=0 default="" pk=0
+table retro_outcome column 11 wall_ms INTEGER notnull=0 default="" pk=0
+table retro_outcome column 12 cost_usd_floor REAL notnull=0 default="" pk=0
+table retro_outcome column 13 cost_steps INTEGER notnull=0 default="" pk=0
+table retro_outcome column 14 cost_partial_steps INTEGER notnull=0 default="" pk=0
+table retro_outcome column 15 cost_unknown_steps INTEGER notnull=0 default="" pk=0
+table retro_outcome column 16 tasks_done INTEGER notnull=0 default="" pk=0
+table retro_outcome column 17 tasks_failed INTEGER notnull=0 default="" pk=0
+table retro_outcome column 18 retries INTEGER notnull=0 default="" pk=0
+table retro_outcome column 19 review_rounds INTEGER notnull=0 default="" pk=0
+table retro_outcome column 2 loop_slug TEXT notnull=1 default="" pk=0
+table retro_outcome column 20 security_rounds INTEGER notnull=0 default="" pk=0
+table retro_outcome column 21 qa_rounds INTEGER notnull=0 default="" pk=0
+table retro_outcome column 22 total_failed_gates INTEGER notnull=0 default="" pk=0
+table retro_outcome column 23 splits_done INTEGER notnull=0 default="" pk=0
+table retro_outcome column 24 escalations INTEGER notnull=0 default="" pk=0
+table retro_outcome column 25 unverified_steps INTEGER notnull=0 default="" pk=0
+table retro_outcome column 26 verified_pass INTEGER notnull=0 default="" pk=0
+table retro_outcome column 27 verified_fail INTEGER notnull=0 default="" pk=0
+table retro_outcome column 28 complete INTEGER notnull=1 default="1" pk=0
+table retro_outcome column 29 source TEXT notnull=1 default="'recorder'" pk=0
+table retro_outcome column 3 terminal_key TEXT notnull=1 default="" pk=0
+table retro_outcome column 30 recorded_at TEXT notnull=1 default="" pk=0
+table retro_outcome column 4 outcome_kind TEXT notnull=1 default="" pk=0
+table retro_outcome column 5 blueprint_id TEXT notnull=1 default="''" pk=0
+table retro_outcome column 6 blueprint_version INTEGER notnull=0 default="" pk=0
+table retro_outcome column 7 started_by_kind TEXT notnull=1 default="''" pk=0
+table retro_outcome column 8 attended INTEGER notnull=0 default="" pk=0
+table retro_outcome column 9 goal_id TEXT notnull=1 default="''" pk=0
+table retro_template check origin IN ('system','user')
+table retro_template column 0 kind TEXT notnull=0 default="" pk=1
+table retro_template column 1 version INTEGER notnull=1 default="" pk=0
+table retro_template column 2 template TEXT notnull=1 default="" pk=0
+table retro_template column 3 origin TEXT notnull=1 default="'system'" pk=0
+table retro_template column 4 created_at TEXT notnull=1 default="" pk=0
+table retro_template column 5 updated_at TEXT notnull=1 default="" pk=0
+table review check by_kind = 'user'
+table review check decision IN ('approved','rejected','parked')
+table review check subject_kind IN ('goal','brief','task')
+table review column 0 id INTEGER notnull=0 default="" pk=1
+table review column 1 subject_kind TEXT notnull=1 default="" pk=0
+table review column 2 subject_id TEXT notnull=1 default="" pk=0
+table review column 3 subject_version INTEGER notnull=1 default="" pk=0
+table review column 4 decision TEXT notnull=1 default="" pk=0
+table review column 5 by_kind TEXT notnull=1 default="" pk=0
+table review column 6 by_id TEXT notnull=1 default="" pk=0
+table review column 7 reason TEXT notnull=1 default="''" pk=0
+table review column 8 decided_at TEXT notnull=1 default="" pk=0
+table roadmap_change check actor_kind IN ('user','cli','system')
+table roadmap_change check length(actor_id) BETWEEN 1 AND 256
+table roadmap_change check length(summary) BETWEEN 1 AND 1024
+table roadmap_change check op IN ('add','update','cancel','estimate','priority','ideate','plan','materialize','transition')
+table roadmap_change column 0 id INTEGER notnull=0 default="" pk=1
+table roadmap_change column 1 item_id INTEGER notnull=1 default="" pk=0
+table roadmap_change column 2 op TEXT notnull=1 default="" pk=0
+table roadmap_change column 3 summary TEXT notnull=1 default="" pk=0
+table roadmap_change column 4 actor_kind TEXT notnull=1 default="" pk=0
+table roadmap_change column 5 actor_id TEXT notnull=1 default="" pk=0
+table roadmap_change column 6 occurred_at TEXT notnull=1 default="" pk=0
+table roadmap_dependency check created_by_kind IN ('user','agent','trigger')
+table roadmap_dependency check item_id <> depends_on_id
+table roadmap_dependency column 0 item_id INTEGER notnull=1 default="" pk=1
+table roadmap_dependency column 1 depends_on_id INTEGER notnull=1 default="" pk=2
+table roadmap_dependency column 2 created_at TEXT notnull=1 default="" pk=0
+table roadmap_dependency column 3 created_by_kind TEXT notnull=1 default="" pk=0
+table roadmap_dependency column 4 created_by_id TEXT notnull=1 default="" pk=0
+table roadmap_dependency fk roadmap_dependency(depends_on_id) -> roadmap_item(id) on_delete=NO ACTION on_update=NO ACTION
+table roadmap_dependency fk roadmap_dependency(item_id) -> roadmap_item(id) on_delete=NO ACTION on_update=NO ACTION
+table roadmap_item check (estimate_min IS NULL AND estimate_max IS NULL AND estimate_basis IS NULL) OR (estimate_min IS NOT NULL AND estimate_max IS NOT NULL AND estimate_basis IS NOT NULL AND estimate_basis <> '' AND estimate_min <= estimate_max)
+table roadmap_item check autonomy_cap IN ('grant','none','outward')
+table roadmap_item check priority_state <> 'unknown' OR priority_label IS NULL
+table roadmap_item check priority_state IN ('known','assumed','unknown')
+table roadmap_item check provenance IN ('authored','triggered','triaged','intake')
+table roadmap_item check status IN ('idea','ideating','brief-agreed','planned','ready','running','done','cancelled')
+table roadmap_item column 0 id INTEGER notnull=0 default="" pk=1
+table roadmap_item column 1 component_root TEXT notnull=1 default="" pk=0
+table roadmap_item column 10 provenance TEXT notnull=1 default="" pk=0
+table roadmap_item column 11 brief_path TEXT notnull=0 default="" pk=0
+table roadmap_item column 12 plan_path TEXT notnull=0 default="" pk=0
+table roadmap_item column 13 loop_slug TEXT notnull=0 default="" pk=0
+table roadmap_item column 14 created_at TEXT notnull=1 default="" pk=0
+table roadmap_item column 15 updated_at TEXT notnull=1 default="" pk=0
+table roadmap_item column 16 autonomy_cap TEXT notnull=1 default="'grant'" pk=0
+table roadmap_item column 2 title TEXT notnull=1 default="" pk=0
+table roadmap_item column 3 epic TEXT notnull=0 default="" pk=0
+table roadmap_item column 4 status TEXT notnull=1 default="" pk=0
+table roadmap_item column 5 priority_state TEXT notnull=1 default="'unknown'" pk=0
+table roadmap_item column 6 priority_label TEXT notnull=0 default="" pk=0
+table roadmap_item column 7 estimate_min INTEGER notnull=0 default="" pk=0
+table roadmap_item column 8 estimate_max INTEGER notnull=0 default="" pk=0
+table roadmap_item column 9 estimate_basis TEXT notnull=0 default="" pk=0
+table roadmap_item fk roadmap_item(component_root) -> component_root(component_root) on_delete=NO ACTION on_update=NO ACTION
+table roadmap_item fk roadmap_item(component_root) -> loop(component_root) on_delete=NO ACTION on_update=NO ACTION
+table roadmap_item fk roadmap_item(loop_slug) -> loop(slug) on_delete=NO ACTION on_update=NO ACTION
+table route check capabilities IS NULL OR (json_valid(capabilities) AND json_type(capabilities) = 'array')
+table route check context_window >= 0
+table route check reasoning_efforts IS NULL OR (json_valid(reasoning_efforts) AND json_type(reasoning_efforts) = 'array')
+table route check wire_capabilities IS NULL OR (json_valid(wire_capabilities) AND json_type(wire_capabilities) = 'array')
+table route column 0 id TEXT notnull=0 default="" pk=1
+table route column 1 provider TEXT notnull=1 default="" pk=0
+table route column 10 openai_endpoint TEXT notnull=0 default="" pk=0
+table route column 11 context_window INTEGER notnull=1 default="0" pk=0
+table route column 12 display_name TEXT notnull=1 default="''" pk=0
+table route column 13 display_description TEXT notnull=1 default="''" pk=0
+table route column 14 icon TEXT notnull=1 default="''" pk=0
+table route column 15 capabilities TEXT notnull=0 default="" pk=0
+table route column 16 reasoning_efforts TEXT notnull=0 default="" pk=0
+table route column 17 wire_capabilities TEXT notnull=0 default="" pk=0
+table route column 18 no_price INTEGER notnull=1 default="0" pk=0
+table route column 19 audio_api TEXT notnull=0 default="" pk=0
+table route column 2 model TEXT notnull=1 default="" pk=0
+table route column 3 base_url TEXT notnull=0 default="" pk=0
+table route column 4 max_output_tokens INTEGER notnull=1 default="0" pk=0
+table route column 5 prices TEXT notnull=0 default="" pk=0
+table route column 6 extra_body TEXT notnull=0 default="" pk=0
+table route column 7 created_at TEXT notnull=1 default="" pk=0
+table route column 8 updated_at TEXT notnull=1 default="" pk=0
+table route column 9 reasoning_effort TEXT notnull=0 default="" pk=0
+table route_probe check state IN ('verified','contradicted')
+table route_probe column 0 route_id TEXT notnull=1 default="" pk=1
+table route_probe column 1 capability TEXT notnull=1 default="" pk=2
+table route_probe column 2 state TEXT notnull=1 default="" pk=0
+table route_probe column 3 detail TEXT notnull=1 default="''" pk=0
+table route_probe column 4 probed_model TEXT notnull=1 default="" pk=0
+table route_probe column 5 probed_at TEXT notnull=1 default="" pk=0
+table scaffold_template check json_valid(files)
+table scaffold_template check json_valid(stack_tags)
+table scaffold_template check origin IN ('system','user')
+table scaffold_template check slug = lower(slug) AND slug NOT LIKE '% %'
+table scaffold_template check version >= 1
+table scaffold_template column 0 id TEXT notnull=0 default="" pk=1
+table scaffold_template column 1 slug TEXT notnull=1 default="" pk=0
+table scaffold_template column 2 version INTEGER notnull=1 default="" pk=0
+table scaffold_template column 3 origin TEXT notnull=1 default="" pk=0
+table scaffold_template column 4 title TEXT notnull=1 default="" pk=0
+table scaffold_template column 5 description TEXT notnull=1 default="''" pk=0
+table scaffold_template column 6 stack_tags TEXT notnull=1 default="'[]'" pk=0
+table scaffold_template column 7 files TEXT notnull=1 default="" pk=0
+table scaffold_template column 8 created_at TEXT notnull=1 default="" pk=0
+table scaffold_template column 9 updated_at TEXT notnull=1 default="" pk=0
+table scaffold_template_revision check actor_kind IN ('user','agent','trigger','system')
+table scaffold_template_revision check json_valid(files)
+table scaffold_template_revision check origin IN ('system','user')
+table scaffold_template_revision check version >= 1
+table scaffold_template_revision column 0 id INTEGER notnull=0 default="" pk=1
+table scaffold_template_revision column 1 slug TEXT notnull=1 default="" pk=0
+table scaffold_template_revision column 2 version INTEGER notnull=1 default="" pk=0
+table scaffold_template_revision column 3 files TEXT notnull=1 default="" pk=0
+table scaffold_template_revision column 4 actor_kind TEXT notnull=1 default="" pk=0
+table scaffold_template_revision column 5 actor_id TEXT notnull=1 default="" pk=0
+table scaffold_template_revision column 6 origin TEXT notnull=1 default="" pk=0
+table scaffold_template_revision column 7 at TEXT notnull=1 default="" pk=0
+table scheduler_decision check actor_kind IN ('user','agent','trigger','scheduler')
+table scheduler_decision check decision IN ('started','deferred','skipped','refused','needs-you','lost', 'enabled','disabled','paused','resumed','settings')
+table scheduler_decision check subject_kind IN ('queue','roadmap','root','daemon')
+table scheduler_decision column 0 id INTEGER notnull=0 default="" pk=1
+table scheduler_decision column 1 at TEXT notnull=1 default="" pk=0
+table scheduler_decision column 10 actor_id TEXT notnull=1 default="''" pk=0
+table scheduler_decision column 11 loop_slug TEXT notnull=1 default="''" pk=0
+table scheduler_decision column 2 component_root TEXT notnull=1 default="''" pk=0
+table scheduler_decision column 3 subject_kind TEXT notnull=1 default="" pk=0
+table scheduler_decision column 4 subject_id INTEGER notnull=1 default="0" pk=0
+table scheduler_decision column 5 decision TEXT notnull=1 default="" pk=0
+table scheduler_decision column 6 reason TEXT notnull=1 default="''" pk=0
+table scheduler_decision column 7 summary TEXT notnull=1 default="" pk=0
+table scheduler_decision column 8 grant_revision TEXT notnull=1 default="''" pk=0
+table scheduler_decision column 9 actor_kind TEXT notnull=1 default="" pk=0
+table scheduler_root check (window_start IS NULL) = (window_end IS NULL)
+table scheduler_root check enabled IN (0,1)
+table scheduler_root check min_priority IN ('known','assumed')
+table scheduler_root check updated_by_kind IN ('user','agent','trigger')
+table scheduler_root check window_start IS NULL OR zone IS NOT NULL
+table scheduler_root column 0 component_root TEXT notnull=0 default="" pk=1
+table scheduler_root column 1 enabled INTEGER notnull=1 default="0" pk=0
+table scheduler_root column 10 created_at TEXT notnull=1 default="" pk=0
+table scheduler_root column 11 updated_at TEXT notnull=1 default="" pk=0
+table scheduler_root column 12 updated_by_kind TEXT notnull=1 default="" pk=0
+table scheduler_root column 13 updated_by_id TEXT notnull=1 default="" pk=0
+table scheduler_root column 2 blueprint TEXT notnull=1 default="" pk=0
+table scheduler_root column 3 tech TEXT notnull=0 default="" pk=0
+table scheduler_root column 4 with_json TEXT notnull=0 default="" pk=0
+table scheduler_root column 5 window_start TEXT notnull=0 default="" pk=0
+table scheduler_root column 6 window_end TEXT notnull=0 default="" pk=0
+table scheduler_root column 7 window_days TEXT notnull=0 default="" pk=0
+table scheduler_root column 8 zone TEXT notnull=0 default="" pk=0
+table scheduler_root column 9 min_priority TEXT notnull=1 default="'assumed'" pk=0
+table scheduler_root fk scheduler_root(component_root) -> component_root(component_root) on_delete=NO ACTION on_update=NO ACTION
+table scheduler_start check outcome IS NULL OR outcome IN ('started','refused','lost')
+table scheduler_start check subject_kind IN ('queue','roadmap')
+table scheduler_start column 0 subject_kind TEXT notnull=1 default="" pk=1
+table scheduler_start column 1 subject_id INTEGER notnull=1 default="" pk=2
+table scheduler_start column 2 decision_id INTEGER notnull=1 default="" pk=0
+table scheduler_start column 3 component_root TEXT notnull=1 default="" pk=0
+table scheduler_start column 4 claimed_at TEXT notnull=1 default="" pk=0
+table scheduler_start column 5 loop_slug TEXT notnull=0 default="" pk=0
+table scheduler_start column 6 outcome TEXT notnull=0 default="" pk=0
+table scheduler_start column 7 outcome_at TEXT notnull=0 default="" pk=0
+table scheduler_state check enabled IN (0,1)
+table scheduler_state check id = 1
+table scheduler_state check paused IN (0,1)
+table scheduler_state check updated_by_kind IN ('user','agent','trigger')
+table scheduler_state column 0 id INTEGER notnull=0 default="" pk=1
+table scheduler_state column 1 enabled INTEGER notnull=1 default="0" pk=0
+table scheduler_state column 2 paused INTEGER notnull=1 default="0" pk=0
+table scheduler_state column 3 paused_reason TEXT notnull=0 default="" pk=0
+table scheduler_state column 4 updated_at TEXT notnull=1 default="" pk=0
+table scheduler_state column 5 updated_by_kind TEXT notnull=1 default="" pk=0
+table scheduler_state column 6 updated_by_id TEXT notnull=1 default="" pk=0
+table secret_ref check source_kind IN ('daemon-env','key-file','store')
+table secret_ref column 0 id TEXT notnull=0 default="" pk=1
+table secret_ref column 1 name TEXT notnull=1 default="" pk=0
+table secret_ref column 2 description TEXT notnull=1 default="''" pk=0
+table secret_ref column 3 source_kind TEXT notnull=1 default="" pk=0
+table secret_ref column 4 source TEXT notnull=1 default="" pk=0
+table secret_ref column 5 inject_as TEXT notnull=1 default="" pk=0
+table secret_ref column 6 origin TEXT notnull=1 default="'user'" pk=0
+table secret_ref column 7 created_at TEXT notnull=1 default="" pk=0
+table secret_ref column 8 updated_at TEXT notnull=1 default="" pk=0
+table secret_ref column 9 archived_at TEXT notnull=0 default="" pk=0
+table seed_event check length(actor) BETWEEN 1 AND 256
+table seed_event check length(reason) <= 512
+table seed_event check op IN ('apply','update','skip','restore','retire','adopt')
+table seed_event column 0 id INTEGER notnull=0 default="" pk=1
+table seed_event column 1 set_id TEXT notnull=1 default="" pk=0
+table seed_event column 2 record_key TEXT notnull=1 default="" pk=0
+table seed_event column 3 op TEXT notnull=1 default="" pk=0
+table seed_event column 4 from_version INTEGER notnull=0 default="" pk=0
+table seed_event column 5 to_version INTEGER notnull=0 default="" pk=0
+table seed_event column 6 reason TEXT notnull=1 default="" pk=0
+table seed_event column 7 actor TEXT notnull=1 default="" pk=0
+table seed_event column 8 occurred_at TEXT notnull=1 default="" pk=0
+table seed_ledger check applied_version >= 1
+table seed_ledger check length(applied_by) BETWEEN 1 AND 256
+table seed_ledger check length(applied_hash) = 64
+table seed_ledger check length(record_key) BETWEEN 1 AND 128
+table seed_ledger check length(set_id) BETWEEN 3 AND 64
+table seed_ledger check state IN ('applied','removed','diverged','retired','failed')
+table seed_ledger column 0 set_id TEXT notnull=1 default="" pk=1
+table seed_ledger column 1 record_key TEXT notnull=1 default="" pk=2
+table seed_ledger column 2 applied_version INTEGER notnull=1 default="" pk=0
+table seed_ledger column 3 applied_hash TEXT notnull=1 default="" pk=0
+table seed_ledger column 4 state TEXT notnull=1 default="" pk=0
+table seed_ledger column 5 applied_at TEXT notnull=1 default="" pk=0
+table seed_ledger column 6 applied_by TEXT notnull=1 default="" pk=0
+table setting check length(key) BETWEEN 3 AND 128 AND key NOT GLOB '*[^A-Za-z0-9.]*' AND key LIKE '%.%' AND key NOT LIKE '.%' AND key NOT LIKE '%.' AND key NOT LIKE '%..%'
+table setting check length(updated_by) BETWEEN 1 AND 256
+table setting check length(value) <= 4096
+table setting column 0 key TEXT notnull=0 default="" pk=1
+table setting column 1 value TEXT notnull=1 default="" pk=0
+table setting column 2 updated_at TEXT notnull=1 default="" pk=0
+table setting column 3 updated_by TEXT notnull=1 default="" pk=0
+table setting_event check (op = 'set' AND new_value IS NOT NULL) OR (op = 'unset' AND new_value IS NULL)
+table setting_event check length(actor) BETWEEN 1 AND 256
+table setting_event check op IN ('set','unset')
+table setting_event check sensitive IN (0,1)
+table setting_event check shadowed_by IS NULL OR shadowed_by = 'env'
+table setting_event column 0 id INTEGER notnull=0 default="" pk=1
+table setting_event column 1 key TEXT notnull=1 default="" pk=0
+table setting_event column 2 op TEXT notnull=1 default="" pk=0
+table setting_event column 3 old_value TEXT notnull=0 default="" pk=0
+table setting_event column 4 new_value TEXT notnull=0 default="" pk=0
+table setting_event column 5 sensitive INTEGER notnull=1 default="" pk=0
+table setting_event column 6 shadowed_by TEXT notnull=0 default="" pk=0
+table setting_event column 7 actor TEXT notnull=1 default="" pk=0
+table setting_event column 8 occurred_at TEXT notnull=1 default="" pk=0
+table step check cost_state IN ('known','partial','unknown')
+table step check status IN ('running','suspended','orphaned','done')
+table step check thinking_dropped IS NULL OR thinking_dropped >= 0
+table step column 0 id INTEGER notnull=0 default="" pk=1
+table step column 1 loop_slug TEXT notnull=1 default="" pk=0
+table step column 10 ended_at TEXT notnull=0 default="" pk=0
+table step column 11 agent_ms INTEGER notnull=0 default="" pk=0
+table step column 12 wall_ms INTEGER notnull=0 default="" pk=0
+table step column 13 outcome TEXT notnull=0 default="" pk=0
+table step column 14 ended_by TEXT notnull=1 default="'open'" pk=0
+table step column 15 source TEXT notnull=1 default="'live'" pk=0
+table step column 16 cost_usd REAL notnull=0 default="" pk=0
+table step column 17 cost_state TEXT notnull=1 default="'unknown'" pk=0
+table step column 18 cost_detail TEXT notnull=0 default="" pk=0
+table step column 19 context_manifest TEXT notnull=0 default="" pk=0
+table step column 2 component_root TEXT notnull=1 default="" pk=0
+table step column 20 pause_reason TEXT notnull=0 default="" pk=0
+table step column 21 thinking_dropped INTEGER notnull=0 default="" pk=0
+table step column 22 run_seq INTEGER notnull=0 default="" pk=0
+table step column 3 taskid TEXT notnull=0 default="" pk=0
+table step column 4 phase TEXT notnull=1 default="" pk=0
+table step column 5 agent TEXT notnull=1 default="" pk=0
+table step column 6 attempt INTEGER notnull=1 default="1" pk=0
+table step column 7 status TEXT notnull=1 default="" pk=0
+table step column 8 started_at TEXT notnull=1 default="" pk=0
+table step column 9 agent_returned_at TEXT notnull=0 default="" pk=0
+table step fk step(component_root) -> loop(component_root) on_delete=CASCADE on_update=NO ACTION
+table step fk step(loop_slug) -> loop(slug) on_delete=CASCADE on_update=NO ACTION
+table step_command_activity column 0 id INTEGER notnull=0 default="" pk=1
+table step_command_activity column 1 step_id INTEGER notnull=1 default="" pk=0
+table step_command_activity column 2 command TEXT notnull=1 default="" pk=0
+table step_command_activity column 3 exit_code INTEGER notnull=0 default="" pk=0
+table step_command_activity column 4 wall_ms INTEGER notnull=1 default="" pk=0
+table step_command_activity column 5 occurred_at TEXT notnull=1 default="" pk=0
+table step_command_activity fk step_command_activity(step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table step_compaction check cost_state IN ('known','partial','unknown')
+table step_compaction column 0 id INTEGER notnull=0 default="" pk=1
+table step_compaction column 1 step_id INTEGER notnull=1 default="" pk=0
+table step_compaction column 10 cost_state TEXT notnull=1 default="'unknown'" pk=0
+table step_compaction column 11 occurred_at TEXT notnull=1 default="" pk=0
+table step_compaction column 2 start_idx INTEGER notnull=1 default="" pk=0
+table step_compaction column 3 end_idx INTEGER notnull=1 default="" pk=0
+table step_compaction column 4 estimate_before INTEGER notnull=1 default="" pk=0
+table step_compaction column 5 estimate_after INTEGER notnull=1 default="" pk=0
+table step_compaction column 6 summary_len INTEGER notnull=1 default="" pk=0
+table step_compaction column 7 input_tokens INTEGER notnull=0 default="" pk=0
+table step_compaction column 8 output_tokens INTEGER notnull=0 default="" pk=0
+table step_compaction column 9 cost_usd REAL notnull=0 default="" pk=0
+table step_compaction fk step_compaction(step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table step_environment column 0 id INTEGER notnull=0 default="" pk=1
+table step_environment column 1 step_id INTEGER notnull=1 default="" pk=0
+table step_environment column 10 resolved_at TEXT notnull=1 default="" pk=0
+table step_environment column 2 environment_id TEXT notnull=0 default="" pk=0
+table step_environment column 3 backend TEXT notnull=0 default="" pk=0
+table step_environment column 4 downgraded INTEGER notnull=1 default="0" pk=0
+table step_environment column 5 downgrade_reason TEXT notnull=0 default="" pk=0
+table step_environment column 6 refusal_kind TEXT notnull=0 default="" pk=0
+table step_environment column 7 refusal TEXT notnull=0 default="" pk=0
+table step_environment column 8 var_names TEXT notnull=1 default="'[]'" pk=0
+table step_environment column 9 secret_refs TEXT notnull=1 default="'[]'" pk=0
+table step_file_activity check action IN ('read','write')
+table step_file_activity column 0 id INTEGER notnull=0 default="" pk=1
+table step_file_activity column 1 step_id INTEGER notnull=1 default="" pk=0
+table step_file_activity column 2 path TEXT notnull=1 default="" pk=0
+table step_file_activity column 3 action TEXT notnull=1 default="" pk=0
+table step_file_activity column 4 lines_added INTEGER notnull=0 default="" pk=0
+table step_file_activity column 5 lines_removed INTEGER notnull=0 default="" pk=0
+table step_file_activity column 6 occurred_at TEXT notnull=1 default="" pk=0
+table step_file_activity fk step_file_activity(step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table step_message column 0 id INTEGER notnull=0 default="" pk=1
+table step_message column 1 step_id INTEGER notnull=1 default="" pk=0
+table step_message column 2 seq INTEGER notnull=1 default="" pk=0
+table step_message column 3 format_version INTEGER notnull=1 default="" pk=0
+table step_message column 4 role TEXT notnull=1 default="" pk=0
+table step_message column 5 content TEXT notnull=1 default="" pk=0
+table step_message column 6 created_at TEXT notnull=1 default="" pk=0
+table step_message column 7 provenance TEXT notnull=1 default="''" pk=0
+table step_message fk step_message(step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table step_recovery column 0 step_id INTEGER notnull=0 default="" pk=1
+table step_recovery column 1 case_name TEXT notnull=1 default="" pk=0
+table step_recovery column 2 reissued INTEGER notnull=1 default="0" pk=0
+table step_recovery column 3 reason TEXT notnull=1 default="''" pk=0
+table step_recovery column 4 updated_at TEXT notnull=1 default="" pk=0
+table step_recovery column 5 failure_json TEXT notnull=0 default="" pk=0
+table step_recovery column 6 prior_cost_json TEXT notnull=0 default="" pk=0
+table step_recovery column 7 reissue_cost_json TEXT notnull=0 default="" pk=0
+table step_recovery fk step_recovery(step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table step_steer check (state = 'pending' AND delivered_at IS NULL AND delivered_iteration IS NULL) OR (state = 'cancelled' AND delivered_at IS NULL AND delivered_iteration IS NULL) OR (state = 'delivered' AND delivered_at IS NOT NULL AND delivered_iteration IS NOT NULL)
+table step_steer check source IN ('user','template','automation','blueprint')
+table step_steer check state IN ('pending','delivered','cancelled')
+table step_steer check text IS NOT NULL OR route IS NOT NULL OR reasoning_effort IS NOT NULL
+table step_steer column 0 id INTEGER notnull=0 default="" pk=1
+table step_steer column 1 step_id INTEGER notnull=1 default="" pk=0
+table step_steer column 10 skills TEXT notnull=0 default="" pk=0
+table step_steer column 11 attachments TEXT notnull=0 default="" pk=0
+table step_steer column 2 text TEXT notnull=0 default="" pk=0
+table step_steer column 3 route TEXT notnull=0 default="" pk=0
+table step_steer column 4 reasoning_effort TEXT notnull=0 default="" pk=0
+table step_steer column 5 state TEXT notnull=1 default="'pending'" pk=0
+table step_steer column 6 created_at TEXT notnull=1 default="" pk=0
+table step_steer column 7 delivered_at TEXT notnull=0 default="" pk=0
+table step_steer column 8 delivered_iteration INTEGER notnull=0 default="" pk=0
+table step_steer column 9 source TEXT notnull=1 default="'user'" pk=0
+table step_steer fk step_steer(step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table step_summary column 0 step_id INTEGER notnull=0 default="" pk=1
+table step_summary column 1 loop_id TEXT notnull=1 default="" pk=0
+table step_summary column 10 spend_state TEXT notnull=1 default="'unknown'" pk=0
+table step_summary column 11 spend_usd REAL notnull=0 default="" pk=0
+table step_summary column 12 first_event INTEGER notnull=1 default="0" pk=0
+table step_summary column 13 last_event INTEGER notnull=1 default="0" pk=0
+table step_summary column 14 context_tokens INTEGER notnull=1 default="0" pk=0
+table step_summary column 15 route TEXT notnull=1 default="''" pk=0
+table step_summary column 2 lane TEXT notnull=1 default="''" pk=0
+table step_summary column 3 turns INTEGER notnull=1 default="0" pk=0
+table step_summary column 4 tool_calls INTEGER notnull=1 default="0" pk=0
+table step_summary column 5 tool_errors INTEGER notnull=1 default="0" pk=0
+table step_summary column 6 input_tokens INTEGER notnull=1 default="0" pk=0
+table step_summary column 7 output_tokens INTEGER notnull=1 default="0" pk=0
+table step_summary column 8 reasoning_tokens INTEGER notnull=1 default="0" pk=0
+table step_summary column 9 wall_ms INTEGER notnull=1 default="0" pk=0
+table step_turn check category IN ('system_prompt','injected_context','assistant_output','tool_result')
+table step_turn check cost_state IN ('known','partial','unknown')
+table step_turn column 0 id INTEGER notnull=0 default="" pk=1
+table step_turn column 1 step_id INTEGER notnull=1 default="" pk=0
+table step_turn column 10 reasoning_tokens INTEGER notnull=0 default="" pk=0
+table step_turn column 11 cost_usd REAL notnull=0 default="" pk=0
+table step_turn column 12 cost_state TEXT notnull=1 default="'unknown'" pk=0
+table step_turn column 13 route TEXT notnull=1 default="" pk=0
+table step_turn column 14 category TEXT notnull=1 default="" pk=0
+table step_turn column 2 iteration INTEGER notnull=1 default="" pk=0
+table step_turn column 3 started_at TEXT notnull=1 default="" pk=0
+table step_turn column 4 ended_at TEXT notnull=1 default="" pk=0
+table step_turn column 5 wall_ms INTEGER notnull=1 default="" pk=0
+table step_turn column 6 input_tokens INTEGER notnull=0 default="" pk=0
+table step_turn column 7 output_tokens INTEGER notnull=0 default="" pk=0
+table step_turn column 8 cache_read_tokens INTEGER notnull=0 default="" pk=0
+table step_turn column 9 cache_write_tokens INTEGER notnull=0 default="" pk=0
+table step_turn fk step_turn(step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table task check approval_state IN ('none','pending','approved','rejected')
+table task check assignee_kind IS NULL OR assignee_kind IN ('agent','user')
+table task check manual = 1 OR approval_state = 'none'
+table task check manual = 1 OR loop_slug IS NOT NULL
+table task check manual IN (0,1)
+table task check type IS NULL OR type IN ('bug','feature','chore','refactor','investigation')
+table task column 0 id TEXT notnull=0 default="" pk=1
+table task column 1 loop_slug TEXT notnull=0 default="" pk=0
+table task column 10 issue TEXT notnull=0 default="" pk=0
+table task column 11 pr TEXT notnull=0 default="" pk=0
+table task column 12 branch TEXT notnull=0 default="" pk=0
+table task column 13 retries INTEGER notnull=1 default="0" pk=0
+table task column 14 security_rounds INTEGER notnull=1 default="0" pk=0
+table task column 15 review_rounds INTEGER notnull=1 default="0" pk=0
+table task column 16 est_changed_lines INTEGER notnull=0 default="" pk=0
+table task column 17 success_summary TEXT notnull=0 default="" pk=0
+table task column 18 last_evidence TEXT notnull=0 default="" pk=0
+table task column 19 started_at TEXT notnull=0 default="" pk=0
+table task column 2 component_root TEXT notnull=0 default="" pk=0
+table task column 20 created_at TEXT notnull=0 default="" pk=0
+table task column 21 updated_at TEXT notnull=1 default="" pk=0
+table task column 22 manual INTEGER notnull=1 default="0" pk=0
+table task column 23 assignee_kind TEXT notnull=0 default="" pk=0
+table task column 24 assignee TEXT notnull=0 default="" pk=0
+table task column 25 component_id TEXT notnull=0 default="" pk=0
+table task column 26 goal_id TEXT notnull=0 default="" pk=0
+table task column 27 parent_task_id TEXT notnull=0 default="" pk=0
+table task column 28 type TEXT notnull=0 default="" pk=0
+table task column 29 approval_state TEXT notnull=1 default="'none'" pk=0
+table task column 3 taskid TEXT notnull=0 default="" pk=0
+table task column 30 created_by_kind TEXT notnull=1 default="'agent'" pk=0
+table task column 31 created_by_id TEXT notnull=1 default="''" pk=0
+table task column 32 source_step INTEGER notnull=0 default="" pk=0
+table task column 4 ord INTEGER notnull=1 default="0" pk=0
+table task column 5 title TEXT notnull=1 default="" pk=0
+table task column 6 tech TEXT notnull=1 default="''" pk=0
+table task column 7 engineer TEXT notnull=1 default="''" pk=0
+table task column 8 depends_on TEXT notnull=1 default="'[]'" pk=0
+table task column 9 status TEXT notnull=1 default="" pk=0
+table task fk task(component_id) -> component(id) on_delete=NO ACTION on_update=NO ACTION
+table task fk task(component_root) -> loop(component_root) on_delete=CASCADE on_update=NO ACTION
+table task fk task(loop_slug) -> loop(slug) on_delete=CASCADE on_update=NO ACTION
+table task_loop check role IN ('owner','worker')
+table task_loop column 0 task_id TEXT notnull=1 default="" pk=1
+table task_loop column 1 loop_slug TEXT notnull=1 default="" pk=2
+table task_loop column 2 component_root TEXT notnull=1 default="" pk=3
+table task_loop column 3 role TEXT notnull=1 default="" pk=0
+table task_loop fk task_loop(component_root) -> loop(component_root) on_delete=CASCADE on_update=NO ACTION
+table task_loop fk task_loop(loop_slug) -> loop(slug) on_delete=CASCADE on_update=NO ACTION
+table task_loop fk task_loop(task_id) -> task(id) on_delete=CASCADE on_update=NO ACTION
+table tool check conditional IN (0,1)
+table tool check json_valid(aliases) AND json_type(aliases) = 'array'
+table tool check json_valid(capabilities) AND json_type(capabilities) = 'array'
+table tool check json_valid(governed) AND json_type(governed) = 'array'
+table tool check json_valid(schema)
+table tool check length(description) BETWEEN 1 AND 4096
+table tool check length(family) BETWEEN 1 AND 32
+table tool check length(name) BETWEEN 1 AND 64 AND name NOT GLOB '*[^a-z0-9_]*'
+table tool check length(notes) <= 200
+table tool check length(schema_hash) = 64
+table tool check origin IN ('system')
+table tool check rerun_class IN ('safe','detectable','unsafe')
+table tool check version >= 1
+table tool column 0 name TEXT notnull=0 default="" pk=1
+table tool column 1 family TEXT notnull=1 default="" pk=0
+table tool column 10 conditional INTEGER notnull=1 default="0" pk=0
+table tool column 11 notes TEXT notnull=1 default="''" pk=0
+table tool column 12 version INTEGER notnull=1 default="" pk=0
+table tool column 13 origin TEXT notnull=1 default="'system'" pk=0
+table tool column 14 created_at TEXT notnull=1 default="" pk=0
+table tool column 15 updated_at TEXT notnull=1 default="" pk=0
+table tool column 2 description TEXT notnull=1 default="" pk=0
+table tool column 3 schema TEXT notnull=1 default="" pk=0
+table tool column 4 schema_hash TEXT notnull=1 default="" pk=0
+table tool column 5 rerun_class TEXT notnull=1 default="" pk=0
+table tool column 6 capabilities TEXT notnull=1 default="" pk=0
+table tool column 7 governed TEXT notnull=1 default="'[]'" pk=0
+table tool column 8 twin TEXT notnull=1 default="''" pk=0
+table tool column 9 aliases TEXT notnull=1 default="'[]'" pk=0
+table tool_receipt column 0 id INTEGER notnull=0 default="" pk=1
+table tool_receipt column 1 step_id INTEGER notnull=1 default="" pk=0
+table tool_receipt column 2 tool_use_id TEXT notnull=1 default="" pk=0
+table tool_receipt column 3 tool TEXT notnull=1 default="" pk=0
+table tool_receipt column 4 arg_digest TEXT notnull=1 default="" pk=0
+table tool_receipt column 5 started_at TEXT notnull=1 default="" pk=0
+table tool_receipt column 6 completed_at TEXT notnull=0 default="" pk=0
+table tool_receipt column 7 result TEXT notnull=0 default="" pk=0
+table tool_receipt column 8 is_error INTEGER notnull=0 default="" pk=0
+table tool_receipt fk tool_receipt(step_id) -> step(id) on_delete=CASCADE on_update=NO ACTION
+table trigger_fire check outcome IN ('fired','did_not_fire','could_not_say','skipped','refused')
+table trigger_fire column 0 id INTEGER notnull=0 default="" pk=1
+table trigger_fire column 1 schedule_id TEXT notnull=1 default="" pk=0
+table trigger_fire column 2 instant TEXT notnull=1 default="" pk=0
+table trigger_fire column 3 outcome TEXT notnull=1 default="" pk=0
+table trigger_fire column 4 reason TEXT notnull=1 default="''" pk=0
+table trigger_fire column 5 loop_id TEXT notnull=1 default="''" pk=0
+table trigger_fire column 6 at TEXT notnull=1 default="" pk=0
+table trigger_fire fk trigger_fire(schedule_id) -> trigger_schedule(id) on_delete=CASCADE on_update=NO ACTION
+table trigger_gap check missed > 0
+table trigger_gap column 0 id INTEGER notnull=0 default="" pk=1
+table trigger_gap column 1 schedule_id TEXT notnull=1 default="" pk=0
+table trigger_gap column 2 covered_from TEXT notnull=1 default="" pk=0
+table trigger_gap column 3 covered_to TEXT notnull=1 default="" pk=0
+table trigger_gap column 4 missed INTEGER notnull=1 default="" pk=0
+table trigger_gap column 5 at TEXT notnull=1 default="" pk=0
+table trigger_gap fk trigger_gap(schedule_id) -> trigger_schedule(id) on_delete=CASCADE on_update=NO ACTION
+table trigger_schedule check (window_start IS NULL AND window_end IS NULL) OR (window_start IS NOT NULL AND window_end IS NOT NULL)
+table trigger_schedule check created_by_kind = 'user'
+table trigger_schedule check kind <> 'webhook' OR expr = ''
+table trigger_schedule check kind IN ('schedule','webhook')
+table trigger_schedule check paused IN (0,1)
+table trigger_schedule column 0 id TEXT notnull=1 default="" pk=1
+table trigger_schedule column 1 kind TEXT notnull=1 default="" pk=0
+table trigger_schedule column 10 covered_until TEXT notnull=1 default="''" pk=0
+table trigger_schedule column 11 created_at TEXT notnull=1 default="" pk=0
+table trigger_schedule column 12 workspace_root TEXT notnull=1 default="''" pk=0
+table trigger_schedule column 13 goal TEXT notnull=1 default="''" pk=0
+table trigger_schedule column 14 created_by_kind TEXT notnull=1 default="'user'" pk=0
+table trigger_schedule column 15 created_by_id TEXT notnull=1 default="''" pk=0
+table trigger_schedule column 16 archived_at TEXT notnull=0 default="" pk=0
+table trigger_schedule column 17 archived_reason TEXT notnull=1 default="''" pk=0
+table trigger_schedule column 18 event_filter TEXT notnull=1 default="''" pk=0
+table trigger_schedule column 2 blueprint TEXT notnull=1 default="" pk=0
+table trigger_schedule column 3 expr TEXT notnull=1 default="''" pk=0
+table trigger_schedule column 4 zone TEXT notnull=1 default="" pk=0
+table trigger_schedule column 5 window_start TEXT notnull=0 default="" pk=0
+table trigger_schedule column 6 window_end TEXT notnull=0 default="" pk=0
+table trigger_schedule column 7 window_days TEXT notnull=1 default="''" pk=0
+table trigger_schedule column 8 paused INTEGER notnull=1 default="0" pk=0
+table trigger_schedule column 9 secret_env TEXT notnull=1 default="''" pk=0
+table verify_command check enabled IN (0,1)
+table verify_command check length(command) BETWEEN 1 AND 4096
+table verify_command check length(name) BETWEEN 1 AND 64 AND name NOT GLOB '*[^a-z0-9-]*'
+table verify_command check memory_mb IS NULL OR memory_mb > 0
+table verify_command check origin IN ('user','template')
+table verify_command check requirement IN ('required','advisory')
+table verify_command check timeout_s BETWEEN 1 AND 600
+table verify_command column 0 id TEXT notnull=0 default="" pk=1
+table verify_command column 1 component_id TEXT notnull=1 default="" pk=0
+table verify_command column 10 template_id TEXT notnull=0 default="" pk=0
+table verify_command column 11 archived_at TEXT notnull=0 default="" pk=0
+table verify_command column 12 created_at TEXT notnull=1 default="" pk=0
+table verify_command column 13 updated_at TEXT notnull=1 default="" pk=0
+table verify_command column 2 name TEXT notnull=1 default="" pk=0
+table verify_command column 3 command TEXT notnull=1 default="" pk=0
+table verify_command column 4 requirement TEXT notnull=1 default="" pk=0
+table verify_command column 5 timeout_s INTEGER notnull=1 default="" pk=0
+table verify_command column 6 memory_mb INTEGER notnull=0 default="" pk=0
+table verify_command column 7 position INTEGER notnull=1 default="0" pk=0
+table verify_command column 8 enabled INTEGER notnull=1 default="1" pk=0
+table verify_command column 9 origin TEXT notnull=1 default="" pk=0
+table verify_command fk verify_command(component_id) -> component(id) on_delete=NO ACTION on_update=NO ACTION
+table verify_command_event check actor_kind IN ('user','cli','agent')
+table verify_command_event check after_json IS NULL OR json_valid(after_json)
+table verify_command_event check before_json IS NULL OR json_valid(before_json)
+table verify_command_event check op IN ('add','update','archive','restore','apply_template')
+table verify_command_event column 0 id INTEGER notnull=0 default="" pk=1
+table verify_command_event column 1 command_id TEXT notnull=1 default="" pk=0
+table verify_command_event column 10 at TEXT notnull=1 default="" pk=0
+table verify_command_event column 2 component_id TEXT notnull=1 default="" pk=0
+table verify_command_event column 3 revision INTEGER notnull=1 default="" pk=0
+table verify_command_event column 4 op TEXT notnull=1 default="" pk=0
+table verify_command_event column 5 actor_kind TEXT notnull=1 default="" pk=0
+table verify_command_event column 6 actor_id TEXT notnull=1 default="" pk=0
+table verify_command_event column 7 summary TEXT notnull=1 default="" pk=0
+table verify_command_event column 8 before_json TEXT notnull=0 default="" pk=0
+table verify_command_event column 9 after_json TEXT notnull=0 default="" pk=0
+table verify_run check actor_kind IN ('user','cli','agent','system')
+table verify_run check state IN ('pass','fail','unverified')
+table verify_run check trigger IN ('loop','manual')
+table verify_run column 0 id TEXT notnull=0 default="" pk=1
+table verify_run column 1 loop_slug TEXT notnull=1 default="''" pk=0
+table verify_run column 10 actor_id TEXT notnull=1 default="" pk=0
+table verify_run column 11 started_at TEXT notnull=1 default="" pk=0
+table verify_run column 12 ended_at TEXT notnull=0 default="" pk=0
+table verify_run column 13 state TEXT notnull=1 default="" pk=0
+table verify_run column 14 reason TEXT notnull=1 default="''" pk=0
+table verify_run column 15 summary TEXT notnull=1 default="''" pk=0
+table verify_run column 16 digest TEXT notnull=1 default="''" pk=0
+table verify_run column 2 component_root TEXT notnull=1 default="" pk=0
+table verify_run column 3 component_id TEXT notnull=1 default="" pk=0
+table verify_run column 4 task TEXT notnull=1 default="''" pk=0
+table verify_run column 5 position INTEGER notnull=1 default="0" pk=0
+table verify_run column 6 attempt INTEGER notnull=1 default="0" pk=0
+table verify_run column 7 head_sha TEXT notnull=1 default="''" pk=0
+table verify_run column 8 trigger TEXT notnull=1 default="" pk=0
+table verify_run column 9 actor_kind TEXT notnull=1 default="" pk=0
+table verify_run_result check length(stderr_tail) <= 2048
+table verify_run_result check length(stdout_tail) <= 2048
+table verify_run_result check requirement IN ('required','advisory')
+table verify_run_result check state IN ('pass','fail','unverified','skipped')
+table verify_run_result check timed_out IN (0,1)
+table verify_run_result check truncated IN (0,1)
+table verify_run_result column 0 run_id TEXT notnull=1 default="" pk=1
+table verify_run_result column 1 seq INTEGER notnull=1 default="" pk=2
+table verify_run_result column 10 stdout_bytes INTEGER notnull=1 default="0" pk=0
+table verify_run_result column 11 stderr_bytes INTEGER notnull=1 default="0" pk=0
+table verify_run_result column 12 truncated INTEGER notnull=1 default="0" pk=0
+table verify_run_result column 13 stdout_sha256 TEXT notnull=1 default="''" pk=0
+table verify_run_result column 14 stderr_sha256 TEXT notnull=1 default="''" pk=0
+table verify_run_result column 15 stdout_tail TEXT notnull=1 default="''" pk=0
+table verify_run_result column 16 stderr_tail TEXT notnull=1 default="''" pk=0
+table verify_run_result column 17 state TEXT notnull=1 default="" pk=0
+table verify_run_result column 18 reason TEXT notnull=1 default="''" pk=0
+table verify_run_result column 2 command_id TEXT notnull=0 default="" pk=0
+table verify_run_result column 3 name TEXT notnull=1 default="" pk=0
+table verify_run_result column 4 requirement TEXT notnull=1 default="" pk=0
+table verify_run_result column 5 command TEXT notnull=1 default="" pk=0
+table verify_run_result column 6 exit_code INTEGER notnull=0 default="" pk=0
+table verify_run_result column 7 signal TEXT notnull=1 default="''" pk=0
+table verify_run_result column 8 timed_out INTEGER notnull=1 default="0" pk=0
+table verify_run_result column 9 wall_ms INTEGER notnull=1 default="0" pk=0
+table verify_run_result fk verify_run_result(run_id) -> verify_run(id) on_delete=NO ACTION on_update=NO ACTION
+table verify_template check length(command) BETWEEN 1 AND 4096
+table verify_template check length(name) BETWEEN 1 AND 64 AND name NOT GLOB '*[^a-z0-9-]*'
+table verify_template check length(stack) BETWEEN 1 AND 32 AND stack NOT GLOB '*[^a-z0-9-]*'
+table verify_template check origin IN ('system','user')
+table verify_template check requirement IN ('required','advisory')
+table verify_template check timeout_s BETWEEN 1 AND 600
+table verify_template column 0 id TEXT notnull=0 default="" pk=1
+table verify_template column 1 stack TEXT notnull=1 default="" pk=0
+table verify_template column 10 archived_at TEXT notnull=0 default="" pk=0
+table verify_template column 2 name TEXT notnull=1 default="" pk=0
+table verify_template column 3 command TEXT notnull=1 default="" pk=0
+table verify_template column 4 requirement TEXT notnull=1 default="" pk=0
+table verify_template column 5 timeout_s INTEGER notnull=1 default="" pk=0
+table verify_template column 6 origin TEXT notnull=1 default="'system'" pk=0
+table verify_template column 7 version TEXT notnull=1 default="" pk=0
+table verify_template column 8 created_at TEXT notnull=1 default="" pk=0
+table verify_template column 9 updated_at TEXT notnull=1 default="" pk=0
+table watchdog_event check actor_kind IN ('user','cli','system')
+table watchdog_event check kind IN ('created','changed','removed','disabled')
+table watchdog_event column 0 id INTEGER notnull=0 default="" pk=1
+table watchdog_event column 1 rule_id TEXT notnull=1 default="" pk=0
+table watchdog_event column 2 at TEXT notnull=1 default="" pk=0
+table watchdog_event column 3 kind TEXT notnull=1 default="" pk=0
+table watchdog_event column 4 actor_kind TEXT notnull=1 default="" pk=0
+table watchdog_event column 5 actor_id TEXT notnull=1 default="''" pk=0
+table watchdog_event column 6 old_value INTEGER notnull=0 default="" pk=0
+table watchdog_event column 7 new_value INTEGER notnull=0 default="" pk=0
+table watchdog_rule check action IN ('notify','stop','block')
+table watchdog_rule check enabled IN (0,1)
+table watchdog_rule check origin IN ('system','user')
+table watchdog_rule check scope IN ('workspace','component')
+table watchdog_rule check signal IN ('no-activity','same-position','repeat-block-reason','step-over-deadline')
+table watchdog_rule check threshold >= 0
+table watchdog_rule column 0 id TEXT notnull=0 default="" pk=1
+table watchdog_rule column 1 scope TEXT notnull=1 default="" pk=0
+table watchdog_rule column 2 subject_id TEXT notnull=1 default="" pk=0
+table watchdog_rule column 3 signal TEXT notnull=1 default="" pk=0
+table watchdog_rule column 4 threshold INTEGER notnull=1 default="" pk=0
+table watchdog_rule column 5 action TEXT notnull=1 default="" pk=0
+table watchdog_rule column 6 enabled INTEGER notnull=1 default="1" pk=0
+table watchdog_rule column 7 origin TEXT notnull=1 default="'user'" pk=0
+table watchdog_rule column 8 created_at TEXT notnull=1 default="" pk=0
+table watchdog_rule column 9 updated_at TEXT notnull=1 default="" pk=0
+table work_closure check entity_kind IN ('task','roadmap','queue','goal')
+table work_closure check reason IN ('loop-archived','loop-deleted')
+table work_closure column 0 entity_kind TEXT notnull=1 default="" pk=1
+table work_closure column 1 entity_id TEXT notnull=1 default="" pk=2
+table work_closure column 2 reason TEXT notnull=1 default="" pk=0
+table work_closure column 3 loop_slug TEXT notnull=1 default="" pk=0
+table work_closure column 4 component_root TEXT notnull=1 default="" pk=0
+table work_closure column 5 prior_status TEXT notnull=1 default="" pk=0
+table work_closure column 6 closed_at TEXT notnull=1 default="" pk=0
+table workspace_telemetry check cost_state IN ('known','partial','unknown')
+table workspace_telemetry check id = 1
+table workspace_telemetry column 0 id INTEGER notnull=0 default="" pk=1
+table workspace_telemetry column 1 loops_run INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 10 files_touched_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 11 files_read_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 12 files_written_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 13 lines_added_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 14 lines_removed_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 15 commands_run_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 16 commands_failed_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 17 command_wall_ms_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 18 updated_at TEXT notnull=1 default="" pk=0
+table workspace_telemetry column 2 wall_ms_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 3 input_tokens_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 4 output_tokens_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 5 cache_read_tokens_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 6 cache_write_tokens_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 7 reasoning_tokens_total INTEGER notnull=1 default="0" pk=0
+table workspace_telemetry column 8 cost_usd_total REAL notnull=1 default="0" pk=0
+table workspace_telemetry column 9 cost_state TEXT notnull=1 default="'known'" pk=0
+table zz_ct_map_guard check n = total
+table zz_ct_map_guard column 0 n INTEGER notnull=0 default="" pk=0
+table zz_ct_map_guard column 1 total INTEGER notnull=0 default="" pk=0
+table zz_s57_merge_rules_fk_guard check n = 0
+table zz_s57_merge_rules_fk_guard column 0 n INTEGER notnull=0 default="" pk=0
+table zz_s57_merge_watch_fk_guard check n = 0
+table zz_s57_merge_watch_fk_guard column 0 n INTEGER notnull=0 default="" pk=0
+table zz_s57_verify_fk_guard check n = 0
+table zz_s57_verify_fk_guard column 0 n INTEGER notnull=0 default="" pk=0

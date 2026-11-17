@@ -1,0 +1,7 @@
+policy rows: 1
+  policy no-bash type=tool_access target=agent:alice action=deny source=operator subject=agent:alice spec={"toolName":"bash","state":"deny"} not_after=none not_after_epoch=- created_at=<TIME>
+proposal rows: 0
+policy_event rows: 3
+  event <ID> at=<TIME> outcome=refusal subject=agent:bob policy_id= detail=refused: agent:bob · no allow matched · default deny (PL5)
+  event <ID> at=<TIME> outcome=refusal subject=agent:alice policy_id=no-bash detail=refused: agent:alice · tool_access "no-bash" · target agent:alice · source operator · no expiry
+  event <ID> at=<TIME> outcome=authored subject=agent:alice policy_id=no-bash detail=authored: the write boundary stored this rule for this subject; the policy_id and subject columns name what was authored (PL15 — authoring is CLI-only)

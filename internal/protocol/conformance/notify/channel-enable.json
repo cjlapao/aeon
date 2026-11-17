@@ -1,0 +1,36 @@
+{
+  "description": "notify.channel.enable flips the authority switch, and it is refused unless the signing secret actually resolves in the secrets store: an enabled-but-unsigned webhook is a forgery with a green light, so enable is where the absence surfaces (SV7). The answer is the row as it now reads.",
+  "method": "notify.channel.enable",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 942,
+    "method": "notify.channel.enable",
+    "params": {
+      "id": "nc-01JTEST0000000000000000001"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 942,
+    "result": {
+      "id": "nc-01JTEST0000000000000000001",
+      "name": "ops-room",
+      "kind": "webhook",
+      "host": "hooks.example.com",
+      "enabled": true,
+      "allowPrivate": false,
+      "secretPresent": true,
+      "subscriptions": [
+        {
+          "channelId": "nc-01JTEST0000000000000000001",
+          "minSeverity": "blocked",
+          "kinds": null,
+          "maxPerHour": 30
+        }
+      ],
+      "createdAt": "2026-11-03T09:00:00Z",
+      "updatedAt": "2026-11-03T09:00:00Z",
+      "consecutiveFailures": 0
+    }
+  }
+}

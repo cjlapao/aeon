@@ -1,0 +1,32 @@
+{
+  "description": "attach pins a loop-written document to a subject \u2014 a step's act; the person's doors decide, they do not pin (the projected door refuses by name).",
+  "method": "attachment.attach",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "method": "attachment.attach",
+    "params": {
+      "subject": {
+        "kind": "goal",
+        "id": "goal-7a1f"
+      },
+      "document": "proposal.md"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "result": {
+      "id": 9,
+      "subjectKind": "goal",
+      "subjectId": "goal-7a1f",
+      "componentRoot": "/home/p/aeon",
+      "loopSlug": "briefing",
+      "document": "proposal.md",
+      "rev": 1,
+      "createdAt": "2026-10-26T09:00:00Z",
+      "currency": "current",
+      "headRev": 1
+    }
+  }
+}

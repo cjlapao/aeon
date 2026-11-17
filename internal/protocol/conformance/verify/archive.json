@@ -1,0 +1,32 @@
+{
+  "description": "verify.archive: the gate leaves the live set — it stops running, stops being measured, and stops showing in a list that does not ask for archived gates — but its rows survive: the run history is untouched, and restore brings it back with its position. The answer is the gate as it now stands, with the archive stamp.",
+  "method": "verify.archive",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1013,
+    "method": "verify.archive",
+    "params": {
+      "id": "vcm-2"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1013,
+    "result": {
+      "gate": {
+        "id": "vcm-2",
+        "componentId": "c-aeon",
+        "name": "lint",
+        "command": "golangci-lint run",
+        "requirement": "advisory",
+        "timeoutS": 600,
+        "position": 2,
+        "enabled": true,
+        "archivedAt": "2026-11-02T13:10:00Z",
+        "origin": "user",
+        "createdAt": "2026-11-01T09:05:00Z",
+        "updatedAt": "2026-11-02T13:05:00Z"
+      }
+    }
+  }
+}

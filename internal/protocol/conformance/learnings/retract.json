@@ -1,0 +1,21 @@
+{
+  "description": "S52 T2 (LM2): the human door takes a memory back. retract answers the row AS IT NOW STANDS — flagged retracted, with the instant and what the person said — plus changed:true, the act that moved it. The reason was required at the door (1..256); the stamp carries it, the audit line keeps its fixed template. A second retract of the same id answers the SAME row with changed:false and wrote nothing at all, not even an audit line (LM2's idempotence: a retraction of an already-retracted memory is not an act).",
+  "method": "learnings.retract",
+  "request": {"jsonrpc": "2.0", "id": 366, "method": "learnings.retract", "params": {"id": 7, "reason": "the sqlite_fts5 tag requirement moved into BUILD.md; the memory is now a stale duplicate of documentation"}},
+  "response": {"jsonrpc": "2.0", "id": 366, "result": {
+    "learning": {
+      "id": 7,
+      "scope": "project",
+      "scopeKey": "/srv/repo",
+      "body": "the build needs the sqlite_fts5 tag",
+      "provenance": "told",
+      "tags": ["build"],
+      "createdAt": "2026-10-30T06:00:00Z",
+      "retracted": true,
+      "retractedAt": "2026-11-04T12:00:00Z",
+      "retractedReason": "the sqlite_fts5 tag requirement moved into BUILD.md; the memory is now a stale duplicate of documentation",
+      "retractedBy": "user/1000"
+    },
+    "changed": true
+  }}
+}

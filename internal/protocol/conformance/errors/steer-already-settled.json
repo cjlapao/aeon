@@ -1,0 +1,21 @@
+{
+  "description": "Withdrawing a steer that was already delivered is refused, not silently accepted: the model may already have acted on those words, and an honest `{state}` answer cannot be given for a row that no longer can change. The refusal names the state found.",
+  "method": "step.steer.cancel",
+  "request": {
+    "jsonrpc": "2.0", "id": 99, "method": "step.steer.cancel",
+    "params": { "steerId": 7 }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 99,
+    "error": {
+      "code": -31521,
+      "message": "the steer can no longer change",
+      "data": {
+        "what": "steer 7 could not be cancelled: the steer is already delivered — the model read it at iteration 3",
+        "means": "nothing was withdrawn — the row keeps the state it had, and the model may already have acted on those words",
+        "todo": "if it was delivered, its effect is in the transcript; steer again — a second instruction is how you correct a read one",
+        "fatal": false
+      }
+    }
+  }
+}

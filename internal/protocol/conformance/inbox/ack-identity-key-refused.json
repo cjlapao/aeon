@@ -1,0 +1,24 @@
+{
+  "description": "inbox.ack params that name an actor are refused before parsing (SV12, the BK13 shape): the person is the peer the socket authenticated, and a request that could name its own actor would let any caller forge who saw the problem — the identity keys are rejected with the door's own sentence, whatever their value.",
+  "method": "inbox.ack",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 910,
+    "method": "inbox.ack",
+    "params": {
+      "key": "questions:41:2026-11-03T09:00:00Z",
+      "actor": {
+        "kind": "user",
+        "id": "0"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 910,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: inbox.ack params carry \"actor\" — acknowledging is a person's act and the person is the peer the socket authenticated, never a name in the request (SV12)"
+    }
+  }
+}

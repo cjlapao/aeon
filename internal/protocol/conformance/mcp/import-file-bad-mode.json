@@ -1,0 +1,14 @@
+{
+  "description": "mcp.importFile answers the params shape error (-32602) when mode is not one of the two named acts: a plan (dry-run) and a mutation (replace) are different things, and the door refuses to guess which one a human meant — no default exists. The same refusal shape covers a relative path, a directory, a symlink to a directory, or a missing file: the door imports one absolute regular file. Params carrying an actor key are refused as a shape error before any of this runs (rejectIdentityKeys), because the actor is the peer credential, never a claim.",
+  "method": "mcp.importFile",
+  "request": {"jsonrpc": "2.0", "id": 916, "method": "mcp.importFile", "params": {
+    "mode": "yolo"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 916,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: mcp.importFile mode must be \"dry-run\" or \"replace\" — got \"yolo\"; a plan and a mutation are different acts and there is no default"
+    }
+  }
+}

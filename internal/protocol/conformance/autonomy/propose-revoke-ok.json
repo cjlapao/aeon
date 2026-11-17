@@ -1,0 +1,27 @@
+{
+  "description": "S56 T8 (AL11): the agent door for narrowing autonomy — autonomy.proposeRevoke creates an INERT proposal row of kind autonomy_revoke (nothing is enforced or revoked until a person commits it at the socket's human door). The request carries no actor, createdBy, proposedBy, status, kind, state or conditions member (identity is stamped by the records service; the effect is fixed at revoke, so a smuggled state meets the service's strict decode). The answer is the stored row with THE copyable commit command and the fixed inertness note — the same PolicyProposeResult the policy twins answer with: one machinery, one sentence.",
+  "method": "autonomy.proposeRevoke",
+  "request": {"jsonrpc": "2.0", "id": 417, "method": "autonomy.proposeRevoke", "params": {
+    "id": "ag_20261101_merge",
+    "reason": "the merge grant has not been used once in three weeks and the review lane tightened; this agent proposes revoking it"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 417,
+    "result": {
+      "proposal": {
+        "id": 41,
+        "kind": "autonomy_revoke",
+        "payload": {
+          "id": "ag_20261101_merge",
+          "reason": "the merge grant has not been used once in three weeks and the review lane tightened; this agent proposes revoking it"
+        },
+        "status": "proposed",
+        "createdAt": "2026-11-01T12:00:00Z",
+        "createdByKind": "agent",
+        "createdById": "implementer",
+        "command": "aeon proposal commit 41"
+      },
+      "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+    }
+  }
+}

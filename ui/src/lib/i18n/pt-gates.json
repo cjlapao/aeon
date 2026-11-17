@@ -1,0 +1,235 @@
+{
+  "settings": {
+    "gates": {
+      "title": "Portas de verificação",
+      "subtitle": "Comandos que verificam o trabalho de um ciclo antes de ele poder ser integrado, e a regra que decide quando pode.",
+      "reconnecting": "Escritas, testes e edições de regra ficam desativados enquanto o daemon não estiver atualizado.",
+      "pick": {
+        "component": "Componente",
+        "none": "Escolha um componente…",
+        "emptyTitle": "Nenhum componente escolhido",
+        "emptyBody": "Escolha um componente para ver seus gates, sua regra de merge e suas execuções.",
+        "label": "A mostrar portas de"
+      },
+      "components": {
+        "failed": "A lista de componentes não pôde ser lida."
+      },
+      "tabs": {
+        "gates": "Gates",
+        "merge": "Regra de merge",
+        "runs": "Execuções"
+      },
+      "word": {
+        "required": "obrigatório",
+        "advisory": "recomendado",
+        "pass": "passou",
+        "fail": "falhou",
+        "unverified": "não verificado",
+        "skipped": "ignorado",
+        "loop": "de um loop",
+        "manual": "à mão"
+      },
+      "filter": {
+        "requirement": "Requisito",
+        "any": "Qualquer",
+        "includeArchived": "Incluir arquivados"
+      },
+      "actions": {
+        "add": "Adicionar gate",
+        "copyFromRoot": "Copiar gates herdados",
+        "retry": "Tentar de novo",
+        "edit": "Editar",
+        "archive": "Arquivar",
+        "restore": "Restaurar",
+        "try": "Testar",
+        "addFromTemplate": "A partir de um modelo"
+      },
+      "list": {
+        "failed": "A lista de gates não pôde ser lida.",
+        "emptyTitle": "Sem gates",
+        "emptyBody": "Este componente ainda não tem gates — adicione um, aplique modelos ou copie os herdados."
+      },
+      "row": {
+        "inheritedFrom": "herdado de {component}",
+        "disabled": "desativado",
+        "archived": "arquivado",
+        "neverRun": "nunca executou",
+        "command": "Comando",
+        "timeout": "tempo limite {seconds} s",
+        "memory": "memória {mb} MB — declarada, não imposta",
+        "lastRunReason": "última execução: {reason}",
+        "archiveFailed": "Arquivar foi recusado.",
+        "restoreFailed": "Restaurar foi recusado."
+      },
+      "copy": {
+        "summary": "{copied} copiados, {failed} recusados"
+      },
+      "try": {
+        "confirmTitle": "Testar “{name}” agora?",
+        "confirm": "Executar agora",
+        "decline": "Agora não",
+        "failed": "O teste foi recusado.",
+        "ranIn": "Executado em {path}",
+        "activeLoops": "Havia loops rodando aqui durante a execução: {slugs}",
+        "rootQuiet": "Nenhum loop trabalhava neste root durante a execução."
+      },
+      "write": {
+        "refused": "O daemon recusou a escrita"
+      },
+      "form": {
+        "addTitle": "Novo gate",
+        "editTitle": "Editar gate — {name}",
+        "name": "Nome",
+        "command": "Comando",
+        "requirement": "Requisito",
+        "timeout": "Tempo limite (s)",
+        "memory": "Memória (MB)",
+        "memoryHint": "Declarada, não imposta — o executor a informa, mas não limita o processo.",
+        "enabled": "Ativado",
+        "save": "Salvar",
+        "cancel": "Cancelar",
+        "addFailed": "Adicionar o gate foi recusado.",
+        "updateFailed": "Atualizar o gate foi recusado.",
+        "noteTitle": "O daemon acrescentou uma nota"
+      },
+      "templates": {
+        "open": "Aplicar modelos",
+        "title": "Modelos iniciais",
+        "subtitle": "Os gates iniciais do próprio daemon, por stack. Um nome que colide recusa a aplicação inteira — nada chega pela metade.",
+        "apply": "Aplicar {count}",
+        "close": "Fechar",
+        "failed": "Os modelos não puderam ser lidos.",
+        "empty": "O daemon não ofereceu modelos.",
+        "applied": "{count} gates adicionados",
+        "applyFailed": "Aplicar os modelos foi recusado."
+      },
+      "merge": {
+        "title": "Regra de merge",
+        "subtitle": "Quando o trabalho de um loop aqui pode ser mesclado, e o que está no caminho.",
+        "failed": "A regra de merge não pôde ser lida.",
+        "source": {
+          "own": "regra própria do componente",
+          "root": "herdada da raiz",
+          "baseline": "a linha de base enviada",
+          "none": "sem regra ainda"
+        },
+        "revision": "revisão {revision}",
+        "lastChange": "última mudança: {summary}",
+        "floorTitle": "Piso de autonomia — um merge desacompanhado poderia armar aqui?",
+        "floorOk": "ok — todos os ingredientes do piso estão presentes",
+        "fields": {
+          "enabled": "Ativado",
+          "requireLocal": "Gates locais obrigatórios",
+          "requireDod": "Definição de feito",
+          "requiredChecks": "Checks obrigatórios",
+          "checksPolicy": "Política de checks",
+          "noChecks": "Quando não há checks",
+          "reviewMode": "Modo de revisão",
+          "aeonReviewAgents": "Agentes de revisão Aeon",
+          "requireThreadsResolved": "Threads devem estar resolvidas",
+          "method": "Método de merge"
+        },
+        "save": "Salvar regra",
+        "saveFailed": "Salvar a regra foi recusado.",
+        "clear": "Remover a regra deste componente",
+        "clearFailed": "Remover a regra foi recusado.",
+        "saved": "Regra salva na revisão {revision}",
+        "confirmSetTitle": "Mudar a regra de merge",
+        "confirmSetBody": "Isto substitui a regra de merge do componente. Os campos que mudam:",
+        "confirmClearTitle": "Remover a regra deste componente",
+        "confirmClearBody": "Isto remove a linha de regra própria do componente. Qual regra valerá depois é o que a próxima leitura efetiva do daemon responder — nada aqui prediz isso.",
+        "confirmGo": "Salvar",
+        "preview": {
+          "title": "Prever um merge",
+          "pr": "Número do PR",
+          "ask": "Avaliar",
+          "allowed": "permitido",
+          "refused": "recusado",
+          "failed": "A previsão foi recusada.",
+          "head": "no head {sha}"
+        }
+      },
+      "runs": {
+        "title": "Execuções",
+        "subtitle": "Toda verificação que o daemon registrou neste componente.",
+        "filterLoop": "Loop",
+        "filterState": "Estado",
+        "failed": "O histórico de execuções não pôde ser lido.",
+        "emptyTitle": "Sem execuções",
+        "emptyBody": "Nada foi verificado aqui ainda.",
+        "noLoop": "não veio de um loop",
+        "attempt": "tarefa {position} · tentativa {attempt}",
+        "head": "head {sha}",
+        "detailFailed": "O detalhe da execução não pôde ser lido.",
+        "loading": "Lendo a execução…",
+        "gateResults": "Resultados por gate",
+        "timedOut": "tempo esgotado",
+        "exit": "saída {code}",
+        "bytes": "{out} de saída · {err} de erro",
+        "showTails": "Mostrar trechos de saída",
+        "secretNotice": "A saída pode conter segredos — o trecho é o extrato purificado do executor, mostrado na medida do possível.",
+        "truncated": "A saída foi truncada — as contagens acima são a verdade; o trecho é um extrato."
+      },
+      "hint": {
+        "gates": "Os comandos que o Aeon executa para verificar o trabalho deste componente. Abra um para o experimentar, editar ou arquivar.",
+        "merge": "Quando o trabalho de um ciclo aqui pode ser integrado, e o que o impede.",
+        "runs": "Todas as verificações que o daemon registou para este componente. Abra uma execução para ver o resultado de cada porta."
+      },
+      "col": {
+        "gate": "Porta",
+        "requirement": "Exigência",
+        "lastRun": "Última execução",
+        "status": "Notas",
+        "state": "Resultado",
+        "loop": "Ciclo",
+        "attempt": "Tentativa",
+        "head": "Commit",
+        "when": "Quando"
+      },
+      "footer": "A mostrar {shown} de {total}",
+      "q": {
+        "what": "Como se chama e o que executa?",
+        "must": "Tem de passar?",
+        "limits": "Quanto tempo e memória pode usar?",
+        "runs": "O que executa?",
+        "last": "Como correu da última vez?",
+        "on": "A regra está ativa?",
+        "pass": "O que tem de passar primeiro?",
+        "review": "Quem revê o trabalho?",
+        "how": "Como é integrado?",
+        "floor": "Poderia uma integração sem supervisão armar-se aqui?",
+        "try": "O que diria sobre um pull request?",
+        "templates": "Que portas iniciais quer?"
+      },
+      "help": {
+        "title": "Para que servem as portas de verificação?",
+        "body": "## O que é uma porta?\n\nUma **porta** é um comando, como os testes, o linter ou a compilação, que o Aeon executa na cópia de trabalho de um componente para verificar o trabalho de um ciclo.\n\n- As portas **obrigatórias** têm de passar antes de o trabalho poder ser integrado.\n- As portas **consultivas** são registadas mas nunca bloqueiam.\n\n## Como as partes se ligam\n\n1. **Portas**: os comandos que verificam o trabalho.\n2. **Regra de integração**: o que tem de ser verdade antes de o trabalho poder ser integrado.\n3. **Execuções**: o que realmente correu e como correu.\n\nAs portas pertencem a um componente. Um componente herda também as portas da raiz; copie-as se quiser alterá-las."
+      }
+    }
+  },
+  "loops": {
+    "dod": {
+      "title": "Definição de feito",
+      "subtitle": "O checklist que a brief do loop comprometeu. Só uma pessoa marca por esta carteira.",
+      "failed": "A definição de feito não pôde ser lida.",
+      "retry": "Tentar de novo",
+      "empty": "A brief deste loop não traz um checklist de feito.",
+      "refused": "O daemon recusou a marcação",
+      "word": {
+        "met": "feito",
+        "unmet": "não feito",
+        "unverifiable": "inverificável",
+        "unchecked": "não marcado"
+      },
+      "evidence": "evidência: {kind} {ref}",
+      "markMet": "Marcar feito",
+      "markUnmet": "Marcar não feito",
+      "markFailed": "A marcação foi recusada.",
+      "confirmTitle": "Marcar este item como “{state}”?",
+      "confirm": "Marcar",
+      "note": "O que prova isso? (guardado como evidência)",
+      "noteRequired": "Um “feito” humano precisa da nota — o daemon recusa vazio.",
+      "confirmHuman": "Esta marca é sua, a pessoa no socket — o daemon a carimba com a identidade do seu peer."
+    }
+  }
+}

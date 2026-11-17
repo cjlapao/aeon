@@ -1,0 +1,27 @@
+{
+  "description": "agent.create can give a new agent more than a name: the instructions it runs with (`prompt`), the technologies it works in (`tech`, from the closed vocabulary handlers.list offers), the tools it may ask for (`tools`, registered tool names) the colour of its minion (`avatarColor`, a colour word or #rrggbb) and which minion it is (`avatarMinion`: pip, bop or noodle, kept in the metadata under `minion`), and what it must report when it finishes (`handoff`: field name to purpose, a trailing ? on the name marking the field optional; checked the way the runtime reads it). Every part but the name is optional, so a caller that sends a name alone gets what it always did. A tag or a tool nobody compiled is refused by name, never dropped. The result is the created row.",
+  "method": "agent.create",
+  "request": {"jsonrpc": "2.0", "id": 117, "method": "agent.create", "params": {"name": "Release notes writer", "description": "Drafts release notes from merged work", "prompt": "You write release notes from the work merged since the last release.", "tech": ["docs", "go"], "tools": ["read", "list", "glob", "grep"], "avatarColor": "pink", "avatarMinion": "bop", "handoff": {"summary": "What was written, in a sentence", "links?": "Where to read it"}}},
+  "response": {"jsonrpc": "2.0", "id": 117, "result": {
+    "id": 13,
+    "slug": "release-notes-writer",
+    "name": "Release notes writer",
+    "description": "Drafts release notes from merged work",
+    "functionality": "",
+    "metadata": "{\"minion\":\"bop\",\"tech\":[\"docs\",\"go\"]}",
+    "prompt": "You write release notes from the work merged since the last release.",
+    "skills": "[]",
+    "version": "1",
+    "internal": false,
+    "avatarType": "minion",
+    "avatarColor": "pink",
+    "avatarMood": "idle",
+    "signature": "",
+    "certificate": "",
+    "signed": false,
+    "tools": "[\"glob\",\"grep\",\"list\",\"read\"]",
+    "handoff": "{\"links?\":\"Where to read it\",\"summary\":\"What was written, in a sentence\"}",
+    "createdAt": "2026-11-11T09:00:00Z",
+    "updatedAt": "2026-11-11T09:00:00Z"
+  }}
+}

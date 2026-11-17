@@ -1,0 +1,27 @@
+{
+  "description": "`trigger.add` is T9's completion of the operational plane (R-9's inventory said four methods; the walk found the missing door — nothing in production could write a schedule row). It is TR1 made typeable: a NAMED blueprint, never a query; T1's validator answers a bad row in its own sentences (IANA zone required — an offset or `Local` refused with what was typed quoted back; expressions validated at write with robfig's words; a webhook row carries neither zone nor expression, and its secret is named by ENV VAR, never valued — C17). An existing id is refused, never silently rewritten: an upsert on add is how a typo quietly retires somebody's nightly job.",
+  "method": "trigger.add",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 73,
+    "method": "trigger.add",
+    "params": {
+      "id": "nightly-survey",
+      "kind": "schedule",
+      "blueprint": "survey-two-step",
+      "expr": "30 3 * * *",
+      "zone": "Europe/London",
+      "workspace": "/home/ops/survey",
+      "goal": "nightly inventory"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 73,
+    "result": {
+      "triggerId": "nightly-survey",
+      "reason": "registered — the clock owns its next answer now (governance still asks TriggerAccess before any fire)",
+      "found": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "description": "The item enters at `idea` — its ONLY door (R1: there is no other way in) — and D5's honesty is on full display: provenance is REQUIRED (authored here: a person typed it), the priority is whatever was declared with `known/assumed/unknown` words and NEVER a silent normal, and `estimate` is null because D3 says an estimate is a range with its basis or nothing at all. `loopSlug` is absent because D6 says so: an item's status is its own field, and nothing is read off a loop that does not exist yet.",
+  "method": "roadmap.add",
+  "request": {"jsonrpc": "2.0", "id": 341, "method": "roadmap.add", "params": {"componentRoot": "/srv/projects/ledger", "title": "export monthly statements", "epic": "reports", "priorityState": "assumed", "priorityLabel": "P1", "provenance": "authored"}},
+  "response": {"jsonrpc": "2.0", "id": 341, "result": {"item": {
+    "id": 12,
+    "componentRoot": "/srv/projects/ledger",
+    "title": "export monthly statements",
+    "epic": "reports",
+    "status": "idea",
+    "priorityState": "assumed",
+    "priorityLabel": "P1",
+    "estimateMin": null,
+    "estimateMax": null,
+    "estimateBasis": null,
+    "provenance": "authored",
+    "createdAt": "2026-10-29T09:00:00Z",
+    "updatedAt": "2026-10-29T09:00:00Z"
+  }}}
+}

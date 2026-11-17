@@ -1,0 +1,30 @@
+{
+  "description": "S46 T8 (MG9/TD2): mcp.mine.proposeRemove creates an INERT proposal to remove a server the CALLER can see \u2014 the same PolicyProposeResult every inert propose answers (the machinery's sentence, not the family's). No config row moved: the refusal that removes nothing and the success that constrains nothing both leave the world untouched until a person commits. Identity is the stamp; the schema carries no agent member (OL3).",
+  "method": "mcp.mine.proposeRemove",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 934,
+    "method": "mcp.mine.proposeRemove",
+    "params": {
+      "server": "reddit",
+      "reason": "the reddit sandbox is decommissioned; nothing reads it anymore"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 934,
+    "result": {
+      "proposal": {
+        "id": 12,
+        "kind": "mcp_server_remove",
+        "payload": "{\"name\":\"reddit\",\"cascadeDeclares\":true,\"reason\":\"the reddit sandbox is decommissioned; nothing reads it anymore\"}",
+        "createdByKind": "agent",
+        "status": "proposed",
+        "command": "aeon proposal commit 12",
+        "createdById": "implementer",
+        "createdAt": "2026-11-01T12:00:00Z"
+      },
+      "note": "the proposal is inert: it constrains nothing until a person commits it (S35 TD2)"
+    }
+  }
+}

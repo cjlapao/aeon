@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1{fill:url(#radial-gradient-1)}
+      .cls-2{fill:none;stroke:url(#linear-gradient-1);stroke-width:36;stroke-linecap:round;stroke-linejoin:round}
+      .cls-3{fill:none;stroke:url(#linear-gradient-2);stroke-width:36;stroke-linecap:round}
+      .cls-4{fill:#ffffff;stroke:#2563eb;stroke-width:8}
+      .cls-5{fill:#2563eb}
+      .cls-6{fill:#ffffff;stroke:#0d9488;stroke-width:8}
+      .cls-7{fill:#0d9488}
+      .cls-8{fill:#ffffff;stroke:#1e293b;stroke-width:6}
+    </style>
+    <radialGradient id="radial-gradient-1" cx="256" cy="256" r="84.219" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient-1" x1="97.898" y1="200.875" x2="198.728" y2="413.336" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="0.48" stop-color="#0284c7"/>
+      <stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="224.955" y1="194.364" x2="300.954" y2="203.637" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <title>logo_light.svg</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <path d="M340.219 256 C340.219 302.513 302.513 340.219 256 340.219 C209.487 340.219 171.781 302.513 171.781 256 C171.781 209.487 209.487 171.781 256 171.781 C302.513 171.781 340.219 209.487 340.219 256 Z" class="cls-1"/>
+    <path d="M256 256 C296.195 315.336 340.219 347.875 393.812 347.875 C447.406 347.875 481.859 305.766 481.859 256 C481.859 206.234 447.406 164.125 393.812 164.125 C340.219 164.125 296.195 196.664 256 256 C215.805 315.336 171.781 347.875 118.188 347.875 C64.594 347.875 30.141 305.766 30.141 256 C30.141 206.234 64.594 164.125 118.188 164.125 C171.781 164.125 215.805 196.664 256 256 Z" class="cls-2"/>
+    <path d="M224.955 194.364 C241.914 229.214 270.086 282.786 287.045 317.636" class="cls-3"/>
+    <path d="M131.586 164.125 C131.586 171.525 125.587 177.523 118.188 177.523 C110.788 177.523 104.789 171.525 104.789 164.125 C104.789 156.725 110.788 150.727 118.188 150.727 C125.587 150.727 131.586 156.725 131.586 164.125 Z" class="cls-4"/>
+    <path d="M122.973 164.125 C122.973 166.768 120.83 168.91 118.188 168.91 C115.545 168.91 113.402 166.768 113.402 164.125 C113.402 161.482 115.545 159.34 118.188 159.34 C120.83 159.34 122.973 161.482 122.973 164.125 Z" class="cls-5"/>
+    <path d="M407.211 347.875 C407.211 355.275 401.212 361.273 393.812 361.273 C386.413 361.273 380.414 355.275 380.414 347.875 C380.414 340.475 386.413 334.477 393.812 334.477 C401.212 334.477 407.211 340.475 407.211 347.875 Z" class="cls-6"/>
+    <path d="M398.598 347.875 C398.598 350.518 396.455 352.66 393.812 352.66 C391.17 352.66 389.027 350.518 389.027 347.875 C389.027 345.232 391.17 343.09 393.812 343.09 C396.455 343.09 398.598 345.232 398.598 347.875 Z" class="cls-7"/>
+    <g>
+      <path d="M273.227 256 C273.227 265.514 265.514 273.227 256 273.227 C246.486 273.227 238.773 265.514 238.773 256 C238.773 246.486 246.486 238.773 256 238.773 C265.514 238.773 273.227 246.486 273.227 256 Z" class="cls-8"/>
+      <path d="M256 248.344 L261.742 254.086 L257.914 261.742 L254.086 261.742 L250.258 254.086 Z" class="cls-5"/>
+    </g>
+  </g>
+</svg>

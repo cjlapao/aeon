@@ -1,0 +1,12 @@
+{
+  "description": "agent.changes asked for the history of a slug that has never had a row, and it SUCCEEDED (S73 AR6, PG3). `changes` is `[]` and never null, `total` is 0, and `slug` echoes the name nobody has ever written. This is a real question a real person asks: an agent was deleted, its history is genuinely empty because the ledger arrived after it, and the panel that got an error would say \"something is wrong\" where the truth is \"nothing has touched this agent since the ledger opened\". The same answer arrives for a page past the end of a real history — an empty window with an honest total — because both are the store finding nothing inside a query that was perfectly well formed. The daemon reserves its refusals for the caller's mistakes, and this is not one.",
+  "method": "agent.changes",
+  "request": {"jsonrpc": "2.0", "id": 125, "method": "agent.changes", "params": {"slug": "agent-that-was-deleted", "page": 1, "pageSize": 20}},
+  "response": {"jsonrpc": "2.0", "id": 125, "result": {
+    "changes": [],
+    "page": 1,
+    "pageSize": 20,
+    "total": 0,
+    "slug": "agent-that-was-deleted"
+  }}
+}

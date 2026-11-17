@@ -1,0 +1,49 @@
+{
+  "description": "tools.byAgent for an agent a person made or imported (a CUSTOM agent): `dispatchable:true`, because it is an agent like any other — the person who brought it in answers for it, and what lets it call a tool is the policy rule written when the tool was chosen, not a class of agent that never runs. Its row's tools are judged by the engine exactly as a shipped agent's are: `read` has the allow rule its owner's grant wrote (`granted_allowed`), `grep` is on the row with no rule yet (`granted_no_rule` — silence permits nothing, PL5, which is a different fact from a denial), and `todo` is not on the row (`not_granted`, with no reason because none was sought). `granted_by` still names where each held tool came from.",
+  "method": "tools.byAgent",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 649,
+    "method": "tools.byAgent",
+    "params": {
+      "agent": "cursitor"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 649,
+    "result": {
+      "agent": "cursitor",
+      "dispatchable": true,
+      "tools": [
+        {
+          "tool": "grep",
+          "agent": "cursitor",
+          "state": "granted_no_rule",
+          "reason": "refused: no policy rule matched this tool for this agent — silence permits nothing (PL5)",
+          "granted_by": [
+            "handler"
+          ],
+          "dispatchable": true
+        },
+        {
+          "tool": "read",
+          "agent": "cursitor",
+          "state": "granted_allowed",
+          "reason": "allowed by policy grant.cursitor.read",
+          "granted_by": [
+            "default",
+            "handler"
+          ],
+          "dispatchable": true
+        },
+        {
+          "tool": "todo",
+          "agent": "cursitor",
+          "state": "not_granted",
+          "dispatchable": true
+        }
+      ]
+    }
+  }
+}

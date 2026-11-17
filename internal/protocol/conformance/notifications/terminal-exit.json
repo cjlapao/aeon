@@ -1,0 +1,13 @@
+{
+  "description": "The shell is gone; the session is KEPT (LW9) for `terminal.attach` to serve its scrollback until it is closed or reaped. Exactly one of exitCode/signal is set, the way cmd.Wait reports it — a killed shell died by signal and has no exit code to invent. The group died with the shell: close is a GROUP kill (spawn.go's mechanism, measured by a freed port).",
+  "event": "terminal.exit",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "terminal.exit",
+    "seq": 3,
+    "params": {
+      "terminalId": "t-7f3a",
+      "exitCode": 3
+    }
+  }
+}

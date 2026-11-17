@@ -1,0 +1,20 @@
+{
+  "description": "A worker's runner returned an error (S64): state failed, the error carried in the row, finishedAt stamped. The distinction the three-state discipline keeps — failed means the WORK ran and said no; see asyncworker.interrupted for the daemon saying no by dying. A subscribed screen shows the sentence, and the same text is in the row for whoever reads it after reopening the app.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c", "seq": 1433, "kind": "asyncworker.failed",
+      "at": "2026-10-30T17:51:47.123456789Z",
+      "payload": {
+        "workerId": "aw_9e8d7c6b5a4938271605f4e3d2c1b0ae",
+        "workerType": "graph.build",
+        "componentRoot": "/home/dev/shop",
+        "state": "failed",
+        "error": "open /home/dev/shop: permission denied",
+        "queuedAt": "2026-10-30T17:41:02.000Z",
+        "startedAt": "2026-10-30T17:41:02.000Z",
+        "finishedAt": "2026-10-30T17:51:47.000Z"
+      }
+    }
+  }
+}

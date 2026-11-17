@@ -1,0 +1,75 @@
+{
+  "description": "S47 T7 (TC9/OL3): tools.mine.list is the CALLER's own inventory — there is no `agent` param to name a subject, because the subject is the identity stamped on the step, and this is what an agent of that stamp sees. Two rows, and the two rows are the whole point: `read` comes from the code with `granted_by:[\"default\"]` (the unconditional grant put it there, and the engine's allow sentence travels verbatim), and `acme.search` is a qualified MCP name that exists in this answer ONLY because this agent declares it — a peer's private server is not filtered out here, it was never in the input, which is how MC2 is structural rather than a filter (no field of this result can name another agent's world, not even a count). No row says `not_granted`: a tool the agent was not given is ABSENT, never listed as refused, so the list is an inventory and not a survey of what was withheld. `held` restates the count so a badge cannot disagree with the array.",
+  "method": "tools.mine.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 941,
+    "method": "tools.mine.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 941,
+    "result": {
+      "tools": [
+        {
+          "tool": {
+            "name": "acme.search",
+            "family": "acme",
+            "source": "mcp",
+            "description": "",
+            "schema": {},
+            "schemaHash": "",
+            "rerunClass": "safe",
+            "capabilities": [],
+            "governed": [],
+            "conditional": false,
+            "available": false,
+            "server": "acme",
+            "tier": "public",
+            "effect": "local",
+            "classified": true,
+            "version": 0,
+            "origin": "user",
+            "rowCurrent": true
+          },
+          "state": "granted_allowed",
+          "reason": "allow · effect_class · acme.search · agent:atlas",
+          "granted_by": ["mcp-declare"]
+        },
+        {
+          "tool": {
+            "name": "read",
+            "family": "fs",
+            "source": "system",
+            "description": "Read a file from the workspace, returning its contents with line numbers.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "path": {"type": "string", "description": "path relative to the step's working directory"}
+              },
+              "required": ["path"]
+            },
+            "schemaHash": "sha256:6d0f0a2b7a1f4a53",
+            "rerunClass": "safe",
+            "capabilities": ["fs.read"],
+            "governed": ["route_access"],
+            "conditional": false,
+            "available": true,
+            "classified": false,
+            "version": 3,
+            "origin": "system",
+            "rowCurrent": true
+          },
+          "state": "granted_allowed",
+          "reason": "allow · tool_access · read · all-agents",
+          "granted_by": ["default"]
+        }
+      ],
+      "held": 2,
+      "dispatchable": true,
+      "policySeen": 2
+    }
+  }
+}

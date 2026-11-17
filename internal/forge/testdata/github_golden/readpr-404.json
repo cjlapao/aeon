@@ -1,0 +1,10 @@
+{
+  "case": "readpr-404",
+  "method": "GET",
+  "path": "/repos/acme/widget/pulls/7",
+  "authShape": "Bearer \u003credacted\u003e",
+  "accept": "application/vnd.github+json",
+  "attempts": 1,
+  "errKind": "not-found",
+  "errSentence": "not-found: not-found: Not Found\n  why:  nothing with that identity exists in the forge\n  do:   list what exists and name an existing one (aeon forge list)"
+}

@@ -1,0 +1,39 @@
+{
+  "description": "verify.runs: the finished runs newest first, scoped by component root (and loop and state when named). Each run carries its identity (loop, root, component, task, position, attempt), the head SHA it ran at, who started it (the trigger and the actor the connection stamped), and its terminal state — the one-line account of what the gate set said about that head.",
+  "method": "verify.runs",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1003,
+    "method": "verify.runs",
+    "params": {
+      "componentId": "c-aeon",
+      "loop": "",
+      "state": "",
+      "limit": 20
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1003,
+    "result": {
+      "runs": [
+        {
+          "id": "vr-101",
+          "loopSlug": "fix-the-login",
+          "componentRoot": "/home/cjlapao/src/aeon",
+          "componentId": "c-aeon",
+          "task": "verify-local",
+          "position": 2,
+          "attempt": 1,
+          "headSha": "3f8c2d1e9a4b7c6d5e8f0a1b2c3d4e5f6a7b8c9d",
+          "trigger": "loop",
+          "actorKind": "system",
+          "actorId": "loop-engine",
+          "startedAt": "2026-11-02T11:30:00Z",
+          "endedAt": "2026-11-02T11:30:42Z",
+          "state": "pass"
+        }
+      ]
+    }
+  }
+}

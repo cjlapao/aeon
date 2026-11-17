@@ -1,0 +1,6 @@
+{
+  "description": "An answer is refused before it is written when the saved transcript or manifest cannot be reconstructed.",
+  "method": "answer",
+  "request": {"jsonrpc":"2.0","id":83,"method":"answer","params":{"stepId":4,"answer":"yes"}},
+  "response": {"jsonrpc":"2.0","id":83,"error":{"code":-31302,"message":"step cannot resume","data":{"what":"step 4 has no usable saved request and manifest","means":"resuming without its transcript, manifest, route or tools would change the step's meaning","todo":"inspect step.show and the daemon store; the detailed error names the missing part","fatal":false}}}
+}

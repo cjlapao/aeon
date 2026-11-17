@@ -1,0 +1,41 @@
+{
+  "agent": "golang-engineer",
+  "grants": [
+    {
+      "qualified": "edit",
+      "tier": "core",
+      "state": "available",
+      "reason": "core: judged by the step's S11 policy gate (S12 does not re-decide core)"
+    },
+    {
+      "qualified": "list",
+      "tier": "core",
+      "state": "available",
+      "reason": "core: judged by the step's S11 policy gate (S12 does not re-decide core)"
+    },
+    {
+      "qualified": "read",
+      "tier": "core",
+      "state": "available",
+      "reason": "core: judged by the step's S11 policy gate (S12 does not re-decide core)"
+    },
+    {
+      "qualified": "gitforge.read_pr",
+      "tier": "public",
+      "state": "unavailable",
+      "reason": "unavailable: no ToolAccess allow rule grants gitforge.read_pr (MC10)"
+    },
+    {
+      "qualified": "search.query",
+      "tier": "public",
+      "state": "unavailable",
+      "reason": "unavailable: no ToolAccess allow rule grants search.query (MC10)"
+    },
+    {
+      "qualified": "labnote.scratch",
+      "tier": "private",
+      "state": "unavailable",
+      "reason": "unavailable: no ToolAccess allow rule grants labnote.scratch (MC10)"
+    }
+  ]
+}

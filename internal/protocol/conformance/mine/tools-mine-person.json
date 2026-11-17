@@ -1,0 +1,18 @@
+{
+  "description": "S47 T7 (rule 6, MC2): a PERSON session reaching tools.mine.list. The records door forks on the caller's kind BEFORE the switch, and these two names are on the closed person-refusal list, so the answer is the pointer sentence — the door that does answer a person — and never the agent's view. A person may read any agent's whole tool situation (that is what tools.byAgent is for, and its actor is the kernel's peer uid, not a claim); what they may not do is walk the SELF doors one slug at a time and read back everybody's inventory through a door whose entire point is that only the agent itself can ask it. -32602 rather than a code of its own because this is not a missing thing: it is the right question at the wrong door, and the sentence names the right one.",
+  "method": "tools.mine.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 944,
+    "method": "tools.mine.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 944,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: refused: this door is agent-scoped; a person uses tools.byAgent — this is the person's door, not the step's (T15)"
+    }
+  }
+}

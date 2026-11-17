@@ -1,0 +1,28 @@
+{
+  "description": "agent.import also takes the card's own contents, for a client that holds the card in hand — a window with a dropped file — and has no path on the daemon's machine to name. Exactly one of `path` or `content` is sent; the verification, the unsigned-import refusal and the (slug, version) idempotent result are the same as for a path (AM3).",
+  "method": "agent.import",
+  "request": {"jsonrpc": "2.0", "id": 113, "method": "agent.import", "params": {"content": "{\"card\":{\"slug\":\"reviewer-plus\",\"name\":\"Reviewer Plus\"},\"signature\":\"\",\"certificate\":\"\"}"}},
+  "response": {"jsonrpc": "2.0", "id": 113, "result": {
+    "agent": {
+      "id": 12,
+      "slug": "reviewer-plus",
+      "name": "Reviewer Plus",
+      "description": "Reviews pull requests and posts findings to the thread",
+      "functionality": "read, list, write",
+      "metadata": "",
+      "prompt": "You are a careful code reviewer.",
+      "skills": "[]",
+      "version": "1.0.0",
+      "internal": false,
+      "avatarType": "default",
+      "avatarColor": "blue",
+      "avatarMood": "neutral",
+      "signature": "",
+      "certificate": "",
+      "signed": false,
+      "createdAt": "2026-10-30T09:00:00Z",
+      "updatedAt": "2026-10-30T09:00:00Z"
+    },
+    "result": "created"
+  }}
+}

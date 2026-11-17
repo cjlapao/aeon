@@ -1,0 +1,35 @@
+{
+  "answer": {
+    "queueItemId": 2,
+    "queued": true,
+    "status": "running"
+  },
+  "error": "",
+  "item": {
+    "status": "running",
+    "loopSlug": ""
+  },
+  "starts": null,
+  "queue": [
+    {
+      "id": 1,
+      "position": 1,
+      "goal": "an ordinary backlog item",
+      "status": "pending",
+      "loopSlug": ""
+    },
+    {
+      "id": 2,
+      "position": 2,
+      "goal": "export the statements",
+      "status": "pending",
+      "loopSlug": ""
+    }
+  ],
+  "attempts": [
+    {
+      "answer": null,
+      "error": "item 1 is already queued for materialization (queue item 2) — S24's ordering decides when its loop runs (CG4: appending starts nothing)"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+fresh: reused=false directoryExists=true baseSHA-==-HEAD=true
+shortcut: reused=true error=true directoryExists=false (F17: success WITHOUT a directory)

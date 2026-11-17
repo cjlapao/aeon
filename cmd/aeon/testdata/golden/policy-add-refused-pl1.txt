@@ -1,0 +1,4 @@
+$ aeon policy add --type tool_access --id pl1-allow --target agent:alice --action allow --tool bash --source agent
+! refused: Allow authored by source "agent" requires an operator (PL1) — a Deny or an Ask from "agent" would be accepted
+$ aeon policy list
+no policies. default is DENY (PL5) — nothing is granted until something grants it.

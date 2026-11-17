@@ -1,0 +1,27 @@
+{
+  "description": "S46 T8 (MG5/MG8): mcp.mine.status answers reachability of the agent's own servers from the SHARED probe CACHE only \u2014 nothing spawned, no process, no connection (a spy in cmd/aeon pins it). A server never probed answers the distinct word \"unchecked\": its own honest state, never an assumed-up or assumed-down (P31's three states at the agent door).",
+  "method": "mcp.mine.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 933,
+    "method": "mcp.mine.status",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 933,
+    "result": {
+      "servers": [
+        {
+          "server": "acme-crud",
+          "state": "ok",
+          "checkedAt": "2026-11-01T12:00:00Z"
+        },
+        {
+          "server": "reddit",
+          "state": "unchecked"
+        }
+      ]
+    }
+  }
+}

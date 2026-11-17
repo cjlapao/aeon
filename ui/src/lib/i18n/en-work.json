@@ -1,0 +1,135 @@
+{
+  "work": {
+    "title": "Work",
+    "all": "All projects",
+    "allPurpose": "Every project at once. Each tab here shows the same thing as inside a component, with a Component column.",
+    "find": "Find a component",
+    "start": "Start a loop",
+    "includeSub": "Include sub components",
+    "breadcrumb": "Where you are",
+    "help": {
+      "title": "Work",
+      "body": "Work is everything you do inside your projects, in one place. Pick a project or a sub component on the left. Its page has tabs: what is running, the loops, the plan, what Aeon knows about the code, what runs by itself, the checks that guard it, its files and its history. Pick **All projects** to see the same tabs across everything."
+    },
+    "tabs": {
+      "overview": "Overview",
+      "loops": "Loops",
+      "plan": "Plan",
+      "knowledge": "Knowledge",
+      "automation": "Automation",
+      "guardrails": "Guardrails",
+      "files": "Files",
+      "history": "History"
+    },
+    "stat": {
+      "running": "Running now",
+      "needsYou": "Needs you",
+      "components": "Components inside",
+      "loops": "Loops recorded",
+      "runningSub": "loops at work",
+      "needsYouSub": "waiting or blocked",
+      "componentsSub": "sub components",
+      "loopsSub": "all time"
+    },
+    "overview": {
+      "inside": "Inside this component",
+      "insideAll": "Your projects",
+      "insideEmpty": "No sub components yet.",
+      "recent": "Latest loops",
+      "recentEmpty": "No loops here yet. Start one to see it appear."
+    },
+    "loops": {
+      "empty": "No loops here yet.",
+      "col": {
+        "loop": "Loop",
+        "component": "Component",
+        "status": "Status",
+        "phase": "Phase",
+        "updated": "Updated"
+      },
+      "footer": "{shown} loops"
+    },
+    "plan": {
+      "goals": "Goals",
+      "roadmap": "Roadmap",
+      "tasks": "Tasks"
+    },
+    "moved": {
+      "title": "This part is still on its own page",
+      "body": "It is moving into the component. Until then it lives here:",
+      "open": "Open {page}"
+    },
+    "unknown": {
+      "title": "That component is not here",
+      "body": "It may have been removed. Pick one from the list.",
+      "back": "Back to all projects"
+    },
+    "error": "The component list did not answer: {error}",
+    "files": {
+      "needsOne": "Pick one component to browse its files."
+    },
+    "knowledge": {
+      "graph": "Code graph",
+      "search": "Search index",
+      "memory": "Memory",
+      "shared": "{names} share the index of the repository they live in.",
+      "memoryRoot": "Component",
+      "memoryAll": "Every component in scope"
+    },
+    "guardrails": {
+      "gates": "Gates",
+      "environments": "Environments",
+      "triage": "Triage",
+      "needsOne": "Gates, environments and triage belong to one component. Pick one in the menu."
+    },
+    "tasks": {
+      "hint": "Real tasks from the daemon. A card moves when an agent finishes a step — the board follows the daemon, you do not drag.",
+      "empty": "No tasks here yet.",
+      "col": {
+        "notStarted": "Not started",
+        "working": "In progress",
+        "checking": "Checking",
+        "inReview": "In review",
+        "landed": "Landed",
+        "stopped": "Stopped"
+      },
+      "step": "step {at} of {of}",
+      "stage": "Column: {column}",
+      "assignee": "Assigned to",
+      "unassigned": "nobody yet",
+      "updated": "Last change",
+      "cost": "Cost",
+      "floor": "(at least)",
+      "openLoop": "Open loop {slug}",
+      "goal": "Goal",
+      "allGoals": "Goal: all"
+    },
+    "timeline": {
+      "hint": "Each bar runs from when the item first started running to when it finished (or to now). An item that has not started yet sits on the day it was created.",
+      "needsOne": "A roadmap belongs to one component. Pick one in the menu.",
+      "empty": "This roadmap has no items yet.",
+      "noEpic": "No epic",
+      "notEstimated": "not estimated",
+      "notStarted": "not started",
+      "byEpic": "By epic",
+      "byPriority": "By priority",
+      "settings": "Roadmap settings"
+    },
+    "goals": {
+      "col": {
+        "goal": "Goal",
+        "state": "State",
+        "type": "Type",
+        "version": "Version",
+        "source": "From"
+      },
+      "state": "Review state",
+      "allStates": "Every review state",
+      "hint": "Click a goal to read its documents and decide.",
+      "empty": "No goals here yet."
+    },
+    "automation": {
+      "continuous": "Continuous work — loops the daemon starts on its own"
+    }
+  }
+}

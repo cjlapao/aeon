@@ -1,0 +1,77 @@
+{
+  "description": "mergerule.preview with a PR named: the read-only dry evaluation the design promises — the rule (effective, with its source and revision), the autonomy floor, and the gate's LIVE answer for that PR: not allowed, with every refusal sentence (the extended path collects them all, in its fixed order) and the evidence — the gate's account of what it saw, the same keys the merge gate's answer carries at the decision site, so the preview and the gate never drift. No merge is attempted and nothing is written: this is the question the gate would be asked, asked now.",
+  "method": "mergerule.preview",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1032,
+    "method": "mergerule.preview",
+    "params": {
+      "componentId": "c-aeon",
+      "pr": 482
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1032,
+    "result": {
+      "componentId": "c-aeon",
+      "source": "own",
+      "rule": {
+        "componentId": "c-aeon",
+        "enabled": true,
+        "requireLocal": true,
+        "requireDod": "all_met",
+        "requiredChecks": [
+          "ci/build",
+          "ci/lint"
+        ],
+        "checksPolicy": "reported_green",
+        "noChecks": "refuse",
+        "reviewMode": "forge",
+        "aeonReviewAgents": [
+          "code-reviewer"
+        ],
+        "requireThreadsResolved": true,
+        "method": "squash",
+        "revision": 4,
+        "source": "own",
+        "updatedAt": "2026-11-02T12:10:00Z"
+      },
+      "floor": {
+        "ok": false,
+        "missing": [
+          {
+            "code": "checks-not-binding",
+            "sentence": "no required check is bound to the forge — with requiredChecks naming ci/build and ci/lint, the checks policy cannot be satisfied by the forge's report alone"
+          }
+        ]
+      },
+      "verdict": {
+        "allowed": false,
+        "refusals": [
+          {
+            "code": "check-not-green",
+            "sentence": "the check \"ci/build\" is red at the PR's head"
+          },
+          {
+            "code": "dod-not-met",
+            "sentence": "1 of 2 DoD items is not met"
+          }
+        ],
+        "evidence": {
+          "aeon_review": "absent",
+          "checks": "1 of 2 green (ci/build red)",
+          "checks_state": "red",
+          "dod": "1 of 2 met",
+          "review_at": "2026-11-02T11:50:00Z",
+          "review_by": "cjlapao",
+          "review_state": "approved",
+          "rule_revision": "4",
+          "threads": "0 unresolved",
+          "verify_head_sha": "3f8c2d1e9a4b7c6d5e8f0a1b2c3d4e5f6a7b8c9d",
+          "verify_run_id": "vr-101"
+        }
+      }
+    }
+  }
+}

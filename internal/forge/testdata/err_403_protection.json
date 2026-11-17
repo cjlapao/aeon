@@ -1,0 +1,7 @@
+{
+ "__status": 403,
+ "body": {
+  "message": "Pull Request is not mergeable",
+  "documentation_url": "https://docs.github.com/rest"
+ }
+}

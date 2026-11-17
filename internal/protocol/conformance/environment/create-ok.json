@@ -1,0 +1,45 @@
+{
+  "description": "S59 T6 (EV16, EV17): environment.create takes slug, name, backend and spec — and NO author. The params carry no actor, no origin and no legacy: the actor is the connection's peer, the origin is `user` because a door cannot claim `system`, and the row's revision starts at 1 beside its audit row. The spec that comes back is the CANONICAL one the validator signed, byte-stable so two revisions diff honestly (the passthrough list is sorted by the canonicaliser, which is why HOME leads).",
+  "method": "environment.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 912,
+    "method": "environment.create",
+    "params": {
+      "slug": "ci-default",
+      "name": "CI default",
+      "backend": "host-scrubbed",
+      "spec": "{\"env\":{\"passthrough\":[\"PATH\",\"HOME\",\"USER\"],\"set\":{\"TERM\":\"dumb\"},\"secrets\":[\"deploy-token\"]},\"home\":\"real\",\"egress\":{\"mode\":\"unenforced\"}}"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 912,
+    "result": {
+      "id": "env_7f2a9b8c6d5e",
+      "slug": "ci-default",
+      "name": "CI default",
+      "backend": "host-scrubbed",
+      "origin": "user",
+      "legacy": false,
+      "revision": 1,
+      "spec": {
+        "env": {
+          "passthrough": ["HOME", "PATH", "TERM", "USER"],
+          "set": { "TERM": "dumb" },
+          "secrets": ["deploy-token"]
+        },
+        "home": "real",
+        "limits": { "timeout": "10m", "output": 1048576 },
+        "egress": { "mode": "unenforced", "allow": [] },
+        "image": null,
+        "services": [],
+        "preview": null
+      },
+      "createdAt": "2026-11-03T09:12:00Z",
+      "updatedAt": "2026-11-03T09:12:00Z",
+      "capabilities": ["no-ambient-secrets", "redacted-output"],
+      "secretRefNames": ["deploy-token"]
+    }
+  }
+}

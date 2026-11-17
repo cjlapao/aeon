@@ -1,0 +1,28 @@
+{
+  "description": "A loop start that arrives while the daemon is shutting down is REFUSED before any row exists (S55 T4, LC19): the daemon is going away, so a loop born into the drain would die at its first step and its row would read running for nothing. The refusal is TYPED, not a transport failure — the daemon understood and declined — and it says what it did not do (nothing was written); the advice is to restart the daemon and start again, because resending into the dying daemon changes nothing.",
+  "method": "loop.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 85,
+    "method": "loop.start",
+    "params": {
+      "blueprint": "pr.yaml",
+      "goal": "open the PR",
+      "workspaceRoot": "/home/dev/prj/checkout"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 85,
+    "error": {
+      "code": -31860,
+      "message": "the loop control refused the operation",
+      "data": {
+        "what": "loop start refused: the daemon is shutting down and will not accept new loop work — restart it, then start again",
+        "means": "the daemon understood and declined — nothing was written and nothing moved",
+        "todo": "do what the what sentence names",
+        "fatal": false
+      }
+    }
+  }
+}

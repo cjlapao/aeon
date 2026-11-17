@@ -1,0 +1,24 @@
+{
+  "description": "S57 T9 (VG19), the second line of defence: the schema's add-only shape cannot smuggle an update, but the socket params are decoded by the service, not by the schema — so the store's half of the shared validator still runs at create. A live gate with the proposed name already stands on the caller's own component (the archived twin would not block), and the create is refused with the validator's own sentence, VERBATIM across the wire (the records projection renders refusals as JSON-RPC's own -32602); nothing was written — a refused proposal leaves no row (TD3).",
+  "method": "verify.proposeAdd",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1102,
+    "method": "verify.proposeAdd",
+    "params": {
+      "name": "unit",
+      "command": "go test ./...",
+      "requirement": "required",
+      "timeoutS": 600,
+      "reason": "an attempted re-filing of the gate that already stands — the name is free on the component or it is not, and this one is not"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1102,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: refused: c-aeon already has a live gate named \"unit\" (archive it first)"
+    }
+  }
+}

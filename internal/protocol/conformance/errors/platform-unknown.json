@@ -1,0 +1,18 @@
+{
+  "description": "`retrieval.reindexPlan` names the corpus it would plan (O8: there is no default to guess), and a corpus outside the closed pair refuses with the platform plane's not-found (-31957, the second code of the S54 block): the word was well-formed, the plane simply has no such corpus to plan — 'code' and 'history' are all there is, and inventing an estimate for a corpus that does not exist is worse than saying so (sibling shape to ErrLearningUnknown). Nothing was estimated, nothing was started, nothing was written; the registry's own three sentences ride, unfilled by any handler.",
+  "method": "retrieval.reindexPlan",
+  "request": {"jsonrpc": "2.0", "id": 345, "method": "retrieval.reindexPlan", "params": {"componentRoot": "/home/dev/aeon", "corpus": "memes"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 345,
+    "error": {
+      "code": -31957,
+      "message": "no such corpus to plan a rebuild for",
+      "data": {
+        "what": "retrieval.reindexPlan named a corpus the plane does not have — the corpora are \"code\" and \"history\" and there is no third",
+        "means": "nothing was estimated, nothing was started, nothing was written",
+        "todo": "run retrieval.status and read the corpora list, then name one of those",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "description": "backup.prune with dryRun:true returns the plan ONLY — every file, kept or not, and WHY (a deletion that cannot say why is a deletion that cannot be reviewed): the newest the keep count admits, the daily and weekly families' survivors, the pre-migration family under its own count (split by the manifest's reason, not the dir it sits in). Nothing is deleted and no ledger row is written: a plan is not an act. The removed key is ABSENT from the answer, which is how a client tells a dry run from one that acted.",
+  "method": "backup.prune",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 958,
+    "method": "backup.prune",
+    "params": {
+      "dryRun": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 958,
+    "result": {
+      "plan": [
+        {
+          "file": "aeon-state-20261102T115930Z-v76.aeonbak",
+          "keep": true,
+          "reason": "the keep-5 newest"
+        },
+        {
+          "file": "aeon-state-20261101T120000Z-v75.aeonbak",
+          "keep": true,
+          "reason": "the keep-5 newest"
+        },
+        {
+          "file": "aeon-state-20261020T120000Z-v74.aeonbak",
+          "keep": true,
+          "reason": "the keep-daily 30 survivor for its week"
+        },
+        {
+          "file": "aeon-state-20261003T120000Z-v70.aeonbak",
+          "keep": false,
+          "reason": "outside the keep counts"
+        }
+      ]
+    }
+  }
+}

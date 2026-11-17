@@ -1,0 +1,4 @@
+policy rows: 1
+  policy grant-read type=tool_access target=agent:alice action=allow source=operator subject=agent:alice spec={"toolName":"read","state":"allow"} not_after=none not_after_epoch=- created_at=<TIME>
+proposal rows: 0
+policy_event rows: 0

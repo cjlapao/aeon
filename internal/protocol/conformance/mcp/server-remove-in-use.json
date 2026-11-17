@@ -1,0 +1,18 @@
+{
+  "description": "S46 T3 registers T5/T8's code early (contract-first, beside server-add-no-actor.json): mcp.server.remove — the human write door at T5 — refuses to remove a server agents still DECLARE with ErrMcpInUse (-31855), naming the declaring agents in `what` so the operator's next call is informed. Nothing cascades silently: MG1's candidate-config rule says the refused write leaves every row exactly where it was (validator-rules-then-rows, one transaction, and this refusal writes neither rows nor an audit line). The removal that WOULD drop grants underneath a live declares is the same in-use fact T8's agent-delete path must also honour — hence \"T5/T8's\". NO WRITER EXISTS YET AT T3; this fixture pins the wire contract so the doors implement against it rather than inventing it later.",
+  "method": "mcp.server.remove",
+  "request": {"jsonrpc": "2.0", "id": 911, "method": "mcp.server.remove", "params": {"name": "reddit"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 911,
+    "error": {
+      "code": -31855,
+      "message": "the MCP thing is still in use",
+      "data": {
+        "what": "the remove was declined because rows still depend on it: agents still declare tools of server \"reddit\" — \"reddit-agent\" (2 declares)",
+        "means": "nothing was removed and no audit row was written — an MCP server that agents still declare cannot vanish underneath them, and a core set narrowed under a live grant would silently revoke a grant nobody revoked",
+        "todo": "read the dependents named in `what`; revoke the declares (mcp.grant.revoke) or set core back, then the remove passes — the refusal is the order of operations, not a permission",
+        "fatal": false
+      }
+    }
+  }
+}

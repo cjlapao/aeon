@@ -1,0 +1,25 @@
+{
+  "description": "CN18's off switch: pause FIRST (the answer carries it), then every scheduler-started loop through S55's own door; a failure names itself and the pause STANDS anyway.",
+  "method": "scheduler.stopAll",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 412,
+    "method": "scheduler.stopAll",
+    "params": {
+      "reason": "operator stepping away — off until I say"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 412,
+    "result": {
+      "paused": true,
+      "stopped": [
+        "roadmap-materialize-12",
+        "aeon-sweep-3"
+      ],
+      "failures": []
+    }
+  },
+  "fromDoor": true
+}

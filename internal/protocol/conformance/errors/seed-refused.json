@@ -1,0 +1,18 @@
+{
+  "description": "A seed.apply (or seed.restore) the engine refuses — a plan-level refusal, the one case is a downgrade, a lower version than applied — carries the seed's refused code (S43-extra T6, the -31831) and the engine's own sentence verbatim in the data: nothing was written, a downgrade is never silent (SD6), and the operator reads the engine's words, not a summary. The handler maps the engine's untyped refusal to this code and fills the What with its sentence via WithWhat, so the three parts travel unchanged.",
+  "method": "seed.apply",
+  "request": {"jsonrpc": "2.0", "id": 321, "method": "seed.apply", "params": {"set": "agents.firstparty"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 321,
+    "error": {
+      "code": -31831,
+      "message": "the seed apply was refused",
+      "data": {
+        "what": "seed: apply of \"agents.firstparty\" refused: a lower version than applied — a downgrade is never silent",
+        "means": "the engine's own sentence names the refusal — a downgrade (a lower version than applied is never silent), or an apply the engine would not make; nothing was written",
+        "todo": "read the engine's sentence below; a downgrade is refused, never coerced, and a diverged or removed record is re-applied only by `seed.restore`",
+        "fatal": false
+      }
+    }
+  }
+}

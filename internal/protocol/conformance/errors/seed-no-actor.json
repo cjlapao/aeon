@@ -1,0 +1,18 @@
+{
+  "description": "A seed.apply (or seed.restore) on a connection the daemon cannot attribute to a peer refuses with the seed's no-actor code (S43-extra T6, the -31832): the actor comes from the connection (the daemon's ActorFor seam), never from params, and an unresolvable or empty peer id is refused rather than stamped with a placeholder (SD10). The honest absence (a storeless daemon has no persons) is the refusal, not a default — an unattributed seed is a silent no-op the audit cannot name, and the three-part data says so without the handler filling in anything (this is the one seed refusal that carries the registry's own sentence, not the engine's).",
+  "method": "seed.apply",
+  "request": {"jsonrpc": "2.0", "id": 322, "method": "seed.apply", "params": {"set": "agents.firstparty"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 322,
+    "error": {
+      "code": -31832,
+      "message": "no actor for a seed write",
+      "data": {
+        "what": "the seed write needs a person, and this connection named none",
+        "means": "the actor comes from the connection, never from params, and an unresolvable or empty peer id is refused rather than stamped with a placeholder — an unattributed seed is a silent no-op that the audit cannot name",
+        "todo": "apply or restore from a connection the daemon can attribute to a peer; the startup inert apply is the only unattributed path, and it is the daemon's own, not a caller's",
+        "fatal": false
+      }
+    }
+  }
+}

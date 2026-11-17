@@ -1,0 +1,36 @@
+{
+  "description": "S45 T4 (PM1): the authoring human door's success answer — policy.add stores through THE write boundary (one round-trip, no second validator) and returns the row exactly as policy.get would render it (describe verbatim from the engine), the authoring-time operator warnings as DATA (DEF-038's unmatchable-target line for a loop target here, SEC-014's broad-allow line absent for a narrow one), and the target's in-force answer BEFORE and AFTER the write, each row {policyID, state, render} with render riding InForceAnswer.Render() byte for byte (D14 — never reformatted, never collapsed). The actor is nowhere on the wire: it was stamped by the daemon from the connection's peer credential (an actor/status/createdBy param key is refused as a shape error), and this accepted add lands exactly one policy_change row (op='add', ids-only summary) which policy.changes, not this answer, reports.",
+  "method": "policy.add",
+  "request": {"jsonrpc": "2.0", "id": 81, "method": "policy.add", "params": {
+    "id": "deny-deploy",
+    "type": "command_access",
+    "target": {"kind": "loop", "id": "aeon-s45-review"},
+    "action": "deny",
+    "spec": {"command": "git push*"}
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 81,
+    "result": {
+      "policy": {
+        "id": "deny-deploy",
+        "type": "command_access",
+        "target": "loop:aeon-s45-review",
+        "action": "deny",
+        "source": "operator",
+        "notAfter": null,
+        "describe": "deny command pattern \"git push*\"",
+        "createdAt": "2026-11-02T09:00:00Z",
+        "origin": "user",
+        "spec": {"command": "git push*", "state": "deny"},
+        "authored": false
+      },
+      "warnings": [
+        "warning  no runtime decision carries a loop identity until S18/S20 — the rule is stored but cannot match yet (deny nothing, permit nothing, fail-closed)"
+      ],
+      "before": {"target": "loop:aeon-s45-review", "answers": []},
+      "after": {"target": "loop:aeon-s45-review", "answers": [
+        {"policyID": "deny-deploy", "state": "in-force", "render": "deny-deploy: deny — command pattern \"git push*\" bound this loop"}
+      ]}
+    }
+  }
+}

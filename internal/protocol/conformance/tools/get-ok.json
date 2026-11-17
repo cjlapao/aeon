@@ -1,0 +1,109 @@
+{
+  "description": "tools.get on `bash`: the tool, EVERY agent that exists, and the rules behind it. The roster is complete on purpose — `atlas` holds bash and a deny refuses it (`granted_denied`, with the engine's sentence verbatim), `brief-author` holds it and no allow matched so PL5 decides (`granted_no_rule`, whose sentence says \"no allow matched\" and must never be rendered as a denial), `sentry` does not hold it at all (`not_granted` with NO reason: the verdict was never sought, and a reason here would be a sentence the evaluator never said), and `cursitor` is a custom agent whose row names tools it can never exercise (`dispatchable:false`, state `not_granted`). `granted_by` says which row put the name there — `default` for the unconditional grant, `handler` for the agent's own row. `policies[].describe` is `policy.Describe` verbatim: one formatter, no client-side assembly. `mcp` is absent because there is no server to link.",
+  "method": "tools.get",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 644,
+    "method": "tools.get",
+    "params": {
+      "name": "bash"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 644,
+    "result": {
+      "tool": {
+        "name": "bash",
+        "family": "process",
+        "source": "system",
+        "description": "Run a shell command in the workspace. It runs with a mandatory timeout, with stdin closed, and with stdout and stderr capped — truncation is reported with the true size. Command policy is decided by the engine over the WHOLE string: it splits on `&&`, `||`, `;` and newlines, and every segment must be allowed. It does NOT analyse quoting, `bash -c` (or `sh -c`), command substitution `$()`, backticks, heredocs, a single `|`, a single `&`, or `()` subshells — such a string is ONE command to the matcher, and evading the policy that way violates the policy regardless of whether the matcher catches it. Commands longer than 65536 bytes are refused at this boundary.",
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "command": {
+              "description": "the shell command to run",
+              "type": "string"
+            },
+            "timeoutSeconds": {
+              "description": "shorten the timeout; it cannot be lengthened",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "command"
+          ],
+          "type": "object"
+        },
+        "schemaHash": "bd4d88d8b930615eb14cf00ec8aa0457c5a99ce7ac046942ae7dd82ff0cac6b5",
+        "rerunClass": "unsafe",
+        "capabilities": [
+          "spawn_process"
+        ],
+        "governed": [
+          "tool_access",
+          "command_access"
+        ],
+        "conditional": false,
+        "available": true,
+        "classified": false,
+        "version": 1,
+        "origin": "system",
+        "rowCurrent": true,
+        "category": "process",
+        "access": "write",
+        "address": "process.bash.write"
+      },
+      "agents": [
+        {
+          "tool": "bash",
+          "agent": "atlas",
+          "state": "granted_denied",
+          "reason": "refused: agent:atlas · tool_access \"deny-bash-atlas\" · target agent:atlas · source operator · no expiry",
+          "granted_by": [
+            "handler"
+          ],
+          "dispatchable": true
+        },
+        {
+          "tool": "bash",
+          "agent": "brief-author",
+          "state": "granted_no_rule",
+          "reason": "refused: agent:brief-author · no allow matched · default deny (PL5)",
+          "granted_by": [
+            "handler"
+          ],
+          "dispatchable": true
+        },
+        {
+          "tool": "bash",
+          "agent": "cursitor",
+          "state": "not_granted",
+          "dispatchable": false
+        },
+        {
+          "tool": "bash",
+          "agent": "sentry",
+          "state": "not_granted",
+          "dispatchable": true
+        }
+      ],
+      "policies": [
+        {
+          "id": "deny-bash-atlas",
+          "action": "deny",
+          "source": "operator",
+          "origin": "user",
+          "target": "agent:atlas",
+          "toolName": "bash",
+          "describe": "denies tool \"bash\" for agent \"atlas\" — authored by operator",
+          "expired": false,
+          "link": {
+            "kind": "policy",
+            "id": "deny-bash-atlas"
+          }
+        }
+      ]
+    }
+  }
+}

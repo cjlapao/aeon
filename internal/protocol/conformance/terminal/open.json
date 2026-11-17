@@ -1,0 +1,12 @@
+{
+  "description": "`terminal.open` starts the person's own shell on a PTY in a registered component root (P26 — the socket only the user can open; policy governs agents, not this, LW8). Output and exit stream as terminal.output / terminal.exit notifications, never through the event log (LW7). Windows refuses with a named unsupported (LW12).",
+  "method": "terminal.open",
+  "request": {
+    "jsonrpc": "2.0", "id": 90, "method": "terminal.open",
+    "params": { "componentRoot": "/home/dev/code/aeon-qa-workspace", "cols": 100, "rows": 24 }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 90,
+    "result": { "terminalId": "t-7f3a", "shell": "/bin/bash", "cwd": "/home/dev/code/aeon-qa-workspace" }
+  }
+}

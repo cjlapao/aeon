@@ -1,0 +1,13 @@
+{
+  "description": "history.vocabulary serves the closed sets as data (HV2): the lanes are internal/history's four GroupBy constants, the outcome words are the statuses the loop engine writes, the filter keys are the params the reads take — a client renders words it is served and types none. The sets are derived from package constants at call time (TestVocabularyEqualsTheConstants moves a constant and the answer moves with it), and a stored status outside the set renders verbatim on a row rather than collapsing into a known word.",
+  "method": "history.vocabulary",
+  "request": {"jsonrpc": "2.0", "id": 415, "method": "history.vocabulary"},
+  "response": {
+    "jsonrpc": "2.0", "id": 415,
+    "result": {
+      "lanes": ["loop", "phase", "task", "agent"],
+      "outcomes": ["running", "waiting", "blocked", "done", "idle", "aborted", "failed"],
+      "filters": ["projectRoot", "componentRoot", "groupBy", "since"]
+    }
+  }
+}

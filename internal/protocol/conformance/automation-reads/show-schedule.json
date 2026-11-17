@@ -1,0 +1,88 @@
+{
+  "description": "The schedule page: the canonical clock form, the plain-language description, the live health compose, the last fires and the audit trail \u2014 one round trip that renders the whole page.",
+  "method": "automation.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8202,
+    "method": "automation.show",
+    "params": {
+      "source": "schedule",
+      "id": "sch-morning"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8202,
+    "result": {
+      "automation": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "name": "Morning standup",
+        "blueprint": "morning-standup",
+        "workspace": "/home/p/ops",
+        "goal": "Daily morning sweep",
+        "expr": "0 7 * * *",
+        "zone": "Europe/Lisbon",
+        "enabled": true,
+        "createdByKind": "user",
+        "createdById": "operator",
+        "createdAt": "2026-10-01T08:00:00Z",
+        "updatedAt": "2026-10-01T08:00:00Z",
+        "lastFire": {
+          "source": "schedule",
+          "triggerId": "sch-morning",
+          "fireId": 41,
+          "at": "2026-11-03T07:00:00.000Z",
+          "outcome": "started",
+          "reason": "",
+          "loopId": "loop-9b2c1010",
+          "loopSlug": "morning-2026-11-03-0700"
+        }
+      },
+      "schedule": {
+        "expr": "0 7 * * *",
+        "zone": "Europe/Lisbon"
+      },
+      "description": "Daily at 07:00 in Europe/Lisbon (cron \"0 7 * * *\"). Starts the morning-standup blueprint in /home/p/ops.",
+      "health": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "blueprint": {
+          "state": "ok"
+        },
+        "workspace": {
+          "exists": true
+        },
+        "scope": {
+          "exists": true
+        },
+        "canFire": true,
+        "reasons": []
+      },
+      "recentFires": [
+        {
+          "source": "schedule",
+          "triggerId": "sch-morning",
+          "fireId": 41,
+          "at": "2026-11-03T07:00:00.000Z",
+          "outcome": "started",
+          "reason": "",
+          "loopId": "loop-9b2c1010",
+          "loopSlug": "morning-2026-11-03-0700"
+        }
+      ],
+      "changes": [
+        {
+          "id": 7,
+          "source": "schedule",
+          "triggerId": "sch-morning",
+          "op": "create",
+          "summary": "created the schedule",
+          "actorKind": "user",
+          "actorId": "operator",
+          "occurredAt": "2026-10-01T08:00:00Z"
+        }
+      ]
+    }
+  }
+}

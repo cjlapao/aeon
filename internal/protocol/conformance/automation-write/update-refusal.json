@@ -1,0 +1,51 @@
+{
+  "description": "An edit that fails add's own validator is an ANSWER, not a transport error: the before and after views are identical, changed is false, and add's sentence rides in reason verbatim (S49 T4 — one grammar for refusals across the add and update doors).",
+  "method": "trigger.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8302,
+    "method": "trigger.update",
+    "params": {
+      "id": "sch-morning",
+      "windowStart": "08:00"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8302,
+    "result": {
+      "before": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "name": "sch-morning",
+        "blueprint": "morning-standup",
+        "workspace": "/home/p/ops",
+        "goal": "Daily morning sweep",
+        "expr": "0 7 * * *",
+        "zone": "Europe/Lisbon",
+        "enabled": true,
+        "createdByKind": "user",
+        "createdById": "operator",
+        "createdAt": "2026-10-01T08:00:00Z",
+        "lastFire": null
+      },
+      "after": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "name": "sch-morning",
+        "blueprint": "morning-standup",
+        "workspace": "/home/p/ops",
+        "goal": "Daily morning sweep",
+        "expr": "0 7 * * *",
+        "zone": "Europe/Lisbon",
+        "enabled": true,
+        "createdByKind": "user",
+        "createdById": "operator",
+        "createdAt": "2026-10-01T08:00:00Z",
+        "lastFire": null
+      },
+      "changed": false,
+      "reason": "schedule \"sch-morning\" has half a window — start \"08:00\" and end \"\" are a pair, and half a window is the kind of row that 'works' until a Sunday explains it"
+    }
+  }
+}

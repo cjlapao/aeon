@@ -1,0 +1,32 @@
+{
+  "description": "TODO",
+  "method": "surface.get",
+  "request": {
+    "id": 705,
+    "jsonrpc": "2.0",
+    "method": "surface.get",
+    "params": {
+      "method": "loop.show"
+    }
+  },
+  "response": {
+    "id": 705,
+    "jsonrpc": "2.0",
+    "result": {
+      "entry": {
+        "method": "loop.show",
+        "kind": "read",
+        "summary": "One loop as the rows hold it: state, blueprint, steps, cost, the last event.",
+        "humanDoorOnly": false,
+        "requiresInitialize": true,
+        "debug": false,
+        "doors": {
+          "socket": true,
+          "public": true,
+          "narrow": "aeon_loop_show",
+          "agentService": false
+        }
+      }
+    }
+  }
+}

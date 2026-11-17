@@ -1,0 +1,33 @@
+{
+  "description": "S27 T3: `undepend` removes exactly one named edge and nothing else \u2014 no cascade, no loop touched, no status moved (rule 7: even a `running` item may un-wish; the edge recorded intent only). The answer shows the row beside its now-empty graph: `dependencies` is simply absent, which is the honest absence, not a hidden list.",
+  "method": "roadmap.undepend",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 348,
+    "method": "roadmap.undepend",
+    "params": {
+      "id": 12,
+      "dependsOn": 9
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 348,
+    "result": {
+      "item": {
+        "id": 12,
+        "componentRoot": "/srv/projects/ledger",
+        "title": "export monthly statements",
+        "status": "running",
+        "priorityState": "known",
+        "priorityLabel": "P1",
+        "provenance": "manual",
+        "briefPath": "briefs/ledger.md",
+        "planPath": "plans/ledger.md",
+        "loopSlug": "ledger-export",
+        "createdAt": "2026-10-29T09:00:00Z",
+        "updatedAt": "2026-10-29T12:00:00Z"
+      }
+    }
+  }
+}

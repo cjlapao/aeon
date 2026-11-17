@@ -1,0 +1,6 @@
+policy rows: 3
+  policy warn-lane type=tool_access target=lane-type:review action=deny source=operator subject=lane-type:review spec={"state":"deny","toolName":"bash"} not_after=none not_after_epoch=- created_at=<TIME>
+  policy warn-loop type=tool_access target=loop:nightly action=deny source=operator subject=loop:nightly spec={"state":"deny","toolName":"bash"} not_after=none not_after_epoch=- created_at=<TIME>
+  policy warn-mcp type=tool_access target=mcp:github action=deny source=operator subject=mcp:github spec={"state":"deny","toolName":"bash"} not_after=none not_after_epoch=- created_at=<TIME>
+proposal rows: 0
+policy_event rows: 0

@@ -1,0 +1,35 @@
+{
+  "description": "S60 T9 (MQ14.3, TD2) — the agent's ONE ask of the merge queue, answered. mergequeue_propose_enqueue is a catalog tool and this is its socket twin: the same records service that answers the tool answers the method, so the bytes are the same answer rather than a second rendering of it (rule 4). What the answer is: a PROPOSAL row, `status: proposed`, authored by the AGENT the step belongs to (`createdByKind: agent` — the ask is the model's, and saying so is the audit), carrying WHICH REPOSITORY and WHICH BRANCH and the REASON a person reads before deciding. The `note` is the fixed inertness statement — `protocol.PolicyProposeInertNote`, one definition in the code and this fixture its wire copy — because an ask adds nothing: no queue row exists, no position is assigned, nothing is enforced until a person runs the `command` this answer names, and THEN the row joins UNATTENDED (MQ14.3 — an agent's committed ask never buys a watched landing) with `enqueued_by` stamped {proposal, the id} (the queue's history names the ask, not the agent as owner, and the enqueue EVENT carries the committing person). A branch that does not exist, a base nobody can resolve, or a branch already open in the lane is refused at create by the SAME mergequeue.ValidateEnqueue over gathered facts that the commit re-runs and the person's own enqueue answers on (MQ14's one function, TD3 — see propose-enqueue-refuses-a-smuggled-base.json for the door's other half); and there is no propose-retry, -reorder, -land or -settings ask to file at all: an agent may only ask a branch IN, and the lane's order, the retries and the settings stay the person's (MQ17, T8's guards).",
+  "method": "mergequeue.proposeEnqueue",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 980,
+    "method": "mergequeue.proposeEnqueue",
+    "params": {
+      "componentRoot": "/srv/components/alpha",
+      "branch": "feature/login-retry",
+      "reason": "the retry fix is green on the branch and the flake has stopped; I cannot put it in the queue myself and should not be able to"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 980,
+    "result": {
+      "proposal": {
+        "id": 91,
+        "kind": "mergequeue_enqueue",
+        "payload": {
+          "componentRoot": "/srv/components/alpha",
+          "branch": "feature/login-retry",
+          "reason": "the retry fix is green on the branch and the flake has stopped; I cannot put it in the queue myself and should not be able to"
+        },
+        "status": "proposed",
+        "createdAt": "2026-11-04T14:00:00Z",
+        "createdByKind": "agent",
+        "createdById": "implementer",
+        "command": "aeon proposal commit 91"
+      },
+      "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+    }
+  }
+}

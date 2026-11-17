@@ -1,0 +1,49 @@
+{
+  "description": "loop.run.options answers the dialogue BEFORE the start: every blueprint with the verdict the same validators give it \u2014 runnable, or the evaluator's sentence and the candidates that would flip it (D6). Sorted by name; no per-component filter exists yet (recorded contradiction).",
+  "method": "loop.run.options",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 412,
+    "method": "loop.run.options",
+    "params": {
+      "id": "loop-9"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 412,
+    "result": {
+      "options": [
+        {
+          "blueprint": "brainstorm",
+          "version": 1,
+          "runnable": true
+        },
+        {
+          "blueprint": "chat",
+          "version": 1,
+          "runnable": true
+        },
+        {
+          "blueprint": "goal-to-brief",
+          "version": 1,
+          "runnable": false,
+          "reason": "blueprint \"goal-to-brief\" needs an approved goal \u2014 none was given",
+          "candidates": [
+            {
+              "kind": "goal",
+              "id": "g1",
+              "title": "Add export",
+              "state": "approved"
+            }
+          ]
+        },
+        {
+          "blueprint": "two-step",
+          "version": 1,
+          "runnable": true
+        }
+      ]
+    }
+  }
+}

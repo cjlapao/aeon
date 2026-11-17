@@ -1,0 +1,59 @@
+{
+  "description": "verify.list over a component with two own gates: the first has never run (lastRun absent — an honest absence, not an empty run) and carries the policy preview, which is a warning, never a refusal (the run-time gate is authoritative); the second has a last passing run from the loop's own rung. effective=false answers the component's OWN set; the effective set (own plus the root's, each marked with its source) is the same method with effective=true.",
+  "method": "verify.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1001,
+    "method": "verify.list",
+    "params": {
+      "componentId": "c-aeon",
+      "effective": null,
+      "includeArchived": false,
+      "requirement": ""
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1001,
+    "result": {
+      "componentId": "c-aeon",
+      "effective": false,
+      "gates": [
+        {
+          "id": "vcm-1",
+          "componentId": "c-aeon",
+          "name": "unit",
+          "command": "go test ./...",
+          "requirement": "required",
+          "timeoutS": 600,
+          "position": 1,
+          "enabled": true,
+          "origin": "user",
+          "createdAt": "2026-11-01T09:00:00Z",
+          "updatedAt": "2026-11-01T09:00:00Z",
+          "policyPreview": "the policy gate would refuse this command as the verifier-engineer: deny — command_access: no rule matches \"go test ./...\" (the run-time gate is authoritative; the preview warns, never refuses)"
+        },
+        {
+          "id": "vcm-2",
+          "componentId": "c-aeon",
+          "name": "lint",
+          "command": "golangci-lint run",
+          "requirement": "advisory",
+          "timeoutS": 300,
+          "position": 2,
+          "enabled": true,
+          "origin": "user",
+          "createdAt": "2026-11-01T09:05:00Z",
+          "updatedAt": "2026-11-01T09:05:00Z",
+          "lastRun": {
+            "id": "vr-101",
+            "state": "pass",
+            "trigger": "loop",
+            "startedAt": "2026-11-02T11:30:00Z",
+            "endedAt": "2026-11-02T11:30:42Z"
+          }
+        }
+      ]
+    }
+  }
+}

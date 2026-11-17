@@ -1,0 +1,63 @@
+{
+  "transcript": [
+    {
+      "role": "system",
+      "kinds": [
+        "text"
+      ],
+      "content": "\n# Chat\n\nYou are the voice of one component in a plain conversation. A person typed a\nmessage; you answer it. There is no lifecycle to run, no phase to report to,\nno report format to terminate with — the thread is the record, and the thread\nis read by the person, not by an orchestrator.\n\n## Do the work directly\n\nWhen the ask is small enough to just do, do it in this turn: `read` the file,\n`list` the directory, `glob` and `grep` before you speculate — an answer about\nthis component is grounded in its files or it is not an answer. When the\nperson asks for a change, make it: `write` a file, `edit` a line, and say\nplainly what you changed. A small task talked about is a small task not done.\n\nUse `bash` only for what files cannot answer and the policy allows — the\nverdict is not yours to widen, and a refusal you receive is an answer to\npass along, not to work around.\n\nTrack a multi-part ask with `todo` so the person can see the parts; a single\nquestion needs none. When something is genuinely missing — a decision only\nthe person can make — ask it with `question` rather than guessing on their\nbehalf; the conversation pauses for a real answer instead of a confident\ninvention.\n\n## Keep the record honest\n\nWhen the conversation produces work worth tracking, file it: `task_create`\nthe task, and settle what was done against `task_list` and `task_show`\nbefore you claim it. When it produces a direction worth deciding, look\nbefore you speak with `goal_list` — a goal that already exists is not\nre-filed, it is refined — and see what surrounds the component with\n`component_list`. Pin a document that outlives the message with `attach`.\n\n## Never invent a process\n\nA conversation is not a pipeline, and you do not manufacture one to look\nthorough. When the person asks for a brainstorm, a brief, a plan or an\nimplementation — a structured process with contracts and review — you call\n`run_start` and let them confirm: name the blueprint that fits and why, in\nplain words, and start nothing they have not agreed to. Between that\nproposal and their yes, nothing runs.\n\nWhen the person asks you to run a blueprint (for example \"implement this\ngoal\" or \"write the brief\"), call `run_start` with the blueprint name and the\ngoal or task id. The person is asked to confirm. If it returns a sentence\nabout something missing, say it plainly, list the candidates it names, and ask\nwhich to use. Never call `run_start` because of your own judgment — only when\nasked.\n\nSay plainly when something is missing, when an answer is a guess, when a\nfile says one thing and the person expects another. The person can decide\nabout a known unknown; a polished guess is theirs only by accident.\n\n\nYou are running one bounded step inside Aeon. You have a small set of tools, a limited number of turns, and a report to produce at the end.\n\nWork from what you can verify. If you need to see a file, read it rather than assuming its contents — and if something you were asked about is not there, say so rather than describing what would usually be there.\n\nIf the honest answer to the task is \"no\" or \"this cannot be done\", say that in the report. A rejection that is correct is a successful step; a plausible answer that is wrong is not.\n\nWhen the work is done, end your reply with a single JSON object matching this schema, in a ```json fenced block:\n\n{\n  \"additionalProperties\": false,\n  \"properties\": {\n    \"open_questions\": {\n      \"description\": \"the literal 'None.' when nothing is outstanding — otherwise each thing still waiting on the person\",\n      \"type\": \"string\"\n    },\n    \"status\": {\n      \"description\": \"ok if you did what was asked; reject if the honest answer is no; blocked if you could not\",\n      \"enum\": [\n        \"ok\",\n        \"reject\",\n        \"blocked\"\n      ]\n    },\n    \"summary\": {\n      \"description\": \"what the conversation settled — the answer given, the work done, or the process proposed, in one paragraph\",\n      \"type\": \"string\"\n    }\n  },\n  \"required\": [\n    \"status\",\n    \"summary\",\n    \"open_questions\"\n  ],\n  \"type\": \"object\"\n}\n\n## Workspace\n\nEvery path you give a tool is relative to the workspace root. Use `list` to find files before guessing a path. Use `read` to inspect them and `write` to create or replace a workspace file when the task asks for a change. Absolute paths and `..` segments are refused, and so is a symlink that resolves outside the workspace — if a path is refused, the error says which rule refused it.\n\nYou cannot see or change files outside the workspace.\n\n## How to work\n\nYour tools: [read list glob grep write edit bash todo question task_create task_list task_show goal_list component_list attach run_start].\n\nCall them one at a time and read each result before deciding what to do next. When you have what you need, stop calling tools and reply with ONLY the JSON report in a ```json fenced block.\n\nYou have a bounded number of turns. If you run out, the step reports that it ran out of room rather than that it failed — so spend turns on what the task actually asked for.\n\n## Your task\n\nThe person's own words in your message are the goal. Work the blueprint position named here.\nCurrent blueprint lane: only\n\n## Policy\n\n- For agent chat: You may use the bash tool.\n- For agent chat: You may run the shell command `echo hi`.\n\nThe daemon enforces these rules whatever you do — a refused attempt returns an error, so spend your turns on what is allowed.\n"
+    },
+    {
+      "role": "user",
+      "kinds": [
+        "text"
+      ],
+      "content": "the drain test loop"
+    },
+    {
+      "role": "assistant",
+      "kinds": [
+        "tool_use"
+      ]
+    },
+    {
+      "role": "user",
+      "kinds": [
+        "tool_result"
+      ],
+      "content": "$ echo hi\nexit 0 · N\n\n--- stdout ---\nhi\n"
+    },
+    {
+      "role": "assistant",
+      "kinds": [
+        "text"
+      ],
+      "content": "{\"status\":\"ok\",\"summary\":\"ran echo hi\"}"
+    }
+  ],
+  "startKeys": [
+    "agent",
+    "command",
+    "iteration",
+    "lane",
+    "loopId",
+    "stepId",
+    "summary",
+    "tool",
+    "toolUseId"
+  ],
+  "endKeys": [
+    "agent",
+    "detail",
+    "durationMs",
+    "iteration",
+    "lane",
+    "loopId",
+    "output",
+    "result",
+    "stepId",
+    "summary",
+    "tool",
+    "toolUseId"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "description": "Sets the route one lane of a shipped, locked blueprint runs on. The blueprint's bytes do not change; an empty value clears the override so the lane inherits the loop's route again.",
+  "method": "blueprint.override",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 85,
+    "method": "blueprint.override",
+    "params": {
+      "name": "dev-loop",
+      "lane": "review",
+      "field": "route",
+      "value": "anthropic"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 85,
+    "result": {
+      "name": "dev-loop",
+      "lane": "review",
+      "field": "route",
+      "value": "anthropic",
+      "changed": true
+    }
+  }
+}

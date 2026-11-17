@@ -1,0 +1,30 @@
+{
+  "description": "notify.subscription.set upserts one (channel, root) scope row: an empty rootId means every root, minSeverity is the attention enum, the quiet window is all-or-none with an explicit IANA zone, and maxPerHour 0 answers as the enforced default 30 — the view states what the dispatcher will do, not what was stored (SV8, TR6).",
+  "method": "notify.subscription.set",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 947,
+    "method": "notify.subscription.set",
+    "params": {
+      "channelId": "nc-01JTEST0000000000000000001",
+      "rootId": "",
+      "minSeverity": "blocked",
+      "quietStart": "22:00",
+      "quietEnd": "07:00",
+      "quietZone": "Europe/Lisbon"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 947,
+    "result": {
+      "channelId": "nc-01JTEST0000000000000000001",
+      "minSeverity": "blocked",
+      "kinds": null,
+      "quietStart": "22:00",
+      "quietEnd": "07:00",
+      "quietZone": "Europe/Lisbon",
+      "maxPerHour": 30
+    }
+  }
+}

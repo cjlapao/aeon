@@ -1,0 +1,22 @@
+{
+  "description": "the board's one kind (OL14): every task transition \u2014 created, moved, assigned, decided \u2014 is task.changed with the previous state inside it, published AFTER the row committed. The daemon that dies between commit and publish loses this notification, never the row (at-most-once until S40's outbox).",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 1750,
+      "kind": "task.changed",
+      "at": "2026-10-26T10:00:00.25Z",
+      "payload": {
+        "id": "task-7a1f",
+        "manual": false,
+        "status": "in-progress",
+        "previous": "pending",
+        "assignee": "golang-engineer",
+        "loopSlug": "briefing",
+        "componentId": "cmp-7a1f"
+      }
+    }
+  }
+}

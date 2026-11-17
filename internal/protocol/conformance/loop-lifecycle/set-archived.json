@@ -1,0 +1,12 @@
+{
+  "description": "`loop.setArchived` hides a loop from the lists (`archived: true`) or shows it again (`false`). Nothing under the loop changes: its steps, chat, documents, costs and links stay exactly as they were. It is the person's door and is refused for a running loop: stop it first. `loop.list` leaves archived loops out unless `archived` is `include` or `only`, and reports `archivedAt` on them.",
+  "method": "loop.setArchived",
+  "request": {
+    "jsonrpc": "2.0", "id": 86, "method": "loop.setArchived",
+    "params": { "id": "loop-7f3a", "archived": true, "note": "old test run" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 86,
+    "result": { "id": "loop-7f3a", "archived": true, "archivedAt": "2026-11-16T12:00:00.000Z" }
+  }
+}

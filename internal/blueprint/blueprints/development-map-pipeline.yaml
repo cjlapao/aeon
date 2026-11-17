@@ -1,0 +1,114 @@
+# development-map, Pipeline mode — derived from opencode/skills/development-map/SKILL.md (525 lines)
+#
+# Driven by 32 agents. The second protocol genuinely in use.
+#
+# ONE SKILL, TWO BLUEPRINTS. development-map declares "Two Invocation Modes" — Pipeline and
+# Direct — and they are not conditional variants of one flow. Pipeline creates issues, files
+# and PRs; Direct creates NONE of them ("No Issue or file is created"). Expressing both as one
+# blueprint would mean a `when` on every lane and a reader who cannot see either shape. So:
+# two blueprints. See development-map-direct.yaml and README.md.
+---
+id: development-map-pipeline
+schemaVersion: 1
+version: 1
+
+lanes:
+  # ---- intake and specification --------------------------------------------
+  - id: feature-issue
+    # Step 2: "If the request already includes acceptance criteria and definition of done,
+    # skip to step 3."
+    # GAP-5: the condition is "the request already contains X" — a property of the input, not
+    # a manifest field. Expressed as a flag the intake must set. See README.md.
+    when: { field: flags.has_acceptance_criteria, op: eq, value: false }
+    step: { kind: model-step, agent: product-manager, produces: feature.md }
+
+  - id: task-breakdown
+    # Step 3: "creates one Task Issue per task linked as a child to the Feature Issue, with
+    # Assigned Specialist set and initial label pending"
+    step: { kind: model-step, agent: project-manager, produces: tasks/ }
+
+  - id: feature-branch
+    # Step 4: "off main on the remote (empty initial commit, pushed) … This ensures the feature
+    # branch exists at the remote before any task branches are created from it."
+    step: { kind: code-action, action: git.createBranch }
+
+  # ---- per task, strictly sequential ---------------------------------------
+  - id: build
+    # Step 5: "Execute tasks one at a time in order (never concurrently)."
+    iterate: tasks
+    rework: implement
+    on_reject: { counter: retries, max: 2, then: escalate }
+    ladder:
+      - id: issue
+        kind: code-action
+        action: forge.openIssue
+        sets: issue-open
+
+      - id: implement
+        # The specialist named in the Task Issue's `Assigned Specialist` field.
+        kind: model-step
+        agent: by-tech-tag
+        sets: in-progress
+
+      - id: pr
+        kind: code-action
+        action: forge.openPR
+        sets: pr-open           # label: ready-for-review
+
+      - id: review
+        # Step 6: "reviews systematically against acceptance criteria … adds label approved
+        # (if approved) or removes ready-for-review (if changes requested)"
+        # Step 7: "Return to step 6 — still for the same task. Loop until approved."
+        # ADDED: a cap of 2. The skill's loop is UNBOUNDED; S13's L28 caps task-level rounds,
+        # and an uncapped backward edge is an `invalid` diagnostic. A deliberate divergence
+        # from the skill, recorded rather than silent.
+        kind: model-step
+        agent: code-reviewer
+        sets: in-review
+        on_reject: { goto: implement, counter: review_rounds, max: 2, then: escalate }
+
+      - id: merge
+        # Step 8: "merges the task PR into the feature branch, adds label merged … and closes
+        # the Task Issue. Only then does the coordinator advance to the next task."
+        kind: code-action
+        action: forge.merge
+        sets: merged
+
+      - id: close-issue
+        kind: code-action
+        action: forge.closeIssue
+
+  # ---- feature-level ------------------------------------------------------
+  - id: feature-verification
+    # Step 9: "When every Task Issue for the feature has label merged, task-coordinator asks
+    # the user for final verification against the feature's acceptance criteria."
+    step: { kind: gate, question: verify-feature }
+    on_reject:
+      goto: build
+      with: { mode: fix }
+      counter: feature_rounds
+      max: 2
+      then: escalate
+
+  - id: choose-base
+    # Step 10: "If an unstable branch exists in the repo, steward MUST ask the user whether to
+    # target main or unstable. If no unstable branch exists, default to main."
+    # A gate whose answers are a CHOICE, not approve/deny — the format's closed answer set
+    # handles it. The `when` makes it appear only where the choice exists.
+    when: { field: flags.has_unstable_branch, op: eq, value: true }
+    step: { kind: gate, question: which-base }
+
+  - id: merge-feature
+    # "Steward reports the merge commit back to the user. Then closes the Feature Issue."
+    step: { kind: code-action, action: forge.merge }
+
+  - id: close-feature-issue
+    step: { kind: code-action, action: forge.closeIssue }
+
+questions:
+  verify-feature:
+    prompt: Every task is merged. Verify the feature against its acceptance criteria?
+    answers: [approve, needs-work, abort]
+  which-base:
+    prompt: This repository has an unstable branch. Merge the feature into which?
+    answers: [main, unstable, abort]

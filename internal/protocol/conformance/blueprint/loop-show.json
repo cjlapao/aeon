@@ -1,0 +1,68 @@
+{
+  "description": "Shows the saved ladder and pinned YAML so an edited source file cannot silently change a running loop.",
+  "method": "loop.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "method": "loop.show",
+    "params": {
+      "id": "loop-1",
+      "includeBlueprint": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "result": {
+      "id": "loop-1",
+      "slug": "loop-1",
+      "blueprint": "two-step",
+      "version": 1,
+      "goal": "Survey the repository",
+      "root": "/repo",
+      "status": "waiting",
+      "startedAt": "2026-10-19T08:00:00Z",
+      "updatedAt": "2026-10-19T08:00:03Z",
+      "position": {
+        "lane": "approve"
+      },
+      "questionId": 7,
+      "gateAnswers": [
+        "approve",
+        "abort"
+      ],
+      "gatePrompt": "Approve the survey and continue?",
+      "lanes": [
+        {
+          "id": "survey",
+          "structure": "direct",
+          "status": "ok",
+          "steps": [
+            {
+              "id": "survey",
+              "kind": "model-step",
+              "status": "done",
+              "outcome": "ok",
+              "startedAt": "2026-10-19T08:00:00Z",
+              "endedAt": "2026-10-19T08:00:02Z",
+              "wallMs": 2000
+            }
+          ]
+        },
+        {
+          "id": "approve",
+          "structure": "direct",
+          "status": "waiting",
+          "steps": [
+            {
+              "id": "approve",
+              "kind": "gate",
+              "status": "pending"
+            }
+          ]
+        }
+      ],
+      "pinnedContent": "id: two-step\n"
+    }
+  }
+}

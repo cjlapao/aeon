@@ -1,0 +1,31 @@
+{
+  "description": "agent.edit changes an agent row by slug and returns the slug it edited — a daemon write (the agent table, not the closed policy set), so it is registered like loop.create. `fields` is the whole row, because the door is a REPLACEMENT: agentmgr.Edit writes ten content fields wholesale (name, description, functionality, prompt, skills, metadata, avatarType, avatarColor, avatarMood, tools — the tools are checked against the tool registry and a list that names an unknown tool is refused by name; a caller that sends no `tools` leaves the allow-list as it is) and a caller that sends only what its form showed would write the other ones empty (S73 design AR5 — the reason the app's panel loads the row with agent.view first and posts what it loaded). The keys outside those ten are read into the struct and ignored: id, slug, internal, signed and the stamps are the row's, never the caller's, so carrying them costs nothing and changing nothing. A slug with no row is refused by name, so an edit cannot reach an agent that never existed.",
+  "method": "agent.edit",
+  "request": {"jsonrpc": "2.0", "id": 116, "method": "agent.edit", "params": {"slug": "reviewer-plus", "fields": {
+    "id": 12,
+    "slug": "reviewer-plus",
+    "name": "Reviewer Plus v2",
+    "description": "Reviews pull requests, posts findings, and flags risky diffs",
+    "functionality": "read, list, write",
+    "metadata": "",
+    "prompt": "You are a careful code reviewer.",
+    "skills": "[]",
+    "version": "1.0.0",
+    "internal": false,
+    "avatarType": "minion",
+    "avatarColor": "blue",
+    "avatarMood": "idle",
+    "signature": "",
+    "certificate": "",
+    "signed": false,
+    "tools": "[\"read\",\"list\",\"write\"]",
+    "temperature": 0.2,
+    "handoff": "{}",
+    "policyAgent": "",
+    "bodyHash": "sha256:1f4b0c9d2a7e43b1a6c85d0e9f3a2b4c6d8e0f1a3b5c7d9e1f3a5b7c9d1e3f5a",
+    "origin": "user",
+    "createdAt": "2026-10-30T09:00:00Z",
+    "updatedAt": "2026-10-30T09:00:00Z"
+  }}},
+  "response": {"jsonrpc": "2.0", "id": 116, "result": {"edited": "reviewer-plus"}}
+}

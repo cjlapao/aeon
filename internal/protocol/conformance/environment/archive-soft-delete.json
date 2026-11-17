@@ -1,0 +1,32 @@
+{
+  "description": "S59 T6 (EV14): environment.archive sets archived_at and returns the same row — the row is NOT deleted, because a binding and an audit trail that point at a vanished row are worse than a row that says it is retired. Restoring is the mirror door (environment.restore), and both stamp the peer that acted.",
+  "method": "environment.archive",
+  "request": { "jsonrpc": "2.0", "id": 924, "method": "environment.archive", "params": { "id": "env_7f2a9b8c6d5e" } },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 924,
+    "result": {
+      "id": "env_7f2a9b8c6d5e",
+      "slug": "ci-default",
+      "name": "CI default",
+      "backend": "host-scrubbed",
+      "origin": "user",
+      "legacy": false,
+      "revision": 3,
+      "spec": {
+        "env": { "passthrough": ["HOME", "PATH", "TERM", "USER"], "set": { "TERM": "dumb" }, "secrets": ["deploy-token"] },
+        "home": "real",
+        "limits": { "timeout": "10m", "output": 1048576 },
+        "egress": { "mode": "unenforced", "allow": [] },
+        "image": null,
+        "services": [],
+        "preview": null
+      },
+      "createdAt": "2026-11-03T09:12:00Z",
+      "updatedAt": "2026-11-03T09:40:00Z",
+      "archivedAt": "2026-11-03T09:40:00Z",
+      "capabilities": ["wall-limit", "env-allowlist", "secrets-redacted"],
+      "secretRefNames": ["deploy-token"]
+    }
+  }
+}

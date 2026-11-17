@@ -1,0 +1,21 @@
+{
+  "description": "S51 T2 (TM1), the narrow edit: title and body and NOTHING else — validation state, priority, duplicate_of, roadmap_item_id, filed_by and every timestamp but updated_at are outside the statement itself. A nil field means LEAVE ALONE (absent on the wire, not empty: an empty title is a refusal, not a rename). The actor comes from the connection and the store writes the 'update' audit row beside the edit in one transaction, its summary naming the FIELD WORDS (SEC-033: no user text rides the audit). changed:false is legal and earns no row; a param carrying actor/actorKind/filedBy is refused by key before any of this.",
+  "method": "triage.update",
+  "request": {"jsonrpc": "2.0", "id": 439, "method": "triage.update", "params": {"id": 7, "title": "retry counter over-counts on the third attempt"}},
+  "response": {"jsonrpc": "2.0", "id": 439, "result": {
+    "changed": true,
+    "bug": {
+      "id": 7,
+      "componentRoot": "/srv/projects/ledger",
+      "title": "retry counter over-counts on the third attempt",
+      "body": "the counter adds the attempt number, not one",
+      "validation": "unvalidated",
+      "priorityState": "known",
+      "priorityLabel": "P1",
+      "filedBy": "person",
+      "validated": false,
+      "createdAt": "2026-10-30T10:10:00Z",
+      "updatedAt": "2026-11-04T12:00:00Z"
+    }
+  }}
+}

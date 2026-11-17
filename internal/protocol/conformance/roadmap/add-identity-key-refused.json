@@ -1,0 +1,29 @@
+{
+  "description": "S50 T1 (RM2), the wire-side twin of the no-actor rule: roadmap.add params carry \"actor\" \u2014 refused by KEY before the lenient decode (decodeParams ignores unknown keys, so the refusal lives here or nowhere; the backup.run precedent BK13 and the environment plane's identity vocabulary). The actor is stamped by the door that holds the connection and never named by the caller \u2014 a param that carried one would let anyone forge the audit identity of the write, which is precisely what the roadmap_change table exists to make impossible. \"actorKind\" and \"who\" carry the same refusal on every roadmap write (add, cancel, estimate, priority, ideate, plan, materialize).",
+  "method": "roadmap.add",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 963,
+    "method": "roadmap.add",
+    "params": {
+      "componentRoot": "/srv/projects/ledger",
+      "title": "export monthly statements",
+      "priorityState": "assumed",
+      "provenance": "authored",
+      "actor": {
+        "kind": "user",
+        "id": "root"
+      },
+      "epic": "reports",
+      "priorityLabel": "P1"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 963,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: roadmap.add refuses the param \"actor\" \u2014 the actor is stamped from the connection, never carried in params (RM2)"
+    }
+  }
+}

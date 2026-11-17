@@ -1,0 +1,6 @@
+{
+  "description": "A second answer is refused and names when the first answer was committed to the question thread.",
+  "method": "answer",
+  "request": {"jsonrpc":"2.0","id":82,"method":"answer","params":{"stepId":4,"questionId":9,"answer":"no"}},
+  "response": {"jsonrpc":"2.0","id":82,"error":{"code":-31301,"message":"question already answered","data":{"what":"question 9 was already answered at 2026-10-17T10:00:00Z","means":"the first answer may already have resumed the step, so it cannot be overwritten","todo":"inspect the recorded answer and its timestamp; start a new question if a correction is needed","fatal":false}}}
+}

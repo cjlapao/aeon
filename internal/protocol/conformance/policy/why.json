@@ -1,0 +1,15 @@
+{
+  "description": "policy.why explains a verdict and writes NOTHING (D9): the sentence is Verdict.Sentence() verbatim — the one formatter every surface prints, never a socket-shaped paraphrase. `type` is the one required member (an explanation with no question is not an answer); `at` dates the answer so the expiry boundary is explorable without waiting. `unimplemented` is the field an app branches on (SEC-033): \"nobody can answer this yet\" and \"a rule refused you\" share the \"refused: \" prefix, and a client that parses prose has already collapsed the three answers into two.",
+  "method": "policy.why",
+  "request": {
+    "jsonrpc": "2.0", "id": 61, "method": "policy.why",
+    "params": {"type": "tool_access", "agent": "main", "tool": "read"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 61,
+    "result": {
+      "allowed": true,
+      "sentence": "allowed: agent:main · tool_access \"grant-read-tool\" · target agent:main · source operator · no expiry"
+    }
+  }
+}

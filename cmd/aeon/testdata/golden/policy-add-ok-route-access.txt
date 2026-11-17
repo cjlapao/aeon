@@ -1,0 +1,4 @@
+$ aeon policy add --type route_access --id ok-route --target agent:dave --action deny --spec {"route":"remote","state":"deny"}
+policy ok-route stored — the daemon's next read sees it (N8 forbids caching)
+$ aeon policy list
+ok-route                 route_access   agent:dave                   deny   operator     no expiry

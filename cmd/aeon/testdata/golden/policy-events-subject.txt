@@ -1,0 +1,7 @@
+$ aeon policy events --subject agent:alice
+<ID> <TIME>  refusal       agent:alice  "no-bash"                 refused: agent:alice · tool_access "no-bash" · target agent:alice · source operator · no expiry
+<ID> <TIME>  authored      agent:alice  "no-bash"                 authored: the write boundary stored this rule for this subject; the policy_id and subject columns name what was authored (PL15 — authoring is CLI-only)
+depth 2 · cap 90 days · oldest <TIME>
+$ aeon policy events --subject agent:nobody
+depth 0 · cap 90 days · oldest (none)
+honesty  no policy_event rows matched "agent:nobody" — that is the filter's answer, not the log's: run aeon policy events without --subject for every subject

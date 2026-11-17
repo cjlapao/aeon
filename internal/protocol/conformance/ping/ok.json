@@ -1,0 +1,6 @@
+{
+  "description": "The round trip is measured by the client, so the result carries nothing. A field a client does not need is a field that has to be kept forever.",
+  "method": "ping",
+  "request": {"jsonrpc": "2.0", "id": 3, "method": "ping"},
+  "response": {"jsonrpc": "2.0", "id": 3, "result": {}}
+}

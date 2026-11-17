@@ -1,0 +1,2 @@
+$ aeon proposal commit 1
+proposal <ID> committed

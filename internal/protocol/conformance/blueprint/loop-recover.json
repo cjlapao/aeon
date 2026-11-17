@@ -1,0 +1,8 @@
+{
+  "description": "`loop.recover` takes a blocked loop back to the step that blocked and runs it again, for any block. When the step has a conversation, the agent is told inside it that something went wrong and to try the last step again (any tool call that never got a result is answered as not completed), and the SAME step is continued from its checkpoint so the agent keeps its context (how: in-place); with no conversation to continue it runs the step again from a clean receipt (how: redispatch). The block (a model's malformed tool call, a provider failure, an action a policy refused and the person has since allowed), not only the historical missing handler. One transition is committed (blocked to running, the step's receipt and the reason cleared), `loop.recovered` is emitted with the reason recovered from, and the ordinary ladder dispatches the step. A loop that is not blocked, sits at a gate, or is already running is refused as data in the daemon's own words.",
+  "method": "loop.recover",
+  "request": { "jsonrpc": "2.0", "id": 97, "method": "loop.recover", "params": { "id": "loop-9" } },
+  "response": { "jsonrpc": "2.0", "id": 97, "result": {
+    "recovered": true, "how": "in-place", "status": "running"
+  } }
+}

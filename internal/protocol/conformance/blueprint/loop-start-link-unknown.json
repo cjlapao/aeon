@@ -1,0 +1,29 @@
+{
+  "description": "S38 T13 (OL9): a goalId or taskId that resolves to nothing refuses by NAME before any row exists. Coordinates are checked, not hoped for — a loop working on a goal that is not there would read a frame nobody wrote; the listing is the way back to a real id.",
+  "method": "loop.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 86,
+    "method": "loop.start",
+    "params": {
+      "blueprint": "two-step",
+      "goal": "survey",
+      "workspaceRoot": "/repo",
+      "goalId": "goal-ghost"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 86,
+    "error": {
+      "code": -31613,
+      "message": "the start names a goal or task that does not exist",
+      "data": {
+        "what": "no goal \"goal-ghost\" — loop.start was given a goalId that does not resolve",
+        "means": "the loop row was NOT created — coordinates are checked before anything is pinned, because a loop working on a goal that is not there would read a frame nobody wrote",
+        "todo": "list what exists (goal.list / task.list --manual) and start on one of those, or omit the id to start an unlinked loop",
+        "fatal": false
+      }
+    }
+  }
+}

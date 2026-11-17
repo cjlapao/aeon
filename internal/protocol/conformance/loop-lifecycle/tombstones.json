@@ -1,0 +1,23 @@
+{
+  "description": "`loop.tombstones` lists the loops deleted from a component with the totals each earned before it went, newest first, `detached`: the tasks, roadmap items and queue items whose link to a loop a deletion cut, with the slug of the loop each lost and the cost a task had spent. A cost nobody reported is `unknown`, never zero. `closed` lists work closed as not done because its loop was archived or deleted (a task becomes skipped, a roadmap or queue item cancelled, a goal parked), each with the status it had; an archived loop's work is opened again when the loop is restored.",
+  "method": "loop.tombstones",
+  "request": {
+    "jsonrpc": "2.0", "id": 88, "method": "loop.tombstones",
+    "params": { "componentRoot": "/home/me/code/qa" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 88,
+    "result": {
+      "tombstones": [
+        { "loopId": "loop-7f3a", "slug": "loop-dmvwadf8d4rc", "componentRoot": "/home/me/code/qa", "title": "Hello CLI", "deletedAt": "2026-11-16T12:05:00.000Z",
+          "steps": 4, "turns": 41, "toolCalls": 169, "inputTokens": 900000, "outputTokens": 20000, "wallMs": 900000, "costUsd": 6.763, "costState": "known" }
+      ],
+      "detached": [
+        { "kind": "task", "id": "task-91", "loopSlug": "loop-dmvwadf8d4rc", "componentRoot": "/home/me/code/qa", "detachedAt": "2026-11-16T12:05:00.000Z", "costUsd": 0.42, "costFloor": true }
+      ],
+      "closed": [
+        { "kind": "task", "id": "task-91", "reason": "loop-deleted", "loopSlug": "loop-dmvwadf8d4rc", "componentRoot": "/home/me/code/qa", "priorStatus": "in-progress", "closedAt": "2026-11-16T12:05:00.000Z" }
+      ]
+    }
+  }
+}

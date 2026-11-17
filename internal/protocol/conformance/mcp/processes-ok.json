@@ -1,0 +1,43 @@
+{
+  "description": "mcp.processes lists every configured MCP server's process as the daemon's supervisor sees it: state (starting, running, stopped, crashed, failed, disabled, remote), PID, start time, restarts, the tool count, and how the previous run ended. The daemon starts every enabled stdio server when it starts; a crashed server is shown as crashed and is never restarted by itself. An http server has no process of ours and reads `remote`.",
+  "method": "mcp.processes",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 961,
+    "method": "mcp.processes",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 961,
+    "result": {
+      "processes": [
+        {
+          "name": "github",
+          "transport": "stdio",
+          "state": "running",
+          "pid": 48213,
+          "startedAt": "2026-11-08T12:00:03Z",
+          "restarts": 1,
+          "tools": 26,
+          "lastExit": "terminated by the daemon (restart requested by user:1000)"
+        },
+        {
+          "name": "docs",
+          "transport": "stdio",
+          "state": "crashed",
+          "restarts": 0,
+          "tools": 4,
+          "lastExit": "exit status 3"
+        },
+        {
+          "name": "search",
+          "transport": "http",
+          "state": "remote",
+          "restarts": 0,
+          "tools": 0
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "description": "The autonomy.grant happy path (S56 T6, AL11): an allow on a live root, stamped by the connection's peer — the actor is the kernel's attestation, never a params claim (the five identity keys are refused as bad params). The conditions object is the caller's verbatim (an absent key is the whole-object default {requireBudget:true}); expiresAt is RFC3339 and absent means no expiry. The result is the written grant and the daemon's own confirmation sentence (the one formatter; T10 refines the wording). dryRun validates everything and writes nothing.",
+  "method": "autonomy.grant",
+  "request": {"jsonrpc": "2.0", "id": 408, "method": "autonomy.grant", "params": {"rootId": "aeon", "subject": "forge.openPR", "conditions": {"requireGates": false, "requireBudget": true, "labels": ["release"], "maxPerDay": 4}, "expiresAt": "2026-12-01T00:00:00Z", "note": "nightly release lane"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 408,
+    "result": {
+      "grant": {
+        "id": "g-8c21",
+        "nodeId": "aeon",
+        "rootId": "aeon",
+        "subject": {"kind": "action", "name": "forge.openPR"},
+        "state": "allow",
+        "conditions": {"requireGates": false, "requireBudget": true, "labels": ["release"], "maxPerDay": 4},
+        "note": "nightly release lane",
+        "expiresAt": "2026-12-01T00:00:00Z",
+        "createdAt": "2026-11-01T09:00:00Z",
+        "createdBy": {"kind": "user", "id": "1000"},
+        "revoked": null,
+        "active": true,
+        "describe": "g-8c21 allows forge.openPR for unattended loops on aeon — expires 2026-12-01T00:00:00Z"
+      },
+      "confirmation": "written: forge.openPR is now allowed for unattended loops on aeon"
+    }
+  }
+}

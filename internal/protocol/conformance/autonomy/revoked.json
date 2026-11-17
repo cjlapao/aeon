@@ -1,0 +1,12 @@
+{
+  "description": "The autonomy.revoked event (S56 T6, R5): published after a revocation is committed (an already-revoked no-op publishes nothing — Changed is false, and an event for a write that did not happen is a second truth). This is the event a person watching a running loop waits for: the loop keeps its pin, but its covered actions will be denied at the next action with the revoked sentence, and the affected loops (named by the revoke result) are the ones the caller stops. Ids only, filed under the grant's workspace root.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-4c1f9a2b", "seq": 9003, "kind": "autonomy.revoked",
+      "componentRoot": "/repo/aeon",
+      "at": "2026-11-01T10:30:00.000000000Z",
+      "payload": {"grantId": "g-8c21", "rootId": "aeon"}
+    }
+  }
+}

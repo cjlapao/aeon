@@ -1,0 +1,35 @@
+{
+  "description": "`loop.transcript` is the loop workspace's history window — a FIFO page across every step a loop ran, read from step_message directly rather than the shared, bounded event ring. No cursor means \"the latest page\", the same bottom-of-the-stream content a live loop already shows; `id` on each message is step_message's own global id, the cursor a next before/after call passes back. hasOlder says there is more to scroll to without the caller inferring it from the page size.",
+  "method": "loop.transcript",
+  "request": {
+    "jsonrpc": "2.0", "id": 61, "method": "loop.transcript",
+    "params": {"slug": "refactor", "componentRoot": "/home/p/repo-a", "limit": 2}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 61,
+    "result": {
+      "messages": [
+        {
+          "id": 140,
+          "stepId": 4,
+          "agent": "golang-engineer",
+          "phase": "build",
+          "role": "assistant",
+          "createdAt": "2026-10-15T09:41:12.345Z",
+          "content": [{"kind": "text", "text": "Patched the retry loop and reran the suite."}]
+        },
+        {
+          "id": 141,
+          "stepId": 4,
+          "agent": "golang-engineer",
+          "phase": "build",
+          "role": "user",
+          "createdAt": "2026-10-15T09:41:13.012Z",
+          "content": [{"kind": "tool_result", "toolUseId": "t9", "content": "PASS ok 0.41s"}]
+        }
+      ],
+      "hasOlder": true,
+      "hasNewer": false
+    }
+  }
+}

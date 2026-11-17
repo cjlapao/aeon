@@ -1,0 +1,34 @@
+{
+  "description": "budget.set that RAISES an existing cap (900 → 1200) with the digest of the statement rendered from the row as read (the S45 PM7.1 pattern: the commit is bound to what was read). A raise loosens authority, so without the confirm param the same request rides the confirm-required refusal with the statement and digest; with the right digest it commits, and the result says Confirmed. The statement's digest here is the SHA-256 of the statement text in this fixture — a client can recompute it.",
+  "method": "budget.set",
+  "request": {
+    "jsonrpc": "2.0", "id": 606, "method": "budget.set",
+    "params": {"scope": "epic", "subjectId": "epc-1", "window": "lifetime", "usdCap": 1200, "confirm": "34dc99b6f5aa59aed400781751f49f43d7d95f5f17df1826d6b58ec7a9d40bd2"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 606,
+    "result": {
+      "view": {
+        "id": "bud-epc-1",
+        "scope": "epic",
+        "subjectId": "epc-1",
+        "window": "lifetime",
+        "enabled": true,
+        "unknownPolicy": "proceed",
+        "warnPct": 80,
+        "origin": "user",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T10:15:00.000Z",
+        "status": "ok",
+        "dimensions": [
+          {"dimension": "usd", "cap": 1200, "spendFloor": 745.5, "exact": false, "unknownCount": 2}
+        ],
+        "lastChanged": {"at": "2026-11-01T10:15:00.000Z", "kind": "changed", "byKind": "user", "byId": "1000"}
+      },
+      "effect": "updated",
+      "statement": "budget bud-epc-1: set the usd cap from 900 to 1200",
+      "digest": "34dc99b6f5aa59aed400781751f49f43d7d95f5f17df1826d6b58ec7a9d40bd2",
+      "confirmed": true
+    }
+  }
+}

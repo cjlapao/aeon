@@ -1,0 +1,32 @@
+# S58 T2 door-table golden (SV2). One line per kind per wiring state:
+# <STATE> <kind>	<method>	<sentence>.
+# Changing a sentence, or a kind's door, means changing THIS file in the
+# same commit as doors.go — and the header line above keeps its promise.
+WIRED   question	answer	Answer with `aeon answer demo-loop <one of: approve | deny>` or in the app.
+UNWIRED question	answer	Answer with `aeon answer demo-loop <one of: approve | deny>` or in the app.
+WIRED   stopped	step.continue	A person stopped this step. Resume it with `aeon step continue 77`.
+UNWIRED stopped	step.continue	A person stopped this step. Resume it with `aeon step continue 77`.
+WIRED   blocked.action-denied		This loop is unattended, so outward actions are denied. Start an attended run, or (S56) grant the action.
+UNWIRED blocked.action-denied		This loop is unattended, so outward actions are denied. Start an attended run, or (S56) grant the action.
+WIRED   blocked.step-blocked	loop.retry	The loop could not continue this step. Read the reason; retry with `aeon loop retry demo-loop`, or start a new run.
+UNWIRED blocked.step-blocked	loop.retry	The loop could not continue this step. Read the reason; retry with `aeon loop retry demo-loop`, or start a new run.
+WIRED   blocked.model-error	loop.retry	The loop could not continue this step. Read the reason; retry with `aeon loop retry demo-loop`, or start a new run.
+UNWIRED blocked.model-error	loop.retry	The loop could not continue this step. Read the reason; retry with `aeon loop retry demo-loop`, or start a new run.
+WIRED   blocked.runner-error	loop.retry	The loop could not continue this step. Read the reason; retry with `aeon loop retry demo-loop`, or start a new run.
+UNWIRED blocked.runner-error	loop.retry	The loop could not continue this step. Read the reason; retry with `aeon loop retry demo-loop`, or start a new run.
+WIRED   blocked.exhaustion	loop.raise	This loop reached its run ceiling. Raise it with `aeon loop raise demo-loop`, or read the reason and start a new run.
+UNWIRED blocked.exhaustion		Something needs a person and this build has no single command for kind blocked.exhaustion: open the loop in the app and read the reason.
+WIRED   blocked.cap-hit		Something needs a person and this build has no single command for kind blocked.cap-hit: open the loop in the app and read the reason.
+UNWIRED blocked.cap-hit		Something needs a person and this build has no single command for kind blocked.cap-hit: open the loop in the app and read the reason.
+WIRED   blocked.stuck		Something needs a person and this build has no single command for kind blocked.stuck: open the loop in the app and read the reason.
+UNWIRED blocked.stuck		Something needs a person and this build has no single command for kind blocked.stuck: open the loop in the app and read the reason.
+WIRED   blocked.other		Something needs a person and this build has no single command for kind blocked.other: open the loop in the app and read the reason.
+UNWIRED blocked.other		Something needs a person and this build has no single command for kind blocked.other: open the loop in the app and read the reason.
+WIRED   question.free		Something needs a person and this build has no single command for kind question.free: open the loop in the app and read the reason.
+UNWIRED question.free		Something needs a person and this build has no single command for kind question.free: open the loop in the app and read the reason.
+WIRED   gate-failed	verify.runShow	The latest gate run failed. Read run 77 (verify.runShow) for what failed, then fix it or run the gates again.
+UNWIRED gate-failed		Something needs a person and this build has no single command for kind gate-failed: open the loop in the app and read the reason.
+WIRED   proposal		Read it, then decide with `aeon proposal commit 77` to apply it or reject it in the app.
+UNWIRED proposal		Read it, then decide with `aeon proposal commit 77` to apply it or reject it in the app.
+WIRED   bugs-unvalidated	triage.list	Open the component's triage list (triage.list) and validate the bugs that wait.
+UNWIRED bugs-unvalidated		Something needs a person and this build has no single command for kind bugs-unvalidated: open the loop in the app and read the reason.

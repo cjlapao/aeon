@@ -1,0 +1,21 @@
+{
+  "description": "A worker's throttle-admitted progress report (S64): the runner's own words in progressNote, a fraction the runner chose, and the manager's floor — never more than one of these per second per worker, so a chatty runner cannot turn the durable log into a spam channel. Screens paint progress from here and re-read the row through asyncworkers.list rather than trusting a stream they may have raced.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c", "seq": 1431, "kind": "asyncworker.progress",
+      "at": "2026-10-30T17:46:15.123456789Z",
+      "payload": {
+        "workerId": "aw_3c9f0a1b2c3d4e5f60718293a4b5c6d7",
+        "workerType": "graph.build",
+        "componentRoot": "/home/dev/shop",
+        "state": "running",
+        "metadata": {"trigger": "write-hook"},
+        "progress": 0.62,
+        "progressNote": "parsing internal/handler/resolve.go",
+        "queuedAt": "2026-10-30T17:41:02.000Z",
+        "startedAt": "2026-10-30T17:41:02.000Z"
+      }
+    }
+  }
+}

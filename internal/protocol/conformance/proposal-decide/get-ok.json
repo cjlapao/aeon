@@ -1,0 +1,39 @@
+{
+  "description": "S45 T5 (PM7.1): proposal.get answers the row exactly as proposal.list renders it (same ProposalRow shape, command spelling included) PLUS `digest` — the sha256 of the canonical payload, the token proposal.commit must carry back — and `preview`, the ADVISORY before-you-commit answer (S37 AA4: the commit re-validates and re-reads, never trusting this). For an mcp_server_add row the preview is null: the kind names no policy target, and inventing one would be the preview guessing. A read writes nothing anywhere.",
+  "method": "proposal.get",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 90,
+    "method": "proposal.get",
+    "params": {
+      "id": 42
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 90,
+    "result": {
+      "proposal": {
+        "id": 42,
+        "kind": "mcp_server_add",
+        "payload": {
+          "agent": "boss",
+          "server": {
+            "name": "github",
+            "command": "gh-mcp",
+            "args": [
+              "--stdio"
+            ]
+          }
+        },
+        "status": "proposed",
+        "createdAt": "2026-11-02T08:55:00Z",
+        "createdByKind": "agent",
+        "createdById": "boss",
+        "command": "aeon proposal commit 42"
+      },
+      "digest": "9f2c41d0f7a83b5c6e1d4a09b7f2e8c3516d0a4b98e7f2c1d0b3a69584736251",
+      "preview": null
+    }
+  }
+}

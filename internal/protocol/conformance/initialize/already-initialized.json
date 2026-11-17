@@ -1,0 +1,21 @@
+{
+  "description": "A second initialize on one connection is refused: re-negotiating would change the recorded version underneath any live subscription.",
+  "method": "initialize",
+  "request": {
+    "jsonrpc": "2.0", "id": 2, "method": "initialize",
+    "params": {"clientName": "aeon-cli", "clientVersion": "0.1.0", "protocolVersion": 1}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 2,
+    "error": {
+      "code": -31003,
+      "message": "connection is already initialized",
+      "data": {
+        "what": "connection conn-1 called `initialize` twice",
+        "means": "the connection already has a negotiated version; re-negotiating would change it underneath any live subscription",
+        "todo": "open a second connection if a different protocol version is needed",
+        "fatal": false
+      }
+    }
+  }
+}

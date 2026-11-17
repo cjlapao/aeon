@@ -1,0 +1,516 @@
+{
+  "ask_agent": {
+    "class": "detectable",
+    "note": "S70 MB1: files a durable agent_message row; a re-run that files it twice is detectable, not silent"
+  },
+  "attach": {
+    "class": "detectable"
+  },
+  "attachments_list": {
+    "class": "safe"
+  },
+  "automation_fires": {
+    "class": "safe",
+    "note": "S49 T7: the unified fire log through the socket's automation.fires \u2014 a re-run re-reads, nothing to reconcile; could-not-say rows travel honest (AN12, rule 4)"
+  },
+  "automation_health": {
+    "class": "safe",
+    "note": "S49 T7: why-not-could-it-fire, a NAME and a set-bool for the secret env, never a value, as of the evaluatedAt the one shared answer stamps (AN10, \u00a74c, rule 4)"
+  },
+  "automation_list": {
+    "class": "safe",
+    "note": "S49 T7: one list over both families through the socket's automation.list \u2014 archived invisible, two honest empties; a re-run re-lists, nothing to reconcile (AN1, AN5, AN6, rule 4)"
+  },
+  "automation_propose_disable": {
+    "class": "detectable",
+    "note": "S49 T7: files an INERT automation_disable proposal (a NARROWING only \u2014 refused at create when unknown, archived or already off); nothing changes until a person commits, and a re-run that files it twice is visible on the desk (AN9)"
+  },
+  "automation_show": {
+    "class": "safe",
+    "note": "S49 T7: one automation in full through the socket's automation.show \u2014 canonical form, plain-words description, last fires and changes (rule 4)"
+  },
+  "autonomy_effective": {
+    "class": "safe"
+  },
+  "autonomy_list": {
+    "class": "safe"
+  },
+  "autonomy_propose_deny": {
+    "class": "detectable",
+    "note": "S56 T8: files an inert autonomy_deny proposal row; a re-run that files it twice is detectable, not silent"
+  },
+  "autonomy_propose_revoke": {
+    "class": "detectable",
+    "note": "S56 T8: files an inert autonomy_revoke proposal row; a re-run that files it twice is detectable, not silent"
+  },
+  "autonomy_show": {
+    "class": "safe"
+  },
+  "backup_status": {
+    "class": "safe",
+    "note": "S62 T6: a read through the socket\u2019s backup.status \u2014 a re-run re-reads, nothing to reconcile"
+  },
+  "bash": {
+    "class": "unsafe"
+  },
+  "blueprint_lint": {
+    "class": "safe",
+    "note": "S48 T10: a read through the socket's blueprint.lint \u2014 advisory-only, evaluated now, nothing to reconcile (BP9)"
+  },
+  "blueprint_list": {
+    "class": "safe",
+    "note": "S48 T10: a read through the socket's blueprint.list \u2014 a re-run re-reads, nothing to reconcile (BP9)"
+  },
+  "blueprint_propose": {
+    "class": "detectable",
+    "note": "S48 T10: files an inert blueprint_save proposal row; a re-run that files it twice is detectable, not silent (BP9 \u2014 the write doors are the person's)"
+  },
+  "blueprint_show": {
+    "class": "safe",
+    "note": "S48 T10: a read through the socket's blueprint.show \u2014 the stored bytes verbatim, nothing to reconcile (BP9)"
+  },
+  "blueprint_validate": {
+    "class": "safe",
+    "note": "S48 T10: validates text through the standing seam and persists nothing \u2014 a re-run re-checks, nothing to reconcile (BP9)"
+  },
+  "brief_create": {
+    "class": "detectable"
+  },
+  "brief_show": {
+    "class": "safe"
+  },
+  "budget_effective": {
+    "class": "safe",
+    "note": "S55 T10: a read through the socket's budget.effective read \u2014 a re-run re-reads the tiers, nothing to reconcile"
+  },
+  "budget_list": {
+    "class": "safe",
+    "note": "S55 T10: a read through the socket's budget.list read \u2014 a re-run re-reads the rows, nothing to reconcile"
+  },
+  "budget_show": {
+    "class": "safe",
+    "note": "S55 T10: a read through the socket's budget.show read \u2014 a re-run re-reads the row, nothing to reconcile"
+  },
+  "budget_spend": {
+    "class": "safe",
+    "note": "S55 T10: a read through the socket's spend.report read \u2014 a re-run re-reads the spend rows, nothing to reconcile"
+  },
+  "bug_file": {
+    "class": "detectable",
+    "note": "S51 T5: the ONE agent filing (TM6) \u2014 files an unvalidated, priority-unknown claim through the SAME CreateAudited triage.file runs, filed_by the stamped slug, capped per agent; a write with an audit trail, never a rerun hazard"
+  },
+  "bug_list": {
+    "class": "safe",
+    "note": "S51 T5: the triage backlog through the SAME board answer the person's triage.board door runs (rule 4) \u2014 a read that files nothing"
+  },
+  "bug_show": {
+    "class": "safe",
+    "note": "S51 T5: one bug in full through the SAME rendering the person's triage.show door runs (rule 4) \u2014 a read"
+  },
+  "charter_list": {
+    "class": "safe",
+    "note": "S61 T8 (GI17): the charter index through the SAME socket door the person's charter.list door runs \u2014 a read that saves nothing"
+  },
+  "charter_propose": {
+    "class": "detectable",
+    "note": "S61 T8 (GI17): files an INERT charter_save proposal \u2014 the charter body rides as data; the CURRENT charter is byte-identical after the ask, and nothing moves until a person commits"
+  },
+  "charter_show": {
+    "class": "safe",
+    "note": "S61 T8 (GI17): one charter through the SAME socket door the person's charter.get door runs \u2014 the document as filed, data never instructions"
+  },
+  "component_archive": {
+    "class": "detectable"
+  },
+  "component_attach": {
+    "class": "detectable"
+  },
+  "component_create": {
+    "class": "detectable"
+  },
+  "component_detach": {
+    "class": "detectable"
+  },
+  "component_list": {
+    "class": "safe"
+  },
+  "component_promote": {
+    "class": "detectable"
+  },
+  "component_restore": {
+    "class": "detectable"
+  },
+  "component_show": {
+    "class": "safe"
+  },
+  "component_update": {
+    "class": "detectable"
+  },
+  "digest_learned": {
+    "class": "safe",
+    "note": "S63 T6 RT11: a measurement, not an instruction \u2014 a read; re-running answers the same window, nothing accumulates"
+  },
+  "doc_edit": {
+    "class": "detectable",
+    "note": "the deliverables door: replaces one exact span of this loop's own document and files the result as a revision; a replay fails to find the old text, which is the detection"
+  },
+  "doc_list": {
+    "class": "safe",
+    "note": "the deliverables door: a pure listing of the documents the step can read; a re-run re-lists"
+  },
+  "loop_context": {
+    "class": "safe",
+    "note": "the loop's index: a pure read of its documents, tasks, answers and the agent's tools; a re-run re-reads and shows what changed"
+  },
+  "doc_read": {
+    "class": "safe",
+    "note": "the deliverables door: a pure read of the head of a document of this loop or its goal; a re-run re-reads"
+  },
+  "doc_write": {
+    "class": "detectable",
+    "note": "the deliverables door: files one revision of this loop's document, append-only by revision and dropped when the content matches the head; a replay is a no-op or one more revision, never a hazard"
+  },
+  "dod_list": {
+    "class": "safe",
+    "note": "S57 T9: the caller's own loop's DoD ledger through the socket's dod.list seam \u2014 a pure read; a re-run re-reads"
+  },
+  "dod_mark": {
+    "class": "detectable",
+    "note": "S57 T9: marks the caller's own loop's DoD item \u2014 unmet/unverifiable freely, met bound to a passing run of the loop's own on the current head (the store re-checks the run); a re-run that marks twice is a visible ledger event, counted, not silent"
+  },
+  "edit": {
+    "class": "detectable"
+  },
+  "env_get": {
+    "class": "detectable",
+    "note": "the variable manager's agent door: reads one agent-visible value and writes an append-only ledger row naming the agent; a replay is one more recorded read, never a hazard"
+  },
+  "env_list": {
+    "class": "safe",
+    "note": "the variable manager's agent door: lists the names and descriptions of the variables a person made available to agents; a pure read, a re-run re-lists"
+  },
+  "environment_effective": {
+    "class": "safe",
+    "note": "S59 T7: what a command on the step's own component would really run in \u2014 names, where each came from, reference names; a pure read through the plane's own effective seam, no values and no spawn (EV5, EV7)"
+  },
+  "environment_list": {
+    "class": "safe",
+    "note": "S59 T7: a read through the socket's environment.list \u2014 a re-run re-lists, nothing to reconcile (EV16)"
+  },
+  "environment_propose_restrict": {
+    "class": "detectable",
+    "note": "S59 T7: files an INERT environment_restrict proposal (a TIGHTENING only, refused at create for every loosening); nothing changes until a person commits, and a re-run that files it twice is visible on the desk (EV16)"
+  },
+  "environment_show": {
+    "class": "safe",
+    "note": "S59 T7: one environment in full through the socket's environment.show \u2014 a pure read of names and literals (EV7)"
+  },
+  "epic_create": {
+    "class": "detectable"
+  },
+  "epic_list": {
+    "class": "safe"
+  },
+  "epic_show": {
+    "class": "safe"
+  },
+  "epic_update": {
+    "class": "detectable"
+  },
+  "export_sets": {
+    "class": "safe",
+    "note": "S62 T8: a read through the socket's export.sets \u2014 a re-run re-reads the states, nothing to reconcile"
+  },
+  "glob": {
+    "class": "safe"
+  },
+  "goal_create": {
+    "class": "detectable"
+  },
+  "goal_list": {
+    "class": "safe"
+  },
+  "goal_show": {
+    "class": "safe"
+  },
+  "goal_submit_review": {
+    "class": "detectable"
+  },
+  "goal_update": {
+    "class": "detectable"
+  },
+  "grep": {
+    "class": "safe"
+  },
+  "history_list": {
+    "class": "safe",
+    "note": "S53 T3 (HV4): the merged live-and-archived history through the SAME shared answer the person's history.list door runs (rule 4) \u2014 a read that files nothing"
+  },
+  "history_show": {
+    "class": "safe",
+    "note": "S53 T3 (HV4): the drill-down through the SAME shared answer the person's history.show door runs (rule 4) \u2014 wrong-door and unknown ids refused by name, never an empty read"
+  },
+  "inbox_list": {
+    "class": "safe",
+    "note": "S58 T6: the caller's root's attention items through the socket's inbox.list seam \u2014 own-view, a pure read; a re-run re-reads"
+  },
+  "inbox_summary": {
+    "class": "safe",
+    "note": "S58 T6: the same evaluation counted, own-view, through inbox.summary \u2014 a pure read; a re-run re-reads"
+  },
+  "index_status": {
+    "class": "safe",
+    "note": "S54 T4: the step's own root's freshness, composed over the same seams the person's platform.status composes over \u2014 a pure read scoped by the step's stamp, never a param; a re-run re-reads"
+  },
+  "intake_propose": {
+    "class": "detectable",
+    "note": "S61 T8 (GI17): files an INERT intake_plan proposal from inside an intake session (the loop's own row stamped; a foreign loop refused) \u2014 ledger rows arrive only when a person commits the plan"
+  },
+  "intake_status": {
+    "class": "safe",
+    "note": "S61 T8 (GI17): an intake session's derived state and step ledger through the SAME socket door the person's intake.status door runs \u2014 derived from rows, never a promise"
+  },
+  "learning_add": {
+    "class": "detectable",
+    "note": "S52 T4: the agent's OWN memory write (M3 self-log) \u2014 scope stamped to the caller's slug or step root, provenance bounded to observed/assumed (LM4), capped 32 per 24h counted off the append-only learning_change; a write with an audit trail, never a rerun hazard"
+  },
+  "learning_propose_retract": {
+    "class": "detectable",
+    "note": "S52 T4: files an INERT learning_retract proposal (an ask to take back ONE readable memory; out-of-scope answers as nonexistent, LM5); nothing is retracted until a person commits, and a re-run that files it twice is visible on the desk (LM7, TD3)"
+  },
+  "learning_query": {
+    "class": "safe",
+    "note": "S52 T4: the agent's readable set only \u2014 the person's word, the projects its steps ran in, its own memory (LM1); a pure read through learnings.mine.query; a re-run re-reads"
+  },
+  "learning_show": {
+    "class": "safe",
+    "note": "S52 T4: one readable learning by id through learnings.mine.show, the shared rendering; a pure read; a re-run re-reads"
+  },
+  "list": {
+    "class": "safe"
+  },
+  "loop_control_state": {
+    "class": "safe",
+    "note": "S55 T10: a read through the socket's loop.control read (own loop) \u2014 a re-run re-reads the state, nothing to reconcile"
+  },
+  "loop_get": {
+    "class": "safe"
+  },
+  "loop_list": {
+    "class": "safe"
+  },
+  "loop_request_stop": {
+    "class": "detectable",
+    "note": "S55 T10: files the inert stop-request row (LC15) \u2014 nothing halts; a re-run that files a duplicate is visible on the desk and counted (5 per loop, 20 per agent), detectable, not silent"
+  },
+  "mcp_grants": {
+    "class": "safe"
+  },
+  "mcp_propose_remove_server": {
+    "class": "detectable"
+  },
+  "mcp_propose_revoke_grant": {
+    "class": "detectable"
+  },
+  "mcp_servers": {
+    "class": "safe"
+  },
+  "mcp_status": {
+    "class": "safe"
+  },
+  "mergequeue_dequeue": {
+    "class": "detectable",
+    "note": "S60 T9: removes THIS loop's own queued/conflicted item (MQ17) \u2014 the row leaves and the audit ledger names the agent; a re-run refuses (the item is gone), which is the detection"
+  },
+  "mergequeue_list": {
+    "class": "safe",
+    "note": "S60 T9: the queue as the agent may see it \u2014 only the repositories its steps ran in (own-view, LM5's structural source); a pure read through mergequeue.list; a re-run re-reads"
+  },
+  "mergequeue_propose_enqueue": {
+    "class": "detectable",
+    "note": "S60 T9: files an INERT mergequeue_enqueue proposal (the ask to put a branch in the queue, MQ14.3); nothing queues until a person commits, and a re-run that files it twice is visible on the desk (TD3)"
+  },
+  "mergequeue_show": {
+    "class": "safe",
+    "note": "S60 T9: one item whole through mergequeue.show, unknown and out-of-view answering the same sentence; a pure read; a re-run re-reads"
+  },
+  "mergequeue_status": {
+    "class": "safe",
+    "note": "S60 T9: one repository's queue view through mergequeue.status, refused by name outside the agent's own view; a pure read; a re-run re-reads"
+  },
+  "mergerule_preview": {
+    "class": "safe",
+    "note": "S57 T9: the component's rule beside a dry read-only evaluation over the forge's live facts \u2014 a pure read; a re-run re-reads"
+  },
+  "mergerule_propose_tighten": {
+    "class": "detectable",
+    "note": "S57 T9: files an INERT merge_rule proposal (Tightens-only at create, the shared TD3 path) \u2014 nothing tightens until a person commits; a re-run that files it twice is visible on the desk"
+  },
+  "mergerule_show": {
+    "class": "safe",
+    "note": "S57 T9: the component's effective merge rule through the socket's mergerule.get seam \u2014 a pure read; a re-run re-reads"
+  },
+  "mission_status": {
+    "class": "safe",
+    "note": "S58 T6: the root's overview through mission.status \u2014 loop counts, needs-you, spend floor, unwired seams named not-wired; a pure read; a re-run re-reads"
+  },
+  "notify_channel_list": {
+    "class": "safe",
+    "note": "S58 T6: channels as an agent may see them through notify.channel.list \u2014 host, enabled, last outcome, failures; a pure read; a re-run re-reads"
+  },
+  "notify_class_list": {
+    "class": "safe",
+    "note": "S58 T6: the event-class table through notify.class.list \u2014 descriptor only, no URL path or secret ref; a pure read; a re-run re-reads"
+  },
+  "policy_in_force": {
+    "class": "safe"
+  },
+  "policy_list": {
+    "class": "safe"
+  },
+  "policy_propose_add": {
+    "class": "detectable"
+  },
+  "policy_propose_remove": {
+    "class": "detectable"
+  },
+  "policy_show": {
+    "class": "safe"
+  },
+  "policy_why": {
+    "class": "safe"
+  },
+  "proposal_list": {
+    "class": "safe"
+  },
+  "question": {
+    "class": "safe"
+  },
+  "read": {
+    "class": "safe"
+  },
+  "report_size": {
+    "class": "detectable"
+  },
+  "roadmap_depend": {
+    "class": "detectable",
+    "note": "S27 T3: files one dependency EDGE (intent only \u2014 no rung moves, no dispatch follows; readiness is re-read at each attempt, D4). A re-run that files the same edge twice is refused by the duplicate sentence and visible in the rows, never silent."
+  },
+  "roadmap_list": {
+    "class": "safe",
+    "note": "S50 T5: the roadmap board through the SAME shared answer the person's roadmap.board door runs (RM8) \u2014 a read that files nothing"
+  },
+  "roadmap_propose_idea": {
+    "class": "detectable",
+    "note": "S50 T5: files an INERT roadmap_idea proposal (an ask to ADD one idea, refused at create when the root is unknown or the identical open item stands \u2014 RM8); nothing is on the board until a person commits, and a re-run that files it twice is visible on the desk"
+  },
+  "roadmap_show": {
+    "class": "safe",
+    "note": "S50 T5: one item in full with its trail, through the SAME shared answers the person's show/history doors run (RM8) \u2014 a read"
+  },
+  "roadmap_undepend": {
+    "class": "detectable",
+    "note": "S27 T3: removes exactly one edge and nothing else \u2014 no cascade, no loop touched (rule 7: a running item may un-wish). A re-run removes an edge that is already gone and is refused by name, visible in the rows, never silent."
+  },
+  "run_start": {
+    "class": "detectable"
+  },
+  "scheduler_attention": {
+    "class": "safe",
+    "note": "S27 T8: the open needs-you for the step's own repository \u2014 a read; answering them is a person's act elsewhere"
+  },
+  "scheduler_decisions": {
+    "class": "safe",
+    "note": "S27 T8: the decision ledger read, newest first \u2014 a re-run re-reads, nothing to reconcile"
+  },
+  "scheduler_preview": {
+    "class": "safe",
+    "note": "S27 T8: the plan one tick ahead, computed from rows \u2014 a re-run recomputes the same preview and starts nothing"
+  },
+  "scheduler_status": {
+    "class": "safe",
+    "note": "S27 T8: a read through the scheduler service scoped to the step's own root \u2014 a re-run re-reads, nothing to reconcile"
+  },
+  "scorecard_component": {
+    "class": "safe",
+    "note": "S63 T6 RT11: a measurement, not an instruction \u2014 a read; re-running answers the same window, nothing accumulates"
+  },
+  "scorecard_mine": {
+    "class": "safe",
+    "note": "S63 T6 RT11: a measurement, not an instruction \u2014 a read; re-running answers the same window, nothing accumulates"
+  },
+  "search": {
+    "class": "safe",
+    "retrieval_only": true
+  },
+  "secretref_list": {
+    "class": "safe",
+    "note": "S59 T7: the reference NAMES, injectAs and source KIND through the socket's secretref.list \u2014 a pure read; the answer is the type with no source and no value field at all (EV7)"
+  },
+  "seed_status": {
+    "class": "safe"
+  },
+  "task_bump_counter": {
+    "class": "detectable"
+  },
+  "task_create": {
+    "class": "detectable"
+  },
+  "task_list": {
+    "class": "safe"
+  },
+  "task_set_status": {
+    "class": "detectable"
+  },
+  "task_show": {
+    "class": "safe"
+  },
+  "task_update": {
+    "class": "detectable"
+  },
+  "template_list": {
+    "class": "safe",
+    "note": "S61 T8 (GI17): the template index through the SAME socket door the person's template.list door runs \u2014 a read; saving a template has no tool"
+  },
+  "template_show": {
+    "class": "safe",
+    "note": "S61 T8 (GI17): one template's files through the SAME socket door the person's template.get door runs \u2014 text a scaffold renders only at a person's commit"
+  },
+  "todo": {
+    "class": "detectable"
+  },
+  "tool_show": {
+    "class": "safe",
+    "note": "S47 T7: one tool of the caller's own, in full \u2014 a pure read; it starts nothing, and an unheld name and a nonexistent one answer identically so the re-run cannot be an existence oracle either"
+  },
+  "tools_mine": {
+    "class": "safe",
+    "note": "S47 T7: the agent's own tool inventory \u2014 a pure read of the registry, the rows and the policy set, with no write and no probe; recovery re-runs it without thought, which is exactly why it must answer the same way twice (N8: no cache to stale)"
+  },
+  "verify_list": {
+    "class": "safe",
+    "note": "S57 T9: the component's own (or effective) gate set through the socket's verify.list seam \u2014 a pure read; a re-run re-reads"
+  },
+  "verify_propose_add": {
+    "class": "detectable",
+    "note": "S57 T9: files an INERT verify_command proposal (op add-only, the shared TD3 path) \u2014 no gate runs until a person commits; a re-run that files it twice is visible on the desk"
+  },
+  "verify_runs": {
+    "class": "safe",
+    "note": "S57 T9: the component's finished verify runs, the caller's own loop by default, through the socket's verify.runs seam \u2014 a pure read; a re-run re-reads"
+  },
+  "verify_show": {
+    "class": "safe",
+    "note": "S57 T9: one gate with its event trail, scoped to the caller's own component, through the socket's verify.show seam \u2014 a pure read; a re-run re-reads"
+  },
+  "watchdog_list": {
+    "class": "safe",
+    "note": "S55 T10: a read through the socket's watchdog.list read \u2014 a re-run re-reads the rules, nothing to reconcile"
+  },
+  "webfetch": {
+    "class": "safe"
+  },
+  "write": {
+    "class": "detectable"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "description": "One blueprint as stored: the content verbatim, path \"\" (cosmetic since the file is gone), the standard-mode Analyze report byte-equal to blueprint.validate's, and the derived references.",
+  "method": "blueprint.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "method": "blueprint.show",
+    "params": {
+      "name": "two-step"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "result": {
+      "name": "two-step",
+      "path": "",
+      "content": "id: two-step\nschemaVersion: 1\nversion: 2\nlanes:\n  - id: survey\n    step: {kind: model-step, agent: default}\n",
+      "origin": "system",
+      "version": 2,
+      "revision": 1,
+      "contentHash": "ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669",
+      "divergedFromShipped": false,
+      "updatedAt": "2026-11-02T12:00:00Z",
+      "updatedBy": "blueprints.standard",
+      "report": {
+        "blueprint": "two-step",
+        "ok": true,
+        "lanes": [
+          {
+            "id": "survey",
+            "step": {
+              "kind": "model-step",
+              "agent": "default"
+            }
+          }
+        ]
+      },
+      "references": [
+        {
+          "kind": "agent",
+          "target": "default"
+        }
+      ],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "survey",
+          "fields": [
+            "route"
+          ]
+        }
+      ],
+      "overrides": [
+        {
+          "lane": "survey",
+          "field": "route",
+          "value": "anthropic"
+        }
+      ],
+      "title": "Developer Loop",
+      "description": "Investigates, plans, asks for one approval, then builds, verifies and ships each task."
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "description": "The autonomy.vocabulary happy path (S56 T6): the closed descriptor set a form reads and never re-types (AL15). Subjects come from the action registry through its exported accessors (local actions excluded — a grant on one is refused); the one class shorthand covers the current outward names; conditions carry their plain-English help and where they are evaluated (pin or action); limits are the closed bounds the validator enforces. The result is the view at top level — no wrapper.",
+  "method": "autonomy.vocabulary",
+  "request": {"jsonrpc": "2.0", "id": 403, "method": "autonomy.vocabulary", "params": {}},
+  "response": {
+    "jsonrpc": "2.0", "id": 403,
+    "result": {
+      "subjects": [
+        {"kind": "action", "name": "forge.closeIssue", "class": "outward", "label": "close an issue", "requiresExpiry": false},
+        {"kind": "action", "name": "forge.merge", "class": "irreversible", "label": "merge a pull request", "requiresExpiry": true, "forcedConditions": ["requireGates"]},
+        {"kind": "action", "name": "forge.openIssue", "class": "outward", "label": "open an issue", "requiresExpiry": false},
+        {"kind": "action", "name": "forge.openPR", "class": "outward", "label": "open a pull request", "requiresExpiry": false},
+        {"kind": "action", "name": "forge.postReview", "class": "outward", "label": "post a review", "requiresExpiry": false},
+        {"kind": "action", "name": "git.commitAndPush", "class": "outward", "label": "commit and push", "requiresExpiry": false},
+        {"kind": "class", "name": "outward", "class": "outward", "label": "every outward action", "requiresExpiry": false, "covers": ["git.commitAndPush", "forge.openIssue", "forge.openPR", "forge.postReview", "forge.closeIssue"]}
+      ],
+      "conditions": [
+        {"name": "requireGates", "type": "bool", "description": "the merge rule (S57) must pass at the moment of the merge; the only condition a merge grant may carry, and it is forced on", "evaluated": "action", "forced": true},
+        {"name": "requireBudget", "type": "bool", "description": "the loop's governing budgets are not exhausted; on by default on every allow", "evaluated": "action", "forced": false},
+        {"name": "labels", "type": "list", "description": "the start's label set must intersect this list; empty means any", "evaluated": "pin", "forced": false},
+        {"name": "maxPerDay", "type": "int", "description": "no more than this many begun uses in the last 24 hours", "evaluated": "action", "forced": false}
+      ],
+      "limits": {"maxMergeGrantDays": 90, "maxLabels": 8, "maxLabelLen": 64, "maxNoteBytes": 512, "maxReasonBytes": 512},
+      "origins": [
+        {"origin": "schedule", "help": "a loop started by a schedule"},
+        {"origin": "webhook", "help": "a loop started by a webhook"},
+        {"origin": "event", "help": "a loop started by an event"},
+        {"origin": "scheduler", "help": "a loop started by the continuous scheduler (S27)"}
+      ],
+      "states": ["allow", "deny"]
+    }
+  }
+}

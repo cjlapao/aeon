@@ -1,0 +1,18 @@
+{
+  "description": "S46 T3 (MG5-reads, DB19): mcp.server for a name the rows do not carry is the TYPED mcp.unknown refusal (-31852) whose `what` names the thing AND the near names (up to three) — never an empty success (an empty server view would read as \"a server with no tools\" when the truth is \"no such server\") and never mcp.refused, whose fact is the domain declining an operation it could perform. The near-names sentence is filled by the SEAM via the typed-error pass-through — only the seam reads the rows, so only the seam may say what is near; the door adds no interpretation of its own. Names are authored, not generated, so typos are the usual cause and the pointer turns a wrong guess into a pick.",
+  "method": "mcp.server",
+  "request": {"jsonrpc": "2.0", "id": 903, "method": "mcp.server", "params": {"name": "reditt"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 903,
+    "error": {
+      "code": -31852,
+      "message": "no such MCP server or agent",
+      "data": {
+        "what": "the mcp.server read named \"reditt\", which is not a server this store carries; the nearest names are: \"reddit\", \"redditsync\", \"acme-crud\"",
+        "means": "the read answered cleanly and the name is simply absent — this is not the MCP domain declining an operation (that refusal is the mcp.refused code), and nothing was written",
+        "todo": "read one of the near names in `what`, or `mcp.servers` (or `aeon mcp list`) to see what exists — server names and agent slugs are authored, not generated, so typos are the usual cause",
+        "fatal": false
+      }
+    }
+  }
+}

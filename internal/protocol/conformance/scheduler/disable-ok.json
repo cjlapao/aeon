@@ -1,0 +1,18 @@
+{
+  "description": "The master off — the off switch that is not an uninstall.",
+  "method": "scheduler.disable",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 406,
+    "method": "scheduler.disable",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 406,
+    "result": {
+      "enabled": false
+    }
+  },
+  "fromDoor": true
+}

@@ -1,0 +1,24 @@
+{
+  "description": "A bash call's `step.tool.start` also carries `command` — the whole command, capped at 2000 runes — because the `summary` cuts it at 60 and a person reviewing what ran needs all of it. Bash only: no other tool's arguments ride the stream.",
+  "event": "step.tool.start",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "seq": 14,
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1490,
+      "kind": "step.tool.start",
+      "at": "2026-10-25T10:00:00.000Z",
+      "payload": {
+        "stepId": 12,
+        "agent": "linter",
+        "tool": "bash",
+        "summary": "cd /home/me/aeon && grep -n 'func Test\\|len(\\|Names()' int…",
+        "command": "cd /home/me/aeon && grep -n 'func Test\\|len(\\|Names()' internal/handler/registry_test.go | head -20",
+        "toolUseId": "toolu_12",
+        "iteration": 2
+      }
+    }
+  }
+}

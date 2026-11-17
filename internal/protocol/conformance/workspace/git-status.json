@@ -1,0 +1,23 @@
+{
+  "description": "`workspace.git.status` answers the header button: branch, upstream, ahead/behind, changed paths with porcelain v2 index/worktree codes. Three states (D7/P31): ok | not-a-repo | unavailable-with-reason — never a reassuring empty list for 'could not tell'. componentRoot must be a registered component root.",
+  "method": "workspace.git.status",
+  "request": {
+    "jsonrpc": "2.0", "id": 83, "method": "workspace.git.status",
+    "params": { "componentRoot": "/home/dev/code/aeon-qa-workspace" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 83,
+    "result": {
+      "state": "ok",
+      "branch": "main",
+      "detached": false,
+      "upstream": "origin/main",
+      "ahead": 1,
+      "behind": 0,
+      "changed": [
+        { "path": "SURVEY.md", "index": "?", "worktree": "U" },
+        { "path": "internal/loop/advance.go", "index": "M", "worktree": " " }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "description": "`step.steer` with the operator's CHOSEN skills (S68 B7): the queue validates the names at queue time — an unknown name refuses naming every offender; a known-but-unpickable skill (invalid, shadowed) is SKIPPED and reported in the result's optional `skipped`, never silently dropped. The riding names are filed on the steer row beside the operator's PURE text (visible as `skills` in `step.steers`), and at the next turn boundary the wire message is the chosen skills' canonical lines, a blank line, then the text — joined only at the drain. Here `legacy-notes` was known but unpickable, so it is skipped and `caveman` alone rides.",
+  "method": "step.steer",
+  "request": {
+    "jsonrpc": "2.0", "id": 81, "method": "step.steer",
+    "params": { "stepId": 12, "text": "Also mention the Go version.", "skills": ["caveman", "legacy-notes"] }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 81,
+    "result": { "steerId": 4, "state": "pending", "skipped": ["legacy-notes"] }
+  }
+}

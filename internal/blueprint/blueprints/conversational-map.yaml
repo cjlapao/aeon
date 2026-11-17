@@ -1,0 +1,103 @@
+# conversational-map — derived from opencode/skills/conversational-map/SKILL.md (278 lines)
+#
+# PARTIAL, AND DELIBERATELY SO. Phase 1 is expressible as a blueprint. Phases 2 and 3 ARE NOT,
+# and forcing them would misrepresent the protocol rather than express it. See GAP-7 in
+# README.md — this file is the evidence for it.
+#
+# The superseded design guessed this skill was "the likeliest to reveal a field the reference
+# lacks." It revealed something larger: a boundary to what a blueprint is for.
+---
+id: conversational-map
+schemaVersion: 1
+version: 1
+
+lanes:
+  # ---- Phase 1 — Work. This much IS a lane sequence. ------------------------
+  - id: triage
+    # "User sends goal/request to task-coordinator. Coordinator classifies into Direct mode,
+    # identifies which specialists are needed, builds a structured Brief per task, and delegates
+    # inline." No artefact — the brief is a handoff field, as in development-map-direct.
+    step: { kind: model-step, agent: task-coordinator }
+
+  - id: investigate
+    # "If the request is a bug with unclear root cause, coordinator inserts debugger-engineer
+    # first … then cites the report path when building each Brief."
+    # The skill lists five triggers for this, and its counter-rule is as important: "When the
+    # user hypothesis is clear … skip debugger-engineer — it adds latency without value."
+    when: { field: flags.root_cause_unclear, op: eq, value: true }
+    step: { kind: model-step, agent: debugger-engineer, produces: .projects/features/debug-investigations/ }
+
+  - id: implement
+    # "Each specialist receives its Brief, works from it, runs local verification
+    # (build/test/lint), and reports back inline."
+    # GAP-8: "Independent tasks can run CONCURRENTLY." The engine is deliberately serial —
+    # S5 asserts serial execution with entry/exit timestamps precisely because order alone
+    # passes against an errgroup. So this lane runs sequentially and the protocol's concurrency
+    # is NOT expressed. A real conflict, not a missing field. See README.md.
+    step: { kind: model-step, agent: by-tech-tag }
+    on_reject: { goto: implement, counter: retries, max: 2, then: escalate }
+
+  - id: offer-review
+    # "The coordinator CAN ask code-reviewer to do an inline diff review before pushing. This
+    # keeps quality high without requiring a PR."
+    step: { kind: gate, question: want-inline-review }
+
+  - id: inline-review
+    when: { field: answers.want-inline-review, op: eq, value: yes }
+    step: { kind: model-step, agent: code-reviewer }
+    on_reject: { goto: implement, counter: review_rounds, max: 2, then: escalate }
+
+  - id: offer-security
+    # "When the work touched authentication/authorization, data handling, crypto, secrets, input
+    # parsing, or a new external dependency, the coordinator OFFERS a security-engineer scan of
+    # the diff before push (THE USER MAY DECLINE) … never forced on a trivial change."
+    # An OFFERED step: conditional on asking in the moment, not on a project flag. Expressible
+    # only through GAP-3's pattern — a gate, then a `when` on its answer.
+    when: { field: flags.touched_sensitive_surface, op: eq, value: true }
+    step: { kind: gate, question: want-security-scan }
+
+  - id: security
+    when: { field: answers.want-security-scan, op: eq, value: yes }
+    step: { kind: model-step, agent: security-engineer }
+    # "Blocking findings route back to the specialist first."
+    on_reject: { goto: implement, counter: security_rounds, max: 2, then: escalate }
+
+questions:
+  want-inline-review:
+    prompt: Review the diff before pushing?
+    answers: [yes, no]
+  want-security-scan:
+    prompt: This touched a sensitive surface. Scan the diff before pushing?
+    answers: [yes, no]
+
+# ============================================================================
+# PHASES 2 AND 3 ARE NOT EXPRESSED, AND CANNOT BE.
+# ============================================================================
+#
+# The skill's own first line about the workflow: "There is no separate Planning phase. The flow
+# is ONE CONTINUOUS CONVERSATION."
+#
+#   Phase 2 — Git:    "WHEN THE USER TRIGGERS a push (e.g., 'push this', 'branch and commit',
+#                     'PR'), the coordinator delegates to github-steward"
+#   Phase 3 — Review: "WHEN THE USER TRIGGERS a review (e.g. 'review this', 'review my PR
+#                     #{N}'), the coordinator delegates to code-reviewer"
+#
+# A blueprint is an ORDERED SEQUENCE. A gate stops and asks a CLOSED question. Neither expresses
+# "sit idle until the user says what happens next, from an open set" — and the skill's own
+# end-to-end example shows exactly that:
+#
+#     User: "Branch and push both."      → Phase 2
+#     User: "Review those PRs."          → Phase 3
+#
+# A gate with answers [push, review, more-work, done] would close the set, and the set is not
+# closed: "also add rate limiting to the admin API" is a legitimate next utterance and appears
+# in no answer list.
+#
+# THE HONEST CONCLUSION: Phases 2 and 3 are not a blueprint's shape. They are a CHAT WITH TOOLS,
+# which S5's step runtime and S6's suspension already provide, with S12's actions available and
+# S10's guard deciding what may run. The human is the orchestrator, and there is no declared
+# graph to interpret.
+#
+# That is not a failure of the format. It is the format's BOUNDARY, found by the one protocol
+# that has no planning phase — and it is worth knowing before someone tries to make every
+# interaction a lane.

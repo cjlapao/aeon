@@ -1,0 +1,164 @@
+{
+  "description": "The match grammar as the validator derives it \u2014 events, keys, applicable keys, closed value sets, and the rule sentences verbatim: the same bytes the editor renders and the validator enforces.",
+  "method": "automation.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8207,
+    "method": "automation.vocabulary",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8207,
+    "result": {
+      "events": [
+        {
+          "event": "goal.approved",
+          "meaning": "a goal left the approval question approved",
+          "applicableKeys": [
+            "root",
+            "component",
+            "goal_type",
+            "source_kind"
+          ]
+        },
+        {
+          "event": "task.created",
+          "meaning": "a manual task was created",
+          "applicableKeys": [
+            "root",
+            "component",
+            "task_type"
+          ]
+        },
+        {
+          "event": "task.approved",
+          "meaning": "a manual task was approved (its goal approved, or the task is independent)",
+          "applicableKeys": [
+            "root",
+            "component",
+            "task_type"
+          ]
+        },
+        {
+          "event": "task.completed",
+          "meaning": "a manual task reached the done column",
+          "applicableKeys": [
+            "root",
+            "component",
+            "task_type"
+          ]
+        }
+      ],
+      "matchKeys": [
+        "root",
+        "component",
+        "goal_type",
+        "task_type",
+        "source_kind"
+      ],
+      "taskTypes": [
+        "bug",
+        "feature",
+        "chore",
+        "refactor",
+        "investigation"
+      ],
+      "goalTypes": [
+        "bug",
+        "feature",
+        "chore",
+        "refactor",
+        "investigation"
+      ],
+      "outcomes": [
+        {
+          "word": "started",
+          "meaning": "a loop was started",
+          "family": "both"
+        },
+        {
+          "word": "skipped",
+          "meaning": "the engine declined before deciding (overlap, a DST note, or a paused parent)",
+          "family": "both"
+        },
+        {
+          "word": "did-not-fire",
+          "meaning": "the schedule's own contract excluded the instant (outside the working-hours window)",
+          "family": "schedule"
+        },
+        {
+          "word": "refused",
+          "meaning": "a gate or guard refused the fire (depth, budget, policy, disabled)",
+          "family": "both"
+        },
+        {
+          "word": "limited",
+          "meaning": "an hourly or daily cap was already spent",
+          "family": "event"
+        },
+        {
+          "word": "could-not-say",
+          "meaning": "the engine cannot tell (a claim left by a crash, an edit mid-flight)",
+          "family": "both"
+        }
+      ],
+      "limits": {
+        "maxValuesPerKey": 16,
+        "maxValueLen": 128,
+        "previewMax": 20,
+        "auditPageMax": 500,
+        "triggerIdMaxLen": 64
+      },
+      "windowGrammar": "window_start and window_end are HH:MM in the trigger's zone; window_days is an ISO list (1=Monday \u2026 7=Sunday, e.g. \"1,2,3,4,5\"); start and end arrive together or not at all",
+      "zones": [
+        "UTC",
+        "Europe/Lisbon",
+        "Europe/Madrid",
+        "Europe/London",
+        "Europe/Paris",
+        "Europe/Berlin",
+        "Europe/Warsaw",
+        "Europe/Istanbul",
+        "Europe/Moscow",
+        "America/New_York",
+        "America/Chicago",
+        "America/Denver",
+        "America/Los_Angeles",
+        "America/Toronto",
+        "America/Mexico_City",
+        "America/Sao_Paulo",
+        "America/Buenos_Aires",
+        "America/Santiago",
+        "America/Bogota",
+        "America/Lima",
+        "Asia/Dubai",
+        "Asia/Karachi",
+        "Asia/Kolkata",
+        "Asia/Bangkok",
+        "Asia/Singapore",
+        "Asia/Hong_Kong",
+        "Asia/Shanghai",
+        "Asia/Tokyo",
+        "Asia/Seoul",
+        "Australia/Perth",
+        "Australia/Sydney",
+        "Australia/Melbourne",
+        "Australia/Brisbane",
+        "Australia/Adelaide",
+        "Australia/Darwin",
+        "Australia/Broken_Hill",
+        "Australia/Lord_Howe",
+        "Pacific/Auckland",
+        "Pacific/Chatham",
+        "Africa/Lagos",
+        "Africa/Cairo",
+        "Africa/Johannesburg",
+        "Africa/Nairobi",
+        "Asia/Riyadh",
+        "Asia/Jerusalem"
+      ],
+      "authorityStatement": "This starts agents with no one present. Outward actions are denied. It will run: <description>"
+    }
+  }
+}

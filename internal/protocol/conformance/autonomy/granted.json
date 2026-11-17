@@ -1,0 +1,12 @@
+{
+  "description": "The autonomy.granted event (S56 T6, R5): published by the socket handler AFTER the store commits — at-most-once by design, as task.changed. The payload carries ids only: the grant id and the root it sits under; a subscriber that races the event reads the full row through autonomy.show, so the event is the signal, not the record. It is filed under the node's workspace root (componentRoot), so a subscriber filtered by Filter{ComponentRoot} gets one project's authority changes. No notify hint: widening the closed hint set is S58's (R5).",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-4c1f9a2b", "seq": 9001, "kind": "autonomy.granted",
+      "componentRoot": "/repo/aeon",
+      "at": "2026-11-01T09:00:00.000000000Z",
+      "payload": {"grantId": "g-8c21", "rootId": "aeon"}
+    }
+  }
+}

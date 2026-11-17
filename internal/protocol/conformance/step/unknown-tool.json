@@ -1,0 +1,25 @@
+{
+  "description": "An unknown name in the grant list is REFUSED, not ignored. Ignoring it gives the step fewer tools than its author intended, and the model works around the absence silently — so a typo in a grant list becomes a step that quietly did less.",
+  "method": "step",
+  "request": {
+    "jsonrpc": "2.0", "id": 73, "method": "step",
+    "params": {
+      "prompt": "read the README",
+      "tools": ["read", "writ"],
+      "workspaceRoot": "/home/p/repo-a"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 73,
+    "error": {
+      "code": -31202,
+      "message": "the grant list names a tool that does not exist",
+      "data": {
+        "what": "tools: the grant list names writ, which do not exist. The tools that do are bash, read. An unknown name is refused rather than ignored, because ignoring it gives the step fewer tools than its author intended and the model works around the absence silently",
+        "means": "the grant list is the only thing that decides what a step can call, so a typo in it would otherwise give the step fewer tools than intended — and the model would work around the absence without saying so",
+        "todo": "the message lists the tools that do exist; `read` is always available and `bash` needs --allow-bash",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+policy rows: 1
+  policy cap-rule type=cost_cap target=agent:alice action=deny source=operator subject=agent:alice spec={"token":"session","max":500} not_after=none not_after_epoch=- created_at=<TIME>
+proposal rows: 0
+policy_event rows: 0

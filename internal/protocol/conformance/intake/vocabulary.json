@@ -1,0 +1,66 @@
+{
+  "description": "The closed sets from the enforcing packages — T11's finalised descriptor: publish CHOICES with i18n label keys and the daemon's own confirmation statements, roles, the plan validator's OWN caps, templates, the remote-create gate as read WITH the sentence a closed gate speaks, routeAvailable, the workspace root with its state.",
+  "method": "intake.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "intake.vocabulary",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "publish": [
+        {
+          "value": "none",
+          "label": "wizard.publish.none.label"
+        },
+        {
+          "value": "private",
+          "label": "wizard.publish.private.label",
+          "statement": "publish PRIVATE creates a remote repository visible only to the accounts you add — nothing is published to the world, but the content leaves this machine."
+        },
+        {
+          "value": "public",
+          "label": "wizard.publish.public.label",
+          "statement": "publish PUBLIC creates a repository visible to the whole world — every file and its full history become outward publication of your content, readable by anyone, and deleting the repository afterwards does not un-publish what was seen. It needs the confirm-public word, and the daemon refuses without it."
+        }
+      ],
+      "roles": [
+        "root",
+        "child",
+        "standalone"
+      ],
+      "caps": {
+        "payloadBytes": 131072,
+        "components": 8,
+        "epics": 50,
+        "goals": 200,
+        "items": 500,
+        "criteriaPerGoal": 100
+      },
+      "templates": [
+        {
+          "slug": "base",
+          "title": "Base",
+          "description": "the shipped floor",
+          "stackTags": [
+            "golang"
+          ],
+          "origin": "system",
+          "version": 1,
+          "fileCount": 4,
+          "diverged": false,
+          "createdAt": "2026-11-05T00:00:00Z",
+          "updatedAt": "2026-11-05T00:00:00Z"
+        }
+      ],
+      "remoteCreateEnabled": false,
+      "remoteCreateReason": "intake.allowRemoteCreate is off — a person must switch it on (the settings door) before any repository is created",
+      "routeAvailable": true,
+      "workspaceRoot": "/home/person/projects",
+      "workspaceRootState": "setting"
+    }
+  }
+}

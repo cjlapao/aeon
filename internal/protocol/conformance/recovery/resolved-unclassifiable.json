@@ -1,0 +1,4 @@
+{
+  "description": "A corrupt snapshot fails one step and reports unclassifiable while the scan continues to inspect the remaining steps.",
+  "notification": {"jsonrpc":"2.0","method":"event","params":{"subscriptionId":"s-1","seq":2005,"kind":"recovery.resolved","at":"2026-10-17T11:00:04Z","payload":{"stepId":9,"outcome":"failed","failure":{"kind":"unclassifiable","detail":"the frozen context manifest is absent"}}}}
+}

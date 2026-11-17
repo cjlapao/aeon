@@ -1,0 +1,1 @@
+loop.start row: defaultBranch="" baseBranch="" branchMode="standard" featureBranch="feature/<slug>"

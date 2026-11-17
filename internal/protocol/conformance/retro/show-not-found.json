@@ -1,0 +1,26 @@
+{
+  "description": "A missing fact row is the plane's refusal voice with the sentence that names the door that hands out ids.",
+  "method": "retro.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "retro.show",
+    "params": {
+      "outcomeId": 412
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -31962,
+      "message": "the scorecard/retro request was refused",
+      "data": {
+        "what": "no retro outcome has id 412 \u2014 retro.list hands out the ids",
+        "means": "nothing was read. An id that does not exist is answered honestly rather than with an empty row pretending to be a loop",
+        "todo": "ask retro.list for the rows that do exist and show one of THOSE"
+      }
+    }
+  },
+  "fromSeam": true
+}

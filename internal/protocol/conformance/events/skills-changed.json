@@ -1,0 +1,21 @@
+{
+  "description": "The watcher saw the catalog move (S66 T3): which skills arrived, left, or changed shape since the last refresh, plus the honest watch state — watching is false and watchError names the reason whenever the daemon is partly or fully blind. An event with no names in any list is a refresh that found nothing new and is never sent.",
+  "event": "skills.changed",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1712,
+      "kind": "skills.changed",
+      "at": "2026-10-31T09:12:00Z",
+      "payload": {
+        "added": ["docx"],
+        "removed": ["pdf"],
+        "changed": ["caveman"],
+        "watching": true,
+        "watchError": "the managed root is not there to watch (/srv/aeon/skills) — a root created later is discovered by the next scan"
+      }
+    }
+  }
+}

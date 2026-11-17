@@ -1,0 +1,3 @@
+$ aeon policy why --agent alice --type effect_class --effect spend
+refused: agent:alice · effect_class has no evaluator yet · refusing rather than permitting (D10)
+note  the binary cannot decide this type yet (D10) — that is not a rule refusing you; the answer changes when the slice registering this type's evaluator lands

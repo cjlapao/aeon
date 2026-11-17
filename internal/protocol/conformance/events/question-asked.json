@@ -1,0 +1,24 @@
+{
+  "description": "The step suspended on a question and the row exists: question.asked carries the question itself (id, stepId, kind, body, options) — the kind S3 has always emitted, named for the class table at S58 T4. The payload is the pending question, so a subscriber can show it without a read-back; the answer still only happens through `answer`.",
+  "event": "question.asked",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1612,
+      "kind": "question.asked",
+      "at": "2026-10-17T16:04:00Z",
+      "payload": {
+        "id": 12,
+        "stepId": 41,
+        "kind": "clarify",
+        "body": "Deploy to production?",
+        "options": [
+          "yes",
+          "no"
+        ]
+      }
+    }
+  }
+}

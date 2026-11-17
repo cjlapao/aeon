@@ -1,0 +1,7 @@
+{
+  "case": "no-seam",
+  "summary": "",
+  "content": "bash cannot run the command: this step's toolset was built without a policy source (no command-verdict seam), and a bash tool that cannot ask the engine whether a command is allowed spawns nothing. The step's caller wires the seam from a store; a storeless daemon, by design, has nothing to ask.",
+  "isError": true,
+  "exitCode": null
+}

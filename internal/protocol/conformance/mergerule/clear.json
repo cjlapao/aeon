@@ -1,0 +1,35 @@
+{
+  "description": "mergerule.clear: the component's rule row is deleted — it returns to its root's rule, or to the baseline — and the revisions survive in the audit (the clear is a revision too, with op clear and the before image). The answer is the rule the component now runs under, with the source that says where it came from.",
+  "method": "mergerule.clear",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1037,
+    "method": "mergerule.clear",
+    "params": {
+      "componentId": "c-aeon"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1037,
+    "result": {
+      "rule": {
+        "componentId": "c-aeon",
+        "enabled": true,
+        "requireLocal": false,
+        "requireDod": "none",
+        "requiredChecks": [],
+        "checksPolicy": "reported_green",
+        "noChecks": "allow",
+        "reviewMode": "forge",
+        "aeonReviewAgents": [
+          "code-reviewer"
+        ],
+        "requireThreadsResolved": false,
+        "method": "squash",
+        "revision": 0,
+        "source": "baseline"
+      }
+    }
+  }
+}

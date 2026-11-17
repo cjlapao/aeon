@@ -1,0 +1,22 @@
+{
+  "description": "A terminal gate failure filed its deduped unvalidated bug (VG16): a verify run the loop could not fix, an exhausted verify rework, or a merge refused by a red check. The reactor files ONE bug per subject (a repeat bumps the ledger's count, never a second bug) and emits this event saying a gate went red and where the bug stands. The payload carries ids and enums only — the gate kind, the loop, the run, the PR, the bug — never the reason's text, which is the bug body's job. Terminal only, never a mid-rework red (OD10).",
+  "event": "gate.failed",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1703,
+      "kind": "gate.failed",
+      "at": "2026-11-02T11:42:00Z",
+      "payload": {
+        "kind": "verify",
+        "componentRoot": "/repos/aeon",
+        "loop": "fix-login-retry",
+        "run": "vr-9",
+        "pr": 0,
+        "bugId": 13
+      }
+    }
+  }
+}

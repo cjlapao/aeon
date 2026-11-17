@@ -1,0 +1,23 @@
+{
+  "description": "S34 T4's one genuinely new daemon behavior: an operator-triggered probe of one configured server — initialize + tools/list only, never tools/call (asserted against a fake transport, not in prose). Single-flight per server name, bounded by internal/mcp.DefaultProbeTimeout (5s, a fixed constant — the config schema has no per-server timeout field to read), and cached with checkedAt so mcp.status can show the age of the last check rather than a fake live badge.",
+  "method": "mcp.check",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 83,
+    "method": "mcp.check",
+    "params": { "server": "github" }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 83,
+    "result": {
+      "server": "github",
+      "ok": true,
+      "tools": [
+        { "name": "list_issues", "description": "List open issues in a repository" }
+      ],
+      "ms": 480,
+      "checkedAt": "2026-10-26T14:02:11Z"
+    }
+  }
+}

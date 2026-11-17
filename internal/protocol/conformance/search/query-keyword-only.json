@@ -1,0 +1,14 @@
+{
+  "description": "The honest degraded half (V9/D4): with no embedding route — or a failed query-time embed — the list is LEXICAL ONLY and the answer says so in the payload, where the deciding audience reads it; a note in a log reaches nobody. `keywordOnly` absent means the fused answer; present means read it as keyword matches and reach for `grep` for exact identifiers (V5).",
+  "method": "search.query",
+  "request": {"jsonrpc": "2.0", "id": 232, "method": "search.query", "params": {"componentRoot": "/home/dev/aeon", "corpus": "history", "query": "why did the brief get rejected"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 232,
+    "result": {
+      "hits": [
+        {"source": "brief-artefacts", "lineStart": 3, "lineEnd": 18, "score": 0.0328}
+      ],
+      "keywordOnly": true
+    }
+  }
+}

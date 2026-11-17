@@ -1,0 +1,6 @@
+{
+  "description": "`voice.speak` turns one sentence into audio with a route that declares the `tts` capability, answering base64 audio and its media type. The app asks one sentence at a time so speech can start before the whole answer exists. It changes nothing in the daemon.",
+  "method": "voice.speak",
+  "request": { "jsonrpc": "2.0", "id": 91, "method": "voice.speak", "params": { "route": "speech", "text": "Two agents are running.", "voice": "alloy" } },
+  "response": { "jsonrpc": "2.0", "id": 91, "result": { "audio": "QVVESU8=", "mime": "audio/mpeg" } }
+}

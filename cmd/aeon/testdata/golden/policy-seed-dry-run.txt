@@ -1,0 +1,5 @@
+$ aeon policy seed-corpus --agent memory-steward-loop --dry-run
+agent "memory-steward-loop": would seed 5 · unchanged 0 · dry-run wrote nothing
+dry-run 5 rule(s) across 1 agent(s) · unchanged 0 · the store saw zero writes
+$ aeon policy list
+no policies. default is DENY (PL5) — nothing is granted until something grants it.

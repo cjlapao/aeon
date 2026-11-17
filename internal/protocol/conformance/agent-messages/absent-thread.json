@@ -1,0 +1,23 @@
+{
+  "description": "P31's third state on the read: a thread NAMED that the loop does not have is `absent: true` with an empty list \u2014 an absence SAID, never a silence a client could only render by guessing (MB7, T4's honest absence).",
+  "method": "agent.messages",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "method": "agent.messages",
+    "params": {
+      "loopId": "l-7",
+      "thread": 99
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "result": {
+      "loopId": "l-7",
+      "thread": 99,
+      "absent": true,
+      "messages": []
+    }
+  }
+}

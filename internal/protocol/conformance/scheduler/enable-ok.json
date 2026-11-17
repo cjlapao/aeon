@@ -1,0 +1,18 @@
+{
+  "description": "The master switch moves alone (CN2's one authority per act): enabling answers the master's new state and touches no repository row (TestEnableNeedsTheMasterAndTheRepo).",
+  "method": "scheduler.enable",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 405,
+    "method": "scheduler.enable",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 405,
+    "result": {
+      "enabled": true
+    }
+  },
+  "fromDoor": true
+}

@@ -1,0 +1,18 @@
+# Deliberately broken S8 validator demo. Keep each fault independent so one
+# report displays several diagnostic classes at once.
+id: broken-fixture
+schemaVersion: 1
+version: 1
+lanes:
+  - id: intake
+    agents: [default] # unknown key; perhaps meant agent
+    when: {field: mode, op: gt, value: 3} # condition type mismatch
+    step: {kind: model-step, agent: absent-agent, sets: nonexistent, emits: [{type: banana}]} # registry, task machine, and (S38 T11) an emits type nothing files
+    on_reject: {goto: absent-lane, counter: retries, max: 2} # reference and termination
+  - id: confirm
+    step: {kind: gate, question: missing-question, agent: default} # structural and reference
+  - id: work
+    iterate: mode # not a collection
+    ladder:
+      - {id: plan, kind: model-step, agent: default}
+      - {id: plan, kind: model-step, agent: default} # duplicate step

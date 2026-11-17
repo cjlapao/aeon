@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    // The daemon.
+    "golang.go",
+    // Required by "App: desktop shell (Rust)" — the launch config is type
+    // "lldb", which this extension provides. Without it the config silently
+    // does not appear in the picker.
+    "vadimcn.vscode-lldb",
+    "rust-lang.rust-analyzer",
+    "tauri-apps.tauri-vscode",
+    // Tailwind v4 completions, pointed at ui/src/index.css by settings.json.
+    "bradlc.vscode-tailwindcss",
+    "vitest.explorer"
+  ]
+}

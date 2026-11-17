@@ -1,0 +1,192 @@
+{
+  // Aeon's debug configurations.
+  //
+  // These live under `aeon/` rather than at the monorepo root so they travel
+  // with the eventual `git subtree split` (P24) — nothing here refers to
+  // anything outside this folder. To see them while the monorepo is open, use
+  // the `aeon.code-workspace` file at the repository root; otherwise open
+  // `aeon/` as the folder.
+  //
+  // The daemon configs write to `.dev/` — an isolated endpoint and an isolated
+  // state directory — EXCEPT the one labelled "real state", which is marked
+  // because stepping through writes against your actual store is a deliberate
+  // act, not a default.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // The one you want almost always. Breakpoints in cmd/ and internal/.
+      //
+      // CGO_ENABLED is explicit because delve builds its own binary: without
+      // it the debugged process has no sqlite-vec, and `--vectors` would fail
+      // in the debugger while passing in `make build`. That divergence is the
+      // trap docs/BUILD.md exists to prevent.
+      "name": "Daemon: serve (dev endpoint)",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      // sqlite_fts5: same reason as CGO_ENABLED below — delve builds its own
+      // binary, and without the tag the debugged store fails at migration 0040.
+      "buildFlags": "-tags=sqlite_fts5",
+      "program": "${workspaceFolder}/cmd/aeon",
+      "args": ["serve"],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "dev: prepare endpoint dir",
+      "env": {
+        "CGO_ENABLED": "1",
+        "GOPRIVATE": "github.com/cjlapao/*",
+        // The same socket `make dev` and `make -C ui tauri-dev` use, so the
+        // app finds the daemon you are stepping through rather than a second
+        // one on the default path.
+        "LOCALRPC_ENDPOINT_PATH": "${workspaceFolder}/.dev/aeon.sock",
+        "XDG_STATE_HOME": "${workspaceFolder}/.dev/state"
+      },
+      "console": "integratedTerminal",
+      "presentation": { "group": "1-daemon", "order": 1 }
+    },
+    {
+      // Deliberately unisolated: reproduces a problem that only happens
+      // against the real store. The label says so in the picker.
+      "name": "Daemon: serve (REAL state — not isolated)",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      // sqlite_fts5: same reason as CGO_ENABLED below — delve builds its own
+      // binary, and without the tag the debugged store fails at migration 0040.
+      "buildFlags": "-tags=sqlite_fts5",
+      "program": "${workspaceFolder}/cmd/aeon",
+      "args": ["serve"],
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "CGO_ENABLED": "1",
+        "GOPRIVATE": "github.com/cjlapao/*"
+      },
+      "console": "integratedTerminal",
+      "presentation": { "group": "1-daemon", "order": 2 }
+    },
+    {
+      // Starts nothing and binds nothing — useful for stepping through the
+      // service allow-list and the ForceOn/ForceOff pins in internal/bootstrap.
+      "name": "Daemon: --print-services",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      // sqlite_fts5: same reason as CGO_ENABLED below — delve builds its own
+      // binary, and without the tag the debugged store fails at migration 0040.
+      "buildFlags": "-tags=sqlite_fts5",
+      "program": "${workspaceFolder}/cmd/aeon",
+      "args": ["--print-services"],
+      "cwd": "${workspaceFolder}",
+      "env": { "CGO_ENABLED": "1", "GOPRIVATE": "github.com/cjlapao/*" },
+      "console": "integratedTerminal",
+      "presentation": { "group": "1-daemon", "order": 3 }
+    },
+    {
+      "name": "Daemon: --vectors",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      // sqlite_fts5: same reason as CGO_ENABLED below — delve builds its own
+      // binary, and without the tag the debugged store fails at migration 0040.
+      "buildFlags": "-tags=sqlite_fts5",
+      "program": "${workspaceFolder}/cmd/aeon",
+      "args": ["--vectors"],
+      "cwd": "${workspaceFolder}",
+      "env": { "CGO_ENABLED": "1", "GOPRIVATE": "github.com/cjlapao/*" },
+      "console": "integratedTerminal",
+      "presentation": { "group": "1-daemon", "order": 4 }
+    },
+    {
+      // Debugs the tests of whichever package the open file belongs to.
+      // For a single test, the Go extension's "debug test" codelens above each
+      // func is faster than a config.
+      "name": "Go: debug tests in this package",
+      "type": "go",
+      "request": "launch",
+      "mode": "test",
+      "buildFlags": "-tags=sqlite_fts5",
+      "program": "${fileDirname}",
+      "env": { "CGO_ENABLED": "1", "GOPRIVATE": "github.com/cjlapao/*" },
+      "presentation": { "group": "2-tests", "order": 1 }
+    },
+    {
+      // Vitest in-band: --no-file-parallelism keeps every test in this process,
+      // so breakpoints in .tsx actually bind.
+      "name": "App: debug tests (vitest)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/ui/node_modules/vitest/vitest.mjs",
+      "args": ["run", "--no-file-parallelism"],
+      "cwd": "${workspaceFolder}/ui",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"],
+      "autoAttachChildProcesses": true,
+      "presentation": { "group": "2-tests", "order": 2 }
+    },
+    {
+      // The web layer in a real browser, with React breakpoints.
+      //
+      // **The daemon pill will read "not connected" here, and that is
+      // correct.** A browser has no Tauri bridge, so `invoke` cannot reach the
+      // socket. Use this for layout, state and CSS; use the desktop config
+      // below for anything involving the daemon.
+      "name": "App: web (Chrome) — no daemon bridge",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/ui",
+      "preLaunchTask": "ui: dev",
+      "sourceMapPathOverrides": {
+        "/@fs/*": "/*",
+        "/src/*": "${workspaceFolder}/ui/src/*"
+      },
+      "presentation": { "group": "3-app", "order": 1 }
+    },
+    {
+      // Debugs the RUST side of the window: endpoint resolution, the socket
+      // call, the one #[tauri::command]. Requires CodeLLDB — see
+      // extensions.json — and Tauri's system libraries (`make -C ui
+      // check-deps`).
+      //
+      // For the React side of a Tauri window use the window's own devtools
+      // (right-click → Inspect in a debug build); VS Code attaches to the Rust
+      // process, not to the embedded webview.
+      //
+      // No `--no-default-features`: that flag appears in Tauri's published
+      // launch config to drop v1's `custom-protocol` feature, and this crate's
+      // `[features] default = []` has nothing to drop.
+      "name": "App: desktop shell (Rust)",
+      "type": "lldb",
+      "request": "launch",
+      "cargo": {
+        "args": ["build", "--manifest-path=${workspaceFolder}/ui/src-tauri/Cargo.toml"]
+      },
+      "cwd": "${workspaceFolder}/ui/src-tauri",
+      "preLaunchTask": "ui: dev",
+      "env": {
+        // Must match the daemon config above, or the window will look for a
+        // daemon on the default path and report "not connected" while one is
+        // running under the debugger.
+        "LOCALRPC_ENDPOINT_PATH": "${workspaceFolder}/.dev/aeon.sock"
+      },
+      "presentation": { "group": "3-app", "order": 2 }
+    }
+  ],
+  "compounds": [
+    {
+      // The pairing to reach for: daemon and window, both with live
+      // breakpoints, talking over .dev/aeon.sock.
+      "name": "Stack: daemon + desktop app",
+      "configurations": ["Daemon: serve (dev endpoint)", "App: desktop shell (Rust)"],
+      "stopAll": true,
+      "presentation": { "group": "0-stack", "order": 1 }
+    },
+    {
+      // The daemon is included so the socket exists, but the browser cannot
+      // reach it. For CSS and state work, not integration.
+      "name": "Stack: daemon + web app",
+      "configurations": ["Daemon: serve (dev endpoint)", "App: web (Chrome) — no daemon bridge"],
+      "stopAll": true,
+      "presentation": { "group": "0-stack", "order": 2 }
+    }
+  ]
+}

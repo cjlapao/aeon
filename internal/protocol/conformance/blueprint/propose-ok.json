@@ -1,0 +1,31 @@
+{
+  "description": "S48 T10 (BP9): the agent door for blueprints — blueprint.propose creates an INERT proposal row of kind blueprint_save (nothing is added or changed until a person commits it at the socket's human door; the five blueprint write doors stay the person's). The request carries no actor, createdBy, proposedBy, status, kind, state, origin or rev member (identity is stamped by the records service; the source is the WHOLE candidate, never a patch, so a smuggled mode meets the service's strict decode). The answer is the stored row with THE copyable commit command and the fixed inertness note — the same PolicyProposeResult the policy and autonomy twins answer with: one machinery, one sentence.",
+  "method": "blueprint.propose",
+  "request": {"jsonrpc": "2.0", "id": 451, "method": "blueprint.propose", "params": {
+    "name": "review-loop",
+    "content": "id: review-loop\nschemaVersion: 1\nversion: 2\nlanes:\n  - id: review\n    step: {kind: model-step, agent: reviewer, emits: [{type: goal}]}\n",
+    "create_only": false,
+    "note": "the review lane needs no shell; this is the whole source a person can read and commit"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 451,
+    "result": {
+      "proposal": {
+        "id": 52,
+        "kind": "blueprint_save",
+        "payload": {
+          "name": "review-loop",
+          "content": "id: review-loop\nschemaVersion: 1\nversion: 2\nlanes:\n  - id: review\n    step: {kind: model-step, agent: reviewer, emits: [{type: goal}]}\n",
+          "createOnly": false,
+          "note": "the review lane needs no shell; this is the whole source a person can read and commit"
+        },
+        "status": "proposed",
+        "createdAt": "2026-11-03T12:00:00Z",
+        "createdByKind": "agent",
+        "createdById": "implementer",
+        "command": "aeon proposal commit 52"
+      },
+      "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+    }
+  }
+}

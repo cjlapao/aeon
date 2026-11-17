@@ -1,0 +1,6 @@
+{
+  "description": "Planning dispatch (T3, D9): `brief-agreed` items send their brief to the SAME project-planner body S13 shipped, through the SAME ordinary step door S24's sizing rode — nothing custom, no second planner. The answer names the host loop the step rides (its deterministic slug is the double-dispatch guard: the machine has no `planning` rung to wear a claim, so the loop's own key does). The item lands `planned` only when the handoff's task_count is a real count AND plan.md is on disk; a failed run leaves `brief-agreed` and nothing retries silently (T3).",
+  "method": "roadmap.plan",
+  "request": {"jsonrpc": "2.0", "id": 348, "method": "roadmap.plan", "params": {"id": 12, "workspaceRoot": "/srv/projects/ledger"}},
+  "response": {"jsonrpc": "2.0", "id": 348, "result": {"dispatched": true, "hostLoop": "plan-item-12"}}
+}

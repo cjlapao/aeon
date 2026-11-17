@@ -1,0 +1,27 @@
+{
+  "description": "The autonomy.list happy path (S56 T6): the grants under one root in the closed polarity the caller named. Each view carries the daemon-rendered describe sentence (AL17's one formatter — no client re-words it) and the honest expiry: expiresAt null means no expiry, never a far-future sentinel. includeInactive is the only way a revoked row is listed; a list that silently dropped revoked grants would read as authority that is not there.",
+  "method": "autonomy.list",
+  "request": {"jsonrpc": "2.0", "id": 401, "method": "autonomy.list", "params": {"rootId": "aeon", "state": "allow", "includeInactive": false}},
+  "response": {
+    "jsonrpc": "2.0", "id": 401,
+    "result": {
+      "grants": [
+        {
+          "id": "g-8c21",
+          "nodeId": "aeon",
+          "rootId": "aeon",
+          "subject": {"kind": "action", "name": "forge.openPR"},
+          "state": "allow",
+          "conditions": {"requireGates": false, "requireBudget": true, "labels": ["release"], "maxPerDay": 4},
+          "note": "nightly release lane",
+          "expiresAt": "2026-12-01T00:00:00Z",
+          "createdAt": "2026-11-01T09:00:00Z",
+          "createdBy": {"kind": "user", "id": "1000"},
+          "revoked": null,
+          "active": true,
+          "describe": "g-8c21 allows forge.openPR for unattended loops on aeon — expires 2026-12-01T00:00:00Z"
+        }
+      ]
+    }
+  }
+}

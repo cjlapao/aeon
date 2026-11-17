@@ -1,0 +1,16 @@
+{
+ "__status": 200,
+ "body": {
+  "number": 7,
+  "head": {
+   "ref": "task/4a17-version/4a17",
+   "sha": "aaa"
+  },
+  "base": {
+   "ref": "feature/4a17-version",
+   "sha": "bbb"
+  },
+  "merged": false,
+  "state": "open"
+ }
+}

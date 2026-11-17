@@ -1,0 +1,47 @@
+{
+  "description": "MB7: `agent.messages` lists a thread's rows for a loop \u2014 scope from the loop row, never a flag. An ask and its reply are one thread (the reply links `resultOf` the ask), and the delivery pair (`deliveredAt`, `deliveredToStepId`) appears only once the boundary has drained the row. There is NO authoring method: a person steers the loop (S39); agents file rows through the ask tool behind the policy gate (MB1).",
+  "method": "agent.messages",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 90,
+    "method": "agent.messages",
+    "params": {
+      "loopId": "l-7",
+      "thread": 12
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 90,
+    "result": {
+      "loopId": "l-7",
+      "thread": 12,
+      "absent": false,
+      "messages": [
+        {
+          "id": 12,
+          "thread": 12,
+          "fromAgent": "planner",
+          "toAgent": "writer",
+          "fromStepId": 4,
+          "body": "what framing should the intro take?",
+          "expectReply": true,
+          "createdAt": "2026-10-31T10:00:00Z"
+        },
+        {
+          "id": 13,
+          "thread": 12,
+          "fromAgent": "writer",
+          "toAgent": "planner",
+          "fromStepId": 7,
+          "body": "the framing is this, verbatim",
+          "expectReply": false,
+          "resultOf": 12,
+          "deliveredAt": "2026-10-31T10:02:00Z",
+          "deliveredToStepId": 4,
+          "createdAt": "2026-10-31T10:01:30Z"
+        }
+      ]
+    }
+  }
+}

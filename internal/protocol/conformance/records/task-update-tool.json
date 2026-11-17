@@ -1,0 +1,36 @@
+{
+  "description": "task_update edits a task's plan fields; the person's half edits only manual rows and is refused T7's sentence for engine rows (S38 T15).",
+  "method": "task.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "method": "task.update",
+    "params": {
+      "id": "task-7a1f",
+      "title": "Wire the board and the events"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "result": {
+      "taskid": "T1",
+      "loopSlug": "briefing",
+      "componentRoot": "/home/p/aeon",
+      "ord": 1,
+      "title": "Wire the board",
+      "tech": "go",
+      "engineer": "golang-engineer",
+      "dependsOn": [],
+      "status": "todo",
+      "id": "task-7a1f",
+      "manual": false,
+      "assigneeKind": "agent",
+      "assignee": "golang-engineer",
+      "componentId": "cmp-7a1f",
+      "approvalState": "none",
+      "createdByKind": "agent",
+      "createdById": "planner"
+    }
+  }
+}

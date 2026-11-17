@@ -1,0 +1,18 @@
+{
+  "description": "A seed.status/plan/apply/restore naming a set the registry does not declare refuses with the seed's unknown-set code (S43-extra T6, the -31830 the closed registry exists to make impossible): a silent empty would let a caller mistake \"this set was never declared\" for \"the set is absent\", and those are different sentences the app renders differently. The registry is the closed set of declared sets (T4), so an undeclared name is always a refusal, not an empty success — the three-part data carries the engine's own sentence verbatim, the handler adds no interpretation.",
+  "method": "seed.status",
+  "request": {"jsonrpc": "2.0", "id": 320, "method": "seed.status", "params": {"set": "policy.corpus"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 320,
+    "error": {
+      "code": -31830,
+      "message": "unknown seed set",
+      "data": {
+        "what": "seed: set \"policy.corpus\" is not declared",
+        "means": "only declared seed sets can be read or applied, so a typo cannot create a silent no-op",
+        "todo": "use one of the declared sets named by `seed.status`",
+        "fatal": false
+      }
+    }
+  }
+}

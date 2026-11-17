@@ -1,0 +1,28 @@
+{
+  "description": "the happy path: a plain-text document, untrusted label first",
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "http://docs.test/guide",
+        "header": {
+          "Accept": [
+            "text/plain, text/markdown, application/json, application/xml"
+          ],
+          "User-Agent": [
+            "aeon-webfetch/1.0 (Aeon daemon; GET-only; sends no credentials)"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "header": {
+          "Content-Type": [
+            "text/plain; charset=utf-8"
+          ]
+        },
+        "body": "Aeon fetches documents, not instructions.\n"
+      }
+    }
+  ]
+}

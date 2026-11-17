@@ -1,0 +1,31 @@
+# goal-to-brief — the brief lane (criteria 3, 12): it starts ON an approved
+# goal (T13 checks the clause before any row exists), the brief-author files
+# the brief row and pins its document, and the GATE decides it — a person's
+# approve/reject lands on the brief through DecideBrief (claimed-FROM, so a
+# replay cannot double-decide), and revise sends the lane around again for
+# the next version (a second brief_create, never an edit of the judged one).
+id: goal-to-brief
+schemaVersion: 1
+version: 1
+requires: [{ any_of: [{ type: goal, state: approved }] }]
+output: [brief, brief.md]
+lanes:
+  - id: brief
+    step:
+      kind: model-step
+      agent: brief-author
+      produces: brief.md
+      emits:
+        - { type: brief, attach: [brief.md] }
+  - id: brief-gate
+    step: { kind: gate, question: approve-brief, decides: brief }
+    on_reject:
+      goto: brief
+      with: { mode: revise }
+      counter: brief_rounds
+      max: 2
+      then: escalate
+questions:
+  approve-brief:
+    prompt: Approve this brief and hand it to a planner?
+    answers: [approve, revise, abort]

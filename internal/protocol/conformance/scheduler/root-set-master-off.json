@@ -1,0 +1,29 @@
+{
+  "description": "ErrSchedulerDisabled (-31936): repository authority under a master that is off is the composition the door refuses — it would read as power nobody granted.",
+  "method": "scheduler.root.set",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 414,
+    "method": "scheduler.root.set",
+    "params": {
+      "componentRoot": "/srv/components/alpha",
+      "enabled": true,
+      "blueprint": "aeon-build"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 414,
+    "error": {
+      "code": -31936,
+      "message": "the continuous scheduler master is off",
+      "data": {
+        "what": "enabling \"/srv/components/alpha\" needs the master on first — one authority per act: send scheduler.enable, then this (CN2)",
+        "means": "nothing was written. The repository's setting stands as it was; the master row is one write (scheduler.enable), not this call's job",
+        "todo": "send scheduler.enable first (one act, one authority), then resend this control — scheduler.status shows the master's state and who set it",
+        "fatal": false
+      }
+    }
+  },
+  "fromDoor": true
+}

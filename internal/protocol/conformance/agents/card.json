@@ -1,0 +1,58 @@
+{
+  "description": "One card, loaded \u2014 the Q2 answer for the local world: `/.well-known/agent.json` is HTTP (S19's) and the local card is a file plus THIS read. The three states stay three: `loaded` true with the card, or false with `state` `absent` (no file) or `refused` (a file that failed the signature \u2014 the why is the load error verbatim). securitySchemes, if the card carried them, would ride as opaque bytes nobody here parses (AS8).",
+  "method": "agent.card",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 71,
+    "method": "agent.card",
+    "params": {
+      "agent": "reddit-agent"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 71,
+    "result": {
+      "agent": "reddit-agent",
+      "loaded": true,
+      "state": "loaded",
+      "card": {
+        "name": "reddit-agent",
+        "description": "reads reddit and summarises sentiment",
+        "version": "1.0.0",
+        "protocolVersion": "0.3",
+        "url": "local",
+        "capabilities": {
+          "streaming": false,
+          "pushNotifications": false
+        },
+        "defaultInputModes": [
+          "text/plain"
+        ],
+        "defaultOutputModes": [
+          "text/plain"
+        ],
+        "skills": [
+          {
+            "id": "summarise-sentiment",
+            "name": "Summarise sentiment",
+            "description": "given a topic, return what people are saying",
+            "tags": [
+              "reddit",
+              "sentiment"
+            ],
+            "examples": [
+              "what do people think of aeon?"
+            ],
+            "inputModes": [
+              "text/plain"
+            ],
+            "outputModes": [
+              "text/plain"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "description": "The autonomy.grant refusal for a caller that is not a person (S56 T6, AL11 lock 2, the -31833 family): every write method refuses a connection whose actor kind is not `user` — an autonomy write is an act of governance, and a governance act by a kind that is not a person cannot be audited as one. The kind comes from the connection's peer credential (the daemon's ActorFor seam), never from params; the request here is a perfectly well-formed grant, which is the point: no params can make a non-person into an author.",
+  "method": "autonomy.grant",
+  "request": {"jsonrpc": "2.0", "id": 428, "method": "autonomy.grant", "params": {"rootId": "aeon", "subject": "forge.openPR"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 428,
+    "error": {
+      "code": -31833,
+      "message": "autonomy write refused",
+      "data": {
+        "what": "refused: only a user may write autonomy — caller kind \"agent\" is not a person (AL11 lock 2)",
+        "means": "a grant is a human-authored authority record with closed rules (subject, conditions, expiry, the node it may sit on); a request outside them is refused, not silently corrected — nothing was written",
+        "todo": "the refusal names the rule it broke and the thing it broke it on; `autonomy.vocabulary` lists the closed sets a request may name",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "description": "`question.pending` is S19 T5's read for a monitor: the one question a loop is blocked on, with its KIND and the DECLARED answer set \u2014 `store.awaiting` says which loops wait, this says why. A polling CI needs the prompt to act on; `waiting on a gate` without it is not an answer anyone can carry to a human. The surface that renders this can read questions and cannot answer or create one, and that is permanent (N16, N6): a key authenticates a caller, not a person.",
+  "method": "question.pending",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 66,
+    "method": "question.pending",
+    "params": {
+      "slug": "refactor",
+      "componentRoot": "/home/p/repo-b"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 66,
+    "result": {
+      "pending": true,
+      "question": {
+        "id": 12,
+        "stepId": 5,
+        "kind": "gate",
+        "prompt": "The plan renames the public API. Continue?",
+        "answers": [
+          "yes",
+          "no"
+        ],
+        "askedAt": "2026-10-27T09:14:02Z"
+      }
+    }
+  }
+}

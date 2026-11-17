@@ -1,0 +1,31 @@
+{
+  "description": "backup.prune without dryRun plans (the same plan the dry run would have shown) and then APPLIES it through the fence — the one remover, which deletes its own names only, inside the configured dirs. The act is recorded on the ledger (kind prune, the count in the fixed-template detail) and the backup.pruned event fires because at least one file went: the event the pre-migration hook's post-success prune pointed at. removed names the files by their names — the basenames, the fence's own voice.",
+  "method": "backup.prune",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 959,
+    "method": "backup.prune",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 959,
+    "result": {
+      "plan": [
+        {
+          "file": "aeon-state-20261102T115930Z-v76.aeonbak",
+          "keep": true,
+          "reason": "the keep-5 newest"
+        },
+        {
+          "file": "aeon-state-20261003T120000Z-v70.aeonbak",
+          "keep": false,
+          "reason": "outside the keep counts"
+        }
+      ],
+      "removed": [
+        "aeon-state-20261003T120000Z-v70.aeonbak"
+      ]
+    }
+  }
+}

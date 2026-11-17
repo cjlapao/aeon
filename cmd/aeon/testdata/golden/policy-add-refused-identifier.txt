@@ -1,0 +1,4 @@
+$ aeon policy add --type tool_access --id bad id --target agent:alice --action deny --tool bash --spec {"state":"deny"}
+! refused: policy id "bad id" carries the character U+0020 at position 3; policy id is limited to the alphabet "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_." — letters, digits, '-', '_', '.' — because an id is third-party text (any source may author a Deny) and it reaches an operator's console through every verdict (SEC-013)
+$ aeon policy list
+no policies. default is DENY (PL5) — nothing is granted until something grants it.

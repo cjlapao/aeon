@@ -1,0 +1,25 @@
+{
+  "description": "A typed actor in params is refused by name before the body is read (P4): the actor is the connection's, and the key never reaches the service.",
+  "method": "charter.save",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "charter.save",
+    "params": {
+      "rootId": "cmp-root",
+      "body": {
+        "goal": "g"
+      },
+      "actor": "someone-else"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: charter.save takes no \"actor\" \u2014 a charter revision carries the connection's person, never a typed actor"
+    }
+  },
+  "fromDoor": true
+}

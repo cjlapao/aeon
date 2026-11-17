@@ -1,0 +1,39 @@
+{
+  "description": "notify.channel.archive retires a channel with a reason and never deletes it: enabled drops to false, archived_at and the reason land on the row, and the delivery log — which has no foreign key — outlives the channel by design (SV12, the archive-only lifecycle).",
+  "method": "notify.channel.archive",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 945,
+    "method": "notify.channel.archive",
+    "params": {
+      "id": "nc-01JTEST0000000000000000001",
+      "reason": "moved to the team webhook"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 945,
+    "result": {
+      "id": "nc-01JTEST0000000000000000001",
+      "name": "ops-room",
+      "kind": "webhook",
+      "host": "hooks.example.com",
+      "enabled": false,
+      "allowPrivate": false,
+      "secretPresent": true,
+      "subscriptions": [
+        {
+          "channelId": "nc-01JTEST0000000000000000001",
+          "minSeverity": "blocked",
+          "kinds": null,
+          "maxPerHour": 30
+        }
+      ],
+      "createdAt": "2026-11-03T09:00:00Z",
+      "updatedAt": "2026-11-03T09:10:00Z",
+      "consecutiveFailures": 0,
+      "archivedAt": "2026-11-03T09:10:00Z",
+      "archiveReason": "moved to the team webhook"
+    }
+  }
+}

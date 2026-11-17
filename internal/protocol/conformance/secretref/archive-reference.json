@@ -1,0 +1,22 @@
+{
+  "description": "S59 T6 (EV7, EV14): secretref.archive retires a reference without deleting the row — an environment whose spec still names it must be able to say WHICH reference it meant when a person reads the audit later. The archive is audited under the reference's own id, and an environment still referencing it is the reason the answer carries referencedBy.",
+  "method": "secretref.archive",
+  "request": { "jsonrpc": "2.0", "id": 929, "method": "secretref.archive", "params": { "name": "deploy-token" } },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 929,
+    "result": {
+      "id": "sref_1a2b3c4d",
+      "name": "deploy-token",
+      "description": "Moved off the daemon's environment onto a 0600 key file.",
+      "sourceKind": "key-file",
+      "source": "/home/cjlapao/.config/aeon/tokens/deploy",
+      "injectAs": "DEPLOY_TOKEN",
+      "origin": "user",
+      "createdAt": "2026-11-03T09:10:00Z",
+      "updatedAt": "2026-11-03T09:55:00Z",
+      "archivedAt": "2026-11-03T09:55:00Z",
+      "referencedBy": ["ci-default"]
+    }
+  }
+}

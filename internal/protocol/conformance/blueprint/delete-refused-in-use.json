@@ -1,0 +1,26 @@
+{
+  "description": "Deleting a blueprint that live automation still names is refused naming EVERY refuser \u2014 each schedule, each event trigger, each live queue item \u2014 so the operator closes exactly those doors first.",
+  "method": "blueprint.delete",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 87,
+    "method": "blueprint.delete",
+    "params": {
+      "name": "nightly-triage"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 87,
+    "error": {
+      "code": -31875,
+      "message": "the blueprint is still referenced by live automation",
+      "data": {
+        "what": "schedules: sched-nightly (schedule); event triggers: pr-opened (id trg-7); live queue items: #41 (status queued)",
+        "means": "deleting it would strand automation that can still fire \u2014 every refuser is named in the what field (id and kind, and a queue item's status) so the operator closes exactly those doors first; started loops are never in the list (they keep their pinned content)",
+        "todo": "pause or re-point every named schedule/trigger and drain or cancel every named queue item, then delete again",
+        "fatal": false
+      }
+    }
+  }
+}

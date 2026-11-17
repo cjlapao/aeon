@@ -1,0 +1,37 @@
+{
+  "description": "S50 T5 (RM8, TD2) — the agent's ONE ask of the roadmap, answered. roadmap_propose_idea is a catalog tool and this is its socket twin: the same records service that answers the tool answers the method, so the bytes are the same answer rather than a second rendering of it (rule 4). What the answer is: a PROPOSAL row, `status: proposed`, authored by the AGENT the step belongs to (`createdByKind: agent` — the ask is the model's, and saying so is the audit), carrying WHICH IDEA (the component root it plans, the title a board will render, the optional epic tag) and the NOTE the person reads before deciding. The `note` is the fixed inertness statement — `protocol.PolicyProposeInertNote`, one definition in the code and this fixture its wire copy — because an ask adds nothing: no item stands on the board, no status or priority or size is set, nothing is enforced until a person runs the `command` this answer names, and THEN the item is theirs — created by roadmap's own create with provenance authored, the COMMITTER as actor, one audit line. An ask naming a root that is no component, or re-asking an idea the board already carries open, is refused at create by the same door the commit re-runs (TD3 — see roadmap-propose/propose-idea-refuses-a-smuggled-status.json for the door's other half); and there is no propose-update, -cancel, -estimate, -priority or -dispatch ask to file at all: an idea may only be ADDED, and the ladder, the size and the start stay the person's (RM8, T4's guards).",
+  "method": "roadmap.proposeIdea",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 970,
+    "method": "roadmap.proposeIdea",
+    "params": {
+      "componentRoot": "/srv/aeon",
+      "title": "carry the roadmap health line into the doctor report",
+      "epic": "roadmap honesty",
+      "note": "the health answer exists on the socket and the doctor never reads it — an operator running doctor offline sees neither setting named; I cannot add the row myself and should not be able to"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 970,
+    "result": {
+      "proposal": {
+        "id": 88,
+        "kind": "roadmap_idea",
+        "payload": {
+          "componentRoot": "/srv/aeon",
+          "title": "carry the roadmap health line into the doctor report",
+          "epic": "roadmap honesty",
+          "note": "the health answer exists on the socket and the doctor never reads it — an operator running doctor offline sees neither setting named; I cannot add the row myself and should not be able to"
+        },
+        "status": "proposed",
+        "createdAt": "2026-11-04T02:00:00Z",
+        "createdByKind": "agent",
+        "createdById": "implementer",
+        "command": "aeon proposal commit 88"
+      },
+      "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+    }
+  }
+}

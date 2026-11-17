@@ -1,0 +1,19 @@
+{
+  "description": "The backup.failed event, the engine's twin of finished, emitted on every failure AND every refusal the run meets (a lock-held refusal is a failed event with its kind, because the schedule's subscriber needs to know the tick did not land): reason and actor (the ledger's pair), the closed-set error_kind a client can branch on, and the stage the run was at. The sentence stays on the door that was refused; the event carries the enum, daemon-wide, ids/enums/numbers only.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-62backup01",
+      "seq": 9102,
+      "kind": "backup.failed",
+      "at": "2026-11-02T12:00:00.500000000Z",
+      "payload": {
+        "reason": "scheduled",
+        "actor_kind": "daemon",
+        "error_kind": "disk-full",
+        "stage": "space"
+      }
+    }
+  }
+}

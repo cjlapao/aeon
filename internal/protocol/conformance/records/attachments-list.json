@@ -1,0 +1,35 @@
+{
+  "description": "attachments_list answers what is pinned to a subject with each pin's currency verdict \u2014 the ledger a person reads before deciding.",
+  "method": "attachment.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "method": "attachment.list",
+    "params": {
+      "subject": {
+        "kind": "goal",
+        "id": "goal-7a1f"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "result": {
+      "attachments": [
+        {
+          "id": 9,
+          "subjectKind": "goal",
+          "subjectId": "goal-7a1f",
+          "componentRoot": "/home/p/aeon",
+          "loopSlug": "briefing",
+          "document": "proposal.md",
+          "rev": 1,
+          "createdAt": "2026-10-26T09:00:00Z",
+          "currency": "current",
+          "headRev": 1
+        }
+      ]
+    }
+  }
+}

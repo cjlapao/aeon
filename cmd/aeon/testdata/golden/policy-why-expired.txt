@@ -1,0 +1,4 @@
+$ aeon policy why --agent alice --tool read --at 2026-10-20T12:00:00Z
+allowed: agent:alice · tool_access "temp-grant" · target agent:alice · source operator · expires <TIME>
+$ aeon policy why --agent alice --tool read --at 2026-10-22T00:00:00Z
+refused: agent:alice · no allow matched · default deny (PL5)

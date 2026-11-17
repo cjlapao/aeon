@@ -1,0 +1,31 @@
+{
+  "description": "An unmet requires is DATA (S39 CR5/D6): the daemon's own sentence from CheckRequires plus the candidates that could satisfy it, and NO run row was written \u2014 the check is before the claim, so the loop and its history are untouched.",
+  "method": "loop.run",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 411,
+    "method": "loop.run",
+    "params": {
+      "id": "loop-9",
+      "blueprint": "goal-to-brief"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 411,
+    "result": {
+      "refused": {
+        "kind": "requires-unmet",
+        "detail": "blueprint \"goal-to-brief\" needs an approved goal \u2014 none was given",
+        "candidates": [
+          {
+            "kind": "goal",
+            "id": "g1",
+            "title": "Add export",
+            "state": "approved"
+          }
+        ]
+      }
+    }
+  }
+}

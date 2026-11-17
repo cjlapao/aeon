@@ -1,0 +1,18 @@
+{
+  "description": "An agent-management WRITE (agent.create, agent.duplicate, agent.edit, agent.delete, agent.import, agent.migrate — the six that change an agent row) on a connection the daemon cannot attribute refuses with S73's no-actor code (-31970, the first code of the S73 block -31970...-31972, which starts one past the -31966...-31969 reserve S61's own comment claims): the actor is the connection's peer credential and is stamped by the dispatch layer while the Session still exists, never read from params (the same four param keys actor, actorKind, createdBy, updatedBy are refused by name before anything else runs). An unresolvable or uid-0 peer, or a runtime that wired no ActorFor at all, is refused instead of being stamped with a placeholder, because S73 AR1 gives the agent plane an append-only ledger and a ledger entry naming nobody is a claim, not a record. Nothing was written: no agent row moved and no agent_change row was minted. The reads of this family — agent.view, agent.rows, agent.changes — carry no actor at all (SP6 draws the line at the acts), so they cannot reach this refusal.",
+  "method": "agent.create",
+  "request": {"jsonrpc": "2.0", "id": 340, "method": "agent.create", "params": {"name": "Night Auditor", "description": "Walks the ledger before close", "functionality": "read, list"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 340,
+    "error": {
+      "code": -31970,
+      "message": "the agent-management write has no nameable author",
+      "data": {
+        "what": "an agent-management write reached the daemon over a connection that resolves to no peer identity — uid 0, a runtime that wired no actor stamp, or a dispatch path that skipped the door",
+        "means": "nothing was written: no agent row changed and no agent_change row was minted, because AR1 has no word for a change nobody performed and the daemon will not invent one to satisfy a request",
+        "todo": "ask over a connection that carries a person (the endpoint's peer credential is the only source; there is no actor parameter to send), or — for the direct door — run the verb on this machine, where the CLI stamps itself honestly",
+        "fatal": false
+      }
+    }
+  }
+}

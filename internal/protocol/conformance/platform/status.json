@@ -1,0 +1,42 @@
+{
+  "description": "`platform.status` (S54 T2, SP1) composes the whole derived plane in one read: retrieval, graph and usage blocks, each answered THROUGH the same seam its own subsystem door serves — a second staleness formula would be a second truth. Every block carries its own state word (available, stale, building, unwired, error); the block shape never changes with the state. Here retrieval is stale with one component and no embedding route to price a pass (the availability sentence, quoted from the retrieval leaf, never paraphrased), the graph is stale with a root that was listed but never built (the ONLY stale the graph block may claim — the seam has no staleness field to invent from), and usage is available with a known cost. Unwired is the ABSENT seam's honest word, not a zero.",
+  "method": "platform.status",
+  "request": {"jsonrpc": "2.0", "id": 340, "method": "platform.status", "params": {}},
+  "response": {
+    "jsonrpc": "2.0", "id": 340,
+    "result": {
+      "evaluatedAt": "2026-11-04T14:31:07Z",
+      "retrieval": {
+        "state": "stale",
+        "availability": "no embedding route to price the pass",
+        "components": [
+          {
+            "component": "/home/dev/aeon",
+            "corpora": [
+              {"name": "code", "files": 1204, "staleChunks": 96},
+              {"name": "history", "files": 71, "staleChunks": 0}
+            ]
+          }
+        ]
+      },
+      "graph": {
+        "state": "stale",
+        "roots": [
+          {"root": "/home/dev/aeon", "files": 431, "nodes": 18342, "edges": 60719},
+          {"root": "/home/dev/other", "neverBuilt": true, "files": 0, "nodes": 0, "edges": 0}
+        ]
+      },
+      "usage": {
+        "state": "available",
+        "workspace": {
+          "loopsRun": 12,
+          "inputTokensTotal": 481234,
+          "outputTokensTotal": 90211,
+          "costUsdTotal": 4.17,
+          "costState": "known",
+          "recorded": true
+        }
+      }
+    }
+  }
+}

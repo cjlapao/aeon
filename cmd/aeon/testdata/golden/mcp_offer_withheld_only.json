@@ -1,0 +1,17 @@
+{
+  "specs": null,
+  "withheld": [
+    {
+      "Qualified": "gitforge.read_pr",
+      "Sentence": "unavailable: no ToolAccess allow rule grants gitforge.read_pr (MC10)"
+    },
+    {
+      "Qualified": "search.query",
+      "Sentence": "unavailable: no ToolAccess allow rule grants search.query (MC10)"
+    },
+    {
+      "Qualified": "labnote.scratch",
+      "Sentence": "unavailable: no ToolAccess allow rule grants labnote.scratch (MC10)"
+    }
+  ]
+}

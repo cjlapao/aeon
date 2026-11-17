@@ -1,0 +1,52 @@
+{
+  "description": "mergerule.preview without a PR: the rule, its source, its revision and the autonomy floor — and the honest sentence that the gate's question has no PR to ask about (cannotSay). The verdict is nil, not an empty allowed: a preview that said \"allowed\" about nothing would be the confident wrong answer the three-state rule exists to prevent.",
+  "method": "mergerule.preview",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1033,
+    "method": "mergerule.preview",
+    "params": {
+      "componentId": "c-aeon",
+      "pr": 0
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1033,
+    "result": {
+      "componentId": "c-aeon",
+      "source": "own",
+      "rule": {
+        "componentId": "c-aeon",
+        "enabled": true,
+        "requireLocal": true,
+        "requireDod": "all_met",
+        "requiredChecks": [
+          "ci/build",
+          "ci/lint"
+        ],
+        "checksPolicy": "reported_green",
+        "noChecks": "refuse",
+        "reviewMode": "forge",
+        "aeonReviewAgents": [
+          "code-reviewer"
+        ],
+        "requireThreadsResolved": true,
+        "method": "squash",
+        "revision": 4,
+        "source": "own",
+        "updatedAt": "2026-11-02T12:10:00Z"
+      },
+      "floor": {
+        "ok": false,
+        "missing": [
+          {
+            "code": "checks-not-binding",
+            "sentence": "no required check is bound to the forge — with requiredChecks naming ci/build and ci/lint, the checks policy cannot be satisfied by the forge's report alone"
+          }
+        ]
+      },
+      "cannotSay": "the gate's question has no PR to ask about — name the PR to dry-run the evaluation against the forge's live facts"
+    }
+  }
+}

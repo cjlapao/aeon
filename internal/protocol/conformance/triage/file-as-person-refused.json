@@ -1,0 +1,22 @@
+{
+  "description": "S51 T5 (TM6): bug_file is the AGENT's filing — a person session reaching this door is refused by name with the pointer sentence, because a person files a claim under themselves through triage.file. The refusal is the records service's own words surfaced as invalid params (the roadmap/automation family's shape, carried).",
+  "method": "triage.fileAs",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 449,
+    "method": "triage.fileAs",
+    "params": {
+      "componentRoot": "/srv/projects/ledger",
+      "title": "whatever a person typed at a step's door",
+      "body": "a person files under themselves — triage.file"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 449,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: refused: filing a bug claim is a person's own act — triage.file is the person's door; use it, and the claim is filed under you, not under a step (TM6)"
+    }
+  }
+}

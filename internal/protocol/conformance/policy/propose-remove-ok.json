@@ -1,0 +1,27 @@
+{
+  "description": "S45 T7 (PM9): the second propose twin — policy.proposeRemove files the removal of a policy as an INERT proposal (the agent may propose a loosening only as a request a person decides; TD2: nothing is enforced until a person commits at the socket's human door). The request carries the id and the required reason and nothing else: no actor, no status, no decidedBy (OL3 — the records service stamps created_by from the caller: the step's agent on the tool path, the peer's uid on this half). The answer is the stored row with THE copyable commit command and the fixed inertness note. validatePolicyRemove refuses at create a proposal naming an id the policy table does not carry (TD3 — a person is never asked to commit a removal of nothing).",
+  "method": "policy.proposeRemove",
+  "request": {"jsonrpc": "2.0", "id": 91, "method": "policy.proposeRemove", "params": {
+    "id": "no-bash-in-review",
+    "reason": "the review lane gained a sandboxed shell at the operator's ruling; the deny row is stale"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 91,
+    "result": {
+      "proposal": {
+        "id": 8,
+        "kind": "policy_remove",
+        "payload": {
+          "id": "no-bash-in-review",
+          "reason": "the review lane gained a sandboxed shell at the operator's ruling; the deny row is stale"
+        },
+        "status": "proposed",
+        "createdAt": "2026-11-01T10:05:00Z",
+        "createdByKind": "agent",
+        "createdById": "implementer",
+        "command": "aeon proposal commit 8"
+      },
+      "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+    }
+  }
+}

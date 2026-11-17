@@ -1,0 +1,28 @@
+{
+  "description": "mcp.process.start starts one server's process (a stopped, crashed or failed one) as the person's act \u2014 human door only. An already running server, a disabled one and an http one answer a plain refusal.",
+  "method": "mcp.process.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 964,
+    "method": "mcp.process.start",
+    "params": {
+      "name": "github"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 964,
+    "result": {
+      "process": {
+        "name": "github",
+        "transport": "stdio",
+        "state": "running",
+        "pid": 48213,
+        "startedAt": "2026-11-08T12:00:03Z",
+        "restarts": 1,
+        "tools": 26,
+        "lastExit": "terminated by the daemon (restart requested by user:1000)"
+      }
+    }
+  }
+}

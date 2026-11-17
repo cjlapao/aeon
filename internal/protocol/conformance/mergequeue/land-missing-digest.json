@@ -1,0 +1,27 @@
+{
+  "description": "A land with no digest is refused at the door: the approval must bind to the row the person SAW. Without the digest there is nothing to bind, and a land would merge whatever the lane happens to hold at the moment the request arrives.",
+  "method": "mergequeue.land",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 342,
+    "method": "mergequeue.land",
+    "params": {
+      "id": "mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 342,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: mergequeue.land needs an id AND the digest from its mergequeue.show answer \u2014 the land is bound to the head the person saw, never to a hope",
+      "data": {
+        "what": null,
+        "means": null,
+        "todo": null,
+        "fatal": false
+      }
+    }
+  },
+  "fromDoor": true
+}

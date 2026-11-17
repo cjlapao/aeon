@@ -1,0 +1,52 @@
+{
+  "description": "S59 T6 (EV5, EV7, EV9): environment.effective with no componentId previews the WORKSPACE scope. The answer is names and sources and NEVER a value — variables[].source says where each name came from (passthrough, set, secret:<name>), the injected reference's variable appears under the name the child will see, and no field anywhere carries the secret. The honesty line travels with the answer (EV1's sentence has exactly one copy), and legacy:false is a statement about the backend, not an absence.",
+  "method": "environment.effective",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 911,
+    "method": "environment.effective",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 911,
+    "result": {
+      "scopeKind": "workspace",
+      "environmentId": "env_7f2a9b8c6d5e",
+      "environmentSlug": "ci-default",
+      "backend": "host-scrubbed",
+      "legacy": false,
+      "attended": false,
+      "capabilities": [
+        "no-ambient-secrets",
+        "redacted-output"
+      ],
+      "variables": [
+        {
+          "name": "HOME",
+          "source": "passthrough"
+        },
+        {
+          "name": "PATH",
+          "source": "passthrough"
+        },
+        {
+          "name": "TERM",
+          "source": "set"
+        },
+        {
+          "name": "USER",
+          "source": "passthrough"
+        },
+        {
+          "name": "DEPLOY_TOKEN",
+          "source": "secret:deploy-token"
+        }
+      ],
+      "secretRefNames": [
+        "deploy-token"
+      ],
+      "honesty": "host-scrubbed removes ambient secrets from what a command sees; it is not a sandbox. The command still runs as the daemon's user, can read every file that user can read, and can reach the network. Filesystem and network isolation come from the container backend."
+    }
+  }
+}

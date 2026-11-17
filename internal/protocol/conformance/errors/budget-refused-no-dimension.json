@@ -1,0 +1,22 @@
+{
+  "description": "A budget.set that would leave the row with NO cap at all: a budget with no dimension is a no-op, and a no-op row is a row that enforces nothing and reads as if it were a cap — the store refuses it by name (data.kind no-dimension) rather than letting a hollow budget exist. The refusal is a store-level backstop: a set that clears the last dimension of an existing row lands on the same kind, because clearing a dimension is a removal, and removals are budget.remove's door.",
+  "method": "budget.set",
+  "request": {
+    "jsonrpc": "2.0", "id": 614, "method": "budget.set",
+    "params": {"scope": "epic", "subjectId": "epc-1", "window": "lifetime", "unknownPolicy": "stop"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 614,
+    "error": {
+      "code": -31861,
+      "message": "the budget refused the operation",
+      "data": {
+        "kind": "no-dimension",
+        "what": "budget set refused: a budget needs at least one cap (usd, tokens, wall-time or steps)",
+        "means": "the daemon understood and declined — no budget row was written and nothing moved",
+        "todo": "do what the what sentence names",
+        "fatal": false
+      }
+    }
+  }
+}

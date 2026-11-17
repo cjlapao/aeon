@@ -1,0 +1,20 @@
+{
+  "description": "`retrieval.reindexPlan` when nothing can be priced (S54 T2, SP2/O3): the route exists but carries no price, so cost.state is 'unknown' with the retrieval leaf's own sentence ('the embedding route carries no price') and NO usd member at all — the absence IS the three-state discipline: a bare $0.00 would read as 'free' for a route nobody priced (M30). The figure halves stay honest too: this corpus was never embedded, so willReplaceEmbeddings is false (the pass creates vectors, replaces none) and no embedDim is claimed — the dimension is the row's recorded history, and an empty row has none to state. An estimate with no price is still a complete, renderable answer.",
+  "method": "retrieval.reindexPlan",
+  "request": {"jsonrpc": "2.0", "id": 344, "method": "retrieval.reindexPlan", "params": {"componentRoot": "/srv/new", "corpus": "code"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 344,
+    "result": {
+      "componentRoot": "/srv/new",
+      "corpus": "code",
+      "files": 212,
+      "staleFiles": 212,
+      "staleChunks": 640,
+      "estimatedInputTokens": 204800,
+      "estimateBasis": "approximately 4 bytes per token over the chunk bodies — the conventional English-text approximation, not a provider's tokenizer",
+      "cost": {"state": "unknown", "reason": "the embedding route carries no price"},
+      "embedModel": "embed-v2",
+      "willReplaceEmbeddings": false
+    }
+  }
+}

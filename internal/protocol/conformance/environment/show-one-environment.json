@@ -1,0 +1,35 @@
+{
+  "description": "S59 T6 (EV16): environment.show by id or slug returns the row the store holds — canonical spec, revision, origin, and the bindings and references that hang off it. `spec` is the bytes the validator signed, not a re-serialisation of a Go struct, because the diff a person reads between two revisions is only honest if it is the diff of what was written.",
+  "method": "environment.show",
+  "request": { "jsonrpc": "2.0", "id": 920, "method": "environment.show", "params": { "slug": "ci-default" } },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 920,
+    "result": {
+      "id": "env_7f2a9b8c6d5e",
+      "slug": "ci-default",
+      "name": "CI default",
+      "description": "Scrubbed host environment for the deploy component.",
+      "backend": "host-scrubbed",
+      "origin": "user",
+      "legacy": false,
+      "revision": 2,
+      "spec": {
+        "env": { "passthrough": ["HOME", "PATH", "TERM", "USER"], "set": { "TERM": "dumb" }, "secrets": ["deploy-token"] },
+        "home": "real",
+        "limits": { "timeout": "10m", "output": 1048576 },
+        "egress": { "mode": "unenforced", "allow": [] },
+        "image": null,
+        "services": [],
+        "preview": null
+      },
+      "createdAt": "2026-11-03T09:12:00Z",
+      "updatedAt": "2026-11-03T09:20:00Z",
+      "capabilities": ["wall-limit", "env-allowlist", "secrets-redacted"],
+      "secretRefNames": ["deploy-token"],
+      "bindings": [
+        { "scopeKind": "component", "componentId": "cmp_42", "environmentId": "env_7f2a9b8c6d5e", "boundAt": "2026-11-03T09:20:00Z" }
+      ]
+    }
+  }
+}

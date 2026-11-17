@@ -1,0 +1,41 @@
+{
+  "description": "mcp.server.inspect runs a CANDIDATE server's command, completes initialize + tools/list (never tools/call) and stops it, answering what the server says it is and every tool it offers: name, description, input schema and the annotation hints. Nothing is stored and no audit row is made. A human door: the peer stamp is required before anything runs. The environment travels as NAMES; their values come from the daemon's own environment unless `useVariables` is true, in which case the stored variables are used — opt-in, because the command is whatever the person typed. The hints are the server's own report, never a classification: only the person's configuration classifies a tool.",
+  "method": "mcp.server.inspect",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 931,
+    "method": "mcp.server.inspect",
+    "params": {
+      "transport": {
+        "type": "stdio",
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-github"],
+        "env": ["GITHUB_PERSONAL_ACCESS_TOKEN"]
+      },
+      "useVariables": false
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 931,
+    "result": {
+      "serverName": "github-mcp-server",
+      "serverVersion": "0.6.2",
+      "protocolVersion": "2025-06-18",
+      "ms": 4210,
+      "tools": [
+        {
+          "name": "create_issue",
+          "description": "Create a new issue in a GitHub repository.",
+          "inputSchema": {"type": "object", "properties": {"owner": {"type": "string"}, "repo": {"type": "string"}, "title": {"type": "string"}}, "required": ["owner", "repo", "title"]},
+          "annotations": {"destructiveHint": false, "idempotentHint": false, "openWorldHint": true}
+        },
+        {
+          "name": "list_repositories",
+          "description": "List the repositories the token can see.",
+          "annotations": {"readOnlyHint": true}
+        }
+      ]
+    }
+  }
+}

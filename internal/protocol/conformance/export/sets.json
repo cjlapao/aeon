@@ -1,0 +1,66 @@
+{
+  "description": "export.sets succeeds: the closed set, in registry order, as the schema this binary holds sees it — the seven default sets available, the opt-in memory set answering available (opt-in) so a client can name the flag, and rows null on every set, because the listing door probes table existence and does not owe a count (three-state honesty: a count the door does not compute is absent, not zero). No params, no actor — the set is a fact of the binary and the schema, and the method is open (a not-yet-initialised daemon still answers it).",
+  "method": "export.sets",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1182,
+    "method": "export.sets"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1182,
+    "result": {
+      "sets": [
+        {
+          "name": "agents",
+          "description": "The agent records (identity, prompt, skills, tools, policy links), content verbatim; signature and signer_certificate are omitted — signing artifacts are not record content.",
+          "state": "available",
+          "rows": null
+        },
+        {
+          "name": "components",
+          "description": "The component tree: every component with its roots, its parentId and its archivedAt; remote_key and repo_key are omitted (credential-shaped). Effective settings are derived and are not exported.",
+          "state": "available",
+          "rows": null
+        },
+        {
+          "name": "goals",
+          "description": "The planning records: epics, goals and briefs, one file per goal/brief version (<id>-v<version>.json).",
+          "state": "available",
+          "rows": null
+        },
+        {
+          "name": "memory",
+          "description": "The learning rows — the loop's scratch memory. Opt-in: absent from a default export, present only with --include-memory.",
+          "optional": true,
+          "state": "available (opt-in)",
+          "rows": null
+        },
+        {
+          "name": "policies",
+          "description": "The policy rows, content verbatim (type, target, action, spec, source, expiry).",
+          "state": "available",
+          "rows": null
+        },
+        {
+          "name": "routes",
+          "description": "The route rows: provider, model, endpoints, prices, capabilities. Keys never ride a route row — they live in the credentials/ files, which the export does not touch.",
+          "state": "available",
+          "rows": null
+        },
+        {
+          "name": "settings",
+          "description": "The stored settings (S44), one file per non-credential-shaped key; a credential-shaped key is never exported, in name or value.",
+          "state": "available",
+          "rows": null
+        },
+        {
+          "name": "triggers",
+          "description": "The trigger records: event triggers (events/) and their schedules (schedules/); secret_env is omitted (credential-shaped).",
+          "state": "available",
+          "rows": null
+        }
+      ]
+    }
+  }
+}

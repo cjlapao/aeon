@@ -1,0 +1,25 @@
+{
+  "description": "Save params carrying an identity key (actor) are refused at the door with -32602: the actor, origin, version and timestamps are stamped by the daemon and the store, never named by the caller.",
+  "method": "blueprint.save",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 89,
+    "method": "blueprint.save",
+    "params": {
+      "name": "forged-idea",
+      "content": "id: forged-idea\nschemaVersion: 1\nversion: 1\nlanes:\n  - id: survey\n    step: {kind: model-step, agent: default}\n",
+      "actor": {
+        "kind": "user",
+        "id": "999"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 89,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: blueprint.save params carry \"actor\" \u2014 the actor, origin, version and timestamps are stamped by the daemon and the store, never named by the caller (S48 BP12)"
+    }
+  }
+}

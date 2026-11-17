@@ -1,0 +1,23 @@
+# resolve-conflict — the merge queue's resolution run (S60 T7). Started for
+# a conflicted item when the repository's conflict_policy is `resolve`. Its
+# WorkDir is the integration worktree where the merge sits IN PROGRESS; the
+# lanes resolve (a model edits the files — local reads/writes only),
+# conclude (git refuses an unresolved index or a committed marker), and
+# verify (the repository's own gate set). The blueprint contains ZERO
+# outward and ZERO irreversible actions: a resolution loop cannot push,
+# cannot open a PR, cannot land — the landing stays the landing loop's, and
+# policy-off (AllowOutward false at start) is an honest belt to that
+# suspenders. One rework round, then block BY NAME for a person — an
+# infinite model-retry loop on the same conflict is how a queue dies.
+id: resolve-conflict
+schemaVersion: 1
+version: 1
+lanes:
+  - id: resolve
+    step: { kind: model-step, agent: by-tech-tag, produces: resolve-notes.md }
+    on_reject: { goto: resolve, counter: resolve_rounds, max: 1, then: block }
+  - id: conclude
+    step: { kind: code-action, action: git.concludeIntegration }
+  - id: verify
+    step: { kind: code-action, action: verify.run }
+questions: {}

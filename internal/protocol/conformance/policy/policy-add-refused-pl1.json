@@ -1,0 +1,25 @@
+{
+  "description": "S45 T4 (PM1/PL1): the socket authoring door enforces the authorship rule EXACTLY ONCE — at the boundary — and carries its sentence across the wire VERBATIM, byte for byte, exactly as the reads' policyRefusal does. An allow authored from source \"agent\" is refused by checkAuthorship; the socket adds no interpretation (the boundary already named the fault and named the alternative), nothing is stored, and NO audit row is written for a refused write (PM8 — TestPolicyAddWritesExactlyOneAuditRow pins the refused side). The door is the human surface; being human does not exempt a write from PL1.",
+  "method": "policy.add",
+  "request": {"jsonrpc": "2.0", "id": 82, "method": "policy.add", "params": {
+    "id": "self-grant",
+    "type": "tool_access",
+    "target": {"kind": "agent", "id": "boss"},
+    "action": "allow",
+    "spec": {"toolName": "bash", "state": "allow"},
+    "source": "agent"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 82,
+    "error": {
+      "code": -31842,
+      "message": "the authoring door refused the write",
+      "data": {
+        "what": "refused: Allow authored by source \"agent\" requires an operator (PL1) — a Deny or an Ask from \"agent\" would be accepted",
+        "means": "nothing was stored and no audit row was written — a refusal is the boundary judging the row, not the machine failing; the closed vocabulary, PL1's authorship rule and the per-type specs are enforced exactly once, at the boundary, on every door",
+        "todo": "read the boundary's sentence below — it names the value it refused and usually the form that would be accepted (PL1's refusal names the Deny/Ask that would pass); `policy.vocabulary` answers the closed sets rather than guessing them",
+        "fatal": false
+      }
+    }
+  }
+}

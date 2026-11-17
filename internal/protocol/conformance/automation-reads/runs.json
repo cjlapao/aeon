@@ -1,0 +1,28 @@
+{
+  "description": "The loops one automation started \u2014 the runs page over loops pinned by trigger, newest first, with the total the page pages against.",
+  "method": "automation.runs",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8204,
+    "method": "automation.runs",
+    "params": {
+      "source": "schedule",
+      "id": "sch-morning"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8204,
+    "result": {
+      "loops": [
+        {
+          "id": "loop-9b2c1010",
+          "slug": "morning-2026-11-03-0700",
+          "status": "running",
+          "startedAt": "2026-11-03T07:00:01Z"
+        }
+      ],
+      "total": 1
+    }
+  }
+}

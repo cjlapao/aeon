@@ -1,0 +1,17 @@
+{
+  "description": "The GROUP tier read (S38's naming honored: this 'project' is the group above components). Its cost_state is the one the store RECOMPUTES from member components on every move (T7) — the only state in the slice that may improve, because it is recomputed rather than floored along the way. Totals are the sum of the members' contributions; a component that moved here carried its numbers in this same transaction.",
+  "method": "telemetry.project",
+  "request": {"jsonrpc": "2.0", "id": 263, "method": "telemetry.project", "params": {"projectId": "prj-commerce"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 263,
+    "result": {
+      "projectId": "prj-commerce",
+      "loopsRun": 7, "wallMsTotal": 21400,
+      "inputTokensTotal": 3400, "outputTokensTotal": 910, "cacheReadTokensTotal": 1500, "cacheWriteTokensTotal": 40, "reasoningTokensTotal": 180,
+      "costUsdTotal": 0.091, "costState": "known",
+      "filesTouchedTotal": 12, "filesReadTotal": 9, "filesWrittenTotal": 5, "linesAddedTotal": 240, "linesRemovedTotal": 33,
+      "commandsRunTotal": 15, "commandsFailedTotal": 2, "commandWallMsTotal": 9800,
+      "updatedAt": "2026-10-30T09:10:00Z", "exists": true
+    }
+  }
+}

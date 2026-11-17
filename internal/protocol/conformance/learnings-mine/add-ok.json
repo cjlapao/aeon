@@ -1,0 +1,32 @@
+{
+  "description": "S52 T4 (LM1, LM4): the agent's ONE memory write. learnings.mine.add files under a STAMPED scope — agent scope under the caller's own slug, project scope under the step's own component root; a scopeKey naming anything else is refused below the schema, and person scope has no agent door at all. Provenance is observed or assumed: told is a person's word and relayed the board hook's, and neither is nameable here by field or by service (LM4). The answer is the same LearningsItemResult rendering as show's. Rate-capped (32 adds per 24h per agent, counted off the audit ledger), body 2048 bytes, 8 tags.",
+  "method": "learnings.mine.add",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 454,
+    "method": "learnings.mine.add",
+    "params": {
+      "scope": "project",
+      "body": "the balance column is built from the rendered table struct's tags — a missing column is the tag list, not the writer loop",
+      "tags": ["ledger", "exports"],
+      "provenance": "observed"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 454,
+    "result": {
+      "learning": {
+        "id": 37,
+        "scope": "project",
+        "scopeKey": "/srv/projects/ledger",
+        "body": "the balance column is built from the rendered table struct's tags — a missing column is the tag list, not the writer loop",
+        "provenance": "observed",
+        "tags": ["ledger", "exports"],
+        "sourceLoopSlug": "dev-loops",
+        "sourceStepId": 2211,
+        "createdAt": "2026-11-04T09:20:00Z"
+      }
+    }
+  }
+}

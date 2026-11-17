@@ -1,0 +1,21 @@
+{
+  "description": "The provider refused or the stream was cut. The provider's OWN WORDS travel in `what`, because they are usually the actionable part — a wrong model name says so precisely, and paraphrasing it would discard the only useful detail. The message also records whether a retry was attempted, because `not retried` is a fact the caller needs: it means the daemon judged another attempt would produce the same answer.",
+  "method": "ask",
+  "request": {
+    "jsonrpc": "2.0", "id": 25, "method": "ask",
+    "params": {"route": "anthropic-sonnet", "prompt": "hello"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 25,
+    "error": {
+      "code": -31102,
+      "message": "the model provider failed",
+      "data": {
+        "what": "model: anthropic answered 404: {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-sonnet-99\"}} (not retried: the provider will answer the same way)",
+        "means": "the provider refused the request, or the stream was cut; the daemon retried where retrying was safe and did not where a reply had already begun",
+        "todo": "the message carries the provider's own words — check the route's credential and model name first",
+        "fatal": false
+      }
+    }
+  }
+}

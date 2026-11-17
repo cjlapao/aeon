@@ -1,0 +1,15 @@
+golang-engineer
+  core:
+    edit                    
+    list                    
+    read                    
+  (the core set — S11 owns their verdicts; MCP adds nothing here until configured)
+  gitforge  (public)
+    gitforge.read_pr         read-only    · reversible  · server did not answer (reported absent)
+  labnote  (private)
+    labnote.scratch          read-only    · reversible  · server did not answer (reported absent)
+  search  (public)
+    search.query             outward      · detectable  · server did not answer (reported absent)
+  MCP server "labnote" did not answer — its tools are reported absent, not silently dropped: mcp: server "labnote": spawning aeon-golden-private: exec: "aeon-golden-private": executable file not found in $PATH
+  MCP server "gitforge" did not answer — its tools are reported absent, not silently dropped: mcp: server "gitforge": spawning aeon-golden-nonexistent: exec: "aeon-golden-nonexistent": executable file not found in $PATH
+  MCP server "search" did not answer — its tools are reported absent, not silently dropped: mcp: server "search": initialize: Post "http://127.0.0.1:1/mcp": dial tcp 127.0.0.1:1: connect: connection refused

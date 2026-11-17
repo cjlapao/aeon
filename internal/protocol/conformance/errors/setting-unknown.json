@@ -1,0 +1,18 @@
+{
+  "description": "A settings.get/set/unset naming a key the registry does not declare refuses with settings.get's unknown code (S44 T5, the -31810 the closed registry exists to make impossible): a silent default would let a caller mistake \"this key was never declared\" for \"it is on its default\", and those are different sentences the app renders differently. The registry is the closed set of declared keys (T3), so an undeclared name is always a refusal, not a default — the three-part data names the key refused and points the caller at settings.list, the door that names what does exist.",
+  "method": "settings.get",
+  "request": {"jsonrpc": "2.0", "id": 307, "method": "settings.get", "params": {"key": "test.notThere"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 307,
+    "error": {
+      "code": -31810,
+      "message": "no setting named \"test.notThere\"",
+      "data": {
+        "what": "the registry declares no setting named \"test.notThere\" — it is not a key this store knows, so get/set/unset cannot resolve it",
+        "means": "the closed registry (T3) has no such declaration, so there is no default to fall back on; an undeclared name is refused, never answered with a default the caller could mistake for a real value",
+        "todo": "the message names the key refused; `aeon settings list` (or settings.list) names what the registry does declare — pick one of those instead",
+        "fatal": false
+      }
+    }
+  }
+}

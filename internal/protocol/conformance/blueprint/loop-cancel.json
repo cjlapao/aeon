@@ -1,0 +1,23 @@
+{
+  "description": "A person cancels a loop (S55 T5, LC4): terminal, cheap, certain. The reason is required (a cancel destroys progress irreversibly and the audit must say why). The loop ends `aborted` through the engine's one writer (the run's state is `cancelled`), and the blueprint's on_abort lane NEVER runs — a cancel must be certain and free, so skippedAbortLane says it out loud; a person who wants the abort lane answers the gate with `abort` instead (OD1).",
+  "method": "loop.cancel",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 503,
+    "method": "loop.cancel",
+    "params": {
+      "id": "loop-9",
+      "reason": "the approach is wrong — starting over"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 503,
+    "result": {
+      "loopId": "loop-9",
+      "status": "aborted",
+      "runState": "cancelled",
+      "skippedAbortLane": true
+    }
+  }
+}

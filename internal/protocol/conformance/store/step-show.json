@@ -1,0 +1,37 @@
+{
+  "description": "`step.show` returns the CANONICAL transcript — `kind` blocks, never a provider's shape — and the cost with its state as a FIELD. A client that inferred the state from whether `usd` is present would collapse `partial` into `known`, and a partial cost has a number: it is a floor.",
+  "method": "step.show",
+  "request": {
+    "jsonrpc": "2.0", "id": 46, "method": "step.show",
+    "params": {"id": 4}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 46,
+    "result": {
+      "id": 4,
+      "loopSlug": "refactor",
+      "componentRoot": "/home/p/repo-a",
+      "phase": "build",
+      "agent": "golang-engineer",
+      "status": "suspended",
+      "startedAt": "2026-10-15T09:41:12.345Z",
+      "cost": {
+        "state": "partial",
+        "usdAtLeast": 0.0012,
+        "missing": ["cacheWriteUsdPerMTok"]
+      },
+      "messages": [
+        {"role": "user", "content": [{"kind": "text", "text": "delete the build directory"}]},
+        {"role": "assistant", "content": [
+          {"kind": "thinking", "text": "That is destructive; I should ask.", "signature": "ErUBCkYIBBgCKkBhZW9u"},
+          {"kind": "tool_use", "id": "toolu_danger", "name": "shell", "input": {"cmd": "rm -rf build"}}
+        ]}
+      ],
+      "contextManifest": {
+        "files": [{"path": "AGENTS.md", "hash": "sha256:cafe"}],
+        "iterationsUsed": 1,
+        "deadlineAt": "2026-10-15T23:59:59.000Z"
+      }
+    }
+  }
+}

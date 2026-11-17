@@ -1,0 +1,26 @@
+{
+  "description": "The autonomy.deny happy path (S56 T6, OD4): a veto, which may sit on a root OR a child (the node door stops at existence; the subject rules are the pure validator's). A veto carries no conditions and no expiry — the params have no fields for them, and a request that tries to is refused, never silently trimmed. The subject here is the one class shorthand, the widest veto on the component. The result is the written veto and the daemon's own confirmation sentence.",
+  "method": "autonomy.deny",
+  "request": {"jsonrpc": "2.0", "id": 409, "method": "autonomy.deny", "params": {"nodeId": "pkg/web", "subject": "outward", "note": "no outward effects from this component while it is unstable"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 409,
+    "result": {
+      "grant": {
+        "id": "g-9f02",
+        "nodeId": "pkg/web",
+        "rootId": "aeon",
+        "subject": {"kind": "class", "name": "outward"},
+        "state": "deny",
+        "conditions": {"requireGates": false, "requireBudget": false},
+        "note": "no outward effects from this component while it is unstable",
+        "expiresAt": null,
+        "createdAt": "2026-11-01T09:05:00Z",
+        "createdBy": {"kind": "user", "id": "1000"},
+        "revoked": null,
+        "active": true,
+        "describe": "g-9f02 vetoes outward for unattended loops on pkg/web"
+      },
+      "confirmation": "written: outward is now vetoed on pkg/web — it cannot run unattended there"
+    }
+  }
+}

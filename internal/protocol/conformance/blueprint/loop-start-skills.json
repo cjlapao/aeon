@@ -1,0 +1,26 @@
+{
+  "description": "`loop.start` with the operator's CHOSEN skills (S68 B6): the names are validated against the live catalog at the door — an unknown name refuses the whole call naming every offender — the chosen names are filed on the kickoff row as the durable receipt, and each chosen skill's canonical instruction line renders into the SYSTEM message of every step of this launch. The choice belongs to this start; it does not stick to the loop, and a later restart is a new launch that chooses again (or nothing).",
+  "method": "loop.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "method": "loop.start",
+    "params": {
+      "blueprint": "two-step",
+      "goal": "Audit the dependencies",
+      "workspaceRoot": "/repo",
+      "route": "anthropic",
+      "skills": ["caveman", "verify-before-done"]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "result": {
+      "id": "loop-2",
+      "slug": "loop-2",
+      "blueprint": "two-step",
+      "status": "running"
+    }
+  }
+}

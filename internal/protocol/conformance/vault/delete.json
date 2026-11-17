@@ -1,0 +1,19 @@
+{
+  "description": "vault.delete removes one variable in one scope and answers whether there was one. Human door only; recorded on the variable ledger.",
+  "method": "vault.delete",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 953,
+    "method": "vault.delete",
+    "params": {
+      "name": "REGION"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 953,
+    "result": {
+      "deleted": true
+    }
+  }
+}

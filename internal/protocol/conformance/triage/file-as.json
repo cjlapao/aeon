@@ -1,0 +1,31 @@
+{
+  "description": "S51 T5 (TM6): the triage plane's ONE agent filing door. triage.fileAs files an UNVALIDATED, priority-unknown bug claim through the SAME CreateAudited triage.file runs — the shape carries no validation state (the store's default is the backstop, D1), no priority (an agent's claim reads unknown, D2), no filedBy (the stamped agent slug is the filer, TM3) and no duplicate/hand-off fields (the person's doors alone). A PERSON session is refused with the pointer sentence; a person files through triage.file, under themselves. The result is the one toTriageView rendering, so the row reads here exactly as triage.show will read it.",
+  "method": "triage.fileAs",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 448,
+    "method": "triage.fileAs",
+    "params": {
+      "componentRoot": "/srv/projects/ledger",
+      "title": "export csv drops the ledger balance column on the monthly range",
+      "body": "steps: Reports > Export > monthly range; the CSV has debit/credit but no balance column; expected three columns as rendered on screen"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 448,
+    "result": {
+      "id": 9,
+      "componentRoot": "/srv/projects/ledger",
+      "title": "export csv drops the ledger balance column on the monthly range",
+      "body": "steps: Reports > Export > monthly range; the CSV has debit/credit but no balance column; expected three columns as rendered on screen",
+      "validation": "unvalidated",
+      "priorityState": "unknown",
+      "priorityLabel": "",
+      "filedBy": "golang-engineer",
+      "validated": false,
+      "createdAt": "2026-11-04T09:00:00Z",
+      "updatedAt": "2026-11-04T09:00:00Z"
+    }
+  }
+}

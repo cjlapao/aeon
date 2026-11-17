@@ -1,0 +1,27 @@
+{
+  "description": "The autonomy.revoke NO-OP success (S56 T6): revoking a grant that is already revoked answers success with the same revoked view, writes NO new change row, and lists no affected loops (there are no running pins to pull from a grant that no longer applies). This is the deliberate contrast with the refusal fixtures in this folder — already-revoked is a no-op, not a refusal: a second revoke is an idempotent audit read, and refusing it would make the retry the exceptional path.",
+  "method": "autonomy.revoke",
+  "request": {"jsonrpc": "2.0", "id": 411, "method": "autonomy.revoke", "params": {"id": "g-8c21", "reason": "the release lane paused"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 411,
+    "result": {
+      "grant": {
+        "id": "g-8c21",
+        "nodeId": "aeon",
+        "rootId": "aeon",
+        "subject": {"kind": "action", "name": "forge.openPR"},
+        "state": "allow",
+        "conditions": {"requireGates": false, "requireBudget": true, "labels": ["release"], "maxPerDay": 4},
+        "note": "nightly release lane",
+        "expiresAt": "2026-12-01T00:00:00Z",
+        "createdAt": "2026-11-01T09:00:00Z",
+        "createdBy": {"kind": "user", "id": "1000"},
+        "revoked": {"at": "2026-11-01T10:30:00Z", "by": "user:1000", "reason": "the release lane paused"},
+        "active": false,
+        "describe": "g-8c21 allows forge.openPR for unattended loops on aeon — revoked at 2026-11-01T10:30:00Z by user:1000 — expires 2026-12-01T00:00:00Z"
+      },
+      "confirmation": "revoked: g-8c21 (forge.openPR) no longer applies — 0 running loop(s) were pinned to it",
+      "affectedLoops": []
+    }
+  }
+}

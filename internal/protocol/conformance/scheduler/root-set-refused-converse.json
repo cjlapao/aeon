@@ -1,0 +1,29 @@
+{
+  "description": "ErrSchedulerRefused (-31935) at its most common door: the CN5 template validator's OWN sentence, rendered verbatim into data.what, the three-part data beside it. The row was never written.",
+  "method": "scheduler.root.set",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 413,
+    "method": "scheduler.root.set",
+    "params": {
+      "componentRoot": "/srv/components/alpha",
+      "enabled": true,
+      "blueprint": "converse-chat"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 413,
+    "error": {
+      "code": -31935,
+      "message": "the continuous scheduler refused the request",
+      "data": {
+        "what": "blueprint \"converse-chat\" finishes with after: converse — a loop that rests forever would hold the repository forever (CN5: the template's blueprint must end)",
+        "means": "nothing was written: no authority row moved, no control was recorded, no work was started or stopped. The scheduler's next tick behaves exactly as it did before the call",
+        "todo": "do what the what says — name a real component root, fix the template the validator's sentence names, or ask the person whose door the control is (scheduler.status answers what is enabled)",
+        "fatal": false
+      }
+    }
+  },
+  "fromDoor": true
+}

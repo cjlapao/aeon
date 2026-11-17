@@ -1,0 +1,25 @@
+{
+  "description": "Creates a loop with pinned YAML and a durable starting position, then schedules its runner independently of this request.",
+  "method": "loop.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "method": "loop.start",
+    "params": {
+      "blueprint": "two-step",
+      "goal": "Survey the repository",
+      "workspaceRoot": "/repo",
+      "route": "anthropic"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "result": {
+      "id": "loop-1",
+      "slug": "loop-1",
+      "blueprint": "two-step",
+      "status": "running"
+    }
+  }
+}

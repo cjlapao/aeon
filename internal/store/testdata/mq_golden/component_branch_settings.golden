@@ -1,0 +1,2 @@
+set:  defaultBranch="trunk"/own branchPrefix="aeon"/own
+bare: defaultBranch=""/own branchPrefix=""/own (no row setting; the ENGINE-side default is S60 T4's to own)

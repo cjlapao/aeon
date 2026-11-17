@@ -1,0 +1,33 @@
+{
+  "description": "loop_get reads one loop row by slug for the step's component; a person is pointed at the socket's own loop.show.",
+  "method": "loop.get",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "method": "loop.get",
+    "params": {
+      "slug": "briefing"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "result": {
+      "id": "d19f-7a1f",
+      "slug": "briefing",
+      "title": "Brief the goal",
+      "goal": "",
+      "root": "/home/p/aeon",
+      "componentRoot": "/home/p/aeon",
+      "mode": "attended",
+      "phase": "capture",
+      "status": "waiting",
+      "startedAt": "2026-10-26T09:00:00Z",
+      "updatedAt": "2026-10-26T09:05:00Z",
+      "goalId": "goal-7a1f",
+      "goalVersion": 1,
+      "startedBy": "",
+      "triggerId": ""
+    }
+  }
+}

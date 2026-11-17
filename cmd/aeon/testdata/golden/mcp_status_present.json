@@ -1,0 +1,35 @@
+{
+  "configPath": "«config»",
+  "present": true,
+  "servers": [
+    {
+      "name": "gitforge",
+      "tier": "public",
+      "transport": "stdio",
+      "command": "aeon-golden-nonexistent",
+      "declaredBy": [
+        "golang-engineer"
+      ]
+    },
+    {
+      "name": "search",
+      "tier": "public",
+      "transport": "http",
+      "url": "http://127.0.0.1:1/mcp",
+      "declaredBy": [
+        "golang-engineer",
+        "manny"
+      ]
+    },
+    {
+      "name": "labnote",
+      "tier": "private",
+      "transport": "stdio",
+      "command": "aeon-golden-private",
+      "declaredBy": [
+        "golang-engineer"
+      ]
+    }
+  ],
+  "probes": {}
+}

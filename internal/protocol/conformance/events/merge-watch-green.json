@@ -1,0 +1,22 @@
+{
+  "description": "The post-merge watch answered green: every reported check on the merged sha is success, the watch has ended, and no bug stands (a green is the job done, VG5). The payload carries ids and enums only — the watch's merge-event id, the root, the sha, the PR, the aggregate's one-line reason — never forge output.",
+  "event": "merge.watch.green",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1701,
+      "kind": "merge.watch.green",
+      "at": "2026-11-02T11:40:00Z",
+      "payload": {
+        "watch": "me-1",
+        "componentRoot": "/repos/aeon",
+        "sha": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0",
+        "pr": 7,
+        "reason": "all 2 reported checks are success",
+        "bugId": 0
+      }
+    }
+  }
+}

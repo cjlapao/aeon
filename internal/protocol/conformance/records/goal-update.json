@@ -1,0 +1,32 @@
+{
+  "description": "goal_update rewrites a goal draft's body through the step's door; the version moves and the pinned loops keep their frame (OL9).",
+  "method": "goal.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "method": "goal.update",
+    "params": {
+      "goal_id": "goal-7a1f",
+      "body_note": "criteria 6-11, tightened"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "result": {
+      "id": "goal-7a1f",
+      "rootId": "prj-7a1f",
+      "version": 2,
+      "title": "Ship the org board",
+      "type": "feature",
+      "bodyNote": "criteria 6-11",
+      "sourceKind": "manual",
+      "sourceRef": "",
+      "reviewState": "draft",
+      "createdByKind": "agent",
+      "createdById": "brainstormer",
+      "createdAt": "2026-10-26T09:00:00Z",
+      "updatedAt": "2026-10-26T09:00:00Z"
+    }
+  }
+}

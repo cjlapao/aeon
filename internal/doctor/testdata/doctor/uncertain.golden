@@ -1,0 +1,11 @@
+doctor
+  anthropic
+    cost    unknown
+    tools   declared
+  retrieval   stale
+  http   not listening
+  credentials
+    ANTHROPIC_API_KEY   present   (environment)
+    no credential is printed here
+  forge       present   (~/.config/aeon/forge.key)
+  bash policy present

@@ -1,0 +1,52 @@
+{
+  "description": "The read surface of discovery (A13): CANDIDATES with the two fields a reader judges fit from \u2014 tags and examples \u2014 and the name spelled the way the door reads it (agent + id). It cannot choose: there is no score, no ranking, no `best` anywhere in this answer, and `refuses` names every broken card the load path excluded (AS9 \u2014 what is enumerable is what is invokable, and absence is never silent). `count` is the listing's own total.",
+  "method": "agent.discover",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 70,
+    "method": "agent.discover"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 70,
+    "result": {
+      "candidates": [
+        {
+          "agent": "reddit-agent",
+          "name": "reddit-agent",
+          "description": "reads reddit and summarises sentiment",
+          "version": "1.0.0",
+          "defaultInputModes": [
+            "text/plain"
+          ],
+          "defaultOutputModes": [
+            "text/plain"
+          ],
+          "skills": [
+            {
+              "agent": "reddit-agent",
+              "id": "summarise-sentiment",
+              "name": "Summarise sentiment",
+              "description": "given a topic, return what people are saying",
+              "tags": [
+                "reddit",
+                "sentiment"
+              ],
+              "examples": [
+                "what do people think of aeon?"
+              ],
+              "inputModes": [
+                "text/plain"
+              ],
+              "outputModes": [
+                "text/plain"
+              ]
+            }
+          ]
+        }
+      ],
+      "refuses": [],
+      "count": 1
+    }
+  }
+}

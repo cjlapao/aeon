@@ -1,0 +1,4 @@
+$ aeon policy add --type trigger_access --id ok-trigger --target all-agents --action deny --spec {"trigger":"schedule","state":"deny"}
+policy ok-trigger stored — the daemon's next read sees it (N8 forbids caching)
+$ aeon policy list
+ok-trigger               trigger_access all-agents                   deny   operator     no expiry

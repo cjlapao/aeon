@@ -1,0 +1,11 @@
+{
+  "description": "Emitted when a connection closes. Its subscriptions are already gone by then: they die with the connection (T5), and reconnection is a cursor's job rather than a subscription's.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c", "seq": 1423, "kind": "client.disconnected",
+      "at": "2026-10-15T09:15:02.000000000Z",
+      "payload": {"connId": "conn-7"}
+    }
+  }
+}

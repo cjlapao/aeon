@@ -1,0 +1,15 @@
+{
+  "kind": "budget.warn",
+  "componentRoot": "comp-golden",
+  "payload": {
+    "cap": 1000000,
+    "dimension": "tokens",
+    "loopId": "loop-golden",
+    "pct": 92
+  },
+  "notify": {
+    "title": "A budget is near its cap",
+    "body": "",
+    "tone": "warning"
+  }
+}

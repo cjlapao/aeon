@@ -1,0 +1,2 @@
+$ aeon policy in-force --agent alice
+tool_access    no-bash                  in force · unacknowledged — still enforced (PL10)

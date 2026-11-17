@@ -1,0 +1,19 @@
+{
+  "description": "S45 T7 (PM9) behaviour 4: the per-caller cap on OPEN proposals (desk.MaxOpenProposalsPerAgent, 20) — a runaway loop must not bury the desk. The 21st file by a caller already holding twenty is a COUNTED refusal naming the limit and the way to see the queue (proposal_list); the 20th passed, this one writes nothing. The limit is a named constant beside the proposal validators, not a hidden number in a switch.",
+  "method": "policy.proposeAdd",
+  "request": {"jsonrpc": "2.0", "id": 90, "method": "policy.proposeAdd", "params": {
+    "id": "loop-proposal-21",
+    "type": "tool_access",
+    "target": {"kind": "agent", "id": "implementer"},
+    "action": "deny",
+    "spec": {"toolName": "webfetch", "state": "deny"},
+    "reason": "the twenty-first in a row — the cap exists so a runaway loop cannot bury the desk"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 90,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: refused: agent implementer already holds 20 open proposals — that is the per-agent cap; see them with proposal_list and ask a person to decide one before filing more"
+    }
+  }
+}

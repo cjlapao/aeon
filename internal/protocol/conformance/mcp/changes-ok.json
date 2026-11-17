@@ -1,0 +1,34 @@
+{
+  "description": "S46 T3 (MG5-reads, MG13): mcp.changes {server?, agent?, limit?} reads the append-only mcp_change audit — the rows field for field (server/agent/qualified absent where the table holds NULL: the op decides which facts exist), newest-first, summaries are the fixed templates the writer built from NAMES and ids only, so no credential can sit in an audit row (MG13/C17 — the audit is a thing people screenshot). This fixture is a filtered read (server + agent): rows for both ops of one server, actorKind/actorId naming who pressed the button (user for a socket write, cli for the verb, system for the seed).",
+  "method": "mcp.changes",
+  "request": {"jsonrpc": "2.0", "id": 906, "method": "mcp.changes", "params": {"server": "reddit", "agent": "reddit-agent", "limit": 20}},
+  "response": {
+    "jsonrpc": "2.0", "id": 906,
+    "result": {
+      "changes": [
+        {
+          "id": 8,
+          "op": "grant_revoke",
+          "server": "reddit",
+          "agent": "reddit-agent",
+          "qualified": "reddit.post_comment",
+          "summary": "revoked the declaration of \"reddit.post_comment\" from agent \"reddit-agent\"",
+          "actorKind": "user",
+          "actorId": "1000",
+          "occurredAt": "2026-11-01T13:05:11Z"
+        },
+        {
+          "id": 7,
+          "op": "grant_declare",
+          "server": "reddit",
+          "agent": "reddit-agent",
+          "qualified": "reddit.search",
+          "summary": "declared \"reddit.search\" for agent \"reddit-agent\"",
+          "actorKind": "user",
+          "actorId": "1000",
+          "occurredAt": "2026-11-01T12:00:00Z"
+        }
+      ]
+    }
+  }
+}

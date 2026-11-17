@@ -1,0 +1,46 @@
+{
+  "description": "mergequeue.land is the person pushing a READY item forward NOW: it is digest-bound to the row AS READ (sha256 over id|status|head|position \u2014 a moved item digests differently and the land refuses), refused from any other state and while the repository's queue mode is off, and delivered THROUGH the driver: the door records the demand, answers the loop's standing land-check gate with its own merge-now word, and reconciles \u2014 the loop still holds the forge.land ask (S11/S56), the queue never merges with its own hands.",
+  "method": "mergequeue.land",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 180,
+    "method": "mergequeue.land",
+    "params": {
+      "id": "mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+      "digest": "fbe6fd7af3920ad4c2de6d9a15dbafb685a3b388d4125a78bfc1f217b7b79bf2"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 180,
+    "result": {
+      "id": "mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+      "componentRoot": "/srv/components/alpha",
+      "base": "main",
+      "branch": "feature/login-retry",
+      "loop": "loop-mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+      "status": "merging",
+      "position": 1,
+      "attended": true,
+      "headSha": "aaaa1111bbbb2222cccc3333dddd4444eeee5555",
+      "baseSha": "9999aaaa8888bbbb7777cccc6666dddd5555eeee4444",
+      "integrationBranch": "integrate/mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+      "integrationSha": "1212aaaa3434bbbb5656cccc7878dddd9090efff",
+      "prNumber": 412,
+      "verifiedSha": "1212aaaa3434bbbb5656cccc7878dddd9090efff",
+      "landingLoop": "loop-mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+      "catchUps": 1,
+      "enqueuedBy": {
+        "kind": "user",
+        "id": "cjlapao"
+      },
+      "staleness": {
+        "state": "current"
+      },
+      "nextStep": "merging: the landing is in flight",
+      "digest": "9efc09bdc82d21f7077d6ffcadf29d25f37b9199ae1a6f22e226db482b7d0c65",
+      "createdAt": "2026-11-03T10:00:00Z",
+      "updatedAt": "2026-11-04T10:30:00Z"
+    }
+  }
+}

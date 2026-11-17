@@ -1,0 +1,81 @@
+{
+  "description": "S46 T3 (MG5-reads/MG8/MG13): mcp.servers is the person's management list — the row-complete read the CLI table becomes. Filtered here to one agent's enabled private servers (every filter is optional; pointers keep absent-vs-empty distinct). The transport carries env NAMES only — there is no field where a value could travel (MG13/§4c made structural). The two servers show the probe join's three states: one probed (the same cache mcp.status reads — this door never probes, MG11) and one never-yet-asked as the distinct word \"unprobed\". declaredBy is the COUNT of agents whose declares name one of its tools (the list of names is mcp.server's, not this read's).",
+  "method": "mcp.servers",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 901,
+    "method": "mcp.servers",
+    "params": {
+      "tier": "private",
+      "agent": "reddit-agent",
+      "enabled": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 901,
+    "result": {
+      "servers": [
+        {
+          "name": "reddit",
+          "tier": "private",
+          "agent": "reddit-agent",
+          "transport": {
+            "type": "stdio",
+            "command": "npx",
+            "args": [
+              "-y",
+              "@acme/mcp-reddit"
+            ],
+            "envNames": [
+              "REDDIT_TOKEN"
+            ]
+          },
+          "tools": [
+            {
+              "name": "search",
+              "rerun": "safe",
+              "effect": "local",
+              "classified": true
+            },
+            {
+              "name": "post_comment",
+              "classified": false
+            }
+          ],
+          "enabled": true,
+          "origin": "user",
+          "declaredBy": 1,
+          "status": "reachable",
+          "updatedAt": "2026-11-01T12:00:00Z",
+          "title": "GitHub",
+          "description": "Issues, pull requests and repositories on GitHub."
+        },
+        {
+          "name": "acme-crud",
+          "tier": "private",
+          "agent": "reddit-agent",
+          "transport": {
+            "type": "http",
+            "url": "https://mcp.acme.dev/tools"
+          },
+          "tools": [
+            {
+              "name": "list_issues",
+              "rerun": "safe",
+              "effect": "local",
+              "classified": true
+            }
+          ],
+          "enabled": true,
+          "origin": "user",
+          "declaredBy": 0,
+          "status": "unprobed",
+          "updatedAt": "2026-10-31T09:30:00Z",
+          "title": "GitHub",
+          "description": "Issues, pull requests and repositories on GitHub."
+        }
+      ]
+    }
+  }
+}

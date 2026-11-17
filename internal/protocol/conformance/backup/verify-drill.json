@@ -1,0 +1,34 @@
+{
+  "description": "backup.verify with drill:true is level 3: the copy is opened on a scratch database and the migrations that have not yet been applied to it are RUN there — the drill is the only place a future migration is exercised against a past backup. drillApplied names the migrations the drill ran, so the report says what was actually tried, and the ledger row records the drill (verify_level drill, the fixed template in the detail column).",
+  "method": "backup.verify",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 954,
+    "method": "backup.verify",
+    "params": {
+      "file": "aeon-state-20261101T120000Z-v75.aeonbak",
+      "drill": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 954,
+    "result": {
+      "run": {
+        "outcome": "ok",
+        "startedAt": "2026-11-02T12:00:00.000Z",
+        "finishedAt": "2026-11-02T12:00:11.000Z"
+      },
+      "report": {
+        "file": "aeon-state-20261101T120000Z-v75.aeonbak",
+        "level": 3,
+        "ok": true,
+        "newerSchema": false,
+        "sentence": "drilled: the copy opened, migration 00000000000076_add_backup_run applied on the scratch database, and the counts agree",
+        "drillApplied": [
+          "00000000000076_add_backup_run"
+        ]
+      }
+    }
+  }
+}

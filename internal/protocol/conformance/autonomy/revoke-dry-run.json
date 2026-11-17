@@ -1,0 +1,13 @@
+{
+  "description": "The autonomy.revoke dry run (S56 T10, behaviours 3/4): the same revocation as revoke.json with dryRun:true — the reason door and the grant lookup run, nothing is written, and the result is the daemon's own sentence of what WOULD stop applying, naming the grant, its subject in plain words, and the running loops pinned under it (the caller stops them through S55's loop.stop — OD8). The grant field is null — no row was touched, and the already-revoked no-op (revoke-already.json) still stands as the written shape's twin.",
+  "method": "autonomy.revoke",
+  "request": {"jsonrpc": "2.0", "id": 416, "method": "autonomy.revoke", "params": {"id": "g-8c21", "reason": "the release lane paused", "dryRun": true}},
+  "response": {
+    "jsonrpc": "2.0", "id": 416,
+    "result": {
+      "grant": null,
+      "confirmation": "dry run: g-8c21 (open a pull request) would stop applying — 1 running loop(s) are pinned to it — nothing was written",
+      "affectedLoops": ["loop-42"]
+    }
+  }
+}

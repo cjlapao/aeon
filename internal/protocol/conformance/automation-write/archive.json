@@ -1,0 +1,72 @@
+{
+  "description": "automation.archive flips a state, never deletes: the source is part of the name, a reason is the archive's companion sentence, and the answer carries the before/after views beside the health the flip just changed. Archive pauses too (the schedule's own off), because an invisible trigger that still says 'running' would be two truths (S49 AN6).",
+  "method": "automation.archive",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8303,
+    "method": "automation.archive",
+    "params": {
+      "source": "schedule",
+      "id": "sch-morning",
+      "reason": "retired with the old on-call rota"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8303,
+    "result": {
+      "before": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "name": "sch-morning",
+        "blueprint": "morning-standup",
+        "workspace": "/home/p/ops",
+        "goal": "Daily morning sweep",
+        "expr": "0 7 * * *",
+        "zone": "Europe/Lisbon",
+        "enabled": true,
+        "createdByKind": "user",
+        "createdById": "operator",
+        "createdAt": "2026-10-01T08:00:00Z",
+        "lastFire": null
+      },
+      "after": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "name": "sch-morning",
+        "blueprint": "morning-standup",
+        "workspace": "/home/p/ops",
+        "goal": "Daily morning sweep",
+        "expr": "0 7 * * *",
+        "zone": "Europe/Lisbon",
+        "enabled": false,
+        "createdByKind": "user",
+        "createdById": "operator",
+        "createdAt": "2026-10-01T08:00:00Z",
+        "lastFire": null,
+        "paused": true,
+        "archived": true,
+        "archivedReason": "retired with the old on-call rota"
+      },
+      "changed": true,
+      "health": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "blueprint": {
+          "state": "ok"
+        },
+        "workspace": {
+          "exists": true
+        },
+        "scope": {
+          "exists": true
+        },
+        "canFire": false,
+        "reasons": [
+          "archived — the engines do not see it (unarchive first, then enable)",
+          "paused — the clock skips it until resumed"
+        ]
+      }
+    }
+  }
+}

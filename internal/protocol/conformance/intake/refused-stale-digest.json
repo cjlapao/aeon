@@ -1,0 +1,31 @@
+{
+  "description": "A digest that no longer matches the plan refuses with the engine's own sentence (GI12): the preview moved, re-preview \u2014 never commit a half-remembered promise.",
+  "method": "intake.commit",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "intake.commit",
+    "params": {
+      "intakeId": "int-abc123",
+      "proposalId": "7",
+      "digest": "s61.intake.v1:0000000000000000000000000000000000000000000000000000000000000000",
+      "targetPath": "/home/person/projects/alpha",
+      "publish": "none"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -31965,
+      "message": "the intake request was refused",
+      "data": {
+        "what": "the plan changed since you saw it \u2014 review again (seen \"s61.intake.v1:0000000000000000000000000000000000000000000000000000000000000000\", now sha256:3f2a9c1b4d5e6f70a1b2c3d4e5f60718293a4b5c6d7e8f9012345678901abcdef)",
+        "means": "nothing was written and nothing half-wrote: a refused commit is not a paused one \u2014 the half-run was taken back or the ledger says exactly where it stands. intake.status is the door that answers where",
+        "todo": "do what the what says \u2014 re-preview (intake.plan hands out a fresh digest), aim at an empty target under the person's workspace, turn on the setting the sentence names, or ask from a person's connection",
+        "fatal": false
+      }
+    }
+  },
+  "fromSeam": true
+}

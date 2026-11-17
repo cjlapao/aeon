@@ -1,0 +1,62 @@
+{
+  "description": "trigger.update is trigger.add's sibling: sparse edits over the stored row, answered with the before/after views, the changed flag, and the clock's next instants. A field that stays absent stays unchanged; nothing here can enable, rename the kind, or name an author (S49 T4, AU1).",
+  "method": "trigger.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8301,
+    "method": "trigger.update",
+    "params": {
+      "id": "sch-morning",
+      "cron": "30 7 * * *"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8301,
+    "result": {
+      "before": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "name": "sch-morning",
+        "blueprint": "morning-standup",
+        "workspace": "/home/p/ops",
+        "goal": "Daily morning sweep",
+        "expr": "0 7 * * *",
+        "zone": "Europe/Lisbon",
+        "enabled": true,
+        "createdByKind": "user",
+        "createdById": "operator",
+        "createdAt": "2026-10-01T08:00:00Z",
+        "lastFire": null
+      },
+      "after": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "name": "sch-morning",
+        "blueprint": "morning-standup",
+        "workspace": "/home/p/ops",
+        "goal": "Daily morning sweep",
+        "expr": "30 7 * * *",
+        "zone": "Europe/Lisbon",
+        "enabled": true,
+        "createdByKind": "user",
+        "createdById": "operator",
+        "createdAt": "2026-10-01T08:00:00Z",
+        "lastFire": null
+      },
+      "changed": true,
+      "nextFires": [
+        {
+          "at": "2026-11-03T07:30:00Z",
+          "kind": "due",
+          "wall": "2026-11-03 07:30 (Europe/Lisbon)"
+        },
+        {
+          "at": "2026-11-04T07:30:00Z",
+          "kind": "due",
+          "wall": "2026-11-04 07:30 (Europe/Lisbon)"
+        }
+      ]
+    }
+  }
+}

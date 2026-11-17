@@ -1,0 +1,135 @@
+{
+  "work": {
+    "title": "Trabalho",
+    "all": "Todos os projetos",
+    "allPurpose": "Todos os projetos de uma vez. Cada separador mostra o mesmo que dentro de um componente, com uma coluna Componente.",
+    "find": "Procurar componente",
+    "start": "Iniciar um loop",
+    "includeSub": "Incluir subcomponentes",
+    "breadcrumb": "Onde está",
+    "help": {
+      "title": "Trabalho",
+      "body": "Trabalho é tudo o que faz dentro dos seus projetos, num só sítio. Escolha um projeto ou subcomponente à esquerda. A página tem separadores: o que está a correr, os loops, o plano, o que o Aeon sabe do código, o que corre sozinho, as verificações que o protegem, os ficheiros e o histórico. Escolha **Todos os projetos** para ver os mesmos separadores de tudo."
+    },
+    "tabs": {
+      "overview": "Resumo",
+      "loops": "Loops",
+      "plan": "Plano",
+      "knowledge": "Conhecimento",
+      "automation": "Automação",
+      "guardrails": "Proteções",
+      "files": "Ficheiros",
+      "history": "Histórico"
+    },
+    "stat": {
+      "running": "A correr",
+      "needsYou": "Precisa de si",
+      "components": "Componentes dentro",
+      "loops": "Loops registados",
+      "runningSub": "loops a trabalhar",
+      "needsYouSub": "à espera ou bloqueados",
+      "componentsSub": "subcomponentes",
+      "loopsSub": "desde sempre"
+    },
+    "overview": {
+      "inside": "Dentro deste componente",
+      "insideAll": "Os seus projetos",
+      "insideEmpty": "Ainda sem subcomponentes.",
+      "recent": "Últimos loops",
+      "recentEmpty": "Ainda não há loops aqui. Inicie um para o ver aparecer."
+    },
+    "loops": {
+      "empty": "Ainda não há loops aqui.",
+      "col": {
+        "loop": "Loop",
+        "component": "Componente",
+        "status": "Estado",
+        "phase": "Fase",
+        "updated": "Atualizado"
+      },
+      "footer": "{shown} loops"
+    },
+    "plan": {
+      "goals": "Objetivos",
+      "roadmap": "Roadmap",
+      "tasks": "Tarefas"
+    },
+    "moved": {
+      "title": "Esta parte ainda está na sua própria página",
+      "body": "Está a mudar para dentro do componente. Até lá fica aqui:",
+      "open": "Abrir {page}"
+    },
+    "unknown": {
+      "title": "Esse componente não está aqui",
+      "body": "Pode ter sido removido. Escolha um da lista.",
+      "back": "Voltar a todos os projetos"
+    },
+    "error": "A lista de componentes não respondeu: {error}",
+    "files": {
+      "needsOne": "Escolha um componente para ver os seus ficheiros."
+    },
+    "knowledge": {
+      "graph": "Grafo de código",
+      "search": "Índice de pesquisa",
+      "memory": "Memória",
+      "shared": "{names} partilha o índice do repositório onde vive.",
+      "memoryRoot": "Componente",
+      "memoryAll": "Todos os componentes no âmbito"
+    },
+    "guardrails": {
+      "gates": "Portões",
+      "environments": "Ambientes",
+      "triage": "Triagem",
+      "needsOne": "Portões, ambientes e triagem pertencem a um componente. Escolha um no menu."
+    },
+    "tasks": {
+      "hint": "Tarefas reais do daemon. Um cartão move-se quando um agente conclui um passo — o quadro segue o daemon, não se arrasta.",
+      "empty": "Ainda sem tarefas aqui.",
+      "col": {
+        "notStarted": "Por começar",
+        "working": "Em curso",
+        "checking": "A verificar",
+        "inReview": "Em revisão",
+        "landed": "Integrado",
+        "stopped": "Parado"
+      },
+      "step": "passo {at} de {of}",
+      "stage": "Coluna: {column}",
+      "assignee": "Atribuído a",
+      "unassigned": "ninguém ainda",
+      "updated": "Última alteração",
+      "cost": "Custo",
+      "floor": "(no mínimo)",
+      "openLoop": "Abrir loop {slug}",
+      "goal": "Objetivo",
+      "allGoals": "Objetivo: todos"
+    },
+    "timeline": {
+      "hint": "Cada barra vai de quando o item começou a correr até acabar (ou até agora). Um item que ainda não começou fica no dia em que foi criado.",
+      "needsOne": "Um roadmap pertence a um componente. Escolha um no menu.",
+      "empty": "Este roadmap ainda não tem itens.",
+      "noEpic": "Sem épico",
+      "notEstimated": "sem estimativa",
+      "notStarted": "por começar",
+      "byEpic": "Por épico",
+      "byPriority": "Por prioridade",
+      "settings": "Definições do roadmap"
+    },
+    "goals": {
+      "col": {
+        "goal": "Objetivo",
+        "state": "Estado",
+        "type": "Tipo",
+        "version": "Versão",
+        "source": "Origem"
+      },
+      "state": "Estado de revisão",
+      "allStates": "Todos os estados",
+      "hint": "Clique num objetivo para ler os documentos e decidir.",
+      "empty": "Ainda sem objetivos aqui."
+    },
+    "automation": {
+      "continuous": "Trabalho contínuo — loops que o daemon inicia sozinho"
+    }
+  }
+}

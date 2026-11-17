@@ -1,0 +1,27 @@
+{
+  "description": "inbox.ack is the visibility write a PERSON performs: the params name only the key of an item currently needing attention, the actor is the peer the socket authenticated (never a param), and the answer carries the item as it now reads — hidden from the default view yet still COUNTED in inbox.summary, because hiding is a view and not a fact (SV3). The row is append-only; undoing is a new row, never an edit.",
+  "method": "inbox.ack",
+  "request": {
+    "jsonrpc": "2.0", "id": 904, "method": "inbox.ack",
+    "params": {"key": "questions:41:2026-11-03T09:00:00Z"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 904,
+    "result": {
+      "item": {
+        "key": "questions:41:2026-11-03T09:00:00Z",
+        "kind": "question",
+        "severity": "needs-you",
+        "rootId": "cmp-1",
+        "componentId": "cmp-1",
+        "loopSlug": "refactor-auth",
+        "itemRef": "41",
+        "reason": "waiting for your answer",
+        "since": "2026-11-03T09:00:00Z",
+        "ageSeconds": 1900,
+        "door": {"method": "answer", "sentence": "Answer with `aeon answer refactor-auth <one of: approve | deny>` or in the app."},
+        "acked": {"by": "user:1000", "at": "2026-11-03T09:31:40Z"}
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "description": "agent.rows is the management table's read and the daemon's first adopter of the paging convention (docs/aeon/PAGING.md, PG1–PG5): the request is the five keys page, pageSize, sort, dir and q, and the answer echoes those five as the daemon APPLIED them beside the rows, plus `total` — the count of the FILTERED set, taken before the window. The rows are the nine columns a list can honestly hold; `prompt`, `skills` and `metadata` are deliberately absent, because a chooser that ships every row's content is a page that loads the whole store into the browser, and an edit form seeded from this row would blank the fields it never showed — which is exactly why the panel opens a row with agent.view (S73 AR5).",
+  "method": "agent.rows",
+  "request": {"jsonrpc": "2.0", "id": 118, "method": "agent.rows", "params": {"page": 1, "pageSize": 2, "sort": "name", "dir": "asc"}},
+  "response": {"jsonrpc": "2.0", "id": 118, "result": {
+    "agents": [
+      {
+        "slug": "atlas-dispatch",
+        "name": "Atlas Dispatcher",
+        "description": "Routes incoming work items to the agent best suited to them",
+        "version": "2.1.0",
+        "internal": true,
+        "signed": false,
+        "origin": "first-party",
+        "createdAt": "2026-10-30T09:00:00Z",
+        "updatedAt": "2026-11-02T14:20:00Z"
+      },
+      {
+        "slug": "code-reviewer",
+        "name": "Code Reviewer",
+        "description": "Reviews diffs for regressions and posts findings to the thread",
+        "version": "1.4.0",
+        "internal": false,
+        "signed": true,
+        "origin": "imported",
+        "createdAt": "2026-10-31T11:05:00Z",
+        "updatedAt": "2026-11-01T08:45:00Z"
+      }
+    ],
+    "page": 1,
+    "pageSize": 2,
+    "total": 7,
+    "sort": "name",
+    "dir": "asc",
+    "q": ""
+  }}
+}

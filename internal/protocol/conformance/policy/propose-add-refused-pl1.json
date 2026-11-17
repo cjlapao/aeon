@@ -1,0 +1,19 @@
+{
+  "description": "S45 T7 (PM9), the second line of defence: the propose schema cannot express an allow (its action enum is deny-or-ask), but the socket params are decoded by the service, not by the schema — so a caller CAN send an allow and must still be refused. The service forces the proposed row's source to \"agent\" (never from input, which carries no such field), so the shared validator's checkAuthorship meets the attempt with PL1's own sentence, VERBATIM across the wire, exactly as the human authoring door carries it. The refusal is ErrBadParams on this door (the records projection renders refusals as JSON-RPC's own -32602); nothing was written — a refused proposal leaves no row (TD3).",
+  "method": "policy.proposeAdd",
+  "request": {"jsonrpc": "2.0", "id": 89, "method": "policy.proposeAdd", "params": {
+    "id": "self-grant",
+    "type": "tool_access",
+    "target": {"kind": "agent", "id": "implementer"},
+    "action": "allow",
+    "spec": {"toolName": "bash", "state": "allow"},
+    "reason": "an attempted self-grant: the schema forbids this value, and PL1 is the second line when the schema is bypassed"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 89,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: refused: Allow authored by source \"agent\" requires an operator (PL1) — a Deny or an Ask from \"agent\" would be accepted"
+    }
+  }
+}

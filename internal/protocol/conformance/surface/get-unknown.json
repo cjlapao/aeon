@@ -1,0 +1,26 @@
+{
+  "description": "surface.get on a name this daemon does not register: -31913, and the refusal NAMES the nearest registered methods. \"No such method\" over a surface of 269 names is a dead end, and the usual cause is a typo (loop.shwo) or a name remembered from another build. It is not a -32601: the dispatcher knew the method it was asked for (surface.get); it is the named SUBJECT that is absent, which is a fact about the surface. A conditional family whose seam was never wired is absent the same way, and the answer says so rather than returning a zero entry.",
+  "method": "surface.get",
+  "request": {
+    "id": 706,
+    "jsonrpc": "2.0",
+    "method": "surface.get",
+    "params": {
+      "method": "loop.shwo"
+    }
+  },
+  "response": {
+    "error": {
+      "code": -31913,
+      "data": {
+        "what": "the surface.get read named \"loop.shwo\", which this daemon does not register; the nearest names are: \"loop.show\", \"loop.get\", \"loop.list\"",
+        "means": "the classification answered cleanly and the method is simply absent from this build \u2014 a conditional family whose seam was never wired is ABSENT here, which is the answer and not an error",
+        "todo": "read the names in `what` (the nearest registered methods), or call `surface.list` to see the whole surface and the doors that reach each method",
+        "fatal": false
+      },
+      "message": "no such method"
+    },
+    "id": 706,
+    "jsonrpc": "2.0"
+  }
+}

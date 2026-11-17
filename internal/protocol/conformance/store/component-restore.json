@@ -1,0 +1,35 @@
+{
+  "description": "Restoring an archived component brings it back to live; the archive was hidden, not deleted, so the id, settings and history all return unchanged.",
+  "method": "component.restore",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 97,
+    "method": "component.restore",
+    "params": {
+      "id": "abc123"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 97,
+    "result": {
+      "id": "abc123",
+      "name": "Aeon QA",
+      "slug": "aeon-qa",
+      "root": "/home/p/aeon-qa",
+      "remote": "https://example.com/team/aeon-qa.git",
+      "remoteKey": "example/team/aeon-qa",
+      "repoKey": "aeon-qa",
+      "owner": "team",
+      "icon": "🧪",
+      "tags": ["go", "qa"],
+      "shortDescription": "",
+      "description": "",
+      "defaultBranch": "main",
+      "branchPrefix": "aeon",
+      "maxParallelAgents": 1,
+      "createdAt": "2026-10-20T08:00:00Z",
+      "updatedAt": "2026-10-21T12:00:00Z"
+    }
+  }
+}

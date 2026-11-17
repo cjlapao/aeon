@@ -1,0 +1,4 @@
+policy rows: 1
+  policy ok-trigger type=trigger_access target=all-agents action=deny source=operator subject=all-agents spec={"state":"deny","trigger":"schedule"} not_after=none not_after_epoch=- created_at=<TIME>
+proposal rows: 0
+policy_event rows: 0

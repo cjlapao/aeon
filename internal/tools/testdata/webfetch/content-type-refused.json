@@ -1,0 +1,28 @@
+{
+  "description": "a PDF is refused with the offered type quoted",
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "http://docs.test/manual.pdf",
+        "header": {
+          "Accept": [
+            "text/plain, text/markdown, application/json, application/xml"
+          ],
+          "User-Agent": [
+            "aeon-webfetch/1.0 (Aeon daemon; GET-only; sends no credentials)"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "header": {
+          "Content-Type": [
+            "application/pdf"
+          ]
+        },
+        "body": "%PDF-1.4 not text"
+      }
+    }
+  ]
+}

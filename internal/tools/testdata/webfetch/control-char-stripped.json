@@ -1,0 +1,28 @@
+{
+  "description": "the form that actually goes on the wire when the argument had a control character in it",
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "http://docs.test/",
+        "header": {
+          "Accept": [
+            "text/plain, text/markdown, application/json, application/xml"
+          ],
+          "User-Agent": [
+            "aeon-webfetch/1.0 (Aeon daemon; GET-only; sends no credentials)"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "header": {
+          "Content-Type": [
+            "text/plain"
+          ]
+        },
+        "body": "this is the URL that was fetched\n"
+      }
+    }
+  ]
+}

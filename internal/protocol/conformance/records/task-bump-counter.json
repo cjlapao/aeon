@@ -1,0 +1,22 @@
+{
+  "description": "task_bump_counter walks a loop task's ladder counter \u2014 the engine's act; a person calling it is refused by name with the decision doors.",
+  "method": "task.bump_counter",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "method": "task.bump_counter",
+    "params": {
+      "id": "task-7a1f",
+      "counter": "qa_rounds"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "result": {
+      "counter": "qa_rounds",
+      "value": 1,
+      "capped": false
+    }
+  }
+}

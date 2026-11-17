@@ -1,0 +1,9 @@
+{
+  "description": "The built side of the same read (S30 T5): built:true with counts for a root that HAS rows. The two status fixtures together are the fourth state's proof — the same method, same shape, `false`/zeros versus `true`/counts, and the numbers are the counters a person uses to decide whether a build is stale before trusting what explain says about it.",
+  "method": "graph.status",
+  "request": {"jsonrpc": "2.0", "id": 250, "method": "graph.status", "params": {"componentRoot": "/home/dev/shop"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 250,
+    "result": {"root": "/home/dev/shop", "built": true, "files": 214, "nodes": 1893, "edges": 5310}
+  }
+}

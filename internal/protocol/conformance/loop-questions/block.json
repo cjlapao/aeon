@@ -1,0 +1,42 @@
+{
+  "description": "loop.questions on a loop parked on a step's block of questions (S76): every question the step asked, oldest first, answered ones carrying the answer already given and the pending ones none, so a reopened chat shows ONE block, resumes where the person left off and never asks again what was answered. Answers is the declared option set ([] means free text). A loop with no parked question answers an empty list, never an error.",
+  "method": "loop.questions",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 2001,
+    "method": "loop.questions",
+    "params": {
+      "id": "loop-dmp17018896b"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 2001,
+    "result": {
+      "questions": [
+        {
+          "id": 11,
+          "stepId": 34,
+          "kind": "clarify",
+          "prompt": "There is no AGENTS.md in this workspace. Which direction should the goal capture?",
+          "answers": [
+            "A — one concise root AGENTS.md",
+            "B — a more operational guide",
+            "C — no guide yet"
+          ],
+          "answer": "A — one concise root AGENTS.md",
+          "askedAt": "2026-11-07T14:00:20.409Z",
+          "answeredAt": "2026-11-07T14:08:39.517Z"
+        },
+        {
+          "id": 12,
+          "stepId": 34,
+          "kind": "clarify",
+          "prompt": "The capture documents are written, but goal creation failed. How should the goal be filed?",
+          "answers": [],
+          "askedAt": "2026-11-07T14:08:58.439Z"
+        }
+      ]
+    }
+  }
+}

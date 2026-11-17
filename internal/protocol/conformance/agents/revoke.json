@@ -1,0 +1,15 @@
+{
+  "description": "agent.revoke — terminal, and the reason is REQUIRED and survives (AP4): calls plugin.Revoke, the same function `aeon agent revoke` calls, so the store's reasonless-revoke CHECK and whatever Revoke records travel through this door too.",
+  "method": "agent.revoke",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 97,
+    "method": "agent.revoke",
+    "params": {"name": "reviewer", "reason": "the vendor shipped a data-exfil update"}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 97,
+    "result": {"agent": "reviewer", "state": "revoked"}
+  }
+}

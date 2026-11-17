@@ -1,0 +1,28 @@
+{
+  "description": "The autonomy.pinned happy path (S56 T6, AL8): what a loop was pinned with, and whether that authority is still live. Each pinned grant carries its LIVE status — the closed trio active|revoked|expired — with the SAME sentences the decision site speaks when it denies, so what the panel shows and what the loop is told are one truth (AL17). The per-action verdicts are built exactly as the decision site builds them (zero seams, pr 0). A loop with no pin row answers {pinned:false, statement}, not an error; an unknown loop is a refusal.",
+  "method": "autonomy.pinned",
+  "request": {"jsonrpc": "2.0", "id": 405, "method": "autonomy.pinned", "params": {"loopId": "loop-42"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 405,
+    "result": {
+      "loopId": "loop-42",
+      "pinned": true,
+      "rootId": "aeon",
+      "rev": 3,
+      "origin": "schedule",
+      "labels": ["release"],
+      "grants": [
+        {
+          "grantId": "g-8c21",
+          "subject": "forge.openPR",
+          "live": {"state": "active", "sentence": "grant g-8c21 is in force: it authorises forge.openPR on aeon until 2026-12-01T00:00:00Z"}
+        }
+      ],
+      "actions": [
+        {"action": "forge.openPR", "verdict": "run", "because": "forge.openPR · forge.openPR · run — granted by g-8c21 (rev 3)"},
+        {"action": "forge.postReview", "verdict": "deny", "because": "forge.postReview denied — no autonomy grant on this root covers it (unattended loops run local actions only)"},
+        {"action": "git.commitAndPush", "verdict": "deny", "because": "git.commitAndPush denied — no autonomy grant on this root covers it (unattended loops run local actions only)"}
+      ]
+    }
+  }
+}

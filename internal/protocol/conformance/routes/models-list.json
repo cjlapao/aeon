@@ -1,0 +1,61 @@
+{
+  "description": "The model catalog exposes display metadata and declared capability/effort subsets while keeping credentials write-only.",
+  "method": "routes.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 30,
+    "method": "routes.list"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 30,
+    "result": {
+      "routes": [
+        {
+          "id": "anthropic",
+          "provider": "anthropic",
+          "model": "claude-sonnet-5",
+          "hasKey": true,
+          "keyHint": "\u2026wxyz",
+          "source": "environment",
+          "maxOutputTokens": 4096,
+          "prices": {
+            "inputUsdPerMTok": 3,
+            "outputUsdPerMTok": 15,
+            "cacheReadUsdPerMTok": 0.3,
+            "cacheWriteUsdPerMTok": 3.75
+          },
+          "priced": true,
+          "displayName": "Research",
+          "displayDescription": "Careful analysis",
+          "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/nWQAAAAASUVORK5CYII=",
+          "capabilities": [
+            "text",
+            "thinking-effort"
+          ],
+          "reasoningEfforts": [
+            "low",
+            "xhigh",
+            "max"
+          ],
+          "reasoningEffort": "max"
+        },
+        {
+          "id": "local",
+          "provider": "openai",
+          "model": "llama3",
+          "baseUrl": "http://127.0.0.1:11434/v1",
+          "hasKey": false,
+          "source": "runtime",
+          "maxOutputTokens": 4096,
+          "priced": false
+        }
+      ],
+      "providers": [
+        "anthropic",
+        "openai"
+      ],
+      "persisted": false
+    }
+  }
+}

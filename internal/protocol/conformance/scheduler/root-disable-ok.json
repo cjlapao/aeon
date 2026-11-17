@@ -1,0 +1,21 @@
+{
+  "description": "The repository switch off. A root with no row is refused (a repository never configured was never enabled) — this one has a row.",
+  "method": "scheduler.root.disable",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 410,
+    "method": "scheduler.root.disable",
+    "params": {
+      "componentRoot": "/srv/components/alpha"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 410,
+    "result": {
+      "componentRoot": "/srv/components/alpha",
+      "enabled": false
+    }
+  },
+  "fromDoor": true
+}

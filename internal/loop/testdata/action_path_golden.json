@@ -1,0 +1,214 @@
+[
+  {
+    "case": "audit-success-advances",
+    "status": "done",
+    "lastReason": "",
+    "position": {
+      "lane": ""
+    },
+    "laneStates": {
+      "run": "ok"
+    },
+    "stepStates": {
+      "run": {
+        "status": "done"
+      }
+    },
+    "evidence": {
+      "run": {
+        "entries": "42"
+      }
+    },
+    "counters": {},
+    "events": [
+      {
+        "kind": "loop.action.executed",
+        "payload": {
+          "action": "audit",
+          "evidence": {
+            "entries": "42"
+          },
+          "lane": "run",
+          "loopId": "\u003cloopId\u003e",
+          "step": ""
+        }
+      }
+    ],
+    "forgeCalls": [],
+    "auditCalls": 1,
+    "diagnostics": null
+  },
+  {
+    "case": "audit-failed-blocks",
+    "status": "blocked",
+    "lastReason": "the audit table is unreadable: file lock",
+    "position": {
+      "lane": "run"
+    },
+    "laneStates": {
+      "run": "pending"
+    },
+    "stepStates": {},
+    "evidence": null,
+    "counters": {},
+    "events": [
+      {
+        "kind": "loop.blocked",
+        "payload": {
+          "loopId": "\u003cloopId\u003e",
+          "reason": {
+            "kind": "action-failed",
+            "detail": "the audit table is unreadable: file lock",
+            "action": "audit"
+          }
+        }
+      }
+    ],
+    "forgeCalls": [],
+    "auditCalls": 1,
+    "diagnostics": null
+  },
+  {
+    "case": "merge-denied-unattended",
+    "status": "blocked",
+    "lastReason": "forge.merge denied — effect class 'irreversible' resolves to deny (loop is unattended)",
+    "position": {
+      "lane": "run"
+    },
+    "laneStates": {
+      "run": "pending"
+    },
+    "stepStates": {},
+    "evidence": null,
+    "counters": {},
+    "events": [
+      {
+        "kind": "loop.blocked",
+        "payload": {
+          "loopId": "\u003cloopId\u003e",
+          "reason": {
+            "kind": "action-denied",
+            "detail": "forge.merge denied — effect class 'irreversible' resolves to deny (loop is unattended)",
+            "action": "forge.merge"
+          }
+        }
+      }
+    ],
+    "forgeCalls": [],
+    "auditCalls": 0,
+    "diagnostics": null
+  },
+  {
+    "case": "openpr-allowoutward-representative",
+    "status": "done",
+    "lastReason": "",
+    "position": {
+      "lane": ""
+    },
+    "laneStates": {
+      "run": "ok"
+    },
+    "stepStates": {
+      "run": {
+        "status": "done"
+      }
+    },
+    "evidence": {
+      "run": {
+        "pr_number": "1"
+      }
+    },
+    "counters": {},
+    "events": [
+      {
+        "kind": "loop.action.executed",
+        "payload": {
+          "action": "forge.openPR",
+          "evidence": {
+            "pr_number": "1"
+          },
+          "lane": "run",
+          "loopId": "\u003cloopId\u003e",
+          "step": ""
+        }
+      }
+    ],
+    "forgeCalls": [
+      {
+        "method": "FindOpenPR",
+        "args": [
+          "task/gld-ap-openpr-allowoutward-representative/4a17"
+        ]
+      },
+      {
+        "method": "OpenPR",
+        "args": [
+          {
+            "Title": "[4a17] Add version endpoint",
+            "Body": "Serves the per-loop opt-in drive; the base is code's fact, not the model's.",
+            "Head": "task/gld-ap-openpr-allowoutward-representative/4a17",
+            "Base": "feature/gld-ap-openpr-allowoutward-representative"
+          }
+        ]
+      }
+    ],
+    "auditCalls": 0,
+    "diagnostics": null
+  },
+  {
+    "case": "on-reject-audit-refused",
+    "status": "",
+    "lastReason": "",
+    "position": {
+      "lane": ""
+    },
+    "laneStates": null,
+    "stepStates": null,
+    "evidence": null,
+    "counters": null,
+    "events": null,
+    "forgeCalls": null,
+    "auditCalls": 0,
+    "diagnostics": [
+      {
+        "state": "invalid",
+        "kind": "code-action-on-reject",
+        "path": "lanes[build].ladder[s1].on_reject",
+        "message": "only verify.run may carry on_reject — the engine routes a code action's outcome, and it routes only the verify run's (S57 VG7)"
+      }
+    ]
+  },
+  {
+    "case": "on-reject-verify-run-accepted",
+    "status": "",
+    "lastReason": "",
+    "position": {
+      "lane": ""
+    },
+    "laneStates": null,
+    "stepStates": null,
+    "evidence": null,
+    "counters": null,
+    "events": null,
+    "forgeCalls": null,
+    "auditCalls": 0,
+    "diagnostics": []
+  },
+  {
+    "case": "actionargs-representative",
+    "status": "",
+    "lastReason": "",
+    "position": {
+      "lane": ""
+    },
+    "laneStates": null,
+    "stepStates": null,
+    "evidence": null,
+    "counters": null,
+    "events": null,
+    "forgeCalls": null,
+    "auditCalls": 0,
+    "diagnostics": null,
+    "argsJson": "{\"Dir\":\"/repo/golden\",\"Loop\":\"gld-args\",\"Task\":\"4a17\",\"TaskTitle\":\"Add version endpoint\",\"Message\":\"\",\"PRSummary\":\"Serves the per-loop opt-in drive; the base is code's fact, not the model's.\",\"ReviewSumm\":\"\",\"Base\":\"feature/gld-args\",\"Prefix\":\"\",\"FeatureBranch\":\"\",\"BaseBranch\":\"\",\"Root\":\"\",\"Item\":\"\",\"IntegrationBranch\":\"\",\"HeadBranch\":\"\",\"VerifiedSHA\":\"\",\"IntegrationSHA\":\"\",\"Position\":0,\"Attended\":false,\"ActorKind\":\"\",\"ActorID\":\"\",\"IssueNumber\":3,\"PRNumber\":7,\"StepID\":0,\"Attempt\":0,\"Verdict\":\"\",\"Method\":\"\",\"Which\":\"\",\"Gate\":\"\",\"Agent\":\"\",\"AeonReview\":\"\"}"
+  }
+]

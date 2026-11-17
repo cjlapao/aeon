@@ -1,0 +1,6 @@
+{
+  "description": "Answering a step without an unanswered question returns a named refusal with a concrete next action.",
+  "method": "answer",
+  "request": {"jsonrpc":"2.0","id":81,"method":"answer","params":{"stepId":4,"answer":"yes"}},
+  "response": {"jsonrpc":"2.0","id":81,"error":{"code":-31300,"message":"no pending question","data":{"what":"step 4 has no pending question","means":"there is no suspended question to attach this answer to","todo":"inspect the step and supply its pending step id","fatal":false}}}
+}

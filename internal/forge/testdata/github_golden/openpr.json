@@ -1,0 +1,23 @@
+{
+  "case": "openpr",
+  "method": "POST",
+  "path": "/repos/acme/widget/pulls",
+  "authShape": "Bearer \u003credacted\u003e",
+  "accept": "application/vnd.github+json",
+  "body": "{\"base\":\"feature/4a17-version\",\"body\":\"b\",\"head\":\"task/4a17-version/4a17\",\"title\":\"feat: version\"}",
+  "attempts": 1,
+  "wire": "{\n  \"number\": 7,\n  \"head\": {\n   \"ref\": \"task/4a17-version/4a17\"\n  },\n  \"base\": {\n   \"ref\": \"feature/4a17-version\"\n  },\n  \"merged\": false\n }",
+  "mapped": "{\"Number\":7,\"Head\":\"task/4a17-version/4a17\",\"BaseRef\":\"feature/4a17-version\",\"Merged\":false,\"MergeSHA\":\"\"}",
+  "wireHas": [
+    "number",
+    "head.ref",
+    "base.ref",
+    "merged"
+  ],
+  "mappedHas": [
+    "number",
+    "head.ref",
+    "base.ref",
+    "merged"
+  ]
+}

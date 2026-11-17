@@ -1,0 +1,30 @@
+{
+  "description": "attachment.put writes one file's bytes ONCE into the loop's frozen @attachments/ revisions and answers the receipt — the store's facts (size, sha256, sniffed mediaType), never the caller's claims. Every later artefact carries this receipt's references; only the daemon's send-time expansion turns a pinned revision back into content (S69 AT3).",
+  "method": "attachment.put",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 311,
+    "method": "attachment.put",
+    "params": {
+      "slug": "briefing",
+      "componentRoot": "/home/p/aeon",
+      "name": "diagram.png",
+      "mediaType": "image/png",
+      "data": "iVBORw0KGgoAAAANSUhEUg=="
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 311,
+    "result": {
+      "receipt": {
+        "name": "diagram.png",
+        "document": "@attachments/4f7d21a0-diagram.png",
+        "rev": 1,
+        "mediaType": "image/png",
+        "size": 69,
+        "sha256": "4f7d21a0ff86417F6c0d1e2b3a4c5d6e7f8091a2b3c4d5e6f708192a3b4c5d6e"
+      }
+    }
+  }
+}

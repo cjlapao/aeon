@@ -1,0 +1,21 @@
+{
+  "description": "One model call finished: its whole text and thinking, what it spent (`usage`, `turnCost`), how long it took (`wallMs`), why it stopped, and the step's RUNNING cost after it (`stepCost`). The page's cost counter moves on this event, and a reopened loop rebuilds the turn from it — the streamed `model.delta` chunks are not needed. Emitted even when the call failed part-way, because it still spent what it spent.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 4412,
+      "kind": "step.turn.completed",
+      "at": "2026-11-15T13:50:48.000000001Z",
+      "payload": {
+        "stepId": 9, "loopId": "l-7", "agent": "investigator", "iteration": 2,
+        "text": "Now let me measure the work.", "thinking": "We need the toolchain versions first.",
+        "usage": { "inputTokens": 59, "outputTokens": 50, "reasoningTokens": 45 },
+        "turnCost": { "state": "known", "usd": 0.000927 },
+        "stepCost": { "state": "known", "usd": 0.00318 },
+        "wallMs": 2140, "stopReason": "tool_use", "toolCalls": 1, "route": "qwen"
+      }
+    }
+  }
+}

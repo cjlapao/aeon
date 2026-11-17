@@ -1,0 +1,15 @@
+{
+  "description": "Read one learning by id. Not-found rides the refusal, not a silence — the socket answers a missing row with the reason it is not there, never a confident wrong answer. The view carries the provenance and, for an observed learning, its count (M3); a non-observed learning carries no count, not a zero.",
+  "method": "learnings.show",
+  "request": {"jsonrpc": "2.0", "id": 363, "method": "learnings.show", "params": {"id": 7}},
+  "response": {"jsonrpc": "2.0", "id": 363, "result": {"learning": {
+    "id": 7,
+    "scope": "agent",
+    "scopeKey": "golang-engineer",
+    "body": "nil-map writes panic — checked once, remembered forever",
+    "provenance": "observed",
+    "observedCount": 3,
+    "tags": ["go", "concurrency"],
+    "createdAt": "2026-10-30T06:17:25Z"
+  }}}
+}

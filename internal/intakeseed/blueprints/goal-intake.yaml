@@ -1,0 +1,21 @@
+# goal-intake — the S61 capture contract (GI1/GI6): a person's stated want becomes
+# a charter draft and a project plan. One lane, one model step by the intake-architect
+# in a scratch workspace; the loop then RESTS (after: converse) — the interview
+# CONTINUES (a message starts a turn with the same agent) until the session files its
+# intake_propose ask or a person closes the rest (intake.abandon). The lane names NO
+# code action: nothing in this blueprint scaffolds, creates, commits or publishes —
+# those are the person's commit door (intake.commit), reached from the FILED proposal
+# rows this session proposes, never from the loop itself (P8/P-E inert law).
+id: goal-intake
+schemaVersion: 1
+version: 1
+after: converse
+converse: intake-architect
+output: [charter.md, plan.json]
+lanes:
+  - id: capture
+    step:
+      kind: model-step
+      agent: intake-architect
+      produces: [charter.md, plan.json]
+questions: {}

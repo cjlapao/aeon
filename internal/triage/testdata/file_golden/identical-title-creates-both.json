@@ -1,0 +1,19 @@
+{
+  "case": "identical-title-creates-both",
+  "refused": false,
+  "bug": {
+    "ID": 1,
+    "ComponentRoot": "/repo/golden",
+    "Title": "loop stalls on empty input",
+    "Body": "the loop stalls when the input is empty",
+    "Validation": "unvalidated",
+    "PriorityState": "unknown",
+    "PriorityLabel": "",
+    "FiledBy": "loop-agent-7",
+    "DuplicateOf": null,
+    "RoadmapItemID": null,
+    "CreatedAt": "2026-11-02T12:00:00.000Z",
+    "UpdatedAt": "2026-11-02T12:00:00.000Z"
+  },
+  "secondId": 2
+}

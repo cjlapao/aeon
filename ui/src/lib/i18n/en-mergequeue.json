@@ -1,0 +1,58 @@
+{
+  "bench": {
+    "mergeQueue": {
+      "title": "Merge queue",
+      "subtitle": "The S60 plane’s ten doors, clickable. Every word on the rows, in the refusals and in the tables below is the daemon’s own — this page adds labels and nothing else.",
+      "offline": {
+        "title": "The daemon is not there",
+        "body": "Writes are disabled. The rows below are the last ones this bench actually read — they are not live."
+      },
+      "refusal": "The daemon refused",
+      "root": {
+        "label": "Root component",
+        "none": "no components are known"
+      },
+      "terminal": "Include terminal rows",
+      "yes": "yes",
+      "no": "no",
+      "refresh": "Re-read",
+      "summary": "mode {mode} · conflict {policy} · land {method} · catch-ups {catchUps} · last set by {by}",
+      "queue": "The queue",
+      "empty": "The queue holds no rows for this root.",
+      "attended": "attended",
+      "retry": "Retry",
+      "dequeue": "Dequeue",
+      "reorder": "Move before",
+      "staleness": {
+        "unread": "the base has not been read"
+      },
+      "land": {
+        "submit": "Land",
+        "title": "Land this row?",
+        "press": "Land it"
+      },
+      "detail": "Row",
+      "decline": "Decline",
+      "vocabulary": "The queue’s own words (mergequeue.vocabulary)",
+      "enqueue": {
+        "panel": "Enqueue a row",
+        "base": "Base branch",
+        "branch": "Feature branch",
+        "head": "Head sha",
+        "attended": "Attended",
+        "submit": "Enqueue",
+        "incomplete": "base, branch and head are all needed — the page sends nothing half-aimed."
+      },
+      "settings": {
+        "panel": "Queue settings",
+        "mode": "Mode",
+        "policy": "Conflict policy",
+        "method": "Land method",
+        "catchUps": "Max catch-ups",
+        "apply": "Send settings",
+        "widening": "The refusal named an acknowledgement. Pressing sends the digest back; declining sends nothing.",
+        "ackPress": "Apply with the acknowledgement"
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "command": "exit 1",
+  "render": "$ exit 1\nexit 1 · 42ms\n"
+}

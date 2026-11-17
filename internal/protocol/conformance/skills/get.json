@@ -1,0 +1,25 @@
+{
+  "description": "One skill, in full (S65): the catalog view plus the SKILL.md body as stored. Truncated is the honest flag — absent means the body arrived complete; a preview that cannot say \"there was more\" is the confident wrong answer. The bench's detail pane is the consumer; nothing here is injected anywhere.",
+  "method": "skills.get",
+  "request": {"jsonrpc": "2.0", "id": 321, "method": "skills.get", "params": {"name": "pdf"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 321,
+    "result": {
+      "skill": {
+        "name": "pdf",
+        "frontmatterName": "pdf",
+        "description": "Extract text and tables from PDF files, fill forms, merge documents.",
+        "status": "valid",
+        "source": "user",
+        "root": "/home/dev/.agents/skills",
+        "path": "/home/dev/.agents/skills/pdf",
+        "files": {"scripts": 2, "references": 3, "assets": 0, "other": 1},
+        "bodyBytes": 128,
+        "bodyLines": 7,
+        "totalBytes": 51240,
+        "scannedAt": "2026-10-30T18:00:00Z"
+      },
+      "body": "# pdf\n\nUse `scripts/extract.py` for text and `scripts/tables.py` for tables.\nAfter extraction, verify page counts before merging documents."
+    }
+  }
+}

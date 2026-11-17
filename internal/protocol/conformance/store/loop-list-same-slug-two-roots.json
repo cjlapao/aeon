@@ -1,0 +1,40 @@
+{
+  "description": "THE scoping fixture. The same slug in two component roots is two separate loops (DB4) — `refactor` exists in two checkouts on most machines, and a git worktree produces exactly this for free. A client must not key its state on the slug alone.",
+  "method": "loop.list",
+  "request": {
+    "jsonrpc": "2.0", "id": 42, "method": "loop.list",
+    "params": {"all": true}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 42,
+    "result": {
+      "all": true,
+      "loops": [
+        {
+          "id": "9f2c1b7a4e5d6f8a0b1c2d3e4f5a6b7c",
+          "slug": "refactor",
+          "componentRoot": "/home/p/repo-a",
+          "title": "refactor",
+          "mode": "standard",
+          "phase": "preflight",
+          "status": "active",
+          "startedAt": "2026-10-15T09:41:12.345Z",
+          "updatedAt": "2026-10-15T09:41:12.345Z",
+          "awaiting": false
+        },
+        {
+          "id": "1a2b3c4d5e6f70819283a4b5c6d7e8f9",
+          "slug": "refactor",
+          "componentRoot": "/home/p/repo-b",
+          "title": "refactor",
+          "mode": "standard",
+          "phase": "preflight",
+          "status": "active",
+          "startedAt": "2026-10-15T09:41:13.001Z",
+          "updatedAt": "2026-10-15T09:41:13.001Z",
+          "awaiting": true
+        }
+      ]
+    }
+  }
+}

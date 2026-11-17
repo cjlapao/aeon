@@ -1,0 +1,108 @@
+{
+  "description": "tools.get on `write_file`, the hidden alias: the answer is the CANONICAL tool (`write`) with its aliases riding, resolved the same way the grant chain and the policy rows resolve it (SEC-051/SEC-059) — one rule about identity, applied by every door, so a grant written against a spelling cannot disagree with a read written against another. The alias is never an entry of its own in `tools.list` (TC11: one executor rendered twice is the drift the whole table exists to prevent), and `twin` names the management-tool counterpart the same executor serves.",
+  "method": "tools.get",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 645,
+    "method": "tools.get",
+    "params": {
+      "name": "write_file"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 645,
+    "result": {
+      "tool": {
+        "name": "write",
+        "aliases": [
+          "write_file"
+        ],
+        "family": "workspace",
+        "source": "system",
+        "description": "Create or replace a UTF-8 file inside the workspace (up to 1 MiB). Parent directories must exist. Paths are workspace-relative; absolute paths, `..` segments and symlink escapes are refused before anything is written.",
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "content": {
+              "description": "complete new file content",
+              "type": "string"
+            },
+            "path": {
+              "description": "workspace-relative file path",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "content"
+          ],
+          "type": "object"
+        },
+        "schemaHash": "9006cdb3a8a1ac653cb297f27c5f36bbf121045031f7855ba5049e6630d54496",
+        "rerunClass": "detectable",
+        "capabilities": [
+          "workspace_write"
+        ],
+        "governed": [
+          "tool_access"
+        ],
+        "conditional": false,
+        "available": true,
+        "classified": false,
+        "version": 1,
+        "origin": "system",
+        "rowCurrent": true,
+        "category": "workspace",
+        "access": "write",
+        "address": "workspace.write.write"
+      },
+      "agents": [
+        {
+          "tool": "write",
+          "agent": "atlas",
+          "state": "granted_no_rule",
+          "reason": "refused: agent:atlas · no allow matched · default deny (PL5)",
+          "granted_by": [
+            "default",
+            "handler"
+          ],
+          "dispatchable": true
+        },
+        {
+          "tool": "write",
+          "agent": "brief-author",
+          "state": "granted_no_rule",
+          "reason": "refused: agent:brief-author · no allow matched · default deny (PL5)",
+          "granted_by": [
+            "default",
+            "handler"
+          ],
+          "dispatchable": true
+        },
+        {
+          "tool": "write",
+          "agent": "cursitor",
+          "state": "not_granted",
+          "granted_by": [
+            "default",
+            "handler"
+          ],
+          "dispatchable": false
+        },
+        {
+          "tool": "write",
+          "agent": "sentry",
+          "state": "granted_no_rule",
+          "reason": "refused: agent:sentry · no allow matched · default deny (PL5)",
+          "granted_by": [
+            "default",
+            "handler"
+          ],
+          "dispatchable": true
+        }
+      ],
+      "policies": []
+    }
+  }
+}

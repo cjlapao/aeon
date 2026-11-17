@@ -1,0 +1,26 @@
+{
+  "description": "A named non-person is refused by name, in S40's own sentence verbatim: \"triggers are written by a person; this actor is \\\"agent\\\"\" (S49 T4 — the refusal is data about the caller, and the registry entry carries the way to the proposal door).",
+  "method": "trigger.pause",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8306,
+    "method": "trigger.pause",
+    "params": {
+      "id": "sch-morning"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8306,
+    "error": {
+      "code": -31893,
+      "message": "automation write refused",
+      "data": {
+        "what": "triggers are written by a person; this actor is \"agent\"",
+        "means": "an agent cannot write, edit, pause, resume, fire, archive, or unarchive a trigger — the refusal touched no state and recorded no audit",
+        "todo": "propose instead: an automation_disable proposal reaches a person's decision desk (agents-get-proposals)",
+        "fatal": false
+      }
+    }
+  }
+}

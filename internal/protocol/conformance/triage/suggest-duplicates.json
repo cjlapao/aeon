@@ -1,0 +1,19 @@
+{
+  "description": "The dedup read (T4, D5/N3): nearest-neighbour candidates within the bug's OWN project, from the on-demand bug_vec k-NN (S22's pattern — dimension is data, fixed at CREATE, never a migration). It is a READ and a SUGGESTION only — it never sets duplicate_of (only a human confirmation does). The candidates are the bugs whose embedding is nearest, scoped to the same component root (no cross-project). An empty list is the honest absence; the detector suggests, a person confirms.",
+  "method": "triage.suggest-duplicates",
+  "request": {"jsonrpc": "2.0", "id": 438, "method": "triage.suggest-duplicates", "params": {"id": 7, "limit": 3}},
+  "response": {"jsonrpc": "2.0", "id": 438, "result": [
+    {
+      "id": 9,
+      "componentRoot": "/srv/projects/ledger",
+      "title": "retry counter over-counts on the third attempt",
+      "body": "same over-count, one attempt later",
+      "validation": "unvalidated",
+      "priorityState": "unknown",
+      "filedBy": "golang-engineer",
+      "validated": false,
+      "createdAt": "2026-10-30T10:10:00Z",
+      "updatedAt": "2026-10-30T10:10:00Z"
+    }
+  ]}
+}

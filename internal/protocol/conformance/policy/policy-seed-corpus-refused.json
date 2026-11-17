@@ -1,0 +1,21 @@
+{
+  "description": "S45 T4/T12 (D4's costume check made wire): the seed door refuses an agent the corpus does not carry, NAMING it — the same ResolveSeedTargets refusal the CLI verb prints, carried verbatim (the door named itself; the socket adds no interpretation). A silent partial seed (some agents applied, the typo ignored) is exactly how a guard set ends up half-present; nothing wrote and no audit row exists for this run. Unknown keys refuse by name the same way, and an actor whose kind is neither user nor cli (a system costume) is refused before anything writes.",
+  "method": "policy.seedCorpus",
+  "request": {"jsonrpc": "2.0", "id": 87, "method": "policy.seedCorpus", "params": {
+    "agents": ["no-such-agent"],
+    "dryRun": false
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 87,
+    "error": {
+      "code": -31842,
+      "message": "the authoring door refused the write",
+      "data": {
+        "what": "the policy.corpus seed door refused: policyseed: agent \"no-such-agent\" is not in the corpus (seed refuses to author rules for an agent the corpus does not carry)",
+        "means": "nothing was stored and no audit row was written — a refusal is the boundary judging the row, not the machine failing; the closed vocabulary, PL1's authorship rule and the per-type specs are enforced exactly once, at the boundary, on every door",
+        "todo": "read the boundary's sentence below — it names the value it refused and usually the form that would be accepted (PL1's refusal names the Deny/Ask that would pass); `policy.vocabulary` answers the closed sets rather than guessing them",
+        "fatal": false
+      }
+    }
+  }
+}

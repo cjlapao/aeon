@@ -1,0 +1,23 @@
+{
+  "description": "`step.tool.start` carries the call's `toolUseId`, the same id its `step.tool.end` (or `step.tool.skipped`) and the transcript's tool_result carry — the only way a watcher can tell which end closes which start when one tool is called twice in a turn.",
+  "event": "step.tool.start",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "seq": 10,
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1478,
+      "kind": "step.tool.start",
+      "at": "2026-10-24T12:00:00.500Z",
+      "payload": {
+        "stepId": 12,
+        "agent": "surveyor",
+        "tool": "write_file",
+        "summary": "SURVEY.md",
+        "toolUseId": "toolu_09",
+        "iteration": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "description": "attachment.read brings ONE pinned revision back for rendering — the bubble's preview, never a re-send: the transcript stays references all the way down (S69 AT5). The mediaType is what the bytes' own magic say; a missing revision refuses naming document and revision rather than answering a blank.",
+  "method": "attachment.read",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 312,
+    "method": "attachment.read",
+    "params": {
+      "slug": "briefing",
+      "componentRoot": "/home/p/aeon",
+      "document": "@attachments/4f7d21a0-diagram.png",
+      "rev": 1
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 312,
+    "result": {
+      "name": "diagram.png",
+      "document": "@attachments/4f7d21a0-diagram.png",
+      "rev": 1,
+      "mediaType": "image/png",
+      "size": 69,
+      "sha256": "4f7d21a0ff86417F6c0d1e2b3a4c5d6e7f8091a2b3c4d5e6f708192a3b4c5d6e",
+      "data": "iVBORw0KGgoAAAANSUhEUg=="
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "description": "One intake's ledger: steps with outcomes and details, and where a crashed commit stands (GI11's read side).",
+  "method": "intake.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "intake.status",
+    "params": {
+      "intakeId": "int-abc123"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "intakeId": "int-abc123",
+      "state": "failed-at-records",
+      "proposalId": "7",
+      "proposalStatus": "open",
+      "targetPath": "/home/person/projects/alpha",
+      "failedStep": "records",
+      "steps": [
+        {
+          "step": "scaffold",
+          "outcome": "done",
+          "detail": "1 component, 4 files",
+          "at": "2026-11-05T10:01:00Z"
+        },
+        {
+          "step": "records",
+          "outcome": "failed",
+          "detail": "store: mid-transaction fault",
+          "at": "2026-11-05T10:01:02Z"
+        }
+      ]
+    }
+  }
+}

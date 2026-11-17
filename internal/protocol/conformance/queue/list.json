@@ -1,0 +1,6 @@
+{
+  "description": "The empty backlog is a statement, not a silence (D4's law, carried to the queue): `items` is a present, empty array — an empty queue must read as empty, never as broken. `componentRoot` echoes the asked-for project because the queue is per-project (CG8): there is no global board to accidentally read. Rows render the board as the daemon sees it — statuses from CG1's seven, size as range-plus-basis or all-absent (D8), and `loopSlug` present ONLY once a loop has materialized (D10: an item's status is not a loop status, and no loop exists until advance says so).",
+  "method": "queue.list",
+  "request": {"jsonrpc": "2.0", "id": 301, "method": "queue.list", "params": {"componentRoot": "/srv/projects/ledger"}},
+  "response": {"jsonrpc": "2.0", "id": 301, "result": {"componentRoot": "/srv/projects/ledger", "items": []}}
+}

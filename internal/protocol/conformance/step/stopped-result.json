@@ -1,0 +1,24 @@
+{
+  "description": "`step` itself reads this way when a `step.stop` call interrupts it mid-flight: `kind: \"suspended\"`, `pauseReason: \"user\"`, no outcome — the SAME shape `step.show` reports afterwards, so a client watching the original call's response does not need a second round trip to learn what happened.",
+  "method": "step",
+  "request": {
+    "jsonrpc": "2.0", "id": 75, "method": "step",
+    "params": {
+      "prompt": "run: sleep 300",
+      "tools": ["read", "bash"],
+      "workspaceRoot": "/home/p/repo-a"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 75,
+    "result": {
+      "stepId": 6,
+      "kind": "suspended",
+      "pauseReason": "user",
+      "reason": "stopped by the user; call step.continue to resume it",
+      "usage": {"inputTokens": 640, "outputTokens": 40},
+      "cost": {"state": "known", "usd": 0.0009},
+      "iterations": 1
+    }
+  }
+}

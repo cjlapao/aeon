@@ -1,0 +1,15 @@
+{
+  "description": "proposal.discard's happy path — the only socket-reachable status change (TD1): discarding loosens nothing, so it needs no reason and no human-only door. A racing discard/decide (someone else committed or rejected first) is NOT an RPC error here — see discard-already-decided.json — because a racing decider is an outcome the UI renders inline, not an exceptional failure (design.md §2's own worked example).",
+  "method": "proposal.discard",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 93,
+    "method": "proposal.discard",
+    "params": {"id": 8}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 93,
+    "result": {"id": 8, "status": "discarded"}
+  }
+}

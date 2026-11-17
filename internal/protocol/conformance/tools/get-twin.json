@@ -1,0 +1,79 @@
+{
+  "description": "tools.get on the records-management tool `loop_list`, the detail answer that carries `twin`: the socket method the same executor serves (`loop.list`), so the drawer can name the person's door onto the very read the model has as a tool. The field is the records catalog's pairing (TC5), read from the same world as the row — not a second table of tool-to-method guesses the screen keeps beside it. Every other word in this answer is the same entry the listing sends: the drawer is a deeper read of one row, never a different rendering of the same fact.",
+  "method": "tools.get",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 655,
+    "method": "tools.get",
+    "params": {
+      "name": "loop_list"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 655,
+    "result": {
+      "tool": {
+        "name": "loop_list",
+        "family": "loop",
+        "source": "system",
+        "description": "List the loops this agent's component works: slug, title, status, phase. Reading, never steering.",
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "root_id": {
+              "description": "filter to one root group",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "schemaHash": "9069aac34b99e7ca2cce6865ce1048e8f9d4a6490f108c11c56c08f9867b6416",
+        "rerunClass": "safe",
+        "capabilities": [
+          "org_records_read"
+        ],
+        "governed": [
+          "tool_access"
+        ],
+        "twin": "loop.list",
+        "conditional": false,
+        "available": true,
+        "classified": false,
+        "version": 1,
+        "origin": "system",
+        "rowCurrent": true,
+        "category": "loop",
+        "access": "read",
+        "address": "loop.loop_list.read"
+      },
+      "agents": [
+        {
+          "tool": "loop_list",
+          "agent": "atlas",
+          "state": "not_granted",
+          "dispatchable": true
+        },
+        {
+          "tool": "loop_list",
+          "agent": "brief-author",
+          "state": "not_granted",
+          "dispatchable": true
+        },
+        {
+          "tool": "loop_list",
+          "agent": "cursitor",
+          "state": "not_granted",
+          "dispatchable": false
+        },
+        {
+          "tool": "loop_list",
+          "agent": "sentry",
+          "state": "not_granted",
+          "dispatchable": true
+        }
+      ],
+      "policies": []
+    }
+  }
+}

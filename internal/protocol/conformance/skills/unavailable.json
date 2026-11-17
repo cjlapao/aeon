@@ -1,0 +1,15 @@
+{
+  "description": "The fault twin of the refusal (S65 T3, DB19): when the DISK or the FETCH fails — an unreadable root, a clone the transport refused — the answer is skills-unavailable, NOT the refusal code. The distinction is why this fixture exists: a caller that retries a refusal fixes nothing, and a caller that edits the file after a network fault is chasing the wrong thing. The what carries the failing act and the underlying sentence; nothing was written, nothing moved.",
+  "method": "skills.install",
+  "request": {"jsonrpc": "2.0", "id": 326, "method": "skills.install", "params": {"source": "acme/skills"}},
+  "response": {"jsonrpc": "2.0", "id": 326, "error": {
+    "code": -31821,
+    "message": "the skills catalog could not be read or fetched",
+    "data": {
+      "what": "skills.install acme/skills: git clone https://github.com/acme/skills.git: fatal: unable to access remote (exit status 128)",
+      "means": "the catalog could not answer — the roots' permissions, the disk, or the network at fault; nothing was written and nothing moved",
+      "todo": "fix what the message names (root permissions, disk, or the fetch transport); skills.list still answers from the last scan",
+      "fatal": false
+    }
+  }}
+}

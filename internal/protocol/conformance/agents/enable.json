@@ -1,0 +1,15 @@
+{
+  "description": "agent.enable — a plain socket write (brief §3's ruling: the imported agent already passed blocklist and consent at import, S15, so moving it starts something already permitted). Calls the same functions `aeon agent enable` calls, including the Rehydrate re-check: a package that grew a request since import is caught here too, not only at the CLI.",
+  "method": "agent.enable",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "method": "agent.enable",
+    "params": {"name": "reviewer"}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "result": {"agent": "reviewer", "state": "enabled"}
+  }
+}

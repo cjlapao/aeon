@@ -1,0 +1,28 @@
+{
+  "description": "LW12: on a system without PTYs, terminal.open refuses with a named `unsupported` — it does not fall back to a pipe. A pipe is not a terminal: no job control, no tty lines, no stty; a shell in one would half-work and mislead.",
+  "method": "terminal.open",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "method": "terminal.open",
+    "params": {
+      "componentRoot": "/home/dev/code/aeon-qa-workspace",
+      "cols": 100,
+      "rows": 24
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "error": {
+      "code": -31510,
+      "message": "terminals are unsupported on this OS",
+      "data": {
+        "what": "no PTY exists for windows",
+        "means": "no shell was started — a PTY is the one thing a terminal session cannot be faked without, and a pipe is not a terminal (no job control, no tty lines, no stty)",
+        "todo": "run the daemon on a system with PTYs; the package builds everywhere, only `open` refuses",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "description": "tools.matchPattern with an address pattern: the daemon answers which tool addresses the pattern names today, using the one matcher the gate uses (policy.MatchToolAddress). The pattern workspace.*.read names every workspace tool that only reads; a tool that writes is not in the list. Zero matches is an answer, not an error — the pattern may name a tool added later.",
+  "method": "tools.matchPattern",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 901,
+    "method": "tools.matchPattern",
+    "params": {
+      "pattern": "workspace.*.read"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 901,
+    "result": {
+      "pattern": "workspace.*.read",
+      "matches": [
+        "workspace.glob.read",
+        "workspace.grep.read",
+        "workspace.list.read",
+        "workspace.read.read"
+      ],
+      "count": 4
+    }
+  }
+}

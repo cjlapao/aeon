@@ -1,0 +1,27 @@
+{
+  "description": "proposal.create's happy path: an inert row, writable from the socket because it constrains nothing (brief §4) — payload stored verbatim, status always 'proposed', created_by stamped from the connection's peer uid (table.ActorFor), and command carrying the exact CLI text that promotes it (TD6/TD7's pattern — text, never a structured action the UI could invoke).",
+  "method": "proposal.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 90,
+    "method": "proposal.create",
+    "params": {
+      "kind": "mcp_server_add",
+      "payload": {"tier": "public", "server": {"name": "github", "transport": {"type": "stdio", "command": "gh-mcp"}}}
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 90,
+    "result": {
+      "id": 7,
+      "kind": "mcp_server_add",
+      "payload": {"tier": "public", "server": {"name": "github", "transport": {"type": "stdio", "command": "gh-mcp"}}},
+      "status": "proposed",
+      "createdAt": "2026-10-29T15:04:02Z",
+      "createdByKind": "user",
+      "createdById": "1000",
+      "command": "aeon proposal commit 7"
+    }
+  }
+}

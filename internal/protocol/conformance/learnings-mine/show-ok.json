@@ -1,0 +1,26 @@
+{
+  "description": "S52 T4 (LM1, LM5): learnings.mine.show reads ONE learning inside the agent's readable set, rendered by the same function the standing learnings.forAgent door and the learning_add answer use — the row reads here exactly as every other surface reads it. An id outside the readable set, a retracted row and a never-filed id all answer the SAME sentence: the doors cannot be probed for what exists but is not yours (no oracle in success or in error, LM5's hygiene). A live row carries no retraction keys at all (LM2's omitempty discipline).",
+  "method": "learnings.mine.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 453,
+    "method": "learnings.mine.show",
+    "params": { "id": 21 }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 453,
+    "result": {
+      "learning": {
+        "id": 21,
+        "scope": "project",
+        "scopeKey": "/srv/projects/ledger",
+        "body": "the CSV writer builds columns from the rendered table, so a column that renders must not be filtered at export",
+        "provenance": "observed",
+        "sourceLoopSlug": "dev-loops",
+        "sourceStepId": 2205,
+        "createdAt": "2026-11-03T18:42:00Z"
+      }
+    }
+  }
+}

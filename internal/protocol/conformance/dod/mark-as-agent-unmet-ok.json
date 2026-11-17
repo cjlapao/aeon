@@ -1,0 +1,33 @@
+{
+  "description": "S57 T9 (VG19): the unmet side of the agent's DoD door — a mark is a statement, and an unmet (or unverifiable) is free from an agent: no evidence is named and none is demanded (a run id on a non-met is refused — a run is evidence only a met carries), and the note rides the audit row as audit text within its 512-byte bound. The item keeps its loop, its text and its position; only the state, the evidence (cleared — the unmet names nothing) and the actor stamp move, with the updatedAt. The answer is the item as it now stands.",
+  "method": "dod.markAsAgent",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1106,
+    "method": "dod.markAsAgent",
+    "params": {
+      "itemId": "dod-4",
+      "state": "unmet",
+      "note": "the flake is not reproduced on the new head yet — one more run before the breaker claim can be met"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1106,
+    "result": {
+      "item": {
+        "id": "dod-4",
+        "loopSlug": "fix-the-login",
+        "componentRoot": "/home/cjlapao/src/aeon",
+        "briefId": "brief-1",
+        "briefVersion": 2,
+        "idx": 3,
+        "text": "the retry storm is bounded by the circuit breaker",
+        "state": "unmet",
+        "actorKind": "agent",
+        "actorId": "implementer",
+        "updatedAt": "2026-11-03T06:15:00Z"
+      }
+    }
+  }
+}

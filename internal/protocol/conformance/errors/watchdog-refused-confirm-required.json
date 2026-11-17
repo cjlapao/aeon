@@ -1,0 +1,24 @@
+{
+  "description": "watchdog.setEnabled that DISABLES without a confirm digest: the act loosens a safeguard, so the daemon refuses it with the canonical statement and its digest riding the error (Data.Statement, Data.Confirm) — the client completes the commit in ONE round trip (watchdog/set-enabled.json) instead of re-reading the row. data.kind is confirm-required and nothing was written; the statement is rendered from the rule as the daemon has it NOW, and its digest is the SHA-256 of that text — the commit is bound to what was read, so a rule that moved since the read is a confirm-mismatch, never a silent loosening.",
+  "method": "watchdog.setEnabled",
+  "request": {
+    "jsonrpc": "2.0", "id": 627, "method": "watchdog.setEnabled",
+    "params": {"id": "wdr-2", "enabled": false}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 627,
+    "error": {
+      "code": -31862,
+      "message": "the watchdog refused the operation",
+      "data": {
+        "kind": "confirm-required",
+        "what": "watchdog setEnabled refused: disabling a rule loosens a safeguard (it will no longer fire) — commit it with the digest of the statement as read",
+        "means": "the daemon understood and declined — no rule row was written and no loop moved",
+        "todo": "do what the what sentence names",
+        "statement": "disable watchdog rule wdr-2 (workspace workspace, step-over-deadline stop, threshold 1h): after this it will no longer fire",
+        "confirm": "eaf14f2fb93826a115d563cbb2d7bd162f20fe404d9d4f36fcdce86947f10593",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "description": "dod.mark: one item's state, evidence-bound. A met item names its evidence (kind and ref — verify_run names a run, manual the person's reference), and the store's pairing backstop decides whose mark a kind of evidence is (a verify_run mark is the engine's, a manual mark the person's; the mismatch refuses before SQL). The actor is the connection's person, never a param. The answer is the item as it now stands.",
+  "method": "dod.mark",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1062,
+    "method": "dod.mark",
+    "params": {
+      "id": "dod-3",
+      "state": "met",
+      "evidence": {
+        "Kind": "manual",
+        "Ref": "e2e: login 401 → 200, run 2026-11-02T13:25:00Z"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1062,
+    "result": {
+      "item": {
+        "id": "dod-3",
+        "loopSlug": "fix-the-login",
+        "componentRoot": "/home/cjlapao/src/aeon",
+        "briefId": "brief-1",
+        "briefVersion": 2,
+        "idx": 2,
+        "text": "the 401 path is covered in the e2e suite",
+        "state": "met",
+        "evidenceKind": "manual",
+        "evidenceRef": "e2e: login 401 → 200, run 2026-11-02T13:25:00Z",
+        "actorKind": "user",
+        "actorId": "1000",
+        "updatedAt": "2026-11-02T13:45:00Z"
+      }
+    }
+  }
+}

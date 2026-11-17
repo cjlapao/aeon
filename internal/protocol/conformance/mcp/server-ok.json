@@ -1,0 +1,73 @@
+{
+  "description": "S46 T3 (MG5-reads): mcp.server {name} is the one-server read — \"everything\": the full view, the agent SLUGS whose declares name one of its tools (the mcp.servers count expanded), and the server's last 20 audit rows newest-first. A public server omits `agent` (the tier already states it; an empty string would name nobody with a value — absence is the honest rendering). The change row here is a grant_declare: `server` is OMITTED where mcp_change holds NULL (a 0 would name a row that does not exist — the PolicyChangeView discipline carried), and the fixed-template summary is built from names and ids only, so no credential can ever sit in the audit (MG13).",
+  "method": "mcp.server",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 902,
+    "method": "mcp.server",
+    "params": {
+      "name": "reddit"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 902,
+    "result": {
+      "server": {
+        "name": "reddit",
+        "tier": "private",
+        "agent": "reddit-agent",
+        "transport": {
+          "type": "stdio",
+          "command": "npx",
+          "args": [
+            "-y",
+            "@acme/mcp-reddit"
+          ],
+          "envNames": [
+            "REDDIT_TOKEN"
+          ]
+        },
+        "tools": [
+          {
+            "name": "search",
+            "rerun": "safe",
+            "effect": "local",
+            "classified": true
+          }
+        ],
+        "enabled": true,
+        "origin": "user",
+        "declaredBy": 1,
+        "status": "reachable",
+        "updatedAt": "2026-11-01T12:00:00Z",
+        "title": "GitHub",
+        "description": "Issues, pull requests and repositories on GitHub."
+      },
+      "declaredBy": [
+        "reddit-agent"
+      ],
+      "changes": [
+        {
+          "id": 7,
+          "op": "grant_declare",
+          "agent": "reddit-agent",
+          "qualified": "reddit.search",
+          "summary": "declared \"reddit.search\" for agent \"reddit-agent\"",
+          "actorKind": "user",
+          "actorId": "1000",
+          "occurredAt": "2026-11-01T12:00:00Z"
+        },
+        {
+          "id": 3,
+          "op": "server_add",
+          "server": "reddit",
+          "summary": "added server \"reddit\" (stdio, 1 tool)",
+          "actorKind": "user",
+          "actorId": "1000",
+          "occurredAt": "2026-10-30T18:14:02Z"
+        }
+      ]
+    }
+  }
+}

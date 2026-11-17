@@ -1,0 +1,32 @@
+{
+  "description": "The next instants a stored schedule will fire \u2014 the SAME engine walk the clock runs, DST gaps included, with the wall clock the person reasons about beside each instant.",
+  "method": "automation.preview",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8209,
+    "method": "automation.preview",
+    "params": {
+      "id": "sch-morning",
+      "n": 2,
+      "from": "2026-11-03T00:00:00Z"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8209,
+    "result": {
+      "instants": [
+        {
+          "at": "2026-11-03T07:00:00Z",
+          "kind": "due",
+          "wall": "2026-11-03 07:00 WET"
+        },
+        {
+          "at": "2026-11-04T07:00:00Z",
+          "kind": "due",
+          "wall": "2026-11-04 07:00 WET"
+        }
+      ]
+    }
+  }
+}

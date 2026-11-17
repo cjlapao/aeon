@@ -1,0 +1,38 @@
+{
+  "description": "task_create files a loop task from a planning step \u2014 the person's half of this door is refused by name, pointing at the manual authoring door (OL14).",
+  "method": "task.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "method": "task.create",
+    "params": {
+      "title": "Wire the board",
+      "tech": "go",
+      "engineer": "golang-engineer",
+      "depends_on": []
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 302,
+    "result": {
+      "taskid": "T1",
+      "loopSlug": "briefing",
+      "componentRoot": "/home/p/aeon",
+      "ord": 1,
+      "title": "Wire the board",
+      "tech": "go",
+      "engineer": "golang-engineer",
+      "dependsOn": [],
+      "status": "todo",
+      "id": "task-7a1f",
+      "manual": false,
+      "assigneeKind": "agent",
+      "assignee": "golang-engineer",
+      "componentId": "cmp-7a1f",
+      "approvalState": "none",
+      "createdByKind": "agent",
+      "createdById": "planner"
+    }
+  }
+}

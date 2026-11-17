@@ -1,0 +1,15 @@
+{
+ "__status": 200,
+ "body": {
+  "sha": "aaa",
+  "total_count": 5,
+  "state": "success",
+  "statuses": [
+   {"context": "ci/unit", "state": "success"},
+   {"context": "ci/integ", "state": "failure"},
+   {"context": "ci/error-ctx", "state": "error"},
+   {"context": "ci/wait", "state": "pending"},
+   {"context": "ci/odd", "state": "frozen"}
+  ]
+ }
+}

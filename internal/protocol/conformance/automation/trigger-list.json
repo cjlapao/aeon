@@ -1,0 +1,84 @@
+{
+  "description": "The trigger catalogue, filtered (rootId/componentId/enabled are the reader's filters): a live trigger carries its last recorded answer (lastFire); a paused one says so with enabled=false and its disabledReason; lastFire:null means never fired, and a null maxCostPerDayUsd is 'no cap', not zero.",
+  "method": "automation.trigger.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 202,
+    "method": "automation.trigger.list",
+    "params": {
+      "rootId": "prj-platform",
+      "componentId": "cmp-alpha",
+      "enabled": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 202,
+    "result": {
+      "triggers": [
+        {
+          "id": "tr-intake",
+          "name": "Intake",
+          "source": "manual",
+          "rootId": "prj-platform",
+          "componentId": "cmp-alpha",
+          "match": {
+            "event": "goal.approved",
+            "goal_type": [
+              "feature"
+            ]
+          },
+          "blueprint": "dev-loop",
+          "kickoff": "Approved: {{.Goal}}",
+          "maxRunsPerHour": 20,
+          "maxCostPerDayUsd": 25.5,
+          "enabled": true,
+          "disabledReason": "",
+          "createdByKind": "user",
+          "createdById": "operator",
+          "createdAt": "2026-10-26T09:00:00Z",
+          "updatedAt": "2026-10-27T08:00:00Z",
+          "lastFire": {
+            "id": 1,
+            "triggerId": "tr-intake",
+            "outboxId": 4,
+            "subjectKind": "goal",
+            "subjectId": "g0",
+            "depth": 0,
+            "outcome": "started",
+            "reason": "",
+            "loopId": "l1",
+            "loopSlug": "auto-tr-intake-4",
+            "costNote": "",
+            "claimedAt": "2026-10-27T08:10:00Z",
+            "decidedAt": "2026-10-27T08:10:01Z"
+          }
+        },
+        {
+          "id": "tr-nightly",
+          "name": "Nightly triage",
+          "source": "manual",
+          "rootId": "prj-platform",
+          "componentId": "",
+          "match": {
+            "event": "task.approved",
+            "task_type": [
+              "triage"
+            ]
+          },
+          "blueprint": "dev-loop",
+          "kickoff": "",
+          "maxRunsPerHour": 4,
+          "maxCostPerDayUsd": null,
+          "enabled": false,
+          "disabledReason": "operator paused it",
+          "createdByKind": "user",
+          "createdById": "operator",
+          "createdAt": "2026-10-25T09:00:00Z",
+          "updatedAt": "2026-10-26T18:00:00Z",
+          "lastFire": null
+        }
+      ]
+    }
+  }
+}

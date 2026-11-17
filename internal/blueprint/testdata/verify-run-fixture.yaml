@@ -1,0 +1,31 @@
+# verify-run-fixture — S57 T6's ladder (NOT an embedded blueprint; the
+# dev-loop blueprint's verify rung is CR-BP1's, and stays a model step
+# until that task lands). The shape the engine integration test drives:
+# a task ladder whose verify rung is the GATE RUN — a code action whose
+# outcome the engine routes.
+#
+#   implement (model) → verify (verify.run)
+#        ↑________________|   on_reject: the run refused the work, so
+#                            back to implement — capped at 2 rounds,
+#                            then the loop blocks (then: block is the
+#                            closed ThenAction set's stop word).
+#
+# The counter lives in the closed manifest vocabulary (counters.*), so
+# the load-time check finds it; the engine's DecideExhaustion owns it.
+---
+id: verify-run-fixture
+schemaVersion: 1
+version: 1
+lanes:
+  - id: build
+    iterate: tasks
+    rework: implement
+    ladder:
+      - id: implement
+        kind: model-step
+        agent: default
+
+      - id: verify
+        kind: code-action
+        action: verify.run
+        on_reject: { goto: implement, counter: verify_rounds, max: 2, then: block }

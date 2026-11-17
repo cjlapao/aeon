@@ -1,0 +1,28 @@
+{
+  "description": "mergequeue.land aimed at an item that is NOT ready (here: still verifying): ErrMergeQueueConflictState names the state the row is actually in. The item's digest is computed for the row as it is, so a land that skipped the state check could not even bind \u2014 the state check speaks first.",
+  "method": "mergequeue.land",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 791,
+    "method": "mergequeue.land",
+    "params": {
+      "id": "mq-9c8b7a69584736251403f2e1d0c9b8a7",
+      "digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 791,
+    "error": {
+      "code": -31955,
+      "message": "the item's state does not carry that door",
+      "data": {
+        "what": "mergequeue.land belongs to a ready item and mq-9c8b7a69584736251403f2e1d0c9b8a7 is verifying",
+        "means": "nothing changed. MQ5's edge table is the queue's shape and the driver alone moves rows along it; a door that worked from any state would be a second driver typing states",
+        "todo": "mergequeue.show the row and read its status and nextStep \u2014 the answer names the door that fits where the item actually is",
+        "fatal": false
+      }
+    }
+  },
+  "fromSeam": true
+}

@@ -1,0 +1,106 @@
+{
+  "settings": {
+    "triage": {
+      "title": "Triage",
+      "subtitle": "Bug claims, whether they hold up, and the human acts that move them on.",
+      "reconnecting": "The daemon is reconnecting — reads still work, writes wait.",
+      "vocabulary": {
+        "failed": "The daemon''s vocabulary could not be read — until it is, this panel names no states and quotes no authority."
+      },
+      "actions": {
+        "retry": "Retry",
+        "validate": "Validate",
+        "handoff": "Hand off",
+        "go": {
+          "validate": "Run the validation",
+          "handoff": "Hand it off"
+        },
+        "setting": "Validation blueprint"
+      },
+      "filters": {
+        "root": "Component root",
+        "rootHint": "The board answers one root at a time — the daemon filters, this panel never sweeps.",
+        "validation": "Validation",
+        "priority": "Priority",
+        "handedOff": "Handed off",
+        "any": "any",
+        "yes": "yes",
+        "no": "no"
+      },
+      "board": {
+        "needsRoot": "Nothing loaded yet — the board is per component root; name one.",
+        "loading": "Asking the daemon…",
+        "empty": "This board answered empty — for this root and these filters, as the daemon filtered them."
+      },
+      "row": {
+        "filedBy": "filed by",
+        "attempts": "validation attempts:",
+        "neverAttempted": "never attempted",
+        "candidates": "possible duplicates (closest first):",
+        "open": "Open"
+      },
+      "drawer": {
+        "attempts": "validation attempts:",
+        "history": "audit trail:",
+        "historyEmpty": "No audit rows for this bug yet.",
+        "cancel": "Cancel",
+        "refused": "The daemon refused this"
+      },
+      "edit": {
+        "intro": "Title and body — the only fields a person may edit; the daemon refuses anything else, verbatim.",
+        "title": "Title",
+        "body": "Body",
+        "save": "Save",
+        "saving": "Saving…",
+        "saved": "Saved — the daemon wrote the row and its audit line.",
+        "noChange": "Nothing changed — the daemon said so; no audit line was written."
+      },
+      "duplicates": {
+        "intro": "Possible duplicates, scored by the daemon''s own comparison — a link becomes real only from a named person.",
+        "mark": "Mark as duplicate",
+        "confirmLine": "Link #{id} as a duplicate of #{of}. A duplicate is a human''s irreversible act — the daemon will refuse a confirmer that is not a person.",
+        "confirmedBy": "Confirmed by",
+        "confirmedByHint": "Your name, as the daemon knows a person — checked against the people, not typed in blind.",
+        "confirm": "Confirm the link"
+      },
+      "statement": {
+        "pending": "The daemon''s statement has not arrived yet — nothing can run until it is read."
+      },
+      "blueprint": {
+        "intro": "Which blueprint answers a validation run. The daemon reads it at each validate and refuses by name when it is missing or invalid — never a fallback.",
+        "label": "Validation blueprint",
+        "hint": "Saved through the one settings door; the daemon answers the new view or a refusal, both verbatim.",
+        "save": "Save",
+        "saving": "Saving…",
+        "saved": "Saved — the daemon wrote the new value and its event.",
+        "noChange": "Nothing changed — the daemon said so.",
+        "healthAdvice": "The health dot is advice, never a gate — validation re-checks the blueprint at its own moment."
+      },
+      "help": {
+        "title": "What is triage?",
+        "body": "## What is triage?\n\nA **bug** here is a claim: a person or an agent says something is broken in a component. **Triage** is the board where each claim is checked and decided, one component at a time.\n\n- **Validation**: Aeon runs the validation blueprint to try to reproduce the bug. The result is recorded as the bug’s validation state.\n- **Priority**: says whether the priority was stated, assumed, or is unknown. It never pretends to know more.\n- **Duplicates**: the daemon scores possible duplicates. A link becomes real only when a named person confirms it.\n- **Hand off**: a validated bug can be handed to the roadmap so it gets planned.\n\nValidate and hand-off show the daemon’s own statement first, and nothing runs until you confirm it. Pick a component to see its board."
+      },
+      "hint": "Pick a component to see its bugs. Open one to read its history, edit it, confirm a duplicate, validate it or hand it off.",
+      "col": {
+        "bug": "Bug",
+        "validation": "Validation",
+        "priority": "Priority",
+        "filedBy": "Filed by",
+        "attempts": "Attempts"
+      },
+      "footer": "Showing {shown} of {total}",
+      "root": {
+        "label": "Component",
+        "none": "Choose a component…"
+      },
+      "q": {
+        "know": "What do we know?",
+        "dup": "Is it a duplicate?",
+        "edit": "What does it say?",
+        "history": "What happened to it?",
+        "run": "Run it?",
+        "setting": "Which blueprint validates a bug?"
+      }
+    }
+  }
+}

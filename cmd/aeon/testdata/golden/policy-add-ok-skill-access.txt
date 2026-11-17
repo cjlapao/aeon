@@ -1,0 +1,4 @@
+$ aeon policy add --type skill_access --id ok-skill --target agent:erin --action ask --spec {"skill":"web","state":"ask"}
+policy ok-skill stored — the daemon's next read sees it (N8 forbids caching)
+$ aeon policy list
+ok-skill                 skill_access   agent:erin                   ask    operator     no expiry

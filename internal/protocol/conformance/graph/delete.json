@@ -1,0 +1,9 @@
+{
+  "description": "One root's graph rows, dropped (S30 T5 — index maintenance at the operator tier argued in graph.go: no policy row governs which files are parsed, because parsing is not an action against a resource). Rows and edges go in the store's ONE transaction (edges first, then nodes — no crash leaves edges to gone nodes), and the componentRoot scoping rule is absolute: the root next door does not feel it. Deleting a root with no rows is not an error — it deletes nothing, honestly, with a count of zero.",
+  "method": "graph.delete",
+  "request": {"jsonrpc": "2.0", "id": 247, "method": "graph.delete", "params": {"componentRoot": "/home/dev/retired"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 247,
+    "result": {"root": "/home/dev/retired", "nodesDeleted": 1893}
+  }
+}

@@ -1,0 +1,11 @@
+{
+ "__status": 201,
+ "body": {
+  "name": "widget",
+  "html_url": "https://github.example/acme/widget",
+  "clone_url": "https://github.example/acme/widget.git",
+  "default_branch": "main",
+  "private": true,
+  "size": 0
+ }
+}

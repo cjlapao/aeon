@@ -1,0 +1,32 @@
+{
+  "description": "S15's ONE plugin read: what is installed, in which state, from where — and nothing that could be mistaken for a verb. There is no way to ask this reader to enable, disable, revoke or import: the four state transitions exist only in the CLI and the app, because a socket caller handed the means to install the thing that bypasses the guards is R6 refused (S10 said it for policy authoring, S12 for MCP servers). Nothing here was fetched — import takes a path and a scheme is refused before any disk is touched (AP10) — and zero imports is the normal state, which the note says without alarm (AP11). Revoked records stay listed when asked because a life that ended is a fact, not an embarrassment (AP4), and firstPartyCount counts the compiled bodies: the flag is the registry's to set, so a package's own claim appears nowhere except as its refusal (AP9).",
+  "method": "agent.plugins",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 78,
+    "method": "agent.plugins"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 78,
+    "result": {
+      "plugins": [
+        {
+          "name": "groot-translator",
+          "state": "disabled",
+          "source": "/home/operator/aeon-packages/groot-translator",
+          "importedAt": "2026-10-25T09:00:00Z",
+          "carriedDenials": 1,
+          "firstParty": false
+        }
+      ],
+      "firstPartyCount": 25,
+      "counts": {
+        "disabled": 1,
+        "enabled": 0,
+        "revoked": 0
+      },
+      "note": "zero imports is the normal state (nothing was fetched — nothing here can fetch); revoked records stay readable because a life that ended is a fact, not an embarrassment (AP4)"
+    }
+  }
+}

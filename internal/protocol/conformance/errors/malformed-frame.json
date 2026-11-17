@@ -1,0 +1,9 @@
+{
+  "description": "A frame that is not valid JSON gets a parse error and THE CONNECTION STAYS OPEN. Dropping it on one bad frame would make a client's minor bug look like a daemon crash, which is a support conversation about the wrong component. `id` is null because there was no parseable request to take an id from.",
+  "method": null,
+  "rawRequest": "not json at all",
+  "response": {
+    "jsonrpc": "2.0", "id": null,
+    "error": {"code": -32700, "message": "invalid JSON"}
+  }
+}

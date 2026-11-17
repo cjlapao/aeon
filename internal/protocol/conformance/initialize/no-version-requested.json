@@ -1,0 +1,12 @@
+{
+  "description": "A client that omits protocolVersion is old or sloppy, not asking for version 0. It is served the oldest supported version rather than refused with a message about version 0, which would explain nothing.",
+  "method": "initialize",
+  "request": {
+    "jsonrpc": "2.0", "id": 1, "method": "initialize",
+    "params": {"clientName": "minimal-client", "clientVersion": "0.0.1"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 1,
+    "result": {"protocolVersion": 1, "daemonVersion": "0.1.0", "capabilities": ["subscribe"]}
+  }
+}

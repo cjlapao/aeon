@@ -1,0 +1,9 @@
+{
+  "kind": "loop.advanced",
+  "componentRoot": "",
+  "payload": {
+    "loopId": "loop-golden",
+    "step": 3
+  },
+  "notify": null
+}

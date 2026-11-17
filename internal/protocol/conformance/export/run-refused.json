@@ -1,0 +1,27 @@
+{
+  "description": "export.run is refused because the named dir already holds files: the engine's refusal rides the family's refusal voice (one code, -31863 — the S62 block's code, reused by the export doors and recorded as such; -31864 stays reserved) with the closed-set kind dir-nonempty in data.kind so a client can branch on the state found, and the person's sentence in data.what. The failed run cleaned up what it had created and touched nothing the dir already held, and the ledger's row was written as a failed run — the request reached the engine's gate, and dir-nonempty maps into the ledger's closed error_kind set as unknown.",
+  "method": "export.run",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1181,
+    "method": "export.run",
+    "params": {
+      "dir": "/home/carlo/exports/aeon-2026-11-02"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1181,
+    "error": {
+      "code": -31863,
+      "message": "the backup was refused",
+      "data": {
+        "kind": "dir-nonempty",
+        "what": "export run refused: the dir /home/carlo/exports/aeon-2026-11-02 is not empty — an export refuses to merge into files that were there first (no accidental worktree)",
+        "means": "the daemon understood and declined — the database was left exactly as it was, no partial published, and the ledger row (where one was written) says refused with its error_kind",
+        "todo": "do what the what sentence names — free space, fix the dir, wait for the lock, or update the binary",
+        "fatal": false
+      }
+    }
+  }
+}

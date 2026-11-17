@@ -1,0 +1,24 @@
+{
+  "description": "S59 T6 (EV16, EV18): environment.bind with dryRun answers in the SAME words the applied write will use — one formatter (execenv.DescribeBind), four callers (CLI, panel, dry run, audit). The statement names the scope, the environment by slug and id, the backend WITH its strength number (not an adjective), the comparison against what was bound before (here: nothing, said as the third state it is), the references by name, and EV6 as a property of the plane. changed:false because a dry run applies nothing (P3).",
+  "method": "environment.bind",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 913,
+    "method": "environment.bind",
+    "params": {
+      "scope": "component",
+      "componentId": "cmp_42",
+      "environmentId": "env_7f2a9b8c6d5e",
+      "dryRun": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 913,
+    "result": {
+      "statement": "bind · scope:component · component cmp_42 · environment ci-default (env_7f2a9b8c6d5e) · backend host-scrubbed (strength 1) · nothing was bound at this scope (an attended step inherits the daemon's environment — strength 0; unattended never does) → 1 · injects 1 secret reference(s) by name: deploy-token · unattended loops never inherit · dry-run: nothing applied",
+      "dryRun": true,
+      "changed": false
+    }
+  }
+}

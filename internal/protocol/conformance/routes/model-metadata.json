@@ -1,0 +1,66 @@
+{
+  "description": "Model display metadata and explicit capability/effort subsets round trip without credentials.",
+  "method": "routes.set",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 31,
+    "method": "routes.set",
+    "params": {
+      "id": "anthropic",
+      "provider": "anthropic",
+      "model": "claude-sonnet-5",
+      "apiKey": "<the credential; never echoed back>",
+      "maxOutputTokens": 4096,
+      "prices": {
+        "inputUsdPerMTok": 3,
+        "outputUsdPerMTok": 15
+      },
+      "displayName": "Research",
+      "displayDescription": "Careful analysis",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/nWQAAAAASUVORK5CYII=",
+      "capabilities": [
+        "text",
+        "thinking-effort"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "xhigh",
+        "max"
+      ],
+      "reasoningEffort": "max"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 31,
+    "result": {
+      "route": {
+        "id": "anthropic",
+        "provider": "anthropic",
+        "model": "claude-sonnet-5",
+        "hasKey": true,
+        "keyHint": "\u2026wxyz",
+        "source": "runtime",
+        "maxOutputTokens": 4096,
+        "prices": {
+          "inputUsdPerMTok": 3,
+          "outputUsdPerMTok": 15
+        },
+        "priced": true,
+        "displayName": "Research",
+        "displayDescription": "Careful analysis",
+        "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+/nWQAAAAASUVORK5CYII=",
+        "capabilities": [
+          "text",
+          "thinking-effort"
+        ],
+        "reasoningEfforts": [
+          "low",
+          "xhigh",
+          "max"
+        ],
+        "reasoningEffort": "max"
+      }
+    }
+  }
+}

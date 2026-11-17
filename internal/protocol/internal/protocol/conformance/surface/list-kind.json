@@ -1,0 +1,104 @@
+{
+  "description": "TODO",
+  "method": "surface.list",
+  "request": {
+    "id": 701,
+    "jsonrpc": "2.0",
+    "method": "surface.list",
+    "params": {
+      "kind": "diagnostic"
+    }
+  },
+  "response": {
+    "id": 701,
+    "jsonrpc": "2.0",
+    "result": {
+      "methods": [
+        {
+          "method": "agent.invoke",
+          "kind": "diagnostic",
+          "summary": "Files an agent-to-agent ask as a WAITING task and returns; suspension is rows, not a blocked call.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": true,
+          "doors": {
+            "socket": true,
+            "public": false,
+            "narrow": "none",
+            "agentService": true
+          }
+        },
+        {
+          "method": "agent.task.complete",
+          "kind": "diagnostic",
+          "summary": "The callee settles its task and reports its cost; a settled task answers by naming its state.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": true,
+          "doors": {
+            "socket": true,
+            "public": false,
+            "narrow": "none",
+            "agentService": true
+          }
+        },
+        {
+          "method": "agent.task.fail",
+          "kind": "diagnostic",
+          "summary": "The callee fails its task with a required reason, recorded verbatim in the task envelope.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": true,
+          "doors": {
+            "socket": true,
+            "public": false,
+            "narrow": "none",
+            "agentService": true
+          }
+        },
+        {
+          "method": "debug.goroutines",
+          "kind": "diagnostic",
+          "summary": "Dumps the daemon goroutine stacks, so a suspended agent task can be proven absent from outside the process.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": true,
+          "doors": {
+            "socket": true,
+            "public": false,
+            "narrow": "none",
+            "agentService": false
+          }
+        },
+        {
+          "method": "debug.subscriptions",
+          "kind": "diagnostic",
+          "summary": "Lists the live subscription registry — the demonstration that a dropped connection empties it.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": true,
+          "doors": {
+            "socket": true,
+            "public": false,
+            "narrow": "none",
+            "agentService": false
+          }
+        }
+      ],
+      "counts": {
+        "total": 5,
+        "unfiltered": 208,
+        "byKind": {
+          "control": 0,
+          "diagnostic": 5,
+          "read": 0,
+          "write": 0
+        },
+        "byDoor": {
+          "agentService": 3,
+          "socket": 5
+        }
+      }
+    }
+  }
+}

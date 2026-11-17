@@ -1,0 +1,7 @@
+{
+  "case": "timeout",
+  "summary": "bash \"sleep 30\" · TIMED OUT after N",
+  "content": "$ sleep 30\nTIMED OUT after N. The output below is what it produced before being stopped — it is partial, and the command may not have finished what it was doing.\n",
+  "isError": false,
+  "exitCode": -1
+}

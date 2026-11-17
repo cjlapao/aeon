@@ -1,0 +1,51 @@
+{
+  "description": "inbox.list is one live evaluation (SV1): items in inbox order (severity class, then oldest, then key), each with the daemon's stored reason VERBATIM, the age computed at read, and the door a person takes; sources[] is the FULL census — questions reported, the four sibling slots name themselves not-wired — so an empty list can never silently mean 'nothing was looking'. Nothing here is stored: the same params a minute later answer with older ageSeconds and could carry different items.",
+  "method": "inbox.list",
+  "request": {
+    "jsonrpc": "2.0", "id": 901, "method": "inbox.list",
+    "params": {"rootId": "cmp-1", "includeAcked": false, "limit": 100}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 901,
+    "result": {
+      "items": [
+        {
+          "key": "questions:41:2026-11-03T09:00:00Z",
+          "kind": "question",
+          "severity": "needs-you",
+          "rootId": "cmp-1",
+          "componentId": "cmp-1",
+          "loopSlug": "refactor-auth",
+          "itemRef": "41",
+          "reason": "waiting for your answer",
+          "since": "2026-11-03T09:00:00Z",
+          "ageSeconds": 1830,
+          "door": {"method": "answer", "sentence": "Answer with `aeon answer refactor-auth <one of: approve | deny>` or in the app."}
+        },
+        {
+          "key": "blocked:lp-7:2026-11-02T22:10:00Z",
+          "kind": "blocked.action-denied",
+          "severity": "blocked",
+          "rootId": "cmp-1",
+          "componentId": "cmp-1",
+          "loopId": "lp-7",
+          "loopSlug": "ship-fixes",
+          "reason": "unattended loop denied an outward action",
+          "since": "2026-11-02T22:10:00Z",
+          "ageSeconds": 53430,
+          "door": {"sentence": "This loop is unattended, so outward actions are denied. Start an attended run, or (S56) grant the action."}
+        }
+      ],
+      "sources": [
+        {"name": "questions", "state": "reporting"},
+        {"name": "blocked", "state": "reporting"},
+        {"name": "stopped", "state": "reporting"},
+        {"name": "budget", "state": "not-wired"},
+        {"name": "stuck", "state": "not-wired"},
+        {"name": "gates", "state": "not-wired"},
+        {"name": "scheduler", "state": "not-wired"}
+      ],
+      "evaluatedAt": "2026-11-03T09:30:30Z"
+    }
+  }
+}

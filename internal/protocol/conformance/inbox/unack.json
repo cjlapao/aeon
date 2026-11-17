@@ -1,0 +1,34 @@
+{
+  "description": "inbox.unack brings a hidden item back to the default view: one more append-only marker row (undoing never edits or deletes the ack it undoes — P3), and the answer is the item again with no `acked` state. An unack of an item that was not hidden is a no-op that writes NO row and answers with nothing; the idempotence is silence, not an error.",
+  "method": "inbox.unack",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 906,
+    "method": "inbox.unack",
+    "params": {
+      "key": "questions:41:2026-11-03T09:00:00Z"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 906,
+    "result": {
+      "item": {
+        "key": "questions:41:2026-11-03T09:00:00Z",
+        "kind": "question",
+        "severity": "needs-you",
+        "rootId": "cmp-1",
+        "componentId": "cmp-1",
+        "loopSlug": "refactor-auth",
+        "itemRef": "41",
+        "reason": "waiting for your answer",
+        "since": "2026-11-03T09:00:00Z",
+        "ageSeconds": 1950,
+        "door": {
+          "method": "answer",
+          "sentence": "Answer with `aeon answer refactor-auth <one of: approve | deny>` or in the app."
+        }
+      }
+    }
+  }
+}

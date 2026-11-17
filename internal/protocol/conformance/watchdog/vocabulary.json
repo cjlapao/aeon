@@ -1,0 +1,23 @@
+{
+  "description": "watchdog.vocabulary: the closed sets the forms and the CLI build from (rule 4) — the scopes, the signals WITH their threshold unit (ms for the two time signals, count for the two count signals) and whether each signal's source is available in THIS store, the actions, the audit's event kinds and the refusal kinds all come from the DAEMON, never a client copy. A literal in the client is a second truth that drifts when the set widens; this read is the one place the sets are named. available:false is an answer, not an omission (P31's honest third state): a rule on that signal is refused at the door rather than silently inert, and the reason names what the probe could not read.",
+  "method": "watchdog.vocabulary",
+  "request": {
+    "jsonrpc": "2.0", "id": 623, "method": "watchdog.vocabulary",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 623,
+    "result": {
+      "scopes": ["workspace", "component"],
+      "signals": [
+        {"signal": "no-activity", "unit": "ms", "available": true},
+        {"signal": "same-position", "unit": "count", "available": true},
+        {"signal": "repeat-block-reason", "unit": "count", "available": true},
+        {"signal": "step-over-deadline", "unit": "ms", "available": false, "reason": "the signal's source is absent in this store: no such column: step.context_manifest"}
+      ],
+      "actions": ["notify", "stop", "block"],
+      "eventKinds": ["created", "changed", "removed", "disabled"],
+      "refusalKinds": ["unknown-rule", "duplicate", "unavailable-signal", "confirm-required", "confirm-mismatch", "workspace-subject", "unknown-subject"]
+    }
+  }
+}

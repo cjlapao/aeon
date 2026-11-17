@@ -1,0 +1,16 @@
+{
+  "description": "The THIRD answer policy.why gives (D10/SEC-033): `unimplemented: true` is the field an app branches on when the binary itself cannot decide, because a registered type's evaluator has not landed yet. It shares the \"refused: \" prefix with a real denial and nothing else in the sentence distinguishes the two, so a client that parses prose has already collapsed \"nobody can answer this yet\" into \"a rule refused you\" — the exact P31 collapse T11 exists to make unrepresentable. This fixture is what puts the field in ui/src/proto/contract.ts (protogen is fixture-derived); without it the generated type carries only {allowed, sentence} and every reader falls back to startsWith. The scenario is the ONLY reachable one: all seven types are registered (six of them as D10 stubs), so Evaluate's unregistered branch cannot be reached from the socket, and sawUnimplemented needs a live, target-matching row OF THAT TYPE — here a stored operator Deny `ban-force-push` (command_access, target agent:boss) that the stub evaluator refuses to decide. `allowed` is false here and MUST be: refusing rather than permitting is the whole D10 claim, so an answer that admits it cannot decide while also permitting is not a shape this wire carries.",
+  "method": "policy.why",
+  "request": {
+    "jsonrpc": "2.0", "id": 66, "method": "policy.why",
+    "params": {"type": "command_access", "agent": "boss", "command": "git push --force"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 66,
+    "result": {
+      "allowed": false,
+      "sentence": "refused: agent:boss · command_access has no evaluator yet · refusing rather than permitting (D10)",
+      "unimplemented": true
+    }
+  }
+}

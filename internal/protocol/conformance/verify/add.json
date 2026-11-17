@@ -1,0 +1,38 @@
+{
+  "description": "verify.add: the human door that writes a gate row. The actor is stamped from the connection (the kernel's peer credential), never from params — a param that names it is refused before the seam is asked. The answer is the gate as written: the store assigned the id, the position (last + 1) and the stamps; the origin is user because the person at the door is who added it.",
+  "method": "verify.add",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1011,
+    "method": "verify.add",
+    "params": {
+      "componentId": "c-aeon",
+      "name": "build",
+      "command": "go build ./...",
+      "requirement": "required",
+      "timeoutS": 300,
+      "memoryMb": null,
+      "position": null,
+      "enabled": null
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1011,
+    "result": {
+      "gate": {
+        "id": "vcm-3",
+        "componentId": "c-aeon",
+        "name": "build",
+        "command": "go build ./...",
+        "requirement": "required",
+        "timeoutS": 300,
+        "position": 3,
+        "enabled": true,
+        "origin": "user",
+        "createdAt": "2026-11-02T13:00:00Z",
+        "updatedAt": "2026-11-02T13:00:00Z"
+      }
+    }
+  }
+}

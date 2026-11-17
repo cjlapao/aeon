@@ -1,0 +1,38 @@
+{
+  "description": "mergerule.set refused as a shape error because its params name an identity key: the actor is stamped by the daemon from the CONNECTION, never read from params — a param that names it would let a caller forge the audit identity of a write to their own data. The refusal happens before the seam is even asked, and the same rejection guards the rule's two writes, the six verify writes and the DoD mark.",
+  "method": "mergerule.set",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1044,
+    "method": "mergerule.set",
+    "params": {
+      "actor": {
+        "id": "1000",
+        "kind": "user"
+      },
+      "componentId": "c-aeon",
+      "rule": {
+        "aeonReviewAgents": [
+          "code-reviewer"
+        ],
+        "checksPolicy": "reported_green",
+        "enabled": true,
+        "method": "squash",
+        "noChecks": "allow",
+        "requireDod": "none",
+        "requireLocal": false,
+        "requireThreadsResolved": false,
+        "requiredChecks": [],
+        "reviewMode": "forge"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1044,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: mergerule.set params carry \"actor\" — the actor is stamped by the daemon from the connection, never named by the caller"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "description": "A finished loop was moved to cold storage.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 2001,
+      "dseq": 14,
+      "kind": "loop.archived",
+      "at": "2026-11-17T06:20:00.123456789Z",
+      "payload": {
+        "loopId": "loop-9",
+        "archivedId": "arch-3"
+      }
+    }
+  }
+}

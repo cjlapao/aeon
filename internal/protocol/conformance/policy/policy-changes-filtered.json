@@ -1,0 +1,31 @@
+{
+  "description": "S45 T3 (PM8): the FILTERED half of policy.changes — policyId reads one rule's trail (the (policy_id, id) index the migration installed serves exactly this read) and limit clamps at the accessor's [1,500]/default-50 contract, both ANDed on the newest-first order. The two empties stay two answers: a filter that matches nothing while the table holds rows prints NO statement (the filter's emptiness is the filter's answer — the empty-table sentence belongs to a Count-proved zero alone), and here the two rows are simply that rule's whole history: the operator added it from the CLI door, a person removed it from the socket door. The actor pair is the audit's whole point: who widened the guard, from which door.",
+  "method": "policy.changes",
+  "request": {"jsonrpc": "2.0", "id": 73, "method": "policy.changes", "params": {"policyId": "grant-bash", "limit": 10}},
+  "response": {
+    "jsonrpc": "2.0", "id": 73,
+    "result": {
+      "changes": [
+        {
+          "id": 2,
+          "op": "remove",
+          "policyId": "grant-bash",
+          "summary": "removed policy \"grant-bash\"",
+          "actorKind": "user",
+          "actorId": "1000",
+          "occurredAt": "2026-10-31T10:12:00Z"
+        },
+        {
+          "id": 1,
+          "op": "add",
+          "policyId": "grant-bash",
+          "summary": "added policy \"grant-bash\" (tool_access allow)",
+          "actorKind": "cli",
+          "actorId": "cli",
+          "occurredAt": "2026-10-30T09:00:00Z"
+        }
+      ],
+      "unauditedPolicyIds": []
+    }
+  }
+}

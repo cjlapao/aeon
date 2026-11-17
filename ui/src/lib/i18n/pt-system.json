@@ -1,0 +1,185 @@
+{
+  "settings": {
+    "system": {
+      "title": "Estado da plataforma",
+      "subtitle": "Saúde de todo o daemon: tarefas de índice em todos os componentes, o que custam e o registo. O grafo e a pesquisa que usa ficam no separador Conhecimento de cada componente.",
+      "reconnecting": "O daemon está reconectando — este painel nada pergunta até ficar atualizado.",
+      "loading": "Consultando o daemon…",
+      "evaluated": "Avaliado {at}",
+      "disabled": "Bloqueado enquanto o daemon informa uma operação em curso — a resposta dele diz quem a iniciou.",
+      "status": {
+        "failed": "O painel de status do daemon não pôde ser lido."
+      },
+      "tab": {
+        "activity": "Atividade",
+        "graph": "Raízes do grafo",
+        "retrieval": "Índices de pesquisa"
+      },
+      "actions": {
+        "retry": "Tentar de novo",
+        "cancel": "Cancelar",
+        "reindex": "Reindexar…",
+        "confirmReindex": "Sim — executar a passada",
+        "indexAll": "Indexar",
+        "reindexAll": "Reindexar",
+        "indexing": "A indexar…",
+        "indexAllTitle": "Indexar a pesquisa de {root}?",
+        "build": "Construir…",
+        "reparse": "Reanalisar…",
+        "delete": "Excluir…",
+        "confirmBuild": "Sim — reconstruir as linhas",
+        "confirmReparse": "Sim — substituir as linhas deste arquivo",
+        "confirmDelete": "Sim — remover o grafo desta raiz",
+        "refresh": "Atualizar"
+      },
+      "retrieval": {
+        "corpus": "Corpus",
+        "files": "Arquivos",
+        "staleChunks": "Fragmentos defasados",
+        "flying": "uma passada em curso",
+        "noEmbed": "Sem rota de incorporação — só respostas por palavra-chave.",
+        "embedRoute": "Rota de incorporação {route} · modelo {model} · {dim} dimensões",
+        "confirm": {
+          "title": "Reindexar {corpus} em {root} — primeiro o plano do daemon, nada foi iniciado.",
+          "pricing": "Calculando o preço do plano…",
+          "counts": "{files} arquivos · {staleFiles} defasados · {staleChunks} fragmentos defasados",
+          "tokens": "≈ {tokens} tokens de entrada — base: {basis}",
+          "estimateNotInvoice": "uma estimativa, nunca uma fatura",
+          "replaces": "Esta passada substitui os vetores derivados do corpus; os arquivos-fonte nunca são tocados."
+        },
+        "state": "Estado",
+        "emptyIndex": "vazio",
+        "hasStale": "desatualizado",
+        "current": "atualizado",
+        "none": "Sem índices de pesquisa",
+        "noneBody": "O daemon ainda não reporta corpora de pesquisa.",
+        "refused": "A reindexação foi recusada",
+        "alreadyFlying": "Uma passagem já estava a correr"
+      },
+      "graph": {
+        "root": "Raiz",
+        "neverBuilt": "nunca construído",
+        "build": {
+          "title": "Construir o grafo em {root}",
+          "statement": "Uma construção regenera as linhas DERIVADAS do grafo desta raiz a partir dos arquivos-fonte; a execução é auditada em seu nome sob uma linha platform_change."
+        },
+        "reparse": {
+          "title": "Reanalisar um arquivo em {root}",
+          "statement": "As linhas do grafo deste arquivo são SUBSTITUÍDAS por uma nova análise — só linhas derivadas, arquivos-fonte intocados; a execução é auditada em seu nome.",
+          "path": "Caminho do arquivo"
+        },
+        "delete": {
+          "title": "Excluir o grafo em {root}",
+          "statement": "Isto remove o grafo derivado INTEIRO da raiz — todo nó e toda aresta; uma construção futura os regenera, e nenhum arquivo-fonte é tocado. A execução é auditada em seu nome."
+        },
+        "counts": "Indexado",
+        "countsLine": "{files} ficheiros · {nodes} símbolos · {edges} ligações",
+        "maintain": "Manter…",
+        "maintainTitle": "Manter o grafo de código",
+        "noRoots": "Sem raízes para indexar",
+        "noRootsBody": "O daemon ainda não lista raízes de componentes. Adicione um componente com um repositório e o grafo aparece aqui.",
+        "q": {
+          "roots": "Que raízes estão indexadas?",
+          "running": "Há algo a correr?",
+          "acts": "O que faz cada ato?"
+        },
+        "runningNow": "Uma passagem está a correr. Os outros atos ficam em espera até terminar.",
+        "idleNow": "Nada está a correr.",
+        "actsBody": "Construir regenera os símbolos e ligações de uma raiz a partir dos seus ficheiros. Reanalisar substitui apenas as linhas de um ficheiro. Apagar remove o grafo inteiro da raiz; uma construção posterior traz tudo de volta. Os ficheiros-fonte nunca são tocados e cada ato pede confirmação.",
+        "refused": "O ato sobre o grafo foi recusado",
+        "alreadyFlying": "Uma passagem já estava a correr",
+        "nodes": "Símbolos",
+        "edges": "Ligações"
+      },
+      "usage": {
+        "loops": "{count} loops executados",
+        "tokens": "{input} de entrada / {output} de saída em tokens",
+        "unrecorded": "Nada registrado ainda — este espaço de trabalho não executou loops contados."
+      },
+      "activity": {
+        "failed": "O livro-razão não pôde ser lido.",
+        "empty": "Nenhuma mudança de plataforma — o livro-razão nunca viu uma operação de loja derivada.",
+        "when": "Quando",
+        "op": "Operação",
+        "subject": "Assunto",
+        "actor": "Iniciada por",
+        "summary": "Resumo",
+        "search": "Pesquisar assunto ou resumo…",
+        "any": "qualquer",
+        "footer": "A mostrar {shown} de {total}"
+      },
+      "startedBy": "Uma passada já estava em curso — o daemon nomeia quem a iniciou: {by} às {at}",
+      "help": {
+        "title": "O que é o estado da plataforma?",
+        "body": "Os agentes encontram código de duas formas. O **grafo de código** responde *quem chama o quê* com exatidão. A **pesquisa** responde *onde se fala disto* por significado ou palavra-chave. Ambos são **derivados dos seus ficheiros** e podem ser reconstruídos a qualquer momento — nada nesta página altera o seu código-fonte.\n\n### O que pode fazer aqui\n- **Explorar o grafo** — escolha um símbolo para ver quem o chama e o que chama, ou escolha dois para ver como se ligam.\n- **Manter o grafo** — construir, reanalisar um ficheiro ou apagar o grafo de uma raiz. Cada ato confirma primeiro e nomeia a raiz.\n- **Manter a pesquisa atualizada** — reindexar um corpus. O daemon calcula o custo antes de confirmar; uma rota sem preço nunca arranca.\n- **Experimentar uma pesquisa** — veja exatamente o que um agente receberia para um termo.\n- **Ler a atividade** — todas as operações que uma pessoa iniciou, e quem as iniciou.\n\n### Custo\nManter o índice de pesquisa atualizado gasta tokens quando há embeddings. O custo aparece antes de confirmar, sempre com o seu estado (conhecido, parcial ou desconhecido) — uma estimativa nunca é uma fatura. Os totais ficam no cartão de Utilização."
+      },
+      "hint": {
+        "graph": "Cada raiz do grafo de código que o daemon guarda, com as suas contagens. Construa, reanalise ou apague em Manter. Para ver quem chama quem, abra o separador Conhecimento de um componente.",
+        "retrieval": "Todos os índices de pesquisa de todos os componentes. Mantenha cada um atual com Reindexar. Para experimentar uma pesquisa, abra o separador Conhecimento de um componente.",
+        "activity": "Cada construção, reanálise, remoção e reindexação, mais recente primeiro, com quem a iniciou."
+      },
+      "strip": {
+        "graph": "Grafo de código",
+        "graphSub": "{roots} raízes · {edges} ligações",
+        "retrieval": "Pesquisa",
+        "retrievalSub": "{files} ficheiros · {stale} blocos desatualizados",
+        "usage": "Utilização"
+      },
+      "explore": {
+        "mode": "Modo",
+        "modeExplore": "Explorar",
+        "modePath": "Caminho A → B",
+        "symbol": "Símbolo",
+        "symbolHint": "Pesquisar um símbolo…",
+        "kind": "Tipo",
+        "anyKind": "Qualquer tipo",
+        "go": "Explorar",
+        "from": "De",
+        "to": "Para",
+        "findPath": "Encontrar caminho",
+        "matches": "Correspondências",
+        "selected": "Símbolo selecionado",
+        "nothingSelected": "Nada selecionado ainda.",
+        "lines": "linhas {start} – {end}",
+        "counts": "{callers} chamadores · {callees} chamados",
+        "cardHint": "Clique em qualquer nó para o abrir aqui.",
+        "centre": "Centrar neste",
+        "pathStart": "Usar como início do caminho",
+        "hint": "Pesquise um símbolo",
+        "hintBody": "Escreva pelo menos duas letras, escolha uma correspondência ou prima Enter, e os seus chamadores e chamados são desenhados aqui.",
+        "ambiguous": "Mais de uma correspondência",
+        "ambiguousBody": "Todas as correspondências estão listadas e nenhuma é escolhida por si. Escolha uma para a explorar.",
+        "pick": "Explorar",
+        "notFound": "Indexado, sem correspondência",
+        "notFoundBody": "Esta raiz tem grafo e nada nele corresponde a esse nome. O símbolo pode estar num ficheiro que a construção ignorou, ou pode não existir.",
+        "notBuilt": "Esta raiz ainda não tem grafo",
+        "notBuiltBody": "Nunca foi construída, o que é diferente de vazia. Construa-a e depois explore.",
+        "build": "Construir grafo…",
+        "rootNotBuilt": "Esta raiz ainda não tem grafo",
+        "rootNotBuiltBody": "Nada para desenhar até a raiz ser construída. Construir lê os seus ficheiros e pode demorar alguns minutos num repositório grande.",
+        "noNode": "O daemon respondeu «encontrado» sem símbolo para desenhar.",
+        "unknownState": "O daemon respondeu «{state}» — esta página é anterior a essa resposta.",
+        "pathHint": "Encontre como dois símbolos se ligam",
+        "pathHintBody": "Escreva os nomes de dois símbolos e o caminho entre eles é desenhado aqui.",
+        "pathState": "Resposta do caminho: {state}",
+        "pathStateBody": "Não há caminho para desenhar nessa resposta.",
+        "ariaLabel": "Rede do grafo de código",
+        "refused": "A consulta ao grafo foi recusada"
+      },
+      "probe": {
+        "title": "Experimente uma pesquisa",
+        "subtitle": "O que um agente receberia para um termo",
+        "root": "Raiz",
+        "corpus": "Índice de pesquisa",
+        "query": "Termo",
+        "queryHint": "como são validados os blueprints",
+        "go": "Pesquisar",
+        "count": "{count} resultados, pela ordem do daemon",
+        "keywordOnly": "só palavras-chave — sem embeddings",
+        "empty": "Sem resultados para esse termo.",
+        "note": "Apenas intervalos de ficheiro e pontuações. A pesquisa e o grafo de código continuam a ser duas consultas separadas.",
+        "refused": "A pesquisa foi recusada"
+      }
+    }
+  }
+}

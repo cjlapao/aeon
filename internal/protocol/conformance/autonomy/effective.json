@@ -1,0 +1,38 @@
+{
+  "description": "The autonomy.effective happy path (S56 T6, AL14): what an unattended loop started NOW on the root would get, per registry action, from the SAME pure Plan the start path pins with — one resolver, so the legibility view cannot drift from enforcement. The view uses ZERO seams, so a condition it cannot ask is state cannot-say, never a confident pass. Every non-local action an allow does not cover is deny with the no-grant sentence; the statement says plainly when nothing is granted. The result is the view at top level — no wrapper.",
+  "method": "autonomy.effective",
+  "request": {"jsonrpc": "2.0", "id": 404, "method": "autonomy.effective", "params": {"rootId": "aeon", "origin": "schedule", "labels": ["release"]}},
+  "response": {
+    "jsonrpc": "2.0", "id": 404,
+    "result": {
+      "rootId": "aeon",
+      "origin": "schedule",
+      "evaluatedAt": "2026-11-01T09:15:00Z",
+      "actions": [
+        {
+          "action": "forge.openPR",
+          "class": "outward",
+          "verdict": "run",
+          "because": "forge.openPR · forge.openPR · run — granted by g-8c21 (rev 0)",
+          "grantId": "g-8c21",
+          "conditions": [
+            {"name": "requireBudget", "state": "cannot-say", "sentence": "the budget authority is not wired into this daemon (S55) — the condition cannot be asked, and cannot-say is never met"}
+          ]
+        },
+        {
+          "action": "forge.postReview",
+          "class": "outward",
+          "verdict": "deny",
+          "because": "forge.postReview denied — no autonomy grant on this root covers it (unattended loops run local actions only)"
+        },
+        {
+          "action": "forge.merge",
+          "class": "irreversible",
+          "verdict": "deny",
+          "because": "forge.merge denied — no autonomy grant on this root covers it (unattended loops run local actions only)"
+        }
+      ],
+      "statement": "an unattended loop started now may take: forge.openPR (grant g-8c21)"
+    }
+  }
+}

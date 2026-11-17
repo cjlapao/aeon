@@ -1,0 +1,24 @@
+{
+  "case": "listreviews-with-submitted-at",
+  "method": "GET",
+  "path": "/repos/acme/widget/pulls/7/reviews",
+  "authShape": "Bearer \u003credacted\u003e",
+  "accept": "application/vnd.github+json",
+  "attempts": 1,
+  "wire": "[\n  {\n   \"id\": 71,\n   \"body\": \"approved with a timestamp\",\n   \"state\": \"APPROVED\",\n   \"user\": {\n    \"login\": \"mira\"\n   },\n   \"submitted_at\": \"2026-10-26T09:12:00Z\"\n  }\n ]",
+  "mapped": "[{\"ID\":71,\"PR\":7,\"Body\":\"approved with a timestamp\",\"Verdict\":\"approve\",\"Author\":\"mira\",\"SubmittedAt\":\"2026-10-26T09:12:00Z\"}]",
+  "wireHas": [
+    "id",
+    "body",
+    "state",
+    "user.login",
+    "submitted_at"
+  ],
+  "mappedHas": [
+    "id",
+    "body",
+    "state",
+    "user.login",
+    "submitted_at"
+  ]
+}

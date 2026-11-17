@@ -1,0 +1,365 @@
+{
+  "agents": {
+    "action": {
+      "create": "New agent",
+      "import": "Import",
+      "migrate": "Migrate",
+      "retry": "Ask the daemon again"
+    },
+    "search": {
+      "label": "Search agents",
+      "placeholder": "Name, slug or description…"
+    },
+    "col": {
+      "name": "Name",
+      "slug": "Slug",
+      "updatedAt": "Updated",
+      "actions": "Actions"
+    },
+    "flag": {
+      "firstParty": "first-party",
+      "yours": "yours",
+      "signed": "signed",
+      "unsigned": "unsigned",
+      "none": "—",
+      "shipped": "Shipped",
+      "imported": "Imported"
+    },
+    "row": {
+      "menu": "Actions for {slug}",
+      "view": "View",
+      "edit": "Edit",
+      "duplicate": "Duplicate",
+      "export": "Export",
+      "delete": "Delete"
+    },
+    "table": {
+      "loading": "Asking the daemon for this page…"
+    },
+    "read": {
+      "failed": "The daemon refused this page"
+    },
+    "empty": {
+      "search": "No agent matches “{q}”.",
+      "none": "This store has no agent rows at all. Import a package or run Migrate to put the first-party set in.",
+      "pastEnd": "Page {page} of this order is empty, though the daemon counts {total} agents in all. Go back a page or change the order."
+    },
+    "reason": {
+      "notConnectedTitle": "Not connected",
+      "notConnected": "There is nothing to configure or call. The Status page names the path it tried and offers Reconnect.",
+      "changesOff": "Changes are off until the daemon is back."
+    },
+    "field": {
+      "name": "Name",
+      "nameHint": "A name change does not re-slug: {slug} stays the reference every blueprint, policy and MCP server points at.",
+      "description": "Description",
+      "functionality": "Functionality",
+      "prompt": "Prompt",
+      "promptHint": "The system prompt, as the row stores it — the daemon does not rewrite it on the way in.",
+      "skills": "Skills",
+      "skillsHint": "A list of the skills a card advertises for this agent. Nothing runs from it; it is shown when the agent is exported or discovered.",
+      "metadata": "Metadata",
+      "tech": "Tech",
+      "techHint": "The technologies this agent works in. A flow step that asks for a tech picks the agent that declares it, the closest match first.",
+      "metadataHint": "The raw details, as JSON. The technologies and the minion above are kept here, so change them above rather than by hand.",
+      "avatarType": "Avatar type",
+      "avatarMood": "Avatar mood",
+      "avatarColor": "Avatar colour",
+      "avatarColorHint": "A colour word, not a picker: this is the word the avatar is painted with.",
+      "avatarHint": "The kind of avatar. Most agents are minions.",
+      "avatarNone": "no avatar",
+      "tools": "Tools",
+      "toolsHint": "What the agent may ask for. Pick kits, or choose individual tools.",
+      "handoff": "Report back",
+      "handoffHint": "What the agent must say when it finishes. A step that says it is done but leaves out a required field is sent back."
+    },
+    "create": {
+      "who": "1 · Who is it?",
+      "colour": "Minion colour",
+      "name": "Name",
+      "nameHint": "The slug is made from the name when you create the agent, and cannot be changed afterwards.",
+      "description": "What is it for, in one line?",
+      "descriptionHint": "Shown in the agents list and when a flow picks an agent.",
+      "does": "2 · What should it do?",
+      "prompt": "Instructions",
+      "promptHint": "This is the prompt the agent runs with. You can change it at any time. Markdown works.",
+      "promptPlaceholder": "Tell the agent who it is, the rules it follows and what it should return.",
+      "useSkeleton": "Start from a skeleton",
+      "works": "3 · What does it work with?",
+      "worksHelp": "Pick the technologies it is good at. A flow that chooses an agent by technology only considers agents that declare it. Leave this empty if it is general purpose.",
+      "techLoading": "Loading the technologies…",
+      "uses": "4 · What can it use?",
+      "usesHelp": "Choose what the agent is allowed to do. Start with a kit; you can change it later on the agent’s page.",
+      "later": "The model it runs on is chosen later, on the agent’s page.",
+      "cancel": "Cancel",
+      "submit": "Create agent",
+      "done": "Created {name}. Its page is open, so you can add anything else it needs.",
+      "skeleton0": "You are [who the agent is].",
+      "skeleton2": "Rules",
+      "skeleton3": "- [a rule it always follows]",
+      "skeleton4": "- [a rule it never breaks]",
+      "skeleton6": "Output",
+      "skeleton7": "[what it returns, and in what shape]"
+    },
+    "detail": {
+      "description": "description",
+      "descriptionEmpty": "no description",
+      "functionality": "functionality",
+      "functionalityEmpty": "no functionality",
+      "prompt": "prompt",
+      "promptEmpty": "no prompt",
+      "skills": "skills",
+      "skillsEmpty": "no skills",
+      "metadata": "metadata",
+      "metadataEmpty": "none",
+      "signer": "signer {certificate}",
+      "signerNone": "(no certificate on the row)",
+      "avatar": "avatar",
+      "breadcrumb": "Agent location",
+      "all": "All agents",
+      "editing": "Editing",
+      "done": "Done",
+      "discard": "Cancel"
+    },
+    "readonly": {
+      "immutable": "The slug {slug} stays the same even if you rename the agent. Flows and policies point at it.",
+      "slug": "Slug",
+      "id": "Row id",
+      "version": "Version",
+      "origin": "Origin",
+      "internal": "First-party",
+      "signed": "Signed",
+      "tools": "Tools",
+      "toolsEmpty": "no tools",
+      "temperature": "Temperature",
+      "handoff": "Handoff",
+      "handoffEmpty": "no handoff",
+      "policyAgent": "Policy agent",
+      "bodyHash": "Body hash",
+      "signature": "Signature",
+      "certificate": "Certificate",
+      "createdAt": "Created",
+      "updatedAt": "Updated"
+    },
+    "panel": {
+      "create": "New agent",
+      "createSubtitle": "Give it a name and instructions. You can change anything later, except the slug.",
+      "edit": "Edit agent",
+      "editSubtitle": "Opened with agent.view, so the row you see is the row you post",
+      "edited": "Saved — the daemon edited {slug}",
+      "view": "Agent",
+      "viewSubtitle": "The row as the daemon reads it",
+      "import": "Import an agent",
+      "importSubtitle": "Add an agent from a card file, in three steps.",
+      "loading": "Asking the daemon for the whole row…",
+      "noRow": "The daemon answered, and its answer carried no row to open.",
+      "save": "Save",
+      "saving": "Writing…",
+      "changed": "Draft — changed: {fields}",
+      "unchanged": "Nothing changed yet.",
+      "firstPartyTitle": "First-party row",
+      "tab": {
+        "overview": "Overview",
+        "prompt": "Prompt",
+        "metadata": "Metadata",
+        "history": "History"
+      }
+    },
+    "history": {
+      "title": "History",
+      "proposal": "arrived through proposal {id}",
+      "loading": "Asking the daemon for the ledger…",
+      "failed": "The daemon refused this history",
+      "op": {
+        "create": "Created",
+        "edit": "Edited",
+        "duplicate": "Duplicated",
+        "delete": "Deleted",
+        "import": "Imported",
+        "migrate": "Migrated",
+        "seed": "Updated from the shipped set"
+      },
+      "empty": "No write has ever touched this agent. Every change that does happen will arrive here, stamped with who made it.",
+      "count": "{shown} of {total} changes",
+      "latest": "Last change",
+      "note": "A record of writes to this agent: who, when, and the daemon’s sentence. It is not a diff, and nothing here restores an earlier value.",
+      "elsewhere": "Changes to other agents are not shown here. The activity of every agent is on the Agents page."
+    },
+    "duplicate": {
+      "title": "Duplicate this agent",
+      "subtitle": "Make a copy of {slug} that you can change.",
+      "note": "The copy starts as an exact copy: the same instructions, tools and minion. It is your own agent, so you can change anything about it. The original is not touched.",
+      "name": "Name for the copy",
+      "nameHint": "The copy gets its own slug, made from this name. It never shares the original’s.",
+      "answer": "Created {name}, a copy of the agent. Its page is open.",
+      "step1": "Name the copy"
+    },
+    "export": {
+      "title": "Export this agent",
+      "subtitle": "Make a card for {slug} that another Aeon can import.",
+      "path": "Save it to a file (optional)",
+      "pathHint": "A path on the machine where the daemon runs. Leave it empty to see the card here instead.",
+      "answer": {
+        "path": "Saved. The daemon wrote the card to:",
+        "card": "The card, ready to copy:"
+      },
+      "step1": "Where should the card go?",
+      "help": "A card is a .json file that holds the agent. Give it to someone, or import it on another machine.",
+      "doneFile": "Card saved.",
+      "doneCard": "Here is the card.",
+      "copy": "Copy the card",
+      "copied": "Card copied."
+    },
+    "migrate": {
+      "title": "Migrate agent rows",
+      "body": "The daemon derives agent rows from the plugin lifecycle table and answers how many it created. Anything already there is left alone — a migrate refuses rather than overwrites.",
+      "ledgerNote": "The run is recorded as one ledger entry that names no single agent, so you will find it under Activity on the Agents page rather than beside one row.",
+      "confirm": "Run the migration",
+      "cancel": "Not now",
+      "close": "Close",
+      "answer": "Done: the daemon created {created} agents."
+    },
+    "delete": {
+      "title": "Delete {slug}?",
+      "body": "The row is gone and the ledger keeps the entry naming it. Type the slug to confirm: {slug}. If a blueprint, a policy or an MCP server still points at it, the daemon refuses and names every one — nothing is removed on your behalf.",
+      "confirm": "Delete this agent",
+      "done": "Deleted — the daemon removed {slug}, and the table above has been asked again."
+    },
+    "discard": {
+      "title": "Throw away your changes?",
+      "body": "The panel holds edits that were never sent. Closing it discards them; the row in the store is what the last answer said it was.",
+      "confirm": "Discard the draft",
+      "cancel": "Keep editing"
+    },
+    "title": "Agents",
+    "purpose": "The specialists your flows hand work to.",
+    "unsignedNote": "Unsigned agents are listed here until signing is set up",
+    "footer": {
+      "showing": "Showing {shown} of {total}",
+      "loadMore": "Load more",
+      "loadingMore": "Loading…"
+    },
+    "overview": {
+      "canDo": "What it can do",
+      "nothingDeclared": "This agent declares no functionality or tools.",
+      "details": "Details",
+      "runsOn": "Runs on"
+    },
+    "handoff": {
+      "required": "Required",
+      "optional": "Optional",
+      "none": "Nothing declared. It finishes with its outcome and a short reason, and nothing else is checked.",
+      "name": "Field name",
+      "namePlaceholder": "summary",
+      "purpose": "What it is for",
+      "purposePlaceholder": "What was done, in a sentence",
+      "add": "Add a field",
+      "remove": "Remove this field",
+      "suggested": "Common ones:",
+      "suggestSummary": "What was done, and how it meets the goal",
+      "suggestTests": "Paths of the tests written, or \"none\" with the reason",
+      "suggestQuestions": "What is still unclear, or \"None.\""
+    },
+    "view": {
+      "agents": "All agents",
+      "activity": "Activity"
+    },
+    "activity": {
+      "col": {
+        "when": "When",
+        "change": "Change",
+        "agent": "Agent",
+        "what": "What happened",
+        "by": "By"
+      },
+      "everyAgent": "Every agent",
+      "empty": "The ledger is empty: no agent row has been created, edited, imported, duplicated, deleted or derived since this store began.",
+      "showing": "Showing {shown} of {total}",
+      "note": "A migrate run names no single agent, so it appears here and never on an agent’s own page."
+    },
+    "import": {
+      "title": "Import an agent",
+      "subtitle": "Add an agent from a card file, in three steps.",
+      "step1": "1. Choose the card",
+      "step1Help": "A card is a .json file for one agent. You get one by pressing Export on an agent, or from someone who shared theirs.",
+      "drop": "Drop the card here, or browse for it",
+      "dropHelp": "One .json file, up to 1 MB.",
+      "browse": "Browse files",
+      "step2": "2. Check what you are importing",
+      "step3": "3. Import it",
+      "step3Help": "Aeon checks the card’s signature first. If the card has been changed or cannot be trusted, nothing is added and you are told why.",
+      "run": "Import agent",
+      "running": "Importing…",
+      "chooseFirst": "Choose a card first.",
+      "notJson": "This file is not valid JSON, so it cannot be an agent card. Choose the file you exported from Aeon.",
+      "notCard": "This JSON file has no agent card in it. Choose a file exported from an agent’s Export button.",
+      "tooBig": "This file is larger than 1 MB, which is too big for an agent card.",
+      "wrongType": "Only .json files can be imported.",
+      "summary": {
+        "name": "Name",
+        "slug": "Slug",
+        "version": "Version",
+        "signed": "Signed",
+        "yes": "Yes, it carries a signature",
+        "no": "No"
+      },
+      "unsignedTitle": "This card is not signed",
+      "unsignedBody": "Nobody vouches for who made this agent. You can still import it: you will be asked to confirm first, and it will be marked unsigned.",
+      "done": {
+        "created": "Added {name} to your agents.",
+        "updated": "Updated {name} to version {version}.",
+        "noop": "{name} is already up to date — this version is already stored, so nothing changed.",
+        "other": "The daemon answered: {word}."
+      },
+      "open": "Open {name}",
+      "another": "Import another card",
+      "consent": "Importing here does not show the consent review that the command line shows. The card’s signature is still checked.",
+      "step2Waiting": "Once you choose a card, its name, version and signature appear here so you can check them.",
+      "confirmTitle": "Import an unsigned agent?",
+      "confirmBody": "This card is not signed, so nobody vouches for who made it, and it may be unsafe. An agent can run commands and change files if you give it the tools. Import it only if you trust where it came from. It will be marked unsigned, and every tool you give it will ask for your approval first.",
+      "confirmYes": "Import anyway",
+      "confirmNo": "Cancel",
+      "markedUnsigned": "Marked unsigned. Every tool you give it asks for your approval first."
+    },
+    "tools": {
+      "effect": {
+        "changes": "Changes things",
+        "runs": "Runs commands",
+        "reaches": "Reaches the network",
+        "asks": "Asks",
+        "reads": "Reads"
+      },
+      "none": "No tools yet: this agent can talk, but it cannot act.",
+      "selected": "{total} tools chosen.",
+      "policy": "Tools you choose are allowed for this agent.",
+      "loading": "Loading the tools…",
+      "failed": "The tools could not be listed:",
+      "bashAsks": "Running commands always asks for your approval first, whichever agent runs them. In the chat you can allow it for the rest of the conversation.",
+      "asksEverything": "This agent was imported without a signature, so every tool it holds asks for your approval first.",
+      "placeholder": "Choose what it can use",
+      "search": "Search tools, such as grep or doc",
+      "empty": "No tool matches that.",
+      "asksFirst": "Asks first"
+    },
+    "minion": {
+      "auto": "auto",
+      "change": "Change the minion (now {current})",
+      "hint": "Click to change which minion it is"
+    },
+    "tech": {
+      "placeholder": "Choose the technologies",
+      "search": "Search, such as go or docker",
+      "empty": "No technology matches that."
+    },
+    "section": {
+      "who": "Who is it?",
+      "works": "What does it work with?",
+      "uses": "What can it use?",
+      "reports": "What does it report back?",
+      "reportsHelp": "When the agent finishes, it hands this on to the next step. Name each thing it must say, and what it is for. Mark the ones it may leave out as optional."
+    },
+    "advanced": {
+      "help": "The details most agents never need: the free-text “what it does”, the skills a card advertises, the raw metadata."
+    }
+  }
+}

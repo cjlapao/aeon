@@ -1,0 +1,26 @@
+{
+  "description": "Every chartered root with its revision, summary line and proposed presence \u2014 a details list, never bare ids.",
+  "method": "charter.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "charter.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "charters": [
+        {
+          "rootId": "cmp-root",
+          "name": "alpha",
+          "revision": 3,
+          "summary": "charter r3 by user:peer-1 (person)",
+          "hasProposed": true,
+          "updatedAt": "2026-11-05T09:00:00Z"
+        }
+      ]
+    }
+  }
+}

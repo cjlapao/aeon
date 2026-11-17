@@ -1,0 +1,16 @@
+{
+  "description": "The bounded chain (S30 T5 §2): the shortest connecting sequence WITHIN PathHopBound — and a chain longer than the bound answers `not-found` rather than crawling unbounded (the cost T5 §2 refuses by construction). Each hop carries its kind and its resolution tag: extracted (literal, same file) or inferred (crossed files or disambiguated), because a path that hides which links were guesses is a path nobody can check. Ambiguous ends list candidates and traverse nothing past them.",
+  "method": "graph.path",
+  "request": {"jsonrpc": "2.0", "id": 244, "method": "graph.path", "params": {"componentRoot": "/home/dev/shop", "from": "api.HandleOrderRequest", "to": "billing.ChargePayment"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 244,
+    "result": {
+      "state": "found",
+      "start": {"id": 51, "symbol": "api.HandleOrderRequest", "kind": "function", "filePath": "internal/api/handler.go", "startLine": 38, "endLine": 43, "language": "go"},
+      "hops": [
+        {"kind": "calls", "resolution": "inferred", "to": {"id": 41, "symbol": "order.ProcessOrder", "kind": "function", "filePath": "internal/order/process.go", "startLine": 16, "endLine": 24, "language": "go"}},
+        {"kind": "calls", "resolution": "inferred", "to": {"id": 7, "symbol": "billing.ChargePayment", "kind": "function", "filePath": "internal/billing/charge.go", "startLine": 9, "endLine": 14, "language": "go"}}
+      ]
+    }
+  }
+}

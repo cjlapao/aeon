@@ -1,0 +1,115 @@
+{
+  "description": "The loop tier read (S33 T8, TL10/TL11): every step_turn row (billed assistant turns AND tool_result rows, category-bearing), the compaction rows (D3's queryable second home \u2014 the checkpoint blob stays byte-identical), file and command activity, and BOTH of D2's numbers, always distinct: currentContextTokens is the EstimateTokens over the transcript (what the next call would carry) while cumulativeTokensTotal is TL11's own definition \u2014 'the same number step_turn's rows sum to' (the compaction row rides the rollup tiers with its own usage, not this number). The tool_result row carries NO token fields and costState 'unknown' \u2014 absence is the three-state, a 0 there would be a fabricated number. Composition is the step's recorded context manifest verbatim; null means never recorded, not empty.",
+  "method": "telemetry.loop",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 261,
+    "method": "telemetry.loop",
+    "params": {
+      "stepId": 41
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 261,
+    "result": {
+      "step": {
+        "id": 41,
+        "loopSlug": "walk",
+        "componentRoot": "/home/dev/shop",
+        "phase": "working",
+        "agent": "tester",
+        "attempt": 1,
+        "status": "running",
+        "startedAt": "2026-10-30T09:00:00Z",
+        "endedBy": "",
+        "source": "cli",
+        "cost": {
+          "state": "known",
+          "usd": 0.01
+        }
+      },
+      "turns": [
+        {
+          "id": 1,
+          "stepId": 41,
+          "iteration": 1,
+          "startedAt": "2026-10-30T09:00:01Z",
+          "endedAt": "2026-10-30T09:00:03Z",
+          "wallMs": 2400,
+          "inputTokens": 400,
+          "outputTokens": 60,
+          "costUsd": 0.004,
+          "costState": "known",
+          "route": "sonnet",
+          "category": "assistant_output"
+        },
+        {
+          "id": 2,
+          "stepId": 41,
+          "iteration": 1,
+          "startedAt": "2026-10-30T09:00:03Z",
+          "endedAt": "2026-10-30T09:00:03Z",
+          "wallMs": 12,
+          "costState": "unknown",
+          "route": "sonnet",
+          "category": "tool_result"
+        }
+      ],
+      "compactions": [
+        {
+          "id": 1,
+          "stepId": 41,
+          "startIdx": 2,
+          "endIdx": 14,
+          "estimateBefore": 1800,
+          "estimateAfter": 210,
+          "summaryLen": 412,
+          "inputTokens": 1500,
+          "outputTokens": 90,
+          "costUsd": 0.006,
+          "costState": "known",
+          "occurredAt": "2026-10-30T09:00:04Z"
+        }
+      ],
+      "fileActivities": [
+        {
+          "id": 1,
+          "stepId": 41,
+          "path": "src/checkout.ts",
+          "action": "write",
+          "linesAdded": 18,
+          "linesRemoved": 3,
+          "occurredAt": "2026-10-30T09:00:03Z"
+        }
+      ],
+      "commandActivities": [
+        {
+          "id": 1,
+          "stepId": 41,
+          "command": "make test",
+          "exitCode": 1,
+          "wallMs": 4200,
+          "occurredAt": "2026-10-30T09:00:05Z"
+        }
+      ],
+      "currentContextTokens": 240,
+      "cumulativeTokensTotal": 460,
+      "composition": {
+        "sections": [
+          {
+            "title": "Task",
+            "category": "system_prompt",
+            "chars": 120
+          },
+          {
+            "title": "Workspace",
+            "category": "system_prompt",
+            "chars": 220
+          }
+        ],
+        "systemChars": 340
+      }
+    }
+  }
+}

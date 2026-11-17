@@ -1,0 +1,20 @@
+{
+  "description": "backup.verify refused as a SHAPE error (-32602, not the family's refusal code) because the file param carries a path separator: the param is a BASENAME — the engine resolves it inside the configured backup dirs — and a name with a separator would let a caller ask about a file the daemon never meant to name (BK12's wire-side twin). The full path belongs to the CLI's direct door, which is a different surface with its own rules.",
+  "method": "backup.verify",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 956,
+    "method": "backup.verify",
+    "params": {
+      "file": "../state.db"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 956,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: file is a basename, not a path — \"../state.db\" carries a separator and the socket refuses it; the full path belongs to the CLI's direct door"
+    }
+  }
+}

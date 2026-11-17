@@ -1,0 +1,37 @@
+{
+  "description": "agent.rows asked for more rows than a page may hold and for page zero, and both CLAMP rather than refuse (PG2, PG3). pageSize 5000 lands on the bounds' maximum of 100 and page 0 lands on 1, and the answer ECHOES 100 and 1 — not 5000 and not 0 — so the caller learns what it actually got from the response instead of from an error message it would have to interpret. A cap that silently returned 20 rows under a 5000 request would be a lie of omission; a refusal would be a daemon that cannot answer the reasonable question \"give me a big page\". The clamp with its echo is the third option, and the bounds (20 by default, 100 at most) belong to the store's one AgentRowBounds literal that the door and the query both read.",
+  "method": "agent.rows",
+  "request": {"jsonrpc": "2.0", "id": 121, "method": "agent.rows", "params": {"page": 0, "pageSize": 5000}},
+  "response": {"jsonrpc": "2.0", "id": 121, "result": {
+    "agents": [
+      {
+        "slug": "atlas-dispatch",
+        "name": "Atlas Dispatcher",
+        "description": "Routes incoming work items to the agent best suited to them",
+        "version": "2.1.0",
+        "internal": true,
+        "signed": false,
+        "origin": "first-party",
+        "createdAt": "2026-10-30T09:00:00Z",
+        "updatedAt": "2026-11-02T14:20:00Z"
+      },
+      {
+        "slug": "code-reviewer",
+        "name": "Code Reviewer",
+        "description": "Reviews diffs for regressions and posts findings to the thread",
+        "version": "1.4.0",
+        "internal": false,
+        "signed": true,
+        "origin": "imported",
+        "createdAt": "2026-10-31T11:05:00Z",
+        "updatedAt": "2026-11-01T08:45:00Z"
+      }
+    ],
+    "page": 1,
+    "pageSize": 100,
+    "total": 2,
+    "sort": "name",
+    "dir": "asc",
+    "q": ""
+  }}
+}

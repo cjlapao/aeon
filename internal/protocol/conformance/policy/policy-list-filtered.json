@@ -1,0 +1,41 @@
+{
+  "description": "S45 T2 (PM5): the filtered half of policy.list. Every filter param is stated and ANDed in the one place (policy.Filter, internal/policy) AFTER the fail-closed re-decode — target in its CLI spelling, split on the first colon and rebuilt by ParseTarget. includeExpired is stated explicitly (absent would mean the same true, D6/D8: an audit view does not hide expiry). The rows now carry the additive describe and createdAt: the sentence is policy.Describe's own, printed verbatim (D9 — no surface assembles it), and createdAt is the row's written-at instant byte for byte. No `spec` crosses the list: the raw spec rides policy.get only.",
+  "method": "policy.list",
+  "request": {
+    "jsonrpc": "2.0", "id": 66, "method": "policy.list",
+    "params": {
+      "type": "tool_access",
+      "target": "agent:boss",
+      "source": "operator",
+      "action": "allow",
+      "includeExpired": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 66,
+    "result": {
+      "policies": [
+        {
+          "id": "grant-read-tool",
+          "type": "tool_access",
+          "target": "agent:boss",
+          "action": "allow",
+          "source": "operator",
+          "notAfter": null,
+          "describe": "allows tool \"read\" for agent \"boss\" — authored by operator",
+          "createdAt": "2026-10-20T09:00:00Z"
+        },
+        {
+          "id": "grant-bash",
+          "type": "tool_access",
+          "target": "agent:boss",
+          "action": "allow",
+          "source": "operator",
+          "notAfter": "2026-12-01T00:00:00Z",
+          "describe": "allows tool \"bash\" for agent \"boss\" — expires 2026-12-01T00:00:00Z — authored by operator",
+          "createdAt": "2026-10-21T12:00:00Z"
+        }
+      ]
+    }
+  }
+}

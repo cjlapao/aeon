@@ -1,0 +1,20 @@
+event: response.created
+data: {"type":"response.created","response":{"id":"resp_FIXTURE","status":"in_progress"}}
+
+event: response.output_item.added
+data: {"type":"response.output_item.added","output_index":0,"item":{"type":"message","id":"msg_FIXTURE","role":"assistant"}}
+
+event: response.output_text.delta
+data: {"type":"response.output_text.delta","item_id":"msg_FIXTURE","output_index":0,"content_index":0,"delta":"The README covers installing and the CLI verbs.\n\n"}
+
+event: response.output_text.delta
+data: {"type":"response.output_text.delta","item_id":"msg_FIXTURE","output_index":0,"content_index":0,"delta":"```json\n{\"status\":\"ok\","}
+
+event: response.output_text.delta
+data: {"type":"response.output_text.delta","item_id":"msg_FIXTURE","output_index":0,"content_index":0,"delta":"\"summary\":\"Read README.md on /v1/responses, with reasoning on and tools working.\"}\n```"}
+
+event: response.output_item.done
+data: {"type":"response.output_item.done","output_index":0,"item":{"type":"message","id":"msg_FIXTURE","role":"assistant","status":"completed"}}
+
+event: response.completed
+data: {"type":"response.completed","response":{"id":"resp_FIXTURE","status":"completed","usage":{"input_tokens":1204,"input_tokens_details":{"cached_tokens":384},"output_tokens":64,"output_tokens_details":{"reasoning_tokens":32},"total_tokens":1268}}}

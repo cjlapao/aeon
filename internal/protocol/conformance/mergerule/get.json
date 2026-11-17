@@ -1,0 +1,62 @@
+{
+  "description": "mergerule.get with effective=true: the component's EFFECTIVE merge rule (its own row when it has one, else the root's, else the baseline — the store's resolution) with its source, its revision, its last change from the audit (who, when, and the before/after images as raw JSON) and the autonomy floor's answer — each missing ingredient named with its code and its sentence. A specific read (effective=false) for a component with no row answers source \"none\" with no rule: an honest absence, not an error.",
+  "method": "mergerule.get",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1031,
+    "method": "mergerule.get",
+    "params": {
+      "componentId": "c-aeon",
+      "effective": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1031,
+    "result": {
+      "componentId": "c-aeon",
+      "source": "own",
+      "rule": {
+        "componentId": "c-aeon",
+        "enabled": true,
+        "requireLocal": true,
+        "requireDod": "all_met",
+        "requiredChecks": [
+          "ci/build",
+          "ci/lint"
+        ],
+        "checksPolicy": "reported_green",
+        "noChecks": "refuse",
+        "reviewMode": "forge",
+        "aeonReviewAgents": [
+          "code-reviewer"
+        ],
+        "requireThreadsResolved": true,
+        "method": "squash",
+        "revision": 4,
+        "source": "own",
+        "updatedAt": "2026-11-02T12:10:00Z"
+      },
+      "lastChange": {
+        "componentId": "c-aeon",
+        "revision": 4,
+        "op": "set",
+        "actorKind": "user",
+        "actorId": "1000",
+        "summary": "require_dod: none → all_met",
+        "before": "{\"enabled\":true,\"requireLocal\":true,\"requireDod\":\"none\",\"requiredChecks\":[\"ci/build\",\"ci/lint\"],\"checksPolicy\":\"reported_green\",\"noChecks\":\"refuse\",\"reviewMode\":\"forge\",\"aeonReviewAgents\":[\"code-reviewer\"],\"requireThreadsResolved\":true,\"method\":\"squash\"}",
+        "after": "{\"enabled\":true,\"requireLocal\":true,\"requireDod\":\"all_met\",\"requiredChecks\":[\"ci/build\",\"ci/lint\"],\"checksPolicy\":\"reported_green\",\"noChecks\":\"refuse\",\"reviewMode\":\"forge\",\"aeonReviewAgents\":[\"code-reviewer\"],\"requireThreadsResolved\":true,\"method\":\"squash\"}",
+        "at": "2026-11-02T12:10:00Z"
+      },
+      "floor": {
+        "ok": false,
+        "missing": [
+          {
+            "code": "checks-not-binding",
+            "sentence": "no required check is bound to the forge — with requiredChecks naming ci/build and ci/lint, the checks policy cannot be satisfied by the forge's report alone"
+          }
+        ]
+      }
+    }
+  }
+}

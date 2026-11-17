@@ -1,0 +1,26 @@
+{
+  "description": "agent.rows searched for a term that IS LIKE's metacharacter vocabulary, and the answer is literal (PG5). The term is matched over slug, name and description with LIKE … ESCAPE '\\', and paging.Like escapes \\, % and _ before wrapping the term, so \"100%_sure\" finds the one row whose text contains those characters and not the rows a raw pattern would sweep in — \"100Xsure\", \"1000sure\", half the store. The escaped pattern is bound as a PARAMETER, never spliced into the SQL text, and `q` echoes the caller's own trimmed term rather than the pattern, because the pattern is the daemon's business. `total` is the count of the FILTERED set (1, not the whole roster), which is what makes the table's \"1 of 7\" honest instead of decorative.",
+  "method": "agent.rows",
+  "request": {"jsonrpc": "2.0", "id": 123, "method": "agent.rows", "params": {"q": "  100%_sure  "}},
+  "response": {"jsonrpc": "2.0", "id": 123, "result": {
+    "agents": [
+      {
+        "slug": "metrics-notes",
+        "name": "Metrics Notes",
+        "description": "Tracks the 100%_sure metric exactly as the store holds it",
+        "version": "0.3.0",
+        "internal": false,
+        "signed": false,
+        "origin": "imported",
+        "createdAt": "2026-11-01T16:30:00Z",
+        "updatedAt": "2026-11-03T09:10:00Z"
+      }
+    ],
+    "page": 1,
+    "pageSize": 20,
+    "total": 1,
+    "sort": "name",
+    "dir": "asc",
+    "q": "100%_sure"
+  }}
+}

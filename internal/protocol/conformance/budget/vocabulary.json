@@ -1,0 +1,27 @@
+{
+  "description": "budget.vocabulary: the closed sets the forms and the CLI build from (rule 4) — scopes, windows, dimensions, unknown policies, statuses, event kinds and refusal kinds come from the DAEMON, never a client copy. A literal in the client is a second truth that drifts when the set widens; this read is the one place the sets are named, and a new value anywhere else is a bug the CLI's grep test (TestBudgetVocabularyHasNoClientCopy) exists to catch.",
+  "method": "budget.vocabulary",
+  "request": {
+    "jsonrpc": "2.0", "id": 609, "method": "budget.vocabulary",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 609,
+    "result": {
+      "scopes": ["workspace", "component", "epic", "loop"],
+      "windows": ["lifetime", "day"],
+      "dimensions": ["usd", "tokens", "wall-time", "steps"],
+      "unknownPolicies": ["proceed", "stop"],
+      "statuses": ["ok", "warn", "hit"],
+      "eventKinds": ["created", "changed", "removed", "raised", "hit", "warned"],
+      "refusalKinds": [
+        "no-dimension", "negative-cap", "warn-pct", "workspace-subject", "unknown-subject", "duplicate",
+        "confirm-required", "confirm-mismatch",
+        "wrong-budget", "wrong-dimension",
+        "no-cap", "below-floor", "lowering",
+        "running", "stopped", "waiting-question", "blocked", "idle", "terminal",
+        "storeless"
+      ]
+    }
+  }
+}

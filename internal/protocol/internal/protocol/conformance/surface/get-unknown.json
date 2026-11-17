@@ -1,0 +1,26 @@
+{
+  "description": "TODO",
+  "method": "surface.get",
+  "request": {
+    "id": 706,
+    "jsonrpc": "2.0",
+    "method": "surface.get",
+    "params": {
+      "method": "loop.shwo"
+    }
+  },
+  "response": {
+    "error": {
+      "code": -31913,
+      "data": {
+        "what": "the surface.get read named \"loop.shwo\", which this daemon does not register; the nearest names are: \"loop.show\", \"loop.get\", \"loop.list\"",
+        "means": "the classification answered cleanly and the method is simply absent from this build — a conditional family whose seam was never wired is ABSENT here, which is the answer and not an error",
+        "todo": "read the names in `what` (the nearest registered methods), or call `surface.list` to see the whole surface and the doors that reach each method",
+        "fatal": false
+      },
+      "message": "no such method"
+    },
+    "id": 706,
+    "jsonrpc": "2.0"
+  }
+}

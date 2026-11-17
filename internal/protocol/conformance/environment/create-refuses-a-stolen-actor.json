@@ -1,0 +1,28 @@
+{
+  "description": "S59 T6 (EV17) at the DOOR, before any service runs: params carrying `actor` are refused with the transport's bad-params code and the refusal NAMES the key. The actor is the connection's peer, taken from the socket's peer credentials (P26); a caller that could name an author could write the audit as somebody who was not there. fromDoor is why the walker dispatches this one against a HEALTHY seam \u2014 the refusal must happen whether or not a service exists. The refusal is a transport-level condition, so it keeps JSON-RPC's own code and carries no `data` (conformance/README): the shape of params is a protocol fact, not an Aeon refusal with a kind a client branches on.",
+  "method": "environment.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 915,
+    "method": "environment.create",
+    "params": {
+      "slug": "ci",
+      "name": "CI",
+      "backend": "host-scrubbed",
+      "spec": "{\"home\":\"real\"}",
+      "actor": {
+        "kind": "agent",
+        "id": "step-7"
+      }
+    }
+  },
+  "fromDoor": true,
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 915,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: environment.create params carry \"actor\" \u2014 the caller names what to act on, never who acted, when it happened, which origin it carries, or where a value lives (S59 EV7, EV17)"
+    }
+  }
+}

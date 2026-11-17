@@ -1,0 +1,22 @@
+{
+  "description": "The post-merge watch answered red: a check failed on the merged sha, the watch has ended, and the filer filed exactly one deduped unvalidated bug (VG5, VG16). The payload names the bug (bugId) and the aggregate's one-line reason — ids and enums only, never the check's output. A second red for the same subject bumps the ledger's count and emits a further red event with the SAME bug id, never a second bug.",
+  "event": "merge.watch.red",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1702,
+      "kind": "merge.watch.red",
+      "at": "2026-11-02T11:41:00Z",
+      "payload": {
+        "watch": "me-1",
+        "componentRoot": "/repos/aeon",
+        "sha": "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0",
+        "pr": 7,
+        "reason": "check build is failure",
+        "bugId": 12
+      }
+    }
+  }
+}

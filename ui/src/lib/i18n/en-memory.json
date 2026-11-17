@@ -1,0 +1,134 @@
+{
+  "settings": {
+    "memory": {
+      "title": "Memory",
+      "subtitle": "What the daemon remembers, who told it, and how the memories connect.",
+      "reconnecting": "The daemon is reconnecting — reads still work, writes wait.",
+      "vocabulary": {
+        "failed": "The daemon''s vocabulary could not be read — until it is, this panel names no scopes, no provenances, and quotes no authority."
+      },
+      "actions": {
+        "retry": "Retry",
+        "close": "Close",
+        "retract": "Retract…",
+        "restore": "Restore…",
+        "confirmRetract": "Yes — stamp it retracted",
+        "confirmRestore": "Yes — restore it",
+        "decline": "No — change nothing"
+      },
+      "filters": {
+        "scope": "Scope",
+        "provenance": "Provenance",
+        "tag": "Tag",
+        "agent": "Agent slug",
+        "project": "Project root",
+        "loop": "Source loop slug",
+        "any": "any",
+        "includeRetracted": "Include retracted rows (the daemon excludes them by default)",
+        "includeRetractedShort": "Include retracted"
+      },
+      "board": {
+        "loading": "Asking the daemon…",
+        "failed": "The board could not be read",
+        "empty": "This board answered empty — for these filters, as the daemon filtered them."
+      },
+      "row": {
+        "open": "Open",
+        "retracted": "retracted",
+        "retractionStamp": "stamped: {stamp}",
+        "fromLoop": "from loop {slug}"
+      },
+      "act": {
+        "refused": "The daemon refused this act — its words, unchanged:",
+        "nothingChanged": "Nothing was written — the row already stood exactly so (an idempotent act leaves no audit line).",
+        "locked": "The connection is not current — reads show, writes wait.",
+        "refusedTitle": "The daemon refused this act"
+      },
+      "confirm": {
+        "lawMissing": "The daemon''s retract law has not been read yet — until it is, this confirm shows nothing invented.",
+        "reason": "Reason (required, {min}..{max} bytes — the bound is the daemon''s)",
+        "reasonUnknown": "Reason (the daemon''s bound applies; its vocabulary is not loaded to quote it)",
+        "reasonHint": "The reason rides the audit line and the stamp verbatim — the plane refuses an empty one."
+      },
+      "history": {
+        "title": "audit career",
+        "failed": "The audit trail could not be read:",
+        "empty": "No audit lines for this id."
+      },
+      "agent": {
+        "title": "What would this agent see?",
+        "subtitle": "The readable set and the daemon''s own order, byte-equal to what the prompt builder would inject.",
+        "picker": "Agent",
+        "query": "Optional query",
+        "queryHint": "type to ask the set against a query…",
+        "needAgent": "Nothing asked yet — name an agent slug; an unknown slug answers its own refusal.",
+        "refused": "The daemon refused this question verbatim:",
+        "empty": "This agent''s readable set answered empty — for this slug and this query.",
+        "why": "why: {basis}",
+        "col": {
+          "rank": "Rank",
+          "provenance": "Provenance",
+          "learning": "Learning",
+          "why": "Why it is here"
+        }
+      },
+      "help": {
+        "title": "What is memory?",
+        "body": "## What is memory?\n\nA **learning** is one thing the daemon has been told or has seen, kept so it can be used later. Each one records **who said it** and how sure that is:\n\n- **Told**: a person said it.\n- **Observed**: the daemon saw it happen, for example in a finished loop. The ×N badge says how many times.\n- **Assumed**: nobody confirmed it.\n- **Relayed**: it came through another channel.\n\nA learning belongs to a **scope**: a person, a project (a component root) or one agent.\n\n## The map\n\nEach dot is a learning. Lines join learnings that share a **tag** or came from the same **loop**, and dots with the same main tag sit together. The layout is computed from those links. It does not measure what the memories mean.\n\n## Nothing is deleted\n\nA learning can be **retracted** with a reason, and restored later. The history of every change is kept. An agent may only *propose* a retraction; nothing is applied until you commit it under **Proposals**."
+      },
+      "hint": {
+        "knowledge": "Click a dot or a card to read a memory, see what it links to, and retract or restore it.",
+        "agent": "Pick an agent to see the exact memories its prompt would be given, in the daemon’s own order.",
+        "proposals": "An agent may only propose retracting a memory. Nothing is applied until a person commits it."
+      },
+      "tabs": {
+        "knowledge": "Knowledge",
+        "agent": "What an agent sees",
+        "proposals": "Proposals"
+      },
+      "mapNote": "The map groups learnings by their main tag and joins those that share a tag or a loop. It is computed from those links, not from what the text means.",
+      "filtersTitle": "Narrow what is loaded",
+      "count": "{shown} memories on the map",
+      "kit": {
+        "library": "Memories",
+        "map": "Map",
+        "details": "Details",
+        "search": "Search memories",
+        "kind": "Type",
+        "status": "Status",
+        "topic": "Main tag",
+        "all": "All",
+        "cards": "Cards",
+        "list": "List",
+        "empty": "No memories match these filters.",
+        "noResults": "No memory matches this search.",
+        "selectMemory": "Pick a dot or a card to read a memory.",
+        "sources": "Where it came from",
+        "noSources": "No source loop was recorded for it.",
+        "related": "Shares a tag or loop with",
+        "topicLayout": "Grouped by main tag",
+        "projectionNote": "Positions are computed from shared tags and loops, not from what the memories mean.",
+        "relationships": "Links",
+        "ungrouped": "No shared tag",
+        "kinds": {
+          "lesson": "Learning",
+          "decision": "Decision",
+          "convention": "Convention",
+          "pitfall": "Pitfall",
+          "code": "Code",
+          "documentation": "Documentation"
+        },
+        "statuses": {
+          "active": "Told, observed or relayed",
+          "needs-review": "Assumed",
+          "superseded": "Superseded",
+          "archived": "Retracted"
+        }
+      },
+      "q": {
+        "acts": "What can you do with it?"
+      },
+      "pendingHint": "Memories without a vector are not on the map. To place the rest, run `aeon learnings embed --scope <scope> --scope-key <key>` once per scope, then reload."
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "description": "verify.list with effective=true over a child component: its own gate (memoryMb declared, a last passing loop run, the policy preview as the daemon's own verdict sentence) plus the root's gate marked with its source pair (source=root, sourceComponent names the supplier), last run failed with the daemon's counts reason. This is the read the Gates panel's source chips render — the shape list.json's description promised and this file now carries.",
+  "method": "verify.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1002,
+    "method": "verify.list",
+    "params": {
+      "componentId": "c-child",
+      "effective": true,
+      "includeArchived": false,
+      "requirement": ""
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1002,
+    "result": {
+      "componentId": "c-child",
+      "effective": true,
+      "gates": [
+        {
+          "id": "vcm-10",
+          "componentId": "c-child",
+          "name": "unit",
+          "command": "go test ./...",
+          "requirement": "required",
+          "timeoutS": 600,
+          "memoryMb": 512,
+          "position": 1,
+          "enabled": true,
+          "origin": "manual",
+          "createdAt": "2026-11-01T09:00:00Z",
+          "updatedAt": "2026-11-02T10:00:00Z",
+          "source": "own",
+          "sourceComponent": "c-child",
+          "lastRun": {
+            "id": "vr-301",
+            "state": "pass",
+            "trigger": "loop",
+            "startedAt": "2026-11-02T10:30:00Z",
+            "endedAt": "2026-11-02T10:31:12Z"
+          },
+          "policyPreview": "the policy gate allows this command as the verifier-engineer: allow — command_access: exact rule match"
+        },
+        {
+          "id": "vc-1",
+          "componentId": "c-aeon",
+          "name": "fmt",
+          "command": "gofmt -l .",
+          "requirement": "advisory",
+          "timeoutS": 60,
+          "position": 2,
+          "enabled": true,
+          "origin": "manual",
+          "createdAt": "2026-10-20T08:00:00Z",
+          "updatedAt": "2026-10-20T08:00:00Z",
+          "source": "root",
+          "sourceComponent": "c-aeon",
+          "lastRun": {
+            "id": "vr-9",
+            "state": "fail",
+            "reason": "1 advisory gate failed",
+            "trigger": "loop",
+            "startedAt": "2026-11-01T18:00:00Z",
+            "endedAt": "2026-11-01T18:00:02Z"
+          },
+          "policyPreview": "the policy gate would refuse this command as the verifier-engineer: deny — command_access: no rule matches \"gofmt -l .\""
+        }
+      ]
+    }
+  }
+}

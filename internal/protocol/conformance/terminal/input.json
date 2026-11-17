@@ -1,0 +1,9 @@
+{
+  "description": "`terminal.input` writes to the terminal's PTY. Input is a UTF-8 string (Q3); output goes the other way as base64 in terminal.output notifications because a shell can produce non-UTF-8 bytes. The session outlives the connection, not the daemon (LW9).",
+  "method": "terminal.input",
+  "request": {
+    "jsonrpc": "2.0", "id": 91, "method": "terminal.input",
+    "params": { "terminalId": "t-7f3a", "data": "echo hi\n" }
+  },
+  "response": { "jsonrpc": "2.0", "id": 91, "result": {} }
+}

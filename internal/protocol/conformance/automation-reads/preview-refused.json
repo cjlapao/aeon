@@ -1,0 +1,30 @@
+{
+  "description": "A preview the ENGINE refused \u2014 the validator\u2019s own sentence rides verbatim in what, because the preview is honest by being the engine and a paraphrase would be a second authority.",
+  "method": "automation.preview",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8212,
+    "method": "automation.preview",
+    "params": {
+      "spec": {
+        "expr": "0 7 * * *",
+        "zone": "Mars/Olympus_Mons"
+      },
+      "n": 1
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8212,
+    "error": {
+      "code": -31891,
+      "message": "automation preview refused",
+      "data": {
+        "what": "zone \"Mars/Olympus_Mons\" is not an IANA timezone (unknown time zone Mars/Olympus_Mons) \u2014 names are Area/Location, like \"Europe/London\" or \"America/Santiago\"; abbreviations like \"BST\" are not zones",
+        "means": "the preview runs the SAME loader the clock and the write doors run: what it refuses here it would refuse at save and at fire, so the preview is honest by being the engine",
+        "todo": "fix the expression, the zone, or the rule per the sentence in `what`; `automation.vocabulary` prints the grammar's rules and the zones the loader accepts",
+        "fatal": false
+      }
+    }
+  }
+}

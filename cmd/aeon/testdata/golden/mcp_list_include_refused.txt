@@ -1,0 +1,16 @@
+golang-engineer
+  core:
+    edit                    
+    list                    
+    read                    
+  (the core set — S11 owns their verdicts; MCP adds nothing here until configured)
+  gitforge  (public)
+    gitforge.read_pr         — unavailable: no ToolAccess allow rule grants gitforge.read_pr (MC10)
+  labnote  (private)
+    labnote.scratch          — unavailable: no ToolAccess allow rule grants labnote.scratch (MC10)
+  search  (public)
+    search.query             — unavailable: no ToolAccess allow rule grants search.query (MC10)
+    gitforge.mystery         — unavailable: gitforge.mystery is unclassified and cannot be called — no re-run class, no effect class (MC6)
+  MCP server "labnote" did not answer — its tools are reported absent, not silently dropped: mcp: server "labnote": spawning aeon-golden-private: exec: "aeon-golden-private": executable file not found in $PATH
+  MCP server "gitforge" did not answer — its tools are reported absent, not silently dropped: mcp: server "gitforge": spawning aeon-golden-nonexistent: exec: "aeon-golden-nonexistent": executable file not found in $PATH
+  MCP server "search" did not answer — its tools are reported absent, not silently dropped: mcp: server "search": initialize: Post "http://127.0.0.1:1/mcp": dial tcp 127.0.0.1:1: connect: connection refused

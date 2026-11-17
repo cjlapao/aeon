@@ -1,0 +1,30 @@
+{
+  "description": "CN2 at the wire: `actor` in params is refused BY KEY before anything else — the scheduler's actor is the CONNECTION's peer credential, and an authority row whose author a caller could type is an authority record with forged history. The same key-ban covers status and source.",
+  "method": "scheduler.enable",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 415,
+    "method": "scheduler.enable",
+    "params": {
+      "actor": {
+        "kind": "user",
+        "id": "someone-else"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 415,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: \"actor\" is not a parameter — the scheduler's actor comes from the connection's peer credential, never from params (CN2)",
+      "data": {
+        "what": null,
+        "means": null,
+        "todo": null,
+        "fatal": false
+      }
+    }
+  },
+  "fromDoor": true
+}

@@ -1,0 +1,47 @@
+{
+  "description": "A candidate rule tested against a sample event BEFORE saving: per-key verdicts and the canonical stored form \u2014 the editor\u2019s dry check over the one grammar.",
+  "method": "automation.test",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8208,
+    "method": "automation.test",
+    "params": {
+      "match": {
+        "event": "task.created",
+        "task_type": [
+          "bug"
+        ]
+      },
+      "sample": {
+        "event": "task.created",
+        "taskType": "bug"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8208,
+    "result": {
+      "matches": true,
+      "perKey": [
+        {
+          "key": "event",
+          "want": [
+            "task.created"
+          ],
+          "have": "task.created",
+          "ok": true
+        },
+        {
+          "key": "task_type",
+          "want": [
+            "bug"
+          ],
+          "have": "bug",
+          "ok": true
+        }
+      ],
+      "canonical": "{\"event\":\"task.created\",\"task_type\":[\"bug\"]}"
+    }
+  }
+}

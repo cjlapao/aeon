@@ -1,0 +1,3 @@
+variable "greeting" {
+  default = "hi"
+}

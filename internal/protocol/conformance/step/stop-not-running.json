@@ -1,0 +1,12 @@
+{
+  "description": "Stopping a step with no live run is NOT an error — `stopped: false` says plainly that there was nothing to interrupt, whether it already finished or was already stopped.",
+  "method": "step.stop",
+  "request": {
+    "jsonrpc": "2.0", "id": 72, "method": "step.stop",
+    "params": { "stepId": 9 }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 72,
+    "result": { "stepId": 9, "stopped": false }
+  }
+}

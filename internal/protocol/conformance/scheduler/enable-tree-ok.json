@@ -1,0 +1,27 @@
+{
+  "description": "CN2's bulk expansion: the template validated once, rows landed for the repositories that exist NOW, and the answer says the law the rows embody — a repository attached later keeps its own authority (TestEnableTreeExpandsOnceAndDoesNotFollow).",
+  "method": "scheduler.enableTree",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 411,
+    "method": "scheduler.enableTree",
+    "params": {
+      "rootId": "cmp_project_1",
+      "blueprint": "aeon-build",
+      "minPriority": "known"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 411,
+    "result": {
+      "roots": [
+        "/srv/components/alpha",
+        "/srv/components/beta"
+      ],
+      "count": 2,
+      "note": "enabled for the repositories that exist NOW — a repository attached later keeps its own authority (CN6)"
+    }
+  },
+  "fromDoor": true
+}

@@ -1,0 +1,18 @@
+{
+  "description": "The settings.set no-op case (S44 T5): a value that is ALREADY the stored value writes nothing and reports changed=false — a re-set of the same value must not stamp a new audit row, so a client that watches the history sees no phantom write. The SettingView is still returned (the row the value resolves to), so the UI can confirm \"this is already set\"; changed=false is the signal a caller uses to skip a re-write. set is the only door that changes a value, and a no-op is not a change (P31's one-resolution rule: the answer is the store's own, never a handler-rewritten one).",
+  "method": "settings.set",
+  "request": {"jsonrpc": "2.0", "id": 304, "method": "settings.set", "params": {"key": "test.flag", "value": "true"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 304,
+    "result": {
+      "setting": {
+        "key": "test.flag", "area": "test", "type": "bool", "default": "false",
+        "description": "A test boolean setting.", "sensitive": false,
+        "value": "true", "source": "database", "stored": "true",
+        "shadowedBy": "", "envInvalid": "", "storedInvalid": false,
+        "updatedAt": "2026-10-30T11:30:00Z", "updatedBy": "user:1000"
+      },
+      "changed": false
+    }
+  }
+}

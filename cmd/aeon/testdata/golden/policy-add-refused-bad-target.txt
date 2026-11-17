@@ -1,0 +1,4 @@
+$ aeon policy add --type tool_access --id bad-target --target agentt:alice --action deny --tool bash
+! unknown target kind "agentt"
+$ aeon policy list
+no policies. default is DENY (PL5) — nothing is granted until something grants it.

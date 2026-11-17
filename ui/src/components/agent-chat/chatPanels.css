@@ -1,0 +1,69 @@
+.chat-composer-anchor { position: relative; flex-shrink: 0; }
+.chat-panels {
+  position: absolute; bottom: calc(100% + 8px); left: 12px; right: 12px;
+  z-index: 20;
+  overflow: visible; padding: 0;
+  pointer-events: none;
+}
+.chat-panels > * { pointer-events: auto; min-width: 0; }
+.chat-panel-stack { display: flex; flex-direction: column; gap: 8px; padding: 3px; }
+.chat-panel-stack > * { flex-shrink: 0; min-width: 0; }
+.chat-panel-viewport { overscroll-behavior: contain; }
+/* S77: the ui-kit Panel (variant "simple", tone from the app theme) owns the
+   surface — background, border, radius and shadow. This class is content only. */
+.chat-panel {
+  color: #334155; overflow: hidden;
+  font-size: 14px; line-height: 1.5;
+}
+.dark .chat-panel { color: #e2e8f0; }
+.chat-panel-heading { display: flex; align-items: center; gap: 10px; padding: 10px 14px; min-width: 0; }
+.chat-panel-heading strong { font-weight: 500; overflow-wrap: anywhere; }
+.chat-panel-disclosure { width: 100%; text-align: left; cursor: pointer; background: transparent; color: inherit; border: 0; font: inherit; flex-wrap: wrap; }
+.chat-panel-muted { color: #64748b; }
+.dark .chat-panel-muted { color: #a1a1aa; }
+.chat-panel-chevron, .chat-panel-close { margin-left: auto; }
+.chat-panel-close { display: grid; place-items: center; background: transparent; border: 0; color: inherit; cursor: pointer; width: 28px; height: 28px; border-radius: 6px; }
+.chat-panel-body {
+  min-height: 0; max-height: min(180px, 24vh, max(0px, calc(var(--chat-panels-height, 30vh) - 100px)));
+  max-height: min(180px, 24dvh, max(0px, calc(var(--chat-panels-height, 30dvh) - 100px)));
+}
+.chat-task-scroll { max-height: min(222px, 40vh, var(--chat-task-height, 40vh));
+  max-height: min(222px, 40dvh, var(--chat-task-height, 40dvh)); }
+.chat-panel-body[hidden] { display: none; }
+.chat-panel-items, .chat-panel-tasks { list-style: none; padding: 0 6px 6px; margin: 0; }
+.chat-panel-row { display: flex; gap: 10px; align-items: center; width: 100%; padding: 8px; border: 0; border-radius: 6px; background: transparent; color: inherit; text-align: left; font: inherit; }
+button.chat-panel-row { cursor: pointer; }
+button.chat-panel-row:hover:not(:disabled), .chat-panel-close:hover { background: #64748b20; }
+.chat-panel-row:disabled, .chat-panel-row[aria-disabled=true] { opacity: .45; cursor: default; }
+.chat-panel button:focus-visible { outline: 2px solid var(--aeon-accent-text, #60a5fa); outline-offset: -3px; }
+.chat-panel-item-text { display: flex; flex-wrap: wrap; column-gap: 10px; min-width: 0; overflow-wrap: anywhere; }
+.chat-panel-description { padding: 0 14px 8px; margin: 0; }
+.chat-panel-empty { margin: 0; padding: 10px 14px 14px; color: #64748b; }
+.dark .chat-panel-empty { color: #a1a1aa; }
+.chat-panel-tasks li { display: flex; align-items: baseline; gap: 10px; padding: 7px 8px; }
+.chat-task-mark { width: 18px; text-align: center; flex-shrink: 0; color: #64748b; }
+[data-status=in_progress] .chat-task-mark { color: var(--aeon-accent-text, #60a5fa); }
+[data-status=completed] .chat-task-mark { color: #16a34a; }
+[data-status=failed] .chat-task-mark { color: #f87171; }
+/* The item being worked on right now: a ring that turns. Off under reduced
+   motion, where the blue colour of the row still says "in progress". */
+.chat-task-spinner { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 2px solid currentColor; border-right-color: transparent; vertical-align: -1px; animation: chat-task-spin 0.9s linear infinite; }
+@keyframes chat-task-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .chat-task-spinner { animation: none; border-right-color: currentColor; opacity: 0.6; } }
+.chat-task-label { min-width: 0; overflow-wrap: anywhere; }
+.chat-task-agent { margin-left: auto; font-size: 12px; overflow-wrap: anywhere; }
+.chat-panel-deck { padding-top: 4px; }
+.chat-picker { z-index: 30; pointer-events: auto; }
+
+.chat-persistent-heading { display: flex; align-items: center; }
+.chat-persistent-heading .chat-panel-disclosure { flex: 1; min-width: 0; flex-wrap: nowrap; }
+.chat-persistent-heading strong { white-space: nowrap; flex-shrink: 0; }
+.chat-persistent-summary { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chat-persistent-actions { display: flex; gap: 6px; padding-right: 12px; flex-shrink: 0; }
+.chat-persistent-actions button { display: grid; place-items: center; background: transparent; border: 0; color: inherit; cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+.chat-persistent-content { padding: 0 14px 12px; overflow-wrap: anywhere; }
+.chat-persistent-content textarea { width: 100%; min-height: 100px; padding: 8px; background: transparent; border: 1px solid #64748b66; border-radius: 6px; color: inherit; resize: vertical; }
+@media (max-width: 480px) {
+  .chat-panels { left: 4px; right: 4px; }
+  .chat-task-agent { max-width: 30%; }
+}

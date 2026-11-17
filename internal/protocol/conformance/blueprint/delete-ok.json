@@ -1,0 +1,21 @@
+{
+  "description": "Deletes an unreferenced user blueprint's row and derived refs \u2014 never its revision history \u2014 reporting that loops started from it are untouched because they carry their pinned content.",
+  "method": "blueprint.delete",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 83,
+    "method": "blueprint.delete",
+    "params": {
+      "name": "my-pipeline"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 83,
+    "result": {
+      "deleted": true,
+      "loopsStartedFromIt": 0,
+      "note": "started loops keep their pinned content"
+    }
+  }
+}

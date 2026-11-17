@@ -1,0 +1,36 @@
+{
+  "description": "`routes.probe` (S18 T3): the operator's ONE minimal request per route, and the verdict it earned. `saved` says the earned verdicts reached the store and survive a restart; `verified` and `contradicted` carry the instant they were measured and the model they were measured against (O2) — a cached verdict without them cannot be aged. A `declared` flag the probe could not settle appears with its reason and no timestamp: the probe never earned an opinion about it, and the declaration was never rewritten (I5). Nothing here fired on its own — M32 makes the operator's call the only door.",
+  "method": "routes.probe",
+  "request": {
+    "jsonrpc": "2.0", "id": 78, "method": "routes.probe",
+    "params": { "route": "local-claiming" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 78,
+    "result": {
+      "route": "local-claiming",
+      "saved": true,
+      "probes": [
+        {
+          "capability": "tools",
+          "state": "verified",
+          "detail": "the request carried a tool declaration and the stream completed — the server accepted tools",
+          "probedAt": "2026-10-26T09:00:00Z",
+          "probedModel": "llama3.2:1b"
+        },
+        {
+          "capability": "streaming-usage",
+          "state": "contradicted",
+          "detail": "the stream completed with no usage at all, although the adapter asked for usage in the stream by the provider's standard means",
+          "probedAt": "2026-10-26T09:00:00Z",
+          "probedModel": "llama3.2:1b"
+        },
+        {
+          "capability": "system-role",
+          "state": "declared",
+          "detail": "not cheaply probable: a silently-ignored system message looks exactly like a honoured one in one request"
+        }
+      ]
+    }
+  }
+}

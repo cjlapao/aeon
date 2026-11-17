@@ -1,0 +1,6 @@
+{
+  "description": "An empty filter matches everything, stated explicitly. This is what the app's dashboard subscribes with; an empty filter that matched nothing would make `aeon watch` with no flags silently useless.",
+  "method": "subscribe",
+  "request": {"jsonrpc": "2.0", "id": 7, "method": "subscribe", "params": {"filter": {}}},
+  "response": {"jsonrpc": "2.0", "id": 7, "result": {"subscriptionId": "s-11223344", "from": 1}}
+}

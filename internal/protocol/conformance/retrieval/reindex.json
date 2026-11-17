@@ -1,0 +1,21 @@
+{
+  "description": "`retrieval.reindex` runs one DELIBERATE pass over one NAMED corpus (O8) — the same function `aeon index rebuild` calls (D15). It never fires on its own: not from status, not from a stale `search.query`, not on daemon start (V21, spy-asserted). `force` is the V17 restatement required to rebuild a corpus onto a different embedding model; without it a mismatch refuses and prices. `embeddedUsd` absent means the cost was not known — never $0.",
+  "method": "retrieval.reindex",
+  "request": {"jsonrpc": "2.0", "id": 94, "method": "retrieval.reindex", "params": {
+    "componentRoot": "/home/dev/aeon",
+    "corpus": "code"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 94,
+    "result": {
+      "corpus": "code",
+      "files": 1204,
+      "chunksWritten": 210,
+      "deleted": 12,
+      "skips": 3,
+      "embedded": 210,
+      "embeddedUsd": 0.0412,
+      "costKnown": true
+    }
+  }
+}

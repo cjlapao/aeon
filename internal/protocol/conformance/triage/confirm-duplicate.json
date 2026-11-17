@@ -1,0 +1,18 @@
+{
+  "description": "The ONE write path for duplicate_of (D5/N3): a duplicate becomes real only from a person-named confirmer; a machine confirmer (agent/model/loop/tool) is refused by name. The detector (suggest-duplicates) never writes — it only suggests. After the confirmation, `duplicateOf` is set to the other bug's id. The result is the row as it now stands. A confirmation is a human act, the same kind of gate S24's policy-authorship check draws.",
+  "method": "triage.confirm-duplicate",
+  "request": {"jsonrpc": "2.0", "id": 435, "method": "triage.confirm-duplicate", "params": {"id": 9, "componentRoot": "/srv/projects/ledger", "of": 7, "confirmedBy": "lead"}},
+  "response": {"jsonrpc": "2.0", "id": 435, "result": {
+    "id": 9,
+    "componentRoot": "/srv/projects/ledger",
+    "title": "retry counter over-counts on the third attempt",
+    "body": "same over-count, one attempt later",
+    "validation": "unvalidated",
+    "priorityState": "unknown",
+    "filedBy": "golang-engineer",
+    "duplicateOf": 7,
+    "validated": false,
+    "createdAt": "2026-10-30T10:10:00Z",
+    "updatedAt": "2026-10-30T10:25:00Z"
+  }}
+}

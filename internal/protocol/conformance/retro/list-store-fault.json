@@ -1,0 +1,24 @@
+{
+  "description": "The absence voice has its own code: when the daemon cannot reach outcome facts at all, retro.list answers the UNAVAILABLE sentence, not a fake empty page and not the refusal voice.",
+  "method": "retro.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "retro.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -31963,
+      "message": "outcome facts are unavailable in this daemon",
+      "data": {
+        "what": "the store backing the outcome facts is not wired \u2014 no row exists to read and none can be written",
+        "means": "nothing was read. An empty page would pretend the recorder ran and saw nothing; the daemon says it cannot say instead",
+        "todo": "run the daemon with its store (aeon serve). If this is a fresh install, the fact tables arrive with the store's migrations and the recorder starts with the daemon"
+      }
+    }
+  },
+  "fromSeam": true
+}

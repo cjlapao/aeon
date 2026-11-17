@@ -1,0 +1,34 @@
+{
+  "description": "loop.todos on a loop whose list closed (S75 TD4/TD6): when no list is active the read answers the most recent closed one with active false, who closed it (all-done, cleared or person) and when, so the strip can say 'closed' instead of vanishing.",
+  "method": "loop.todos",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1902,
+    "method": "loop.todos",
+    "params": {
+      "id": "loop-dmo91lspzwch"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1902,
+    "result": {
+      "active": false,
+      "revision": 4,
+      "items": [
+        {
+          "id": "a",
+          "content": "Finish the draft",
+          "status": "done"
+        }
+      ],
+      "counts": {
+        "pending": 0,
+        "inProgress": 0,
+        "done": 1
+      },
+      "closedAt": "2026-11-07T12:10:00Z",
+      "closedBy": "all-done"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "description": "backup.status answers the four-state machine (never/fresh/stale/failing) with the numbers behind it: the last success's instant and age, the next due instant (last success + the configured interval, only when enabled), the newest verify, and running — a FRESH live lock holder only, a corpse is not running (saying running about a corpse is a lie). settings reports all ten keys with the layer each came from (a value the person made vs one inherited); db is the database's own size facts from the store's one Info() call. dir is the one path on this family's wire: the configured backup dir, a setting, not a secret location.",
+  "method": "backup.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 957,
+    "method": "backup.status",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 957,
+    "result": {
+      "state": "fresh",
+      "enabled": true,
+      "dir": "/home/user/.local/state/aeon/backups",
+      "lastSuccess": "2026-11-02T11:59:30.000Z",
+      "lastVerified": "2026-11-02T12:00:04.000Z",
+      "ageSeconds": 1830,
+      "nextDueAt": "2026-11-03T11:59:30.000Z",
+      "running": false,
+      "settings": [
+        {
+          "key": "backup.enabled",
+          "value": "true",
+          "source": "default"
+        },
+        {
+          "key": "backup.dir",
+          "value": "",
+          "source": "default"
+        },
+        {
+          "key": "backup.interval",
+          "value": "24h",
+          "source": "default"
+        },
+        {
+          "key": "backup.timeout",
+          "value": "10m0s",
+          "source": "default"
+        },
+        {
+          "key": "backup.keep",
+          "value": "5",
+          "source": "default"
+        },
+        {
+          "key": "backup.keepDaily",
+          "value": "30",
+          "source": "default"
+        },
+        {
+          "key": "backup.keepWeekly",
+          "value": "12",
+          "source": "default"
+        },
+        {
+          "key": "backup.keepPreMig",
+          "value": "5",
+          "source": "default"
+        },
+        {
+          "key": "backup.verifyAfter",
+          "value": "true",
+          "source": "default"
+        },
+        {
+          "key": "backup.staleAfter",
+          "value": "48h0m0s",
+          "source": "default"
+        }
+      ],
+      "db": {
+        "bytes": 1441792,
+        "walBytes": 16384,
+        "journalMode": "wal",
+        "applied": 76,
+        "pending": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "description": "TODO",
+  "method": "surface.list",
+  "request": {
+    "id": 708,
+    "jsonrpc": "2.0",
+    "method": "surface.list",
+    "params": {
+      "door": "narrow"
+    }
+  },
+  "response": {
+    "error": {
+      "code": -31500,
+      "data": {
+        "what": "the narrow door cannot be filtered on this daemon — Table.NarrowMethods was never wired, so every entry reports narrow:unknown; the projection is a fact internal/narrow owns",
+        "means": "the S31 method table registered at slice open; handlers arrive with their tasks, and this call reached a stub",
+        "todo": "the stub's own `what` names the task that lands this handler — see docs/aeon/S31-loop-workspace/tasks/",
+        "fatal": false
+      },
+      "message": "this method is not wired yet"
+    },
+    "id": 708,
+    "jsonrpc": "2.0"
+  }
+}

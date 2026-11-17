@@ -1,0 +1,59 @@
+{
+  "description": "The published sets: metrics with descriptions, the four states, MinSample, the window presets, the milestone ladder (RT7).",
+  "method": "scorecard.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "scorecard.vocabulary",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "metrics": [
+        {
+          "name": "loops",
+          "description": "Loops whose outcome the recorder saw in the window.",
+          "scope": "all"
+        },
+        {
+          "name": "doneRate",
+          "description": "Terminal loops that ended done.",
+          "scope": "all"
+        }
+      ],
+      "states": [
+        "ok",
+        "too-few",
+        "cannot-say",
+        "partial"
+      ],
+      "minSample": 10,
+      "windows": [
+        {
+          "name": "7d",
+          "days": 7
+        },
+        {
+          "name": "30d",
+          "days": 30
+        },
+        {
+          "name": "90d",
+          "days": 90
+        }
+      ],
+      "milestones": [
+        1,
+        3,
+        10,
+        30,
+        100,
+        300,
+        1000
+      ],
+      "statement": "A score is a measurement of what happened. It does not change what any agent, blueprint or project is allowed or asked to do."
+    }
+  }
+}

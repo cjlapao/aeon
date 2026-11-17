@@ -1,0 +1,28 @@
+{
+  "description": "An ask becomes a WAITING task (AS4: suspension is rows, not a blocked call) and the answer carries the receipt: taskId for the reports, the skillRef in the one canonical spelling, and policiesHash \u2014 the digest of the set the ask was created under (AS13 made visible). Nothing here waited for the callee: sync is not invokable over the socket (a call that blocks on a stranger is S21's problem), and the frozen set was read SERVER-side at one clock reading (D12) \u2014 params carry no policy field to begin with.",
+  "method": "agent.invoke",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 72,
+    "method": "agent.invoke",
+    "params": {
+      "callerLoopSlug": "l-reddit",
+      "componentRoot": "/home/p/aeon",
+      "callerStepId": 41,
+      "calleeAgent": "reddit-agent",
+      "skillId": "summarise-sentiment",
+      "text": "what do people say about aeon?"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 72,
+    "result": {
+      "taskId": 12,
+      "status": "waiting",
+      "skillRef": "reddit-agent/summarise-sentiment",
+      "callerStepId": 41,
+      "policiesHash": "9f2c41ab77e5d0a3c61b8f4e2d9a7054cc3318b6ef7d2401a5c9be37d4f0e218"
+    }
+  }
+}

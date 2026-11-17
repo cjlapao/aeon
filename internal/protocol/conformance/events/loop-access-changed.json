@@ -1,0 +1,19 @@
+{
+  "description": "A person changed a loop's permission mode: full access on, pre-approved tools, or back to ask. The payload names the loop, the new mode, the tools (empty unless the mode is tools) and who changed it. It answers an ASK only; an explicit deny rule still denies.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 1710,
+      "kind": "loop.access.changed",
+      "at": "2026-11-15T10:00:00.000000001Z",
+      "payload": {
+        "loopId": "l-7",
+        "mode": "full",
+        "tools": [],
+        "by": "user:1000"
+      }
+    }
+  }
+}

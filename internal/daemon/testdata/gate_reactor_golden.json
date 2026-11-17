@@ -1,0 +1,131 @@
+[
+  {
+    "case": "untracked-finished",
+    "kind": "loop.finished",
+    "queueItems": null,
+    "roadmapItems": null,
+    "bugs": null,
+    "learnings": null
+  },
+  {
+    "case": "untracked-blocked",
+    "kind": "loop.blocked",
+    "queueItems": null,
+    "roadmapItems": null,
+    "bugs": null,
+    "learnings": null
+  },
+  {
+    "case": "queue-blocked-halts-and-asks",
+    "kind": "loop.blocked",
+    "queueItems": [
+      {
+        "identify": "watched",
+        "status": "blocked"
+      }
+    ],
+    "roadmapItems": null,
+    "bugs": null,
+    "learnings": null,
+    "question": {
+      "kind": "gate",
+      "body": "queued item \"watched\" is blocked — the build failed at step three; the queue is halted until a person says otherwise (cancel the item to let the next one run)",
+      "options": [
+        "advance",
+        "hold"
+      ]
+    }
+  },
+  {
+    "case": "queue-finished-asks-about-next",
+    "kind": "loop.finished",
+    "queueItems": [
+      {
+        "identify": "next-up",
+        "status": "ready"
+      },
+      {
+        "identify": "shipped",
+        "status": "done"
+      }
+    ],
+    "roadmapItems": null,
+    "bugs": null,
+    "learnings": null,
+    "question": {
+      "kind": "gate",
+      "body": "next queued item: next-up — advance?",
+      "options": [
+        "advance",
+        "hold"
+      ]
+    }
+  },
+  {
+    "case": "queue-finished-auto-no-next",
+    "kind": "loop.finished",
+    "queueItems": [
+      {
+        "identify": "solo",
+        "status": "done"
+      }
+    ],
+    "roadmapItems": null,
+    "bugs": null,
+    "learnings": null
+  },
+  {
+    "case": "triage-finished-moves-bug",
+    "kind": "loop.finished",
+    "queueItems": null,
+    "roadmapItems": null,
+    "bugs": [
+      {
+        "identify": "#1",
+        "status": "could-not-tell"
+      }
+    ],
+    "learnings": [
+      "validation of \"crash on empty input\" (bug #1): the attempt concluded could-not-tell — the app crashes when given empty input"
+    ]
+  },
+  {
+    "case": "triage-blocked-leaves-bug",
+    "kind": "loop.blocked",
+    "queueItems": null,
+    "roadmapItems": null,
+    "bugs": [
+      {
+        "identify": "#1",
+        "status": "unvalidated"
+      }
+    ],
+    "learnings": null
+  },
+  {
+    "case": "roadmap-finished-lands-done",
+    "kind": "loop.finished",
+    "queueItems": null,
+    "roadmapItems": [
+      {
+        "identify": "the feature",
+        "status": "done"
+      }
+    ],
+    "bugs": null,
+    "learnings": null
+  },
+  {
+    "case": "roadmap-blocked-keeps-status",
+    "kind": "loop.blocked",
+    "queueItems": null,
+    "roadmapItems": [
+      {
+        "identify": "the feature",
+        "status": "running"
+      }
+    ],
+    "bugs": null,
+    "learnings": null
+  }
+]

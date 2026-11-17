@@ -1,0 +1,14 @@
+{
+  "description": "agent.rows asked for a page past the end of the data, and it is a SUCCESS, not a refusal (PG3). `agents` is [] — an array, never null — `total` still says 7 because the store still holds seven agents, and `page` echoes 40 because the daemon does not silently move a caller to the last page it likes better. The three together are what a table needs to say \"there is no page 40\" without inventing an error: a client that deleted rows under a page 7 will land here, and an empty list with an honest total is the whole truth in one round trip.",
+  "method": "agent.rows",
+  "request": {"jsonrpc": "2.0", "id": 119, "method": "agent.rows", "params": {"page": 40, "pageSize": 20}},
+  "response": {"jsonrpc": "2.0", "id": 119, "result": {
+    "agents": [],
+    "page": 40,
+    "pageSize": 20,
+    "total": 7,
+    "sort": "name",
+    "dir": "asc",
+    "q": ""
+  }}
+}

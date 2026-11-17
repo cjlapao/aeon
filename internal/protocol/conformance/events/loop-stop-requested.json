@@ -1,0 +1,21 @@
+{
+  "description": "LC15's request desk speaks on the stream (S55 T5): an agent filed a stop request against a running loop. Nothing halted — the row is inert by construction — and this is the moment a person sees it (the one control kind with a notify hint, warning): the agent asked, and a person now acts (loop.stop) or dismisses it.",
+  "event": "loop.stop.requested",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1701,
+      "kind": "loop.stop.requested",
+      "at": "2026-11-01T09:15:00Z",
+      "payload": {
+        "loopId": "loop-1",
+        "requestId": 7,
+        "byAgent": "default",
+        "byStepId": 41,
+        "reason": "the loop is churning on the same failing test — stop it"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "description": "goal_submit_review moves the goal the step authored into review \u2014 the author's act; the person's half of the ledger is goal.decide, never this.",
+  "method": "goal.submit_review",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "method": "goal.submit_review",
+    "params": {
+      "goal_id": "goal-7a1f"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "result": {
+      "id": "goal-7a1f",
+      "rootId": "prj-7a1f",
+      "version": 1,
+      "title": "Ship the org board",
+      "type": "feature",
+      "bodyNote": "criteria 6-11",
+      "sourceKind": "manual",
+      "sourceRef": "",
+      "reviewState": "in_review",
+      "createdByKind": "agent",
+      "createdById": "brainstormer",
+      "createdAt": "2026-10-26T09:00:00Z",
+      "updatedAt": "2026-10-26T09:00:00Z"
+    }
+  }
+}

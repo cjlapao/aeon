@@ -1,0 +1,21 @@
+{
+  "description": "A workspace git read naming a componentRoot the daemon never registered answers `not a registered component root` — the path is named, and nothing was read. The socket's workspace doors open only on roots registered through component.create, which is what makes their answers about a component rather than about any directory on the machine.",
+  "method": "workspace.git.status",
+  "request": {
+    "jsonrpc": "2.0", "id": 85, "method": "workspace.git.status",
+    "params": { "componentRoot": "/home/dev/code/unregistered" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 85,
+    "error": {
+      "code": -31524,
+      "message": "not a registered component root",
+      "data": {
+        "what": "\"/home/dev/code/unregistered\" is not a registered component root of this daemon",
+        "means": "nothing was read — the socket's workspace doors open only on roots registered through `component.create`, which is what makes their answers about a component rather than about any directory on the machine",
+        "todo": "register the root first (`component.create`), or name a root already in `component.list`",
+        "fatal": false
+      }
+    }
+  }
+}

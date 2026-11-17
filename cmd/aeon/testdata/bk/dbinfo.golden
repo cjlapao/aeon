@@ -1,0 +1,35 @@
+store   $STATE/aeon/state.db
+        wal, $SIZE, foreign_keys ON, busy_timeout 5000ms
+        pools: 1 writer (DB15 — WAL allows one), 4 readers
+schema  118 migration(s) applied, latest 20261116170000_trigger_event_filter
+vectors sqlite-vec v0.1.6 (statically linked)
+
+tables  _migrations         action_intent       agent               agent_chain         agent_change        agent_message       
+        agent_task          async_worker        attachment          attention_ack       automation_change   automation_cursor   
+        automation_event    autonomy_change     autonomy_grant      autonomy_use        backup_run          blueprint           
+        blueprint_import    blueprint_override  blueprint_ref       blueprint_revision  brief               budget              
+        budget_event        bug                 bug_change          charter_revision    chat_message        component           
+        component_root      component_telemetry detached_link       dod_event           dod_item            env_var             
+        env_var_change      environment         environment_binding environment_change  environment_provisionepic                
+        event               event_trigger       event_trigger_fire  gate_filing         goal                goal_component      
+        goal_criterion      graph_edge          graph_node          intake              intake_step         learning            
+        learning_change     learning_tag        loop                loop_access         loop_archive        loop_archive_file   
+        loop_archived       loop_autonomy_pin   loop_blueprint      loop_control_event  loop_control_requestloop_document       
+        loop_model_option   loop_phase          loop_run            loop_todo           loop_todo_list      loop_tombstone      
+        loop_worktree       mcp_agent           mcp_change          mcp_declare         mcp_import          mcp_server          
+        mcp_server_tool     mcp_share           memory              merge_event         merge_queue_config  merge_queue_event   
+        merge_queue_item    merge_rule          merge_rule_event    merge_watch         notify_change       notify_channel      
+        notify_delivery     notify_event_class  notify_subscription platform_change     plugin_agent        plugin_refusal      
+        plugin_transition   policy              policy_acceptance   policy_change       policy_event        proposal            
+        question            queue_item          retrieval_chunk     retrieval_chunk_fts retrieval_chunk_fts_configretrieval_chunk_fts_data
+        retrieval_chunk_fts_docsizeretrieval_chunk_fts_idxretrieval_corpus    retrieval_source_mtimeretro_agent         retro_learning      
+        retro_outcome       retro_template      review              roadmap_change      roadmap_dependency  roadmap_item        
+        route               route_probe         scaffold_template   scaffold_template_revisionscheduler_decision  scheduler_root      
+        scheduler_start     scheduler_state     secret_ref          seed_event          seed_ledger         setting             
+        setting_event       step                step_command_activitystep_compaction     step_environment    step_file_activity  
+        step_message        step_recovery       step_steer          step_summary        step_turn           task                
+        task_loop           tool                tool_receipt        trigger_fire        trigger_gap         trigger_schedule    
+        verify_command      verify_command_eventverify_run          verify_run_result   verify_template     watchdog_event      
+        watchdog_rule       work_closure        workspace_telemetry zz_ct_map_guard     zz_s57_merge_rules_fk_guardzz_s57_merge_watch_fk_guard
+        zz_s57_verify_fk_guard
+backup   never · $STATE/aeon/backups

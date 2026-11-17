@@ -1,0 +1,42 @@
+{
+  "description": "mcp.process.logs answers a server's log from a bounded ring: the server's own stderr (stream stderr) and what the supervisor did to it (stream daemon), after a sequence number; `next` is what to ask from next, and `dropped` says how many lines fell out of the ring since `after` \u2014 a gap is said, not hidden.",
+  "method": "mcp.process.logs",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 962,
+    "method": "mcp.process.logs",
+    "params": {
+      "name": "github",
+      "after": 0,
+      "limit": 200
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 962,
+    "result": {
+      "name": "github",
+      "lines": [
+        {
+          "seq": 1,
+          "at": "2026-11-08T12:00:00.100Z",
+          "stream": "daemon",
+          "text": "starting npx -y @modelcontextprotocol/server-github"
+        },
+        {
+          "seq": 2,
+          "at": "2026-11-08T12:00:02.900Z",
+          "stream": "stderr",
+          "text": "GitHub MCP Server running on stdio"
+        },
+        {
+          "seq": 3,
+          "at": "2026-11-08T12:00:03.000Z",
+          "stream": "daemon",
+          "text": "running, pid 48213"
+        }
+      ],
+      "next": 3
+    }
+  }
+}

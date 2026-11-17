@@ -1,0 +1,29 @@
+{
+  "description": "S34 T1's roster read: who every agent is, first-party bodies and imported plugins alike, as identity only — never what they may do (tools.grants, T2's separate method) and never the four plugin state verbs, which stay CLI/app-only and unreachable from this socket (R6). State is the real vocabulary measured from the code, not a guess: first-party bodies answer \"running\" (plugin/import.go's literal, outside the store's own CHECK vocabulary entirely — first-party bodies run when their loop dispatches them), imported rows answer \"disabled\" / \"enabled\" / \"revoked\" (store/plugin_state.go's PluginAgentStates, the migration-0023 CHECK). There is no \"blocked\" and no \"never_arrived\" anywhere this reads from.",
+  "method": "agent.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 79,
+    "method": "agent.list"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 79,
+    "result": {
+      "agents": [
+        {
+          "name": "default",
+          "provenance": "first_party",
+          "state": "running"
+        },
+        {
+          "name": "groot-translator",
+          "provenance": "imported",
+          "state": "disabled",
+          "source": "/home/operator/aeon-packages/groot-translator",
+          "importedAt": "2026-10-25T09:00:00Z"
+        }
+      ]
+    }
+  }
+}

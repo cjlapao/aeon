@@ -1,0 +1,32 @@
+{
+  "description": "Recorder health says what it KNOWS: recording start, dropped count, the last reconcile pass, and the model retrospective's state named honestly (RT6/RT15).",
+  "method": "retro.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "retro.status",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "recordedSince": "2026-10-12T08:00:00Z",
+      "loopsRecorded": 91,
+      "lastWriteAt": "2026-11-04T13:02:11Z",
+      "dropped": 0,
+      "outcomes": 91,
+      "learningsWritten": 14,
+      "reconcile": {
+        "neverRun": false,
+        "lastRunAt": "2026-11-04T07:59:58Z",
+        "lastWritten": 2
+      },
+      "modelRetrospective": {
+        "enabled": false,
+        "blockedBy": "no retro.modelEnabled setting declared and no retrospective blueprint built yet (S63 T8)"
+      },
+      "statement": "A score is a measurement of what happened. It does not change what any agent, blueprint or project is allowed or asked to do."
+    }
+  }
+}

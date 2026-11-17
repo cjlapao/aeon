@@ -1,0 +1,40 @@
+{
+  "description": "tools.status in a world where two rows have drifted: `bash` reports `differs` with the FIELD NAMES that disagree (description, schema_hash — a report that said only \"wrong\" would leave the operator guessing), and `grep` reports `missing_row` because its row is gone while the code still implements it. Nothing was repaired: the row stayed tampered with and the tool stayed absent, because TC11's ruling is that drift is SAID and the applier is not a read — silently fixing a disagreement is the one outcome worse than admitting it. `seed` is the engine's own ledger read through the ONE engine `seed.status` reads (same set, same versions, no second stamp), and it says `partial` here for the same two rows — the ledger remembers applying `grep` while the world no longer has it, so the engine's own per-record summary and the drift report agree rather than each holding a private answer (a status panel that said `applied, current` beside a drifted row would be two truths in one screen), and `counts` is one pass over the same world the listing serves, so the two panels cannot disagree about how many tools there are. `drift` is the DISAGREEMENT list — a row that agrees contributes nothing here and still sets `rowCurrent:true` on its entry.",
+  "method": "tools.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 651,
+    "method": "tools.status"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 651,
+    "result": {
+      "seed": {
+        "set": "tools.core",
+        "availableVersion": 1,
+        "appliedVersion": 1,
+        "state": "partial"
+      },
+      "drift": [
+        {
+          "name": "bash",
+          "state": "differs",
+          "fields": [
+            "description",
+            "schema_hash"
+          ]
+        },
+        {
+          "name": "grep",
+          "state": "missing_row"
+        }
+      ],
+      "counts": {
+        "system": 72,
+        "mcp": 2,
+        "conditionalUnwired": 2
+      }
+    }
+  }
+}

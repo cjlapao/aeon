@@ -1,0 +1,18 @@
+{
+  "description": "One bug by id, the row as the daemon sees it. The two states ride as two fields (D2, R4): validation is a four-value machine (here reproduced, the attempt landed a definitive verdict), priority is a separate three-value set (here known with a label). `duplicateOf` and `roadmapItemId` render the honest absence (null, not zero) when unset. `validated` is the derived fact: not `unvalidated`.",
+  "method": "triage.show",
+  "request": {"jsonrpc": "2.0", "id": 433, "method": "triage.show", "params": {"id": 7}},
+  "response": {"jsonrpc": "2.0", "id": 433, "result": {
+    "id": 7,
+    "componentRoot": "/srv/projects/ledger",
+    "title": "retry counter over-counts on the second attempt",
+    "body": "the retry counter adds two on the second attempt; expected one",
+    "validation": "reproduced",
+    "priorityState": "known",
+    "priorityLabel": "P1",
+    "filedBy": "golang-engineer",
+    "validated": true,
+    "createdAt": "2026-10-30T10:00:00Z",
+    "updatedAt": "2026-10-30T10:20:00Z"
+  }}
+}

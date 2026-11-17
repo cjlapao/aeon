@@ -1,0 +1,21 @@
+{
+  "description": "Priority is ONE decision, and the pair travels together (D2): the state `known` carries the label that makes it mean something to the team. The refusal of the contradiction — `unknown` WITH a label — is named, never precedence-resolved into 'clear the label', and a move back to unknown clears the label as part of the same one decision (the database CHECK agrees: unknown-and-labelled is unwritable). D4's shadow falls here too: this is the write that makes `planned → ready` possible — readiness is re-checked at the attempt, never cached.",
+  "method": "roadmap.priority",
+  "request": {"jsonrpc": "2.0", "id": 346, "method": "roadmap.priority", "params": {"id": 12, "priorityState": "known", "priorityLabel": "P1 — customer-visible, promised"}},
+  "response": {"jsonrpc": "2.0", "id": 346, "result": {"item": {
+    "id": 12,
+    "componentRoot": "/srv/projects/ledger",
+    "title": "export monthly statements",
+    "status": "planned",
+    "priorityState": "known",
+    "priorityLabel": "P1 — customer-visible, promised",
+    "estimateMin": null,
+    "estimateMax": null,
+    "estimateBasis": null,
+    "provenance": "triaged",
+    "briefPath": "/srv/projects/ledger/brief.md",
+    "planPath": "/srv/projects/ledger/plan.md",
+    "createdAt": "2026-10-29T09:00:00Z",
+    "updatedAt": "2026-10-29T10:05:00Z"
+  }}}
+}

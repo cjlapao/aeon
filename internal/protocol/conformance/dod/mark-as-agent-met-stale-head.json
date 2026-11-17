@@ -1,0 +1,23 @@
+{
+  "description": "S57 T9 (VG19), the currency refusal: a met mark names a passing run, but a run that sat on an OLD head is stale evidence — VG10's currency rule (a pass run counts on the head it ran on) applied to the mark. The run exists and passed, and it is the caller's own loop's, but the component now stands elsewhere, so the mark is refused with the sentence naming both heads, VERBATIM across the wire as JSON-RPC's own -32602; the item keeps its state and its evidence (no mark written). Re-running the gate on the new head is the way to name fresh evidence.",
+  "method": "dod.markAsAgent",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1107,
+    "method": "dod.markAsAgent",
+    "params": {
+      "itemId": "dod-3",
+      "state": "met",
+      "evidenceRunId": "vr-101",
+      "note": "the e2e run covers the 401 path"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1107,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: refused: run vr-101 sat on head 9f8e7d6c, but /home/cjlapao/src/aeon now stands at 3a4b5c6d — a met mark on a stale head is stale evidence (VG10's currency rule, applied to the mark)"
+    }
+  }
+}

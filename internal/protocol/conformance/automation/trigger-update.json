@@ -1,0 +1,37 @@
+{
+  "description": "An edit carries only what changed; clearMaxCost:true is its own intention (§4c's discipline — absent keeps, clear clears). Scope ids are not fields of this call: to move a trigger, create another.",
+  "method": "automation.trigger.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 207,
+    "method": "automation.trigger.update",
+    "params": {"id": "trg-intake", "maxRunsPerHour": 30, "clearMaxCost": true}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 207,
+    "result": {
+      "id": "trg-intake",
+      "name": "Intake",
+      "source": "event",
+      "rootId": "prj-platform",
+      "componentId": "cmp-alpha",
+      "match": {"event": "goal.approved", "goal_type": ["feature"]},
+      "blueprint": "dev-loop",
+      "kickoff": "Approved: {{.Goal}}",
+      "maxRunsPerHour": 30,
+      "maxCostPerDayUsd": null,
+      "enabled": true,
+      "disabledReason": "",
+      "createdByKind": "user",
+      "createdById": "501",
+      "createdAt": "2026-10-28T09:00:00Z",
+      "updatedAt": "2026-10-28T09:05:00Z",
+      "lastFire": {
+        "id": 1, "triggerId": "trg-intake", "outboxId": 4, "subjectKind": "goal", "subjectId": "g0",
+        "depth": 0, "outcome": "started", "reason": "", "loopId": "l1", "loopSlug": "auto-trg-intake-4",
+        "costNote": "", "claimedAt": "2026-10-28T09:02:00Z", "decidedAt": "2026-10-28T09:02:01Z"
+      }
+    }
+  }
+}

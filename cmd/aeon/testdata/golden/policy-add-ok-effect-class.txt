@@ -1,0 +1,4 @@
+$ aeon policy add --type effect_class --id ok-effect --target all-agents --action deny --spec {"effect":"spend","state":"deny"}
+policy ok-effect stored — the daemon's next read sees it (N8 forbids caching)
+$ aeon policy list
+ok-effect                effect_class   all-agents                   deny   operator     no expiry

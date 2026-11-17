@@ -1,0 +1,138 @@
+{
+  "description": "tools.list with available=false — P31's honest third state made listable: `search` and `graph` are tools this build IMPLEMENTS and cannot RUN, because their resolver seams are not wired here. They are listed, with their real schemas and hashes, and `available:false`; they are not omitted (an omission reads as \"no such tool\" and sends the reader to the wrong screen) and not refused. `conditional:true` says why, and `tools.status`' `counts.conditionalUnwired` is the same two counted from the same single pass over one world.",
+  "method": "tools.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 642,
+    "method": "tools.list",
+    "params": {
+      "available": false
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 642,
+    "result": {
+      "tools": [
+        {
+          "name": "graph",
+          "family": "code-graph",
+          "source": "system",
+          "description": "Structural questions about this project's code: who calls what, what a symbol relates to, where a name is declared. Returns SYMBOLS and file:line LOCATIONS, never file contents — read the file for what it says.\n\nComplements `grep`; it does not replace it. For an exact string or a literal pattern use `grep`. For call relations and cross-file structure, this.\n\nActions: \"explain\" (one symbol's direct edges, both directions), \"path\" (the shortest chain between two symbols, bounded), \"query\" (browse nodes by kind/name-prefix/file). Answers are four-state: found, ambiguous (candidates listed, none picked), not-found, not-built (this project has no index yet — say so rather than concluding the symbol is absent).",
+          "schema": {
+            "additionalProperties": false,
+            "properties": {
+              "action": {
+                "description": "which structural question to ask",
+                "enum": [
+                  "explain",
+                  "path",
+                  "query"
+                ],
+                "type": "string"
+              },
+              "file": {
+                "description": "for query: only nodes from this project-relative file",
+                "type": "string"
+              },
+              "from": {
+                "description": "for path: the chain's start symbol",
+                "type": "string"
+              },
+              "kind": {
+                "description": "for query: filter by node kind (function, method, type, interface, class, file, package)",
+                "type": "string"
+              },
+              "limit": {
+                "description": "for query: maximum rows (default 100)",
+                "type": "integer"
+              },
+              "prefix": {
+                "description": "for query: symbol name prefix",
+                "type": "string"
+              },
+              "symbol": {
+                "description": "for explain: the symbol to explain — bare or qualified (order.Validate)",
+                "type": "string"
+              },
+              "to": {
+                "description": "for path: the chain's end symbol",
+                "type": "string"
+              }
+            },
+            "required": [
+              "action"
+            ],
+            "type": "object"
+          },
+          "schemaHash": "f2ec6c1c258c99aef9cf4dc372caff8dc55036c73623a72f5e5aabaf3ec258b4",
+          "rerunClass": "safe",
+          "capabilities": [
+            "graph_read"
+          ],
+          "governed": [
+            "tool_access"
+          ],
+          "conditional": true,
+          "available": false,
+          "classified": false,
+          "version": 1,
+          "origin": "system",
+          "rowCurrent": true,
+          "category": "code-graph",
+          "access": "read",
+          "address": "code-graph.graph.read"
+        },
+        {
+          "name": "search",
+          "family": "retrieval",
+          "source": "system",
+          "description": "Semantic and keyword search over this project's code or its loop history. Returns file:line locations, never file contents — read the file to see current truth.\n\nComplements `grep`; it does not replace it. For an exact identifier, a literal string, or a definition, use `grep` — it has an exact answer and this does not.\n\nRequires a corpus: \"code\" or \"history\". There is no default.",
+          "schema": {
+            "additionalProperties": false,
+            "properties": {
+              "corpus": {
+                "description": "which corpus to search; REQUIRED — there is no default (a default corpus is a query whose scope depends on a setting the caller did not state)",
+                "enum": [
+                  "code",
+                  "history"
+                ],
+                "type": "string"
+              },
+              "limit": {
+                "description": "maximum results (default 10)",
+                "type": "integer"
+              },
+              "query": {
+                "description": "the question in words; an empty query is refused rather than answered with everything",
+                "type": "string"
+              }
+            },
+            "required": [
+              "corpus",
+              "query"
+            ],
+            "type": "object"
+          },
+          "schemaHash": "36f628ee6cfe3363db1c4c02c436feed6df621d371c93cab959eaef39c246082",
+          "rerunClass": "safe",
+          "capabilities": [
+            "index_read"
+          ],
+          "governed": [
+            "tool_access"
+          ],
+          "conditional": true,
+          "available": false,
+          "classified": false,
+          "version": 1,
+          "origin": "system",
+          "rowCurrent": true,
+          "category": "retrieval",
+          "access": "read",
+          "address": "retrieval.search.read"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "description": "budget.effective answers, for one named subject, every budget that applies to it — TIGHTEST FIRST (LC9's tier order: loop, epic, component, root, workspace), the same ordered applicability the enforcement side runs, so the read and the gate cannot disagree about what is in force. The subject is echoed in the shape the door resolved it (a loop by id names the loop; the component and root arms name their tiers).",
+  "method": "budget.effective",
+  "request": {
+    "jsonrpc": "2.0", "id": 603, "method": "budget.effective",
+    "params": {"loopId": "loop-1"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 603,
+    "result": {
+      "subject": "loop loop-1",
+      "budgets": [
+        {
+          "id": "bud-loop-1",
+          "scope": "loop",
+          "subjectId": "loop-1",
+          "window": "lifetime",
+          "enabled": true,
+          "unknownPolicy": "proceed",
+          "origin": "user",
+          "createdAt": "2026-11-01T09:05:00.000Z",
+          "updatedAt": "2026-11-01T09:05:00.000Z",
+          "status": "ok",
+          "dimensions": [
+            {"dimension": "usd", "cap": 25, "spendFloor": 3.2, "exact": true, "unknownCount": 0}
+          ],
+          "lastChanged": {"at": "2026-11-01T09:05:00.000Z", "kind": "created", "byKind": "user", "byId": "1000"}
+        },
+        {
+          "id": "bud-epc-1",
+          "scope": "epic",
+          "subjectId": "epc-1",
+          "window": "lifetime",
+          "enabled": true,
+          "unknownPolicy": "proceed",
+          "warnPct": 80,
+          "origin": "user",
+          "createdAt": "2026-11-01T09:00:00.000Z",
+          "updatedAt": "2026-11-01T09:00:00.000Z",
+          "status": "warn",
+          "dimensions": [
+            {"dimension": "usd", "cap": 900, "spendFloor": 745.5, "exact": false, "unknownCount": 2}
+          ],
+          "lastChanged": {"at": "2026-11-01T09:00:00.000Z", "kind": "created", "byKind": "user", "byId": "1000"}
+        },
+        {
+          "id": "bud-workspace",
+          "scope": "workspace",
+          "subjectId": "workspace",
+          "window": "lifetime",
+          "enabled": true,
+          "unknownPolicy": "stop",
+          "origin": "user",
+          "createdAt": "2026-11-01T08:00:00.000Z",
+          "updatedAt": "2026-11-01T08:00:00.000Z",
+          "status": "ok",
+          "dimensions": [
+            {"dimension": "usd", "cap": 5000, "spendFloor": 748.7, "exact": false, "unknownCount": 2}
+          ],
+          "lastChanged": {"at": "2026-11-01T08:00:00.000Z", "kind": "created", "byKind": "user", "byId": "1000"}
+        }
+      ]
+    }
+  }
+}

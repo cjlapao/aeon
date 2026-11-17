@@ -1,0 +1,21 @@
+{
+  "description": "S50 T2 (RM1), the wire-side law: roadmap.update refuses EVERY param outside its set, by KEY before the lenient decode \u2014 here `status`. The refusal NAMES the fields the edit does reach, because the useful no says what is possible: status rides roadmap.plan/roadmap.ideate (the machine's moves), priority and estimate ride roadmap.priority and roadmap.estimate (their honesty rules live there). Identity keys (actor, actorKind, who) ride the same door as every other roadmap write (RM2); a path outside the item's component root and a path edit after `running` are refusals with their own sentences (RM1).",
+  "method": "roadmap.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 968,
+    "method": "roadmap.update",
+    "params": {
+      "id": 12,
+      "status": "done"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 968,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: roadmap.update refuses the param \"status\" \u2014 the edit reaches only id, title, epic, briefPath, planPath, clearEpic; status, priority, estimate and provenance ride their own verbs (RM1)"
+    }
+  }
+}

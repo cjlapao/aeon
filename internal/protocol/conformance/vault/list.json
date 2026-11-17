@@ -1,0 +1,42 @@
+{
+  "description": "vault.list answers every managed variable. A SECRET is listed by name, scope, flags and description and never its value: the type has no value to carry for it, so the omission is a shape and not a redaction. A plain variable carries its value because a person said it is not secret. `project` is a ROOT component id (an override for that project's work); absent means global.",
+  "method": "vault.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 951,
+    "method": "vault.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 951,
+    "result": {
+      "variables": [
+        {
+          "name": "GITHUB_PERSONAL_ACCESS_TOKEN",
+          "description": "CI token for the github MCP server",
+          "secret": true,
+          "agentVisible": false,
+          "updatedAt": "2026-11-08T12:00:00Z"
+        },
+        {
+          "name": "REGION",
+          "secret": false,
+          "agentVisible": true,
+          "value": "eu-west-1",
+          "updatedAt": "2026-11-08T12:01:00Z"
+        },
+        {
+          "name": "API_URL",
+          "project": "prj-7a1f",
+          "projectName": "Aeon",
+          "description": "the project's own endpoint",
+          "secret": false,
+          "agentVisible": false,
+          "value": "https://staging.example",
+          "updatedAt": "2026-11-08T12:02:00Z"
+        }
+      ]
+    }
+  }
+}

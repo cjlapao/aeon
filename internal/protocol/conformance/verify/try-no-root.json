@@ -1,0 +1,28 @@
+{
+  "description": "verify.try refused: the component has no primary root to run in (no-root). A try needs a directory the gate's command can run in, and a component whose root is unregistered has none — the refusal says what is missing rather than guessing a directory, and nothing is spawned and nothing is recorded.",
+  "method": "verify.try",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1025,
+    "method": "verify.try",
+    "params": {
+      "componentId": "c-unrooted",
+      "id": "vcm-1"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1025,
+    "error": {
+      "code": -31870,
+      "message": "the verify operation was refused",
+      "data": {
+        "kind": "no-root",
+        "what": "verify try refused: the component has no primary root registered — verify.try has no directory to run the gate in, and nothing was spawned",
+        "means": "the daemon understood and declined — the gate set is exactly as it was (no row written, no run recorded, no template copied), and the kind in data kind says which law it refused against",
+        "todo": "do what the what sentence names — fix the field it refused, clear the name it says is taken, or ask for the root it says is missing",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "`terminal.resize` sets the PTY window size, which matters: a shell laid out at 80 columns wraps its output at 80 forever unless the app resizes it with its panel. Unknown terminal ids are refused by name.",
+  "method": "terminal.resize",
+  "request": {
+    "jsonrpc": "2.0", "id": 92, "method": "terminal.resize",
+    "params": { "terminalId": "t-7f3a", "cols": 120, "rows": 30 }
+  },
+  "response": { "jsonrpc": "2.0", "id": 92, "result": {} }
+}

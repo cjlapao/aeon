@@ -1,0 +1,27 @@
+{
+  "description": "The autonomy.revoke happy path (S56 T6): set the revoked trio once, with the reason (required — an audited revocation without one cannot be explained) and the running loops the authority is pulled from, which the caller stops through S55's loop.stop (AL never stops loops itself, OD8). The result's grant carries the revoked view and the describe names who and when; the confirmation names the affected loop count. already-revoked is a no-op success (no new change row, affectedLoops empty) — see revoke-already.json.",
+  "method": "autonomy.revoke",
+  "request": {"jsonrpc": "2.0", "id": 410, "method": "autonomy.revoke", "params": {"id": "g-8c21", "reason": "the release lane paused"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 410,
+    "result": {
+      "grant": {
+        "id": "g-8c21",
+        "nodeId": "aeon",
+        "rootId": "aeon",
+        "subject": {"kind": "action", "name": "forge.openPR"},
+        "state": "allow",
+        "conditions": {"requireGates": false, "requireBudget": true, "labels": ["release"], "maxPerDay": 4},
+        "note": "nightly release lane",
+        "expiresAt": "2026-12-01T00:00:00Z",
+        "createdAt": "2026-11-01T09:00:00Z",
+        "createdBy": {"kind": "user", "id": "1000"},
+        "revoked": {"at": "2026-11-01T10:30:00Z", "by": "user:1000", "reason": "the release lane paused"},
+        "active": false,
+        "describe": "g-8c21 allows forge.openPR for unattended loops on aeon — revoked at 2026-11-01T10:30:00Z by user:1000 — expires 2026-12-01T00:00:00Z"
+      },
+      "confirmation": "revoked: g-8c21 (forge.openPR) no longer applies — 1 running loop(s) were pinned to it",
+      "affectedLoops": ["loop-42"]
+    }
+  }
+}

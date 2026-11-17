@@ -1,0 +1,5 @@
+data: {"id":"chatcmpl-966","object":"chat.completion.chunk","created":1793043506,"model":"qwen3.5:latest","system_fingerprint":"fp_ollama","choices":[{"index":0,"delta":{"role":"assistant","content":"","tool_calls":[{"id":"call_gtsww5mp","index":0,"type":"function","function":{"name":"get_weather","arguments":"{\"city\":\"Paris\"}"}}]},"finish_reason":null}]}
+
+data: {"id":"chatcmpl-966","object":"chat.completion.chunk","created":1793043507,"model":"qwen3.5:latest","system_fingerprint":"fp_ollama","choices":[{"index":0,"delta":{"role":"assistant","content":""},"finish_reason":"tool_calls"}]}
+
+data: [DONE]

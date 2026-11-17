@@ -1,0 +1,24 @@
+{
+  "description": "A bound yields `blocked`, NOT `failed`, and the reason NAMES the bound and its value. A caller seeing `failed` files a bug report; one seeing `blocked` raises the budget — conflating them sends every over-long step to the wrong response. The transcript and the partial cost are kept: the step spent money before it ran out of room.",
+  "method": "step",
+  "request": {
+    "jsonrpc": "2.0", "id": 71, "method": "step",
+    "params": {
+      "prompt": "summarise every file in the repository",
+      "workspaceRoot": "/home/p/repo-a",
+      "maxIterations": 4
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 71,
+    "result": {
+      "stepId": 5,
+      "kind": "complete",
+      "outcome": "blocked",
+      "reason": "exceeded MaxIterations (4)",
+      "usage": {"inputTokens": 8820, "outputTokens": 1204},
+      "cost": {"state": "known", "usd": 0.0147},
+      "iterations": 4
+    }
+  }
+}

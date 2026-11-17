@@ -1,0 +1,21 @@
+{
+  "description": "LW4: a steer arrives at a turn boundary, and a step with no boundaries left has nowhere to arrive. The refusal names the state found AND the method that fits it — here a person-stopped step, whose next words belong to step.continue {message}.",
+  "method": "step.steer",
+  "request": {
+    "jsonrpc": "2.0", "id": 98, "method": "step.steer",
+    "params": { "stepId": 41, "text": "actually, summarize rather than report" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 98,
+    "error": {
+      "code": -31520,
+      "message": "the step cannot be steered",
+      "data": {
+        "what": "step 41 is stopped (suspended, pause reason `user`) — your next words belong to `step.continue {message}`, which restarts it WITH them",
+        "means": "the instruction was not queued and nothing will drain it — a steer arrives at a turn boundary, and a step with no boundaries left has nowhere to arrive",
+        "todo": "the refusal names the state found and the method to use instead: `answer` behind a question, `step.continue {message}` behind a person-stop",
+        "fatal": false
+      }
+    }
+  }
+}

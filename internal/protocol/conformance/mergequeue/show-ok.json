@@ -1,0 +1,82 @@
+{
+  "description": "mergequeue.show is the item WHOLE: the row, the append-only ledger read back in order (SEC-033-clean by construction \u2014 enums, ids, counts and paths only), the integration worktree path, and the digest the land binds to. The digest is sha256 over id|status|head|position: an item that moved since this read digests differently, and its land refuses.",
+  "method": "mergequeue.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 763,
+    "method": "mergequeue.show",
+    "params": {
+      "id": "mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 763,
+    "result": {
+      "item": {
+        "id": "mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+        "componentRoot": "/srv/components/alpha",
+        "base": "main",
+        "branch": "feature/login-retry",
+        "loop": "loop-mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+        "status": "ready",
+        "position": 1,
+        "attended": true,
+        "headSha": "aaaa1111bbbb2222cccc3333dddd4444eeee5555",
+        "baseSha": "9999aaaa8888bbbb7777cccc6666dddd5555eeee4444",
+        "integrationBranch": "integrate/mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+        "integrationSha": "1212aaaa3434bbbb5656cccc7878dddd9090efff",
+        "prNumber": 412,
+        "verifiedSha": "1212aaaa3434bbbb5656cccc7878dddd9090efff",
+        "landingLoop": "loop-mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0",
+        "catchUps": 1,
+        "enqueuedBy": {
+          "kind": "user",
+          "id": "cjlapao"
+        },
+        "staleness": {
+          "state": "current"
+        },
+        "nextStep": "ready: the gate is green for 1212aaaa3434bbbb5656cccc7878dddd9090efff",
+        "digest": "fbe6fd7af3920ad4c2de6d9a15dbafb685a3b388d4125a78bfc1f217b7b79bf2",
+        "createdAt": "2026-11-03T10:00:00Z",
+        "updatedAt": "2026-11-04T09:00:00Z"
+      },
+      "transitions": [
+        {
+          "kind": "transition",
+          "toStatus": "queued",
+          "actorKind": "user",
+          "actorId": "cjlapao",
+          "detail": "appended at position 1",
+          "at": "2026-11-03T10:00:00Z"
+        },
+        {
+          "kind": "transition",
+          "fromStatus": "queued",
+          "toStatus": "catching_up",
+          "actorKind": "daemon",
+          "actorId": "driver",
+          "at": "2026-11-03T10:05:00Z"
+        },
+        {
+          "kind": "transition",
+          "fromStatus": "catching_up",
+          "toStatus": "verifying",
+          "actorKind": "daemon",
+          "actorId": "driver",
+          "at": "2026-11-03T10:20:00Z"
+        },
+        {
+          "kind": "transition",
+          "fromStatus": "verifying",
+          "toStatus": "ready",
+          "actorKind": "daemon",
+          "actorId": "driver",
+          "at": "2026-11-04T09:00:00Z"
+        }
+      ],
+      "worktree": "/srv/components/alpha/.aeon/integrate/mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "case": "label-on-unknown-priority-refused",
+  "refused": true,
+  "sentence": "a priority label (\"high\") on an unknown priority contradicts itself (D2) — set the state or drop the label"
+}

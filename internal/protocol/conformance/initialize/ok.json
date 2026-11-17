@@ -1,0 +1,12 @@
+{
+  "description": "The handshake. The client states the version it NEEDS; the daemon answers with the version it will SPEAK.",
+  "method": "initialize",
+  "request": {
+    "jsonrpc": "2.0", "id": 1, "method": "initialize",
+    "params": {"clientName": "aeon-cli", "clientVersion": "0.1.0", "protocolVersion": 1}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 1,
+    "result": {"protocolVersion": 1, "daemonVersion": "0.1.0", "capabilities": ["subscribe"]}
+  }
+}

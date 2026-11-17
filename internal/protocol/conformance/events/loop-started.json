@@ -1,0 +1,19 @@
+{
+  "description": "A pinned loop was created and its background runner was scheduled; clients can discover its identity.",
+  "event": "loop.started",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1601,
+      "kind": "loop.started",
+      "at": "2026-10-17T16:00:00Z",
+      "payload": {
+        "loopId": "loop-1",
+        "blueprint": "two-step",
+        "version": 1
+      }
+    }
+  }
+}

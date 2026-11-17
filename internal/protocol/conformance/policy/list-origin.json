@@ -1,0 +1,21 @@
+{
+  "description": "S45 T12 (PM15/PM16): policy.list filtered by PROVENANCE. The `origin` param keeps one provenance — 'system' for rows the seed process wrote (the declared policy.corpus set), 'user' for operator-authored rows, 'import' reserved; a value outside the three is a -32602 naming it (the boundary's ParseOrigin owns the set). Each view carries its own `origin` beside createdAt: a listing that can say 'the machine seeded this' is what stops a system rule from reading as an operator's. Origin is provenance, never policy content — the evaluator reads none (PM11), and the filter's policy half (type/target/source/action/expiry) is untouched by it. The ids here are the seed identity unchanged from S11: corpus.<agent>.<hash>, the agent component the corpus name.",
+  "method": "policy.list",
+  "request": {"jsonrpc": "2.0", "id": 71, "method": "policy.list", "params": {"origin": "system"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 71,
+    "result": {
+      "policies": [
+        {
+          "id": "corpus.memory-steward-loop.a1b2c3d4e5f6",
+          "type": "command_access",
+          "target": "agent:memory-steward-loop",
+          "action": "allow",
+          "source": "operator",
+          "notAfter": null,
+          "origin": "system"
+        }
+      ]
+    }
+  }
+}

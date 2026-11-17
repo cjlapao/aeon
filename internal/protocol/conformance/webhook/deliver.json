@@ -1,0 +1,26 @@
+{
+  "description": "`webhook.deliver` is S20 T6's mounting (TR11): a webhook is NOT a second listener, it is this surface answering a signed delivery — the signature rides as a PARAM (stdio has no headers, N18) and GitHub's X-Hub-Signature-256 is sugar for the same field. The answer is the five-answer vocabulary, never an error: `did it fire?` asked through a POST gets fired / did not fire / could not say / skipped / refused, with the reason — an unverified signature starts nothing and says so (401 is an OUTCOME here, carried by a transport that only failed if the socket did). The payload reaches the loop labelled third-party DATA (TR10): signatures prove origin, never permission (TR9).",
+  "method": "webhook.deliver",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 67,
+    "method": "webhook.deliver",
+    "params": {
+      "id": "ship",
+      "payload": "{\"head_commit\":{\"message\":\"release 1.2\"}}",
+      "signature": "sha256=6f1e9a2b3c4d5e6f708192a3b4c5d6e7f8091a2b3c4d5e6f708192a3b4c5d6e7",
+      "timestamp": "2026-10-27T09:14:02Z",
+      "deliveryId": "0b0a2c4e-1"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 67,
+    "result": {
+      "triggerId": "ship",
+      "outcome": "did_not_fire",
+      "reason": "the signature did not verify — an unauthenticated delivery starts nothing (a valid signature would prove who sent it, never what they may cause)",
+      "httpStatus": 401
+    }
+  }
+}

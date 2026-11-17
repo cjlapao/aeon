@@ -1,0 +1,34 @@
+{
+  "description": "mcp.grant.revoke takes a declaration back \u2014 the narrowing direction (agents may propose these, never the converse, T8). Revoking a pair that was never declared answers changed:false and writes NOTHING \u2014 no rows, no audit row (a refusal or a no-op is not something that happened).",
+  "method": "mcp.grant.revoke",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 927,
+    "method": "mcp.grant.revoke",
+    "params": {
+      "agent": "golang-engineer",
+      "qualified": "github.list_issues"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 927,
+    "result": {
+      "grants": [
+        {
+          "agent": "golang-engineer",
+          "before": [
+            {
+              "qualified": "github.list_issues",
+              "tier": "public",
+              "state": "unavailable",
+              "reason": "declared; no policy allow exists for golang-engineer (MC10)"
+            }
+          ],
+          "after": []
+        }
+      ],
+      "changed": true
+    }
+  }
+}

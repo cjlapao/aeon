@@ -1,0 +1,36 @@
+{
+  "description": "seed.plan is a read: it returns the plan an apply WOULD make for a set (and, optionally, the keys to scope it), writing nothing — the spy-pinned read (S43-extra T6, SD6, SD10). The result is the field-for-field twin of the engine's plan: per-record decisions (op = apply | update | skip | restore | retire | adopt, with fromVersion/toVersion and the reason) and a plan-level refusal (a downgrade) that fails the whole apply before any write, spoken verbatim.",
+  "method": "seed.plan",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 322,
+    "method": "seed.plan",
+    "params": {
+      "set": "agents.firstparty",
+      "keys": ["agents.firstparty.body.default"]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 322,
+    "result": {
+      "plan": {
+        "setId": "agents.firstparty",
+        "decisions": [
+          {
+            "key": "agents.firstparty.body.default",
+            "op": "apply",
+            "state": "absent",
+            "fromVersion": 0,
+            "toVersion": 1,
+            "reason": "create a new record"
+          }
+        ],
+        "refusal": {
+          "key": "",
+          "reason": ""
+        }
+      }
+    }
+  }
+}

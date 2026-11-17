@@ -1,0 +1,41 @@
+{
+  "description": "mergequeue.dequeue is open \u2192 removed(removed-by-person) \u2014 and the item's LIVE loops were put down FIRST, through the loop plane's own door, before the row moved (behaviour 3: a loop of a removed item must never land). The event ledger carries the removal with the peer as actor.",
+  "method": "mergequeue.dequeue",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 131,
+    "method": "mergequeue.dequeue",
+    "params": {
+      "id": "mq-1a2b3c4d5e6f708192a3b4c5d6e7f809"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 131,
+    "result": {
+      "id": "mq-1a2b3c4d5e6f708192a3b4c5d6e7f809",
+      "componentRoot": "/srv/components/alpha",
+      "base": "main",
+      "branch": "feature/export-csv",
+      "status": "removed",
+      "reason": "removed-by-person",
+      "position": 2,
+      "attended": false,
+      "headSha": "bbbb2222cccc3333dddd4444eeee5555ffff6666",
+      "baseSha": "9999aaaa8888bbbb7777cccc6666dddd5555eeee4444",
+      "catchUps": 0,
+      "enqueuedBy": {
+        "kind": "cli",
+        "id": "aeon-cli"
+      },
+      "staleness": {
+        "state": "not-yet",
+        "reason": "the queue has not read its base for this state yet"
+      },
+      "nextStep": "removed: taken out of the queue (removed-by-person)",
+      "digest": "4fb59bcad9bc3931de8a8dfb82b132d201bdd7c94b5a95c3aa20067dc84a020a",
+      "createdAt": "2026-11-04T08:00:00Z",
+      "updatedAt": "2026-11-04T10:00:00Z"
+    }
+  }
+}

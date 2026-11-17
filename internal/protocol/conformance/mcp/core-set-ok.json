@@ -1,0 +1,30 @@
+{
+  "description": "mcp.core.set narrows an agent's core grant; core:null means the WHOLE core set and core:[] means NONE \u2014 two different facts that never collapse (the two empties). validateCoreGrant (the same validator every other path uses) judges the names; the before/after shows exactly which core tools left the offer. Setting the value that stands is changed:false with no audit row.",
+  "method": "mcp.core.set",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 928,
+    "method": "mcp.core.set",
+    "params": {
+      "agent": "golang-engineer",
+      "core": [
+        "read",
+        "list"
+      ]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 928,
+    "result": {
+      "grants": [
+        {
+          "agent": "golang-engineer",
+          "before": [],
+          "after": []
+        }
+      ],
+      "changed": true
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "The daemon's validation-attempt dispatch (T3, D2): it starts an ORDINARY loop through the daemon's own loop.start door, G14-pinned, with a prompt that reads the bug and attempts to reproduce it. The bug stays UNVALIDATED — the attempt does not pre-label the claim; the reactor moves it on the loop's own terminal event (D1). The answer is the daemon's seam result: the loop's slug (the deterministic retry guard) and the note that the bug waits for the attempt to finish. No second loop, no new path — the same door every loop starts on.",
+  "method": "triage.validate",
+  "request": {"jsonrpc": "2.0", "id": 436, "method": "triage.validate", "params": {"id": 7}},
+  "response": {"jsonrpc": "2.0", "id": 436, "result": {
+    "loopId": "triage-validate-7",
+    "note": "the validation attempt loop is started; the bug stays unvalidated until it finishes (the reactor moves it, on the loop's own terminal)"
+  }}
+}

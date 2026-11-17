@@ -1,0 +1,49 @@
+{
+  "description": "Editing component metadata keeps its ID and primary workspace root while changing the icon and other editable fields.",
+  "method": "component.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "method": "component.update",
+    "params": {
+      "id": "abc123",
+      "name": "Aeon QA Updated",
+      "slug": "aeon-qa-updated",
+      "remote": "https://example.com/team/aeon-qa.git",
+      "remoteKey": "example/team/aeon-qa",
+      "repoKey": "aeon-qa",
+      "owner": "platform",
+      "icon": "🚀",
+      "tags": [
+        "qa"
+      ]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "result": {
+      "id": "abc123",
+      "name": "Aeon QA Updated",
+      "slug": "aeon-qa-updated",
+      "root": "/home/p/aeon-qa",
+      "remote": "https://example.com/team/aeon-qa.git",
+      "remoteKey": "example/team/aeon-qa",
+      "repoKey": "aeon-qa",
+      "owner": "platform",
+      "icon": "🚀",
+      "tags": [
+        "qa"
+      ],
+      "createdAt": "2026-10-20T08:00:00Z",
+      "updatedAt": "2026-10-20T09:00:00Z",
+      "rootId": "prj-abc123",
+      "shortDescription": "",
+      "description": "",
+      "defaultBranch": "main",
+      "branchPrefix": "aeon",
+          "maxParallelAgents": 1,
+          "maxParallelAgents": 1
+    }
+  }
+}

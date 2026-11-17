@@ -1,0 +1,12 @@
+{
+  "description": "`step.continue` resumes a step a person stopped, with an optional provider or reasoning-effort change — only meaningful once nothing is mid-flight. Returns immediately with `status: running`; the resumed work streams the same way the first run did.",
+  "method": "step.continue",
+  "request": {
+    "jsonrpc": "2.0", "id": 73, "method": "step.continue",
+    "params": { "stepId": 4, "route": "openai", "reasoningEffort": "medium" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 73,
+    "result": { "stepId": 4, "questionId": 0, "answeredAt": "", "status": "running" }
+  }
+}

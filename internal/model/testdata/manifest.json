@@ -1,0 +1,247 @@
+{
+  "comment": [
+    "Every fixture in this directory is labelled with its origin, and that label is the ONLY",
+    "thing that tells you what the fixture is worth. A hand-written fixture encoding what its",
+    "author BELIEVED a provider sends will pass its test and be wrong in production — and that",
+    "is invisible in the test that uses it.",
+    "",
+    "A hand-written fixture presented as a recording is a failed check (O4). An unlabelled one",
+    "fails fixtures_test.go."
+  ],
+  "fixtures": [
+    {
+      "path": "openai/text-only.sse",
+      "provider": "openai",
+      "scenario": "text-only, usage present on the final chunk",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-15",
+      "notVerified": "Not captured against api.openai.com — no credential was available, and this slice must never contact a provider (I7, D15). Written from the documented chat-completions streaming shape. UNVERIFIED: that `usage` arrives on a final chunk carrying an EMPTY `choices` array (it requires stream_options.include_usage, which ToWire sets); the exact `object` and `created` field values; whether a role-only first delta is always sent. The field PATHS the adapter reads — choices[0].delta.content, choices[0].finish_reason, usage.prompt_tokens, usage.completion_tokens — are what a real capture would confirm."
+    },
+    {
+      "path": "openai/tool-call.sse",
+      "provider": "openai",
+      "scenario": "one tool call, arguments fragmented across three deltas",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-15",
+      "notVerified": "Not captured. UNVERIFIED: how many fragments a real stream splits arguments into and at which byte boundaries — the adapter must not care, which is what the offset-independence test exists to prove. The SHAPE being relied on: the id and name arrive on the FIRST fragment only, subsequent fragments carry function.arguments alone, and fragments are keyed by `index` rather than by id."
+    },
+    {
+      "path": "openai/usage-absent.sse",
+      "provider": "openai",
+      "scenario": "no usage reported at all",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-15",
+      "notVerified": "Not captured. This is the shape of a stream requested WITHOUT stream_options.include_usage, which is the default. UNVERIFIED against a live endpoint, but it is the case that matters most: it is what produces an `unknown` cost, and D7 asserts the result is not a known zero."
+    },
+    {
+      "path": "openai/usage-partial.sse",
+      "provider": "openai",
+      "scenario": "usage with input tokens only, so the cost is a floor",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-15",
+      "notVerified": "DELIBERATELY SYNTHETIC, and added while walking the demo. No real provider reports prompt_tokens without completion_tokens — but a gateway, a proxy or a truncated final chunk can, and the `partial` cost state exists for exactly that. Without this fixture the third cost state was unreachable outside a unit test, so the demo could show `known` and `unknown` and had to describe `partial` in prose. UNVERIFIED as a provider behaviour; it is a shape the system must handle rather than one anybody promises."
+    },
+    {
+      "path": "openai/malformed-tool-arguments.sse",
+      "provider": "openai",
+      "scenario": "a tool call whose accumulated arguments are not valid JSON",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-15",
+      "notVerified": "DELIBERATELY SYNTHETIC — this one could not be captured even with a credential, because it requires a model to emit malformed JSON on demand. A model doing so is a normal event and must not fail the call (D6), so the case needs a fixture regardless of whether a real one can be obtained."
+    },
+    {
+      "path": "anthropic/text-only.sse",
+      "provider": "anthropic",
+      "scenario": "text-only, usage split across message_start and message_delta",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-15",
+      "notVerified": "Not captured against api.anthropic.com — no credential was available. Written from the documented messages streaming shape. UNVERIFIED: the exact cache field names on message_start (`cache_creation_input_tokens`, `cache_read_input_tokens`) and whether they appear when caching is unused; the frequency of `ping` events. The SHAPE being relied on: input tokens on message_start, output tokens on message_delta, and named `event:` lines throughout."
+    },
+    {
+      "path": "anthropic/tool-call.sse",
+      "provider": "anthropic",
+      "scenario": "one tool call, input_json_delta fragmented",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-15",
+      "notVerified": "Not captured. UNVERIFIED: fragment boundaries, as with OpenAI. The SHAPE being relied on: content_block_start carries the COMPLETE id and name (unlike OpenAI), then input_json_delta fragments carry `partial_json` only, and content_block_stop ends the block."
+    },
+    {
+      "path": "anthropic/two-tool-calls.sse",
+      "provider": "anthropic",
+      "scenario": "two tool calls in one assistant turn",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-15",
+      "notVerified": "Not captured. This fixture exists for the merge rule — two tool results must become EXACTLY ONE user message (D11) — which is the row of the provider table most easily missed, because it works with one tool call and fails with two."
+    },
+    {
+      "path": "anthropic/signed-thinking.sse",
+      "provider": "anthropic",
+      "scenario": "a signed thinking block followed by text",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-15",
+      "notVerified": "Not captured, and this is the fixture whose unverified status matters MOST. UNVERIFIED: the real signature's length, alphabet and whether it arrives in one signature_delta or several. The signature here is a plausible shape containing the characters a careless encoder mangles — `+`, `/`, `=` padding. What the test asserts is byte-identical round-tripping of whatever arrives, so the value's realism affects the test's realism and not its correctness. A real capture should replace this before S7 depends on it."
+    },
+    {
+      "path": "anthropic/usage-absent.sse",
+      "provider": "anthropic",
+      "scenario": "no message_start and no message_delta, so no usage",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-15",
+      "notVerified": "DELIBERATELY SYNTHETIC — Anthropic always sends message_start in a normal stream, so this shape is what a TRUNCATED or proxied stream looks like rather than a provider behaviour. It exists because the adapter must report `unknown` rather than a zero cost when usage never arrives, whatever the cause."
+    },
+    {
+      "path": "anthropic/unmapped-content.sse",
+      "provider": "anthropic",
+      "scenario": "a redacted_thinking block, which maps to no canonical kind",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-15",
+      "notVerified": "Not captured — `redacted_thinking` only appears when a safety system engages. UNVERIFIED: the exact field names on the block. What it exercises is M4: content that maps to none of the four canonical kinds is dropped and COUNTED, so `Finalise`'s `dropped` is non-zero and a silent loss becomes a visible number."
+    },
+    {
+      "path": "anthropic/step-read-tool.sse",
+      "provider": "anthropic",
+      "scenario": "S5 demo turn 1 — text, then a `read` tool call with its arguments fragmented",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-16",
+      "notVerified": "Not captured. It is `anthropic/tool-call.sse` — which IS this shape's reference — with the tool renamed to `read` and its input changed to {\"path\":\"README.md\"}, so that S5's demo can be walked with no credential and no live provider. Every FRAME TYPE and field path is the one in that fixture; nothing new about the wire is being claimed. UNVERIFIED: nothing beyond what tool-call.sse already leaves unverified — this file changes only the tool's name and arguments, which are Aeon's own values rather than the provider's."
+    },
+    {
+      "path": "anthropic/step-handoff.sse",
+      "provider": "anthropic",
+      "scenario": "S5 demo turn 2 — a text answer ending in a ```json fenced handoff",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-16",
+      "notVerified": "Not captured. It is `anthropic/text-only.sse`'s frame sequence with the text deltas replaced by prose plus a fenced JSON object, so the demo's step can REACH an `ok` outcome without a provider. UNVERIFIED: that a real model splits a fenced block across deltas at these byte boundaries — the extractor must not care, which is what the handoff tests prove by concatenating text blocks before extracting."
+    },
+    {
+      "path": "anthropic/step-bash-tool.sse",
+      "provider": "anthropic",
+      "scenario": "S5 demo — a `bash` tool call, for the demo step that proves an ungranted shell cannot run",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-16",
+      "notVerified": "Not captured. Same frames as `anthropic/tool-call.sse` with the tool renamed to `bash` and the input changed to a `touch` command. It exists so the demo can attempt the one thing this slice must refuse, with a command whose only effect would be a file somebody can look for. UNVERIFIED: nothing beyond tool-call.sse — the tool name and arguments are Aeon's values, not the provider's."
+    },
+    {
+      "path": "anthropic/ask-git-push.sse",
+      "provider": "anthropic",
+      "scenario": "S11 DEMO step 3 — text, then a `bash` `git push` tool call; the turn an `ask` rule suspends into a permission question",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-23",
+      "notVerified": "Not captured. It is `anthropic/step-bash-tool.sse`'s frame sequence (message_start through message_stop) carrying the walk's own values: the text delta \"I will push the current branch.\", tool id `toolu_T20PUSH1`, input {\"command\":\"git push\"}. It exists so the attended-ask walk (DEMO §S11 steps 3–5) is reproducible with no credential and no live provider. UNVERIFIED: nothing beyond tool-call.sse — the sentence, id and arguments are Aeon's values, not the provider's."
+    },
+    {
+      "path": "anthropic/reissue-git-push.sse",
+      "provider": "anthropic",
+      "scenario": "S11 DEMO step 4 — the post-approval re-issue: told its call was approved, the model asks for the same `git push` again as `toolu_T20PUSH2`",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-23",
+      "notVerified": "Not captured. The same envelope as `anthropic/ask-git-push.sse` with `msg_T20A2`, the text delta \"Approved — running it now.\" and the call re-issued as `toolu_T20PUSH2`, so the re-ask (F-21) replays as pasted. It replays what the walk's model did; it is not a claim about how a real provider phrases an approval. UNVERIFIED: nothing beyond tool-call.sse — the sentence, id and arguments are Aeon's values, not the provider's."
+    },
+    {
+      "path": "anthropic/step-two-reads.sse",
+      "provider": "anthropic",
+      "scenario": "S5 demo — one turn asking for TWO `read` calls, for the serial-execution step",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-16",
+      "notVerified": "Not captured. It is `anthropic/two-tool-calls.sse` with both tools renamed to `read` and their inputs changed to workspace paths, so the demo can show two tool calls arriving in one turn and running one at a time. UNVERIFIED: nothing beyond two-tool-calls.sse — the names and arguments are Aeon's values. The ORDER the two blocks arrive in is the fixture's, which is the point: the demo asserts the tool results come back in that order."
+    },
+    {
+      "path": "openai/responses-tool-call.sse",
+      "provider": "openai",
+      "scenario": "/v1/responses — a reasoning summary, text, and one function call with fragmented arguments",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-16",
+      "notVerified": "Not captured against api.openai.com — no credential was available, and this slice must never contact a provider (I7). Written from the documented Responses streaming shape. UNVERIFIED, in the order most likely to be wrong: (1) the exact event name for reasoning summaries (`response.reasoning_summary_text.delta`); (2) whether `response.function_call_arguments.done` always carries the complete `arguments` (the adapter treats it as authoritative and replaces what it accumulated); (3) whether `output_index` is the right key for the argument events — the adapter keys on it because `item_id` is absent from some documented examples. The field PATHS the adapter reads are the claim: response.output_text.delta/.delta, response.function_call_arguments.delta/.arguments, item.call_id, item.name, response.usage.input_tokens / output_tokens / input_tokens_details.cached_tokens / output_tokens_details.reasoning_tokens."
+    },
+    {
+      "path": "openai/responses-handoff.sse",
+      "provider": "openai",
+      "scenario": "/v1/responses — a text answer ending in a fenced JSON handoff, with cached input tokens",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-16",
+      "notVerified": "Not captured. It exists so a STEP can be walked end to end on the responses endpoint with no credential. UNVERIFIED: that a real stream splits a fenced block at these byte boundaries — the extractor must not care, which is what the handoff tests prove by concatenating text before extracting. Also unverified: that `input_tokens_details.cached_tokens` is reported on a non-cached call as well as a cached one."
+    },
+    {
+      "path": "anthropic/step-question.sse",
+      "provider": "anthropic",
+      "scenario": "one read sibling followed by a question tool call with two structured choices, replayed before a resumed handoff",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-17",
+      "notVerified": "Synthetic S6 CLI fixture based on the existing anthropic tool-call shape. No real provider key was available. Its purpose is to exercise suspension and answering through the shipped CLI and daemon, not to claim that a provider will choose to ask this question."
+    },
+    {
+      "path": "openai/responses-incomplete.sse",
+      "provider": "openai",
+      "scenario": "/v1/responses — a reply truncated at the output cap, reported as `response.incomplete`",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-16",
+      "notVerified": "Not captured. This is the shape that distinguishes this endpoint from chat/completions, which reports `finish_reason: length` instead. UNVERIFIED: that `incomplete_details.reason` is exactly `max_output_tokens`, and that usage is reported on an incomplete response at all — the adapter accumulates whatever arrives and reports an `unknown` cost if none does, which is the honest behaviour either way."
+    },
+    {
+      "path": "anthropic/s8-survey-write.sse",
+      "provider": "anthropic",
+      "scenario": "S8 two-step replay — write_file creates SURVEY.md before the gate or finish",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-17",
+      "notVerified": "Not captured from a live provider. The SSE frame sequence follows the existing Anthropic tool-call fixture. Tool name and JSON argument bytes are Aeon fixture values; no provider tool-use behavior beyond that frame shape was verified."
+    },
+    {
+      "path": "anthropic/s31-walk-write.sse",
+      "provider": "anthropic",
+      "scenario": "S31 walk replay — the SAME bytes as s8-survey-write with the tool named by its canonical name `write`, so a replay proves the write path end to end instead of stopping at the pre-rename name (S31 DEMO F-22)",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-24",
+      "notVerified": "Not captured from a live provider; it is anthropic/s8-survey-write.sse with one string changed — \"name\":\"write_file\" to \"name\":\"write\" — so every frame-shape caveat on that entry applies here unchanged, and NOTHING was verified beyond what it verifies there. The point of the change is measured, not assumed: the walk showed the pre-rename name refused on the CALL side (\"there is no tool called \\\"write_file\\\" in this step\") while the grant side resolves it through the hidden alias, and this fixture's run is what turns D8's line counts into walked facts (+1 −2 with two person-notes on disk beforehand)."
+    },
+    {
+      "path": "anthropic/s8-summary-write.sse",
+      "provider": "anthropic",
+      "scenario": "S8 two-step replay — write_file creates SUMMARY.md before the gate or finish",
+      "origin": "hand-written",
+      "capturedAt": "2026-10-17",
+      "notVerified": "Not captured from a live provider. The SSE frame sequence follows the existing Anthropic tool-call fixture. Tool name and JSON argument bytes are Aeon fixture values; no provider tool-use behavior beyond that frame shape was verified."
+    },
+    {
+      "path": "openai/ollama-text-reasoning-usage.sse",
+      "provider": "openai",
+      "scenario": "Ollama 0.18.0 /v1/chat/completions, qwen3.5:latest: reasoning arrives as delta.reasoning (content empty while thinking), usage on a final chunk with an EMPTY choices array when stream_options.include_usage is requested",
+      "origin": "recorded",
+      "capturedAt": "2026-10-26"
+    },
+    {
+      "path": "openai/vllm-text-reasoning-content.sse",
+      "provider": "openai",
+      "scenario": "vLLM (qwen3.8-flash-next) /v1/chat/completions: reasoning arrives as delta.reasoning_content, the answer as delta.content (leading blank lines kept), usage with completion_tokens_details.reasoning_tokens and a cost field on a final chunk",
+      "origin": "recorded",
+      "capturedAt": "2026-11-15"
+    },
+    {
+      "path": "openai/ollama-usage-absent.sse",
+      "provider": "openai",
+      "scenario": "Ollama 0.18.0 /v1/chat/completions, qwen3.5:latest, WITHOUT stream_options requested: the stream ends with finish_reason and [DONE] and carries NO usage anywhere (M9's unknown, measured on a real server)",
+      "origin": "recorded",
+      "capturedAt": "2026-10-26"
+    },
+    {
+      "path": "openai/ollama-tool-call.sse",
+      "provider": "openai",
+      "scenario": "Ollama 0.18.0 /v1/chat/completions, qwen3.5:latest: one tool call with a provider-issued id (call_…), arguments in a single fragment, finish_reason tool_calls; no usage (stream_options was not requested)",
+      "origin": "recorded",
+      "capturedAt": "2026-10-26"
+    },
+    {
+      "path": "openai/empty-tool-call-ids.sse",
+      "provider": "openai",
+      "scenario": "Two tool calls whose ids are absent or duplicated across fragments — the Q11 shapes Ollama 0.18.0 did NOT reproduce live (it issues call_… ids), so the shapes are composed to exercise the synthesis and the duplicate-suffix rules",
+      "origin": "hand-written",
+      "notVerified": "Composed, not captured: NO server was observed emitting empty or duplicated ids — Ollama 0.18.0 issued well-formed call_ ids on every measured call, and OpenAI's documented shape carries ids. The fixture tests the adapter's DEFENCE (synthesise and record, suffix duplicates), not a provider's documented behaviour; which real servers emit these shapes is unobserved."
+    },
+    {
+      "path": "openai/empty-tool-call-ids-responses.sse",
+      "provider": "openai",
+      "scenario": "responses wire: one function_call with an absent call_id and two sharing call_dup — the same Q11 shapes as the chat fixture, so the synthesis rule is pinned on both wire formats",
+      "origin": "hand-written",
+      "notVerified": "Composed, not captured: no server measured here emitted absent or duplicated call ids (Ollama 0.18.0 issued call_… ids on every call). The fixture exists to pin the adapter's defence on the responses wire, mirroring the chat-side hand-written fixture; which real servers produce these shapes is unobserved."
+    }
+  ]
+}

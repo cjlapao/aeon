@@ -1,0 +1,71 @@
+{
+  "description": "automation.unarchive clears the archive and nothing else: a row archived from a paused state comes back paused — the door removes the invisibility, it does not re-decide the operations (S49 T4).",
+  "method": "automation.unarchive",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8304,
+    "method": "automation.unarchive",
+    "params": {
+      "source": "schedule",
+      "id": "sch-morning"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8304,
+    "result": {
+      "before": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "name": "sch-morning",
+        "blueprint": "morning-standup",
+        "workspace": "/home/p/ops",
+        "goal": "Daily morning sweep",
+        "expr": "0 7 * * *",
+        "zone": "Europe/Lisbon",
+        "enabled": false,
+        "createdByKind": "user",
+        "createdById": "operator",
+        "createdAt": "2026-10-01T08:00:00Z",
+        "lastFire": null,
+        "paused": true,
+        "archived": true,
+        "archivedReason": "retired with the old on-call rota"
+      },
+      "after": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "name": "sch-morning",
+        "blueprint": "morning-standup",
+        "workspace": "/home/p/ops",
+        "goal": "Daily morning sweep",
+        "expr": "0 7 * * *",
+        "zone": "Europe/Lisbon",
+        "enabled": false,
+        "createdByKind": "user",
+        "createdById": "operator",
+        "createdAt": "2026-10-01T08:00:00Z",
+        "lastFire": null,
+        "paused": true
+      },
+      "changed": true,
+      "health": {
+        "source": "schedule",
+        "id": "sch-morning",
+        "blueprint": {
+          "state": "ok"
+        },
+        "workspace": {
+          "exists": true
+        },
+        "scope": {
+          "exists": true
+        },
+        "canFire": false,
+        "reasons": [
+          "paused — the clock skips it until resumed"
+        ]
+      }
+    }
+  }
+}

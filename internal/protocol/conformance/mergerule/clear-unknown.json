@@ -1,0 +1,27 @@
+{
+  "description": "mergerule.clear refuses a component with no rule row: there is nothing to clear (code -31871, kind merge-rule-unknown) — clearing a rule the component never set would be a write the ledger could not account for, so the sentence names the component and the fact it is missing.",
+  "method": "mergerule.clear",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1043,
+    "method": "mergerule.clear",
+    "params": {
+      "componentId": "c-no-rule"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1043,
+    "error": {
+      "code": -31871,
+      "message": "the merge rule operation was refused",
+      "data": {
+        "kind": "merge-rule-unknown",
+        "what": "merge rule clear refused: c-no-rule has no merge rule to clear",
+        "means": "the daemon understood and declined — the rule row and its ledger are exactly as they were (no revision issued, no event written), and the kind in data kind says which closed set it refused",
+        "todo": "do what the what sentence names — put the field in the closed set it names, or clear the component it says has no row",
+        "fatal": false
+      }
+    }
+  }
+}

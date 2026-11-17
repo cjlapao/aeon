@@ -1,0 +1,36 @@
+{
+  "description": "The add door storing a credential-shaped command: the predicate is `CommandIsTokenShaped` (redact.go l.58) and the note is the daemon's ONE sentence (VerifyEnvNoteSentence, verify.go l.321) stamped by the daemon, present because the written command matched a token shape. A shaped command is still a legal command — this is the note's sample, not a refusal's.",
+  "method": "verify.add",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 61,
+    "method": "verify.add",
+    "params": {
+      "componentId": "c-aeon",
+      "name": "api-health",
+      "command": "curl -s -H \"Authorization: bearer ghp_DUMMYSAMPLENOTREAL0000000000\" https://api.internal.example/health",
+      "requirement": "advisory",
+      "timeoutS": 60
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 61,
+    "result": {
+      "gate": {
+        "id": "v-7",
+        "componentId": "c-aeon",
+        "name": "api-health",
+        "command": "curl -s -H \"Authorization: bearer ghp_DUMMYSAMPLENOTREAL0000000000\" https://api.internal.example/health",
+        "requirement": "advisory",
+        "timeoutS": 60,
+        "enabled": true,
+        "origin": "user",
+        "position": 3,
+        "createdAt": "2026-11-02T14:06:00Z",
+        "updatedAt": "2026-11-02T14:06:00Z"
+      },
+      "note": "gate commands run with a scrubbed environment; do not embed a credential"
+    }
+  }
+}

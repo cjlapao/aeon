@@ -1,0 +1,12 @@
+{
+  "description": "`loop.options` records what the person chose for the loop's model after it started: the thinking switch (`on` | `off`) and the reasoning effort. The choice is the loop's: every model step that STARTS after it carries it, while a step already running keeps what it began with. Both empty clears the choice and the route's own settings apply again. `loop.show` reports the options in force as `reasoningEffort` and `thinking`.",
+  "method": "loop.options",
+  "request": {
+    "jsonrpc": "2.0", "id": 85, "method": "loop.options",
+    "params": { "id": "loop-7f3a", "thinking": "off", "reasoningEffort": "low" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 85,
+    "result": { "id": "loop-7f3a", "reasoningEffort": "low", "thinking": "off" }
+  }
+}

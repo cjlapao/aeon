@@ -1,0 +1,2 @@
+$ aeon policy in-force --agent alice
+cost_cap       cap-rule                 could not determine · no evaluator for cost_cap yet (D10)

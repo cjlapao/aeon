@@ -1,0 +1,41 @@
+{
+  "description": "verify.show for one gate: the gate in full plus its event trail (who, when, what — the audit of the gate's own shape) and its last run. A gate that has never run carries no lastRun; a gate that was never written carries no events. The show is the detail a list row links to, and the only read that carries the event trail.",
+  "method": "verify.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1002,
+    "method": "verify.show",
+    "params": {
+      "id": "vcm-1"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1002,
+    "result": {
+      "gate": {
+        "id": "vcm-1",
+        "componentId": "c-aeon",
+        "name": "unit",
+        "command": "go test ./...",
+        "requirement": "required",
+        "timeoutS": 600,
+        "position": 1,
+        "enabled": true,
+        "origin": "user",
+        "createdAt": "2026-11-01T09:00:00Z",
+        "updatedAt": "2026-11-01T09:00:00Z"
+      },
+      "events": [
+        {
+          "op": "add",
+          "revision": 1,
+          "actorKind": "user",
+          "actorId": "1000",
+          "at": "2026-11-01T09:00:00Z",
+          "summary": "gate \"unit\" added (required, 600s)"
+        }
+      ]
+    }
+  }
+}

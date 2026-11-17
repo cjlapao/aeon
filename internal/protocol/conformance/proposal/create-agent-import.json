@@ -1,0 +1,34 @@
+{
+  "description": "proposal.create's agent_import happy path (S37 T4, criterion 1): a bare absolute path is stored as the row's payload (AA2 — no snapshot of the package, card or prompt), status is always 'proposed', and the result carries the preview the desk shows BEFORE anyone commits — the agent name, the consent sentence, and the carried denials the package would add. The preview is advisory (AA4): `aeon proposal commit` re-reads the package and re-renders the consent from the fresh read, so a stale preview is never authoritative. S35's create shape plus one field, `preview`.",
+  "method": "proposal.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "method": "proposal.create",
+    "params": {
+      "kind": "agent_import",
+      "payload": {"pkgPath": "/home/operator/agents/reviewer-plus"}
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "result": {
+      "id": 8,
+      "kind": "agent_import",
+      "payload": {"pkgPath": "/home/operator/agents/reviewer-plus"},
+      "status": "proposed",
+      "createdAt": "2026-10-29T15:04:02Z",
+      "createdByKind": "user",
+      "createdById": "1000",
+      "command": "aeon proposal commit 8",
+      "preview": {
+        "agent": "reviewer-plus",
+        "consent": "reviewer-plus requests: read the repository, and no outbound network",
+        "carriedDeny": [
+          {"id": "no-outbound-reviewer-plus", "target": {"kind": "agent", "id": "reviewer-plus"}}
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "description": "a server that states more than it sends reports the stated length",
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "http://docs.test/short",
+        "header": {
+          "Accept": [
+            "text/plain, text/markdown, application/json, application/xml"
+          ],
+          "User-Agent": [
+            "aeon-webfetch/1.0 (Aeon daemon; GET-only; sends no credentials)"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "header": {
+          "Content-Type": [
+            "text/plain"
+          ]
+        },
+        "body": "hello",
+        "content_length": 10
+      }
+    }
+  ]
+}

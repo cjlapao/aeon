@@ -1,0 +1,18 @@
+{
+  "description": "S46 T3 (MG5-reads): mcp.vocabulary {} serves the closed sets from the code that ENFORCES them — transports (mcp's own constants), rerun classes (internal/tools' — W16, never re-declared), effect classes, and the name grammars as REGEXP STRINGS taken from the validator's own variables. No params: the answer is a function of the compiled binary, and refusing it would claim the daemon cannot state facts it ships (policy.vocabulary's argument, carried). A UI form built from anything else drifts from the validator; built from this, an offered value is an accepted value (PM6's rule onto MCP).",
+  "method": "mcp.vocabulary",
+  "request": {"jsonrpc": "2.0", "id": 905, "method": "mcp.vocabulary"},
+  "response": {
+    "jsonrpc": "2.0", "id": 905,
+    "result": {
+      "transports": ["stdio", "http"],
+      "rerun": ["safe", "detectable", "unsafe"],
+      "effect": ["local", "outward", "irreversible"],
+      "grammars": {
+        "server": "^[a-z][a-z0-9_-]*$",
+        "tool": "^[A-Za-z0-9_][A-Za-z0-9_-]*(\\.[A-Za-z0-9_-]+)*$",
+        "envName": "^[A-Za-z_][A-Za-z0-9_]*$"
+      }
+    }
+  }
+}

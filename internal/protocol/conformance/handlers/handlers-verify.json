@@ -1,0 +1,8 @@
+{
+  "description": "The corpus sweep as data: every shipped body re-verified by the running daemon, the count against the registered list, and an empty findings set — a failing body would be findings, not an error.",
+  "method": "handlers.verify",
+  "request": { "jsonrpc": "2.0", "id": 98, "method": "handlers.verify", "params": { "scope": "corpus" } },
+  "response": { "jsonrpc": "2.0", "id": 98, "result": {
+    "scope": "corpus", "passed": 25, "refused": false
+  } }
+}

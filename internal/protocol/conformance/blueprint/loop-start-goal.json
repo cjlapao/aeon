@@ -1,0 +1,27 @@
+{
+  "description": "S38 T13 (OL9): start ON an approved goal. goalId is a coordinate, not free text — the goal's version is pinned beside the blueprint pin (later goal versions never move this loop's frame), and when the person typed no goal the prompt seeds from the goal's own title and body. taskId is the sibling coordinate for a person-approved manual task; the loop becomes its worker.",
+  "method": "loop.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 84,
+    "method": "loop.start",
+    "params": {
+      "blueprint": "development-map-direct",
+      "workspaceRoot": "/repo",
+      "slug": "on-goal",
+      "goalId": "goal-7c1d",
+      "taskId": "task-41a0",
+      "attended": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 84,
+    "result": {
+      "id": "loop-7",
+      "slug": "on-goal",
+      "blueprint": "development-map-direct",
+      "status": "running"
+    }
+  }
+}

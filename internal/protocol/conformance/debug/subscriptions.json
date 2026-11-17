@@ -1,0 +1,14 @@
+{
+  "description": "A DEBUG method, excluded from the narrowed surface S19 mounts on HTTP and stdio: a debug method on a public surface is operational control by another name. It exists so that `the registry empties when a connection closes` can be SHOWN rather than only asserted.",
+  "method": "debug.subscriptions",
+  "request": {"jsonrpc": "2.0", "id": 14, "method": "debug.subscriptions"},
+  "response": {
+    "jsonrpc": "2.0", "id": 14,
+    "result": {
+      "connections": 2,
+      "subscriptions": [
+        {"subscriptionId": "s-7f3a1b2c", "connId": "conn-1", "filter": {"kinds": ["loop.*"]}, "next": 1421}
+      ]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "description": "One template whole at its current version \u2014 files and contents verbatim (a template is a document, not a secret).",
+  "method": "template.get",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "template.get",
+    "params": {
+      "slug": "base"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "slug": "base",
+      "title": "Base",
+      "description": "the shipped floor",
+      "stackTags": [
+        "golang"
+      ],
+      "origin": "system",
+      "version": 1,
+      "fileCount": 4,
+      "diverged": false,
+      "createdAt": "2026-11-05T00:00:00Z",
+      "updatedAt": "2026-11-05T00:00:00Z",
+      "files": [
+        {
+          "path": "README.md",
+          "mode": 420,
+          "content": "# {{.Name}}\n"
+        }
+      ]
+    }
+  }
+}

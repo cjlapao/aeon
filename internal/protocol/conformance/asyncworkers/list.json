@@ -1,0 +1,22 @@
+{
+  "description": "The page-mount question, answered (S64 T3): the app opens a screen and asks 'is anything of this type running for this root' — one narrowed read of the durable ledger, plus the registry's closed set so the screen can offer the honest menu of what CAN run. The row is the source of truth and this is its door; live movement arrives through asyncworker.* events, and a subscriber that races one re-reads through here.",
+  "method": "asyncworkers.list",
+  "request": {"jsonrpc": "2.0", "id": 260, "method": "asyncworkers.list", "params": {"workerType": "graph.build", "states": ["queued", "running"]}},
+  "response": {
+    "jsonrpc": "2.0", "id": 260,
+    "result": {
+      "workers": [{
+        "workerId": "aw_3c9f0a1b2c3d4e5f60718293a4b5c6d7",
+        "workerType": "graph.build",
+        "componentRoot": "/home/dev/shop",
+        "state": "running",
+        "metadata": {"trigger": "write-hook"},
+        "progress": 0.62,
+        "progressNote": "parsing internal/handler/resolve.go",
+        "queuedAt": "2026-10-30T17:41:02.000Z",
+        "startedAt": "2026-10-30T17:41:02.000Z"
+      }],
+      "types": ["graph.build"]
+    }
+  }
+}

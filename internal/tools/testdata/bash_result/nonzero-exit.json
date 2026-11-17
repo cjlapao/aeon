@@ -1,0 +1,7 @@
+{
+  "case": "nonzero-exit",
+  "summary": "bash \"exit 3\" · exit 3 · N",
+  "content": "$ exit 3\nexit 3 · N\n",
+  "isError": false,
+  "exitCode": 3
+}

@@ -1,0 +1,18 @@
+# chat — the plain conversation (S39 CR3/CR1): the loop built when a person
+# just wants to TALK to a component. One lane, one ordinary model step by the
+# general chat agent, and the loop then RESTS (after: converse) — every
+# further message starts another turn of the same agent, streamed and
+# steerable like any step, until a person closes the rest with loop.close.
+# output: [] — a conversation is not a deliverable; the thread is the record.
+id: chat
+schemaVersion: 1
+version: 1
+after: converse
+converse: chat
+output: []
+lanes:
+  - id: converse
+    step:
+      kind: model-step
+      agent: chat
+questions: {}

@@ -1,0 +1,31 @@
+{
+  "description": "Advisory policy lint: the verdict sentence verbatim, every finding dated. Lint never changes Report.OK, save or validate \u2014 and when the tools catalog is unwired the answer is the explicit unavailable state, never an all-clear.",
+  "method": "blueprint.lint",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "method": "blueprint.lint",
+    "params": {
+      "name": "nightly-triage"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "result": {
+      "advisories": [
+        {
+          "lane": "work",
+          "step": "commit",
+          "agent": "triage",
+          "tool": "shell",
+          "state": "denied",
+          "reason": "policy 17 (imported) denies shell for triage \u2014 lapses 2026-12-01",
+          "evaluatedAt": "2026-11-02T14:00:00Z",
+          "kind": "grant"
+        }
+      ],
+      "evaluatedAt": "2026-11-02T14:00:00Z"
+    }
+  }
+}

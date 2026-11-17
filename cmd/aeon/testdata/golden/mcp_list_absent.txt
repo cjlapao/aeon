@@ -1,0 +1,2 @@
+no MCP servers configured.
+tools available: the core nine only (S11)

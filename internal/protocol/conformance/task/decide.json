@@ -1,0 +1,24 @@
+{
+  "description": "task.decide records the person's verdict on a manual task's review \u2014 approved or rejected, with the peer stamped as the decider (OL11/OL14).",
+  "method": "task.decide",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 341,
+    "method": "task.decide",
+    "params": {
+      "id": "task-7a1f",
+      "decision": "approved",
+      "reason": "ready to run"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 341,
+    "result": {
+      "changed": true,
+      "state": "approved",
+      "decidedBy": "1000",
+      "decidedAt": "2026-10-26T10:00:00Z"
+    }
+  }
+}

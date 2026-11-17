@@ -1,0 +1,28 @@
+{
+  "description": "A backwards window is refused with the service's own sentence in the what, not paraphrased at the door (DB19).",
+  "method": "scorecard.blueprint",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "scorecard.blueprint",
+    "params": {
+      "blueprint": "dev-loop",
+      "since": "2026-11-04T00:00:00Z",
+      "until": "2026-10-01T00:00:00Z"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -31962,
+      "message": "the scorecard/retro request was refused",
+      "data": {
+        "what": "the window 2026-11-04T00:00:00Z to 2026-10-01T00:00:00Z runs backwards \u2014 the card refuses rather than measure nothing",
+        "means": "nothing was read: no card answered, no metric was computed. A backwards window is a mistake, and a card over nothing would dress it up as a quiet period",
+        "todo": "name a window whose since comes before its until, or leave the window out and let the service resolve the last 30 days"
+      }
+    }
+  },
+  "fromSeam": true
+}

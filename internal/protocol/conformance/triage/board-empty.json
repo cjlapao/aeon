@@ -1,0 +1,34 @@
+{
+  "description": "S51 T2 (TM5), the board at its root and nothing else: the root is required (the board, like the list, is scoped to one component — the plane law of S29's list), and every filter field stays optional. The rows below carry the hand-off case this fixture observes — roadmapItemId rides the bug, roadmapStatus names the item's CURRENT status (the board shows where the work is NOW, D8) — and the confirmed link renders as a fact a person made (D5), never as a suggestion.",
+  "method": "triage.board",
+  "request": {"jsonrpc": "2.0", "id": 445, "method": "triage.board", "params": {"componentRoot": "/srv/projects/ledger"}},
+  "response": {"jsonrpc": "2.0", "id": 445, "result": [
+    {
+      "bug": {
+        "id": 12,
+        "componentRoot": "/srv/projects/ledger",
+        "title": "statement export drops the year suffix",
+        "body": "only the month prints",
+        "validation": "reproduced",
+        "priorityState": "assumed",
+        "priorityLabel": "P2",
+        "filedBy": "golang-engineer",
+        "duplicateOf": 7,
+        "roadmapItemId": 3,
+        "validated": true,
+        "createdAt": "2026-11-01T08:00:00Z",
+        "updatedAt": "2026-11-02T09:30:00Z"
+      },
+      "describe": {
+        "validationSentence": "validation: \"reproduced\" — an attempt reproduced it (D1)",
+        "prioritySentence": "priority: \"assumed\" (\"P2\")",
+        "duplicate": "linked as a duplicate of bug 7 (a person confirmed it, D5)",
+        "handoff": "handed off to roadmap item 3 (D8)"
+      },
+      "attempts": 1,
+      "lastAttemptAt": "2026-11-01T09:00:00Z",
+      "candidates": [],
+      "roadmapStatus": "running"
+    }
+  ]}
+}

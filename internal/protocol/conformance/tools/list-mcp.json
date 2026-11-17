@@ -1,0 +1,66 @@
+{
+  "description": "tools.list with source=mcp: the MCP half of the catalog, which is NOT in the `tool` table at all (TC4) and so carries no seeded `version` (0) and no `rowCurrent` claim of its own beyond the server it came from. `acme.post` is MC6 made visible — a declared tool nobody classified, `classified:false`, `available:true` because it is a real tool of a real enabled server, and `effect:outward` with `rerunClass:unsafe`; hiding it would let the management screen pretend an outward-facing capability is absent while its server still advertises it. `description` is EMPTY because no authority holds one (S46's `mcp_server_tool` records name, rerun and effect): an invented sentence would be the catalog authoring a contract it cannot enforce. Both belong to the enabled `acme` server; the disabled `off` server's `sleep` is nowhere, because a tool of a disabled server cannot be called by anyone.",
+  "method": "tools.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 641,
+    "method": "tools.list",
+    "params": {
+      "source": "mcp"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 641,
+    "result": {
+      "tools": [
+        {
+          "name": "acme.post",
+          "family": "acme",
+          "source": "mcp",
+          "description": "",
+          "schema": {},
+          "schemaHash": "",
+          "rerunClass": "unsafe",
+          "capabilities": [],
+          "governed": [],
+          "conditional": false,
+          "available": true,
+          "server": "acme",
+          "tier": "private",
+          "effect": "outward",
+          "classified": false,
+          "version": 0,
+          "origin": "user",
+          "rowCurrent": true,
+          "category": "mcp",
+          "access": "write",
+          "address": "mcp.acme.post.write"
+        },
+        {
+          "name": "acme.search",
+          "family": "acme",
+          "source": "mcp",
+          "description": "",
+          "schema": {},
+          "schemaHash": "",
+          "rerunClass": "safe",
+          "capabilities": [],
+          "governed": [],
+          "conditional": false,
+          "available": true,
+          "server": "acme",
+          "tier": "private",
+          "effect": "local",
+          "classified": true,
+          "version": 0,
+          "origin": "user",
+          "rowCurrent": true,
+          "category": "mcp",
+          "access": "read",
+          "address": "mcp.acme.search.read"
+        }
+      ]
+    }
+  }
+}

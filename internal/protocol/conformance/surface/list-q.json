@@ -1,0 +1,49 @@
+{
+  "description": "surface.list with a free-text q: the match is a case-insensitive substring over the method NAME and the SUMMARY, the two fields a person actually reads. This is the door that makes a 269-method surface navigable from a search box without the browser inventing its own index — and the summaries are the daemon's own sentences, written in the table, ≤140 characters and distinct one from another, which its own test enforces.",
+  "method": "surface.list",
+  "request": {
+    "id": 703,
+    "jsonrpc": "2.0",
+    "method": "surface.list",
+    "params": {
+      "q": "webhook"
+    }
+  },
+  "response": {
+    "id": 703,
+    "jsonrpc": "2.0",
+    "result": {
+      "methods": [
+        {
+          "method": "webhook.deliver",
+          "kind": "control",
+          "summary": "Mounts a webhook delivery on this surface; the signature rides as a param because stdio has no headers.",
+          "humanDoorOnly": false,
+          "requiresInitialize": true,
+          "debug": false,
+          "doors": {
+            "socket": true,
+            "public": true,
+            "narrow": "aeon_webhook_deliver",
+            "agentService": false
+          }
+        }
+      ],
+      "counts": {
+        "total": 1,
+        "unfiltered": 226,
+        "byKind": {
+          "control": 1,
+          "diagnostic": 0,
+          "read": 0,
+          "write": 0
+        },
+        "byDoor": {
+          "narrow": 1,
+          "public": 1,
+          "socket": 1
+        }
+      }
+    }
+  }
+}

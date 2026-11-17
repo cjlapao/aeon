@@ -1,0 +1,35 @@
+{
+  "description": "Scrolling up: `before` asks for the window immediately preceding a cursor already on screen. A row this build cannot parse — written by a newer Aeon — names itself `unreadable` rather than failing the whole page around it; the rest of the window still renders.",
+  "method": "loop.transcript",
+  "request": {
+    "jsonrpc": "2.0", "id": 62, "method": "loop.transcript",
+    "params": {"slug": "refactor", "componentRoot": "/home/p/repo-a", "before": 140, "limit": 2}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 62,
+    "result": {
+      "messages": [
+        {
+          "id": 138,
+          "stepId": 3,
+          "agent": "golang-engineer",
+          "phase": "build",
+          "role": "assistant",
+          "createdAt": "2026-10-15T09:40:44.000Z",
+          "unreadable": "written by a newer Aeon (format 2, this build reads up to 1)"
+        },
+        {
+          "id": 139,
+          "stepId": 4,
+          "agent": "golang-engineer",
+          "phase": "build",
+          "role": "user",
+          "createdAt": "2026-10-15T09:41:12.000Z",
+          "content": [{"kind": "text", "text": "Also check the retry path."}]
+        }
+      ],
+      "hasOlder": false,
+      "hasNewer": true
+    }
+  }
+}

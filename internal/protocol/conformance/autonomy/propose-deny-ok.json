@@ -1,0 +1,29 @@
+{
+  "description": "S56 T8 (AL11): the agent door for narrowing autonomy — autonomy.proposeDeny creates an INERT proposal row of kind autonomy_deny (a veto on a root or child for an action or the outward class; nothing is enforced until a person commits it). The request's subject is the two-shape vocabulary (kind action|class, name the action or \"outward\"); state is implied (deny) and no agent-reachable schema carries the word allow anywhere (AL11's lock at the wire level). The answer is the stored row with THE copyable commit command and the fixed inertness note — the same PolicyProposeResult the policy twins answer with: one machinery, one sentence.",
+  "method": "autonomy.proposeDeny",
+  "request": {"jsonrpc": "2.0", "id": 418, "method": "autonomy.proposeDeny", "params": {
+    "nodeId": "root-aeon",
+    "subject": {"kind": "action", "name": "webfetch.post"},
+    "reason": "outbound posting from this root bit us once; the agent proposes the veto rather than asking a person to type it"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 418,
+    "result": {
+      "proposal": {
+        "id": 42,
+        "kind": "autonomy_deny",
+        "payload": {
+          "nodeId": "root-aeon",
+          "subject": {"kind": "action", "name": "webfetch.post"},
+          "reason": "outbound posting from this root bit us once; the agent proposes the veto rather than asking a person to type it"
+        },
+        "status": "proposed",
+        "createdAt": "2026-11-01T12:05:00Z",
+        "createdByKind": "agent",
+        "createdById": "implementer",
+        "command": "aeon proposal commit 42"
+      },
+      "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+    }
+  }
+}

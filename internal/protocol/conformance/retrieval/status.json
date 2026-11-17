@@ -1,0 +1,20 @@
+{
+  "description": "`retrieval.status` reports availability, PER-CORPUS staleness (O4: code churns and history does not — two figures, never one global number), and the embedding identity, through the identical function `aeon index status` calls (D15/P34). It starts nothing: a status read that reindexed is the auto-fire V21 forbids. `reindexing` with `percent` 0 means running with no figure yet — 'running' and '0%' are different claims.",
+  "method": "retrieval.status",
+  "request": {"jsonrpc": "2.0", "id": 93, "method": "retrieval.status", "params": {
+    "componentRoot": "/home/dev/aeon"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 93,
+    "result": {
+      "root": "/home/dev/aeon",
+      "corpora": [
+        {"corpus": "code", "files": 1204, "staleFiles": 38, "pendingEmbed": 0, "available": true, "reindexing": true, "percent": 61},
+        {"corpus": "history", "files": 71, "staleFiles": 0, "pendingEmbed": 0, "available": true}
+      ],
+      "embedRoute": "openai-embed",
+      "embedModel": "text-embedding-3-small",
+      "embedDim": 1536
+    }
+  }
+}

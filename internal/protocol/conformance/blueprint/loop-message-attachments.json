@@ -1,0 +1,21 @@
+{
+  "description": "`loop.message` with attachments (S69 AT3): the client sends only references — {document, rev} into frozen @attachments/ revisions it PUT beforehand; the door resolves every one against the store before the row (an unknown reference refuses the whole call naming every offender), files receipts from the STORE's facts (size, sha256, sniffed mediaType), and the daemon expands the pinned revisions to base64 content blocks at send time only — the row keeps references, the wire gets bytes, and live and replay agree because the revision cannot move.",
+  "method": "loop.message",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 99,
+    "method": "loop.message",
+    "params": {
+      "id": "loop-2f6a",
+      "text": "the build is red — here is the failing output",
+      "attachments": [
+        { "document": "@attachments/4f7d21a0-build-log.txt", "rev": 1 }
+      ]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 99,
+    "result": { "messageId": 14, "seq": 5, "turn": "started" }
+  }
+}

@@ -1,0 +1,6 @@
+$ aeon proposal reject
+! refused: reject takes exactly ONE id
+$ aeon proposal reject 1 2
+! refused: reject takes exactly ONE id
+$ aeon proposal reject 0
+! refused: "0" is not a positive proposal id

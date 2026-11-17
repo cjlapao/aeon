@@ -1,0 +1,74 @@
+{
+  "description": "S59 T6 (EV16, EV19): environment.list answers with BOTH origins in one listing — the row the seed laid (`origin: system`, which no door can write or delete) and the person's own row — each with its backend, revision, canonical spec, the references it injects BY NAME, and the bindings it holds. `legacy` is false on both: a row that inherits the daemon is a different row, and the honest third state is reserved for it.",
+  "method": "environment.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 910,
+    "method": "environment.list",
+    "params": { "limit": 10 }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 910,
+    "result": [
+      {
+        "id": "env_0f1e2d3c4b5a",
+        "slug": "host-scrubbed",
+        "name": "System scrubbed",
+        "description": "The workspace floor the seed lays (EV19).",
+        "backend": "host-scrubbed",
+        "origin": "system",
+        "legacy": false,
+        "revision": 1,
+        "spec": {
+          "env": {
+            "passthrough": ["CI", "HOME", "LANG", "LC_ALL", "LOGNAME", "PATH", "SHELL", "TERM", "TMPDIR", "TZ", "USER"],
+            "set": { "CI": "true" },
+            "secrets": []
+          },
+          "home": "real",
+          "limits": { "timeout": "10m", "output": 1048576 },
+          "egress": { "mode": "unenforced", "allow": [] },
+          "image": null,
+          "services": [],
+          "preview": null
+        },
+        "createdAt": "2026-11-03T09:00:00Z",
+        "updatedAt": "2026-11-03T09:00:00Z",
+        "capabilities": ["no-ambient-secrets", "redacted-output"],
+        "bindings": [
+          { "scopeKind": "workspace", "environmentId": "env_0f1e2d3c4b5a", "boundAt": "2026-11-03T09:00:00Z" }
+        ]
+      },
+      {
+        "id": "env_7f2a9b8c6d5e",
+        "slug": "ci-default",
+        "name": "CI default",
+        "backend": "host-scrubbed",
+        "origin": "user",
+        "legacy": false,
+        "revision": 2,
+        "spec": {
+          "env": {
+            "passthrough": ["HOME", "PATH", "TERM", "USER"],
+            "set": { "TERM": "dumb" },
+            "secrets": ["deploy-token"]
+          },
+          "home": "real",
+          "limits": { "timeout": "10m", "output": 1048576 },
+          "egress": { "mode": "unenforced", "allow": [] },
+          "image": null,
+          "services": [],
+          "preview": null
+        },
+        "createdAt": "2026-11-03T09:12:00Z",
+        "updatedAt": "2026-11-03T09:20:00Z",
+        "capabilities": ["no-ambient-secrets", "redacted-output"],
+        "secretRefNames": ["deploy-token"],
+        "bindings": [
+          { "scopeKind": "component", "componentId": "cmp_42", "environmentId": "env_7f2a9b8c6d5e", "boundAt": "2026-11-03T09:20:00Z" }
+        ]
+      }
+    ]
+  }
+}

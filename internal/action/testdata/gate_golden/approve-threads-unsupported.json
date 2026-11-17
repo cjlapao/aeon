@@ -1,0 +1,18 @@
+{
+  "case": "approve-threads-unsupported",
+  "refused": false,
+  "sha": "00000000000000000000000000000000002dc6df",
+  "evidence": {
+    "checks": "not-configured (N/A — the server reports no status API; server-agnosticism says absence passes, L34)",
+    "review_at": "",
+    "review_by": "fake",
+    "review_state": "approve",
+    "threads": "not-reported (the server reports no thread API — L34's threadless reference server)"
+  },
+  "calls": [
+    "PostReview",
+    "ReadPR",
+    "ListReviews",
+    "MergePR"
+  ]
+}

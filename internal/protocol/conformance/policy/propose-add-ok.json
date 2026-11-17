@@ -1,0 +1,36 @@
+{
+  "description": "S45 T7 (PM9): the agent door for tightening policy — policy.proposeAdd creates an INERT proposal row (TD2: nothing is enforced until a person commits it at the socket's human door). The request carries no source, actor, createdBy, status or kind member (OL3: identity is stamped by the records service, never typed); the stored payload's source is forced to \"agent\", so the proposed row can only narrow (PL1 refuses any allow). The answer is the stored row with THE copyable commit command and the fixed inertness note — the agent can tell a person what to run, and run nothing itself. The five read twins (policy.list/get/why/inForce, proposal.list) reuse the standing methods; these two are the only new socket methods the slice adds, registered iff the records service stands (V13).",
+  "method": "policy.proposeAdd",
+  "request": {"jsonrpc": "2.0", "id": 88, "method": "policy.proposeAdd", "params": {
+    "id": "no-bash-in-review",
+    "type": "tool_access",
+    "target": {"kind": "agent", "id": "implementer"},
+    "action": "deny",
+    "spec": {"toolName": "bash", "state": "deny"},
+    "reason": "the review lane never needs a shell; this agent proposes tightening its own reach, never loosening it"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 88,
+    "result": {
+      "proposal": {
+        "id": 7,
+        "kind": "policy_add",
+        "payload": {
+          "id": "no-bash-in-review",
+          "type": "tool_access",
+          "target": {"kind": "agent", "id": "implementer"},
+          "action": "deny",
+          "spec": {"toolName": "bash", "state": "deny"},
+          "source": "agent",
+          "reason": "the review lane never needs a shell; this agent proposes tightening its own reach, never loosening it"
+        },
+        "status": "proposed",
+        "createdAt": "2026-11-01T10:00:00Z",
+        "createdByKind": "agent",
+        "createdById": "implementer",
+        "command": "aeon proposal commit 7"
+      },
+      "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+    }
+  }
+}

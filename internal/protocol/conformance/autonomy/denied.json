@@ -1,0 +1,12 @@
+{
+  "description": "The autonomy.denied event (S56 T6, R5): published after a veto is committed. A veto is authority REMOVED — it overrides every allow on the component and its root — so its event matters as much as a grant's: a pinned loop about to act will be denied at the next action, and a subscribed panel should say so without polling autonomy.list. The payload is ids only, and the event is filed under the node's workspace root like the grant's.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-4c1f9a2b", "seq": 9002, "kind": "autonomy.denied",
+      "componentRoot": "/repo/aeon",
+      "at": "2026-11-01T09:05:00.000000000Z",
+      "payload": {"grantId": "g-9f02", "rootId": "aeon"}
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "description": "An enqueue whose base_branch is not a branch the named repository has: ErrMergeQueueBaseUnknown. The queue lane is keyed (component_root, base_branch); a lane onto a branch nobody can check out would merge nothing into nowhere. The refusal never lists the branches the repository DOES have \u2014 that is the component's own read.",
+  "method": "mergequeue.enqueue",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 102,
+    "method": "mergequeue.enqueue",
+    "params": {
+      "componentRoot": "/srv/components/alpha",
+      "baseBranch": "release",
+      "featureBranch": "feature/nightly-sweep",
+      "headSha": "cccc3333dddd4444eeee5555ffff6666aaaa7777",
+      "attended": false
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 102,
+    "error": {
+      "code": -31954,
+      "message": "that base branch does not exist for that repository",
+      "data": {
+        "what": "base branch \"release\" is not known for this repository (known: [main]) \u2014 the loop pin, the component's default branch, or origin/HEAD decide a base",
+        "means": "nothing enqueued. A queue lane is keyed (component_root, base_branch); a lane onto a branch nobody can check out would merge nothing into nowhere",
+        "todo": "name the repository's real base (mergequeue.status answers the lanes this repository already has), or create the base branch first",
+        "fatal": false
+      }
+    }
+  },
+  "fromSeam": true
+}

@@ -1,0 +1,52 @@
+{
+  "description": "verify.applyTemplate: the named templates are copied onto the component as origin=template gates, all or nothing — one template that would collide on name refuses the WHOLE apply, and no gate is written. Each copy carries its template's id (its provenance) and a position past the component's current last, so the applied gates run after the hand-written ones.",
+  "method": "verify.applyTemplate",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1015,
+    "method": "verify.applyTemplate",
+    "params": {
+      "componentId": "c-aeon",
+      "templateIds": [
+        "vt-go-test",
+        "vt-go-vet"
+      ]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1015,
+    "result": {
+      "gates": [
+        {
+          "id": "vcm-4",
+          "componentId": "c-aeon",
+          "name": "go test (package)",
+          "command": "go test ./...",
+          "requirement": "required",
+          "timeoutS": 900,
+          "position": 3,
+          "enabled": true,
+          "origin": "template",
+          "templateId": "vt-go-test",
+          "createdAt": "2026-11-02T13:30:00Z",
+          "updatedAt": "2026-11-02T13:30:00Z"
+        },
+        {
+          "id": "vcm-5",
+          "componentId": "c-aeon",
+          "name": "go vet",
+          "command": "go vet ./...",
+          "requirement": "required",
+          "timeoutS": 300,
+          "position": 4,
+          "enabled": true,
+          "origin": "template",
+          "templateId": "vt-go-vet",
+          "createdAt": "2026-11-02T13:30:00Z",
+          "updatedAt": "2026-11-02T13:30:00Z"
+        }
+      ]
+    }
+  }
+}

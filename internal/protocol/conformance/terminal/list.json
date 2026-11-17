@@ -1,0 +1,15 @@
+{
+  "description": "`terminal.list` enumerates sessions — optionally filtered by componentRoot — so the app can re-open the tabs it had before a reload: which terminals exist, whether each is still attached, whether the shell exited. At most 8 terminals per component root (LW10).",
+  "method": "terminal.list",
+  "request": {
+    "jsonrpc": "2.0", "id": 96, "method": "terminal.list",
+    "params": { "componentRoot": "/home/dev/code/aeon-qa-workspace" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 96,
+    "result": [
+      { "terminalId": "t-7f3a", "componentRoot": "/home/dev/code/aeon-qa-workspace", "cwd": "/home/dev/code/aeon-qa-workspace", "shell": "/bin/bash", "createdAt": "2026-10-24T10:00:00Z", "attached": true, "exited": false },
+      { "terminalId": "t-1b2c", "componentRoot": "/home/dev/code/aeon-qa-workspace", "cwd": "/home/dev/code/aeon-qa-workspace", "shell": "/bin/bash", "createdAt": "2026-10-24T09:55:00Z", "attached": false, "exited": true, "exitCode": 1 }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "description": "The policy reads fail CLOSED, and loudly (the SEC-015 discipline on the read side): a policy row that escaped the write boundary — a hand-edited table, a row predating the vocabulary gate — REFUSES the whole list rather than being silently dropped, because dropping a row can drop a Deny and a permission nobody authored is the failure this slice was chartered to make impossible. The `what` carries the boundary's OWN sentence verbatim, naming the row at fault: the socket adds no interpretation, because the boundary already named the fault.",
+  "method": "policy.list",
+  "request": {"jsonrpc": "2.0", "id": 64, "method": "policy.list"},
+  "response": {
+    "jsonrpc": "2.0", "id": 64,
+    "error": {
+      "code": -31400,
+      "message": "the policy read was refused",
+      "data": {
+        "what": "refused: stored policy \"half-written\" is not a policy the engine accepts (unknown policy type \"everything\"); the row did not come through the write boundary (or the table was edited by hand). Refusing the whole list is the fail-closed answer: dropping the row silently can drop a Deny with it",
+        "means": "the boundary will not render an answer it cannot vouch for: a policy row, acceptance record or audit row that escaped the write boundary refuses the WHOLE read loudly, rather than the confident wrong answer a silently dropped row would produce",
+        "todo": "the message carries the boundary's own words naming the row or the seam at fault; `aeon policy list` reads the same gate from a terminal, and `aeon policy events` fires the retention trim on demand",
+        "fatal": false
+      }
+    }
+  }
+}

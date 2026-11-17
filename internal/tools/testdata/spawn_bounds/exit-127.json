@@ -1,0 +1,4 @@
+{
+  "command": "definitely-not-a-command-s59",
+  "render": "$ definitely-not-a-command-s59\nexit 127 · 42ms\n\n--- stderr ---\nbash: line 1: definitely-not-a-command-s59: command not found\n"
+}

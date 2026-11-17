@@ -1,0 +1,43 @@
+{
+  "description": "notify.channel.create adds a webhook channel and it is BORN DISABLED: url https-only and host-checked at the door, the secret arrives as a daemon-host file path (never a value here), and the subscription rows ride the create, each audited as its own set. Enabled false is the whole safety property of this write (SV7).",
+  "method": "notify.channel.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 941,
+    "method": "notify.channel.create",
+    "params": {
+      "name": "ops-room",
+      "url": "https://hooks.example.com/aeon",
+      "secretFile": "/home/ops/.secrets/aeon-notify.key",
+      "subscriptions": [
+        {
+          "minSeverity": "blocked"
+        }
+      ]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 941,
+    "result": {
+      "id": "nc-01JTEST0000000000000000001",
+      "name": "ops-room",
+      "kind": "webhook",
+      "host": "hooks.example.com",
+      "enabled": false,
+      "allowPrivate": false,
+      "secretPresent": true,
+      "subscriptions": [
+        {
+          "channelId": "nc-01JTEST0000000000000000001",
+          "minSeverity": "blocked",
+          "kinds": null,
+          "maxPerHour": 30
+        }
+      ],
+      "createdAt": "2026-11-03T09:00:00Z",
+      "updatedAt": "2026-11-03T09:00:00Z",
+      "consecutiveFailures": 0
+    }
+  }
+}

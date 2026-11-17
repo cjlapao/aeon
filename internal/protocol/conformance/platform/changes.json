@@ -1,0 +1,30 @@
+{
+  "description": "`platform.changes` (S54 T1's ledger, read by T2's door) answers the derived-store operation audit newest first: who started what act, on which root, when. Rows are the STARTED acts (SP3: one platform_change row per operation actually queued, written in the same transaction — not attempts, not outcomes). op is the closed four {reindex, graph_build, graph_reparse, graph_delete}; a reindex row's subject is the flight's own key, root and corpus joined by NUL (one identity across ledger, audit and single-flight), shown here as \\u0000; actor_kind is the closed pair {user, cli} the audit CHECK compiled (no agent has a door onto these acts, SP4); outcomeRef is the worker id minted for the attempt ('aw_…' or absent — never prose). subject filters by root; an empty subject lists the plane. A read: it audits nothing, carries no identity param, reaches only the person's socket.",
+  "method": "platform.changes",
+  "request": {"jsonrpc": "2.0", "id": 342, "method": "platform.changes", "params": {"limit": 50}},
+  "response": {
+    "jsonrpc": "2.0", "id": 342,
+    "result": [
+      {
+        "id": 41,
+        "op": "reindex",
+        "subject": "/home/dev/aeon\u0000code",
+        "outcomeRef": "aw_7f3a9c2e14b8d051",
+        "summary": "retrieval.reindex started for corpus code",
+        "actorKind": "user",
+        "actorId": "1000",
+        "occurredAt": "2026-11-04T14:29:55Z"
+      },
+      {
+        "id": 40,
+        "op": "graph_build",
+        "subject": "/home/dev/other",
+        "outcomeRef": "aw_2c81f4a9903e7b6d",
+        "summary": "graph.build started",
+        "actorKind": "cli",
+        "actorId": "cli",
+        "occurredAt": "2026-11-04T13:58:11Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "description": "One fact row whole: its per-agent rows and the single learning link its milestone wrote, body quoted verbatim.",
+  "method": "retro.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "retro.show",
+    "params": {
+      "outcomeId": 77
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "row": {
+        "id": 77,
+        "componentRoot": "aeon",
+        "loopSlug": "s63-recorder",
+        "terminalKey": "s63-recorder:done:3",
+        "outcomeKind": "done",
+        "blueprintId": "dev-loop",
+        "blueprintVersion": 2,
+        "startedByKind": "user",
+        "attended": true,
+        "wallMs": 5400000,
+        "costFloor": 0.42,
+        "costSteps": 6,
+        "costUnknownSteps": 1,
+        "reviewRounds": 1,
+        "complete": true,
+        "source": "recorder",
+        "recordedAt": "2026-11-03T21:14:02Z",
+        "describe": "loop \"s63-recorder\" on aeon finished done after 1 review round, cost at least $0.42 (1 of 6 steps unknown)"
+      },
+      "agents": [
+        {
+          "agent": "dev-loops",
+          "agentSlugKnown": true,
+          "steps": 6,
+          "stepsDone": 6,
+          "verifyPass": 4,
+          "costFloor": 0.42,
+          "costUnknownSteps": 1,
+          "agentMs": 5300000
+        }
+      ],
+      "learning": {
+        "id": 12,
+        "provenance": "observed",
+        "body": "The recorder's terminal key kept the re-drive of s63-recorder to one row across three terminals."
+      },
+      "statement": "A score is a measurement of what happened. It does not change what any agent, blueprint or project is allowed or asked to do."
+    }
+  }
+}

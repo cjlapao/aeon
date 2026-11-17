@@ -1,0 +1,22 @@
+{
+  "description": "The runner stopped at a human gate and released its goroutine while the question stays durable. `lane`/`step` name which gate is waiting and `answers` are the choices it offers, so a chat can render the gate without a second read.",
+  "event": "loop.waiting",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1603,
+      "kind": "loop.waiting",
+      "at": "2026-10-17T16:00:00Z",
+      "payload": {
+        "loopId": "loop-1",
+        "questionId": 7,
+        "prompt": "Approve?",
+        "answers": ["approve", "reject"],
+        "lane": "approve",
+        "step": "approve"
+      }
+    }
+  }
+}

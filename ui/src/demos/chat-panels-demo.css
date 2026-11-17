@@ -1,0 +1,17 @@
+body { margin: 0; background: #eef1f5; color: #1e293b; }
+.dark body { background: #18191c; color: #e2e8f0; }
+.panels-demo { max-width: 1080px; margin: 0 auto; padding: 38px 24px; font-family: "Inter Variable", sans-serif; }
+.panels-demo-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.panels-demo-eyebrow { color: #64748b; font-size: 11px; letter-spacing: .16em; }
+.panels-demo h1 { font-size: clamp(26px, 4vw, 42px); font-weight: 550; letter-spacing: -.04em; margin: 8px 0; }
+.panels-demo-header p:not(.panels-demo-eyebrow), .panels-demo-footer { font-size: 13px; color: #64748b; }
+.dark .panels-demo-header p, .dark .panels-demo-footer { color: #a1a1aa; }
+.panels-demo-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 24px 0 12px; }
+.panels-demo-controls span { font-size: 12px; margin-left: auto; color: #64748b; }
+.dark .panels-demo-controls span { color: #a1a1aa; }
+.panels-demo-header button, .panels-demo-controls button { background: transparent; border: 1px solid #64748b55; border-radius: 8px; padding: 7px 12px; font-size: 12px; cursor: pointer; color: inherit; }
+.panels-demo button:focus-visible { outline: 2px solid #60a5fa; outline-offset: 2px; }
+.panels-demo-chat { height: clamp(400px, 70vh, 780px); border: 1px solid #64748b40; border-radius: 22px; overflow: hidden; background: #fff; }
+.dark .panels-demo-chat { background: #1e2024; }
+.panels-demo-footer { text-align: center; margin-top: 16px; }
+@media (max-width: 520px) { .panels-demo { padding: 20px 10px; } .panels-demo-header { align-items: start; } }

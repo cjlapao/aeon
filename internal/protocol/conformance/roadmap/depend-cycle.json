@@ -1,0 +1,27 @@
+{
+  "description": "S27 T3 rule 5: a cycle is refused with its closure NAMED, never a bare 'cycle detected'. This edge closes the smallest ring (item 9 already depends on item 12; the attempt is 12 -> 9), so the store's reverse-edge sentence is the closure sentence \u2014 the pair, named, with the deadlock it would cause. A longer ring gets the walk's sentence (item X cannot depend on item Y \u2014 item Y already depends on item X; the graph would cycle and neither item could ever become ready), proven in internal/roadmap/dependencies_test.go.",
+  "method": "roadmap.depend",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 349,
+    "method": "roadmap.depend",
+    "params": {
+      "id": 9,
+      "dependsOn": 12
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 349,
+    "error": {
+      "code": -31900,
+      "message": "the roadmap refused the act",
+      "data": {
+        "what": "roadmap_dependency: the reverse edge already exists (a 2-cycle would deadlock the graph)",
+        "means": "nothing moved \u2014 the row keeps the state it had",
+        "todo": "if the edge must go, roadmap.undepend {id, dependsOn} removes exactly the named pair and nothing else; roadmap.board shows what waits on what",
+        "fatal": false
+      }
+    }
+  }
+}

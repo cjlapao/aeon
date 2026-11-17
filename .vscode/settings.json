@@ -1,0 +1,60 @@
+{
+  // GOPRIVATE is not optional. The framework module cannot be verified by the
+  // checksum database, so without it gopls reports every scaffolding import as
+  // unresolved and every hover as unknown — while `make build` works, because
+  // the Makefile exports it.
+  //
+  // CGO_ENABLED is here for the same reason it is in the launch configs: the
+  // tooling should build the binary this project actually ships.
+  "go.toolsEnvVars": {
+    "GOPRIVATE": "github.com/cjlapao/*",
+    "CGO_ENABLED": "1"
+  },
+  "go.testEnvVars": {
+    "GOPRIVATE": "github.com/cjlapao/*",
+    "CGO_ENABLED": "1"
+  },
+  "go.lintTool": "golangci-lint",
+  "go.buildTags": "sqlite_fts5",
+  "go.testTags": "sqlite_fts5",
+  "go.lintOnSave": "package",
+
+  // rust-analyzer needs pointing at the Tauri crate; it is not at this folder's
+  // root, and without this the Rust files show no diagnostics at all.
+  "rust-analyzer.linkedProjects": ["ui/src-tauri/Cargo.toml"],
+
+  // Tailwind v4 keeps its theme in CSS rather than a config file, so the
+  // extension needs the entry stylesheet to offer completions.
+  "tailwindCSS.experimental.configFile": "ui/src/index.css",
+
+  "typescript.tsdk": "ui/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  // Build output and the Rust target directory are large and noisy. The
+  // watcher exclusion matters most: src-tauri/target holds tens of thousands
+  // of files and will saturate inotify on Linux if it is watched.
+  "files.exclude": {
+    "**/dist": true,
+    "**/src-tauri/target": true,
+    "**/node_modules": true
+  },
+  "search.exclude": {
+    "**/dist": true,
+    "**/src-tauri/target": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/Cargo.lock": true
+  },
+  "files.watcherExclude": {
+    "**/src-tauri/target/**": true,
+    "**/node_modules/**": true,
+    "**/.dev/**": true
+  },
+
+  "[go]": { "editor.formatOnSave": true },
+  "[rust]": { "editor.formatOnSave": true },
+  "[makefile]": { "editor.insertSpaces": false },
+
+  // The gofmt-ed width this project is written to.
+  "editor.rulers": [100]
+}

@@ -1,0 +1,27 @@
+{
+  "description": "Publishes the condition field vocabulary so authors can validate a when expression without reading daemon source code.",
+  "method": "blueprint.fields",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "method": "blueprint.fields",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "result": {
+      "fields": [
+        {
+          "path": "mode",
+          "type": "string",
+          "operators": [
+            "eq",
+            "ne"
+          ],
+          "doc": "Loop mode"
+        }
+      ]
+    }
+  }
+}

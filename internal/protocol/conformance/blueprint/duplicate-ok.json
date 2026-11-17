@@ -1,0 +1,38 @@
+{
+  "description": "Duplicates a stored blueprint into a new name (a text copy whose source id and version are rewritten) through the same Analyze and one-transaction write path, answering the new row's revision, provenance and derived refs.",
+  "method": "blueprint.duplicate",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 82,
+    "method": "blueprint.duplicate",
+    "params": {
+      "from": "two-step",
+      "name": "my-pipeline",
+      "note": "copied for the pipeline experiment"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 82,
+    "result": {
+      "name": "my-pipeline",
+      "changed": true,
+      "revision": 1,
+      "origin": "user",
+      "version": 1,
+      "report": {
+        "blueprint": "my-pipeline",
+        "schemaVersion": 1,
+        "version": 1,
+        "validCount": 6,
+        "diagnostics": []
+      },
+      "references": [
+        {
+          "kind": "agent",
+          "target": "default"
+        }
+      ]
+    }
+  }
+}

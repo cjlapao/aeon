@@ -1,0 +1,17 @@
+{
+  "description": "`workspace.git.diff` returns a unified diff for one path (working tree vs HEAD); an untracked file comes back as an all-added diff, a binary file reports binary with no body, and a capped diff (512 KiB) says so with truncated. The path goes through the same resolver as loop.file.read — escaping the root is refused with the path named.",
+  "method": "workspace.git.diff",
+  "request": {
+    "jsonrpc": "2.0", "id": 84, "method": "workspace.git.diff",
+    "params": { "componentRoot": "/home/dev/code/aeon-qa-workspace", "path": "SURVEY.md" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 84,
+    "result": {
+      "state": "ok",
+      "diff": "--- /dev/null\n+++ b/SURVEY.md\n@@ -0,0 +1,2 @@\n+# Survey\n\n+Findings here.\n",
+      "binary": false,
+      "truncated": false
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "description": "`step.continue` refuses a step that is not suspended-because-a-person-stopped-it — running, done, or waiting on a real question all need a different response (and for the last, `answer`, not this).",
+  "method": "step.continue",
+  "request": {
+    "jsonrpc": "2.0", "id": 74, "method": "step.continue",
+    "params": { "stepId": 5 }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 74,
+    "error": {
+      "code": -31305, "message": "step is not paused",
+      "data": {
+        "what": "step 5 has status \"suspended\" and pause reason \"\"; step.continue only resumes a step a person stopped",
+        "means": "it may be running right now, done, or waiting on a real question — step.continue only resumes the first kind; `answer` is for the second",
+        "todo": "step.show names the step's status and, for a real question, its pending question",
+        "fatal": false
+      }
+    }
+  }
+}

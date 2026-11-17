@@ -1,0 +1,30 @@
+{
+  "case": "readpr",
+  "method": "GET",
+  "path": "/repos/acme/widget/pulls/7",
+  "authShape": "Bearer \u003credacted\u003e",
+  "accept": "application/vnd.github+json",
+  "attempts": 1,
+  "wire": "{\n  \"number\": 7,\n  \"head\": {\n   \"ref\": \"task/4a17-version/4a17\",\n   \"sha\": \"aaa\"\n  },\n  \"base\": {\n   \"ref\": \"feature/4a17-version\",\n   \"sha\": \"bbb\"\n  },\n  \"merged\": false,\n  \"state\": \"open\"\n }",
+  "mapped": "{\"Number\":7,\"Head\":\"task/4a17-version/4a17\",\"BaseRef\":\"feature/4a17-version\",\"Merged\":false,\"MergeSHA\":\"\",\"headSHA\":\"aaa\"}",
+  "wireHas": [
+    "number",
+    "head.ref",
+    "head.sha",
+    "base.ref",
+    "base.sha",
+    "merged",
+    "state"
+  ],
+  "mappedHas": [
+    "number",
+    "head.ref",
+    "head.sha",
+    "base.ref",
+    "merged"
+  ],
+  "dropped": [
+    "base.sha",
+    "state"
+  ]
+}

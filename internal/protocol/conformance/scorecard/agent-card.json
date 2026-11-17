@@ -1,0 +1,56 @@
+{
+  "description": "An agent card keyed by slug: window resolved by the service and echoed, coverage strip beside every metric, n and state on every number, and RT3's sentence on the result.",
+  "method": "scorecard.agent",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "scorecard.agent",
+    "params": {
+      "agent": "dev-loops"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "card": {
+        "subject": {
+          "kind": "agent",
+          "id": "dev-loops"
+        },
+        "window": {
+          "since": "2026-10-05T00:00:00Z",
+          "until": "2026-11-04T00:00:00Z"
+        },
+        "coverage": {
+          "recordedSince": "2026-10-20T09:14:02Z",
+          "loopsInHistory": 41,
+          "loopsRecorded": 37,
+          "loopsNotRecorded": 4
+        },
+        "statement": "Outcome recording covers 37 of 41 loops since 2026-10-20T09:14:02Z; the 4 earlier loops are counted, never measured.",
+        "metrics": {
+          "loops": {
+            "value": 37,
+            "n": 37,
+            "state": "ok"
+          },
+          "doneRate": {
+            "value": 0.75,
+            "n": 36,
+            "state": "ok"
+          },
+          "costPerCompletedItem": {
+            "value": null,
+            "n": 8,
+            "state": "too-few",
+            "detail": {
+              "rendered": "at least $0.31 per completed item (2 of 9 steps unknown)"
+            }
+          }
+        }
+      },
+      "statement": "A score is a measurement of what happened. It does not change what any agent, blueprint or project is allowed or asked to do."
+    }
+  }
+}

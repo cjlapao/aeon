@@ -1,0 +1,12 @@
+{
+  "description": "Params of the wrong shape get JSON-RPC's -32602, not an Aeon code, for the same reason as -32601: the shape of params is a protocol-level fact.",
+  "method": "initialize",
+  "request": {
+    "jsonrpc": "2.0", "id": 13, "method": "initialize",
+    "params": {"protocolVersion": "not-a-number"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 13,
+    "error": {"code": -32602, "message": "invalid params: json: cannot unmarshal string into Go struct field InitializeParams.protocolVersion of type int"}
+  }
+}

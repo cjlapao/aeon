@@ -1,0 +1,365 @@
+{
+  "agents": {
+    "action": {
+      "create": "Novo agente",
+      "import": "Importar",
+      "migrate": "Migrar",
+      "retry": "Perguntar de novo ao daemon"
+    },
+    "search": {
+      "label": "Buscar agentes",
+      "placeholder": "Nome, slug ou descrição…"
+    },
+    "col": {
+      "name": "Nome",
+      "slug": "Slug",
+      "updatedAt": "Atualizado",
+      "actions": "Ações"
+    },
+    "flag": {
+      "firstParty": "de primeira parte",
+      "yours": "seu",
+      "signed": "assinado",
+      "unsigned": "não assinado",
+      "none": "—",
+      "shipped": "Do sistema",
+      "imported": "Importado"
+    },
+    "row": {
+      "menu": "Ações de {slug}",
+      "view": "Ver",
+      "edit": "Editar",
+      "duplicate": "Duplicar",
+      "export": "Exportar",
+      "delete": "Excluir"
+    },
+    "table": {
+      "loading": "Pedindo esta página ao daemon…"
+    },
+    "read": {
+      "failed": "O daemon recusou esta página"
+    },
+    "empty": {
+      "search": "Nenhum agente corresponde a “{q}”.",
+      "none": "Este armazenamento não tem nenhuma linha de agente. Importe um pacote ou rode Migrar para pôr o conjunto de primeira parte.",
+      "pastEnd": "A página {page} desta ordem está vazia, embora o daemon conte {total} agentes no total. Volte uma página ou mude a ordem."
+    },
+    "reason": {
+      "notConnectedTitle": "Sem conexão",
+      "notConnected": "Não há nada para configurar nem chamar. A página de Status diz o caminho que tentou e oferece Reconectar.",
+      "changesOff": "As alterações ficam desligadas até o daemon voltar."
+    },
+    "field": {
+      "name": "Nome",
+      "nameHint": "Mudar o nome não gera um novo slug: {slug} continua sendo a referência que todo blueprint, política e servidor MCP aponta.",
+      "description": "Descrição",
+      "functionality": "Funcionalidade",
+      "prompt": "Prompt",
+      "promptHint": "O prompt de sistema, como a linha o guarda — o daemon não o reescreve na entrada.",
+      "skills": "Habilidades",
+      "skillsHint": "Uma lista das habilidades que um cartão anuncia para este agente. Nada roda a partir dela; aparece quando o agente é exportado ou descoberto.",
+      "metadata": "Metadados",
+      "tech": "Tecnologias",
+      "techHint": "As tecnologias em que este agente trabalha. Um passo de fluxo que pede uma tecnologia escolhe o agente que a declara, o mais próximo primeiro.",
+      "metadataHint": "Os detalhes brutos, em JSON. As tecnologias e o minion acima ficam guardados aqui, então mude-os acima e não à mão.",
+      "avatarType": "Tipo de avatar",
+      "avatarMood": "Humor do avatar",
+      "avatarColor": "Cor do avatar",
+      "avatarColorHint": "Uma palavra de cor, não um seletor: é com essa palavra que o avatar é pintado.",
+      "avatarHint": "O tipo de avatar. A maioria dos agentes é minion.",
+      "avatarNone": "sem avatar",
+      "tools": "Ferramentas",
+      "toolsHint": "O que o agente pode pedir. Escolha kits ou ferramentas individuais.",
+      "handoff": "Relatório final",
+      "handoffHint": "O que o agente deve dizer ao terminar. Um passo que diz estar pronto mas deixa de fora um campo obrigatório é devolvido."
+    },
+    "create": {
+      "who": "1 · Quem é?",
+      "colour": "Cor do minion",
+      "name": "Nome",
+      "nameHint": "O slug é feito a partir do nome quando você cria o agente e não pode ser alterado depois.",
+      "description": "Para que serve, em uma linha?",
+      "descriptionHint": "Aparece na lista de agentes e quando um fluxo escolhe um agente.",
+      "does": "2 · O que ele deve fazer?",
+      "prompt": "Instruções",
+      "promptHint": "Este é o prompt com que o agente roda. Você pode mudá-lo a qualquer momento. Markdown funciona.",
+      "promptPlaceholder": "Diga ao agente quem ele é, as regras que segue e o que deve devolver.",
+      "useSkeleton": "Começar de um esqueleto",
+      "works": "3 · Com o que ele trabalha?",
+      "worksHelp": "Escolha as tecnologias em que ele é bom. Um fluxo que escolhe agente por tecnologia só considera quem a declara. Deixe vazio se for de uso geral.",
+      "techLoading": "Carregando as tecnologias…",
+      "uses": "4 · O que ele pode usar?",
+      "usesHelp": "Escolha o que o agente pode fazer. Comece por um kit; você pode mudar depois na página do agente.",
+      "later": "O modelo em que ele roda é escolhido depois, na página do agente.",
+      "cancel": "Cancelar",
+      "submit": "Criar agente",
+      "done": "{name} foi criado. A página dele está aberta, para você adicionar o que mais precisar.",
+      "skeleton0": "Você é [quem o agente é].",
+      "skeleton2": "Regras",
+      "skeleton3": "- [uma regra que ele sempre segue]",
+      "skeleton4": "- [uma regra que ele nunca quebra]",
+      "skeleton6": "Saída",
+      "skeleton7": "[o que ele devolve, e em que formato]"
+    },
+    "detail": {
+      "description": "descrição",
+      "descriptionEmpty": "sem descrição",
+      "functionality": "funcionalidade",
+      "functionalityEmpty": "sem funcionalidade",
+      "prompt": "prompt",
+      "promptEmpty": "sem prompt",
+      "skills": "habilidades",
+      "skillsEmpty": "sem habilidades",
+      "metadata": "metadados",
+      "metadataEmpty": "nenhum",
+      "signer": "signatário {certificate}",
+      "signerNone": "(nenhum certificado na linha)",
+      "avatar": "avatar",
+      "breadcrumb": "Local do agente",
+      "all": "Todos os agentes",
+      "editing": "Editando",
+      "done": "Concluir",
+      "discard": "Cancelar"
+    },
+    "readonly": {
+      "immutable": "O slug {slug} continua o mesmo mesmo que você renomeie o agente. Fluxos e políticas apontam para ele.",
+      "slug": "Slug",
+      "id": "Id da linha",
+      "version": "Versão",
+      "origin": "Origem",
+      "internal": "Primeira parte",
+      "signed": "Assinado",
+      "tools": "Ferramentas",
+      "toolsEmpty": "nenhuma ferramenta",
+      "temperature": "Temperatura",
+      "handoff": "Handoff",
+      "handoffEmpty": "sem handoff",
+      "policyAgent": "Agente de política",
+      "bodyHash": "Hash do corpo",
+      "signature": "Assinatura",
+      "certificate": "Certificado",
+      "createdAt": "Criado",
+      "updatedAt": "Atualizado"
+    },
+    "panel": {
+      "create": "Novo agente",
+      "createSubtitle": "Dê um nome e instruções. Você pode mudar tudo depois, menos o slug.",
+      "edit": "Editar agente",
+      "editSubtitle": "Aberto com agent.view: a linha que você vê é a linha que você envia",
+      "edited": "Salvo — o daemon editou {slug}",
+      "view": "Agente",
+      "viewSubtitle": "A linha como o daemon a lê",
+      "import": "Importar um agente",
+      "importSubtitle": "Adicione um agente a partir de um arquivo de cartão, em três passos.",
+      "loading": "Pedindo a linha inteira ao daemon…",
+      "noRow": "O daemon respondeu, e a resposta não trazia linha para abrir.",
+      "save": "Salvar",
+      "saving": "Gravando…",
+      "changed": "Rascunho — mudou: {fields}",
+      "unchanged": "Nada mudou ainda.",
+      "firstPartyTitle": "Linha de primeira parte",
+      "tab": {
+        "overview": "Visão geral",
+        "prompt": "Prompt",
+        "metadata": "Metadados",
+        "history": "Histórico"
+      }
+    },
+    "history": {
+      "title": "Histórico",
+      "proposal": "chegou pela proposta {id}",
+      "loading": "Pedindo o livro-razão ao daemon…",
+      "failed": "O daemon recusou este histórico",
+      "op": {
+        "create": "Criado",
+        "edit": "Editado",
+        "duplicate": "Duplicado",
+        "delete": "Excluído",
+        "import": "Importado",
+        "migrate": "Migrado",
+        "seed": "Atualizado do conjunto fornecido"
+      },
+      "empty": "Nenhuma escrita tocou este agente. Toda mudança que acontecer chegará aqui, com quem a fez.",
+      "count": "{shown} de {total} mudanças",
+      "latest": "Última mudança",
+      "note": "Um registro das escritas neste agente: quem, quando e a frase do daemon. Não é um diff, e nada aqui restaura um valor anterior.",
+      "elsewhere": "Mudanças em outros agentes não aparecem aqui. A atividade de todos os agentes está na página Agentes."
+    },
+    "duplicate": {
+      "title": "Duplicar este agente",
+      "subtitle": "Faça uma cópia de {slug} que você possa alterar.",
+      "note": "A cópia começa idêntica: as mesmas instruções, ferramentas e minion. É um agente seu, então você pode mudar o que quiser. O original não é tocado.",
+      "name": "Nome da cópia",
+      "nameHint": "A cópia recebe um slug próprio, feito a partir deste nome. Nunca o do original.",
+      "answer": "{name} foi criado, uma cópia do agente. A página dele está aberta.",
+      "step1": "Dê um nome à cópia"
+    },
+    "export": {
+      "title": "Exportar este agente",
+      "subtitle": "Faça um cartão de {slug} que outro Aeon possa importar.",
+      "path": "Salvar em um arquivo (opcional)",
+      "pathHint": "Um caminho na máquina onde o daemon roda. Deixe vazio para ver o cartão aqui.",
+      "answer": {
+        "path": "Salvo. O daemon escreveu o cartão em:",
+        "card": "O cartão, pronto para copiar:"
+      },
+      "step1": "Para onde vai o cartão?",
+      "help": "Um cartão é um arquivo .json que guarda o agente. Entregue a alguém, ou importe em outra máquina.",
+      "doneFile": "Cartão salvo.",
+      "doneCard": "Aqui está o cartão.",
+      "copy": "Copiar o cartão",
+      "copied": "Cartão copiado."
+    },
+    "migrate": {
+      "title": "Migrar linhas de agente",
+      "body": "O daemon deriva linhas de agente da tabela de ciclo de vida de plugins e responde quantas criou. O que já existe fica como está — uma migração recusa em vez de sobrescrever.",
+      "ledgerNote": "A execução é registrada como uma entrada que não nomeia um único agente, então você a encontra em Atividade na página Agentes, e não junto de uma linha.",
+      "confirm": "Rodar a migração",
+      "cancel": "Agora não",
+      "close": "Fechar",
+      "answer": "Pronto: o daemon criou {created} agentes."
+    },
+    "delete": {
+      "title": "Excluir {slug}?",
+      "body": "A linha se vai e o livro-razão guarda o lançamento que a nomeia. Digite o slug para confirmar: {slug}. Se um blueprint, uma política ou um servidor MCP ainda aponta para ela, o daemon recusa e nomeia cada uma — nada é removido por sua conta.",
+      "confirm": "Excluir este agente",
+      "done": "Excluído — o daemon removeu {slug}, e a tabela acima foi consultada de novo."
+    },
+    "discard": {
+      "title": "Jogar fora suas mudanças?",
+      "body": "O painel guarda edições que nunca foram enviadas. Fechar isto as descarta; a linha no armazenamento é o que a última resposta disse que era.",
+      "confirm": "Descartar o rascunho",
+      "cancel": "Continuar editando"
+    },
+    "title": "Agentes",
+    "purpose": "Os especialistas a quem seus fluxos entregam o trabalho.",
+    "unsignedNote": "Agentes sem assinatura aparecem aqui até a assinatura ser configurada",
+    "footer": {
+      "showing": "Mostrando {shown} de {total}",
+      "loadMore": "Carregar mais",
+      "loadingMore": "Carregando…"
+    },
+    "overview": {
+      "canDo": "O que ele faz",
+      "nothingDeclared": "Este agente não declara funcionalidade nem ferramentas.",
+      "details": "Detalhes",
+      "runsOn": "Roda com"
+    },
+    "handoff": {
+      "required": "Obrigatório",
+      "optional": "Opcional",
+      "none": "Nada declarado. O agente termina com o resultado e um motivo curto, e nada mais é conferido.",
+      "name": "Nome do campo",
+      "namePlaceholder": "resumo",
+      "purpose": "Para que serve",
+      "purposePlaceholder": "O que foi feito, em uma frase",
+      "add": "Adicionar um campo",
+      "remove": "Remover este campo",
+      "suggested": "Comuns:",
+      "suggestSummary": "O que foi feito e como atende ao objetivo",
+      "suggestTests": "Caminhos dos testes escritos, ou \"nenhum\" com o motivo",
+      "suggestQuestions": "O que ainda está em aberto, ou \"Nenhuma.\""
+    },
+    "view": {
+      "agents": "Todos os agentes",
+      "activity": "Atividade"
+    },
+    "activity": {
+      "col": {
+        "when": "Quando",
+        "change": "Mudança",
+        "agent": "Agente",
+        "what": "O que aconteceu",
+        "by": "Por"
+      },
+      "everyAgent": "Todos os agentes",
+      "empty": "O registro está vazio: nenhum agente foi criado, editado, importado, duplicado, excluído ou derivado desde que este armazenamento existe.",
+      "showing": "Mostrando {shown} de {total}",
+      "note": "Uma migração não nomeia um único agente, então aparece aqui e nunca na página do próprio agente."
+    },
+    "import": {
+      "title": "Importar um agente",
+      "subtitle": "Adicione um agente a partir de um arquivo de cartão, em três passos.",
+      "step1": "1. Escolha o cartão",
+      "step1Help": "Um cartão é um arquivo .json de um agente. Você o obtém em Exportar num agente, ou de alguém que compartilhou o dele.",
+      "drop": "Solte o cartão aqui, ou procure por ele",
+      "dropHelp": "Um arquivo .json, até 1 MB.",
+      "browse": "Procurar arquivos",
+      "step2": "2. Confira o que você vai importar",
+      "step3": "3. Importe",
+      "step3Help": "O Aeon verifica primeiro a assinatura do cartão. Se o cartão foi alterado ou não é confiável, nada é adicionado e você é avisado do motivo.",
+      "run": "Importar agente",
+      "running": "Importando…",
+      "chooseFirst": "Escolha um cartão primeiro.",
+      "notJson": "Este arquivo não é um JSON válido, então não pode ser um cartão de agente. Escolha o arquivo que você exportou do Aeon.",
+      "notCard": "Este JSON não tem um cartão de agente. Escolha um arquivo exportado pelo botão Exportar de um agente.",
+      "tooBig": "Este arquivo tem mais de 1 MB, grande demais para um cartão de agente.",
+      "wrongType": "Só arquivos .json podem ser importados.",
+      "summary": {
+        "name": "Nome",
+        "slug": "Slug",
+        "version": "Versão",
+        "signed": "Assinado",
+        "yes": "Sim, tem uma assinatura",
+        "no": "Não"
+      },
+      "unsignedTitle": "Este cartão não é assinado",
+      "unsignedBody": "Ninguém garante quem fez este agente. Você ainda pode importá-lo: vai precisar confirmar antes, e ele ficará marcado como não assinado.",
+      "done": {
+        "created": "{name} foi adicionado aos seus agentes.",
+        "updated": "{name} foi atualizado para a versão {version}.",
+        "noop": "{name} já está atualizado — esta versão já estava armazenada, então nada mudou.",
+        "other": "O daemon respondeu: {word}."
+      },
+      "open": "Abrir {name}",
+      "another": "Importar outro cartão",
+      "consent": "Importar aqui não mostra a revisão de consentimento que a linha de comando mostra. A assinatura do cartão continua sendo verificada.",
+      "step2Waiting": "Quando você escolher um cartão, o nome, a versão e a assinatura aparecem aqui para você conferir.",
+      "confirmTitle": "Importar um agente não assinado?",
+      "confirmBody": "Este cartão não é assinado, então ninguém garante quem o fez, e ele pode não ser seguro. Um agente pode executar comandos e alterar arquivos se você lhe der as ferramentas. Importe só se confiar na origem. Ele ficará marcado como não assinado, e toda ferramenta que você der a ele pedirá a sua aprovação antes.",
+      "confirmYes": "Importar mesmo assim",
+      "confirmNo": "Cancelar",
+      "markedUnsigned": "Marcado como não assinado. Toda ferramenta que você der a ele pede a sua aprovação antes."
+    },
+    "tools": {
+      "effect": {
+        "changes": "Altera coisas",
+        "runs": "Executa comandos",
+        "reaches": "Acessa a rede",
+        "asks": "Pergunta",
+        "reads": "Lê"
+      },
+      "none": "Nenhuma ferramenta ainda: este agente conversa, mas não age.",
+      "selected": "{total} ferramentas escolhidas.",
+      "policy": "As ferramentas que você escolhe ficam permitidas para este agente.",
+      "loading": "Carregando as ferramentas…",
+      "failed": "Não foi possível listar as ferramentas:",
+      "bashAsks": "Executar comandos sempre pede a sua aprovação antes, seja qual for o agente. No chat você pode permitir pelo resto da conversa.",
+      "asksEverything": "Este agente foi importado sem assinatura, então toda ferramenta que ele tem pede a sua aprovação antes.",
+      "placeholder": "Escolha o que ele pode usar",
+      "search": "Buscar ferramentas, como grep ou doc",
+      "empty": "Nenhuma ferramenta corresponde.",
+      "asksFirst": "Pede antes"
+    },
+    "minion": {
+      "auto": "automático",
+      "change": "Trocar o minion (agora {current})",
+      "hint": "Clique para trocar qual minion é"
+    },
+    "tech": {
+      "placeholder": "Escolha as tecnologias",
+      "search": "Buscar, como go ou docker",
+      "empty": "Nenhuma tecnologia corresponde."
+    },
+    "section": {
+      "who": "Quem é?",
+      "works": "Com o que ele trabalha?",
+      "uses": "O que ele pode usar?",
+      "reports": "O que ele relata ao terminar?",
+      "reportsHelp": "Quando o agente termina, ele passa isto ao passo seguinte. Nomeie cada coisa que ele deve dizer e para que serve. Marque como opcional o que ele pode deixar de fora."
+    },
+    "advanced": {
+      "help": "Os detalhes de que a maioria dos agentes nunca precisa: o “o que faz” em texto livre, as habilidades que um cartão anuncia e os metadados brutos."
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "description": "S46 T3 (MG5-reads): the MCP domain's own refusal code (-31853), carried VERBATIM from the seam exactly as policyRefusal carries the policy reads' refusals and ErrProposalDecideRefused carries desk's — the layer that judged the request named the fault, and a paraphrase by the door would be an interpretation wearing that layer's authority (D9). This read refuses a filter the closed sets make nonsense rather than answering the vacuous list (the seam owns the judgement). It is the MCP subject's own taxonomy code, preferred over the agent-services seam's ErrAgentRefused so a client can tell WHICH domain declined. T5's write doors (mcp.server.add, mcp.grant.declare, …) are named as this code's first write-door writers, validator sentences verbatim. Nothing was written by a refusal.",
+  "method": "mcp.servers",
+  "request": {"jsonrpc": "2.0", "id": 908, "method": "mcp.servers", "params": {"tier": "publc"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 908,
+    "error": {
+      "code": -31853,
+      "message": "the MCP management door refused",
+      "data": {
+        "what": "refused: tier filter \"publc\" is not \"public\" or \"private\" — mcp.vocabulary answers the closed sets rather than guessing them",
+        "means": "nothing was written and no audit row was made — a refusal is the domain judging the request, not the machine failing; the validator, the grammar and the domain's own rules are enforced where the rows live, and this door carries their sentences, never rewrites them",
+        "todo": "read the sentence in `what` — it names what was refused and usually the form that would pass; `mcp.vocabulary` answers the closed sets and grammars rather than guessing them",
+        "fatal": false
+      }
+    }
+  }
+}

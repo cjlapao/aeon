@@ -1,0 +1,28 @@
+{
+  "description": "S38 T13 (OL9): a blueprint declaring requires: refuses an unlinked start — the loop row is NOT created, and the refusal carries the evaluator's sentence plus the workspace's approved candidates in `todo`, so the client offers a pick instead of a dead end. A clock or webhook fire of the same blueprint meets the same refusal (recorded as a trigger fire refused by S20).",
+  "method": "loop.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 85,
+    "method": "loop.start",
+    "params": {
+      "blueprint": "org-needs",
+      "goal": "do it anyway",
+      "workspaceRoot": "/repo"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 85,
+    "error": {
+      "code": -31612,
+      "message": "the blueprint's requires were not met",
+      "data": {
+        "what": "blueprint \"org-needs\" needs goal approved or task approved — none was given",
+        "means": "the loop row was NOT created — a loop that starts against a missing prerequisite would reach its first gate with nothing standing behind it",
+        "todo": "start on one of the approved candidates named below, approve one first (goal.review / task.decide), or start a blueprint that declares no requires — the workspace already holds: goal goal-7c1d (ship the org layers), task task-41a0 (wire the sockets)",
+        "fatal": false
+      }
+    }
+  }
+}

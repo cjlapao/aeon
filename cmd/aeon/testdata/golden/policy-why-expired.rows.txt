@@ -1,0 +1,4 @@
+policy rows: 1
+  policy temp-grant type=tool_access target=agent:alice action=allow source=operator subject=agent:alice spec={"toolName":"read","state":"allow"} not_after=<TIME> not_after_epoch=1792540800 created_at=<TIME>
+proposal rows: 0
+policy_event rows: 0

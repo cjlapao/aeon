@@ -1,0 +1,20 @@
+{
+  "description": "The backlog of one component root, the door's own order. `validation` and `priorityState` are TWO separate closed sets rendered apart (D2, R4 — never one combined badge); `unvalidated` is not `could-not-tell`, and an `unknown` priority says unknown, never a blank. A filter that matches nothing is the filter's answer, not a silence: the empty list is a statement. The two filters (validation, priority) never collapse into each other.",
+  "method": "triage.list",
+  "request": {"jsonrpc": "2.0", "id": 432, "method": "triage.list", "params": {"componentRoot": "/srv/projects/ledger", "validationState": "unvalidated"}},
+  "response": {"jsonrpc": "2.0", "id": 432, "result": [
+    {
+      "id": 7,
+      "componentRoot": "/srv/projects/ledger",
+      "title": "retry counter over-counts on the second attempt",
+      "body": "the retry counter adds two on the second attempt; expected one",
+      "validation": "unvalidated",
+      "priorityState": "known",
+      "priorityLabel": "P1",
+      "filedBy": "golang-engineer",
+      "validated": false,
+      "createdAt": "2026-10-30T10:00:00Z",
+      "updatedAt": "2026-10-30T10:00:00Z"
+    }
+  ]}
+}

@@ -1,0 +1,41 @@
+{
+  "description": "A step a PERSON stopped reads back `status: \"suspended\"` with `pauseReason: \"user\"` — the one field that tells it apart from a step suspended because the model asked a real question (where pauseReason is absent). Both share the status (P2: no process, resumable either way).",
+  "method": "step.show",
+  "request": {
+    "jsonrpc": "2.0", "id": 47, "method": "step.show",
+    "params": {"id": 4}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 47,
+    "result": {
+      "id": 4,
+      "loopSlug": "step",
+      "componentRoot": "/home/p/repo-a",
+      "phase": "build",
+      "agent": "step:ad-hoc",
+      "status": "suspended",
+      "pauseReason": "user",
+      "startedAt": "2026-10-15T09:41:12.345Z",
+      "cost": {
+        "state": "known",
+        "usd": 0.0041
+      },
+      "messages": [
+        {"role": "user", "content": [{"kind": "text", "text": "read the README and summarise it"}]},
+        {"role": "assistant", "content": [
+          {"kind": "text", "text": "I will read the README first."},
+          {"kind": "tool_use", "id": "toolu_1", "name": "read", "input": {"path": "README.md"}}
+        ]},
+        {"role": "user", "content": [
+          {"kind": "tool_result", "toolUseId": "toolu_1", "content": "README.md\n# demo", "isError": false}
+        ]}
+      ],
+      "contextManifest": {
+        "files": [],
+        "iterationsUsed": 1,
+        "maxIterations": 12,
+        "deadlineAt": "2026-10-15T23:59:59.000Z"
+      }
+    }
+  }
+}

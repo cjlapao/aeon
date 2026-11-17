@@ -1,0 +1,3 @@
+$ aeon policy events --depth 1
+<ID> <TIME>  refusal       agent:bob  -                         refused: agent:bob · no allow matched · default deny (PL5)
+depth 3 · cap 90 days · oldest <TIME>

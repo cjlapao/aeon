@@ -1,0 +1,65 @@
+{
+  "description": "export.run succeeds on the default export: every non-optional set, in registry order, is written into the named dir; the answer carries the dir, each set's state and row count, the tree's own file count, and recorded=true because the request reached the engine — the ledger's backup_run row (kind=export, reason=manual, outcome ok) was written, and the actor who asked was stamped by the daemon from the connection, never named by the caller. The memory set is absent from the default and from the answer, which is the opt-in contract stated as a fact, not a failure.",
+  "method": "export.run",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1180,
+    "method": "export.run",
+    "params": {
+      "dir": "/home/carlo/exports/aeon-2026-11-02"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1180,
+    "result": {
+      "dir": "/home/carlo/exports/aeon-2026-11-02",
+      "sets": [
+        {
+          "name": "agents",
+          "description": "The agent records (identity, prompt, skills, tools, policy links), content verbatim; signature and signer_certificate are omitted — signing artifacts are not record content.",
+          "state": "available",
+          "rows": 3
+        },
+        {
+          "name": "components",
+          "description": "The component tree: every component with its roots, its parentId and its archivedAt; remote_key and repo_key are omitted (credential-shaped). Effective settings are derived and are not exported.",
+          "state": "available",
+          "rows": 7
+        },
+        {
+          "name": "goals",
+          "description": "The planning records: epics, goals and briefs, one file per goal/brief version (<id>-v<version>.json).",
+          "state": "available",
+          "rows": 5
+        },
+        {
+          "name": "policies",
+          "description": "The policy rows, content verbatim (type, target, action, spec, source, expiry).",
+          "state": "available",
+          "rows": 11
+        },
+        {
+          "name": "routes",
+          "description": "The route rows: provider, model, endpoints, prices, capabilities. Keys never ride a route row — they live in the credentials/ files, which the export does not touch.",
+          "state": "available",
+          "rows": 2
+        },
+        {
+          "name": "settings",
+          "description": "The stored settings (S44), one file per non-credential-shaped key; a credential-shaped key is never exported, in name or value.",
+          "state": "available",
+          "rows": 9
+        },
+        {
+          "name": "triggers",
+          "description": "The trigger records: event triggers (events/) and their schedules (schedules/); secret_env is omitted (credential-shaped).",
+          "state": "available",
+          "rows": 4
+        }
+      ],
+      "files": 41,
+      "recorded": true
+    }
+  }
+}

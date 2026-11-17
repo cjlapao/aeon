@@ -1,0 +1,158 @@
+{
+  "settings": {
+    "continuous": {
+      "actions": {
+        "addRepo": "Add repository",
+        "cancel": "Cancel",
+        "clearFilters": "Clear filters",
+        "disable": "Disable",
+        "disableRepo": "Disable repository",
+        "edit": "Edit",
+        "enable": "Enable continuous work",
+        "enableRepo": "Enable repository",
+        "pause": "Pause",
+        "resume": "Resume",
+        "retry": "Retry",
+        "save": "Save",
+        "saveEnable": "Save and enable",
+        "stopAll": "Stop everything"
+      },
+      "attentionCount": "Needs you: {open}",
+      "col": {
+        "kind": "Kind",
+        "lastStart": "Last start",
+        "loop": "Loop",
+        "note": "What to do",
+        "repository": "Repository",
+        "since": "Since",
+        "status": "Status",
+        "subject": "Work item",
+        "template": "Starts",
+        "verdict": "Verdict",
+        "why": "Why",
+        "window": "Hours"
+      },
+      "decisions": {
+        "all": "All",
+        "col": {
+          "actor": "Actor",
+          "at": "At",
+          "decision": "Decision",
+          "reason": "Reason",
+          "repository": "Repository",
+          "subject": "Subject",
+          "summary": "Summary"
+        },
+        "decision": "Decision",
+        "empty": "No decisions in this window match.",
+        "failed": "The decision ledger could not be read",
+        "footer": "Showing {shown} of the newest {limit} decisions",
+        "reason": "Reason",
+        "repository": "Repository",
+        "subject": "Subject",
+        "subjectHint": "Search work item…"
+      },
+      "disabled": "Writes wait while the daemon is not current.",
+      "form": {
+        "briefPath": "Brief path",
+        "minPriority": "Minimum priority",
+        "newTitle": "Add a repository",
+        "pickRepo": "Repository",
+        "tech": "Tech",
+        "title": "Scheduler row",
+        "windowDays": "Days",
+        "windowEmpty": "Leave the window empty to allow work at any time.",
+        "windowEnd": "Window end",
+        "windowStart": "Window start",
+        "windowZone": "Zone"
+      },
+      "help": {
+        "body": "**Continuous work lets Aeon pick up ready work by itself.** Normally a loop starts when you start it. With this switched on, a scheduler looks at the repositories you enrolled, finds work that is ready (queue and roadmap items) and starts a loop for it — without anyone asking at that moment.\n\n### How it decides\nEvery few seconds the scheduler runs a *tick*. For each enrolled repository it checks, in order: is the master on and not paused, is the repository enabled, does its template load, is the time inside its window, is the repository already busy, is there budget left, is there ready work. The first check that fails is the **reason** shown next to the repository. The **Next tick** tab runs that same check without starting anything.\n\n### What you control\n- **Master switch** — off until you turn it on. Turning it on confirms with exactly what you are granting.\n- **Pause** — stops picking new work; loops already running keep running. **Stop everything** pauses and also stops the running loops.\n- **Repositories** — only enrolled, enabled repositories are touched. Each has a blueprint (the loop to run), a minimum priority and a time window.\n- **Slots** — a cap on how many loops run at once.\n\n### Safe by construction\nLoops started this way run **unattended**: an action that would need a person''s approval is denied on the spot, so they cannot open or merge a pull request on their own. When a loop is blocked and needs you, it shows up under **Needs you**.\n\nEvery act on this page is audited to the person who did it.",
+        "title": "What is continuous work?"
+      },
+      "hint": {
+        "attention": "Loops the scheduler started that are blocked and waiting for a person.",
+        "decisions": "Everything the scheduler decided, newest first, with who or what triggered it.",
+        "preview": "What the next tick would do, run now and starting nothing — and, for every line it would not start, why.",
+        "repositories": "The repositories the scheduler may start work in. Click one to change what it starts and when."
+      },
+      "loading": "Asking the daemon…",
+      "master": "Master",
+      "needsYou": {
+        "empty": {
+          "body": "No blocked loop is waiting for a person.",
+          "title": "Nothing needs you"
+        },
+        "failed": "The needs-you lines could not be read",
+        "since": "since {at}"
+      },
+      "nextTick": "Next tick: {at}",
+      "pause": {
+        "title": "Pause the scheduler — the reason the person gives rides the audit row"
+      },
+      "pausedToast": "Paused",
+      "preview": {
+        "failed": "The preview could not be run",
+        "footer": "{starting} would start, {holding} would not — the list is at most the slots cap deep: a count of slots, not a memory measurement.",
+        "now": "The daemon ran its tick as of {now} — nothing was started.",
+        "wouldStartEmpty": "Nothing would start on this tick."
+      },
+      "q": {
+        "what": "What does it start here?",
+        "when": "When may it work?",
+        "working": "Is it working here?"
+      },
+      "reconnecting": "Reconnecting to the daemon — the scheduler''s answers are paused, nothing can be changed.",
+      "refused": "The scheduler refused",
+      "repo": {
+        "anytime": "any time",
+        "lastStart": "last start {at}",
+        "minPriority": "min {state}",
+        "off": "disabled",
+        "on": "enabled",
+        "window": "{start}–{end} {days} ({zone})"
+      },
+      "repositories": {
+        "count": "{count} repositories enrolled",
+        "empty": {
+          "body": "Add a scheduler row for a component root and its template; until then the tick has nowhere to start.",
+          "title": "No repositories are enrolled"
+        },
+        "failed": "The scheduler rows could not be read",
+        "noneFree": "Every repository the daemon knows is already enrolled"
+      },
+      "s20Paused": "S20 paused",
+      "settings": {
+        "subtitle": "Read-only — the values the scheduler is running with",
+        "title": "Scheduler settings"
+      },
+      "slots": "Slots in use: {used} of {cap}",
+      "state": {
+        "off": "off",
+        "on": "on",
+        "paused": "paused"
+      },
+      "stateLine": {
+        "off": "The scheduler is off. Nothing starts by itself until you turn it on.",
+        "on": "The scheduler is running: on each tick it starts ready work in the enabled repositories below.",
+        "paused": "The scheduler is paused. It picks no new work; loops already running keep running."
+      },
+      "status": {
+        "failed": "The scheduler status could not be read",
+        "unreadable": "The status answer did not arrive shaped as the contract describes."
+      },
+      "stopAll": {
+        "note": "Loops in use right now: {used}",
+        "title": "Stop everything — pause and stop the running loops"
+      },
+      "subtitle": "Lets agents pick up ready work from your repositories on their own, inside the hours and limits you set.",
+      "tabs": {
+        "attention": "Needs you",
+        "decisions": "Decisions",
+        "preview": "Next tick",
+        "repositories": "Repositories"
+      },
+      "title": "Continuous work"
+    }
+  }
+}

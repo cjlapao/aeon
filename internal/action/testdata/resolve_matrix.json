@@ -1,0 +1,514 @@
+[
+  {
+    "action": "audit",
+    "attended": false,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "audit · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "audit",
+    "attended": false,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "audit · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "audit",
+    "attended": true,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "audit · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "audit",
+    "attended": true,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "audit · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "forge.closeIssue",
+    "attended": false,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "deny",
+    "sentence": "forge.closeIssue denied — effect class 'outward' resolves to deny (loop is unattended)"
+  },
+  {
+    "action": "forge.closeIssue",
+    "attended": false,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "run",
+    "sentence": "forge.closeIssue · outward · run — outward effect runs on the loop's own allowOutward declaration at start (per loop, per moment; never a key)"
+  },
+  {
+    "action": "forge.closeIssue",
+    "attended": true,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "forge.closeIssue · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "forge.closeIssue",
+    "attended": true,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "forge.closeIssue · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "forge.land",
+    "attended": false,
+    "allowOutward": false,
+    "class": "irreversible",
+    "verdict": "deny",
+    "sentence": "forge.land denied — effect class 'irreversible' resolves to deny (loop is unattended)"
+  },
+  {
+    "action": "forge.land",
+    "attended": false,
+    "allowOutward": true,
+    "class": "irreversible",
+    "verdict": "deny",
+    "sentence": "forge.land denied — effect class 'irreversible' resolves to deny (loop is unattended; allowOutward does not grant it)"
+  },
+  {
+    "action": "forge.land",
+    "attended": true,
+    "allowOutward": false,
+    "class": "irreversible",
+    "verdict": "ask",
+    "sentence": "forge.land · irreversible · ask — cannot be undone by another action — a human decides"
+  },
+  {
+    "action": "forge.land",
+    "attended": true,
+    "allowOutward": true,
+    "class": "irreversible",
+    "verdict": "ask",
+    "sentence": "forge.land · irreversible · ask — cannot be undone by another action — a human decides"
+  },
+  {
+    "action": "forge.merge",
+    "attended": false,
+    "allowOutward": false,
+    "class": "irreversible",
+    "verdict": "deny",
+    "sentence": "forge.merge denied — effect class 'irreversible' resolves to deny (loop is unattended)"
+  },
+  {
+    "action": "forge.merge",
+    "attended": false,
+    "allowOutward": true,
+    "class": "irreversible",
+    "verdict": "deny",
+    "sentence": "forge.merge denied — effect class 'irreversible' resolves to deny (loop is unattended; allowOutward does not grant it)"
+  },
+  {
+    "action": "forge.merge",
+    "attended": true,
+    "allowOutward": false,
+    "class": "irreversible",
+    "verdict": "ask",
+    "sentence": "forge.merge · irreversible · ask — cannot be undone by another action — a human decides"
+  },
+  {
+    "action": "forge.merge",
+    "attended": true,
+    "allowOutward": true,
+    "class": "irreversible",
+    "verdict": "ask",
+    "sentence": "forge.merge · irreversible · ask — cannot be undone by another action — a human decides"
+  },
+  {
+    "action": "forge.openIssue",
+    "attended": false,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "deny",
+    "sentence": "forge.openIssue denied — effect class 'outward' resolves to deny (loop is unattended)"
+  },
+  {
+    "action": "forge.openIssue",
+    "attended": false,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "run",
+    "sentence": "forge.openIssue · outward · run — outward effect runs on the loop's own allowOutward declaration at start (per loop, per moment; never a key)"
+  },
+  {
+    "action": "forge.openIssue",
+    "attended": true,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "forge.openIssue · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "forge.openIssue",
+    "attended": true,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "forge.openIssue · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "forge.openLandingPR",
+    "attended": false,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "deny",
+    "sentence": "forge.openLandingPR denied — effect class 'outward' resolves to deny (loop is unattended)"
+  },
+  {
+    "action": "forge.openLandingPR",
+    "attended": false,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "run",
+    "sentence": "forge.openLandingPR · outward · run — outward effect runs on the loop's own allowOutward declaration at start (per loop, per moment; never a key)"
+  },
+  {
+    "action": "forge.openLandingPR",
+    "attended": true,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "forge.openLandingPR · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "forge.openLandingPR",
+    "attended": true,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "forge.openLandingPR · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "forge.openPR",
+    "attended": false,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "deny",
+    "sentence": "forge.openPR denied — effect class 'outward' resolves to deny (loop is unattended)"
+  },
+  {
+    "action": "forge.openPR",
+    "attended": false,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "run",
+    "sentence": "forge.openPR · outward · run — outward effect runs on the loop's own allowOutward declaration at start (per loop, per moment; never a key)"
+  },
+  {
+    "action": "forge.openPR",
+    "attended": true,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "forge.openPR · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "forge.openPR",
+    "attended": true,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "forge.openPR · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "forge.postReview",
+    "attended": false,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "deny",
+    "sentence": "forge.postReview denied — effect class 'outward' resolves to deny (loop is unattended)"
+  },
+  {
+    "action": "forge.postReview",
+    "attended": false,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "run",
+    "sentence": "forge.postReview · outward · run — outward effect runs on the loop's own allowOutward declaration at start (per loop, per moment; never a key)"
+  },
+  {
+    "action": "forge.postReview",
+    "attended": true,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "forge.postReview · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "forge.postReview",
+    "attended": true,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "forge.postReview · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "git.commitAndPush",
+    "attended": false,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "deny",
+    "sentence": "git.commitAndPush denied — effect class 'outward' resolves to deny (loop is unattended)"
+  },
+  {
+    "action": "git.commitAndPush",
+    "attended": false,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "run",
+    "sentence": "git.commitAndPush · outward · run — outward effect runs on the loop's own allowOutward declaration at start (per loop, per moment; never a key)"
+  },
+  {
+    "action": "git.commitAndPush",
+    "attended": true,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "git.commitAndPush · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "git.commitAndPush",
+    "attended": true,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "git.commitAndPush · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "git.concludeIntegration",
+    "attended": false,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.concludeIntegration · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.concludeIntegration",
+    "attended": false,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.concludeIntegration · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.concludeIntegration",
+    "attended": true,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.concludeIntegration · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.concludeIntegration",
+    "attended": true,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.concludeIntegration · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.createBranch",
+    "attended": false,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.createBranch · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.createBranch",
+    "attended": false,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.createBranch · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.createBranch",
+    "attended": true,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.createBranch · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.createBranch",
+    "attended": true,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.createBranch · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.integrate",
+    "attended": false,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.integrate · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.integrate",
+    "attended": false,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.integrate · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.integrate",
+    "attended": true,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.integrate · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.integrate",
+    "attended": true,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.integrate · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.mergeBranch",
+    "attended": false,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.mergeBranch · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.mergeBranch",
+    "attended": false,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.mergeBranch · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.mergeBranch",
+    "attended": true,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.mergeBranch · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.mergeBranch",
+    "attended": true,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "git.mergeBranch · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "git.publishIntegration",
+    "attended": false,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "deny",
+    "sentence": "git.publishIntegration denied — effect class 'outward' resolves to deny (loop is unattended)"
+  },
+  {
+    "action": "git.publishIntegration",
+    "attended": false,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "run",
+    "sentence": "git.publishIntegration · outward · run — outward effect runs on the loop's own allowOutward declaration at start (per loop, per moment; never a key)"
+  },
+  {
+    "action": "git.publishIntegration",
+    "attended": true,
+    "allowOutward": false,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "git.publishIntegration · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "git.publishIntegration",
+    "attended": true,
+    "allowOutward": true,
+    "class": "outward",
+    "verdict": "ask",
+    "sentence": "git.publishIntegration · outward · ask — visible to other people — a human decides"
+  },
+  {
+    "action": "queue.enqueue",
+    "attended": false,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "queue.enqueue · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "queue.enqueue",
+    "attended": false,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "queue.enqueue · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "queue.enqueue",
+    "attended": true,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "queue.enqueue · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "queue.enqueue",
+    "attended": true,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "queue.enqueue · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "verify.run",
+    "attended": false,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "verify.run · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "verify.run",
+    "attended": false,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "verify.run · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "verify.run",
+    "attended": true,
+    "allowOutward": false,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "verify.run · local · run — effects confined to the working tree"
+  },
+  {
+    "action": "verify.run",
+    "attended": true,
+    "allowOutward": true,
+    "class": "local",
+    "verdict": "run",
+    "sentence": "verify.run · local · run — effects confined to the working tree"
+  }
+]

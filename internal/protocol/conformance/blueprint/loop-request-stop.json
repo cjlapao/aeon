@@ -1,0 +1,21 @@
+{
+  "description": "The socket twin of the agent's stop request (S55 T5, LC15): an inert row is filed — the daemon stamps the agent identity from the loop's IN-FLIGHT step (a params agent is refused by name: the request is an agent act, and the agent it names is the one running). NOTHING halts: the loop's status and steps are untouched, the request is open, and a person sees it (loop.control's openRequests, the notify warning) and acts with loop.stop or settles it with loop.control.dismiss. Per-loop (5) and per-agent (20) open limits are counted refusals (see loop-control-refused-request-limit).",
+  "method": "loop.requestStop",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 505,
+    "method": "loop.requestStop",
+    "params": {
+      "loopId": "loop-9",
+      "reason": "this loop is going in circles — a person should stop it"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 505,
+    "result": {
+      "requestId": 12,
+      "status": "open"
+    }
+  }
+}

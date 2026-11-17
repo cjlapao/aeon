@@ -1,0 +1,26 @@
+{
+  "description": "inbox.ack naming a key that is NOT currently needing attention is refused with ErrInboxScope, never silently accepted: the append-only marker table must not become a graveyard of arbitrary strings, and an ack that quietly \"succeeded\" against nothing teaches a person their inbox is clean when the key was simply wrong. The fresh evaluation is the ghost check.",
+  "method": "inbox.ack",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 908,
+    "method": "inbox.ack",
+    "params": {
+      "key": "questions:9999:2026-11-03T00:00:00Z"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 908,
+    "error": {
+      "code": -31926,
+      "message": "unknown inbox scope",
+      "data": {
+        "what": "attention: that item is no longer needing attention: questions:9999:2026-11-03T00:00:00Z — an ack may only name an item that is CURRENTLY needing attention (from a fresh inbox.list), so the marker table cannot be filled with ghosts",
+        "means": "an empty inbox would have looked like 'nothing needs you' — this refusal says the scope itself was the unknown thing, so an empty list can never be a lie about a typo",
+        "todo": "check the id against `component.list` (archived components are out of scope like unknown ones), or call inbox.list/inbox.summary with no rootId to see every tree",
+        "fatal": false
+      }
+    }
+  }
+}

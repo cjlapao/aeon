@@ -1,0 +1,12 @@
+{
+  "description": "`step.steer` queues a message (and/or a route/effort change) for a RUNNING step, injected at the next turn boundary (LW1) — never mid-stream. Keyed by stepId, never by loop (D12/P33). At least one of text/route/reasoningEffort is required; refusal on a step that is not running names the state and the method to use instead (LW4).",
+  "method": "step.steer",
+  "request": {
+    "jsonrpc": "2.0", "id": 80, "method": "step.steer",
+    "params": { "stepId": 12, "text": "Also mention the Go version." }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 80,
+    "result": { "steerId": 3, "state": "pending" }
+  }
+}

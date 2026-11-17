@@ -1,0 +1,4 @@
+$ aeon policy add --type tool_accesss --id typo --target agent:alice --action deny --tool bash --spec {"state":"deny"}
+! unknown policy type "tool_accesss"
+$ aeon policy list
+no policies. default is DENY (PL5) — nothing is granted until something grants it.

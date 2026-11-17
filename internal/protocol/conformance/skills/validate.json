@@ -1,0 +1,28 @@
+{
+  "description": "Validate re-reads the disk (S65): the forced scan's answer — the verdicts as they stand NOW (an operator's edit made with an editor open is reflected, and ScannedAt says when the disk was read), narrowed to one name when one was named. The bench's Validate button is this door; freshness is a click, never a poll.",
+  "method": "skills.validate",
+  "request": {"jsonrpc": "2.0", "id": 322, "method": "skills.validate", "params": {"name": "pdf"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 322,
+    "result": {
+      "skills": [
+        {
+          "name": "pdf",
+          "frontmatterName": "pdf",
+          "description": "Extract text and tables from PDF files, fill forms, merge documents.",
+          "status": "valid",
+          "source": "user",
+          "root": "/home/dev/.agents/skills",
+          "path": "/home/dev/.agents/skills/pdf",
+          "files": {"scripts": 2, "references": 3, "assets": 0, "other": 1},
+          "bodyBytes": 4213,
+          "bodyLines": 88,
+          "totalBytes": 51240,
+          "scannedAt": "2026-10-30T18:05:00Z"
+        }
+      ],
+      "summary": {"valid": 1, "warn": 0, "invalid": 1, "shadowed": 0},
+      "scannedAt": "2026-10-30T18:05:00Z"
+    }
+  }
+}

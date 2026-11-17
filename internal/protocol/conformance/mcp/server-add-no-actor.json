@@ -1,0 +1,24 @@
+{
+  "description": "S46 T3 registers T5's code early (contract-first, the way goal.submit_review's fixture documents its shape): mcp.server.add — the HUMAN write door the operator ruling of 2026-10-30 opens for MCP, arriving at T5 — refuses when the connection resolves to no peer identity (uid 0) with ErrMcpNoActor (-31854), the twin of policy.add's -31843 and the seed's -31840-family rule: the actor is the kernel's peer credential stamped by Table.ActorFor, NEVER a param (an actor key is refused as a shape error), and an unresolvable peer is refused rather than stamped \"user 0\" — an unattributable configuration write is the mcp_change audit row that cannot name who widened what agents may do. NO WRITER EXISTS YET AT T3: the five reads are unscoped by design (MG8) and need no actor; this fixture pins the wire contract while it is fresh so T5's door implements AGAINST it.",
+  "method": "mcp.server.add",
+  "request": {"jsonrpc": "2.0", "id": 910, "method": "mcp.server.add", "params": {
+    "name": "acme-crud",
+    "tier": "public",
+    "transport": {"type": "http", "url": "https://mcp.acme.dev/tools"},
+    "tools": [{"name": "list_issues", "rerun": "safe", "effect": "local"}],
+    "enabled": false
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 910,
+    "error": {
+      "code": -31854,
+      "message": "no actor for an MCP configuration write",
+      "data": {
+        "what": "the MCP write needs a person, and this connection resolved to no peer identity (uid 0) — or the runtime wired no actor stamp at all",
+        "means": "the actor comes from the connection's peer credential, never from params, and an unresolvable peer is refused rather than stamped with a placeholder — an unattributed configuration write is the audit row that cannot name who changed what agents may do",
+        "todo": "write from a connection the daemon can attribute to a peer (the peer credential, not a claim); params never carry the actor — an actor key is refused as a shape error",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "description": "S45 T4 (PM7.2): a removal whose BEFORE-state the store cannot answer for is refused BEFORE the write — a half answer about a rule is how a confident wrong answer is built (policy.get's fail-closed rule carried onto the door). ErrPolicyAuthoringRefused carries the boundary's own sentence verbatim (here the in-force capture refusing through the boundary's reader); nothing was deleted and no audit row was written. Removal of an absent id is NOT this fixture — that is the {removed:false} no-op, no error, no audit (DB19).",
+  "method": "policy.remove",
+  "request": {"jsonrpc": "2.0", "id": 85, "method": "policy.remove", "params": {"id": "grant-bash"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 85,
+    "error": {
+      "code": -31842,
+      "message": "the authoring door refused the write",
+      "data": {
+        "what": "the in-force answer for agent:boss could not be read: refused: the acceptance/audit seam faulted while answering for agent:boss",
+        "means": "nothing was stored and no audit row was written — a refusal is the boundary judging the row, not the machine failing; the closed vocabulary, PL1's authorship rule and the per-type specs are enforced exactly once, at the boundary, on every door",
+        "todo": "read the boundary's sentence below — it names the value it refused and usually the form that would be accepted (PL1's refusal names the Deny/Ask that would pass); `policy.vocabulary` answers the closed sets rather than guessing them",
+        "fatal": false
+      }
+    }
+  }
+}

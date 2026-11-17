@@ -1,0 +1,36 @@
+{
+  "description": "S59 T6 (EV17): environment.changes is the audit of this plane, and the row carries WHO (actorKind + actorId, stamped by the daemon from the connection) and WHICH revision the write produced. specAfter is the canonical spec as recorded; damaged bytes would be reported as {\"unreadable\": …} rather than dropped, so an empty field always means empty (P3's third state).",
+  "method": "environment.changes",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 921,
+    "method": "environment.changes",
+    "params": { "subjectKind": "environment", "subjectId": "env_7f2a9b8c6d5e", "limit": 20 }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 921,
+    "result": [
+      {
+        "id": 41,
+        "at": "2026-11-03T09:20:00Z",
+        "actorKind": "user",
+        "actorId": "peer-1",
+        "subjectKind": "environment",
+        "subjectId": "env_7f2a9b8c6d5e",
+        "action": "environment.update",
+        "revision": 2,
+        "summary": "spec replaced (3 passthrough, 1 set, 1 secret reference); expected revision 1",
+        "specAfter": {
+          "env": { "passthrough": ["HOME", "PATH", "TERM", "USER"], "set": { "TERM": "dumb" }, "secrets": ["deploy-token"] },
+          "home": "real",
+          "limits": { "timeout": "10m", "output": 1048576 },
+          "egress": { "mode": "unenforced", "allow": [] },
+          "image": null,
+          "services": [],
+          "preview": null
+        }
+      }
+    ]
+  }
+}

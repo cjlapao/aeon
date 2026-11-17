@@ -1,0 +1,39 @@
+{
+  "description": "Promoting a standalone component files it under a new root (a project): its id, loops and history stay, and the new root carries the editable fields given at the promote; empty fields keep their current values.",
+  "method": "component.promote",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 93,
+    "method": "component.promote",
+    "params": {
+      "id": "abc123",
+      "name": "Aeon QA",
+      "shortDescription": "A promoted root",
+      "description": "",
+      "icon": "🧪"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 93,
+    "result": {
+      "id": "abc123",
+      "name": "Aeon QA",
+      "slug": "aeon-qa",
+      "root": "/home/p/aeon-qa",
+      "remote": "https://example.com/team/aeon-qa.git",
+      "remoteKey": "example/team/aeon-qa",
+      "repoKey": "aeon-qa",
+      "owner": "team",
+      "icon": "🧪",
+      "tags": ["go", "qa"],
+      "shortDescription": "A promoted root",
+      "description": "",
+      "defaultBranch": "main",
+      "branchPrefix": "aeon",
+      "maxParallelAgents": 1,
+      "createdAt": "2026-10-20T08:00:00Z",
+      "updatedAt": "2026-10-21T08:00:00Z"
+    }
+  }
+}

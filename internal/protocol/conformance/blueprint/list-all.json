@@ -1,0 +1,61 @@
+{
+  "description": "The SAME door with NO params at all: `origin` and `q` are omitempty in the Go struct (blueprint_manage.go l.342-345), so the empty request is the WHOLE shelf — system rows and user rows side by side, each with its own truth. The fixture exists because a shelf sampled only through one filter taught the contract that the filter was required; it is not.",
+  "method": "blueprint.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "method": "blueprint.list",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "result": {
+      "names": [
+        "dev-loop",
+        "my-flow",
+        "two-step"
+      ],
+      "blueprints": [
+        {
+          "name": "dev-loop",
+          "origin": "system",
+          "version": 1,
+          "revision": 1,
+          "contentHash": "8af923d78af923d78af923d78af923d78af923d78af923d78af923d78af923d7",
+          "divergedFromShipped": true,
+          "updatedAt": "2026-11-02T12:00:00Z",
+          "updatedBy": "1000",
+          "usedByCount": 4,
+          "title": "Dev Loop",
+          "description": "What this flow is for."
+        },
+        {
+          "name": "my-flow",
+          "origin": "user",
+          "version": 1,
+          "revision": 3,
+          "contentHash": "44d88612fea8a8f36de82e1278abb02f8ea42b3e7b52c0f78d7b1d1f5c1f2d3f",
+          "updatedAt": "2026-11-02T13:05:00Z",
+          "updatedBy": "1000",
+          "usedByCount": 1,
+          "title": "My Flow",
+          "description": "What this flow is for."
+        },
+        {
+          "name": "two-step",
+          "origin": "system",
+          "version": 2,
+          "revision": 1,
+          "contentHash": "ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669ab10e669",
+          "divergedFromShipped": false,
+          "updatedAt": "2026-11-02T12:00:00Z",
+          "updatedBy": "blueprints.standard",
+          "usedByCount": 0,
+          "title": "Two Step",
+          "description": "What this flow is for."
+        }
+      ]
+    }
+  }
+}

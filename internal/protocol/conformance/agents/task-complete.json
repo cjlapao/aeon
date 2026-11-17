@@ -1,0 +1,26 @@
+{
+  "description": "The callee's report settles the task (the report a local skill server sends over the SAME P26 socket; Debug-marked like step.steer and terminal.* \u2014 a report is product control for the connected app, never the S19 projection). A cost is OPTIONAL and its absence records `unknown \u00b7 cost-not-reported`, never zero (O2: absent is not zero). The task layer answers a settled task with the refusal that names its state \u2014 this method cannot settle one twice (T3's idempotence, unchanged).",
+  "method": "agent.task.complete",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 76,
+    "method": "agent.task.complete",
+    "params": {
+      "taskId": 12,
+      "result": "sentiment: positive (37 threads read)",
+      "outcome": "ok",
+      "cost": {
+        "state": "known",
+        "usd": 0.0042
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 76,
+    "result": {
+      "taskId": 12,
+      "status": "done"
+    }
+  }
+}

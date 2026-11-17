@@ -1,0 +1,35 @@
+{
+  "description": "mergerule.set refused as a shape error because the rule names a server-managed field (revision): the revision is the ledger's number, the source the store's resolution, and the stamp the store's clock — a param that names them is a param that forges the ledger. The refusal is a -32602 with the field named, and the closed-set validations never ran: the shape is wrong before the values can be judged.",
+  "method": "mergerule.set",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1042,
+    "method": "mergerule.set",
+    "params": {
+      "componentId": "c-aeon",
+      "rule": {
+        "enabled": true,
+        "requireLocal": false,
+        "requireDod": "none",
+        "requiredChecks": [],
+        "checksPolicy": "reported_green",
+        "noChecks": "allow",
+        "reviewMode": "forge",
+        "aeonReviewAgents": [
+          "code-reviewer"
+        ],
+        "requireThreadsResolved": false,
+        "method": "squash",
+        "revision": 99
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1042,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: mergerule.set's rule names \"revision\" — that field is the ledger's, not the caller's"
+    }
+  }
+}

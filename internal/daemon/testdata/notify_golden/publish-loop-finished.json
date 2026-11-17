@@ -1,0 +1,13 @@
+{
+  "kind": "loop.finished",
+  "componentRoot": "",
+  "payload": {
+    "loopId": "loop-golden",
+    "status": "done"
+  },
+  "notify": {
+    "title": "Loop finished",
+    "body": "",
+    "tone": "success"
+  }
+}

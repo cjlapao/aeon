@@ -1,0 +1,12 @@
+{
+ "__status": 422,
+ "body": {
+  "message": "Validation Failed",
+  "errors": [
+   {
+    "message": "The head could not be resolved."
+   }
+  ],
+  "documentation_url": "https://docs.github.com/rest"
+ }
+}

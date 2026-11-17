@@ -1,0 +1,37 @@
+{
+  "description": "watchdog.show is the single-rule read: the rule (detailed, as in list), its audit trail (newest first — created, changed, disabled and removed rows; the values are the enabled flag as 0/1, and the history outlives the rule, LC11), and the fires it has caused (newest first). A fire's action is the move TAKEN, which can differ from the rule's declared action: a stop rule on an unattended loop reads block, because the loop's attendedness, not the rule, picked the move (LC17). A show of an id with no row is a refusal (unknown-rule), not an empty result.",
+  "method": "watchdog.show",
+  "request": {
+    "jsonrpc": "2.0", "id": 622, "method": "watchdog.show",
+    "params": {"id": "wdr-1"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 622,
+    "result": {
+      "rule": {
+        "id": "wdr-1",
+        "scope": "component",
+        "subjectId": "/repos/aeon",
+        "signal": "no-activity",
+        "threshold": 1800000,
+        "thresholdHuman": "30m",
+        "action": "notify",
+        "enabled": true,
+        "origin": "system",
+        "createdAt": "2026-11-01T08:00:00.000Z",
+        "updatedAt": "2026-11-01T08:00:00.000Z",
+        "lastFiredAt": "2026-11-01T11:45:00.000Z",
+        "fireCount": 3,
+        "loopsInEpisode": ["loop-7"]
+      },
+      "events": [
+        {"at": "2026-11-01T10:00:00.000Z", "kind": "changed", "actorKind": "user", "actorId": "1000", "oldValue": 1, "newValue": 0},
+        {"at": "2026-11-01T08:00:00.000Z", "kind": "created", "actorKind": "system", "actorId": "seed"}
+      ],
+      "fires": [
+        {"at": "2026-11-01T11:45:00.000Z", "loopId": "loop-7", "signal": "no-activity", "action": "notify", "episode": "e-1"},
+        {"at": "2026-11-01T09:30:00.000Z", "loopId": "loop-3", "signal": "no-activity", "action": "notify", "episode": "e-2"}
+      ]
+    }
+  }
+}

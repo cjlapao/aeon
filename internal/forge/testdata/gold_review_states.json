@@ -1,0 +1,37 @@
+{
+ "__status": 200,
+ "body": [
+  {
+   "id": 1,
+   "body": "a",
+   "state": "APPROVED",
+   "user": {
+    "login": "mira"
+   }
+  },
+  {
+   "id": 2,
+   "body": "b",
+   "state": "CHANGES_REQUESTED",
+   "user": {
+    "login": "mira"
+   }
+  },
+  {
+   "id": 3,
+   "body": "c",
+   "state": "COMMENTED",
+   "user": {
+    "login": "bot"
+   }
+  },
+  {
+   "id": 4,
+   "body": "d",
+   "state": "DISMISSED",
+   "user": {
+    "login": "steward"
+   }
+  }
+ ]
+}

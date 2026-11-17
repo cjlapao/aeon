@@ -1,0 +1,31 @@
+{
+  "description": "S59 T6 (EV14): environment.restore clears archived_at and bumps the revision — the return is an audited transition, not an uneventful edit. A restore of a row that was never archived is refused by the store's own sentence, which the door carries verbatim.",
+  "method": "environment.restore",
+  "request": { "jsonrpc": "2.0", "id": 925, "method": "environment.restore", "params": { "id": "env_7f2a9b8c6d5e" } },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 925,
+    "result": {
+      "id": "env_7f2a9b8c6d5e",
+      "slug": "ci-default",
+      "name": "CI default",
+      "backend": "host-scrubbed",
+      "origin": "user",
+      "legacy": false,
+      "revision": 4,
+      "spec": {
+        "env": { "passthrough": ["HOME", "PATH", "TERM", "USER"], "set": { "TERM": "dumb" }, "secrets": ["deploy-token"] },
+        "home": "real",
+        "limits": { "timeout": "10m", "output": 1048576 },
+        "egress": { "mode": "unenforced", "allow": [] },
+        "image": null,
+        "services": [],
+        "preview": null
+      },
+      "createdAt": "2026-11-03T09:12:00Z",
+      "updatedAt": "2026-11-03T09:45:00Z",
+      "capabilities": ["wall-limit", "env-allowlist", "secrets-redacted"],
+      "secretRefNames": ["deploy-token"]
+    }
+  }
+}

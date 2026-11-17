@@ -1,0 +1,8 @@
+# TestAgainstRecordedFixturesOnly: tokens that would mean a test reached a
+# network. One per line.
+net/http
+httptest
+net.Dial
+http://
+https://
+127.0.0.1

@@ -1,0 +1,24 @@
+# The services Aeon registers, sorted, one per line.
+#
+# This file is the specification and register_test.go is the comparison. They
+# are updated in the SAME COMMIT or the test fails — which is the point: the
+# daemon's composition cannot widen without a reviewable diff, including when it
+# widens because of a framework upgrade (B11).
+#
+# Lines starting with # and blank lines are ignored.
+#
+# NOTE: "registered" is not "running". `api` is registered so the wiring exists
+# from day one, and PINNED OFF in Pins() so nothing listens — see register.go.
+# This file tracks registration; the pins track enablement.
+#
+# `database` arrived with S4, in the framework's INJECTED mode: Aeon opens the
+# handle because the framework's own SQLite arm is modernc.org/sqlite, which
+# cannot host sqlite-vec (measured: `no such function: vec_version`). The
+# config, the ledger, the schema lock and the store lifecycle stay the
+# framework's. It is pinned ON — a daemon that cannot persist a step cannot
+# suspend, resume or recover, so "running without memory" is not a state worth
+# having reachable.
+api
+database
+localrpc
+narrow

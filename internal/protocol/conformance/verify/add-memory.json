@@ -1,0 +1,38 @@
+{
+  "description": "verify.add carrying a memory bound: the number is DECLARED, not enforced (the runner has no memory cgroup), and the row echoes it back as memoryMb. The closed timeout range is the store's law — this one sits inside it; a bound is a number the daemon stores and reports, never one the client re-types.",
+  "method": "verify.add",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1003,
+    "method": "verify.add",
+    "params": {
+      "componentId": "c-aeon",
+      "name": "vet",
+      "command": "go vet ./...",
+      "requirement": "required",
+      "timeoutS": 300,
+      "memoryMb": 512,
+      "enabled": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1003,
+    "result": {
+      "gate": {
+        "id": "vcm-11",
+        "componentId": "c-aeon",
+        "name": "vet",
+        "command": "go vet ./...",
+        "requirement": "required",
+        "timeoutS": 300,
+        "memoryMb": 512,
+        "position": 2,
+        "enabled": true,
+        "origin": "manual",
+        "createdAt": "2026-11-03T10:00:00Z",
+        "updatedAt": "2026-11-03T10:00:00Z"
+      }
+    }
+  }
+}

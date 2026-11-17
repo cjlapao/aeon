@@ -1,0 +1,261 @@
+{
+  "description": "S45 T2 (PM6): policy.vocabulary serves the closed picture from the ONE daemon-side source so no client hardcodes it — the four closed sets as types.go names them, the authorship matrix COMPUTED by calling checkAuthorship for each (source, action) pair (never restated: the refused cells carry the boundary's PL1 sentence verbatim, so a UI that paraphrases it is a second PL1), and one spec descriptor per compiled type taken from the registered validator's schema — the same field set the write refuses anything outside. A UI form built from anything else drifts from the engine; built from this, an offered value is an accepted value.",
+  "method": "policy.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 69,
+    "method": "policy.vocabulary"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 69,
+    "result": {
+      "vocabulary": {
+        "types": [
+          "tool_access",
+          "command_access",
+          "route_access",
+          "effect_class",
+          "cost_cap",
+          "skill_access",
+          "trigger_access"
+        ],
+        "targetKinds": [
+          "all-agents",
+          "agent",
+          "loop",
+          "lane-type",
+          "mcp"
+        ],
+        "sources": [
+          "operator",
+          "agent",
+          "mcp_server",
+          "import"
+        ],
+        "actions": [
+          "allow",
+          "deny",
+          "ask"
+        ],
+        "authorship": [
+          {
+            "source": "operator",
+            "action": "allow",
+            "allowed": true
+          },
+          {
+            "source": "operator",
+            "action": "deny",
+            "allowed": true
+          },
+          {
+            "source": "operator",
+            "action": "ask",
+            "allowed": true
+          },
+          {
+            "source": "agent",
+            "action": "allow",
+            "allowed": false,
+            "reason": "refused: Allow authored by source \"agent\" requires an operator (PL1) — a Deny or an Ask from \"agent\" would be accepted"
+          },
+          {
+            "source": "agent",
+            "action": "deny",
+            "allowed": true
+          },
+          {
+            "source": "agent",
+            "action": "ask",
+            "allowed": true
+          },
+          {
+            "source": "mcp_server",
+            "action": "allow",
+            "allowed": false,
+            "reason": "refused: Allow authored by source \"mcp_server\" requires an operator (PL1) — a Deny or an Ask from \"mcp_server\" would be accepted"
+          },
+          {
+            "source": "mcp_server",
+            "action": "deny",
+            "allowed": true
+          },
+          {
+            "source": "mcp_server",
+            "action": "ask",
+            "allowed": true
+          },
+          {
+            "source": "import",
+            "action": "allow",
+            "allowed": false,
+            "reason": "refused: Allow authored by source \"import\" requires an operator (PL1) — a Deny or an Ask from \"import\" would be accepted"
+          },
+          {
+            "source": "import",
+            "action": "deny",
+            "allowed": true
+          },
+          {
+            "source": "import",
+            "action": "ask",
+            "allowed": true
+          }
+        ],
+        "specs": [
+          {
+            "type": "tool_access",
+            "fields": [
+              {
+                "name": "toolName",
+                "kind": "string",
+                "required": true,
+                "description": "the exact tool this rule names — compared exactly, case-sensitively, in the honest name",
+                "picker": "tool-address"
+              },
+              {
+                "name": "state",
+                "kind": "enum",
+                "required": true,
+                "enumValues": [
+                  "allow",
+                  "deny",
+                  "ask"
+                ],
+                "description": "the row's action restated inside the spec — it must agree with the row's action, or the row enforces nothing"
+              }
+            ]
+          },
+          {
+            "type": "command_access",
+            "fields": [
+              {
+                "name": "command",
+                "kind": "string",
+                "required": true,
+                "description": "the command pattern the matcher accepts — '*' anywhere except edges or doubled, bare name or trailing star"
+              },
+              {
+                "name": "state",
+                "kind": "enum",
+                "required": true,
+                "enumValues": [
+                  "allow",
+                  "deny",
+                  "ask"
+                ],
+                "description": "the row's action restated inside the spec — it must agree with the row's action, or the row enforces nothing"
+              }
+            ]
+          },
+          {
+            "type": "route_access",
+            "fields": [
+              {
+                "name": "route",
+                "kind": "string",
+                "required": true,
+                "description": "the route (or remote: egress peer) this rule names — a single trailing '*' is the one pattern form"
+              },
+              {
+                "name": "state",
+                "kind": "enum",
+                "required": true,
+                "enumValues": [
+                  "allow",
+                  "deny",
+                  "ask"
+                ],
+                "description": "the row's action restated inside the spec — it must agree with the row's action, or the row enforces nothing"
+              }
+            ]
+          },
+          {
+            "type": "effect_class",
+            "fields": [
+              {
+                "name": "effect",
+                "kind": "string",
+                "required": true,
+                "description": "the kind of effect (reading, writing, spending) this rule governs tools by"
+              },
+              {
+                "name": "state",
+                "kind": "enum",
+                "required": true,
+                "enumValues": [
+                  "allow",
+                  "deny",
+                  "ask"
+                ],
+                "description": "the row's action restated inside the spec — it must agree with the row's action, or the row enforces nothing"
+              }
+            ]
+          },
+          {
+            "type": "cost_cap",
+            "fields": [
+              {
+                "name": "token",
+                "kind": "string",
+                "required": true,
+                "description": "the cost token whose spend this cap bounds"
+              },
+              {
+                "name": "max",
+                "kind": "number",
+                "required": true,
+                "description": "the cap on that token — a finite, non-negative number; zero is a real cap"
+              }
+            ]
+          },
+          {
+            "type": "skill_access",
+            "fields": [
+              {
+                "name": "skill",
+                "kind": "string",
+                "required": true,
+                "description": "the exact skill reference (callee/skill) this rule names — no wildcards"
+              },
+              {
+                "name": "state",
+                "kind": "enum",
+                "required": true,
+                "enumValues": [
+                  "allow",
+                  "deny",
+                  "ask"
+                ],
+                "description": "the row's action restated inside the spec — it must agree with the row's action, or the row enforces nothing"
+              }
+            ]
+          },
+          {
+            "type": "trigger_access",
+            "fields": [
+              {
+                "name": "trigger",
+                "kind": "string",
+                "required": true,
+                "description": "the trigger kind (manual, schedule, webhook) this rule governs — no wildcards"
+              },
+              {
+                "name": "state",
+                "kind": "enum",
+                "required": true,
+                "enumValues": [
+                  "allow",
+                  "deny",
+                  "ask"
+                ],
+                "description": "the row's action restated inside the spec — it must agree with the row's action, or the row enforces nothing"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

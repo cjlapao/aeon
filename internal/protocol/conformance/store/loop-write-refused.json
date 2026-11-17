@@ -1,0 +1,26 @@
+{
+  "description": "A document name is REFUSED, never normalised into range. `tasks/../../etc/passwd` would clean to a path outside the loop, and a silent clamp turns an escape attempt into a successful write somewhere unexpected — which looks exactly like the feature working. These names come from a MODEL.",
+  "method": "loop.write",
+  "request": {
+    "jsonrpc": "2.0", "id": 45, "method": "loop.write",
+    "params": {
+      "slug": "refactor",
+      "componentRoot": "/home/p/repo-a",
+      "name": "../../../etc/passwd",
+      "content": "x"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 45,
+    "error": {
+      "code": -31106,
+      "message": "the document name was refused",
+      "data": {
+        "what": "a document name cannot contain a .. segment (got '../../../etc/passwd'). It is refused rather than resolved, because resolving it would write somewhere else",
+        "means": "names are confined to the loop: a known name (`plan`), a top-level file, or one level under tasks/ or scratch/, with a .md, .jsonl or .txt extension. An absolute path or a `..` segment is refused rather than resolved, because resolving it would write somewhere else",
+        "todo": "the message names the specific reason; use a known name or a path like `tasks/T1.md`",
+        "fatal": false
+      }
+    }
+  }
+}

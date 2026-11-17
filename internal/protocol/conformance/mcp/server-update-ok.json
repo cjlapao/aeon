@@ -1,0 +1,48 @@
+{
+  "description": "mcp.server.update replaces the PROVIDED sections whole — a transport-only update keeps the tools exactly as they were (no partial tool patches; renaming is not an operation: the name is the identity, rename means add + remove). An origin=system row refuses by name (MG10: edit refused; duplicate by add).",
+  "method": "mcp.server.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 923,
+    "method": "mcp.server.update",
+    "params": {
+      "name": "github",
+      "transport": {
+        "type": "http",
+        "url": "https://gh.example/mcp"
+      },
+      "title": "GitHub (work)"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 923,
+    "result": {
+      "server": {
+        "name": "github",
+        "tier": "public",
+        "enabled": true,
+        "origin": "user",
+        "transport": {
+          "type": "http",
+          "command": "",
+          "args": [],
+          "env": [],
+          "url": "https://gh.example/mcp"
+        },
+        "tools": [
+          {
+            "name": "list_issues",
+            "rerun": "safe",
+            "effect": "local"
+          }
+        ],
+        "declaredBy": 0,
+        "status": "unprobed",
+        "updatedAt": "2026-11-01T17:00:00Z"
+      },
+      "grants": [],
+      "changed": true
+    }
+  }
+}

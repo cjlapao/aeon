@@ -1,0 +1,54 @@
+{
+  "description": "inbox.summary is the same evaluation counted (SV3: acked items COUNT, so the number never lies — hiding is a view, not a fact). bySeverity uses the closed five-class vocabulary; oldestSince is the oldest item's own stored time (age is never stored); sources[] repeats the census so a count whose sources failed is distinguishable from a quiet day. One of the three carries a live hidden-mark (acked), so total counts it and `acked` names the split — the number never lies about what a person already saw (SV3, T3).",
+  "method": "inbox.summary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 902,
+    "method": "inbox.summary",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 902,
+    "result": {
+      "total": 3,
+      "bySeverity": {
+        "needs-you": 1,
+        "blocked": 1,
+        "stopped": 1
+      },
+      "acked": 1,
+      "oldestSince": "2026-11-02T22:10:00Z",
+      "sources": [
+        {
+          "name": "questions",
+          "state": "reporting"
+        },
+        {
+          "name": "blocked",
+          "state": "reporting"
+        },
+        {
+          "name": "stopped",
+          "state": "reporting"
+        },
+        {
+          "name": "budget",
+          "state": "not-wired"
+        },
+        {
+          "name": "stuck",
+          "state": "not-wired"
+        },
+        {
+          "name": "gates",
+          "state": "not-wired"
+        },
+        {
+          "name": "scheduler",
+          "state": "not-wired"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "description": "merge.events: the merge-event trail — the merges that happened and the gate's account of each: the PR and its SHA, the method the rule asked for, the evidence the gate carried at the merge, the rule revision it judged under and the run it measured, and who recorded it. Scoped by component (or the loop, which the daemon resolves to the loop's own root — a loop names both halves of the scope) and capped. The trail is the merge's memory: what was merged, and why the gate let it.",
+  "method": "merge.events",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1051,
+    "method": "merge.events",
+    "params": {
+      "componentId": "c-aeon",
+      "loop": "fix-the-login",
+      "limit": 20
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1051,
+    "result": {
+      "events": [
+        {
+          "id": "mev-1",
+          "loopSlug": "fix-the-login",
+          "componentRoot": "/home/cjlapao/src/aeon",
+          "componentId": "c-aeon",
+          "pr": 482,
+          "mergeSha": "4a9d3e2f1b0c8a7d6e5f4a3b2c1d0e9f8a7b6c5d",
+          "method": "squash",
+          "baseRef": "main",
+          "headSha": "3f8c2d1e9a4b7c6d5e8f0a1b2c3d4e5f6a7b8c9d",
+          "ruleRevision": 4,
+          "evidence": "review approved by cjlapao at 2026-11-02T11:50:00Z; checks 1 of 2 green (ci/build red); threads 0 unresolved; dod 1 of 2 met; local pass at vr-101",
+          "verifyRunId": "vr-101",
+          "mergedAt": "2026-11-02T13:15:00Z",
+          "actorKind": "system",
+          "actorId": "loop-engine"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "description": "Every project root that HAS a graph (S30 T5): the bench's root-picker data, so a person never types a path from memory and the listing itself can never be mistaken for one project's answer — it names roots, nothing else. An empty list is the honest state 'nothing is indexed yet', distinct from a refusal: no rows anywhere is data, not failure (DB19).",
+  "method": "graph.roots",
+  "request": {"jsonrpc": "2.0", "id": 248, "method": "graph.roots", "params": {}},
+  "response": {
+    "jsonrpc": "2.0", "id": 248,
+    "result": ["/home/dev/shop", "/home/dev/aeon"]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "description": "The preview: files per component, the git commands the run will issue, the rows-would-file census, and the digest the commit needs. Files nothing (GI10).",
+  "method": "intake.plan",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "intake.plan",
+    "params": {
+      "intakeId": "int-abc123",
+      "proposalId": "7",
+      "targetPath": "/home/person/projects/alpha",
+      "publish": "none"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "intakeId": "int-abc123",
+      "proposalId": "7",
+      "digest": "s61.intake.v1:3f2a9c1b4d5e6f70a1b2c3d4e5f60718293a4b5c6d7e8f9012345678901abcdef",
+      "targetPath": "/home/person/projects/alpha",
+      "publish": "none",
+      "components": [
+        {
+          "slug": "alpha",
+          "role": "",
+          "name": "Alpha",
+          "targetPath": "/home/person/projects/alpha/alpha",
+          "blueprint": "base@1",
+          "files": [
+            "README.md",
+            "go.mod"
+          ],
+          "actions": [
+            "git init -b main",
+            "git add -A"
+          ],
+          "remoteCreated": false
+        }
+      ],
+      "goals": 2,
+      "epics": 1,
+      "items": 1,
+      "records": [
+        "epics: 1",
+        "goals: 2",
+        "items: 1"
+      ]
+    }
+  }
+}

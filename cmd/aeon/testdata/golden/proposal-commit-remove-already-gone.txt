@@ -1,0 +1,5 @@
+$ aeon proposal commit 1
+proposal <ID> committed
+$ aeon proposal list
+ID    KIND               STATUS     CREATED BY               COMMAND
+<ID> policy_remove      committed  user:1000                aeon proposal commit 1

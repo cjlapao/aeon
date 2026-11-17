@@ -1,0 +1,7 @@
+{
+  "case": "bad-json",
+  "summary": "",
+  "content": "the arguments for `bash` are not valid JSON: invalid character 'o' in literal null (expecting 'u')",
+  "isError": true,
+  "exitCode": null
+}

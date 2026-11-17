@@ -1,0 +1,37 @@
+{
+  "description": "verify.templates: the inert verify templates grouped by stack. A template is a candidate gate that does nothing of until a person applies it to a component (verify.applyTemplate); it is never a run, and its origin and version are its provenance — builtin seeds arrive from the T10 set, and a template a person copied earlier arrives as origin=user.",
+  "method": "verify.templates",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1006,
+    "method": "verify.templates"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1006,
+    "result": {
+      "templates": [
+        {
+          "id": "vt-go-test",
+          "stack": "go",
+          "name": "go test (package)",
+          "command": "go test ./...",
+          "requirement": "required",
+          "timeoutS": 900,
+          "origin": "builtin",
+          "version": "1"
+        },
+        {
+          "id": "vt-go-vet",
+          "stack": "go",
+          "name": "go vet",
+          "command": "go vet ./...",
+          "requirement": "required",
+          "timeoutS": 300,
+          "origin": "builtin",
+          "version": "1"
+        }
+      ]
+    }
+  }
+}

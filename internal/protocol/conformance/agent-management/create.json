@@ -1,0 +1,25 @@
+{
+  "description": "agent.create is the write that mints a first-party agent row from name/description/functionality — a daemon write, not PL15 policy authoring (it touches the agent table, not the closed policy set), so it is registered like loop.create rather than the human-only door. The result is the created row, so the caller holds the identity it just made; the CLI and the app share this one surface (P34).",
+  "method": "agent.create",
+  "request": {"jsonrpc": "2.0", "id": 111, "method": "agent.create", "params": {"name": "Reviewer Plus", "description": "Reviews pull requests and posts findings to the thread", "functionality": "read, list, write"}},
+  "response": {"jsonrpc": "2.0", "id": 111, "result": {
+    "id": 12,
+    "slug": "reviewer-plus",
+    "name": "Reviewer Plus",
+    "description": "Reviews pull requests and posts findings to the thread",
+    "functionality": "read, list, write",
+    "metadata": "",
+    "prompt": "You are a careful code reviewer.",
+    "skills": "[]",
+    "version": "1.0.0",
+    "internal": false,
+    "avatarType": "default",
+    "avatarColor": "blue",
+    "avatarMood": "neutral",
+    "signature": "",
+    "certificate": "",
+    "signed": false,
+    "createdAt": "2026-10-30T09:00:00Z",
+    "updatedAt": "2026-10-30T09:00:00Z"
+  }}
+}

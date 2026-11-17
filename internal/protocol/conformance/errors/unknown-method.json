@@ -1,0 +1,9 @@
+{
+  "description": "An unknown method is JSON-RPC's OWN -32601, not an Aeon code: it is a fact about JSON-RPC rather than about Aeon. Note the absence of a `data` member — the three-part shape is Aeon's, and a transport-level condition does not carry it.",
+  "method": "nope",
+  "request": {"jsonrpc": "2.0", "id": 12, "method": "nope"},
+  "response": {
+    "jsonrpc": "2.0", "id": 12,
+    "error": {"code": -32601, "message": "method \"nope\" is not registered"}
+  }
+}

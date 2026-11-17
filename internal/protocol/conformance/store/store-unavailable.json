@@ -1,0 +1,20 @@
+{
+  "description": "Reaching this means the store failed to OPEN: it opens before the daemon registers its methods, so a running daemon without memory has already printed the reason on stdout. `fatal: true` — nothing a client retries will fix it.",
+  "method": "store.info",
+  "request": {
+    "jsonrpc": "2.0", "id": 50, "method": "store.info"
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 50,
+    "error": {
+      "code": -31104,
+      "message": "no store is available",
+      "data": {
+        "what": "this daemon has no store, so nothing can be read or written",
+        "means": "the store opens before the daemon registers its methods, so reaching this means the open failed and the daemon is running without memory",
+        "todo": "check `aeon serve`'s first lines for the store path and the open error, and `aeon db info` for the file itself",
+        "fatal": true
+      }
+    }
+  }
+}

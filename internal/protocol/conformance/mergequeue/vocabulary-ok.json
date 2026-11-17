@@ -1,0 +1,169 @@
+{
+  "description": "mergequeue.vocabulary is DERIVED, never hand-copied (MQ17): the states walk mergequeue.StatusSet and every legalNext edge is probed through the same mergequeue.Legal the driver moves by, so a screen cannot show an edge the driver would refuse; reasons, modes, policies and land methods come from the closed sets themselves; methods and their door kinds come from the plane's own registration list. Adding a status constant changes this answer with no handler edit anywhere.",
+  "method": "mergequeue.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 220,
+    "method": "mergequeue.vocabulary",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 220,
+    "result": {
+      "states": [
+        {
+          "name": "queued",
+          "meaning": "on the lane, waiting its turn; the loop has not started or has not been needed",
+          "legalNext": [
+            "catching_up",
+            "removed"
+          ]
+        },
+        {
+          "name": "catching_up",
+          "meaning": "the integration branch is being built (or rebuilt after the base moved)",
+          "legalNext": [
+            "verifying",
+            "conflicted",
+            "removed"
+          ]
+        },
+        {
+          "name": "verifying",
+          "meaning": "the gate runs against the integration head \u2014 the queue's own S57 verification",
+          "legalNext": [
+            "ready",
+            "failed",
+            "removed"
+          ]
+        },
+        {
+          "name": "ready",
+          "meaning": "the gate is green for this head; a manual queue waits for a person's land, an auto queue lands on its grants",
+          "legalNext": [
+            "queued",
+            "merging",
+            "removed"
+          ]
+        },
+        {
+          "name": "merging",
+          "meaning": "the landing is in flight: the PR and the merge are the loop's work now",
+          "legalNext": [
+            "queued",
+            "merged",
+            "failed",
+            "removed"
+          ]
+        },
+        {
+          "name": "merged",
+          "meaning": "landed on base; landed_sha names the commit; the worktrees are cleaned",
+          "legalNext": []
+        },
+        {
+          "name": "conflicted",
+          "meaning": "the integration merge conflicts; the resolve-or-ask plane owns the exit (paths and counts only, SEC-033)",
+          "legalNext": [
+            "queued",
+            "failed",
+            "removed"
+          ]
+        },
+        {
+          "name": "failed",
+          "meaning": "ended short \u2014 reason_kind names the family (denied, gate-failed, head-moved, catchup-limit, loop-stopped, \u2026)",
+          "legalNext": [
+            "queued"
+          ]
+        },
+        {
+          "name": "removed",
+          "meaning": "taken out of the queue by a person or the stop contract; the branch and its commits are untouched",
+          "legalNext": []
+        }
+      ],
+      "reasons": [
+        "denied",
+        "conflict",
+        "gate-failed",
+        "head-moved",
+        "protected",
+        "catchup-limit",
+        "loop-stopped",
+        "base-moved",
+        "removed-by-person",
+        "landed",
+        "merge-rule",
+        "no-grant",
+        "person-rejected",
+        "conflict-policy-block",
+        "slot-busy"
+      ],
+      "modes": [
+        "off",
+        "manual",
+        "auto"
+      ],
+      "conflictPolicies": [
+        "ask",
+        "resolve",
+        "block"
+      ],
+      "landMethods": [
+        "squash",
+        "merge"
+      ],
+      "mergeActors": [
+        "user",
+        "cli",
+        "blueprint",
+        "daemon",
+        "agent"
+      ],
+      "methods": [
+        {
+          "name": "mergequeue.list",
+          "door": "read"
+        },
+        {
+          "name": "mergequeue.show",
+          "door": "read"
+        },
+        {
+          "name": "mergequeue.status",
+          "door": "read"
+        },
+        {
+          "name": "mergequeue.vocabulary",
+          "door": "read"
+        },
+        {
+          "name": "mergequeue.enqueue",
+          "door": "human"
+        },
+        {
+          "name": "mergequeue.dequeue",
+          "door": "human"
+        },
+        {
+          "name": "mergequeue.reorder",
+          "door": "human"
+        },
+        {
+          "name": "mergequeue.retry",
+          "door": "human"
+        },
+        {
+          "name": "mergequeue.land",
+          "door": "human"
+        },
+        {
+          "name": "mergequeue.settings",
+          "door": "human"
+        }
+      ]
+    }
+  }
+}

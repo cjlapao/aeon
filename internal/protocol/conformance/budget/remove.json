@@ -1,0 +1,12 @@
+{
+  "description": "budget.remove with the digest of the removal statement: a removal always loosens authority (a cap that is gone will never fire), so it always confirms, and the digest here is the SHA-256 of the statement the daemon rendered from the row — the same one a confirm-required refusal (errors/budget-refused-confirm-required.json) hands the client. The audit row outlives the budget (LC11): the removed caps are still readable in the audit of the subject, the view simply stops existing.",
+  "method": "budget.remove",
+  "request": {
+    "jsonrpc": "2.0", "id": 608, "method": "budget.remove",
+    "params": {"id": "bud-epc-1", "confirm": "0d0e9e5f01d0c09945a124dbd0286b558fc1e2f1a790580b79901ff7663ff7c5"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 608,
+    "result": {"id": "bud-epc-1", "removed": true}
+  }
+}

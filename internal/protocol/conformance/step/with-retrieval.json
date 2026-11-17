@@ -1,0 +1,29 @@
+{
+  "description": "The retrieval declaration (S22 T7, V7/R6): `contextRetrievals` declares — it does not resolve. Each {corpus, query} is NAMED (O8, no defaults); the daemon resolves it ONCE at Compile, freezes the hits' files into the manifest marked `retrieved` with query and score (V14/O2), and no resume or recovery re-asks (N7). Nothing-found is RECORDED in the manifest, not silenced (O6). Absent the key, retrieval was never asked — a different state from asking and finding nothing.",
+  "method": "step",
+  "request": {"jsonrpc": "2.0", "id": 92, "method": "step", "params": {
+    "prompt": "explain the retry policy",
+    "workspaceRoot": "/home/dev/aeon",
+    "contextFiles": ["internal/policy/evaluate.go"],
+    "contextRetrievals": [
+      {"corpus": "code", "query": "where is the retry policy"},
+      {"corpus": "history", "query": "why was the retry brief rejected"}
+    ]
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 92,
+    "result": {
+      "stepId": 77,
+      "kind": "complete",
+      "outcome": "ok",
+      "handoff": {
+        "status": "ok",
+        "summary": "The retry policy lives in escalate.go; the history shows the brief was rejected for missing a backoff floor.",
+        "evidence": ["internal/loop/escalate.go:120-131", "brief-artefacts:3-18"]
+      },
+      "usage": {"inputTokens": 512, "outputTokens": 96},
+      "cost": {"state": "known", "usd": 0.0031},
+      "iterations": 1
+    }
+  }
+}

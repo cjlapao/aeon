@@ -1,0 +1,25 @@
+{
+  "description": "The policy gate's verdict on one tool call, published for EVERY call the gate judged — allowed ones included — so a watcher can show 'policy allowed write_file' rather than only the refusals, which would read as 'nothing was checked' for the rest (P31). `verdict` is allowed | denied | asked; `reason` is the one formatter's sentence, verbatim. Absent entirely when a step runs with no gate. Arrives after `step.tool.start` and before the call's `step.tool.end`, paired by `toolUseId`.",
+  "event": "step.policy.decided",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "seq": 12,
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1480,
+      "kind": "step.policy.decided",
+      "at": "2026-10-24T12:00:01.000Z",
+      "payload": {
+        "stepId": 12,
+        "agent": "surveyor",
+        "tool": "write_file",
+        "summary": "SURVEY.md",
+        "toolUseId": "toolu_09",
+        "verdict": "allowed",
+        "reason": "allowed: agent:surveyor · \"survey-writes\" · target all-agents · source operator · no expiry",
+        "iteration": 4
+      }
+    }
+  }
+}

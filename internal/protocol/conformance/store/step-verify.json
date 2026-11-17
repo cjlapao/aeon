@@ -1,0 +1,17 @@
+{
+  "description": "`step.verify` reports byte-identity AND the signature's length. `present` and `the right length` are different claims, and a signature short by one byte is rejected by Anthropic on the next tool-use turn — in a different process, with an error about something else. Somebody diagnosing that at S7 runs this first.",
+  "method": "step.verify",
+  "request": {
+    "jsonrpc": "2.0", "id": 47, "method": "step.verify",
+    "params": {"id": 4}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 47,
+    "result": {
+      "ok": true,
+      "messages": 2,
+      "signatureLength": 92,
+      "digest": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    }
+  }
+}

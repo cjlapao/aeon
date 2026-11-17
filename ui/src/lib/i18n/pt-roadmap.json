@@ -1,0 +1,84 @@
+{
+  "roadmap": {
+    "manage": {
+      "reconnecting": "O daemon está reconectando — o quadro de gerenciamento não pergunta nada até a conexão estar atualizada.",
+      "boardTitle": "O quadro",
+      "boardLoading": "Perguntando ao daemon…",
+      "boardEmpty": "Nada corresponde — o daemon respondeu sem linhas.",
+      "needsRoot": "Indique a raiz do componente — o quadro responde um projeto por vez.",
+      "ready": "pronto",
+      "notReady": "não está pronto",
+      "settingsTitle": "Configurações de despacho",
+      "filters": {
+        "root": "Raiz do componente",
+        "rootHint": "O quadro lê um projeto — a raiz sob a qual seus itens vivem.",
+        "status": "Estado",
+        "statusAll": "qualquer estado",
+        "epic": "Épico",
+        "epicPlaceholder": "uma etiqueta de épico"
+      },
+      "edit": {
+        "title": "Título",
+        "titleLimit": "{max} bytes no máximo (UTF-8) — o limite do próprio daemon",
+        "epic": "Épico (uma etiqueta, não uma linha)",
+        "epicLimit": "{max} bytes no máximo (UTF-8) — o limite do próprio daemon",
+        "overLimit": "{used} de {max} bytes — acima do limite do daemon",
+        "noEpic": "sem épico",
+        "clearEpic": "limpar o épico",
+        "briefPath": "Caminho do brief",
+        "planPath": "Caminho do plano",
+        "pathsHidden": "Os campos de caminho estão fechados para este estado — a janela editável do daemon não o inclui.",
+        "save": "Salvar",
+        "saving": "Salvando…",
+        "noChange": "O daemon respondeu: nada mudou."
+      },
+      "drawer": {
+        "close": "Fechar",
+        "priority": "prioridade",
+        "tab": {
+          "edit": "Editar",
+          "history": "Histórico"
+        },
+        "loading": "Abrindo o item…",
+        "dispatchNote": "Despachar é ato da pessoa — cada botão pergunta antes, citando a declaração de autoridade do próprio daemon; recusar não envia nada.",
+        "ideate": "Ideação",
+        "plan": "Planejar",
+        "materialize": "Materializar",
+        "workspaceRoot": "Raiz do workspace",
+        "workspaceRootHint": "O despacho roda um loop — indique a raiz do workspace em que ele roda.",
+        "workspaceRootMissing": "Nenhuma raiz de workspace indicada — o despacho não é oferecido.",
+        "materializeBlueprint": "Blueprint",
+        "materializeGoal": "Objetivo",
+        "cancel": "Cancelar — não enviar nada",
+        "go": {
+          "ideate": "Iniciar a ideação",
+          "plan": "Despachar o planejamento",
+          "materialize": "Materializar o loop"
+        }
+      },
+      "history": {
+        "loading": "Pedindo a trilha de auditoria…",
+        "empty": "Nenhuma mudança registrada ainda.",
+        "systemActor": "sistema"
+      },
+      "dispatch": {
+        "intro": "Qual blueprint cada configuração de despacho responde, lido das próprias configurações do daemon.",
+        "blueprint": "Blueprint",
+        "blueprintHint": "Escolhido da própria lista de blueprints do daemon.",
+        "save": "Salvar",
+        "saving": "Salvando…",
+        "saved": "Salvo — o daemon respondeu a nova visão.",
+        "noChange": "O daemon respondeu: nada mudou.",
+        "healthAdvice": "A saúde é conselho — o despacho reconfere no seu próprio momento."
+      },
+      "proposals": {
+        "title": "Ideias propostas",
+        "empty": "Nenhuma ideia de roadmap espera uma decisão.",
+        "commit": "Confirmar",
+        "reject": "Rejeitar",
+        "reasonPlaceholder": "motivo da rejeição (obrigatório)",
+        "noDigest": "proposal.get não respondeu um digest — não há com o que confirmar honestamente."
+      }
+    }
+  }
+}

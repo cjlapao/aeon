@@ -1,0 +1,24 @@
+{
+  "description": "Checkpoint's exclusive announcement (I2): the model read these steers AT this iteration boundary, and these tool calls were skipped to honour them (LW2). The tool-free turn dispatches nothing, so `skippedTools` is exactly the list a watcher subtracts from the turn it was watching. The delivery is durable before the text enters the transcript: a crash after the first save containing the text replays the same ids.",
+  "event": "step.steer.delivered",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "seq": 11,
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1470,
+      "kind": "step.steer.delivered",
+      "at": "2026-10-24T12:00:00.000Z",
+      "payload": {
+        "stepId": 12,
+        "agent": "default",
+        "steerId": 41,
+        "iteration": 3,
+        "skippedTools": [
+          "bash"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "command": "printf 'ok\\n'",
+  "render": "$ printf 'ok\\n'\nexit 0 · 42ms\n\n--- stdout ---\nok\n"
+}

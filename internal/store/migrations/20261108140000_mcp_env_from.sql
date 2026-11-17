@@ -1,0 +1,2 @@
+-- An MCP server's environment variables are bound: each NAME the process sees is bound to a variable in the variable manager (env_var), and the binding is stored here as a JSON object NAME -> variable name. Values are never in this table or anywhere in the configuration; an older server whose names carry no binding keeps resolving as it did until it is edited.
+ALTER TABLE mcp_server ADD COLUMN env_from TEXT NOT NULL DEFAULT '{}' CHECK (json_valid(env_from) AND json_type(env_from) = 'object');

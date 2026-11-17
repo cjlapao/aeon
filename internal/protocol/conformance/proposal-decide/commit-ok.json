@@ -1,0 +1,51 @@
+{
+  "description": "S45 T5 (PM7/PM8): proposal.commit {id, digest} — the digest-bound human decision. effectApplied:true states THIS call applied the effect (false is the crash-recovery completion: the effect had landed, the flip was lost, the retry finished it — the door SAYS so instead of re-applying). before/after are the target's InForceView answers (Render() bytes verbatim, D14; empty here — an mcp_server_add changes no policy target). warnings carry the authoring-time advisory lines the CLI prints on stderr (DEF-038, SEC-014) as DATA for every surface. The row left `proposed`: decided_by_kind='user', decided_by_id = the connection's peer uid (never a param), and exactly one policy_change row (op='commit', ids-only summary) stands behind the decision.",
+  "method": "proposal.commit",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "method": "proposal.commit",
+    "params": {
+      "id": 42,
+      "digest": "9f2c41d0f7a83b5c6e1d4a09b7f2e8c3516d0a4b98e7f2c1d0b3a69584736251"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 92,
+    "result": {
+      "proposal": {
+        "id": 42,
+        "kind": "mcp_server_add",
+        "payload": {
+          "agent": "boss",
+          "server": {
+            "name": "github",
+            "command": "gh-mcp",
+            "args": [
+              "--stdio"
+            ]
+          }
+        },
+        "status": "committed",
+        "createdAt": "2026-11-02T08:55:00Z",
+        "createdByKind": "agent",
+        "createdById": "boss",
+        "command": "aeon proposal commit 42",
+        "decidedAt": "2026-11-02T09:00:00Z",
+        "decidedByKind": "user",
+        "decidedById": "4321"
+      },
+      "effectApplied": true,
+      "before": {
+        "target": "",
+        "answers": []
+      },
+      "after": {
+        "target": "",
+        "answers": []
+      },
+      "warnings": []
+    }
+  }
+}

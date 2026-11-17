@@ -1,0 +1,52 @@
+{
+  "description": "S45 T5 (PM7.1): the policy_add preview carries the would-be row's describe sentence (policy.Describe, the one formatter — byte-identical to what policy.get will show after a commit) and the target's CURRENT in-force answer through the same handle policy.inForce reads: what changes, beside what stands today. Every row is {policyID, state, render} with render = InForceAnswer.Render() verbatim (D14); an empty answer is [] — never null, never a shrug. Advisory: the commit door re-derives everything.",
+  "method": "proposal.get",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 91,
+    "method": "proposal.get",
+    "params": {
+      "id": 43
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 91,
+    "result": {
+      "proposal": {
+        "id": 43,
+        "kind": "policy_add",
+        "payload": {
+          "id": "deny-shell-boss",
+          "type": "command_access",
+          "target": {
+            "kind": "agent",
+            "id": "boss"
+          },
+          "action": "deny",
+          "spec": {
+            "command": "git push"
+          }
+        },
+        "status": "proposed",
+        "createdAt": "2026-11-02T08:55:00Z",
+        "createdByKind": "agent",
+        "createdById": "boss",
+        "command": "aeon proposal commit 43"
+      },
+      "digest": "b1a2c3d4e5f60718293a4b5c6d7e8f9012345678901234567890123456789abc",
+      "preview": {
+        "kind": "policy_add",
+        "target": "agent:boss",
+        "describe": "deny command pattern \"git push\"",
+        "inForce": [
+          {
+            "policyID": "allow-shell-boss",
+            "state": "in-force",
+            "render": "allow-shell-boss: allow — command pattern \"git push\" bound this agent"
+          }
+        ]
+      }
+    }
+  }
+}

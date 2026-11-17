@@ -1,0 +1,4 @@
+{
+  "description": "Each considered running step announces its case and position before recovery acts; dry-run uses the same shape with dryRun true.",
+  "notification": {"jsonrpc":"2.0","method":"event","params":{"subscriptionId":"s-1","seq":2002,"kind":"recovery.step","at":"2026-10-17T11:00:01Z","payload":{"stepId":7,"case":"C","index":1,"total":2,"reason":"bash receipt started but not completed"}}}
+}

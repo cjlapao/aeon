@@ -1,0 +1,21 @@
+{
+  "description": "A step with no `workspaceRoot` is REFUSED rather than defaulted. The daemon serves every component on the machine, so defaulting to its own working directory would read the DAEMON's files, produce a plausible answer, and look like it worked — which is the worst of the three outcomes.",
+  "method": "step",
+  "request": {
+    "jsonrpc": "2.0", "id": 72, "method": "step",
+    "params": {"prompt": "read the README"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 72,
+    "error": {
+      "code": -31201,
+      "message": "the step needs a workspace root",
+      "data": {
+        "what": "no workspaceRoot was given, and there is deliberately no default",
+        "means": "the daemon serves every component on the machine, so its own working directory is not yours. A step that defaulted to it would read the daemon's files and the answer would look right",
+        "todo": "send `workspaceRoot`; `aeon step` sends your working directory, and `--workspace` overrides it",
+        "fatal": false
+      }
+    }
+  }
+}

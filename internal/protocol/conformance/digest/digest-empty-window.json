@@ -1,0 +1,97 @@
+{
+  "description": "A quiet window answers with every section in its zero shape, all four honesty groups, the two reads side by side, and the explicit 'nothing needs you' \u2014 never an error (RT12).",
+  "method": "digest.learned",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "digest.learned",
+    "params": {
+      "id": "aeon"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "window": {
+        "since": "2026-10-05T00:00:00Z",
+        "until": "2026-11-04T00:00:00Z"
+      },
+      "statement": "A score is a measurement of what happened. It does not change what any agent, blueprint or project is allowed or asked to do.",
+      "coverage": {
+        "recordedSince": "2026-10-12T08:00:00Z",
+        "loopsInHistory": 5,
+        "loopsRecorded": 5,
+        "loopsNotRecorded": 0
+      },
+      "outcomes": {
+        "cardWindow": {
+          "since": "2026-10-05T00:00:00Z",
+          "until": "2026-11-04T00:00:00Z"
+        },
+        "byKind": [],
+        "previous": {
+          "cardWindow": {
+            "since": "2026-09-05T00:00:00Z",
+            "until": "2026-10-05T00:00:00Z"
+          },
+          "byKind": []
+        }
+      },
+      "rework": {
+        "reviewRounds": {
+          "value": null,
+          "n": 5,
+          "state": "too-few"
+        },
+        "securityRounds": {
+          "value": null,
+          "n": 5,
+          "state": "too-few"
+        },
+        "retryRounds": 0,
+        "qaRounds": 1,
+        "topBlueprints": []
+      },
+      "blocked": {
+        "top": []
+      },
+      "cost": {
+        "floor": "at least $0.00 across 0 steps (5 loops' cost not recorded)",
+        "unknownSteps": 5,
+        "perCompletedItem": {
+          "value": null,
+          "n": 5,
+          "state": "cannot-say"
+        },
+        "largestLoop": null
+      },
+      "learned": {
+        "groups": [
+          {
+            "provenance": "told",
+            "items": []
+          },
+          {
+            "provenance": "observed",
+            "items": []
+          },
+          {
+            "provenance": "assumed",
+            "items": []
+          },
+          {
+            "provenance": "relayed",
+            "items": []
+          }
+        ]
+      },
+      "attention": {
+        "blockedNow": [],
+        "pendingQuestions": 0,
+        "proposalsPending": 0,
+        "statement": "nothing needs you"
+      }
+    }
+  }
+}

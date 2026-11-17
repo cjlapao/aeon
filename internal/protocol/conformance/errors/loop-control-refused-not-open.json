@@ -1,0 +1,27 @@
+{
+  "description": "LC15's dismissal of a request that is not open (S55 T5): the store's CAS answers the state it found — the request is already settled or never filed — and data.kind 'not-open' names it. The remedy points at the desk (loop.control.requests) so a person who raced a dismissal sees where the settled row went instead of a dead error.",
+  "method": "loop.control.dismiss",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 515,
+    "method": "loop.control.dismiss",
+    "params": {
+      "requestId": 7
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 515,
+    "error": {
+      "code": -31860,
+      "message": "the loop control refused the operation",
+      "data": {
+        "kind": "not-open",
+        "what": "loop dismiss refused: stop request 7 is not open — it is already settled or never filed (loop.control.requests names the desk)",
+        "means": "the daemon understood and declined — nothing was written and nothing moved",
+        "todo": "do what the what sentence names",
+        "fatal": false
+      }
+    }
+  }
+}

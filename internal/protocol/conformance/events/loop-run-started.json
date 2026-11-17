@@ -1,0 +1,24 @@
+{
+  "description": "A new run claimed the loop (S39 T9, CR2): the timeline's opening beat \u2014 which blueprint, which run number, who started it (user/agent/trigger), and the goal coordinates the run pinned.",
+  "event": "loop.run.started",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1606,
+      "kind": "loop.run.started",
+      "at": "2026-10-27T15:58:00Z",
+      "payload": {
+        "loopId": "loop-9",
+        "runSeq": 2,
+        "blueprint": "goal-to-brief",
+        "version": 1,
+        "startedByKind": "user",
+        "startedById": "",
+        "goalId": "g1",
+        "goalVersion": 3
+      }
+    }
+  }
+}

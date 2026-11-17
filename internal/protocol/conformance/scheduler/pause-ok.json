@@ -1,0 +1,21 @@
+{
+  "description": "CN18 pause: the operational off STOPS PICKING; running loops keep running, and the answer says so in the daemon's own words.",
+  "method": "scheduler.pause",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 407,
+    "method": "scheduler.pause",
+    "params": {
+      "reason": "deploying the schema migration"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 407,
+    "result": {
+      "paused": true,
+      "runningLoops": "unchanged — pause stops picking, not running work"
+    }
+  },
+  "fromDoor": true
+}

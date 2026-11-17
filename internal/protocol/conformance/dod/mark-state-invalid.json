@@ -1,0 +1,28 @@
+{
+  "description": "dod.mark refuses a state outside the closed set: the state is quoted and the closed set is named in the sentence (code -31872, kind state-invalid) — the item's row is exactly as it was, and the sentence says what to mark instead.",
+  "method": "dod.mark",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1064,
+    "method": "dod.mark",
+    "params": {
+      "id": "dod-2",
+      "state": "done"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1064,
+    "error": {
+      "code": -31872,
+      "message": "the DoD operation was refused",
+      "data": {
+        "kind": "state-invalid",
+        "what": "dod mark refused: the state is \"done\"; the closed set is unchecked|met|unmet|unverifiable",
+        "means": "the daemon understood and declined — the item keeps its state and its evidence (no mark written, no updated stamp), and the kind in data kind says whose mark it is not",
+        "todo": "do what the what sentence names — name the evidence a met item needs, or ask the mark of the actor it says it belongs to",
+        "fatal": false
+      }
+    }
+  }
+}

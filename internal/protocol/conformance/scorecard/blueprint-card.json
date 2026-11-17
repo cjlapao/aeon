@@ -1,0 +1,54 @@
+{
+  "description": "A blueprint card names the blueprint by id and answers over every loop that ran it in the window \u2014 the same shape as the agent door, one subject type different.",
+  "method": "scorecard.blueprint",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "scorecard.blueprint",
+    "params": {
+      "blueprint": "dev-loop"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "card": {
+        "subject": {
+          "kind": "blueprint",
+          "id": "dev-loop"
+        },
+        "window": {
+          "since": "2026-10-05T00:00:00Z",
+          "until": "2026-11-04T00:00:00Z"
+        },
+        "coverage": {
+          "recordedSince": "2026-10-12T08:00:00Z",
+          "loopsInHistory": 22,
+          "loopsRecorded": 19,
+          "loopsNotRecorded": 3
+        },
+        "statement": "Outcome recording covers 19 of 22 loops since 2026-10-12T08:00:00Z; the 3 earlier loops are counted, never measured.",
+        "metrics": {
+          "loops": {
+            "value": 19,
+            "n": 19,
+            "state": "ok"
+          },
+          "doneRate": {
+            "value": 0.789473684210526,
+            "n": 19,
+            "state": "ok"
+          },
+          "costPerCompletedItem": {
+            "value": null,
+            "n": 6,
+            "state": "too-few",
+            "note": "fewer than 10 completed loops priced"
+          }
+        }
+      },
+      "statement": "A score is a measurement of what happened. It does not change what any agent, blueprint or project is allowed or asked to do."
+    }
+  }
+}

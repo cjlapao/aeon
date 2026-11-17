@@ -1,0 +1,14 @@
+{
+ "__status": 200,
+ "body": {
+  "number": 4,
+  "title": "Add version endpoint",
+  "body": "b",
+  "state": "open",
+  "labels": [
+   {
+    "name": "dev-loop"
+   }
+  ]
+ }
+}

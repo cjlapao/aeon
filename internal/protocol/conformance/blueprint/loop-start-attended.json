@@ -1,0 +1,25 @@
+{
+  "description": "D2's declaration on the wire: `attended` is what `aeon loop start` sends at start (true for a human at a terminal, false for a scripted start nobody will answer) and the daemon pins it beside the blueprint bytes without re-deriving it. The field is OPTIONAL here on purpose: a client that cannot say must send nothing and get never-recorded, never a daemon-supplied guess — the third state is the reason loop-start.json exists unchanged beside this fixture. protogen is fixture-derived, so this file is what puts attended on the app's loop.start params type.",
+  "method": "loop.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "method": "loop.start",
+    "params": {
+      "blueprint": "two-step",
+      "goal": "Survey the repository",
+      "workspaceRoot": "/repo",
+      "attended": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 81,
+    "result": {
+      "id": "loop-1",
+      "slug": "loop-1",
+      "blueprint": "two-step",
+      "status": "running"
+    }
+  }
+}

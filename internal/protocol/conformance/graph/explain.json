@@ -1,0 +1,19 @@
+{
+  "description": "The structural read (S30 T5, D7/D8/CG7): one symbol, its direct edges BOTH directions, references only — no field in this answer can hold file content or prose. Four-state honesty at its purest: `found` shown here; the same method answers `ambiguous` with every candidate listed and none picked, `not-found` when the root has rows and the name matches none, and `not-built` when the root has no rows at all — a collapsed fourth state would let an un-indexed project read as an empty one. componentRoot is REQUIRED (T5 §5): there is no ambient root on the socket.",
+  "method": "graph.explain",
+  "request": {"jsonrpc": "2.0", "id": 241, "method": "graph.explain", "params": {"componentRoot": "/home/dev/shop", "symbol": "order.ProcessOrder"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 241,
+    "result": {
+      "state": "found",
+      "node": {"id": 41, "symbol": "order.ProcessOrder", "kind": "function", "filePath": "internal/order/process.go", "startLine": 16, "endLine": 24, "language": "go"},
+      "outgoing": [
+        {"kind": "calls", "resolution": "inferred", "to": {"id": 12, "symbol": "order.validateOrder", "kind": "function", "filePath": "internal/order/validate.go", "startLine": 18, "endLine": 20, "language": "go"}},
+        {"kind": "calls", "resolution": "inferred", "to": {"id": 7, "symbol": "billing.ChargePayment", "kind": "function", "filePath": "internal/billing/charge.go", "startLine": 9, "endLine": 14, "language": "go"}}
+      ],
+      "incoming": [
+        {"kind": "calls", "resolution": "inferred", "from": {"id": 51, "symbol": "api.HandleOrderRequest", "kind": "function", "filePath": "internal/api/handler.go", "startLine": 38, "endLine": 43, "language": "go"}}
+      ]
+    }
+  }
+}

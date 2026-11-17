@@ -1,0 +1,37 @@
+{
+  "description": "One trigger, whole: the canonical match object as authored, the kickoff TEMPLATE (never a rendered body), and its last answer — AU14 says the desk reads, the human doors write.",
+  "method": "automation.trigger.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 203,
+    "method": "automation.trigger.show",
+    "params": {"id": "tr-intake"}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 203,
+    "result": {
+      "id": "tr-intake",
+      "name": "Intake",
+      "source": "manual",
+      "rootId": "prj-platform",
+      "componentId": "cmp-alpha",
+      "match": {"event": "goal.approved", "goal_type": ["feature"]},
+      "blueprint": "dev-loop",
+      "kickoff": "Approved: {{.Goal}}",
+      "maxRunsPerHour": 20,
+      "maxCostPerDayUsd": 25.5,
+      "enabled": true,
+      "disabledReason": "",
+      "createdByKind": "user",
+      "createdById": "operator",
+      "createdAt": "2026-10-26T09:00:00Z",
+      "updatedAt": "2026-10-27T08:00:00Z",
+      "lastFire": {
+        "id": 1, "triggerId": "tr-intake", "outboxId": 4, "subjectKind": "goal", "subjectId": "g0",
+        "depth": 0, "outcome": "started", "reason": "", "loopId": "l1", "loopSlug": "auto-tr-intake-4",
+        "costNote": "", "claimedAt": "2026-10-27T08:10:00Z", "decidedAt": "2026-10-27T08:10:01Z"
+      }
+    }
+  }
+}

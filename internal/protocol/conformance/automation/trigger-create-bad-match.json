@@ -1,0 +1,23 @@
+{
+  "description": "A value the grammar refuses is refused by sentence, verbatim: null is not a zero value here, it is a match nobody meant. (The task file demoed this with an unknown `labels` key; that fixture had to be re-chosen, because protogen learns types from fixtures and a REFUSED key in a request still teaches the TypeScript page a key the grammar refuses. The unknown-key sentence keeps its own byte-for-byte test on the daemon side.)",
+  "method": "automation.trigger.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 210,
+    "method": "automation.trigger.create",
+    "params": {
+      "name": "Too clever",
+      "match": {"event": null, "goal_type": ["feature"]},
+      "blueprint": "dev-loop",
+      "maxRunsPerHour": 5
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 210,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: match: event \"\" is not an automation event (the set is goal.approved, task.created, task.approved, task.completed)"
+    }
+  }
+}

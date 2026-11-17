@@ -1,0 +1,19 @@
+{
+  "description": "LC15's settlement (S55 T5): a person dismissed an open stop request. The request is settled open→dismissed exactly once (the store's CAS) and the loop is untouched — a dismissal is 'noted, not acting', never a control act on the loop. The desk's screen updates from this event rather than a re-read.",
+  "event": "loop.control.dismissed",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1702,
+      "kind": "loop.control.dismissed",
+      "at": "2026-11-01T09:20:00Z",
+      "payload": {
+        "loopId": "loop-1",
+        "requestId": 7,
+        "decidedBy": "user:1000"
+      }
+    }
+  }
+}

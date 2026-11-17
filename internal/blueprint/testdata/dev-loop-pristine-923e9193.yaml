@@ -1,0 +1,203 @@
+# dev-loop — derived from opencode/skills/dev-loop-protocol/SKILL.md (864 lines)
+#
+# Driven by 33 agents and all four dev-loops primaries. This is THE protocol in use.
+#
+# Derived, not invented: every lane below is a row in the skill's phase table, in its
+# stated order. Where this file adds something the skill does not have, the comment says
+# ADDED and why. Where the format could not express something, the comment says GAP and
+# names it — see README.md.
+---
+id: dev-loop
+schemaVersion: 1
+version: 1
+on_abort: git-abort
+
+lanes:
+  # ---- intent and research -------------------------------------------------
+  - id: clarify
+    # "runs FIRST, before discovery … Always runs; asks only genuine intent ambiguities"
+    step: { kind: model-step, agent: intent-clarifier, produces: prompt.md }
+
+  - id: clarify-answers
+    # The skill's second dispatch shape: "the orchestrator relays the user's answers to its
+    # Open questions and re-dispatches to fold them in".
+    # GAP-1 resolved by S8: `${question.clarify-open-questions}` resolves from the
+    # saved gate answer when a revision re-enters clarify.
+    step: { kind: gate, question: clarify-open-questions }
+    on_reject:
+      goto: clarify
+      with: { user_answer: "${question.clarify-open-questions}" }
+      counter: clarify_rounds
+      max: 2
+      then: escalate
+
+  - id: discovery
+    # "mandatory every loop" — no `when`. Sets the Legal-review flag that gates the next lane.
+    step: { kind: model-step, agent: investigator, produces: discovery.md }
+
+  - id: discovery-answers
+    step: { kind: gate, question: discovery-open-questions }
+    on_reject:
+      goto: discovery
+      with: { user_answer: "${question.discovery-open-questions}" }
+      counter: discovery_rounds
+      max: 2
+      then: escalate
+
+  - id: legal
+    # "CONDITIONAL (only when discovery's Legal-review flag says needed) … runs BETWEEN
+    # discovery and plan so constraints feed the plan"
+    when: { field: flags.legal_review, op: eq, value: true }
+    step: { kind: model-step, agent: legal-advisor, produces: legal.md }
+
+  # ---- planning and the one approval gate ----------------------------------
+  - id: plan
+    # "requires discovery.md on disk first; must honor any constraints in a resolved legal.md"
+    step: { kind: model-step, agent: project-planner, produces: [plan.md, tasks/] }
+
+  - id: plan-gate
+    # The protocol's own summary: "investigates → plans → (one approval gate) → builds
+    # task-by-task → verifies each task → commits, running unattended"
+    step: { kind: gate, question: approve-plan }
+    on_reject:
+      goto: plan
+      with: { mode: revise }
+      counter: plan_rounds
+      max: 2
+      then: escalate
+
+  # ---- build ---------------------------------------------------------------
+  - id: git-feature-start
+    # "once, at build start (before any task) — create the loop's feature_branch off its
+    # base_branch (both from loop_get; never invent either) + push it"
+    step: { kind: code-action, action: git.createBranch }
+
+  - id: build
+    iterate: tasks
+    rework: implement
+    on_reject: { counter: retries, max: 2, then: escalate }
+    ladder:
+      - id: issue
+        kind: code-action
+        action: forge.openIssue
+        sets: issue-open
+        when: { field: mode, op: neq, value: poc }
+
+      - id: implement
+        kind: model-step
+        agent: by-tech-tag        # go→golang, react-ts→react-typescript, … (13 tags)
+        sets: in-progress
+
+      - id: verify
+        kind: model-step
+        agent: verifier-engineer
+        sets: verified            # evidence REQUIRED by the status machine
+
+      - id: security
+        kind: model-step
+        agent: security-engineer
+        sets: secure              # evidence REQUIRED
+        produces: security.md
+        when: { field: flags.security_scan, op: eq, value: true }
+        on_reject: { counter: security_rounds, max: 2, then: escalate }
+
+      - id: commit-local
+        # POC only: "commit LOCALLY, return the SHA. No issue, no push, no PR"
+        kind: code-action
+        action: git.commitAndPush
+        when: { field: mode, op: eq, value: poc }
+
+      - id: pr
+        kind: code-action
+        action: forge.openPR
+        sets: pr-open
+        when: { field: mode, op: neq, value: poc }
+
+      - id: review
+        kind: model-step
+        agent: code-reviewer
+        sets: in-review
+        when: { field: mode, op: neq, value: poc }
+        on_reject: { goto: implement, counter: review_rounds, max: 2, then: escalate }
+
+      - id: merge
+        kind: code-action
+        action: forge.merge       # merges into feature_branch, then closes the issue
+        sets: merged              # evidence REQUIRED — the merge SHA
+        when: { field: mode, op: neq, value: poc }
+
+      - id: close-issue
+        kind: code-action
+        action: forge.closeIssue  # `Closes #n` does not fire on a feature-branch merge
+        when: { field: mode, op: neq, value: poc }
+
+  # ---- post-build ----------------------------------------------------------
+  - id: qa-specs
+    # POC only: "create/amend the human-followable QA test specs … Never executes tests"
+    when: { field: mode, op: eq, value: poc }
+    step: { kind: model-step, agent: qa-test-spec, produces: docs/test_suites/ }
+
+  - id: qa
+    # "hard-gate (build + full repo test suite green), feature-level integration testing …
+    # defects → QAT tasks"
+    when: { field: flags.integration_surface, op: eq, value: true }
+    step: { kind: model-step, agent: qa-engineer }
+    on_reject:
+      goto: plan
+      with: { mode: qa-fix }
+      counter: qa_rounds
+      max: 2
+      then: escalate
+
+  - id: memory
+    # "after QA, before git-feature … (Iron Triage; non-gating)"
+    # GAP-2 resolved by S8's `advisory`: a reject is recorded and does not route.
+    advisory: true
+    step: { kind: model-step, agent: memory-steward }
+
+  # ---- terminal: two user-gated paths --------------------------------------
+  - id: feature-gate
+    # GAP-3: the answer selects between two later lanes. The format routes a reject to ONE
+    # target, so the branch is expressed as two mutually exclusive `when` lanes below.
+    step: { kind: gate, question: finish-how }
+
+  - id: git-feature
+    # MERGE-NOW: "open AND merge the feature_branch → base_branch PR (final; user-gated)"
+    when: { field: answers.finish-how, op: eq, value: merge-now }
+    step: { kind: code-action, action: forge.merge }
+
+  - id: git-feature-pr
+    # LEAVE-OPEN: "open the feature_branch → base_branch PR without merging"
+    when: { field: answers.finish-how, op: eq, value: leave-open }
+    step: { kind: code-action, action: forge.openPR }
+
+  - id: feature-review
+    # "review the FEATURE PR … Whole-feature scope (taskid: n/a) … so the PR the user merges
+    # later is already approved"
+    when: { field: answers.finish-how, op: eq, value: leave-open }
+    step: { kind: model-step, agent: code-reviewer }
+
+  - id: git-abort
+    # GAP-4 resolved: a gate's abort jumps here, so cleanup cannot be omitted.
+    # S16 still refuses this code action until the forge implementation arrives.
+    when: { field: flags.aborted, op: eq, value: true }
+    step: { kind: code-action, action: forge.closeOpenIssuesAndPRs }
+
+questions:
+  clarify-open-questions:
+    prompt: prompt.md raised open questions. Answer them, or approve as-is.
+    answers: [approve, revise, abort]
+  discovery-open-questions:
+    prompt: discovery.md raised open questions. Answer them, or approve as-is.
+    answers: [approve, revise, abort]
+  approve-plan:
+    prompt: Approve the plan and start building?
+    answers: [approve, revise, abort]
+  finish-how:
+    prompt: Merge the feature branch now, or open the PR and leave it for you?
+    answers: [merge-now, leave-open, abort]
+
+# NOT EXPRESSED, deliberately:
+#
+#   The dispatch ritual, the FINAL REPORT line, the caller guard, memory_append and
+#   event_append — all engine work now (S11's RITUAL and BECAME MECHANISM categories).

@@ -1,0 +1,23 @@
+{
+  "description": "CG9 is the named departure from PL15: queue authoring is socket-writable, because a queue item is ordinary project content at the same trust tier as loop.start's own params — and CG3 says the item IS a loop.start payload held in a queue. `attended` is the per-item declaration or absent for the project default (D5/D6), never inferred from who is watching; the row lands `pending` because D8 demands a size before anything is eligible, and the size is a fact of its own landing. `with` rides as authored (CG7 columns carry the component's identity).",
+  "method": "queue.append",
+  "request": {"jsonrpc": "2.0", "id": 300, "method": "queue.append", "params": {
+    "componentRoot": "/srv/projects/ledger",
+    "blueprint": "dev-loop",
+    "goal": "Add rate limiting to /api/search behind a per-key counter",
+    "tech": "go",
+    "with": {"ticket": "LEDGER-118"},
+    "attended": true
+  }},
+  "response": {"jsonrpc": "2.0", "id": 300, "result": {"item": {
+    "id": 1, "position": 1, "status": "pending",
+    "blueprint": "dev-loop",
+    "goal": "Add rate limiting to /api/search behind a per-key counter",
+    "workspaceRoot": "/srv/projects/ledger",
+    "tech": "go",
+    "with": {"ticket": "LEDGER-118"},
+    "attended": true,
+    "sizeMin": null, "sizeMax": null, "sizeBasis": null,
+    "createdAt": "2026-10-29T12:00:00Z", "updatedAt": "2026-10-29T12:00:00Z"
+  }}}
+}

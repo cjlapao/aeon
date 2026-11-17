@@ -1,0 +1,19 @@
+{
+  "description": "A false condition records its distinct skip status, rather than leaving the lane apparently pending.",
+  "event": "loop.skipped",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1604,
+      "kind": "loop.skipped",
+      "at": "2026-10-17T16:00:00Z",
+      "payload": {
+        "loopId": "loop-1",
+        "lane": "optional",
+        "as": "not-needed"
+      }
+    }
+  }
+}

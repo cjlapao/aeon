@@ -1,0 +1,58 @@
+{
+  "bench": {
+    "mergeQueue": {
+      "title": "Fila de merge",
+      "subtitle": "As dez portas do plano S60, clicáveis. Cada palavra nas linhas, nas recusas e nas tabelas abaixo é do próprio daemon — esta página só acrescenta rótulos.",
+      "offline": {
+        "title": "O daemon não está presente",
+        "body": "Escritas desativadas. As linhas abaixo são as últimas que este bench realmente leu — não estão ao vivo."
+      },
+      "refusal": "O daemon recusou",
+      "root": {
+        "label": "Componente raiz",
+        "none": "nenhum componente é conhecido"
+      },
+      "terminal": "Incluir linhas terminais",
+      "yes": "sim",
+      "no": "não",
+      "refresh": "Reler",
+      "summary": "modo {mode} · conflito {policy} · merge {method} · recapturas {catchUps} · último ajuste por {by}",
+      "queue": "A fila",
+      "empty": "A fila não tem linhas para esta raiz.",
+      "attended": "acompanhada",
+      "retry": "Repetir",
+      "dequeue": "Retirar da fila",
+      "reorder": "Mover antes",
+      "staleness": {
+        "unread": "a base não foi lida"
+      },
+      "land": {
+        "submit": "Integrar",
+        "title": "Integrar esta linha?",
+        "press": "Integrar agora"
+      },
+      "detail": "Linha",
+      "decline": "Recusar",
+      "vocabulary": "As palavras da própria fila (mergequeue.vocabulary)",
+      "enqueue": {
+        "panel": "Enfileirar uma linha",
+        "base": "Ramo de base",
+        "branch": "Ramo de funcionalidade",
+        "head": "Head sha",
+        "attended": "Acompanhada",
+        "submit": "Enfileirar",
+        "incomplete": "base, ramo e head são todos necessários — a página nada envia meio apuntado."
+      },
+      "settings": {
+        "panel": "Ajustes da fila",
+        "mode": "Modo",
+        "policy": "Política de conflito",
+        "method": "Método de merge",
+        "catchUps": "Recapturas máximas",
+        "apply": "Enviar ajustes",
+        "widening": "A recusa nomeou um reconhecimento. Pressionar devolve o digest; recusar não envia nada.",
+        "ackPress": "Aplicar com o reconhecimento"
+      }
+    }
+  }
+}

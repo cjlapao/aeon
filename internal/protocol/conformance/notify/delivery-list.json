@@ -1,0 +1,38 @@
+{
+  "description": "notify.delivery.list reads the append-only outcome log newest-first: sends, failures and every suppression kind — quiet, rate, dedup, disabled, overflow — each with its attempts, status and error kind. The schema has no column for a body, a url or response text, so honesty is structural (SV12).",
+  "method": "notify.delivery.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 950,
+    "method": "notify.delivery.list",
+    "params": {
+      "channelId": "nc-01JTEST0000000000000000001",
+      "limit": 2
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 950,
+    "result": {
+      "deliveries": [
+        {
+          "id": 17,
+          "channelId": "nc-01JTEST0000000000000000001",
+          "eventSeq": 1204,
+          "attentionKey": "question:42",
+          "outcome": "sent",
+          "attempts": 1,
+          "at": "2026-11-03T09:11:00Z"
+        },
+        {
+          "id": 16,
+          "channelId": "nc-01JTEST0000000000000000001",
+          "eventSeq": 1203,
+          "outcome": "suppressed-dedup",
+          "attempts": 0,
+          "at": "2026-11-03T09:10:30Z"
+        }
+      ]
+    }
+  }
+}

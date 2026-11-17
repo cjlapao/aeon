@@ -1,0 +1,22 @@
+{
+  "description": "A message to a resting loop starts a conversation turn: the thread row lands, the loop's conversation agent takes one ordinary step, and the answer says so while the step streams on. The loop itself stays idle — a turn is a step, not a run.",
+  "method": "loop.message",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 97,
+    "method": "loop.message",
+    "params": {
+      "id": "loop-9",
+      "text": "ok, create the goal"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 97,
+    "result": {
+      "messageId": 41,
+      "seq": 7,
+      "turn": "started"
+    }
+  }
+}

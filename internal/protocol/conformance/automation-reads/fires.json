@@ -1,0 +1,49 @@
+{
+  "description": "The unified fire log across both families, newest first, with the outcome counts over the WHOLE log (not the page) and the cursor the next page reads back: the two tables are one history.",
+  "method": "automation.fires",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8203,
+    "method": "automation.fires",
+    "params": {
+      "limit": 2
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8203,
+    "result": {
+      "fires": [
+        {
+          "source": "event",
+          "triggerId": "trg-bugs",
+          "fireId": 12,
+          "at": "2026-11-02T18:04:11.000Z",
+          "outcome": "started",
+          "reason": "",
+          "loopId": "loop-4d2e2020",
+          "loopSlug": "triage-tsk-61aa",
+          "subjectKind": "task",
+          "subjectId": "tsk-61aa",
+          "depth": 1
+        },
+        {
+          "source": "schedule",
+          "triggerId": "sch-morning",
+          "fireId": 38,
+          "at": "2026-11-01T07:00:00.000Z",
+          "outcome": "skipped",
+          "reason": "outside window"
+        }
+      ],
+      "counts": {
+        "started": 2,
+        "refused": 0,
+        "limited": 0,
+        "skipped": 1,
+        "couldNotSay": 0
+      },
+      "nextBeforeId": "2026-11-01T07:00:00.000Z|schedule:38"
+    }
+  }
+}

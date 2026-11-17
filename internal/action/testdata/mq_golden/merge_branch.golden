@@ -1,0 +1,5 @@
+clean: merged=true branch=task/4a17-version/fix-parse-order mergeCommitParents=true checkedOutAfter=task/4a17-version/fix-parse-order
+again: alreadyMerged=true
+conflict: kind=conflict detail=merging feature/4a17-version into task/4a17-version/fix-parse-order: Auto-merging shared.txt
+CONFLICT (add/add): Merge conflict in shared.txt
+Automatic merge failed; fix conflicts and then commit the result. leftOn=task/4a17-version/fix-parse-order unmergedStatus=AA

@@ -1,0 +1,24 @@
+{
+  "description": "surface.get refuses a params bag that names an actor, with the transport's -32602 rather than an Aeon code: the shape of params is a protocol-level fact (D9). The classification is a property of the daemon and its build, never of who is asking \u2014 the actor and the authorship are stamped by the daemon from the connection (PM7.3/PM8), so an `actor` key would be an invitation to believe a caller about which door it was standing at. A client that believes the refusal is a client that cannot forge a view of the surface.",
+  "method": "surface.get",
+  "request": {
+    "id": 707,
+    "jsonrpc": "2.0",
+    "method": "surface.get",
+    "params": {
+      "actor": {
+        "id": "atlas",
+        "kind": "agent"
+      },
+      "method": "loop.show"
+    }
+  },
+  "response": {
+    "error": {
+      "code": -32602,
+      "message": "invalid params: surface.get params carry \"actor\" \u2014 the actor and the authorship are stamped by the daemon from the connection, never named by the caller (PM7.3/PM8)"
+    },
+    "id": 707,
+    "jsonrpc": "2.0"
+  }
+}

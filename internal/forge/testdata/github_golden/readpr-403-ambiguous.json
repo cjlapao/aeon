@@ -1,0 +1,10 @@
+{
+  "case": "readpr-403-ambiguous",
+  "method": "GET",
+  "path": "/repos/acme/widget/pulls/7",
+  "authShape": "Bearer \u003credacted\u003e",
+  "accept": "application/vnd.github+json",
+  "attempts": 1,
+  "errKind": "refused",
+  "errSentence": "refused: ambiguous 403 — could not be told apart from an auth or a protection failure, saying so rather than guessing: Resource not accessible by personal access token\n  why:  the forge understood the call and declined it — a domain refusal, not a transient fault\n  do:   fix the request so it satisfies the refusal; resending it unchanged will fail again"
+}

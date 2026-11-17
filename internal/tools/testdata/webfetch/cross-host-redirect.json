@@ -1,0 +1,28 @@
+{
+  "description": "a redirect to another host is refused and NOTHING is sent to that host",
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "http://docs.test/moved",
+        "header": {
+          "Accept": [
+            "text/plain, text/markdown, application/json, application/xml"
+          ],
+          "User-Agent": [
+            "aeon-webfetch/1.0 (Aeon daemon; GET-only; sends no credentials)"
+          ]
+        }
+      },
+      "response": {
+        "status": 302,
+        "header": {
+          "Location": [
+            "http://elsewhere.test/stolen"
+          ]
+        },
+        "body": ""
+      }
+    }
+  ]
+}

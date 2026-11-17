@@ -1,0 +1,18 @@
+{
+  "description": "Resume lifts the pause (master stays where it is).",
+  "method": "scheduler.resume",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 408,
+    "method": "scheduler.resume",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 408,
+    "result": {
+      "paused": false
+    }
+  },
+  "fromDoor": true
+}

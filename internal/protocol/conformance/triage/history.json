@@ -1,0 +1,21 @@
+{
+  "description": "S51 T2 (TM5): one bug's audit, newest-first — the acts, each fixed-template summary, and the actor who made each. This is the table bug_change read back: a person asking WHAT HAPPENED TO THIS BUG and the answer naming who did it (user/cli/agent/system, TM2). The history of a real bug with no rows answers EMPTY — that is a different fact from an id that never was, which answers ErrTriageUnknown (see history-unknown.json).",
+  "method": "triage.history",
+  "request": {"jsonrpc": "2.0", "id": 440, "method": "triage.history", "params": {"id": 7, "limit": 20}},
+  "response": {"jsonrpc": "2.0", "id": 440, "result": [
+    {
+      "op": "priority",
+      "summary": "set bug 7 priority to \"known\"",
+      "actorKind": "cli",
+      "actorId": "aeon-cli",
+      "occurredAt": "2026-11-01T09:00:00Z"
+    },
+    {
+      "op": "file",
+      "summary": "filed bug 7",
+      "actorKind": "user",
+      "actorId": "42",
+      "occurredAt": "2026-10-30T10:10:00Z"
+    }
+  ]}
+}

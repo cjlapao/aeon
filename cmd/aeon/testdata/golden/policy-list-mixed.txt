@@ -1,0 +1,15 @@
+$ aeon policy list
+mixed-command            command_access agent:alice                  allow  operator     no expiry
+mixed-cost               cost_cap       all-agents                   deny   operator     no expiry
+mixed-effect             effect_class   all-agents                   deny   agent        no expiry
+mixed-expired            tool_access    agent:carol                  deny   operator     <TIME>
+mixed-route              route_access   loop:nightly                 deny   operator     no expiry
+mixed-skill              skill_access   lane-type:review             ask    operator     no expiry
+mixed-tool               tool_access    agent:alice                  deny   operator     no expiry
+mixed-trigger            trigger_access mcp:github                   deny   mcp_server   <TIME>
+$ aeon policy list --type command_access
+mixed-command            command_access agent:alice                  allow  operator     no expiry
+$ aeon policy list --type trigger_access
+mixed-trigger            trigger_access mcp:github                   deny   mcp_server   <TIME>
+$ aeon policy list --type skill_access
+mixed-skill              skill_access   lane-type:review             ask    operator     no expiry

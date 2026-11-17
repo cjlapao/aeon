@@ -1,0 +1,51 @@
+# proposal-author — drop record
+
+original: opencode/agents/proposal-author.md  (244 lines)
+rewrite:  aeon/internal/handler/bodies/proposal-author.md  (150 lines)
+delta:    102 lines removed, 8 added
+
+## RITUAL (deleted — the engine does this)
+
+- L70-L76  "Follow the `proposal-brief-protocol` skill — load it before doing anything" (the skill held the schema, verify-before-claiming, the near-miss rule, path conventions) → nothing loads skills (the guard's skill refusal is what makes this a hard line, not a style choice); the PROPOSAL SCHEMA is written into this body as its owner — the four sections with what each must do — and the discipline rides in the sections' own rules. Recorded as a schema-port decision (project-planner's plan.md ownership, A5's pattern), not a silent drop.
+- L78-L82  "Operation Mode: Primary … no orchestrator above you" → the lane runs inside a loop the daemon dispatches; the OWNING-THE-ARC that matters (interview → investigate → draft → iterate → approved file) survives as the body's three phases. "Invoked directly by a human" (L11) re-expressed honestly: the lane reaches the human through the `question` tool, not through a chat window.
+- L10-L11  the intent-clarifier disambiguation paragraph → both bodies exist here (intent-clarifier shipped at S13; this one now); the distinction was for a roster where both could be summoned by the same prompt — recorded, dropped.
+- L186-L187  `ls docs/proposals/` numbering, `NN-slug`, create `README.md` index at 01 → the lane's `produces: proposal.md` declares the path (the blueprint pins it); directory conventions that exist to route an orchestrator are lane plumbing here. The INDEX-LINE habit survives (Boundaries) because the human reads it.
+- L201-L205  the FINAL REPORT terminator (`status={done|incomplete|blocked} files_changed={N} …`) → the handoff is structured; `blocked`-not-pasting survives verbatim in Boundaries, and `files_changed` became the write the `produces:` row asserts.
+- L169-L173  "show it in chat, in full" → re-expressed as the render-then-ask order (§0b below) against the step's output surface; the CHAT half is platform, the ORDER half is the whole failure mode and is DOMAIN.
+
+## BECAME MECHANISM (deleted — a tool, a gate, or a row guarantees it)
+
+- L12-L14  `mode: primary`, `variant: coder-thinking` → A1 removed spawning; `variant` measured to have zero consumers (Q2) — recorded by the loader, never ported.
+- L15-L33  tools map (`patch: true` with the OpenCode permission-merge comment, `task: false # you do the work yourself`, `lsp`, and the five `"*_false"` MCP-prefix denials `filesystem_*` `github_*` `memory_*` `playwright_*` `postgresql_*`) → allow-list `[read, write, edit, glob, grep, bash, webfetch, todo, question]`: task RETIRED (A1 — nothing delegates anyway), patch/lsp/codesearch retired (W1), todowrite→todo (A19); the MCP-prefix denials die with the platform — S12's MCP CLIENT is the deferred carrier (DEFERRED below): an operator who CONFIGURES a server gets its tools, a body instructs none.
+- L34-L55  permission.bash allow-table (pwd/ls/cat/head/tail/wc/grep/rg/find/sed -n/realpath/stat/dirname/basename/date + four read-only git verbs) → the corpus block carries this agent's rules (measured by name in `internal/policy/testdata/corpus.json` 2026-10-26) and the body binds them with `policy-agent: proposal-author`; seeding stays the operator's call (`aeon policy seed-corpus`), the evaluator denies what is not allowed, and the toolset grants bash for the read-only probes the body names (investigator's allow-table precedent, its drop record L22-L33's ruling).
+- L26  `task: false` + L82 "delegate to nobody" → dispatch is the blueprint's; a body cannot delegate at all now, so the prohibition became the architecture.
+- L93-L102  the wave discipline's TOOL half ("questions typed into your reply are not questions … the tool renders a prompt and blocks") → the `question` tool is registered (S5/S7 machinery) and the gate renders it; the WHY survives in the body verbatim in spirit, including the monologue sentence — that sentence is the reason the tool is the core instrument (L25).
+
+## DOMAIN (kept)
+
+- L60-L68  the whole opening frame: short opinionated document, exactly one file, both-sources rule (conversation-alone invents; code-alone solves nobody's problem), never code/plan/estimates → opening paragraph.
+- L84-L87  "What exists today is TRUE — everything else is opinion, that section is fact, you are the only one who checks it" → verbatim in substance; it is the document's reason to exist.
+- L91-L142  the interview craft, nearly whole: waves per turn 2-4 options+recommended default+Other-always (L93-L96), the never-stop-at-one rule and its "reads like the user's first sentence with headings added" reason (L104-L106), all five wave contents A-E with Wave E named highest-value and its reason (L133-L137), and the discipline trio — a question earns its place only if the answer changes what you write, never ask implementation/layout/library, never ask what the repo answers (assume it and RECORD the assumption) (L139-L142).
+- L146-L163  investigation six-step, nearly whole: project rules first with the dead-on-arrival reason (L150-L151), map adjacent by concept AND synonyms (L152-L154), open each and answer what it ACTUALLY does + consumers + extend-or-different-concern (L154-L156), verify-every-claim both directions with the quote-the-signature and keep-the-empty-grep specifics (L157-L158), hunt the half-built case with the actively-misleads reason (L159-L161), the near-miss as highest-leverage (L162-L163) — its "name the near-miss" expansion (what/who-consumes/what-breaks) moved from the skill reference into the handoff field and the section rule.
+- L167-L184  the draft-approval order (§0b): render the complete draft AS the finished document with real headings, THEN the `question` call, same turn draft first; never approve on a summary/path/stale-draft; "I have changes" → re-render the ENTIRE revised draft with the Changed: line; nothing-to-disk-before-agreement — the whole paragraph, because "a proposal ends up written to disk on an approval nobody gave" is the named failure (L172-L173).
+- L191-L200  the visible checklist (via todo) and the ordering waves→investigate→wave E→draft→approve→write; "brief-author re-verifies your factual claims" (L199-L200) survives as the closing sentence of Phase 3 — it sets downstream expectations.
+- L209-L227  the quality bar: verified-by-opening (not name/memory/listing), near-miss explained, "the interview happened and SHOWS" with the could-not-have-guessed test ("reads like it could have been written without talking to anyone — go back"), one capability with the two-"and also" rule, requirements-as-case-and-outcome-or-number with the wish-bullet chain (proposal→brief prose bullet→approximated in code) and its "give it a bar", obligations named in Why-it-matters with the four examples.
+- L231-L244  boundaries: never code/plan/estimate, effort ONE LETTER S/M/L (L233-L234 — now a handoff field so the model cannot forget it), never invent a constraint (only what the human actually said), never claim-exists-without-opening, file-lane-only (L238-L239), never git writes never rm, one-proposal-per-session with the human picks the split (L241-L242), and the blocked-not-pasted rule with its reason "a deliverable that exists only in chat is lost" (L243-L244).
+
+## DEFERRED (kept OUT — the capability is not in the body, and why)
+
+- L29-L32  the MCP-prefix tool families the original denied BY NAME (`filesystem_*`, `github_*`, `memory_*`, `playwright_*`, `postgresql_*`) → the S12 MCP client is the deferred carrier (ROADMAP §7, S12's ruling): an operator who CONFIGURES such a server gets those tools; a body instructs none, and the denials are not ported because there is nothing here to deny — the absence is recorded rather than re-enacted as prose.
+- L72-L76  the skill's SHARED-DISCIPLINE text beyond the schema (its verify-before-claiming section as an external document every author loads) → re-read against S12 per ROADMAP §7: skill loading needs the MCP/skill carrier that is deferred; the THREE RULES THAT MATTER for this agent are inlined (schema, verify, near-miss) so the lane is self-sufficient meanwhile; the rest of the skill (brief-author halves) ships with T14's body instead of being half-referenced here.
+- L23-L24  `codesearch: true` → retired (W1); grep is the registry's search, and the body's synonym-mapping step names grep specifically.
+
+## REWORDED (O3 — A17's ledger; meaning unchanged, 0 added lines)
+- L5       tools line + the sentences naming where output goes: deliverables are documents in the database (`doc_write`/`doc_read`/`doc_edit`/`doc_list`) instead of workspace files (`write`/`edit`); the role and its rules are unchanged
+
+- L3-L11  the front-matter description compressed from the multi-line block (it named the output path, the distinctness paragraph, and the skill — all handled above); the interview-first-then-investigate order is the load-bearing clause and leads.
+- L175-L184  "render it as the finished document using the skill's Part 1 schema" → the schema is IN this body, so the instruction points at the section list rather than an external part number.
+- L199-L200  "brief-author turns this into an implementation brief" → "the brief lane", since here it is a lane (`brief`, then `self-check`), not an agent you summon.
+
+## NIL (recorded, not empty)
+
+- No nil here, and that is the point of recording: unlike task-coordinator, this name HAS a corpus block (measured by name 2026-10-26, `agents[]` keyed `agent`) — so the body DECLARES `policy-agent: proposal-author`, the CommandRules binding is asserted by test (empty would fail it), and the contrast with the three names that must record nil is visible across the five records.
+- L169-L173  2026-10-27 (S38 T10, counted in the delta):(S38 T10, +8 counted): the records paragraph — an approved proposal offered to `goal_create` (born in_review; approval stays a person's act) with `goal_list`/`epic_list` ground and `attach` for the prose pointer. OL3/OL14 — show-in-full-then-approve; the approved draft now also files its goal (`goal_create`, born in_review). OL3/OL14.

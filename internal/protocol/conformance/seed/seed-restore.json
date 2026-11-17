@@ -1,0 +1,31 @@
+{
+  "description": "seed.restore is the second human door: it names one record (set + key) and re-applies it from the available content, writing through the engine and stamping the actor from the CONNECTION, never params (S43-extra T6, SD10). It is how a diverged or removed record is re-applied — the case seed-refused's todo points to — and the result is the same per-record outcome shape as apply (a second copy would be a second truth). It carries no actor and no confirmation: the daemon does not pretend a socket can prove a human is present (SD11).",
+  "method": "seed.restore",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 324,
+    "method": "seed.restore",
+    "params": {
+      "set": "agents.firstparty",
+      "key": "agents.firstparty.body.default"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 324,
+    "result": {
+      "apply": {
+        "setId": "agents.firstparty",
+        "records": [
+          {
+            "key": "agents.firstparty.body.default",
+            "op": "restore",
+            "fromVersion": 0,
+            "toVersion": 1,
+            "reason": "restored — a diverged record re-applied"
+          }
+        ]
+      }
+    }
+  }
+}

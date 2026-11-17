@@ -1,0 +1,58 @@
+{
+  "description": "dod.list: the loop's definition-of-done items, in their brief order, each with its state and — when met — the evidence it names (kind and ref) and the mark's actor (who marked it, from the connection that did). The ledger is the loop's done-ness: all met is the merge's ingredient, and an empty ledger is the refusal the rule can produce (dod-none), so the list is the thing the rule measures against.",
+  "method": "dod.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1061,
+    "method": "dod.list",
+    "params": {
+      "loop": "fix-the-login"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1061,
+    "result": {
+      "loop": "fix-the-login",
+      "items": [
+        {
+          "id": "dod-1",
+          "loopSlug": "fix-the-login",
+          "componentRoot": "/home/cjlapao/src/aeon",
+          "briefId": "brief-1",
+          "briefVersion": 2,
+          "idx": 0,
+          "text": "the login fix has a regression test",
+          "state": "met",
+          "evidenceKind": "verify_run",
+          "evidenceRef": "vr-101",
+          "actorKind": "user",
+          "actorId": "1000",
+          "updatedAt": "2026-11-02T11:35:00Z"
+        },
+        {
+          "id": "dod-2",
+          "loopSlug": "fix-the-login",
+          "componentRoot": "/home/cjlapao/src/aeon",
+          "briefId": "brief-1",
+          "briefVersion": 2,
+          "idx": 1,
+          "text": "the session store is flushed before the response",
+          "state": "unchecked",
+          "updatedAt": "2026-11-01T08:00:00Z"
+        },
+        {
+          "id": "dod-3",
+          "loopSlug": "fix-the-login",
+          "componentRoot": "/home/cjlapao/src/aeon",
+          "briefId": "brief-1",
+          "briefVersion": 2,
+          "idx": 2,
+          "text": "the 401 path is covered in the e2e suite",
+          "state": "unmet",
+          "updatedAt": "2026-11-01T08:00:00Z"
+        }
+      ]
+    }
+  }
+}

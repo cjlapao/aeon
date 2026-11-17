@@ -1,0 +1,4 @@
+{
+  "description": "An incomplete unsafe receipt fails with a structured unknown-tool-outcome; clients can show the tool and call id without parsing prose.",
+  "notification": {"jsonrpc":"2.0","method":"event","params":{"subscriptionId":"s-1","seq":2003,"kind":"recovery.resolved","at":"2026-10-17T11:00:02Z","payload":{"stepId":7,"outcome":"failed","failure":{"kind":"unknown-tool-outcome","tool":"bash","toolUseId":"toolu_7","detail":"bash receipt started but not completed"}}}}
+}

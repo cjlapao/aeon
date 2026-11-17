@@ -1,0 +1,27 @@
+{
+  "description": "notify.class.update with a template reaching outside the closed placeholder set is refused at the door with ErrClassTemplate and nothing is written: a hint can carry ids and enums only — no prompt, goal, name or message is placeable anywhere a template could quote it, so an outbound notification can never be made to leak a person's work (SV4, SV6).",
+  "method": "notify.class.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 932,
+    "method": "notify.class.update",
+    "params": {
+      "kind": "loop.blocked",
+      "title": "Loop blocked: {goalText}"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 932,
+    "error": {
+      "code": -31925,
+      "message": "event class template refused",
+      "data": {
+        "what": "notify: template names \"{goalText}\", which is not a placeholder (the closed set is rootSlug, loopSlug, reasonKind, severity, count)",
+        "means": "a hint can carry ids and enums and nothing else: prompts, goals, names and messages never reach a template, so an outbound notification cannot be made to quote a person's work (SV6)",
+        "todo": "edit the template to use only the closed placeholders (notify.vocabulary lists them), or leave the shipped template as it is",
+        "fatal": false
+      }
+    }
+  }
+}

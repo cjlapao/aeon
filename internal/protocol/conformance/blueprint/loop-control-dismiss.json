@@ -1,0 +1,20 @@
+{
+  "description": "A person settles an open stop request (S55 T5, LC15): the request moves open→dismissed exactly once (the store's compare-and-set; a decided or missing request is a typed refusal — see loop-control-refused-not-open), the decider is stamped from the connection, and the loop is UNTOUCHED — a dismissal is the person's \"noted, not acting\", never a control act on the loop itself (stopping it remains loop.stop). The settlement emits loop.control.dismissed so the desk's screen updates.",
+  "method": "loop.control.dismiss",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 507,
+    "method": "loop.control.dismiss",
+    "params": {
+      "requestId": 12
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 507,
+    "result": {
+      "requestId": 12,
+      "status": "dismissed"
+    }
+  }
+}

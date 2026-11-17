@@ -1,0 +1,16 @@
+{
+  "description": "The workspace singleton read — NO arguments, and no filter param to accrete. One row carries the whole store's totals; its exists flag makes 'nothing has been counted yet' a DISTINCT state from a zero-filled row (DB19: no rows is data, not failure), and the floored cost_state keeps the grand total honest about how much of it is actually known. Component moves never touch these totals (T7's Do-NOT): a move rearranges attribution, not truth.",
+  "method": "telemetry.workspace",
+  "request": {"jsonrpc": "2.0", "id": 264, "method": "telemetry.workspace", "params": {}},
+  "response": {
+    "jsonrpc": "2.0", "id": 264,
+    "result": {
+      "loopsRun": 9, "wallMsTotal": 30500,
+      "inputTokensTotal": 5200, "outputTokensTotal": 1400, "cacheReadTokensTotal": 2100, "cacheWriteTokensTotal": 55, "reasoningTokensTotal": 260,
+      "costUsdTotal": 0.135, "costState": "partial",
+      "filesTouchedTotal": 17, "filesReadTotal": 13, "filesWrittenTotal": 7, "linesAddedTotal": 330, "linesRemovedTotal": 44,
+      "commandsRunTotal": 21, "commandsFailedTotal": 3, "commandWallMsTotal": 12900,
+      "updatedAt": "2026-10-30T09:30:00Z", "exists": true
+    }
+  }
+}

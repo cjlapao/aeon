@@ -1,0 +1,46 @@
+{
+  "description": "One task plus its chain rollup (T6): the parent cost is KNOWN here only because every cost in the chain reported \u2014 with an unknown child it degrades to `partial` with the floors kept and `missing` naming each child's reason, never rounding an uncertainty into a fact. It cannot re-judge a finished ask: `policiesHash` is the recorded digest of the set the ask was created under (AS13); this read shows that fact rather than re-deciding it.",
+  "method": "agent.task.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 75,
+    "method": "agent.task.show",
+    "params": {
+      "taskId": 12
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 75,
+    "result": {
+      "taskId": 12,
+      "callerLoopId": "l-77",
+      "callerLane": "work",
+      "callerStepId": 41,
+      "calleeAgent": "reddit-agent",
+      "skillId": "summarise-sentiment",
+      "mode": "async",
+      "status": "waiting",
+      "text": "what do people say about aeon?",
+      "cost": {
+        "state": "unknown",
+        "reason": "cost-not-reported"
+      },
+      "policiesHash": "9f2c41ab77e5d0a3c61b8f4e2d9a7054cc3318b6ef7d2401a5c9be37d4f0e218",
+      "createdAt": "2026-10-25T09:20:00Z",
+      "completedAt": "",
+      "rollup": {
+        "cost": {
+          "state": "partial",
+          "usdAtLeast": 0.0021,
+          "missing": [
+            "child-cost:no-price-for-route"
+          ],
+          "reason": "chain-child-unknown: no-price-for-route"
+        },
+        "children": 2,
+        "nodes": 3
+      }
+    }
+  }
+}

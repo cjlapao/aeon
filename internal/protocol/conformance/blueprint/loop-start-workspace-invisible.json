@@ -1,0 +1,28 @@
+{
+  "description": "A loop start whose workspaceRoot the daemon cannot honour is REFUSED before anything is pinned (S19 T7 typed the validator): relative, invisible, or not-a-directory all answer the same code, and the retry is never the advice \u2014 resending changes nothing. The message names the specific fact the daemon could not verify.",
+  "method": "loop.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 84,
+    "method": "loop.start",
+    "params": {
+      "blueprint": "pr.yaml",
+      "goal": "open the PR",
+      "workspaceRoot": "prj/checkout"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 84,
+    "error": {
+      "code": -31109,
+      "message": "the workspace is not usable by the daemon",
+      "data": {
+        "what": "workspace path \"prj/checkout\" must be absolute",
+        "means": "the daemon validates what a loop may touch BEFORE pinning it; a loop pinned to an unreachable root would block on its first step anyway, with less context",
+        "todo": "send an absolute path the daemon's process can see (same filesystem, existing); `aeon loop start` checks the same rule from the CLI",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "roadmap": {
+    "manage": {
+      "reconnecting": "The daemon is reconnecting — the management board asks nothing until the connection is current.",
+      "boardTitle": "The board",
+      "boardLoading": "Asking the daemon…",
+      "boardEmpty": "Nothing matches — the daemon answered with no rows.",
+      "needsRoot": "Name the component root — the board answers one project at a time.",
+      "ready": "ready",
+      "notReady": "not ready",
+      "settingsTitle": "Dispatch settings",
+      "filters": {
+        "root": "Component root",
+        "rootHint": "The board reads one project — the root its items live under.",
+        "status": "Status",
+        "statusAll": "any status",
+        "epic": "Epic",
+        "epicPlaceholder": "an epic tag"
+      },
+      "edit": {
+        "title": "Title",
+        "titleLimit": "{max} bytes maximum (UTF-8) — the daemon’s own limit",
+        "epic": "Epic (a tag, not a row)",
+        "epicLimit": "{max} bytes maximum (UTF-8) — the daemon’s own limit",
+        "overLimit": "{used} of {max} bytes — over the daemon’s limit",
+        "noEpic": "no epic",
+        "clearEpic": "clear the epic",
+        "briefPath": "Brief path",
+        "planPath": "Plan path",
+        "pathsHidden": "The path fields are closed for this status — the daemon’s editable window does not include it.",
+        "save": "Save",
+        "saving": "Saving…",
+        "noChange": "The daemon answered: nothing changed."
+      },
+      "drawer": {
+        "close": "Close",
+        "priority": "priority",
+        "tab": {
+          "edit": "Edit",
+          "history": "History"
+        },
+        "loading": "Opening the item…",
+        "dispatchNote": "Dispatch is the person’s act — each button asks first, quoting the daemon’s own authority statement; declining sends nothing.",
+        "ideate": "Ideate",
+        "plan": "Plan",
+        "materialize": "Materialize",
+        "workspaceRoot": "Workspace root",
+        "workspaceRootHint": "The dispatch runs a loop — name the workspace root it runs in.",
+        "workspaceRootMissing": "No workspace root named — dispatch is not offered.",
+        "materializeBlueprint": "Blueprint",
+        "materializeGoal": "Goal",
+        "cancel": "Cancel — send nothing",
+        "go": {
+          "ideate": "Start ideation",
+          "plan": "Dispatch planning",
+          "materialize": "Materialize the loop"
+        }
+      },
+      "history": {
+        "loading": "Asking for the audit trail…",
+        "empty": "No changes recorded yet.",
+        "systemActor": "system"
+      },
+      "dispatch": {
+        "intro": "Which blueprint each dispatch setting answers, read from the daemon’s own settings.",
+        "blueprint": "Blueprint",
+        "blueprintHint": "Chosen from the daemon’s own blueprint list.",
+        "save": "Save",
+        "saving": "Saving…",
+        "saved": "Saved — the daemon answered the new view.",
+        "noChange": "The daemon answered: nothing changed.",
+        "healthAdvice": "Health is advice — a dispatch re-checks at its own moment."
+      },
+      "proposals": {
+        "title": "Proposed ideas",
+        "empty": "No roadmap ideas are waiting for a decision.",
+        "commit": "Commit",
+        "reject": "Reject",
+        "reasonPlaceholder": "reason for rejecting (required)",
+        "noDigest": "proposal.get answered no digest — there is nothing honest to commit against."
+      }
+    }
+  }
+}

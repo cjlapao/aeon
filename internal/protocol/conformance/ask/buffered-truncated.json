@@ -1,0 +1,19 @@
+{
+  "description": "The buffer bound was reached, and `truncated` SAYS SO. A reply that stops mid-sentence with no explanation reads as a model failure, so the truncation is reported rather than silent. The cost is still the whole call's: every token was bought, including the ones that did not fit.",
+  "method": "ask",
+  "request": {
+    "jsonrpc": "2.0", "id": 22, "method": "ask",
+    "params": {"route": "openai-gpt4o", "prompt": "Write a novel."}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 22,
+    "result": {
+      "askId": "a-9",
+      "text": "Chapter one. …",
+      "usage": {"inputTokens": 8, "outputTokens": 64000},
+      "cost": {"state": "known", "usd": 0.96},
+      "truncated": true,
+      "stopReason": "length"
+    }
+  }
+}

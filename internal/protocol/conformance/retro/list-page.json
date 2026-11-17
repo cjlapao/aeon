@@ -1,0 +1,43 @@
+{
+  "description": "A fact row answers with ids, enums, counts and the rendered describe sentence \u2014 free text does not exist on these rows (RT10).",
+  "method": "retro.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "retro.list",
+    "params": {
+      "id": "aeon",
+      "limit": 50
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "rows": [
+        {
+          "id": 77,
+          "componentRoot": "aeon",
+          "loopSlug": "s63-recorder",
+          "terminalKey": "s63-recorder:done:3",
+          "outcomeKind": "done",
+          "blueprintId": "dev-loop",
+          "blueprintVersion": 2,
+          "startedByKind": "user",
+          "attended": true,
+          "wallMs": 5400000,
+          "costFloor": 0.42,
+          "costSteps": 6,
+          "costUnknownSteps": 1,
+          "reviewRounds": 1,
+          "complete": true,
+          "source": "recorder",
+          "recordedAt": "2026-11-03T21:14:02Z",
+          "describe": "loop \"s63-recorder\" on aeon finished done after 1 review round, cost at least $0.42 (1 of 6 steps unknown)"
+        }
+      ],
+      "nextCursor": 77,
+      "statement": "A score is a measurement of what happened. It does not change what any agent, blueprint or project is allowed or asked to do."
+    }
+  }
+}

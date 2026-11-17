@@ -1,0 +1,9 @@
+{
+  "case": "no-reviews",
+  "refused": true,
+  "sentence": "refused: forge.merge gate: PR #3 has no review at all — nothing has been APPROVED — the merge is refused BEFORE the forge is asked (L34/D10)\n  why:  the forge understood the call and declined it — a domain refusal, not a transient fault\n  do:   fix the request so it satisfies the refusal; resending it unchanged will fail again",
+  "calls": [
+    "ReadPR",
+    "ListReviews"
+  ]
+}

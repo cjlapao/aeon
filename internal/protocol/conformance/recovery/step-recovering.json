@@ -1,0 +1,6 @@
+{
+  "description": "A step still in the startup scan returns a named recovering error instead of a stale snapshot.",
+  "method": "step.show",
+  "request": {"jsonrpc":"2.0","id":94,"method":"step.show","params":{"id":7}},
+  "response": {"jsonrpc":"2.0","id":94,"error":{"code":-31303,"message":"step is recovering","data":{"what":"step 7 is recovering","means":"its saved snapshot may change when recovery commits the outcome","todo":"watch recovery events or retry step.show after recovery.resolved","fatal":false}}}
+}

@@ -1,0 +1,51 @@
+{
+  "description": "brief_create files the loop's brief as the next version and pins the named document when the blueprint declares the contract (T14); a person calling it is refused by name and pointed at brief.decide.",
+  "method": "brief.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "method": "brief.create",
+    "params": {
+      "goal_id": "goal-7a1f",
+      "scope": "the board only",
+      "out_of_scope": "triggers",
+      "acceptance_criteria": [
+        "board renders"
+      ],
+      "test_plan": "QA suite",
+      "document": "brief.md"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "result": {
+      "brief": {
+        "id": "brief-7a1f",
+        "loopSlug": "briefing",
+        "componentRoot": "/home/p/aeon",
+        "version": 1,
+        "goalId": "goal-7a1f",
+        "scope": "the board only",
+        "outOfScope": "triggers",
+        "acceptanceCriteria": [
+          "board renders"
+        ],
+        "constraints": [],
+        "testPlan": "QA suite",
+        "reviewState": "in_review",
+        "createdAt": "2026-10-26T09:00:00Z",
+        "updatedAt": "2026-10-26T09:00:00Z"
+      },
+      "attachment": {
+        "id": 9,
+        "subjectKind": "brief",
+        "subjectId": "briefing",
+        "document": "brief.md",
+        "rev": 1,
+        "currency": "current",
+        "headRev": 1
+      }
+    }
+  }
+}

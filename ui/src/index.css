@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+:root { color-scheme: light; background-color: #fff; }
+:root.dark { color-scheme: dark; background-color: #101817; }
+body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; margin: 0; height: 100dvh; min-height: 0;}
+.aeon-product {
+  height: 100dvh;
+  min-height: 0;
+  background: #fff;
+}
+
+/*
+ * The kit's PageBodyLayout (0.2.23) marks its center region `min-w-0
+ * flex-1 overflow-auto` but never pairs that with `min-height: 0` — a flex
+ * item's default `min-height: auto` refuses to shrink below its content's
+ * natural height, so `overflow-auto` never gets the chance to engage and
+ * the region grows to fit the chat/inspector/terminal content instead of
+ * scrolling it, pushing the whole page taller than the viewport (the loop
+ * workspace's chat forcing a page-level scrollbar). This is the one-line
+ * fix flexbox always needs for an overflowing child; applying it globally
+ * to the kit's own attribute is correct for every PageBodyLayout caller,
+ * not just this one.
+ */
+[data-page-region="center"] { min-height: 0; }
+
+/*
+ * The kit's ScrollArea wraps its children in a `display: table; min-width: 100%` box (scrollarea-content). A table box is
+ * as wide as its widest unbreakable child, so a page inside it cannot be narrower than its own content: a long title, a
+ * breadcrumb or a row of controls gave every page a minimum width and a sideways scrollbar instead of reflowing. A block
+ * box takes the width it is given, and the page's own rows wrap, truncate or scroll inside it. Scoped to the page region.
+ */
+[role="region"][aria-label="Page content"] [data-slot="scrollarea-content"] { display: block !important; min-width: 0 !important; }
+
+
+/* .aeon-accent-text { color: var(--aeon-accent-text, #047857); }
+.aeon-accent-button { background: var(--aeon-control-fill, #047857); color: white; }
+.aeon-accent-panel { border-color: color-mix(in srgb, var(--aeon-accent-text, #047857) 25%, transparent); }
+.aeon-accent-outline { border-color: color-mix(in srgb, var(--aeon-accent-text, #047857) 40%, transparent); }
+.aeon-accent-wash { background: color-mix(in srgb, var(--aeon-accent-wash, #c7e8d2) 42%, transparent); }
+.aeon-accent-hover:hover { border-color: var(--aeon-accent-text, #047857); }
+.aeon-wordmark { color: #14352b; font-weight: 800; letter-spacing: .18em; text-decoration: none; white-space: nowrap; }
+.aeon-wordmark span { margin-left: .8rem; color: var(--aeon-accent-text, #547565); font-size: .68rem; font-weight: 500; letter-spacing: .22em; }
+.aeon-live { min-width: 0; color: var(--aeon-accent-text, #355f4b); font-size: .75rem; text-decoration: none; overflow-wrap: anywhere; }
+.dark .aeon-wordmark { color: #e7eeea; }
+.dark .aeon-wordmark span, .dark .aeon-live { color: var(--aeon-accent-text, #b4d5c3); }
+.aeon-page-header { background: #ffffffa8; backdrop-filter: blur(18px); }
+.dark .aeon-page-header { background: #15231ec9; }
+html:not(.dark) .aeon-product .text-emerald-300 { color: var(--aeon-accent-text, #047857); }
+html:not(.dark) .aeon-product .text-slate-400 { color: #475569; }
+@media (max-width: 640px) { .aeon-wordmark span { display: none; } }
+.aeon-product .aeon-form-select { color-scheme: light; background-color: #fff !important; color: #0f172a !important; }
+*/
+
+/* Markdown body (prompt view, loop files). Live: the block above is retired. */
+.aeon-markdown { line-height: 1.65; }
+.aeon-markdown h1, .aeon-markdown h2, .aeon-markdown h3 { margin: 1.3em 0 .5em; font-weight: 700; line-height: 1.25; }
+.aeon-markdown h1 { font-size: 1.7rem; } .aeon-markdown h2 { font-size: 1.35rem; } .aeon-markdown h3 { font-size: 1.1rem; }
+.aeon-markdown p, .aeon-markdown ul, .aeon-markdown ol, .aeon-markdown pre, .aeon-markdown table { margin: .7em 0; }
+.aeon-markdown ul { list-style: disc; padding-left: 1.5rem; } .aeon-markdown ol { list-style: decimal; padding-left: 1.5rem; }
+.aeon-markdown a { color: #6ee7b7; text-decoration: underline; }
+.aeon-markdown pre { overflow-x: auto; border-radius: .5rem; background: #e1eee6; padding: .9rem; }
+.dark .aeon-markdown pre { background: #0d1715; }
+.aeon-markdown :not(pre) > code { border-radius: .25rem; background: #d4e8db; padding: .1rem .3rem; }
+.dark .aeon-markdown :not(pre) > code { background: #19352e; }
+.aeon-markdown table { display: block; overflow-x: auto; border-collapse: collapse; }
+.aeon-markdown th, .aeon-markdown td { border: 1px solid #456459; padding: .4rem .65rem; }
+.aeon-markdown blockquote { border-left: 3px solid #34d399; padding-left: 1rem; color: #b5cbbf; }
+
+/* Syntax colors for CodeBlock (src/components/CodeBlock.tsx): one set per scheme. */
+:root {
+  --code-bg: #eef5f0; --code-fg: #1f2d27; --code-comment: #6b7f74; --code-punct: #5d6f65;
+  --code-key: #0e7490; --code-string: #047857; --code-number: #b45309; --code-keyword: #7c3aed;
+  --code-fn: #1d4ed8; --code-deleted: #be123c;
+}
+.dark {
+  --code-bg: #0d1715; --code-fg: #d6e2dc; --code-comment: #7d9488; --code-punct: #94a89d;
+  --code-key: #67d4e8; --code-string: #86e0b3; --code-number: #f4b968; --code-keyword: #c4a8ff;
+  --code-fn: #8db4ff; --code-deleted: #ff8fa3;
+}
+.aeon-code { background: var(--code-bg); border: 1px solid color-mix(in srgb, var(--code-fg) 14%, transparent); }
+
+/*
+ * The tools picker's popup. The kit sizes a picker popup to its widest row and measures it before it
+ * is placed, so one unwrapped line can stretch the popup across the whole window. While it is being
+ * measured (the kit hides it until it has a position), a popup that holds the tools list is held to
+ * 44rem: it comes out as wide as the field, or a little wider, and never wider than that.
+ */
+[data-slot="picker-popup"][style*="hidden"]:has([data-tools-row]) { max-width: 44rem; }
+
+/* The Memory page's knowledge explorer (the kit's KnowledgeExplorer): the kit lays its regions out as a
+   page that grows with its content. Here the explorer takes the height the page has — the memory list
+   and the detail scroll inside their own columns, and the map keeps its place. Where an ancestor has no
+   height to give, the rules do nothing and the page scrolls instead. */
+.aeon-knowledge {
+  display: flex;
+  flex-direction: column;
+}
+.aeon-knowledge > .kit-knowledge-explorer,
+.aeon-knowledge > .kit-knowledge-explorer > :where(div:not(.kit-knowledge-mobile-nav):not(.kit-knowledge-regions)) {
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.aeon-knowledge .kit-knowledge-regions {
+  flex: 1;
+  min-height: 0;
+  grid-template-rows: auto minmax(0, 1fr);
+  align-items: stretch;
+}
+.aeon-knowledge .kit-knowledge-region-library {
+  grid-row: 1 / span 2;
+  min-height: 0;
+  overflow-y: auto;
+}
+.aeon-knowledge .kit-knowledge-region-map {
+  min-height: 0;
+}
+.aeon-knowledge .kit-knowledge-region-detail {
+  min-height: 0;
+  overflow-y: auto;
+}
+@media (max-width: 900px) {
+  .aeon-knowledge .kit-knowledge-region-library,
+  .aeon-knowledge .kit-knowledge-region-detail {
+    overflow-y: visible;
+  }
+}
+/* Every learning is the same "type" here, so the explorer's type filter would only ever offer one answer. */
+.aeon-knowledge .kit-knowledge-filters > label:first-of-type {
+  display: none;
+}

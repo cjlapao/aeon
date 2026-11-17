@@ -1,0 +1,35 @@
+{
+  "description": "seed.status reads every set's status (or one, scoped by set) with zero writes — the same read the seed_status tool calls, the same engine either caller asks (S43-extra T6, SD10). The result is the field-for-field twin of the engine's status rows, spoken as string values on the wire: a set's class, its available and applied versions, and each record's state (absent | applied | removed | diverged | retired | failed), version and reason.",
+  "method": "seed.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 320,
+    "method": "seed.status",
+    "params": {
+      "set": "agents.firstparty"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 320,
+    "result": {
+      "sets": [
+        {
+          "id": "agents.firstparty",
+          "class": "inert",
+          "availableVersion": 1,
+          "appliedVersion": 1,
+          "records": [
+            {
+              "key": "agents.firstparty.body.default",
+              "state": "applied",
+              "availableVersion": 1,
+              "appliedVersion": 1,
+              "reason": "applied at start"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

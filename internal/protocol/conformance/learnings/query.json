@@ -1,0 +1,9 @@
+{
+  "description": "The tag-filtered read (D5) with an optional embedding rank (T3). The tag filter runs first and always; `queryText` ranks the tag-filtered set WITHIN it only (D6 — a learning the tag filter excluded is never pulled in by a similar vector). Here one tag prefix (`go*`) narrows the set, and every result still carries its provenance and, for the observed one, its count (M3). Without an embedding route the set is returned unranked (D5: no route is the normal state, not a degraded one).",
+  "method": "learnings.query",
+  "request": {"jsonrpc": "2.0", "id": 364, "method": "learnings.query", "params": {"scope": "agent", "scopeKey": "golang-engineer", "tags": [{"pattern": "go", "prefix": true}], "queryText": "concurrency pitfalls"}},
+  "response": {"jsonrpc": "2.0", "id": 364, "result": {"learnings": [
+    {"id": 7, "scope": "agent", "scopeKey": "golang-engineer", "body": "nil-map writes panic — checked once, remembered forever", "provenance": "observed", "observedCount": 3, "tags": ["go", "concurrency"], "createdAt": "2026-10-30T06:17:25Z"},
+    {"id": 9, "scope": "agent", "scopeKey": "golang-engineer", "body": "wrap errors with %w to keep the chain", "provenance": "told", "tags": ["go", "errors"], "createdAt": "2026-10-30T06:20:00Z"}
+  ]}}
+}

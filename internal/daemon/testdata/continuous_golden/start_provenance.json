@@ -1,0 +1,42 @@
+[
+  {
+    "name": "person_zero_extras",
+    "extrasStartedBy": "",
+    "extrasTriggerId": "",
+    "loopStartedBy": "",
+    "loopTriggerId": "",
+    "runStartedByKind": "user"
+  },
+  {
+    "name": "event_fire",
+    "extrasStartedBy": "event",
+    "extrasTriggerId": "tr-event-1",
+    "loopStartedBy": "event",
+    "loopTriggerId": "tr-event-1",
+    "runStartedByKind": "event"
+  },
+  {
+    "name": "schedule_fire",
+    "extrasStartedBy": "trigger",
+    "extrasTriggerId": "sched-1",
+    "loopStartedBy": "trigger",
+    "loopTriggerId": "sched-1",
+    "runStartedByKind": "trigger"
+  },
+  {
+    "name": "scheduler_word_kept",
+    "extrasStartedBy": "scheduler",
+    "extrasTriggerId": "sched-2",
+    "loopStartedBy": "scheduler",
+    "loopTriggerId": "sched-2",
+    "runStartedByKind": "scheduler"
+  },
+  {
+    "name": "any_other_word_laundered_to_trigger",
+    "extrasStartedBy": "harvest",
+    "extrasTriggerId": "sched-3",
+    "loopStartedBy": "harvest",
+    "loopTriggerId": "sched-3",
+    "runStartedByKind": "trigger"
+  }
+]

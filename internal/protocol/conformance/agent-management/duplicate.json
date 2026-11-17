@@ -1,0 +1,25 @@
+{
+  "description": "agent.duplicate copies one agent row under a new name and returns the new row — a daemon write, not policy authoring, so it is registered like loop.create. The copy carries the source's functionality and metadata (a duplicate that dropped a tool the original had would be a silent narrowing of authority), and the new slug is minted from the name, refusing an empty one.",
+  "method": "agent.duplicate",
+  "request": {"jsonrpc": "2.0", "id": 114, "method": "agent.duplicate", "params": {"slug": "reviewer-plus", "name": "Reviewer Copy"}},
+  "response": {"jsonrpc": "2.0", "id": 114, "result": {
+    "id": 13,
+    "slug": "reviewer-copy",
+    "name": "Reviewer Copy",
+    "description": "Reviews pull requests and posts findings to the thread",
+    "functionality": "read, list, write",
+    "metadata": "",
+    "prompt": "You are a careful code reviewer.",
+    "skills": "[]",
+    "version": "1.0.0",
+    "internal": false,
+    "avatarType": "default",
+    "avatarColor": "blue",
+    "avatarMood": "neutral",
+    "signature": "",
+    "certificate": "",
+    "signed": false,
+    "createdAt": "2026-10-30T09:05:00Z",
+    "updatedAt": "2026-10-30T09:05:00Z"
+  }}
+}

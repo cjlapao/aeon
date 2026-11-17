@@ -1,0 +1,4 @@
+$ aeon proposal commit not-a-number
+! refused: "not-a-number" is not a positive proposal id
+$ aeon proposal commit
+! refused: commit takes exactly ONE id

@@ -1,0 +1,21 @@
+{
+  "description": "S51 T2 (TM1), the body half of the edit and the unchanged answer: a body arrives, the title stays untouched, and when the words are already exactly the stored ones the door answers changed:FALSE with no transaction and no audit row (an edit of nothing earns nothing — TM2's noise rule). A body over 16 KiB, or carrying a control character other than newline and tab, is refused by name; a VALIDATED bug edits too (a typo fix never re-opens validation, D3).",
+  "method": "triage.update",
+  "request": {"jsonrpc": "2.0", "id": 444, "method": "triage.update", "params": {"id": 7, "body": "the counter adds the attempt number, not one\n(same text as stored — a no-op edit)"}},
+  "response": {"jsonrpc": "2.0", "id": 444, "result": {
+    "changed": false,
+    "bug": {
+      "id": 7,
+      "componentRoot": "/srv/projects/ledger",
+      "title": "retry counter over-counts on the third attempt",
+      "body": "the counter adds the attempt number, not one\n(same text as stored — a no-op edit)",
+      "validation": "unvalidated",
+      "priorityState": "known",
+      "priorityLabel": "P1",
+      "filedBy": "person",
+      "validated": false,
+      "createdAt": "2026-10-30T10:10:00Z",
+      "updatedAt": "2026-10-30T10:10:00Z"
+    }
+  }}
+}

@@ -1,0 +1,77 @@
+{
+  "description": "mergerule.vocabulary: the closed sets the rule fields draw from (require_dod, checks_policy, no_checks, review_mode, method), the closed refusal codes the evaluation can produce, the closed floor codes the autonomy floor can name, and the baseline rule — the rule every component starts from, stated in CODE (VG21: the baseline is a function, never a row a client could read and drift from).",
+  "method": "mergerule.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1035,
+    "method": "mergerule.vocabulary"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1035,
+    "result": {
+      "requireDod": [
+        "none",
+        "all_met"
+      ],
+      "checksPolicy": [
+        "reported_green",
+        "required_only"
+      ],
+      "noChecks": [
+        "allow",
+        "refuse"
+      ],
+      "reviewMode": [
+        "forge",
+        "aeon",
+        "either",
+        "both"
+      ],
+      "method": [
+        "merge",
+        "squash",
+        "rebase"
+      ],
+      "refusalCodes": [
+        "no-review",
+        "latest-not-approve",
+        "outstanding-request-changes",
+        "check-not-green",
+        "check-missing",
+        "check-pending",
+        "check-unknown",
+        "no-checks",
+        "threads-unresolved",
+        "threads-unreportable",
+        "local-not-green",
+        "evidence-stale",
+        "dod-not-met",
+        "dod-none",
+        "aeon-review-missing"
+      ],
+      "floorCodes": [
+        "disabled",
+        "local-not-required",
+        "no-required-gates",
+        "dod-not-required",
+        "checks-not-binding",
+        "forge-review-only"
+      ],
+      "baseline": {
+        "enabled": true,
+        "requireLocal": false,
+        "requireDod": "none",
+        "requiredChecks": [],
+        "checksPolicy": "reported_green",
+        "noChecks": "allow",
+        "reviewMode": "forge",
+        "aeonReviewAgents": [
+          "code-reviewer"
+        ],
+        "requireThreadsResolved": false,
+        "method": "squash"
+      }
+    }
+  }
+}

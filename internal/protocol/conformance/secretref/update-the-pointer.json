@@ -1,0 +1,31 @@
+{
+  "description": "S59 T6 (EV7): secretref.update moves the POINTER, never the value — here the reference is repointed from a daemon variable to a key file, and `injectAs` is untouched because its field is absent (a nil *string means \"leave alone\", which is the three-state answer for a partial edit). The name is the key: it is what every environment's spec refers to, so the environments keep working while the source moves underneath them.",
+  "method": "secretref.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 928,
+    "method": "secretref.update",
+    "params": {
+      "name": "deploy-token",
+      "sourceKind": "key-file",
+      "source": "/home/cjlapao/.config/aeon/tokens/deploy",
+      "description": "Moved off the daemon's environment onto a 0600 key file."
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 928,
+    "result": {
+      "id": "sref_1a2b3c4d",
+      "name": "deploy-token",
+      "description": "Moved off the daemon's environment onto a 0600 key file.",
+      "sourceKind": "key-file",
+      "source": "/home/cjlapao/.config/aeon/tokens/deploy",
+      "injectAs": "DEPLOY_TOKEN",
+      "origin": "user",
+      "createdAt": "2026-11-03T09:10:00Z",
+      "updatedAt": "2026-11-03T09:50:00Z",
+      "referencedBy": ["ci-default"]
+    }
+  }
+}

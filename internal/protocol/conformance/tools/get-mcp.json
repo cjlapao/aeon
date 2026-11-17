@@ -1,0 +1,80 @@
+{
+  "description": "tools.get on a qualified MCP name: `acme.search` answers with its server half (`server`, `tier`) and the DATA link the UI navigates by (`link.kind:\"mcp_server\"`, `link.id:\"acme\"` — S45's discipline that links are data a client resolves, never a path it builds), and `policies` is empty because this tool's availability is S12's effect-class answer, not a `tool_access` row. Its `agents` column shows `atlas` `granted_allowed` with the view's reason verbatim and `granted_by:[mcp-declare]` — the agent's own declaration is the row behind the grant — while `sentry` never declared against this private server and sees `not_granted`, which is also why no door in this slice can enumerate a peer's servers (MC2).",
+  "method": "tools.get",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 646,
+    "method": "tools.get",
+    "params": {
+      "name": "acme.search"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 646,
+    "result": {
+      "tool": {
+        "name": "acme.search",
+        "family": "acme",
+        "source": "mcp",
+        "description": "",
+        "schema": {},
+        "schemaHash": "",
+        "rerunClass": "safe",
+        "capabilities": [],
+        "governed": [],
+        "conditional": false,
+        "available": true,
+        "server": "acme",
+        "tier": "private",
+        "effect": "local",
+        "classified": true,
+        "version": 0,
+        "origin": "user",
+        "rowCurrent": true,
+        "category": "mcp",
+        "access": "read",
+        "address": "mcp.acme.search.read"
+      },
+      "agents": [
+        {
+          "tool": "acme.search",
+          "agent": "atlas",
+          "state": "granted_allowed",
+          "reason": "allow · effect_class · acme.search · agent:atlas",
+          "granted_by": [
+            "mcp-declare"
+          ],
+          "dispatchable": true
+        },
+        {
+          "tool": "acme.search",
+          "agent": "brief-author",
+          "state": "not_granted",
+          "dispatchable": true
+        },
+        {
+          "tool": "acme.search",
+          "agent": "cursitor",
+          "state": "not_granted",
+          "dispatchable": false
+        },
+        {
+          "tool": "acme.search",
+          "agent": "sentry",
+          "state": "not_granted",
+          "dispatchable": true
+        }
+      ],
+      "policies": [],
+      "mcp": {
+        "server": "acme",
+        "tier": "private",
+        "link": {
+          "kind": "mcp_server",
+          "id": "acme"
+        }
+      }
+    }
+  }
+}

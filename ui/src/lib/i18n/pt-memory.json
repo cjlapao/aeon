@@ -1,0 +1,134 @@
+{
+  "settings": {
+    "memory": {
+      "title": "Memória",
+      "subtitle": "O que o daemon recorda, quem lho disse e como as memórias se ligam.",
+      "reconnecting": "O daemon está reconectando — leituras ainda funcionam, escritas esperam.",
+      "vocabulary": {
+        "failed": "O vocabulário do daemon não pôde ser lido — até ser, este painel não nomeia escopos, proveniências, nem cita autoridade alguma."
+      },
+      "actions": {
+        "retry": "Tentar de novo",
+        "close": "Fechar",
+        "retract": "Retraiar…",
+        "restore": "Restaurar…",
+        "confirmRetract": "Sim — carimbar como retraída",
+        "confirmRestore": "Sim — restaurá-la",
+        "decline": "Não — não mudar nada"
+      },
+      "filters": {
+        "scope": "Escopo",
+        "provenance": "Proveniência",
+        "tag": "Etiqueta",
+        "agent": "Slug do agente",
+        "project": "Raiz do projeto",
+        "loop": "Slug do loop de origem",
+        "any": "qualquer",
+        "includeRetracted": "Incluir linhas retraídas (o daemon as exclui por padrão)",
+        "includeRetractedShort": "Incluir retiradas"
+      },
+      "board": {
+        "loading": "Perguntando ao daemon…",
+        "failed": "O painel não pôde ser lido",
+        "empty": "Este painel respondeu vazio — para estes filtros, como o daemon os filtrou."
+      },
+      "row": {
+        "open": "Abrir",
+        "retracted": "retraída",
+        "retractionStamp": "carimbo: {stamp}",
+        "fromLoop": "do loop {slug}"
+      },
+      "act": {
+        "refused": "O daemon recusou este ato — com as palavras dele, sem mudança:",
+        "nothingChanged": "Nada foi escrito — a linha já estava exatamente assim (um ato idempotente não deixa linha de auditoria).",
+        "locked": "A conexão não está corrente — leituras mostram, escritas esperam.",
+        "refusedTitle": "O daemon recusou este ato"
+      },
+      "confirm": {
+        "lawMissing": "A lei de retração do daemon ainda não foi lida — até ser, esta confirmação não mostra nada inventado.",
+        "reason": "Motivo (obrigatório, {min}..{max} bytes — o limite é do daemon)",
+        "reasonUnknown": "Motivo (o limite do daemon se aplica; o vocabulário dele não está carregado para citá-lo)",
+        "reasonHint": "O motivo viaja na linha de auditoria e no carimbo, com as mesmas palavras — o plano recusa um vazio."
+      },
+      "history": {
+        "title": "carreira de auditoria",
+        "failed": "O rastro de auditoria não pôde ser lido:",
+        "empty": "Nenhuma linha de auditoria para este id."
+      },
+      "agent": {
+        "title": "O que este agente veria?",
+        "subtitle": "O conjunto legível e a ordem do próprio daemon, byte a byte igual ao que o construtor de prompt injetaria.",
+        "picker": "Agente",
+        "query": "Consulta opcional",
+        "queryHint": "digite para perguntar o conjunto contra uma consulta…",
+        "needAgent": "Nada perguntado ainda — nomeie um slug de agente; um slug desconhecido responde a recusa dele.",
+        "refused": "O daemon recusou esta pergunta, ao pé da letra:",
+        "empty": "O conjunto legível deste agente respondeu vazio — para este slug e esta consulta.",
+        "why": "motivo: {basis}",
+        "col": {
+          "rank": "Posição",
+          "provenance": "Proveniência",
+          "learning": "Aprendizagem",
+          "why": "Porque está aqui"
+        }
+      },
+      "help": {
+        "title": "O que é a memória?",
+        "body": "## O que é a memória?\n\nUma **aprendizagem** é algo que o daemon ouviu ou viu e guardou para usar mais tarde. Cada uma regista **quem o disse** e quão certo é:\n\n- **Dita**: uma pessoa disse-o.\n- **Observada**: o daemon viu acontecer, por exemplo num ciclo terminado. O selo ×N diz quantas vezes.\n- **Assumida**: ninguém a confirmou.\n- **Retransmitida**: chegou por outro canal.\n\nUma aprendizagem pertence a um **âmbito**: uma pessoa, um projeto (a raiz de um componente) ou um agente.\n\n## O mapa\n\nCada ponto é uma aprendizagem. As linhas ligam aprendizagens que partilham uma **etiqueta** ou vieram do mesmo **ciclo**, e os pontos com a mesma etiqueta principal ficam juntos. A disposição é calculada a partir dessas ligações. Não mede o que as memórias significam.\n\n## Nada é apagado\n\nUma aprendizagem pode ser **retirada** com um motivo e restaurada mais tarde. O histórico de cada alteração é mantido. Um agente só pode *propor* uma retirada; nada é aplicado até a confirmar em **Propostas**."
+      },
+      "hint": {
+        "knowledge": "Clique num ponto ou num cartão para ler uma memória, ver a que se liga e retirá-la ou restaurá-la.",
+        "agent": "Escolha um agente para ver exatamente as memórias que o seu prompt receberia, pela ordem do próprio daemon.",
+        "proposals": "Um agente só pode propor retirar uma memória. Nada é aplicado até uma pessoa confirmar."
+      },
+      "tabs": {
+        "knowledge": "Conhecimento",
+        "agent": "O que um agente vê",
+        "proposals": "Propostas"
+      },
+      "mapNote": "O mapa agrupa as aprendizagens pela etiqueta principal e liga as que partilham uma etiqueta ou um ciclo. É calculado a partir dessas ligações, não do significado do texto.",
+      "filtersTitle": "Restringir o que é carregado",
+      "count": "{shown} memórias no mapa",
+      "kit": {
+        "library": "Memórias",
+        "map": "Mapa",
+        "details": "Detalhes",
+        "search": "Pesquisar memórias",
+        "kind": "Tipo",
+        "status": "Estado",
+        "topic": "Etiqueta principal",
+        "all": "Todas",
+        "cards": "Cartões",
+        "list": "Lista",
+        "empty": "Nenhuma memória corresponde a estes filtros.",
+        "noResults": "Nenhuma memória corresponde a esta pesquisa.",
+        "selectMemory": "Escolha um ponto ou um cartão para ler uma memória.",
+        "sources": "De onde veio",
+        "noSources": "Não foi registado nenhum ciclo de origem.",
+        "related": "Partilha uma etiqueta ou ciclo com",
+        "topicLayout": "Agrupado pela etiqueta principal",
+        "projectionNote": "As posições são calculadas a partir de etiquetas e ciclos partilhados, não do significado das memórias.",
+        "relationships": "Ligações",
+        "ungrouped": "Sem etiqueta partilhada",
+        "kinds": {
+          "lesson": "Aprendizagem",
+          "decision": "Decisão",
+          "convention": "Convenção",
+          "pitfall": "Armadilha",
+          "code": "Código",
+          "documentation": "Documentação"
+        },
+        "statuses": {
+          "active": "Dita, observada ou retransmitida",
+          "needs-review": "Assumida",
+          "superseded": "Substituída",
+          "archived": "Retirada"
+        }
+      },
+      "q": {
+        "acts": "O que pode fazer com ela?"
+      },
+      "pendingHint": "As memórias sem vetor não estão no mapa. Para colocar as restantes, execute `aeon learnings embed --scope <âmbito> --scope-key <chave>` uma vez por âmbito e recarregue."
+    }
+  }
+}

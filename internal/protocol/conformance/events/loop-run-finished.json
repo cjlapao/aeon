@@ -1,0 +1,27 @@
+{
+  "description": "A blueprint run ended inside a resting loop (S39 CR1): the run carries its outcome and the P32 cost floor (usdAtLeast with its partial/unknown counts — a floor, exact only when every step was known), the loop says idle — the conversation stays open, so loop.finished does NOT fire for this transition.",
+  "event": "loop.run.finished",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1607,
+      "kind": "loop.run.finished",
+      "at": "2026-10-27T16:00:00Z",
+      "payload": {
+        "loopId": "loop-9",
+        "runSeq": 1,
+        "outcome": "done",
+        "status": "idle",
+        "cost": {
+          "usdAtLeast": 0.5,
+          "exact": true,
+          "partial": 0,
+          "unknown": 0,
+          "steps": 2
+        }
+      }
+    }
+  }
+}

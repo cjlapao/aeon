@@ -1,0 +1,7 @@
+{
+  "case": "oversized",
+  "summary": "",
+  "content": "`bash` refused a 65537-byte command: the bound at this boundary is 65536 bytes. A command too long to read is refused toward deny rather than split and hoped for; run the work in smaller pieces.",
+  "isError": true,
+  "exitCode": null
+}

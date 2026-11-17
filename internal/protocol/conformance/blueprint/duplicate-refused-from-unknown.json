@@ -1,0 +1,28 @@
+{
+  "description": "Duplicating from a name that has no row is refused naming the nearest names, so the copy door answers the typo instead of a bare not-found.",
+  "method": "blueprint.duplicate",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 88,
+    "method": "blueprint.duplicate",
+    "params": {
+      "from": "two-step",
+      "name": "my-pipeline"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 88,
+    "error": {
+      "code": -31873,
+      "message": "the blueprint write was refused",
+      "data": {
+        "kind": "from-unknown",
+        "what": "duplicate source \"two-steep\" has no row \u2014 the nearest names are: \"two-step\"",
+        "means": "the daemon understood and declined \u2014 the row, its revision history and its derived refs are exactly as they were; when data.kind is diagnostics the what field IS the Analyze report, byte-verbatim, and the same source validated through blueprint.validate answers it identically",
+        "todo": "do what the what says \u2014 fix the named diagnostics, name the id the source declares, pick an unused name, name an existing revision, or restore/duplicate the shipped blueprint instead of deleting it",
+        "fatal": false
+      }
+    }
+  }
+}

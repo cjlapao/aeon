@@ -1,0 +1,28 @@
+{
+  "description": "A save whose candidate has invalid diagnostics is refused with the Analyze report VERBATIM in data.what (kind diagnostics) and NOTHING written \u2014 no row, no revision, no refs.",
+  "method": "blueprint.save",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 85,
+    "method": "blueprint.save",
+    "params": {
+      "name": "broken-idea",
+      "content": "id: broken-idea\nschemaVersion: 1\nversion: 1\nlanes: []\n"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 85,
+    "error": {
+      "code": -31873,
+      "message": "the blueprint write was refused",
+      "data": {
+        "kind": "diagnostics",
+        "what": "{\"blueprint\":\"broken-idea\",\"schemaVersion\":1,\"version\":1,\"validCount\":0,\"diagnostics\":[{\"path\":\"lanes\",\"state\":\"invalid\",\"message\":\"a blueprint needs at least one lane\"}]}",
+        "means": "the daemon understood and declined \u2014 the row, its revision history and its derived refs are exactly as they were; when data.kind is diagnostics the what field IS the Analyze report, byte-verbatim, and the same source validated through blueprint.validate answers it identically",
+        "todo": "do what the what says \u2014 fix the named diagnostics, name the id the source declares, pick an unused name, name an existing revision, or restore/duplicate the shipped blueprint instead of deleting it",
+        "fatal": false
+      }
+    }
+  }
+}

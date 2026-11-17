@@ -1,0 +1,129 @@
+[
+  {
+    "case": "review-ok-lands",
+    "status": "done",
+    "lastReason": "",
+    "position": {
+      "lane": ""
+    },
+    "stepStates": {
+      "review": {
+        "status": "done",
+        "outcome": "ok",
+        "stepId": 101
+      }
+    },
+    "evidence": null,
+    "events": [
+      {
+        "kind": "loop.advanced",
+        "payload": {
+          "cost": null,
+          "item": "",
+          "lane": "review",
+          "loopId": "\u003cloopId\u003e",
+          "outcome": "ok",
+          "step": ""
+        }
+      },
+      {
+        "kind": "loop.finished",
+        "payload": {
+          "loopId": "\u003cloopId\u003e",
+          "status": "done"
+        }
+      }
+    ]
+  },
+  {
+    "case": "review-ok-with-finding",
+    "status": "done",
+    "lastReason": "the error handler swallows the panic",
+    "position": {
+      "lane": ""
+    },
+    "stepStates": {
+      "review": {
+        "status": "done",
+        "outcome": "ok",
+        "reason": "the error handler swallows the panic",
+        "stepId": 101
+      }
+    },
+    "evidence": null,
+    "events": [
+      {
+        "kind": "loop.advanced",
+        "payload": {
+          "cost": null,
+          "item": "",
+          "lane": "review",
+          "loopId": "\u003cloopId\u003e",
+          "outcome": "ok",
+          "step": ""
+        }
+      },
+      {
+        "kind": "loop.finished",
+        "payload": {
+          "loopId": "\u003cloopId\u003e",
+          "status": "done"
+        }
+      }
+    ],
+    "backlog": "# Deferred findings\n\nAppended by the loop's review lane, never rewritten. Each entry names\nits PR, its date, its lane/step, and the finding. Shape documented in\naeon/docs/BACKLOG.md (S17 T8).\n- PR (no number recorded) · \u003cdate\u003e · review/ · the error handler swallows the panic\n"
+  },
+  {
+    "case": "review-reject-unverified-stores",
+    "status": "done",
+    "lastReason": "",
+    "position": {
+      "lane": ""
+    },
+    "stepStates": {
+      "review": {
+        "status": "done",
+        "outcome": "unverified",
+        "reason": "unverified: the gate could not run: no verifier registered",
+        "stepId": 101
+      },
+      "rework": {
+        "status": "done",
+        "outcome": "ok",
+        "stepId": 102
+      }
+    },
+    "evidence": null,
+    "events": [
+      {
+        "kind": "loop.advanced",
+        "payload": {
+          "cost": null,
+          "item": "",
+          "lane": "review",
+          "loopId": "\u003cloopId\u003e",
+          "outcome": "reject",
+          "step": ""
+        }
+      },
+      {
+        "kind": "loop.advanced",
+        "payload": {
+          "cost": null,
+          "item": "",
+          "lane": "rework",
+          "loopId": "\u003cloopId\u003e",
+          "outcome": "ok",
+          "step": ""
+        }
+      },
+      {
+        "kind": "loop.finished",
+        "payload": {
+          "loopId": "\u003cloopId\u003e",
+          "status": "done"
+        }
+      }
+    ]
+  }
+]

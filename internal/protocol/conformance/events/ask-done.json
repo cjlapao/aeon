@@ -1,0 +1,16 @@
+{
+  "description": "The single terminal event, carrying the accounting. Emitted WHATEVER HAPPENED — success, provider failure, or the client disconnecting mid-stream — because an ask that reports nothing loses the spend (M15), and those tokens were still bought. Note `cost.state`: the three states are the whole point, and a client must render all three rather than formatting `usd` and hoping.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c", "seq": 1444, "kind": "ask.done",
+      "at": "2026-10-15T09:20:04.000000000Z",
+      "payload": {
+        "askId": "a-7",
+        "usage": {"inputTokens": 1203, "outputTokens": 412, "cacheReadTokens": 980},
+        "cost": {"state": "partial", "usdAtLeast": 0.0097, "missing": ["cacheWriteTokens"]},
+        "stopReason": "end_turn"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "description": "spend.report is the spend over time, grouped: the window is echoed back as the store's own timestamp shape (the client sees what was actually read), and each bucket carries the USD floor with P31's honesty marks — exact says when the floor is a total, the partial/unknown counts say what it is not, so a sum that hides an unknown cannot read as a fact. Buckets are sorted by key; a bucket with no priced tokens at all omits tokens.",
+  "method": "spend.report",
+  "request": {
+    "jsonrpc": "2.0", "id": 604, "method": "spend.report",
+    "params": {"groupBy": "day", "since": "2026-10-30T00:00:00Z", "rootId": "/home/p/repo-a"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 604,
+    "result": {
+      "groupBy": "day",
+      "since": "2026-10-30T00:00:00.000Z",
+      "until": "2026-11-01T12:00:00.000Z",
+      "rootId": "/home/p/repo-a",
+      "buckets": [
+        {"key": "2026-10-30", "usdFloor": 41.75, "exact": true, "partialCount": 0, "unknownCount": 0, "tokens": 310000, "steps": 28},
+        {"key": "2026-10-31", "usdFloor": 12.3, "exact": false, "partialCount": 1, "unknownCount": 3, "tokens": 95000, "steps": 17},
+        {"key": "2026-11-01", "usdFloor": 3.2, "exact": true, "partialCount": 0, "unknownCount": 0, "steps": 4}
+      ]
+    }
+  }
+}

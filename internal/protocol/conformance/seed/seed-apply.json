@@ -1,0 +1,32 @@
+{
+  "description": "seed.apply is the explicit human door (via=explicit): it takes the set and the keys to scope the apply, writes through the engine, and stamps the actor from the CONNECTION (the daemon's ActorFor seam), never from params (S43-extra T6, SD10). The result is the per-record apply outcome (op, fromVersion/toVersion, reason) and requiresConfirmation:false — the daemon does not pretend a socket can prove a human is present; the confirmation is a UI/CLI concern (SD11, S45 PM7). A params actor would let a caller forge the audit identity, so it is refused by shape, never resolved.",
+  "method": "seed.apply",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 323,
+    "method": "seed.apply",
+    "params": {
+      "set": "agents.firstparty",
+      "keys": ["agents.firstparty.body.default"]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 323,
+    "result": {
+      "apply": {
+        "setId": "agents.firstparty",
+        "records": [
+          {
+            "key": "agents.firstparty.body.default",
+            "op": "apply",
+            "fromVersion": 0,
+            "toVersion": 1,
+            "reason": "applied — a new record"
+          }
+        ]
+      },
+      "requiresConfirmation": false
+    }
+  }
+}

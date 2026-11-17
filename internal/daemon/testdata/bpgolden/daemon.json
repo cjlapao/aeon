@@ -1,0 +1,915 @@
+{
+  "fields": {
+    "fields": [
+      {
+        "path": "mode",
+        "type": "enum",
+        "enum": [
+          "simple",
+          "standard",
+          "poc"
+        ],
+        "operators": [
+          "eq",
+          "neq",
+          "in"
+        ],
+        "doc": "Loop execution mode"
+      },
+      {
+        "path": "flags.*",
+        "type": "bool",
+        "operators": [
+          "eq",
+          "neq"
+        ],
+        "doc": "Boolean facts declared by prior steps"
+      },
+      {
+        "path": "counters.*",
+        "type": "int",
+        "operators": [
+          "eq",
+          "neq",
+          "gt",
+          "gte",
+          "lt",
+          "lte",
+          "in"
+        ],
+        "doc": "Named retry and round counters"
+      },
+      {
+        "path": "answers.*",
+        "type": "string",
+        "operators": [
+          "eq",
+          "neq",
+          "in"
+        ],
+        "doc": "Answer to a named gate"
+      },
+      {
+        "path": "tasks",
+        "type": "collection",
+        "operators": [
+          "eq",
+          "neq"
+        ],
+        "doc": "Task identifiers for iterate"
+      },
+      {
+        "path": "tasks.count",
+        "type": "int",
+        "operators": [
+          "eq",
+          "neq",
+          "gt",
+          "gte",
+          "lt",
+          "lte",
+          "in"
+        ],
+        "doc": "Number of tasks"
+      }
+    ]
+  },
+  "fireTimeCheck": {
+    "brainstorm": "ok",
+    "chat": "ok",
+    "conversational-map": "ok",
+    "dev-loop": "ok",
+    "development-map-direct": "ok",
+    "development-map-pipeline": "ok",
+    "goal-to-brief": "ok",
+    "golden-broken": "blueprint \"golden-broken\" is not shipped and not in this project\n  why:  it must be a shipped name or a file in ./aeon/blueprints\n  do:   aeon blueprint list",
+    "golden-custom": "ok",
+    "no-such-blueprint": "blueprint \"no-such-blueprint\" is not shipped and not in this project\n  why:  it must be a shipped name or a file in ./aeon/blueprints\n  do:   aeon blueprint list",
+    "proposal-brief": "ok",
+    "research-map": "unavailable-skill: lanes[survey].step.skill cannot run: the skill target \"reddit-agent/summarise-sentiment\" cannot be checked — agent services are not configured on this process; starting a loop with this lane is refused until they are",
+    "roadmap-plan": "ok",
+    "tag-only": "ok",
+    "two-step": "ok"
+  },
+  "list": {
+    "names": [
+      "brainstorm",
+      "chat",
+      "conversational-map",
+      "dev-loop",
+      "development-map-direct",
+      "development-map-pipeline",
+      "goal-to-brief",
+      "golden-custom",
+      "proposal-brief",
+      "research-map",
+      "roadmap-plan",
+      "tag-only",
+      "two-step"
+    ],
+    "blueprints": [
+      {
+        "name": "brainstorm",
+        "origin": "system",
+        "version": 1,
+        "revision": 2,
+        "contentHash": "36d747903062024a8e0f4abfe5fd2465c5a895de3a806e3b456a6bc2d2224bf8",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Brainstorm",
+        "description": "Turns a conversation into a goal: the brainstormer captures the idea and files a proposal and a brief against it."
+      },
+      {
+        "name": "chat",
+        "origin": "system",
+        "version": 1,
+        "revision": 2,
+        "contentHash": "a8f14a981201cd89e55decb3bfe592696492318542d99f3094931f2b71c34e36",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Chat",
+        "description": "A plain conversation with an agent about a component. The run never finishes, so you can keep talking."
+      },
+      {
+        "name": "conversational-map",
+        "origin": "system",
+        "version": 1,
+        "revision": 2,
+        "contentHash": "46796e123b0c68fde0e2e9deb95d6372219a7bfeeb1422c257a565208d45b4b9",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Conversational Map",
+        "description": "Triages a request, investigates and implements it, then offers an inline review and a security pass."
+      },
+      {
+        "name": "dev-loop",
+        "origin": "system",
+        "version": 1,
+        "revision": 2,
+        "contentHash": "a19fd6cc26811185c45b46dc9cffe7918796dea8071743403fe35320d28fb72d",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Developer Loop",
+        "description": "Investigates, plans, asks for one approval, then builds, verifies and ships each task, running unattended after the approval."
+      },
+      {
+        "name": "development-map-direct",
+        "origin": "system",
+        "version": 1,
+        "revision": 2,
+        "contentHash": "9b6666048806c75a179becdfa1160ecd0a50623011e68fe51b2e762341114ee1",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Development Map (Direct)",
+        "description": "The short path for one change: triage, investigate, brief, implement, review, then commit and open the pull request."
+      },
+      {
+        "name": "development-map-pipeline",
+        "origin": "system",
+        "version": 1,
+        "revision": 2,
+        "contentHash": "866b6e2674fe407b4b665707f6754d22ad4ee9da0644008df2fbf1a7fead8ab7",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Development Map (Pipeline)",
+        "description": "The full feature pipeline: issue, task breakdown, a branch per task, implementation, review and merge, then feature verification."
+      },
+      {
+        "name": "goal-to-brief",
+        "origin": "system",
+        "version": 1,
+        "revision": 2,
+        "contentHash": "46addfc2d327175a2e48655d518cb992e542f305beaecdd871acf2deaea14ca2",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Goal to Brief",
+        "description": "Starts on an approved goal, has the brief author write the brief, and waits for a person to approve it."
+      },
+      {
+        "name": "golden-custom",
+        "origin": "user",
+        "version": 1,
+        "revision": 1,
+        "contentHash": "68b90a4cd11849b2fd774f33e95f4c84c740c3792b7cec5c1029536cf46c098b",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Golden Custom"
+      },
+      {
+        "name": "proposal-brief",
+        "origin": "system",
+        "version": 1,
+        "revision": 2,
+        "contentHash": "b5f744d3775a4ad576b7ce5e5ef44c0efd801b1d9c805f233ac6f61560614dda",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Proposal and Brief",
+        "description": "Drafts a proposal, gets it approved, writes the brief from it, self-checks the brief and asks for approval."
+      },
+      {
+        "name": "research-map",
+        "origin": "system",
+        "version": 1,
+        "revision": 2,
+        "contentHash": "a3a499ca009f80807009025bd8144357e3473dc09a3da89913c1c1718984cbc4",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Research Map",
+        "description": "A planner asks a surveyor for findings and a reporter writes them up: one agent asking another."
+      },
+      {
+        "name": "roadmap-plan",
+        "origin": "system",
+        "version": 1,
+        "revision": 2,
+        "contentHash": "08aa5c6c34760d0bb6f0888ec1e1df490483c6b5d970bf688770491f3e8aa394",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Roadmap Plan",
+        "description": "One step that turns a roadmap item into a plan."
+      },
+      {
+        "name": "tag-only",
+        "origin": "system",
+        "version": 1,
+        "revision": 2,
+        "contentHash": "b5bc01598ea0ca069f9eec180bd15b3167b8b575925c1fbb31263b7e27c0b08e",
+        "divergedFromShipped": false,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Tech Tag Rehearsal",
+        "description": "One step that picks its agent by tech tag. Used to try the tag resolver."
+      },
+      {
+        "name": "two-step",
+        "origin": "system",
+        "version": 2,
+        "revision": 2,
+        "contentHash": "cebc0a771d962678f911e974dcde1da2a38303bcaff46fdf53e71a123f7d5e89",
+        "divergedFromShipped": true,
+        "updatedAt": "",
+        "updatedBy": "user:test",
+        "usedByCount": 0,
+        "title": "Two Step",
+        "description": "Two agent steps with a person's approval between them. A small flow for trying the engine."
+      }
+    ]
+  },
+  "loadStart": {
+    "brainstorm": "ok",
+    "chat": "ok",
+    "conversational-map": "ok",
+    "dev-loop": "ok",
+    "development-map-direct": "ok",
+    "development-map-pipeline": "ok",
+    "goal-to-brief": "ok",
+    "golden-broken": "blueprint \"golden-broken\" is not shipped and not in this project\n  why:  it must be a shipped name or a file in ./aeon/blueprints\n  do:   aeon blueprint list",
+    "golden-custom": "ok",
+    "no-such-blueprint": "blueprint \"no-such-blueprint\" is not shipped and not in this project\n  why:  it must be a shipped name or a file in ./aeon/blueprints\n  do:   aeon blueprint list",
+    "proposal-brief": "ok",
+    "research-map": "ok",
+    "roadmap-plan": "ok",
+    "tag-only": "ok",
+    "two-step": "ok"
+  },
+  "pin": {
+    "blueprintId": "golden-custom",
+    "content": "id: golden-custom\nschemaVersion: 1\nversion: 1\nlanes:\n  - id: approve\n    step: {kind: gate, question: go}\nquestions:\n  go:\n    prompt: Continue?\n    answers: [yes, no]\n",
+    "version": 1
+  },
+  "save": {
+    "bad-name": "invalid params: blueprint name \"../escape\" is outside the grammar (lowercase words joined by single hyphens, ≤ 64)",
+    "collision-createOnly": "aeon -31873: the blueprint write was refused",
+    "id-mismatch": "aeon -31873: the blueprint write was refused",
+    "invalid": "aeon -31873: the blueprint write was refused",
+    "valid-createOnly": {
+      "name": "golden-save",
+      "changed": true,
+      "revision": 1,
+      "origin": "user",
+      "version": 1,
+      "report": {
+        "blueprint": "golden-save",
+        "schemaVersion": 1,
+        "version": 1,
+        "validCount": 6,
+        "diagnostics": []
+      },
+      "references": []
+    }
+  },
+  "show": {
+    "brainstorm": {
+      "name": "brainstorm",
+      "title": "Brainstorm",
+      "description": "Turns a conversation into a goal: the brainstormer captures the idea and files a proposal and a brief against it.",
+      "path": "",
+      "content": "# brainstorm — the S38 capture lane (criterion 2): a conversation's product\n# becomes a goal ROW with the two files pinned to it. The model writes the\n# files, files the goal, and attaches both documents; the contract (T12)\n# refuses the lane ok until the rows exist — files alone are not the\n# deliverable. S39 T6 (CR1) makes it rest: after its capture run the loop\n# goes idle — the conversation that produced the goal CONTINUES (a message\n# starts a turn with the same conversation agent, brainstormer), and a\n# person closes the rest with loop.close when the thread is truly over.\nid: brainstorm\nschemaVersion: 1\nversion: 1\nafter: converse\nconverse: brainstormer\noutput: [goal, proposal.md, brief.md]\nlanes:\n  - id: capture\n    step:\n      kind: model-step\n      agent: brainstormer\n      produces: [proposal.md, brief.md]\n      emits:\n        - { type: goal, attach: [proposal.md, brief.md] }\nquestions: {}\n",
+      "origin": "system",
+      "version": 1,
+      "revision": 2,
+      "contentHash": "36d747903062024a8e0f4abfe5fd2465c5a895de3a806e3b456a6bc2d2224bf8",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "capture",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    },
+    "chat": {
+      "name": "chat",
+      "title": "Chat",
+      "description": "A plain conversation with an agent about a component. The run never finishes, so you can keep talking.",
+      "path": "",
+      "content": "# chat — the plain conversation (S39 CR3/CR1): the loop built when a person\n# just wants to TALK to a component. One lane, one ordinary model step by the\n# general chat agent, and the loop then RESTS (after: converse) — every\n# further message starts another turn of the same agent, streamed and\n# steerable like any step, until a person closes the rest with loop.close.\n# output: [] — a conversation is not a deliverable; the thread is the record.\nid: chat\nschemaVersion: 1\nversion: 1\nafter: converse\nconverse: chat\noutput: []\nlanes:\n  - id: converse\n    step:\n      kind: model-step\n      agent: chat\nquestions: {}\n",
+      "origin": "system",
+      "version": 1,
+      "revision": 2,
+      "contentHash": "a8f14a981201cd89e55decb3bfe592696492318542d99f3094931f2b71c34e36",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "converse",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    },
+    "conversational-map": {
+      "name": "conversational-map",
+      "title": "Conversational Map",
+      "description": "Triages a request, investigates and implements it, then offers an inline review and a security pass.",
+      "path": "",
+      "content": "# conversational-map — derived from opencode/skills/conversational-map/SKILL.md (278 lines)\n#\n# PARTIAL, AND DELIBERATELY SO. Phase 1 is expressible as a blueprint. Phases 2 and 3 ARE NOT,\n# and forcing them would misrepresent the protocol rather than express it. See GAP-7 in\n# README.md — this file is the evidence for it.\n#\n# The superseded design guessed this skill was \"the likeliest to reveal a field the reference\n# lacks.\" It revealed something larger: a boundary to what a blueprint is for.\n---\nid: conversational-map\nschemaVersion: 1\nversion: 1\n\nlanes:\n  # ---- Phase 1 — Work. This much IS a lane sequence. ------------------------\n  - id: triage\n    # \"User sends goal/request to task-coordinator. Coordinator classifies into Direct mode,\n    # identifies which specialists are needed, builds a structured Brief per task, and delegates\n    # inline.\" No artefact — the brief is a handoff field, as in development-map-direct.\n    step: { kind: model-step, agent: task-coordinator }\n\n  - id: investigate\n    # \"If the request is a bug with unclear root cause, coordinator inserts debugger-engineer\n    # first … then cites the report path when building each Brief.\"\n    # The skill lists five triggers for this, and its counter-rule is as important: \"When the\n    # user hypothesis is clear … skip debugger-engineer — it adds latency without value.\"\n    when: { field: flags.root_cause_unclear, op: eq, value: true }\n    step: { kind: model-step, agent: debugger-engineer, produces: .projects/features/debug-investigations/ }\n\n  - id: implement\n    # \"Each specialist receives its Brief, works from it, runs local verification\n    # (build/test/lint), and reports back inline.\"\n    # GAP-8: \"Independent tasks can run CONCURRENTLY.\" The engine is deliberately serial —\n    # S5 asserts serial execution with entry/exit timestamps precisely because order alone\n    # passes against an errgroup. So this lane runs sequentially and the protocol's concurrency\n    # is NOT expressed. A real conflict, not a missing field. See README.md.\n    step: { kind: model-step, agent: by-tech-tag }\n    on_reject: { goto: implement, counter: retries, max: 2, then: escalate }\n\n  - id: offer-review\n    # \"The coordinator CAN ask code-reviewer to do an inline diff review before pushing. This\n    # keeps quality high without requiring a PR.\"\n    step: { kind: gate, question: want-inline-review }\n\n  - id: inline-review\n    when: { field: answers.want-inline-review, op: eq, value: yes }\n    step: { kind: model-step, agent: code-reviewer }\n    on_reject: { goto: implement, counter: review_rounds, max: 2, then: escalate }\n\n  - id: offer-security\n    # \"When the work touched authentication/authorization, data handling, crypto, secrets, input\n    # parsing, or a new external dependency, the coordinator OFFERS a security-engineer scan of\n    # the diff before push (THE USER MAY DECLINE) … never forced on a trivial change.\"\n    # An OFFERED step: conditional on asking in the moment, not on a project flag. Expressible\n    # only through GAP-3's pattern — a gate, then a `when` on its answer.\n    when: { field: flags.touched_sensitive_surface, op: eq, value: true }\n    step: { kind: gate, question: want-security-scan }\n\n  - id: security\n    when: { field: answers.want-security-scan, op: eq, value: yes }\n    step: { kind: model-step, agent: security-engineer }\n    # \"Blocking findings route back to the specialist first.\"\n    on_reject: { goto: implement, counter: security_rounds, max: 2, then: escalate }\n\nquestions:\n  want-inline-review:\n    prompt: Review the diff before pushing?\n    answers: [yes, no]\n  want-security-scan:\n    prompt: This touched a sensitive surface. Scan the diff before pushing?\n    answers: [yes, no]\n\n# ============================================================================\n# PHASES 2 AND 3 ARE NOT EXPRESSED, AND CANNOT BE.\n# ============================================================================\n#\n# The skill's own first line about the workflow: \"There is no separate Planning phase. The flow\n# is ONE CONTINUOUS CONVERSATION.\"\n#\n#   Phase 2 — Git:    \"WHEN THE USER TRIGGERS a push (e.g., 'push this', 'branch and commit',\n#                     'PR'), the coordinator delegates to github-steward\"\n#   Phase 3 — Review: \"WHEN THE USER TRIGGERS a review (e.g. 'review this', 'review my PR\n#                     #{N}'), the coordinator delegates to code-reviewer\"\n#\n# A blueprint is an ORDERED SEQUENCE. A gate stops and asks a CLOSED question. Neither expresses\n# \"sit idle until the user says what happens next, from an open set\" — and the skill's own\n# end-to-end example shows exactly that:\n#\n#     User: \"Branch and push both.\"      → Phase 2\n#     User: \"Review those PRs.\"          → Phase 3\n#\n# A gate with answers [push, review, more-work, done] would close the set, and the set is not\n# closed: \"also add rate limiting to the admin API\" is a legitimate next utterance and appears\n# in no answer list.\n#\n# THE HONEST CONCLUSION: Phases 2 and 3 are not a blueprint's shape. They are a CHAT WITH TOOLS,\n# which S5's step runtime and S6's suspension already provide, with S12's actions available and\n# S10's guard deciding what may run. The human is the orchestrator, and there is no declared\n# graph to interpret.\n#\n# That is not a failure of the format. It is the format's BOUNDARY, found by the one protocol\n# that has no planning phase — and it is worth knowing before someone tries to make every\n# interaction a lane.\n",
+      "origin": "system",
+      "version": 1,
+      "revision": 2,
+      "contentHash": "46796e123b0c68fde0e2e9deb95d6372219a7bfeeb1422c257a565208d45b4b9",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "triage",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "investigate",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "implement",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "inline-review",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "security",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    },
+    "dev-loop": {
+      "name": "dev-loop",
+      "title": "Developer Loop",
+      "description": "Investigates, plans, asks for one approval, then builds, verifies and ships each task, running unattended after the approval.",
+      "path": "",
+      "content": "# dev-loop — derived from opencode/skills/dev-loop-protocol/SKILL.md (864 lines)\n#\n# Driven by 33 agents and all four dev-loops primaries. This is THE protocol in use.\n#\n# Derived, not invented: every lane below is a row in the skill's phase table, in its\n# stated order. S17 T7 authored it to the protocol's own summary — \"investigates\n# -\u003e plans -\u003e (one approval gate) -\u003e builds task-by-task -\u003e verifies each task -\u003e\n# commits, running unattended\" — which means exactly ONE routine gate: the\n# plan-gate. Everything else that asks is an exception the machinery raises. Where this file adds something the skill does not have, the comment says\n# ADDED and why. Where the format could not express something, the comment says GAP and\n# names it — see README.md.\n---\nid: dev-loop\nschemaVersion: 1\nversion: 1\non_abort: git-abort\n\nlanes:\n  # ---- intent and research -------------------------------------------------\n  - id: clarify\n    # \"runs FIRST, before discovery … Always runs; asks only genuine intent ambiguities\"\n    step: { kind: model-step, agent: intent-clarifier, produces: prompt.md }\n\n  - id: discovery\n    # \"mandatory every loop\" — no `when`. Sets the Legal-review flag that gates the next lane.\n    step: { kind: model-step, agent: investigator, produces: discovery.md }\n\n  - id: legal\n    # \"CONDITIONAL (only when discovery's Legal-review flag says needed) … runs BETWEEN\n    # discovery and plan so constraints feed the plan\"\n    when: { field: flags.legal_review, op: eq, value: true }\n    step: { kind: model-step, agent: legal-advisor, produces: legal.md }\n\n  # ---- planning and the one approval gate ----------------------------------\n  - id: plan\n    # \"requires discovery.md on disk first; must honor any constraints in a resolved legal.md\"\n    step: { kind: model-step, agent: project-planner, produces: [plan.md, tasks/] }\n\n  - id: plan-gate\n    # The protocol's own summary: \"investigates → plans → (one approval gate) → builds\n    # task-by-task → verifies each task → commits, running unattended\"\n    step: { kind: gate, question: approve-plan }\n    on_reject:\n      goto: plan\n      with: { mode: revise }\n      counter: plan_rounds\n      max: 2\n      then: escalate\n\n  # ---- build ---------------------------------------------------------------\n  - id: git-feature-start\n    # \"once, at build start (before any task) — create the loop's feature_branch off its\n    # base_branch (both from loop_get; never invent either) + push it\"\n    # S17 T7 walk (S16 T12's finding as data): one createBranch lane per\n    # BRANCH KIND — the feature branch here, the task branch inside the\n    # build ladder below. Without `which:` every createBranch silently\n    # builds a task branch and no loop can ever grow the feature branch\n    # the merge lane merges INTO.\n    step: { kind: code-action, action: git.createBranch, params: { which: feature } }\n\n  - id: build\n    iterate: tasks\n    rework: implement\n    on_reject: { counter: retries, max: 2, then: escalate }\n    ladder:\n      - id: issue\n        kind: code-action\n        action: forge.openIssue\n        sets: issue-open\n        when: { field: mode, op: neq, value: poc }\n\n      - id: branch\n        # The task branch, created from THIS loop's feature branch\n        # (actionArgs derives the base; S16 T12's two-kinds rule — the\n        # POC overlay keeps a POC on one branch, so this rung is not\n        # for it).\n        kind: code-action\n        action: git.createBranch\n        params: { which: task }\n        when: { field: mode, op: neq, value: poc }\n\n      - id: implement\n        kind: model-step\n        agent: by-tech-tag        # go→golang-engineer, react-ts→react-typescript-engineer, … — ten tags, one table (T10)\n        sets: in-progress\n\n      - id: verify\n        kind: model-step\n        agent: verifier-engineer\n        sets: verified            # evidence REQUIRED by the status machine\n\n      - id: security\n        kind: model-step\n        agent: security-engineer\n        sets: secure              # evidence REQUIRED\n        produces: security.md\n        when: { field: flags.security_scan, op: eq, value: true }\n        on_reject: { counter: security_rounds, max: 2, then: escalate }\n\n      - id: commit-local\n        # POC only: \"commit LOCALLY, return the SHA. No issue, no push, no PR\"\n        kind: code-action\n        action: git.commitAndPush\n        when: { field: mode, op: eq, value: poc }\n\n      - id: push\n        # T7 walk: the PR's head is the TASK branch, and the forge\n        # refuses a head that was never pushed (O8) — a PR against a ref\n        # nobody can fetch is the phantom-ref failure. commitAndPush is\n        # what creates the remote branch (CreateBranch checks it out\n        # locally; the push is this rung's job). Pushing the TASK branch\n        # is not the forbidden push: the \"no push in the commit phase\"\n        # rule is about the FEATURE branch, which only the merge moves.\n        kind: code-action\n        action: git.commitAndPush\n        when: { field: mode, op: neq, value: poc }\n\n      - id: pr\n        kind: code-action\n        action: forge.openPR\n        sets: pr-open\n        when: { field: mode, op: neq, value: poc }\n\n      - id: review\n        kind: model-step\n        agent: code-reviewer\n        sets: in-review\n        when: { field: mode, op: neq, value: poc }\n        on_reject: { goto: implement, counter: review_rounds, max: 2, then: escalate }\n\n      - id: merge\n        kind: code-action\n        action: forge.merge       # merges into feature_branch, then closes the issue\n        sets: merged              # evidence REQUIRED — the merge SHA\n        when: { field: mode, op: neq, value: poc }\n\n      - id: close-issue\n        kind: code-action\n        action: forge.closeIssue  # `Closes #n` does not fire on a feature-branch merge\n        when: { field: mode, op: neq, value: poc }\n\n  # ---- post-build ----------------------------------------------------------\n  - id: qa-specs\n    # POC only: \"create/amend the human-followable QA test specs … Never executes tests\"\n    when: { field: mode, op: eq, value: poc }\n    step: { kind: model-step, agent: qa-test-spec, produces: docs/test_suites/ }\n\n  - id: qa\n    # \"hard-gate (build + full repo test suite green), feature-level integration testing …\n    # defects → QAT tasks\"\n    when: { field: flags.integration_surface, op: eq, value: true }\n    step: { kind: model-step, agent: qa-engineer }\n    on_reject:\n      goto: plan\n      with: { mode: qa-fix }\n      counter: qa_rounds\n      max: 2\n      then: escalate\n\n  - id: memory\n    # \"after QA, before git-feature … (Iron Triage; non-gating)\"\n    # GAP-2 resolved by S8's `advisory`: a reject is recorded and does not route.\n    advisory: true\n    step: { kind: model-step, agent: memory-steward }\n\n  # ---- terminal: the abort path ---------------------------------------------\n  # S17 T7 (the one-gate ruling): the S8-era terminal branch —\n  # feature-gate asking merge-now vs leave-open, then git-feature /\n  # git-feature-pr / feature-review — is REMOVED. Three findings, recorded\n  # not rebuilt (N1/D15):\n  #   F1  Four gates on the happy path (this one plus the two open-question\n  #       relays) is a wizard, not an unattended loop. The protocol's own\n  #       summary names ONE approval gate; the plan-gate above is it.\n  #   F2  The branch needed an answers.* value no lane could set except a\n  #       gate — the format routes a reject to one target (old GAP-3) and\n  #       S8 solved that by ADDING a gate, which is the wizard again.\n  #       Deleting the branch is authorship; giving it a mechanism is not\n  #       this slice's work.\n  #   F3  Merge is still ASKED (S16's L22): forge.merge is irreversible,\n  #       so the execution layer asks a person on an attended loop — the\n  #       escalation-shaped exception, not a routine step. leave-open is\n  #       what the loop already built: the per-task PRs stay open, and an\n  #       unattended deny collapses to a block that leaves them there for\n  #       the person. Whole-feature review belongs to the task-level\n  #       review step (T8's merge gate), not a post-hoc lane.\n\n  - id: git-abort\n    # GAP-4 resolved: a gate's abort jumps here, so cleanup cannot be omitted.\n    # T10 flipped: the batch forge.closeOpenIssuesAndPRs this lane carried\n    # from S8 was NEVER in S16's closed set (D14 — eight plus audit, no\n    # ninth) and validation now refuses it, so the lane does what the set\n    # actually offers: close the task issue. Closing PRs is not an S16\n    # action; an aborted loop's PR waits for the person, which is exactly\n    # what the finish lane's leave-open already admits.\n    when: { field: flags.aborted, op: eq, value: true }\n    step: { kind: code-action, action: forge.closeIssue }\n\nquestions:\n  # The ONE approval gate. Open questions are NOT routine gates: the\n  # clarify/discovery bodies carry the `question` tool, which suspends the\n  # STEP when a person is genuinely needed (S11) — escalation-shaped,\n  # never a scheduled interrogation. (T7 F1; S8's `${question.*}` answer\n  # folding left with the relay lanes.)\n  approve-plan:\n    prompt: Approve the plan and start building?\n    answers: [approve, revise, abort]\n\n# NOT EXPRESSED, deliberately:\n#\n#   The dispatch ritual, the FINAL REPORT line, the caller guard, memory_append and\n#   event_append — all engine work now (S11's RITUAL and BECAME MECHANISM categories).\n",
+      "origin": "system",
+      "version": 1,
+      "revision": 2,
+      "contentHash": "a19fd6cc26811185c45b46dc9cffe7918796dea8071743403fe35320d28fb72d",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "clarify",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "discovery",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "legal",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "plan",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "build",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "qa-specs",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "qa",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "memory",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    },
+    "development-map-direct": {
+      "name": "development-map-direct",
+      "title": "Development Map (Direct)",
+      "description": "The short path for one change: triage, investigate, brief, implement, review, then commit and open the pull request.",
+      "path": "",
+      "content": "# development-map, Direct mode — derived from opencode/skills/development-map/SKILL.md\n#\n# The other half of the same skill, and STRUCTURALLY DIFFERENT rather than a trimmed Pipeline.\n#\n# What makes it different is not fewer steps. It is that Direct mode creates NO ARTEFACTS:\n# \"No Issue or file is created.\" No `produces:` anywhere, no issues, no task ladder, and three\n# lanes that are optional at the user's discretion rather than by a project flag.\n#\n# This is the shape that proves L10's claim. `hotfix` at 115 lines is a compressed dev-loop;\n# this is a different thing.\n---\nid: development-map-direct\nschemaVersion: 1\nversion: 1\n\nlanes:\n  - id: triage\n    # Step 1: \"Coordinator classifies the request as Direct.\"\n    # No artefact. The classification is the outcome.\n    step: { kind: model-step, agent: task-coordinator }\n\n  - id: investigate\n    # Step 2: \"If root cause is unclear, coordinator delegates to debugger-engineer first and\n    # waits for the report path.\"\n    when: { field: flags.root_cause_unclear, op: eq, value: true }\n    step: { kind: model-step, agent: debugger-engineer }\n\n  - id: brief\n    # Step 3: \"Coordinator builds the Brief … citing any debugger-engineer report.\"\n    # Step 4: \"hands the Brief to the specialist inline. No Issue or file is created.\"\n    # The brief is a handoff field, not a file — which is why there is no `produces:`.\n    step: { kind: model-step, agent: task-coordinator }\n\n  - id: implement\n    # Step 5: \"Specialist follows the Brief, runs local verification (build/test/lint), and\n    # reports back inline with files changed, verification output summary, and any surprises.\"\n    # Verification is INSIDE the step here, not a separate lane — the specialist runs it.\n    step: { kind: model-step, agent: by-tech-tag }\n    on_reject: { goto: implement, counter: retries, max: 2, then: escalate }\n\n  - id: review\n    # Step 6: \"If the user wants a review … Review is inline, no review file.\"\n    when: { field: flags.wants_review, op: eq, value: true }\n    step: { kind: model-step, agent: code-reviewer }\n    on_reject: { goto: implement, counter: review_rounds, max: 2, then: escalate }\n\n  - id: git\n    # Step 7: \"If the user wants the change committed or a PR opened … Otherwise the\n    # specialist's work stands as local changes.\"\n    when: { field: flags.wants_commit, op: eq, value: true }\n    step: { kind: code-action, action: git.commitAndPush }\n\n  - id: pr\n    when: { field: flags.wants_pr, op: eq, value: true }\n    step: { kind: code-action, action: forge.openPR }\n\n# No questions. Direct mode has NO GATES — which is the point of it, and worth noticing:\n# every other blueprint here has at least one. A flow with no human gate is a flow whose\n# safety comes entirely from S12's effect classes, since `outward` and `irreversible` still ask.\nquestions: {}\n",
+      "origin": "system",
+      "version": 1,
+      "revision": 2,
+      "contentHash": "9b6666048806c75a179becdfa1160ecd0a50623011e68fe51b2e762341114ee1",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "triage",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "investigate",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "brief",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "implement",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "review",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    },
+    "development-map-pipeline": {
+      "name": "development-map-pipeline",
+      "title": "Development Map (Pipeline)",
+      "description": "The full feature pipeline: issue, task breakdown, a branch per task, implementation, review and merge, then feature verification.",
+      "path": "",
+      "content": "# development-map, Pipeline mode — derived from opencode/skills/development-map/SKILL.md (525 lines)\n#\n# Driven by 32 agents. The second protocol genuinely in use.\n#\n# ONE SKILL, TWO BLUEPRINTS. development-map declares \"Two Invocation Modes\" — Pipeline and\n# Direct — and they are not conditional variants of one flow. Pipeline creates issues, files\n# and PRs; Direct creates NONE of them (\"No Issue or file is created\"). Expressing both as one\n# blueprint would mean a `when` on every lane and a reader who cannot see either shape. So:\n# two blueprints. See development-map-direct.yaml and README.md.\n---\nid: development-map-pipeline\nschemaVersion: 1\nversion: 1\n\nlanes:\n  # ---- intake and specification --------------------------------------------\n  - id: feature-issue\n    # Step 2: \"If the request already includes acceptance criteria and definition of done,\n    # skip to step 3.\"\n    # GAP-5: the condition is \"the request already contains X\" — a property of the input, not\n    # a manifest field. Expressed as a flag the intake must set. See README.md.\n    when: { field: flags.has_acceptance_criteria, op: eq, value: false }\n    step: { kind: model-step, agent: product-manager, produces: feature.md }\n\n  - id: task-breakdown\n    # Step 3: \"creates one Task Issue per task linked as a child to the Feature Issue, with\n    # Assigned Specialist set and initial label pending\"\n    step: { kind: model-step, agent: project-manager, produces: tasks/ }\n\n  - id: feature-branch\n    # Step 4: \"off main on the remote (empty initial commit, pushed) … This ensures the feature\n    # branch exists at the remote before any task branches are created from it.\"\n    step: { kind: code-action, action: git.createBranch }\n\n  # ---- per task, strictly sequential ---------------------------------------\n  - id: build\n    # Step 5: \"Execute tasks one at a time in order (never concurrently).\"\n    iterate: tasks\n    rework: implement\n    on_reject: { counter: retries, max: 2, then: escalate }\n    ladder:\n      - id: issue\n        kind: code-action\n        action: forge.openIssue\n        sets: issue-open\n\n      - id: implement\n        # The specialist named in the Task Issue's `Assigned Specialist` field.\n        kind: model-step\n        agent: by-tech-tag\n        sets: in-progress\n\n      - id: pr\n        kind: code-action\n        action: forge.openPR\n        sets: pr-open           # label: ready-for-review\n\n      - id: review\n        # Step 6: \"reviews systematically against acceptance criteria … adds label approved\n        # (if approved) or removes ready-for-review (if changes requested)\"\n        # Step 7: \"Return to step 6 — still for the same task. Loop until approved.\"\n        # ADDED: a cap of 2. The skill's loop is UNBOUNDED; S13's L28 caps task-level rounds,\n        # and an uncapped backward edge is an `invalid` diagnostic. A deliberate divergence\n        # from the skill, recorded rather than silent.\n        kind: model-step\n        agent: code-reviewer\n        sets: in-review\n        on_reject: { goto: implement, counter: review_rounds, max: 2, then: escalate }\n\n      - id: merge\n        # Step 8: \"merges the task PR into the feature branch, adds label merged … and closes\n        # the Task Issue. Only then does the coordinator advance to the next task.\"\n        kind: code-action\n        action: forge.merge\n        sets: merged\n\n      - id: close-issue\n        kind: code-action\n        action: forge.closeIssue\n\n  # ---- feature-level ------------------------------------------------------\n  - id: feature-verification\n    # Step 9: \"When every Task Issue for the feature has label merged, task-coordinator asks\n    # the user for final verification against the feature's acceptance criteria.\"\n    step: { kind: gate, question: verify-feature }\n    on_reject:\n      goto: build\n      with: { mode: fix }\n      counter: feature_rounds\n      max: 2\n      then: escalate\n\n  - id: choose-base\n    # Step 10: \"If an unstable branch exists in the repo, steward MUST ask the user whether to\n    # target main or unstable. If no unstable branch exists, default to main.\"\n    # A gate whose answers are a CHOICE, not approve/deny — the format's closed answer set\n    # handles it. The `when` makes it appear only where the choice exists.\n    when: { field: flags.has_unstable_branch, op: eq, value: true }\n    step: { kind: gate, question: which-base }\n\n  - id: merge-feature\n    # \"Steward reports the merge commit back to the user. Then closes the Feature Issue.\"\n    step: { kind: code-action, action: forge.merge }\n\n  - id: close-feature-issue\n    step: { kind: code-action, action: forge.closeIssue }\n\nquestions:\n  verify-feature:\n    prompt: Every task is merged. Verify the feature against its acceptance criteria?\n    answers: [approve, needs-work, abort]\n  which-base:\n    prompt: This repository has an unstable branch. Merge the feature into which?\n    answers: [main, unstable, abort]\n",
+      "origin": "system",
+      "version": 1,
+      "revision": 2,
+      "contentHash": "866b6e2674fe407b4b665707f6754d22ad4ee9da0644008df2fbf1a7fead8ab7",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "feature-issue",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "task-breakdown",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "build",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    },
+    "goal-to-brief": {
+      "name": "goal-to-brief",
+      "title": "Goal to Brief",
+      "description": "Starts on an approved goal, has the brief author write the brief, and waits for a person to approve it.",
+      "path": "",
+      "content": "# goal-to-brief — the brief lane (criteria 3, 12): it starts ON an approved\n# goal (T13 checks the clause before any row exists), the brief-author files\n# the brief row and pins its document, and the GATE decides it — a person's\n# approve/reject lands on the brief through DecideBrief (claimed-FROM, so a\n# replay cannot double-decide), and revise sends the lane around again for\n# the next version (a second brief_create, never an edit of the judged one).\nid: goal-to-brief\nschemaVersion: 1\nversion: 1\nrequires: [{ any_of: [{ type: goal, state: approved }] }]\noutput: [brief, brief.md]\nlanes:\n  - id: brief\n    step:\n      kind: model-step\n      agent: brief-author\n      produces: brief.md\n      emits:\n        - { type: brief, attach: [brief.md] }\n  - id: brief-gate\n    step: { kind: gate, question: approve-brief, decides: brief }\n    on_reject:\n      goto: brief\n      with: { mode: revise }\n      counter: brief_rounds\n      max: 2\n      then: escalate\nquestions:\n  approve-brief:\n    prompt: Approve this brief and hand it to a planner?\n    answers: [approve, revise, abort]\n",
+      "origin": "system",
+      "version": 1,
+      "revision": 2,
+      "contentHash": "46addfc2d327175a2e48655d518cb992e542f305beaecdd871acf2deaea14ca2",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "brief",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    },
+    "golden-broken": {
+      "error": "blueprint \"golden-broken\" is not shipped and not in this project\n  why:  it must be a shipped name or a file in ./aeon/blueprints\n  do:   aeon blueprint list"
+    },
+    "golden-custom": {
+      "name": "golden-custom",
+      "title": "Golden Custom",
+      "path": "",
+      "content": "id: golden-custom\nschemaVersion: 1\nversion: 1\nlanes:\n  - id: approve\n    step: {kind: gate, question: go}\nquestions:\n  go:\n    prompt: Continue?\n    answers: [yes, no]\n",
+      "origin": "user",
+      "version": 1,
+      "revision": 1,
+      "contentHash": "68b90a4cd11849b2fd774f33e95f4c84c740c3792b7cec5c1029536cf46c098b",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": []
+    },
+    "proposal-brief": {
+      "name": "proposal-brief",
+      "title": "Proposal and Brief",
+      "description": "Drafts a proposal, gets it approved, writes the brief from it, self-checks the brief and asks for approval.",
+      "path": "",
+      "content": "# proposal-brief — derived from opencode/skills/proposal-brief-protocol/SKILL.md (833 lines)\n#\n# Driven by brief-author and proposal-author. It is also the protocol that produced every\n# document in docs/aeon/ — which makes it the one whose output this repository is made of.\n#\n# A THIRD STRUCTURAL SHAPE. dev-loop and development-map both END IN A MERGE. This one ends in\n# an approved document and a handoff: there is nothing to merge, no iterating lane, and no code\n# action anywhere. See README.md.\n---\nid: proposal-brief\nschemaVersion: 1\nversion: 1\n\nlanes:\n  # ---- part 1: the proposal, optional ---------------------------------------\n  - id: proposal\n    # \"Part 1 — The proposal schema\": NN — Title / What it is / Why it matters /\n    # What exists today / Proposed shape / Risks / notes.\n    # Conditional because the brief's §7 is \"Overrides to the proposal — Fill, or DELETE IF\n    # NONE\": a brief may implement a proposal, or stand alone.\n    when: { field: flags.has_proposal, op: eq, value: true }\n    step: { kind: model-step, agent: proposal-author, produces: proposal.md }\n\n  - id: proposal-gate\n    when: { field: flags.has_proposal, op: eq, value: true }\n    step: { kind: gate, question: approve-proposal }\n    on_reject:\n      goto: proposal\n      counter: proposal_rounds\n      max: 2\n      then: escalate\n\n  # ---- part 2: the brief ---------------------------------------------------\n  - id: brief\n    # The 14-section template. Four sections are \"Constant — copy verbatim\": §1, §9, §12, §13.\n    # GAP-6: `produces:` asserts a path EXISTS. It cannot assert §1 was copied verbatim or that\n    # §9's constant rows survived — and the skill is explicit about why that matters: \"do not\n    # trim them per project — they are short, and each one exists because its absence caused a\n    # specific failure.\" A trimmed brief is the failure mode, and it passes `produces:`.\n    step: { kind: model-step, agent: brief-author, produces: brief.md }\n\n  - id: self-check\n    # \"§13 Pre-dispatch self-check\" — six groups, A through F, and A is \"Mechanical — paste the\n    # command and its output\". The author runs it against its OWN finished brief, so this is a\n    # step validating the previous step's product, the same relationship `verify` has to a task\n    # in dev-loop.\n    step: { kind: model-step, agent: brief-author }\n    on_reject:\n      goto: brief\n      counter: selfcheck_rounds\n      max: 2\n      then: escalate\n\n  - id: brief-gate\n    # The human reads the brief. This is the protocol's only unconditional gate, and its terminal\n    # one — there is no merge after it.\n    step: { kind: gate, question: approve-brief }\n    on_reject:\n      goto: brief\n      with: { mode: revise }\n      counter: brief_rounds\n      max: 2\n      then: escalate\n\n# The protocol's product is an APPROVED BRIEF. What happens next is another protocol's —\n# dev-loops-brief runs dev-loop against it — so this blueprint terminates on the gate rather\n# than on an action. Nothing is merged, nothing is pushed, and no code action appears anywhere.\n\nquestions:\n  approve-proposal:\n    prompt: Approve the proposal, or send it back?\n    answers: [approve, revise, abort]\n  approve-brief:\n    prompt: Approve the brief and hand it to a planner?\n    answers: [approve, revise, abort]\n\n# NOT EXPRESSED, deliberately — these are handler-body content, not lanes:\n#\n#   The shared discipline (§0 asking is a tool call · §0b show it before you ask about it ·\n#   §1 verify before claiming · §2 name the near-miss · §3 numbers and truth tables, never bare\n#   negatives · §4 paths). Six rules that shape HOW a document is written, which is exactly\n#   S11's DOMAIN category — judgement the model still needs, in the body of brief-author and\n#   proposal-author.\n#\n#   §12 \"How to decompose\" is instructions IN the brief, to a later planner. It is content this\n#   protocol produces, not a step it performs.\n#\n# AND ONE CONSTRAINT THAT LOOKS LIKE A CONFLICT AND IS NOT:\n#\n#   \"the plan is a numbered sequence, NEVER a dependency graph (R11)\"\n#\n#   S13's L31 topologically sorts a plan's tasks. That is not a contradiction: L31's sort is\n#   STABLE, so a plan with no `depends_on` sorts to its declared order and R11 is satisfied for\n#   free. Two protocols with different task models, one sorting rule. Recorded because it reads\n#   like a conflict on first look.\n",
+      "origin": "system",
+      "version": 1,
+      "revision": 2,
+      "contentHash": "b5f744d3775a4ad576b7ce5e5ef44c0efd801b1d9c805f233ac6f61560614dda",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "proposal",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "brief",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "self-check",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    },
+    "research-map": {
+      "name": "research-map",
+      "title": "Research Map",
+      "description": "A planner asks a surveyor for findings and a reporter writes them up: one agent asking another.",
+      "path": "",
+      "content": "# research-map — S14's demo blueprint: an agent asking another agent.\n#\n# This is the slice's keystone made walkable (DEMO §4): a planning step, then\n# a step that does NOT call a model and does NOT call a tool — it asks\n# reddit-agent, whose signed card offers `summarise-sentiment`, for a\n# judgement. The step suspends (the process exits; AS4, P2), the task is a\n# row, and a completion resumes the loop cold.\n#\n# What it needs before it can START, not merely fail later:\n#   - a signed card for reddit-agent at \u003cstore dir\u003e/agentsvc/cards/reddit-agent.json\n#     (the walk publishes one; AS2 — no card, no ask, refused at the pin);\n#   - a daemon started through cmd/aeon serve, which wires the card store\n#     (an unwired daemon refuses the lane at loop start with the honest\n#     sentence — never a durable loop guaranteed to block).\n#\n# The third lane runs AFTER the resume: `report` is an ordinary model step,\n# and the loop reaching it is the proof the cold resume moved the ladder.\n---\nid: research-map\nschemaVersion: 1\nversion: 1\n\nlanes:\n  - id: plan\n    step: { kind: model-step, agent: project-planner, produces: PLAN.md }\n\n  - id: survey\n    # The delegation. `agent` is the CALLER (the planner asks); the skill\n    # names the CALLEE and its skill as `agent/skill`. Params ride the task\n    # row so a resumed callee answers the ask it was given, not a re-guess.\n    step:\n      {\n        kind: model-step,\n        agent: project-planner,\n        skill: \"reddit-agent/summarise-sentiment\",\n        params: { query: \"aeon\" },\n        produces: SURVEY.md,\n      }\n\n  - id: report\n    step: { kind: model-step, agent: golang-engineer, produces: REPORT.md }\n",
+      "origin": "system",
+      "version": 1,
+      "revision": 2,
+      "contentHash": "a3a499ca009f80807009025bd8144357e3473dc09a3da89913c1c1718984cbc4",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "plan",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "survey",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "report",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    },
+    "roadmap-plan": {
+      "name": "roadmap-plan",
+      "title": "Roadmap Plan",
+      "description": "One step that turns a roadmap item into a plan.",
+      "path": "",
+      "content": "id: plan\nschemaVersion: 1\nversion: 1\nlanes:\n  - id: only\n    step: {kind: model-step, agent: project-planner}\n",
+      "origin": "system",
+      "version": 1,
+      "revision": 2,
+      "contentHash": "08aa5c6c34760d0bb6f0888ec1e1df490483c6b5d970bf688770491f3e8aa394",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "only",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    },
+    "tag-only": {
+      "name": "tag-only",
+      "title": "Tech Tag Rehearsal",
+      "description": "One step that picks its agent by tech tag. Used to try the tag resolver.",
+      "path": "",
+      "content": "# tag-only — the bench demo runner's one-lane rehearsal of the tech-tag\n# resolver (S13, spec 2026-10-25-bench-demo-runner). Not a workflow: the\n# resolver's two honest outcomes both surface from this single lane — an\n# unknown tag stops the loop naming the tag and the available tags, a known\n# tag dispatches the RESOLVED handler (visible on the step row as the step's\n# agent). It needs no credential to show the refusal half, which is why the\n# demo runs it live.\nid: tag-only\nschemaVersion: 1\nversion: 1\nlanes:\n  - id: implement\n    step: {kind: model-step, agent: by-tech-tag, produces: OUT.md}\n",
+      "origin": "system",
+      "version": 1,
+      "revision": 2,
+      "contentHash": "b5bc01598ea0ca069f9eec180bd15b3167b8b575925c1fbb31263b7e27c0b08e",
+      "divergedFromShipped": false,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "implement",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    },
+    "two-step": {
+      "name": "two-step",
+      "title": "Two Step",
+      "description": "Two agent steps with a person's approval between them. A small flow for trying the engine.",
+      "path": "",
+      "content": "# S8 test bench blueprint: two model steps with a human gate between them.\nid: two-step\nschemaVersion: 1\nversion: 2\nlanes:\n  - id: survey\n    step: {kind: model-step, agent: default, produces: SURVEY.md}\n  - id: approve\n    step: {kind: gate, question: approve-survey}\n    on_reject: {goto: survey, counter: survey_revisions, max: 2, then: block}\n  - id: summarise\n    step: {kind: model-step, agent: default, produces: SUMMARY.md}\nquestions:\n  approve-survey:\n    prompt: Approve the survey and continue?\n    answers: [approve, revise, abort]\n# edited by the operator\n",
+      "origin": "system",
+      "version": 2,
+      "revision": 2,
+      "contentHash": "cebc0a771d962678f911e974dcde1da2a38303bcaff46fdf53e71a123f7d5e89",
+      "divergedFromShipped": true,
+      "updatedAt": "",
+      "updatedBy": "user:test",
+      "report": null,
+      "references": [],
+      "locked": true,
+      "overridable": [
+        {
+          "lane": "survey",
+          "fields": [
+            "route"
+          ]
+        },
+        {
+          "lane": "summarise",
+          "fields": [
+            "route"
+          ]
+        }
+      ]
+    }
+  },
+  "validate": {
+    "content:broken": {
+      "blueprint": "",
+      "schemaVersion": 0,
+      "version": 0,
+      "validCount": 0,
+      "diagnostics": [
+        {
+          "state": "invalid",
+          "kind": "yaml",
+          "path": "$",
+          "message": "yaml: line 3: did not find expected ',' or ']'"
+        }
+      ]
+    },
+    "content:garbage": {
+      "blueprint": "",
+      "schemaVersion": 0,
+      "version": 0,
+      "validCount": 0,
+      "diagnostics": [
+        {
+          "state": "invalid",
+          "kind": "yaml",
+          "path": "$",
+          "message": "yaml: line 1: did not find expected node content"
+        }
+      ]
+    },
+    "content:valid-custom": {
+      "blueprint": "golden-custom",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 6,
+      "diagnostics": []
+    },
+    "name:brainstorm": {
+      "blueprint": "brainstorm",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 8,
+      "diagnostics": []
+    },
+    "name:chat": {
+      "blueprint": "chat",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 8,
+      "diagnostics": []
+    },
+    "name:conversational-map": {
+      "blueprint": "conversational-map",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 28,
+      "diagnostics": []
+    },
+    "name:dev-loop": {
+      "blueprint": "dev-loop",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 81,
+      "diagnostics": []
+    },
+    "name:development-map-direct": {
+      "blueprint": "development-map-direct",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 28,
+      "diagnostics": []
+    },
+    "name:development-map-pipeline": {
+      "blueprint": "development-map-pipeline",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 47,
+      "diagnostics": []
+    },
+    "name:goal-to-brief": {
+      "blueprint": "goal-to-brief",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 10,
+      "diagnostics": []
+    },
+    "name:golden-broken": {
+      "error": "blueprint \"golden-broken\" is not shipped and not in this project\n  why:  it must be a shipped name or a file in ./aeon/blueprints\n  do:   aeon blueprint list"
+    },
+    "name:golden-custom": {
+      "blueprint": "golden-custom",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 6,
+      "diagnostics": []
+    },
+    "name:proposal-brief": {
+      "blueprint": "proposal-brief",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 22,
+      "diagnostics": []
+    },
+    "name:research-map": {
+      "blueprint": "research-map",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 12,
+      "diagnostics": [
+        {
+          "state": "unverifiable",
+          "kind": "agentsvc",
+          "path": "lanes[survey].step.skill",
+          "message": "the skill target \"reddit-agent/summarise-sentiment\" cannot be checked — agent services are not configured on this process; starting a loop with this lane is refused until they are",
+          "slice": "S14"
+        }
+      ]
+    },
+    "name:roadmap-plan": {
+      "blueprint": "plan",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 6,
+      "diagnostics": []
+    },
+    "name:tag-only": {
+      "blueprint": "tag-only",
+      "schemaVersion": 1,
+      "version": 1,
+      "validCount": 6,
+      "diagnostics": []
+    },
+    "name:two-step": {
+      "blueprint": "two-step",
+      "schemaVersion": 1,
+      "version": 2,
+      "validCount": 13,
+      "diagnostics": []
+    }
+  }
+}

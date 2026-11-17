@@ -1,0 +1,27 @@
+{
+  "description": "verify.show refuses an id that no gate row answers: the id is named in the refusal (code -31870, kind command-unknown) with the store's own sentence, so the client can branch on the family and the person reads which id it asked about.",
+  "method": "verify.show",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1023,
+    "method": "verify.show",
+    "params": {
+      "id": "vcm-999"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1023,
+    "error": {
+      "code": -31870,
+      "message": "the verify operation was refused",
+      "data": {
+        "kind": "command-unknown",
+        "what": "verify show refused: vcm-999 is not a gate",
+        "means": "the daemon understood and declined — the gate set is exactly as it was (no row written, no run recorded, no template copied), and the kind in data kind says which law it refused against",
+        "todo": "do what the what sentence names — fix the field it refused, clear the name it says is taken, or ask for the root it says is missing",
+        "fatal": false
+      }
+    }
+  }
+}

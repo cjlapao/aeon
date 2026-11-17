@@ -1,0 +1,23 @@
+{
+  "description": "The backup.finished event, emitted by the backup engine itself (T4) on the way out of a successful run, through the daemon's one publish seam (T6): the file's NAME — never a path, BK12 — with its size and sha256, the migrations applied, the verify level the run's own check reached, the free-space state, and the ledger's reason/actor pair. A subscribed panel refreshes its backup list from this; the payload is ids, enums and numbers only, daemon-wide (no componentRoot — the backup has no project).",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-62backup01",
+      "seq": 9101,
+      "kind": "backup.finished",
+      "at": "2026-11-02T11:59:31.000000000Z",
+      "payload": {
+        "file_name": "aeon-state-20261102T115930Z-v76.aeonbak",
+        "size_bytes": 1845504,
+        "sha256": "9c2f8b1e4d7a63509c8b2e1f4a7d63509c8b2e1f4a7d63509c8b2e1f4a7d6350",
+        "applied": 76,
+        "verify_level": "verified",
+        "free_space_state": "ok",
+        "reason": "manual",
+        "actor_kind": "user"
+      }
+    }
+  }
+}

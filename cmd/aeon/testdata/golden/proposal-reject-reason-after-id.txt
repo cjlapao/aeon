@@ -1,0 +1,2 @@
+$ aeon proposal reject 1 --reason too late
+! refused: reject takes exactly ONE id

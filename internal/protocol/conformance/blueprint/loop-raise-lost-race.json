@@ -1,0 +1,22 @@
+{
+  "description": "loop.raise's LOST RACE is a RESULT, not an error (the loop.resume precedent, byte for byte): the cap WAS lifted when the raise's budget commit landed (the raised audit event says so, this call's actor in it), and the loop moved first — so the answer carries raised=true with Resumed false, the status the loop already has, a note, and the refusal that names the door that state has. An error with a dead end would tell the person the lift did not happen, and it did.",
+  "method": "loop.raise",
+  "request": {
+    "jsonrpc": "2.0", "id": 611, "method": "loop.raise",
+    "params": {"id": "loop-1", "usdCap": 1200, "reason": "the estimate was off — the cap is right, give it the room"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 611,
+    "result": {
+      "loopId": "loop-1",
+      "raised": {"budgetId": "bud-epc-1", "dimension": "usd", "from": 900, "to": 1200},
+      "resumed": false,
+      "status": "done",
+      "note": "the loop moved before the raise could land — the refusal names the door its state has",
+      "refusal": {
+        "kind": "terminal",
+        "detail": "the loop is done — a raise resumes a loop the cap parked; this one finished before the raise landed"
+      }
+    }
+  }
+}

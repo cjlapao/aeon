@@ -1,0 +1,21 @@
+{
+  "description": "`retrieval.reindexPlan` (S54 T2, SP2) answers what a rebuild WOULD do and WOULD cost without doing any of it: the numbers come from the SAME estimate walk the query-side priced refusal already runs (files, stale files, chunks, ~tokens at bytes/4), and the cost rides the SAME three-state pricing the status drift uses — known carries the figure, unknown carries the sentence, never a bare number and never the $0.00 a configured-but-unpriced route would invite (O3/M30). It takes no embedder by its own signature: a preview that embedded to price itself charged for the preview. willReplaceEmbeddings is the corpus row's own history — a never-embedded corpus CREATES vectors, it replaces none. The corpus is NAMED (O8, no default) and an unknown one is refused (-31957), not estimated.",
+  "method": "retrieval.reindexPlan",
+  "request": {"jsonrpc": "2.0", "id": 343, "method": "retrieval.reindexPlan", "params": {"componentRoot": "/home/dev/aeon", "corpus": "code"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 343,
+    "result": {
+      "componentRoot": "/home/dev/aeon",
+      "corpus": "code",
+      "files": 1204,
+      "staleFiles": 38,
+      "staleChunks": 96,
+      "estimatedInputTokens": 412600,
+      "estimateBasis": "approximately 4 bytes per token over the chunk bodies — the conventional English-text approximation, not a provider's tokenizer",
+      "cost": {"usd": 0.12, "state": "known"},
+      "embedModel": "text-embedding-3-small",
+      "embedDim": 1536,
+      "willReplaceEmbeddings": true
+    }
+  }
+}

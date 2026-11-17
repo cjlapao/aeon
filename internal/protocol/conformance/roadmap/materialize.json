@@ -1,0 +1,6 @@
+{
+  "description": "Materialization (T4, R4): the claim `ready → running` is the single serialization point — and its readiness was RE-CHECKED at the attempt, against the row as it is now (D4: brief AND plan AND priority-not-unknown, never a cached verdict). This fixture is the DIRECT branch: the project has no queue rows, so the payload goes to the same loop.start door the queue's own advance ends at — one door, both ways. The other branch answers {\"queued\": true, \"queueItemId\": N, ...} instead: S24's ordering then decides WHEN the loop runs, appending starts nothing (CG4), and the item honestly sits running-until-started until it does (D6).",
+  "method": "roadmap.materialize",
+  "request": {"jsonrpc": "2.0", "id": 349, "method": "roadmap.materialize", "params": {"id": 12, "blueprint": "dev-loop", "goal": "export monthly statements per the agreed plan", "workspaceRoot": "/srv/projects/ledger", "tech": "go"}},
+  "response": {"jsonrpc": "2.0", "id": 349, "result": {"started": true, "loopSlug": "roadmap-item-12", "stamped": true, "status": "running"}}
+}

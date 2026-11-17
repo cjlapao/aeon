@@ -1,0 +1,25 @@
+{
+  "description": "`trigger.list` is S20 T8's operational view (pause/resume live in CLI and app only, TR12): every trigger's kind, blueprint, cron and zone, the PAUSED state, and the next fire computed by the SAME library the clock walks — printed, never guessed. Policy NEVER appears here: a plane that cannot evaluate governance must not print its implicit consent; a refusal arrives in the fire record, in S10's own sentence (TestPauseAndTriggerAccessAreDistinct).",
+  "method": "trigger.list",
+  "request": { "jsonrpc": "2.0", "id": 68, "method": "trigger.list", "params": {} },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 68,
+    "result": {
+      "triggers": [
+        {
+          "id": "nightly-survey",
+          "kind": "schedule",
+          "blueprint": "survey-two-step",
+          "expr": "30 3 * * *",
+          "zone": "Europe/London",
+          "window": "09:00-17:00 (1,2,3,4,5)",
+          "workspace": "/home/ops/survey",
+          "goal": "nightly inventory",
+          "paused": true,
+          "nextFire": "2026-10-28T03:30:00Z (Europe/London)"
+        }
+      ]
+    }
+  }
+}

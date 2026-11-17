@@ -1,0 +1,23 @@
+{
+  "description": "A person stops a RUNNING loop (S55 T5, LC2): the daemon stops the loop's in-flight steps first (each parks suspended/user), lets the runner settle, then compare-and-set parks the loop waiting/stopped — one control event, the person's actor from the connection and the reason in its own column. The answer says what parked and where the loop now is; nothing was committed failed (a stop never races a step into failure, LC2's fixed order).",
+  "method": "loop.stop",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 501,
+    "method": "loop.stop",
+    "params": {
+      "id": "loop-9",
+      "reason": "the goal changed — this work is obsolete"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 501,
+    "result": {
+      "loopId": "loop-9",
+      "stopped": true,
+      "status": "waiting",
+      "parkedSteps": [41]
+    }
+  }
+}

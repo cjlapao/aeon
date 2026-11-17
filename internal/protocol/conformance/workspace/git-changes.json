@@ -1,0 +1,21 @@
+{
+  "description": "`workspace.git.changes` answers the \"edited N files +A −R\" summary: every changed path of the working tree against HEAD with its added and removed line counts, its one-word status, and the totals. An untracked file is counted by its lines as git would show it once staged. A binary file, or a count that could not be read, carries no `added`/`removed` at all — never a zero standing in — and the totals cover only files whose counts are known. Three states like `workspace.git.status`: ok | not-a-repo | unavailable-with-reason.",
+  "method": "workspace.git.changes",
+  "request": {
+    "jsonrpc": "2.0", "id": 84, "method": "workspace.git.changes",
+    "params": { "componentRoot": "/home/dev/code/aeon-qa-workspace" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 84,
+    "result": {
+      "state": "ok",
+      "files": [
+        { "path": "internal/greet/greet.go", "status": "added", "added": 42, "removed": 0 },
+        { "path": "cmd/hello/main.go", "status": "modified", "added": 9, "removed": 5 },
+        { "path": "logo.png", "status": "modified", "binary": true }
+      ],
+      "totalAdded": 51,
+      "totalRemoved": 5
+    }
+  }
+}

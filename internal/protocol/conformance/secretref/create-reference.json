@@ -1,0 +1,31 @@
+{
+  "description": "S59 T6 (EV7): secretref.create takes a NAME, a SOURCE KIND and a SOURCE — the three things that say where a value lives — plus what the child will call it (injectAs, which defaults to the name and must be a variable name, refused as inject-as-shape otherwise). No key in this params bag can hold a value, and the refusal of one happens at the door. `origin` is `user` because a door cannot claim the system's, and `referencedBy` starts empty: a reference exists before any environment uses it, which is how a person stages a secret before wiring it.",
+  "method": "secretref.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 932,
+    "method": "secretref.create",
+    "params": {
+      "name": "deploy-token",
+      "description": "The deploy bot's token, held by the daemon's environment.",
+      "sourceKind": "daemon-env",
+      "source": "DEPLOY_TOKEN",
+      "injectAs": "DEPLOY_TOKEN"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 932,
+    "result": {
+      "id": "sref_1a2b3c4d",
+      "name": "deploy-token",
+      "description": "The deploy bot's token, held by the daemon's environment.",
+      "sourceKind": "daemon-env",
+      "source": "DEPLOY_TOKEN",
+      "injectAs": "DEPLOY_TOKEN",
+      "origin": "user",
+      "createdAt": "2026-11-03T09:10:00Z",
+      "updatedAt": "2026-11-03T09:10:00Z"
+    }
+  }
+}

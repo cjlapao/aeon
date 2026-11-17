@@ -1,0 +1,63 @@
+{
+  "description": "The control read (S55 T5, LC16) for a loop blocked on a budget cap with an open stop request from its agent: eligibility is the daemon's OWN verdict (the same CheckStop/CheckResume/CheckCancel the operations run as a gate, plus the cap-hit raise predicate) — the client renders it, never guesses it. stop and resume are refused with the same refusal the operation would answer, cancel is eligible, and raise is the door for this state. openRequests and the recent audit ride along; capHit is absent until the budget rows name the cap (S55 T7).",
+  "method": "loop.control",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 504,
+    "method": "loop.control",
+    "params": {
+      "id": "loop-9"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 504,
+    "result": {
+      "loopId": "loop-9",
+      "status": "blocked",
+      "eligibility": {
+        "stop": {
+          "eligible": false,
+          "refusal": {
+            "kind": "blocked",
+            "detail": "the loop is blocked — it has its own remedy, not a stop"
+          }
+        },
+        "resume": {
+          "eligible": false,
+          "refusal": {
+            "kind": "cap-hit",
+            "detail": "the loop is blocked on a budget cap — raise it (loop.raise)"
+          }
+        },
+        "cancel": {
+          "eligible": true
+        },
+        "raise": {
+          "eligible": true
+        }
+      },
+      "openRequests": [
+        {
+          "id": 12,
+          "loopId": "loop-9",
+          "requestedAt": "2026-11-01T09:15:00Z",
+          "byAgent": "builder",
+          "byStepId": 41,
+          "reason": "this loop is going in circles — a person should stop it",
+          "status": "open"
+        }
+      ],
+      "events": [
+        {
+          "at": "2026-11-01T09:15:00Z",
+          "kind": "request",
+          "actorKind": "agent",
+          "actorId": "builder",
+          "stepId": 41,
+          "reason": "this loop is going in circles — a person should stop it"
+        }
+      ]
+    }
+  }
+}

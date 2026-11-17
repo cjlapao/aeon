@@ -1,0 +1,13 @@
+{
+ "__status": 200,
+ "__headers": {
+  "Link": "<{{BASE}}/repos/acme/widget/commits/aaa/check-runs?per_page=100&page=2>; rel=\"next\""
+ },
+ "body": {
+  "total_count": 3,
+  "check_runs": [
+   {"id": 101, "name": "page-one-a", "status": "completed", "conclusion": "success"},
+   {"id": 102, "name": "page-one-b", "status": "completed", "conclusion": "success"}
+  ]
+ }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "notify.channel.test sends the fixed test envelope through the REAL dispatcher — signed, headered, logged like any delivery — and answers with the delivery outcome. It is refused for a disabled or archived channel, and a test that ran and failed comes back as error -31929 carrying the honest outcome, never a green write over a dead receiver (SV7).",
+  "method": "notify.channel.test",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 946,
+    "method": "notify.channel.test",
+    "params": {
+      "id": "nc-01JTEST0000000000000000001"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 946,
+    "result": {
+      "outcome": "sent",
+      "attempts": 1,
+      "at": "2026-11-03T09:12:00Z"
+    }
+  }
+}

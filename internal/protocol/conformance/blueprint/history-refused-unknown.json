@@ -1,0 +1,26 @@
+{
+  "description": "History of a name that never existed is refused naming the nearest names \u2014 while a DELETED blueprint's history stays readable (append-only revisions).",
+  "method": "blueprint.history",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 93,
+    "method": "blueprint.history",
+    "params": {
+      "name": "two-steps"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 93,
+    "error": {
+      "code": -31876,
+      "message": "no blueprint by that name \u2014 and no history of one either",
+      "data": {
+        "what": "nearest names: two-step",
+        "means": "usage, history, revision, diff and lint answer about a NAME the store knows \u2014 a deleted blueprint's history still counts as known (the revision table is append-only); this is the never-existed case",
+        "todo": "check the name against blueprint.list; the what field names the nearest names",
+        "fatal": false
+      }
+    }
+  }
+}

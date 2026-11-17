@@ -1,0 +1,14 @@
+{
+  "description": "D12: remove is CANCEL, never delete — the row stays, `cancelled`, saying what happened to it; the board's history survives the act of tidying. A cancelled item answers queue.list forever after. The row's size facts ride along untouched: history is not edited, only annotated by its own status.",
+  "method": "queue.remove",
+  "request": {"jsonrpc": "2.0", "id": 303, "method": "queue.remove", "params": {"id": 7}},
+  "response": {"jsonrpc": "2.0", "id": 303, "result": {"item": {
+    "id": 7, "position": 3, "status": "cancelled",
+    "blueprint": "dev-loop",
+    "goal": "Retire the legacy CSV exporter",
+    "workspaceRoot": "/srv/projects/ledger",
+    "attended": null,
+    "sizeMin": 2, "sizeMax": 3, "sizeBasis": "exporter call sites plus the docs line; removal-only change",
+    "createdAt": "2026-10-29T12:03:00Z", "updatedAt": "2026-10-29T12:09:00Z"
+  }}}
+}

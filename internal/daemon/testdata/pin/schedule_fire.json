@@ -1,0 +1,6 @@
+{
+  "attended": false,
+  "allow_outward": false,
+  "started_by": "trigger",
+  "trigger_id": "nightly-survey"
+}

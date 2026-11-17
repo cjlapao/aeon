@@ -1,0 +1,49 @@
+{
+ "description": "S61 T8 (GI17): the agent's plan ask, from INSIDE an intake session — intake.propose files an INERT proposal row of kind intake_plan (no row of the plan lands in any registry until a person commits it, and the commit road is the person's intake.commit door, not this one). The request carries NO intakeId: the daemon stamps the calling loop's own intake row (a typed one meets the strict decode and the parse refusal names it); no actor, status, kind, path, publish mode or option member exists. The plan's charter and components ride as DATA. The answer is the stored row with THE copyable commit command and the fixed inertness note — one machinery, one sentence.",
+ "method": "intake.propose",
+ "request": {
+  "jsonrpc": "2.0",
+  "id": 426,
+  "method": "intake.propose",
+  "params": {
+   "charter": {
+    "goal": "ship the goal-intake plane"
+   },
+   "components": [
+    {"name": "Solo", "slug": "solo", "template": "go-service", "role": "standalone"}
+   ],
+   "projectName": "solo-project",
+   "reason": "the interview closed; this is the plan the person described, filed for their decision"
+  }
+ },
+ "response": {
+  "jsonrpc": "2.0",
+  "id": 426,
+  "result": {
+   "proposal": {
+    "id": 48,
+    "kind": "intake_plan",
+    "payload": {
+     "intakeId": "int-3f7c81ad",
+     "charter": {
+      "goal": "ship the goal-intake plane"
+     },
+     "components": [
+      {"name": "Solo", "slug": "solo", "template": "go-service", "role": "standalone"}
+     ],
+     "projectName": "solo-project",
+     "epics": null,
+     "goals": null,
+     "items": null,
+     "reason": "the interview closed; this is the plan the person described, filed for their decision"
+    },
+    "status": "proposed",
+    "createdAt": "2026-11-05T12:00:00Z",
+    "createdByKind": "agent",
+    "createdById": "intake-architect",
+    "command": "aeon proposal commit 48"
+   },
+   "note": "inert — nothing is enforced until a person commits this proposal at the socket's human door (TD2)"
+  }
+ }
+}

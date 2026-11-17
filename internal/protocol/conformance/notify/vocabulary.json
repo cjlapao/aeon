@@ -1,0 +1,67 @@
+{
+  "description": "notify.vocabulary answers the plane's whole descriptor from the daemon: the table's distinct kinds, the five attention severities, the closed template placeholders, the four tones, the dispatcher's channel and error enums and its constants (caps, dedup window, per-hour rate, timeout, attempts, queue) — one read so the app renders the editor without holding a vocabulary of its own (SV13, SV18).",
+  "method": "notify.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 934,
+    "method": "notify.vocabulary"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 934,
+    "result": {
+      "kinds": [
+        "budget.hit",
+        "budget.warn",
+        "loop.blocked",
+        "loop.finished",
+        "loop.stop.requested",
+        "loop.waiting",
+        "question.asked",
+        "watchdog.fired"
+      ],
+      "severities": [
+        "needs-you",
+        "stuck",
+        "blocked",
+        "stopped",
+        "info"
+      ],
+      "placeholders": [
+        "rootSlug",
+        "loopSlug",
+        "reasonKind",
+        "severity",
+        "count"
+      ],
+      "tones": [
+        "info",
+        "success",
+        "warning",
+        "danger"
+      ],
+      "errorKinds": [
+        "transport",
+        "timeout",
+        "status",
+        "refused-address",
+        "secret-missing",
+        "url-invalid"
+      ],
+      "channelKinds": [
+        "webhook"
+      ],
+      "limits": {
+        "titleMaxBytes": 120,
+        "bodyMaxBytes": 240,
+        "dedupMinutes": 10,
+        "defaultMaxPerHour": 30,
+        "maxPerHourFloor": 1,
+        "maxPerHourCeiling": 1000,
+        "sendTimeoutSecs": 10,
+        "attempts": 3,
+        "queueDepth": 256
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "description": "S45 T5 (PM7.1): the digest mismatch — the commit is BOUND to what was read. proposal.commit carries the digest proposal.get returned; any other value refuses naming both digests, applies nothing, flips nothing, audits nothing: a client can never commit a row it did not display. The desk's own sentence rides `what` VERBATIM (policyRefusal's rule, carried onto decisions) — the human reads the refusing code's words, not a paraphrase.",
+  "method": "proposal.commit",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 93,
+    "method": "proposal.commit",
+    "params": {
+      "id": 42,
+      "digest": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 93,
+    "error": {
+      "code": -31844,
+      "message": "proposal decision refused",
+      "data": {
+        "what": "refused: the proposal changed since you read it — its digest is 9f2c41d0f7a83b5c6e1d4a09b7f2e8c3516d0a4b98e7f2c1d0b3a69584736251, the commit carried 0000000000000000000000000000000000000000000000000000000000000000",
+        "means": "a proposal decision is bound to what was read (the digest), decided once (a decided row is immutable history), re-validated at commit, and every refusal leaves the row exactly where it was — a refusal here changed nothing",
+        "todo": "read the sentence in `what`; if the digest moved, re-read with proposal.get and commit what you actually saw; if the row is already decided, the refusal names who decided it",
+        "fatal": false
+      }
+    }
+  }
+}

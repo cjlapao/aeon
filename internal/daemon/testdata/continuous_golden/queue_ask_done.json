@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "position": 1,
+      "goal": "shipped",
+      "status": "done",
+      "loopSlug": "loop-one"
+    },
+    {
+      "id": 2,
+      "position": 2,
+      "goal": "decide the retry policy",
+      "status": "ready",
+      "loopSlug": ""
+    }
+  ],
+  "starts": null,
+  "question": {
+    "kind": "gate",
+    "body": "next queued item: decide the retry policy — advance?"
+  },
+  "sizingLoop": false
+}

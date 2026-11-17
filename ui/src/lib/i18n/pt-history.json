@@ -1,0 +1,77 @@
+{
+  "history": {
+    "manage": {
+      "title": "Histórico",
+      "subtitle": "O que o daemon consegue mostrar sobre execuções terminadas — e o que ele não consegue afirmar.",
+      "back": "Projetos",
+      "reconnecting": "O daemon está reconectando — a visão de histórico não pergunta nada até a conexão estar atual.",
+      "reconnectingHint": "Nenhuma linha é herdada da resposta anterior: uma resposta que nunca chegou não é um fato.",
+      "offline": "O daemon não está acessível — nada pode ser mostrado até ele voltar a responder.",
+      "actions": {
+        "retry": "perguntar ao daemon de novo"
+      },
+      "vocabulary": {
+        "failed": "O vocabulário do daemon não pôde ser lido — até ele responder, esta tela não nomeia faixas nem oferece agrupamento."
+      },
+      "scope": {
+        "title": "Escopo",
+        "subtitle": "Um escopo, um só caminho: o daemon é perguntado com as palavras de filtro dele, nunca com uma varredura desta tela.",
+        "rootLabel": "Raiz de componente",
+        "rootHint": "Escolha uma raiz ou deixe o intervalo inteiro — a tela nunca nomeia um componente que você não escolheu.",
+        "rootPicked": "As raízes abaixo são as que o daemon lista hoje; uma resposta vazia oferece apenas o intervalo inteiro.",
+        "rootAll": "todos os componentes (o intervalo inteiro)",
+        "laneLabel": "Faixa",
+        "laneHint": "As palavras de faixa são do daemon, servidas por history.vocabulary — esta tela não digita nenhuma delas.",
+        "laneDefault": "a faixa padrão do daemon",
+        "laneWaiting": "Nenhuma faixa ainda — nada pode ser escolhido até history.vocabulary responder.",
+        "sinceLabel": "Desde",
+        "sinceHint": "Um limite inferior opcional, enviado só quando você digita."
+      },
+      "coverage": {
+        "title": "Cobertura",
+        "scopeAll": "todos os componentes",
+        "live": "ativos: {count}",
+        "archived": "arquivados: {count}",
+        "span": "intervalo {oldest} → {newest}",
+        "healthy": "Nada aqui é indecodificável.",
+        "cannotSay": "Esta visão não consegue afirmar o conteúdo de {count} entradas arquivadas — elas não estão mostradas nem ausentes.",
+        "cannotSayHint": "Os ids nomeados abaixo são os que o daemon conseguiu apontar; a contagem é o total deles, e a lista tem o limite do próprio daemon.",
+        "notShown": "Não mostrado",
+        "notShownCount": "{count}",
+        "floorLabel": "Piso de custo",
+        "failed": "A leitura de cobertura foi recusada — as linhas abaixo ficam sem qualificação até ela responder.",
+        "loading": "Perguntando ao daemon o que ele cobre…",
+        "none": "Nenhuma resposta de cobertura chegou ainda — o que vem a seguir está sem qualificação."
+      },
+      "rows": {
+        "title": "Linhas",
+        "subtitle": "As linhas que o daemon agrupou e filtrou, na ordem da resposta dele.",
+        "loading": "Perguntando ao daemon…",
+        "failed": "As linhas foram recusadas.",
+        "noStatement": "O daemon respondeu sem linhas e não enviou declaração alguma — esta tela não escreve uma própria."
+      },
+      "row": {
+        "show": "abrir a entrada",
+        "lane": "faixa",
+        "outcome": "resultado",
+        "cost": "custo",
+        "duration": "duração",
+        "reason": "motivo"
+      },
+      "export": {
+        "label": "Exportar",
+        "working": "Perguntando ao daemon…",
+        "personOnly": "Exportar é porta de pessoa — fica desativado enquanto você estiver somente leitura ou o daemon não estiver respondendo.",
+        "done": "Salvas {count} linhas nos seus downloads.",
+        "refused": "A exportação foi recusada."
+      },
+      "drilldown": {
+        "title": "A entrada, pela porta dela",
+        "loading": "Perguntando ao daemon por esta entrada…",
+        "refused": "O daemon recusou esta entrada",
+        "nothing": "A resposta não trazia transcrição nem arquivos — não há nada a mostrar, e nada é inventado.",
+        "close": "fechar"
+      }
+    }
+  }
+}

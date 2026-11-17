@@ -1,0 +1,24 @@
+{
+  "description": "A unified diff between two answers computed daemon-side on the stored bytes \u2014 here the current row against what ships.",
+  "method": "blueprint.diff",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 91,
+    "method": "blueprint.diff",
+    "params": {
+      "name": "two-step",
+      "a": "current",
+      "b": "shipped"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 91,
+    "result": {
+      "diff": "--- current\n+++ shipped\n@@ -1,3 +1,3 @@\n id: two-step\n-schemaVersion: 2\n+schemaVersion: 1\n",
+      "aLabel": "current",
+      "bLabel": "shipped",
+      "equal": false
+    }
+  }
+}

@@ -1,0 +1,4 @@
+$ aeon policy add --type command_access --id pairing --target agent:alice --action deny --command git status --spec {"command":"git status","state":"deny"}
+! --spec and --command say "command" twice — say it once: --spec "{\"command\":\"git status\",\"state\":\"deny\"}" carries the whole spec, --command "git status" writes only the "command" field (and the "state" the row's action restates); drop one of them
+$ aeon policy list
+no policies. default is DENY (PL5) — nothing is granted until something grants it.

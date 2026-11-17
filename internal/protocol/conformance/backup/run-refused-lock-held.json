@@ -1,0 +1,27 @@
+{
+  "description": "backup.run refused because another backup holds the single-flight lock: the engine's refusal rides one code (the family's refusal voice) with the closed-set error_kind in data.kind so a client can branch on the state found — and with the person's sentence in data.what. The ledger row says refused/lock-held (a refusal is a fact of the schedule too), nothing was published, and the database is untouched.",
+  "method": "backup.run",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 951,
+    "method": "backup.run",
+    "params": {
+      "reason": "manual"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 950,
+    "error": {
+      "code": -31863,
+      "message": "the backup was refused",
+      "data": {
+        "kind": "lock-held",
+        "what": "backup run refused: the backup lock is held — pid 48213 started at 2026-11-02T11:55:00.000Z — wait for it to finish (a corpse older than the stale window would be reclaimed by this run)",
+        "means": "the daemon understood and declined — the database was left exactly as it was, no partial published, and the ledger row (where one was written) says refused with its error_kind",
+        "todo": "do what the what sentence names — free space, fix the dir, wait for the lock, or update the binary",
+        "fatal": false
+      }
+    }
+  }
+}

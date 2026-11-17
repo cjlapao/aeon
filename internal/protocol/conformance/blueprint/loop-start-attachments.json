@@ -1,0 +1,30 @@
+{
+  "description": "`loop.start` with files attached (S77): the bytes were PUT beforehand under the slug this start NAMES — an attachments field beside a minted slug is refused, because a minted slug owns no earlier puts — the door resolves every reference against the store before any row exists, refuses naming every offender, and the start's route must DECLARE the capability each type asks (image / pdf / file); an undeclared capability is not a silent yes. The store's receipts file the launch's kickoff row (which run 1 links), and the pinned revisions expand to base64 content blocks at the ONE compile boundary, every model step of this launch, exactly as the chosen skills beside them ride the launch.",
+  "method": "loop.start",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 84,
+    "method": "loop.start",
+    "params": {
+      "blueprint": "two-step",
+      "goal": "Reconcile the diagram with the shipped API",
+      "workspaceRoot": "/repo",
+      "route": "anthropic",
+      "slug": "diagram-reconcile",
+      "attachments": [
+        { "document": "@attachments/9c1ba7e0-diagram.png", "rev": 1 },
+        { "document": "@attachments/22f04a6c-notes.md", "rev": 2 }
+      ]
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 84,
+    "result": {
+      "id": "loop-7",
+      "slug": "diagram-reconcile",
+      "blueprint": "two-step",
+      "status": "running"
+    }
+  }
+}

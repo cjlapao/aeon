@@ -1,0 +1,82 @@
+{
+  "description": "S52 T4 (LM1, LM5, LM6): the AGENT's own read of memory — learnings.mine.query answers the readable set and nothing else: the person's word, learnings filed under the projects this agent's steps have actually run in, and the agent's own memory. Daemon-side filters only (queryText, tags, limit) — a person-scope widening or an actor param does not exist on this door, and a person session reaching it is refused by name (the opposite of the human-door pattern: here the AGENT view is the scoped one). Why each hit reads where it does is answered beside it: the M1 ordering note plus the basis sentence (D5/D6 — similarity within the set, never a re-widening).",
+  "method": "learnings.mine.query",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 452,
+    "method": "learnings.mine.query",
+    "params": {
+      "queryText": "export csv money columns",
+      "tags": [
+        {
+          "pattern": "ledger*"
+        }
+      ],
+      "limit": 5
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 452,
+    "result": {
+      "hits": [
+        {
+          "learning": {
+            "id": 7,
+            "scope": "person",
+            "scopeKey": "operator",
+            "body": "the balance column must render in every exported view — stated rule, not a suggestion",
+            "provenance": "told",
+            "tags": [
+              "ledger",
+              "exports"
+            ],
+            "createdAt": "2026-10-31T09:15:00Z"
+          },
+          "why": {
+            "rank": 1,
+            "m1Note": "relayed ranks below told, observed and assumed — a channel fact never outscores a person's word or a loop's seeing (M1's honesty ordering, unchanged by S52)",
+            "basis": "embedding similarity within the merged set (D6's within-set ranking), then M1's ordering"
+          }
+        },
+        {
+          "learning": {
+            "id": 21,
+            "scope": "project",
+            "scopeKey": "/srv/projects/ledger",
+            "body": "the CSV writer builds columns from the rendered table, so a column that renders must not be filtered at export",
+            "provenance": "observed",
+            "sourceLoopSlug": "dev-loops",
+            "sourceStepId": 2205,
+            "createdAt": "2026-11-03T18:42:00Z"
+          },
+          "why": {
+            "rank": 2,
+            "m1Note": "relayed ranks below told, observed and assumed — a channel fact never outscores a person's word or a loop's seeing (M1's honesty ordering, unchanged by S52)",
+            "basis": "embedding similarity within the merged set (D6's within-set ranking), then M1's ordering"
+          }
+        },
+        {
+          "learning": {
+            "id": 34,
+            "scope": "agent",
+            "scopeKey": "golang-engineer",
+            "body": "last month's export bug was the same column list read from the wrong struct tag",
+            "provenance": "assumed",
+            "tags": [
+              "ledger"
+            ],
+            "sourceLoopSlug": "dev-loops",
+            "sourceStepId": 2190,
+            "createdAt": "2026-11-04T08:55:00Z"
+          },
+          "why": {
+            "rank": 3,
+            "m1Note": "relayed ranks below told, observed and assumed — a channel fact never outscores a person's word or a loop's seeing (M1's honesty ordering, unchanged by S52)",
+            "basis": "embedding similarity within the merged set (D6's within-set ranking), then M1's ordering"
+          }
+        }
+      ]
+    }
+  }
+}

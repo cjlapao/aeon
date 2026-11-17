@@ -1,0 +1,18 @@
+{
+  "description": "The autonomy.grant refusal for a class subject that is not grantable (S56 T6, the -31833 family): the ONLY class a grant may name is the outward shorthand — an irreversible action is granted only by its own name, because a class-wide irreversible grant would be authority the person never scoped. The fixture documents the validator's sentence for a class name outside the closed set (the socket derives the kind from the name, so a caller who types a class name gets exactly this family; the pure seam sees the derived subject).",
+  "method": "autonomy.grant",
+  "request": {"jsonrpc": "2.0", "id": 423, "method": "autonomy.grant", "params": {"rootId": "aeon", "subject": "irreversible"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 423,
+    "error": {
+      "code": -31833,
+      "message": "autonomy write refused",
+      "data": {
+        "what": "the only class a grant may name is \"outward\"; \"irreversible\" is not grantable — an irreversible action is granted only by its own name",
+        "means": "a grant is a human-authored authority record with closed rules (subject, conditions, expiry, the node it may sit on); a request outside them is refused, not silently corrected — nothing was written",
+        "todo": "the refusal names the rule it broke and the thing it broke it on; `autonomy.vocabulary` lists the closed sets a request may name",
+        "fatal": false
+      }
+    }
+  }
+}

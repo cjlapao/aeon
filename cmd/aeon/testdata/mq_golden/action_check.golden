@@ -1,0 +1,68 @@
+=== check audit
+audit · local · run — effects confined to the working tree
+---
+=== check forge.closeIssue
+forge.closeIssue · outward · ask — visible to other people — a human decides
+---
+=== check forge.land
+forge.land · irreversible · ask — cannot be undone by another action — a human decides
+---
+=== check forge.merge
+forge.merge · irreversible · ask — cannot be undone by another action — a human decides
+---
+=== check forge.openIssue
+forge.openIssue · outward · ask — visible to other people — a human decides
+---
+=== check forge.openLandingPR
+forge.openLandingPR · outward · ask — visible to other people — a human decides
+---
+=== check forge.openPR
+forge.openPR · outward · ask — visible to other people — a human decides
+---
+=== check forge.postReview
+forge.postReview · outward · ask — visible to other people — a human decides
+---
+=== check git.commitAndPush
+git.commitAndPush · outward · ask — visible to other people — a human decides
+---
+=== check git.concludeIntegration
+git.concludeIntegration · local · run — effects confined to the working tree
+---
+=== check git.createBranch
+git.createBranch · local · run — effects confined to the working tree
+---
+=== check git.integrate
+git.integrate · local · run — effects confined to the working tree
+---
+=== check git.mergeBranch
+git.mergeBranch · local · run — effects confined to the working tree
+---
+=== check git.publishIntegration
+git.publishIntegration · outward · ask — visible to other people — a human decides
+---
+=== check queue.enqueue
+queue.enqueue · local · run — effects confined to the working tree
+---
+=== check verify.run
+verify.run · local · run — effects confined to the working tree
+---
+=== refused: unknown action "git.notAnAction" — the registry is closed (L8): eight actions plus audit
+=== list
+ACTION                 CLASS          STRATEGY              ARGS (required: *)
+audit                  local          naturally-idempotent —
+forge.closeIssue       outward        check-then-act       *issue_number(evidence)
+forge.land             irreversible   check-then-act        aeon_review(evidence) *base_branch(code) *dir(code) *integration_branch(code) *integration_sha(evidence) *item(code) *loop(code)  method(code) *pr(evidence) *root(code) *verified_sha(evidence)
+forge.merge            irreversible   check-then-act        aeon_review(evidence) *dir(code) *loop(code)  method(code) *pr(evidence) *task(code)
+forge.openIssue        outward        check-then-act       *dir(code) *loop(code) *task(code) *task_title(code)
+forge.openLandingPR    outward        check-then-act       *base_branch(code) *dir(code) *head_branch(code) *integration_branch(code) *item(code)  pr_summary(handoff)
+forge.openPR           outward        check-then-act       *base(code) *dir(code) *loop(code) *pr_summary(handoff) *task(code) *task_title(code)
+forge.postReview       outward        receipt-first        *attempt(code) *loop(code) *pr(evidence) *review_summary(handoff) *step_id(code)
+git.commitAndPush      outward        check-then-act       *dir(code) *loop(code) *message(code) *task(code)
+git.concludeIntegration local          check-then-act       *dir(code) *integration_branch(code)
+git.createBranch       local          check-then-act        base_branch(code) *dir(code) *loop(code)  task(code)  which(code)
+git.integrate          local          check-then-act       *base_branch(code) *head_branch(code) *integration_branch(code) *item(code) *root(code)
+git.mergeBranch        local          check-then-act       *dir(code) *loop(code) *task(code)
+git.publishIntegration outward        check-then-act       *dir(code) *integration_branch(code)
+queue.enqueue          local          naturally-idempotent  attended(code)  base_branch(code)  feature_branch(code) *loop(code) *root(code)
+verify.run             local          naturally-idempotent  agent(code) *dir(code)  gate(code) *loop(code)  task(code)
+

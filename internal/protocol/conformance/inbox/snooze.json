@@ -1,0 +1,27 @@
+{
+  "description": "inbox.snooze hides an item until an instant at most seven days out (SV-D11); expiry is a comparison at read time, so the item returns by itself with no job and no restart. The answer shows the mark with its `until`, and the summary keeps counting the item while it hides — the number never lies (SV3).",
+  "method": "inbox.snooze",
+  "request": {
+    "jsonrpc": "2.0", "id": 905, "method": "inbox.snooze",
+    "params": {"key": "blocked:lp-7:2026-11-02T22:10:00Z", "until": "2026-11-05T09:00:00Z"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 905,
+    "result": {
+      "item": {
+        "key": "blocked:lp-7:2026-11-02T22:10:00Z",
+        "kind": "blocked.action-denied",
+        "severity": "blocked",
+        "rootId": "cmp-1",
+        "componentId": "cmp-1",
+        "loopId": "lp-7",
+        "loopSlug": "ship-fixes",
+        "reason": "unattended loop denied an outward action",
+        "since": "2026-11-02T22:10:00Z",
+        "ageSeconds": 54100,
+        "door": {"sentence": "This loop is unattended, so outward actions are denied. Start an attended run, or (S56) grant the action."},
+        "acked": {"by": "user:1000", "at": "2026-11-03T09:40:00Z", "until": "2026-11-05T09:00:00Z"}
+      }
+    }
+  }
+}

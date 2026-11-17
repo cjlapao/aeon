@@ -1,0 +1,4 @@
+{
+  "description": "A digest mismatch is a separate structured recovery failure so clients do not mistake a wrong captured result for an unknown tool outcome.",
+  "notification": {"jsonrpc":"2.0","method":"event","params":{"subscriptionId":"s-1","seq":2004,"kind":"recovery.resolved","at":"2026-10-17T11:00:03Z","payload":{"stepId":8,"outcome":"failed","failure":{"kind":"digest-mismatch","tool":"bash","toolUseId":"toolu_8","detail":"bash receipt digest-mismatch"}}}}
+}

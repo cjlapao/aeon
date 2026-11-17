@@ -1,0 +1,30 @@
+{
+  "description": "verify.add refuses a name that is not a gate slug: a slug is lowercase letters, digits and hyphens, 1 to 64, and the refused name is quoted in the sentence (code -31870, kind name-not-a-slug) — the gate set is exactly as it was.",
+  "method": "verify.add",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "verify.add",
+    "params": {
+      "componentId": "c-aeon",
+      "name": "UPPER",
+      "command": "npm test",
+      "requirement": "required"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -31870,
+      "message": "the verify operation was refused",
+      "data": {
+        "kind": "name-not-a-slug",
+        "what": "verify add refused: \"UPPER\" is not a gate name — a slug is lowercase letters, digits and hyphens, 1 to 64",
+        "means": "the daemon understood and declined — the gate set is exactly as it was (no row written, no run recorded, no template copied), and the kind in data says which law it refused against",
+        "todo": "name the gate as a slug — lowercase letters, digits and hyphens, 1 to 64 — and try the add again",
+        "fatal": false
+      }
+    }
+  }
+}

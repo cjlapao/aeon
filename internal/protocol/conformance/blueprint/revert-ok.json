@@ -1,0 +1,38 @@
+{
+  "description": "Reverts a blueprint to a named revision's content by APPENDING it as a new revision (op=revert) through the same Analyze and write path; the revision history is never rewritten.",
+  "method": "blueprint.revert",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 84,
+    "method": "blueprint.revert",
+    "params": {
+      "name": "two-step",
+      "rev": 1,
+      "note": "back to the shipped shape"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 84,
+    "result": {
+      "name": "two-step",
+      "changed": true,
+      "revision": 3,
+      "origin": "user",
+      "version": 1,
+      "report": {
+        "blueprint": "two-step",
+        "schemaVersion": 1,
+        "version": 1,
+        "validCount": 6,
+        "diagnostics": []
+      },
+      "references": [
+        {
+          "kind": "agent",
+          "target": "default"
+        }
+      ]
+    }
+  }
+}

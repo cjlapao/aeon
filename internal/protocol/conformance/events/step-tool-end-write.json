@@ -1,0 +1,26 @@
+{
+  "description": "S31 D8: a write-shaped `step.tool.end` carries the line-diff counts against the previous content — `{stepId, tool, toolUseId, path, linesAdded, linesRemoved}` — so the ladder and the chat screen answer \"what did that call cost the file\" without re-reading anything. The tool's model-facing content is untouched (N5: the counts ride the EVENT, never the transcript); a tool that never ran publishes no tool.end at all (the steered skip speaks through `step.tool.skipped`), and non-file tools leave these fields absent.",
+  "event": "step.tool.end",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "seq": 12,
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1461,
+      "kind": "step.tool.end",
+      "at": "2026-10-24T09:41:14.882Z",
+      "payload": {
+        "stepId": 12,
+        "tool": "write",
+        "toolUseId": "toolu_02",
+        "summary": "write notes/plan.md",
+        "result": "wrote notes/plan.md (212 bytes)",
+        "iteration": 3,
+        "path": "notes/plan.md",
+        "linesAdded": 4,
+        "linesRemoved": 1
+      }
+    }
+  }
+}

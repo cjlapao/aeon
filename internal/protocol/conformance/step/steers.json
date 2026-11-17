@@ -1,0 +1,15 @@
+{
+  "description": "`step.steers` lists a step's steers in queue order: pending, delivered (with the iteration that carried them and when) and cancelled ones. The UI shows a steer as 'queued · after this turn' and then 'delivered' from exactly this listing plus the steer events. A steer that carried CHOSEN skills (S68 B7) shows their riding names as `skills` — the row's text stayed the operator's pure words, and the names are the durable receipt of what the drain renders into the wire message.",
+  "method": "step.steers",
+  "request": {
+    "jsonrpc": "2.0", "id": 81, "method": "step.steers",
+    "params": { "stepId": 12 }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 81,
+    "result": [
+      { "steerId": 2, "text": "Use the table form.", "state": "delivered", "createdAt": "2026-10-24T10:02:00Z", "deliveredAt": "2026-10-24T10:02:09Z", "iteration": 3 },
+      { "steerId": 3, "text": "Also mention the Go version.", "state": "pending", "createdAt": "2026-10-24T10:03:00Z", "skills": ["caveman"] }
+    ]
+  }
+}

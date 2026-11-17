@@ -1,0 +1,23 @@
+{
+  "description": "Answers a human gate through the closed answer set and restarts the loop from the committed next position.",
+  "method": "loop.answer",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "method": "loop.answer",
+    "params": {
+      "id": "loop-1",
+      "answer": "approve"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 80,
+    "result": {
+      "id": "loop-1",
+      "questionId": 7,
+      "answer": "approve",
+      "status": "running"
+    }
+  }
+}

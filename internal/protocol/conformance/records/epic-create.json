@@ -1,0 +1,29 @@
+{
+  "description": "epic_create files a new epic from a step's project scope through the catalog's one implementation (OL11); the person's half is refused by name.",
+  "method": "epic.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "method": "epic.create",
+    "params": {
+      "root_id": "prj-7a1f",
+      "title": "Org layers",
+      "objective": "one definition, two doors",
+      "owner": "cjlapao"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "result": {
+      "id": "epic-7a1f",
+      "rootId": "prj-7a1f",
+      "title": "Org layers",
+      "objective": "one definition, two doors",
+      "owner": "cjlapao",
+      "reviewState": "draft",
+      "createdAt": "2026-10-26T09:00:00Z",
+      "updatedAt": "2026-10-26T09:00:00Z"
+    }
+  }
+}

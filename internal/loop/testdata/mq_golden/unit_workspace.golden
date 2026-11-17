@@ -1,0 +1,7 @@
+model-saw: slug=p root=/repo compRoot=/repo
+model-saw: slug=p root=/repo compRoot=/repo
+model-saw: slug=p root=/repo compRoot=/repo
+worktree-adds: 3
+worktree-at: /repo/.worktrees/lane-a
+worktree-at: /repo/.worktrees/lane-b
+worktree-at: /repo/.worktrees/lane-c

@@ -1,0 +1,36 @@
+{
+  "description": "`store.info` answers with the PATH FIRST, because every later slice's debugging starts by finding the file (B10). `walBytes` is reported SEPARATELY: in WAL mode committed data lives in the log until a checkpoint, so a busy store's main file can read as 4 KiB — found by walking the demo, which predicted 48 KiB and got 4. `foreignKeys` is read from the connection rather than inferred from the DSN — the wrong DSN spelling produces a store that looks configured and runs without cascades.",
+  "method": "store.info",
+  "request": {
+    "jsonrpc": "2.0", "id": 40, "method": "store.info"
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 40,
+    "result": {
+      "path": "/home/p/.local/state/aeon/state.db",
+      "bytes": 196608,
+      "walBytes": 4136960,
+      "journalMode": "wal",
+      "foreignKeys": true,
+      "applied": [
+        {"name": "0001_core_tables", "status": "applied", "appliedAt": "2026-10-15T09:41:12.345Z"},
+        {"name": "0002_steps_and_events", "status": "applied", "appliedAt": "2026-10-15T09:41:12.351Z"},
+        {"name": "0003_chat", "status": "applied", "appliedAt": "2026-10-15T09:41:12.355Z"},
+        {"name": "0004_documents_and_archive", "status": "applied", "appliedAt": "2026-10-15T09:41:12.359Z"},
+        {"name": "0005_policy", "status": "applied", "appliedAt": "2026-10-15T09:41:12.362Z"},
+        {"name": "0006_step_context_manifest", "status": "applied", "appliedAt": "2026-10-15T09:41:12.366Z"}
+      ],
+      "pending": [],
+      "tables": [
+        "_migrations", "chat_message", "event", "loop", "loop_archive", "loop_archive_file",
+        "loop_document", "loop_phase", "memory", "policy", "policy_acceptance", "policy_event",
+        "project", "component_root", "question", "step", "step_message", "task"
+      ],
+      "vecWriterVersion": "v0.1.6",
+      "vecReaderVersion": "v0.1.6",
+      "readPoolSize": 4,
+      "writerPoolSize": 1,
+      "busyTimeoutMs": 5000
+    }
+  }
+}

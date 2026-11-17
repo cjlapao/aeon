@@ -1,0 +1,4 @@
+$ aeon policy add --type cost_cap --id ok-cost --target all-agents --action deny --spec {"token":"session","max":250}
+policy ok-cost stored — the daemon's next read sees it (N8 forbids caching)
+$ aeon policy list
+ok-cost                  cost_cap       all-agents                   deny   operator     no expiry

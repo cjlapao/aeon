@@ -1,0 +1,9 @@
+{
+  "case": "base-ref-empty",
+  "refused": true,
+  "sentence": "refused: PR #3 has no base ref — refusing to merge something that cannot say what it merges into (L26)\n  why:  the forge understood the call and declined it — a domain refusal, not a transient fault\n  do:   fix the request so it satisfies the refusal; resending it unchanged will fail again",
+  "calls": [
+    "PostReview",
+    "ReadPR"
+  ]
+}

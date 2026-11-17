@@ -1,0 +1,40 @@
+{
+  "description": "mission.status answers one entry per evaluated root (SV11): the four live loop-status counts (terminal rows are excluded, never counted into an invented `total`), needs-you as the inbox.summary result for the same scope (the consistency claim, visible on the wire), spend as the CT7 rollup of the ROOT's row — the root's row IS the subtree total (CT7) — presented as a FLOOR with its cost state named (P32: partial never reads as exact), and the two seams this build never wired saying `not-wired`, never a zero (T6's Do-NOT list: no lying zeros, no composite score anywhere in the shape).",
+  "method": "mission.status",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1450,
+    "method": "mission.status",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1450,
+    "result": {
+      "components": [
+        {
+          "rootId": "cmp-atlas",
+          "name": "Atlas",
+          "loops": { "running": 1, "waiting": 2, "blocked": 1, "idle": 3 },
+          "needsYou": {
+            "total": 2,
+            "bySeverity": { "needs-you": 1, "blocked": 1 },
+            "acked": 0,
+            "oldestSince": "2026-11-03T15:40:00Z",
+            "sources": [
+              { "name": "questions", "state": "reporting" },
+              { "name": "blocked", "state": "reporting" },
+              { "name": "stopped", "state": "reporting" },
+              { "name": "budget", "state": "not-wired" },
+              { "name": "stuck", "state": "reporting" }
+            ]
+          },
+          "spend": { "state": "reporting", "usdAtLeast": 12.4, "costState": "partial" },
+          "cap": { "state": "not-wired" },
+          "nextReady": { "state": "not-wired" },
+          "lastActivityAt": "2026-11-03T18:00:00Z"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "description": "S46 T3 (MG5-reads, three-state honesty): the EMPTY TABLE's answer for mcp.changes — the audit provably holds no rows, and only that answer carries the statement \"no MCP configuration changes recorded.\" (the PolicyChangesEmptyStatement discipline: the statement belongs to the Count-proved zero, and its ABSENCE is the other answers — a filtered-empty read prints the empty list and no statement, because \"my filter matched nothing\" is the filter's answer and the empty-table sentence is the table's). An empty listing that could never be told from a never-used one is how a full audit gets believed empty; the statement plus its absence keeps the three states three.",
+  "method": "mcp.changes",
+  "request": {"jsonrpc": "2.0", "id": 907, "method": "mcp.changes"},
+  "response": {
+    "jsonrpc": "2.0", "id": 907,
+    "result": {
+      "changes": [],
+      "statement": "no MCP configuration changes recorded."
+    }
+  }
+}

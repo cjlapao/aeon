@@ -1,0 +1,25 @@
+{
+  "description": "S59 T6 (EV12): environment.teardown of an id the ledger does not hold is a refusal that names the id, carries the closed-set kind, and wrote NO row. Marking an unknown provision removed would launder a leaked container into 'nothing is running', which is the failure EV12 exists to prevent. fromSeam: the refusal is the STORE's sentence, carried verbatim by the door (DB19) — the walker stands a seam that answers with it.",
+  "method": "environment.teardown",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 914,
+    "method": "environment.teardown",
+    "params": { "provisionId": "prv_missing" }
+  },
+  "fromSeam": true,
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 914,
+    "error": {
+      "code": -31880,
+      "message": "the environment or secret-reference operation was refused",
+      "data": {
+        "kind": "provision-unknown",
+        "what": "there is no provision prv_missing to mark — the ledger is the only thing that knows a resource exists, so a mark against nothing means the resource was created without a row (EV12)",
+        "means": "the container, if it exists, has no ledger row — or the row was removed and something still runs",
+        "todo": "list the ledger with environment.provisions and name the row you meant"
+      }
+    }
+  }
+}

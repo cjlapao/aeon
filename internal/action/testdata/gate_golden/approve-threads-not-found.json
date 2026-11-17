@@ -1,0 +1,16 @@
+{
+  "case": "approve-threads-not-found",
+  "refused": false,
+  "sha": "00000000000000000000000000000000002dc6df",
+  "evidence": {
+    "checks": "not-configured (N/A — no checks reported is no checks, not a red gate)",
+    "review_at": "2026-10-26T09:12:00Z",
+    "review_by": "mira",
+    "review_state": "approve",
+    "threads": "not-reported (server refused the thread query — a missing thread API is not a blocker)"
+  },
+  "calls": [
+    "ReadPR",
+    "MergePR"
+  ]
+}

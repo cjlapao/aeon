@@ -1,0 +1,13 @@
+$ aeon policy add --type tool_access --id warn-lane --target lane-type:review --action deny --tool bash --spec {"state":"deny"}
+policy warn-lane stored — the daemon's next read sees it (N8 forbids caching)
+warning  no runtime decision carries a lane-type identity until S18/S20 — the rule is stored but cannot match yet (deny nothing, permit nothing, fail-closed)
+$ aeon policy add --type tool_access --id warn-loop --target loop:nightly --action deny --tool bash --spec {"state":"deny"}
+policy warn-loop stored — the daemon's next read sees it (N8 forbids caching)
+warning  no runtime decision carries a loop identity until S18/S20 — the rule is stored but cannot match yet (deny nothing, permit nothing, fail-closed)
+$ aeon policy add --type tool_access --id warn-mcp --target mcp:github --action deny --tool bash --spec {"state":"deny"}
+policy warn-mcp stored — the daemon's next read sees it (N8 forbids caching)
+warning  no runtime decision carries a mcp identity until S18/S20 — the rule is stored but cannot match yet (deny nothing, permit nothing, fail-closed)
+$ aeon policy list
+warn-lane                tool_access    lane-type:review             deny   operator     no expiry
+warn-loop                tool_access    loop:nightly                 deny   operator     no expiry
+warn-mcp                 tool_access    mcp:github                   deny   operator     no expiry

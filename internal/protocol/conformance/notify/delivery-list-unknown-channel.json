@@ -1,0 +1,26 @@
+{
+  "description": "notify.delivery.list refused with the delivery-query family: the channel id names no row. An empty list for a typo would read as \"this channel delivered nothing\" — the exact lie the delivery log exists to make impossible — so the refusal says the QUERY was the unknown thing, and an archived channel's log stays readable behind includeArchived.",
+  "method": "notify.delivery.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 953,
+    "method": "notify.delivery.list",
+    "params": {
+      "channelId": "nc-does-not-exist"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 953,
+    "error": {
+      "code": -31928,
+      "message": "delivery query refused",
+      "data": {
+        "what": "channel \"nc-does-not-exist\" does not exist",
+        "means": "an empty list for a typo'd channel would read as 'this channel delivered nothing' — a lie the delivery log exists to make impossible; the refusal says the query itself was the unknown thing",
+        "todo": "check the id against notify.channel.list (archived channels keep their log — includeArchived covers them)",
+        "fatal": false
+      }
+    }
+  }
+}

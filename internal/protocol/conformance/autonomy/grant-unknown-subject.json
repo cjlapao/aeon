@@ -1,0 +1,18 @@
+{
+  "description": "The autonomy.grant refusal for an unknown subject (S56 T6, the -31833 family): the subject names an action that is not in the closed registry. The registry is closed (D14) — a grant for a name nobody compiled is a permission nobody granted, so the answer is a typed refusal with the pure validator's sentence verbatim in `what`, not a parse error and not a silent no-op. The three-part data keeps its generic halves; only `what` carries the refusal's own words.",
+  "method": "autonomy.grant",
+  "request": {"jsonrpc": "2.0", "id": 421, "method": "autonomy.grant", "params": {"rootId": "aeon", "subject": "forge.deploy"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 421,
+    "error": {
+      "code": -31833,
+      "message": "autonomy write refused",
+      "data": {
+        "what": "forge.deploy is not a registry action (the registry is closed)",
+        "means": "a grant is a human-authored authority record with closed rules (subject, conditions, expiry, the node it may sit on); a request outside them is refused, not silently corrected — nothing was written",
+        "todo": "the refusal names the rule it broke and the thing it broke it on; `autonomy.vocabulary` lists the closed sets a request may name",
+        "fatal": false
+      }
+    }
+  }
+}

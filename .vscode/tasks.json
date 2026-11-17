@@ -1,0 +1,93 @@
+{
+  // Tasks the launch configs depend on. Each one shells out to a make target
+  // rather than reimplementing it, so there is no second definition of how
+  // Aeon is built that can drift from the Makefile.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // localrpc sets the endpoint's parent directory to owner-only and does
+      // not create it. Without this the daemon fails at startup with a chmod
+      // error naming a directory that does not exist — which reads as a
+      // permissions problem rather than a missing mkdir.
+      "label": "dev: prepare endpoint dir",
+      "type": "shell",
+      "command": "mkdir -p .dev && chmod 700 .dev",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "silent", "panel": "shared" }
+    },
+    {
+      "label": "go: build",
+      "type": "shell",
+      "command": "make build",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "problemMatcher": ["$go"],
+      "presentation": { "reveal": "silent", "panel": "shared" }
+    },
+    {
+      "label": "go: test",
+      "type": "shell",
+      "command": "make test",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "test",
+      "problemMatcher": ["$go"]
+    },
+    {
+      "label": "ui: install",
+      "type": "shell",
+      "command": "make -C ui install",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "silent", "panel": "shared" }
+    },
+    {
+      // A background task: the launch configs wait for vite to report ready,
+      // then attach. Without the background matcher VS Code would wait forever
+      // for a dev server that never exits.
+      "label": "ui: dev",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": { "cwd": "${workspaceFolder}/ui" },
+      "dependsOn": ["ui: install"],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "vite",
+        "pattern": { "regexp": "^\\s*(.*)$", "file": 1 },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*VITE v.*",
+          "endsPattern": ".*(Local:|ready in).*"
+        }
+      },
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "ui: build",
+      "type": "shell",
+      "command": "make -C ui build",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$tsc"],
+      "presentation": { "reveal": "silent", "panel": "shared" }
+    },
+    {
+      // What CI runs. If this is green and CI is not, the difference is the
+      // runner, not your tree.
+      "label": "all: ci",
+      "type": "shell",
+      "command": "make ci",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$go", "$tsc"]
+    },
+    {
+      // Reports Tauri's system libraries with the install line for your
+      // distribution. Expected to fail on a machine that has never built the
+      // app — that is the point.
+      "label": "ui: check Tauri system deps",
+      "type": "shell",
+      "command": "make -C ui check-deps",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ]
+}

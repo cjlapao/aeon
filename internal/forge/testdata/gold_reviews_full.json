@@ -1,0 +1,14 @@
+{
+ "__status": 200,
+ "body": [
+  {
+   "id": 71,
+   "body": "approved with a timestamp",
+   "state": "APPROVED",
+   "user": {
+    "login": "mira"
+   },
+   "submitted_at": "2026-10-26T09:12:00Z"
+  }
+ ]
+}

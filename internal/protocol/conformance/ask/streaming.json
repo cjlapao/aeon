@@ -1,0 +1,13 @@
+{
+  "description": "Streaming mode: with a subscriptionId, `ask` returns only the askId and the reply arrives as ask.delta events through the ordinary subscription machinery (M23). usage and cost are deliberately ABSENT from this result — they arrive on ask.done, and leaving them out is what stops a client reading a half-finished answer as the whole one.",
+  "method": "ask",
+  "request": {
+    "jsonrpc": "2.0", "id": 20, "method": "ask",
+    "params": {
+      "route": "anthropic-sonnet",
+      "prompt": "What does this repository do?",
+      "subscriptionId": "s-7f3a1b2c"
+    }
+  },
+  "response": {"jsonrpc": "2.0", "id": 20, "result": {"askId": "a-7"}}
+}

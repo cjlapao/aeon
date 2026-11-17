@@ -1,0 +1,24 @@
+{
+  "description": "A budget.set that RAISES an existing cap without a confirm digest: the act loosens authority, so the daemon refuses it with the canonical statement and its digest riding the error (Data.Statement, Data.Confirm) — the client completes the commit in ONE round trip (set-raise-confirmed.json) instead of re-reading the row. data.kind is confirm-required; nothing was written.",
+  "method": "budget.set",
+  "request": {
+    "jsonrpc": "2.0", "id": 612, "method": "budget.set",
+    "params": {"scope": "epic", "subjectId": "epc-1", "window": "lifetime", "usdCap": 1200}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 612,
+    "error": {
+      "code": -31861,
+      "message": "the budget refused the operation",
+      "data": {
+        "kind": "confirm-required",
+        "what": "budget set refused: this act loosens authority (raise the usd cap from 900 to 1200) — commit it with the digest of the statement as read",
+        "means": "the daemon understood and declined — no budget row was written and nothing moved",
+        "todo": "do what the what sentence names",
+        "statement": "budget bud-epc-1: set the usd cap from 900 to 1200",
+        "confirm": "34dc99b6f5aa59aed400781751f49f43d7d95f5f17df1826d6b58ec7a9d40bd2",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "description": "mcp.server.remove with cascadeDeclares:true: each revoked declaration is LISTED in the result (revoked) and audited as its own grant_revoke row \u2014 never a silent revoke. Without the flag the same removal refuses with ErrMcpInUse naming every declaring agent (the server-remove-in-use fixture is that refusal's contract).",
+  "method": "mcp.server.remove",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 924,
+    "method": "mcp.server.remove",
+    "params": {
+      "name": "search",
+      "cascadeDeclares": true
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 924,
+    "result": {
+      "grants": [
+        {
+          "agent": "manny",
+          "before": [
+            {
+              "qualified": "search.query",
+              "tier": "public",
+              "state": "available",
+              "reason": "declared; policy allow in force"
+            }
+          ],
+          "after": []
+        }
+      ],
+      "changed": true,
+      "revoked": [
+        "manny: search.query"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "The origin filter is a closed pair; anything else refuses at the door before the store is read.",
+  "method": "template.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "template.list",
+    "params": {
+      "origin": "both"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: template.list origin is \"system\" or \"user\" \u2014 not \"both\""
+    }
+  },
+  "fromDoor": true
+}

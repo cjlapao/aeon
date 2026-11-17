@@ -1,0 +1,24 @@
+{
+  "description": "an absent Content-Type fails closed and says nothing was offered",
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "http://docs.test/mystery",
+        "header": {
+          "Accept": [
+            "text/plain, text/markdown, application/json, application/xml"
+          ],
+          "User-Agent": [
+            "aeon-webfetch/1.0 (Aeon daemon; GET-only; sends no credentials)"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "header": {},
+        "body": "type unknown to anyone"
+      }
+    }
+  ]
+}

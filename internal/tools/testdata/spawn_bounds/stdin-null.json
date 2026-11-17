@@ -1,0 +1,4 @@
+{
+  "command": "read x; printf 'rc=%s val=[%s]\\n' \"$?\" \"$x\"",
+  "render": "$ read x; printf 'rc=%s val=[%s]\\n' \"$?\" \"$x\"\nexit 0 · 42ms\n\n--- stdout ---\nrc=1 val=[]\n"
+}

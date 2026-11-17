@@ -1,0 +1,27 @@
+{
+  "description": "inbox.snooze past the seven-day horizon is refused (ErrSnoozeHorizon, -31927, SV-D11): a snooze that never wakes is a deleted problem wearing a hide button, and a week is the longest honest 'later' an inbox can hold. Longer silence is a channel schedule; never a ghost item.",
+  "method": "inbox.snooze",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 909,
+    "method": "inbox.snooze",
+    "params": {
+      "key": "stopped:lp-3:2026-11-01T08:00:00Z",
+      "until": "2026-12-25T00:00:00Z"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 909,
+    "error": {
+      "code": -31927,
+      "message": "snooze outside the horizon",
+      "data": {
+        "what": "attention: snooze horizon: until 2026-12-25T00:00:00Z is past the one-week horizon (max seven days out) — a longer silence is a channel schedule (T5), not an invisible problem",
+        "means": "a snooze that never wakes is a deleted problem, and the inbox must stay the truth; expiry is computed at read, so a snooze past its instant is live again with no job and no restart",
+        "todo": "pick an `until` between now and seven days ahead, or use inbox.ack for 'seen' and a channel schedule (notify) for a longer silence",
+        "fatal": false
+      }
+    }
+  }
+}

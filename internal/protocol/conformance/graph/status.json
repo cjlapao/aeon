@@ -1,0 +1,9 @@
+{
+  "description": "The fourth state as DATA (S30 T5): built:false with zeros is the honest answer for a root that was never parsed — told apart from a failed read by the error being absent (DB19). The bench's not-built panel renders exactly this shape; a status that answered `true` with zero rows would be the confident wrong answer the slice exists to forbid.",
+  "method": "graph.status",
+  "request": {"jsonrpc": "2.0", "id": 243, "method": "graph.status", "params": {"componentRoot": "/home/dev/never-built"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 243,
+    "result": {"root": "/home/dev/never-built", "built": false, "files": 0, "nodes": 0, "edges": 0}
+  }
+}

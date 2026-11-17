@@ -1,0 +1,15 @@
+{
+  "description": "`trigger.resume` lifts the operational bar and promises NOTHING beyond that: the clock owns the next answer, the policy rows own whether it passes. The second off switch stays a different fact.",
+  "method": "trigger.resume",
+  "request": { "jsonrpc": "2.0", "id": 70, "method": "trigger.resume", "params": { "id": "nightly-survey" } },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 70,
+    "result": {
+      "triggerId": "nightly-survey",
+      "reason": "resumed — the clock owns the next answer now",
+      "paused": false,
+      "found": true
+    }
+  }
+}

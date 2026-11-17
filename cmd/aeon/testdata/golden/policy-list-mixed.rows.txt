@@ -1,0 +1,11 @@
+policy rows: 8
+  policy mixed-command type=command_access target=agent:alice action=allow source=operator subject=agent:alice spec={"command":"git status","state":"allow"} not_after=none not_after_epoch=- created_at=<TIME>
+  policy mixed-cost type=cost_cap target=all-agents action=deny source=operator subject=all-agents spec={"token":"session","max":1000} not_after=none not_after_epoch=- created_at=<TIME>
+  policy mixed-effect type=effect_class target=all-agents action=deny source=agent subject=all-agents spec={"effect":"spend","state":"deny"} not_after=none not_after_epoch=- created_at=<TIME>
+  policy mixed-expired type=tool_access target=agent:carol action=deny source=operator subject=agent:carol spec={"toolName":"webfetch","state":"deny"} not_after=<TIME> not_after_epoch=1577934245 created_at=<TIME>
+  policy mixed-route type=route_access target=loop:nightly action=deny source=operator subject=loop:nightly spec={"route":"remote","state":"deny"} not_after=none not_after_epoch=- created_at=<TIME>
+  policy mixed-skill type=skill_access target=lane-type:review action=ask source=operator subject=lane-type:review spec={"skill":"shell","state":"ask"} not_after=none not_after_epoch=- created_at=<TIME>
+  policy mixed-tool type=tool_access target=agent:alice action=deny source=operator subject=agent:alice spec={"toolName":"bash","state":"deny"} not_after=none not_after_epoch=- created_at=<TIME>
+  policy mixed-trigger type=trigger_access target=mcp:github action=deny source=mcp_server subject=mcp:github spec={"trigger":"webhook","state":"deny"} not_after=<TIME> not_after_epoch=1792497600 created_at=<TIME>
+proposal rows: 0
+policy_event rows: 0

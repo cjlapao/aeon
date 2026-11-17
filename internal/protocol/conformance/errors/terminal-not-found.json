@@ -1,0 +1,27 @@
+{
+  "description": "An id no live session carries answers `no such terminal` — the id is named, nothing was touched. A CLOSED session is gone, not parked; the listing is the way back to a live id.",
+  "method": "terminal.input",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "method": "terminal.input",
+    "params": {
+      "terminalId": "t-gone",
+      "data": "echo hi\n"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 95,
+    "error": {
+      "code": -31511,
+      "message": "no such terminal",
+      "data": {
+        "what": "no live terminal carries terminalId \"t-gone\"",
+        "means": "nothing was read, typed into, resized or killed — the id names a session that was never opened or has already been closed (a closed session is gone, not parked)",
+        "todo": "`terminal.list {componentRoot}` lists the live sessions with their ids and states",
+        "fatal": false
+      }
+    }
+  }
+}

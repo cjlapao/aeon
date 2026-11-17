@@ -1,0 +1,41 @@
+{
+  "description": "mergequeue.reorder moves one QUEUED item directly before another by BEFORE-id \u2014 position is the queue's assignment, never a typed number (a params 'position' is refused by key). An empty beforeId means last. Only queued rows move; the lane's running head is nobody's to jump.",
+  "method": "mergequeue.reorder",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 426,
+    "method": "mergequeue.reorder",
+    "params": {
+      "id": "mq-1a2b3c4d5e6f708192a3b4c5d6e7f809",
+      "beforeId": "mq-0f1e2d3c4b5a69788796a5b4c3d2e1f0"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 426,
+    "result": {
+      "id": "mq-1a2b3c4d5e6f708192a3b4c5d6e7f809",
+      "componentRoot": "/srv/components/alpha",
+      "base": "main",
+      "branch": "feature/export-csv",
+      "status": "queued",
+      "position": 1,
+      "attended": false,
+      "headSha": "bbbb2222cccc3333dddd4444eeee5555ffff6666",
+      "baseSha": "9999aaaa8888bbbb7777cccc6666dddd5555eeee4444",
+      "catchUps": 0,
+      "enqueuedBy": {
+        "kind": "cli",
+        "id": "aeon-cli"
+      },
+      "staleness": {
+        "state": "not-yet",
+        "reason": "the queue has not read its base for this state yet"
+      },
+      "nextStep": "queued: first in line on main",
+      "digest": "bfe24cc08df6e0356d6972bfa0b3491994649c44a5e2357aaa8167fd408d779c",
+      "createdAt": "2026-11-04T08:00:00Z",
+      "updatedAt": "2026-11-04T10:10:00Z"
+    }
+  }
+}

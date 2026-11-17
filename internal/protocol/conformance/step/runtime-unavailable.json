@@ -1,0 +1,21 @@
+{
+  "description": "A daemon with no runtime wired. `aeon serve` always wires one, so reaching this means the daemon was built or started in a way that skipped it — `fatal: true`, because nothing a client retries will fix it.",
+  "method": "step",
+  "request": {
+    "jsonrpc": "2.0", "id": 75, "method": "step",
+    "params": {"prompt": "x", "workspaceRoot": "/home/p/repo-a"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 75,
+    "error": {
+      "code": -31200,
+      "message": "no step runtime is available",
+      "data": {
+        "what": "this daemon cannot run a step: no runtime is wired",
+        "means": "`aeon serve` always wires one, so reaching this means the daemon was built or started in a way that skipped it",
+        "todo": "restart the daemon; if it persists, this is a defect — report the version from `aeon version`",
+        "fatal": true
+      }
+    }
+  }
+}

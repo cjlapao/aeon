@@ -1,0 +1,23 @@
+{
+  "description": "S50 T6: show answers the item PLUS `describe`, the daemon's own one-sentence rendering (the RM5 formatter, the same bytes the board row and the CLI print — the dispatch seatbelt prints it beside the authority sentence, so no surface re-renders). A fully grown item, every honest state named at once every honest state named at once (P31, and this slice's D2/D3/D6): the PRIORITY is the word `known` with the label that earned it — unknown would read as the word `unknown`, never blank and never a number (D2's sort column that sorts unknown last is the failure this rendering prevents); the ESTIMATE is the range WITH its basis, the three all-present-or-all-absent (D3 — a bare figure is not expressible); `briefPath`/`planPath` are POINTERS, never content (D9 — the files are read with existing file tools); and `loopSlug` is present because this item materialized (D6: it was nothing until a loop actually existed).",
+  "method": "roadmap.show",
+  "request": {"jsonrpc": "2.0", "id": 343, "method": "roadmap.show", "params": {"id": 12}},
+  "response": {"jsonrpc": "2.0", "id": 343, "result": {"item": {
+    "id": 12,
+    "componentRoot": "/srv/projects/ledger",
+    "title": "export monthly statements",
+    "epic": "reports",
+    "status": "running",
+    "priorityState": "known",
+    "priorityLabel": "P1",
+    "estimateMin": 2,
+    "estimateMax": 5,
+    "estimateBasis": "two handlers and a renderer, one door each",
+    "provenance": "triaged",
+    "briefPath": "/srv/projects/ledger/brief.md",
+    "planPath": "/srv/projects/ledger/plan.md",
+    "loopSlug": "roadmap-item-12",
+    "createdAt": "2026-10-29T09:00:00Z",
+    "updatedAt": "2026-10-29T11:30:00Z"
+  }, "describe": "running · priority known (P1) · estimate 2–5 (two handlers and a renderer, one door each) · loop roadmap-item-12"}}
+}

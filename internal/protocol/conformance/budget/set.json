@@ -1,0 +1,33 @@
+{
+  "description": "budget.set that CREATES (scope/subjectId/window names no row yet): a cap that did not exist now exists, which tightens authority — no confirmation is needed, the commit lands directly. The result carries the view, the effect, and the canonical statement with its digest (the UI shows the statement; a later loosening against this row will confirm against its digest, so the client holds it from the start).",
+  "method": "budget.set",
+  "request": {
+    "jsonrpc": "2.0", "id": 605, "method": "budget.set",
+    "params": {"scope": "epic", "subjectId": "epc-1", "window": "lifetime", "usdCap": 900, "warnPct": 80}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 605,
+    "result": {
+      "view": {
+        "id": "bud-epc-1",
+        "scope": "epic",
+        "subjectId": "epc-1",
+        "window": "lifetime",
+        "enabled": true,
+        "unknownPolicy": "proceed",
+        "warnPct": 80,
+        "origin": "user",
+        "createdAt": "2026-11-01T09:00:00.000Z",
+        "updatedAt": "2026-11-01T09:00:00.000Z",
+        "status": "ok",
+        "dimensions": [
+          {"dimension": "usd", "cap": 900, "spendFloor": 0, "exact": true, "unknownCount": 0}
+        ],
+        "lastChanged": {"at": "2026-11-01T09:00:00.000Z", "kind": "created", "byKind": "user", "byId": "1000"}
+      },
+      "effect": "created",
+      "statement": "create budget epic/epc-1/lifetime: caps usd=900; unknown policy proceed; warn line 80%",
+      "digest": "2e35c1a7ef3c56fee0a8239733957a0dd1ccc8ae275acf76df6e758292d390b9"
+    }
+  }
+}

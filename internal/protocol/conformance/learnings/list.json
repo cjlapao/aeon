@@ -1,0 +1,9 @@
+{
+  "description": "The plain read: a listing of one scope, every learning with its tags, ordered by created_at. Provenance is ALWAYS shown (M3 — the label is never collapsed), and the observed count rides only with the observed learning (here, none are observed, so no count appears and none is a zero). An empty listing answers honestly — `learnings` is empty, nothing was refused.",
+  "method": "learnings.list",
+  "request": {"jsonrpc": "2.0", "id": 362, "method": "learnings.list", "params": {"scope": "project", "scopeKey": "/srv/repo"}},
+  "response": {"jsonrpc": "2.0", "id": 362, "result": {"learnings": [
+    {"id": 1, "scope": "project", "scopeKey": "/srv/repo", "body": "the build needs the sqlite_fts5 tag", "provenance": "told", "tags": ["build"], "createdAt": "2026-10-30T06:00:00Z"},
+    {"id": 2, "scope": "project", "scopeKey": "/srv/repo", "body": "the CGO shim header must match go-sqlite3's version", "provenance": "assumed", "tags": ["build", "cgo"], "createdAt": "2026-10-30T06:05:00Z"}
+  ]}}
+}

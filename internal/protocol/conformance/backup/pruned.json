@@ -1,0 +1,19 @@
+{
+  "description": "The backup.pruned event, fired by the service after a non-dry backup.prune removed at least one file (a dry run is not an act and fires nothing; a prune that kept everything fires no event): the count and the files' NAMES — basenames, the fence's own voice, the one string content the payload carries. This is the event the pre-migration hook's post-success prune pointed at (T5): the daemon's prune path owns it, so every fenced removal in the family announces itself the same way. Daemon-wide.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-62backup01",
+      "seq": 9104,
+      "kind": "backup.pruned",
+      "at": "2026-11-02T12:30:00.000000000Z",
+      "payload": {
+        "removed": 1,
+        "file_names": [
+          "aeon-state-20261003T120000Z-v70.aeonbak"
+        ]
+      }
+    }
+  }
+}

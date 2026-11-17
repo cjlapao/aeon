@@ -1,0 +1,18 @@
+{
+  "description": "A retrieval.reindex (or graph.build, graph.reparse, graph.delete) on a connection the daemon cannot attribute to a lawful person refuses with the platform operation's no-actor code (S54 T1, the -31956 — re-anchored in build when S60's block took -31952...-31955 on main first): the actor comes from the connection (the daemon's ActorFor seam), never from params, and an unresolvable, empty or uid-0 peer id — or an actor kind the platform audit cannot name — is refused rather than stamped with a placeholder (SP3 admits 'user' and 'cli' only; no agent reaches these doors, SP4). Nothing was queued, no rows were touched, and no platform_change row exists; the derived index stays exactly as it was. The registry's own sentence rides, unfilled by any handler.",
+  "method": "retrieval.reindex",
+  "request": {"jsonrpc": "2.0", "id": 330, "method": "retrieval.reindex", "params": {"componentRoot": "/srv/app", "corpus": "code"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 330,
+    "error": {
+      "code": -31956,
+      "message": "no person at the endpoint for this platform operation",
+      "data": {
+        "what": "retrieval.reindex, graph.build, graph.reparse or graph.delete reached its door without a lawful human actor: no stamping source on the table, an empty or uid-0 peer id, or an actor kind the platform audit cannot name (SP3 admits 'user' and 'cli' only)",
+        "means": "nothing was started — no worker queued, no rows touched, no audit row",
+        "todo": "reconnect as the person who owns the daemon's socket (the 0600 endpoint carries your uid as the actor); an agent has no door onto these operations at all",
+        "fatal": false
+      }
+    }
+  }
+}

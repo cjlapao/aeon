@@ -1,0 +1,21 @@
+{
+  "description": "S59 T6 (EV7): secretref.restore brings a retired reference back — the mirror write, audited, and refused by the store's own sentence when the reference was never archived. Restoring a reference does not restore a value: the source it names has to be present, and secretref.check is the door that says whether it is.",
+  "method": "secretref.restore",
+  "request": { "jsonrpc": "2.0", "id": 930, "method": "secretref.restore", "params": { "name": "deploy-token" } },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 930,
+    "result": {
+      "id": "sref_1a2b3c4d",
+      "name": "deploy-token",
+      "description": "Moved off the daemon's environment onto a 0600 key file.",
+      "sourceKind": "key-file",
+      "source": "/home/cjlapao/.config/aeon/tokens/deploy",
+      "injectAs": "DEPLOY_TOKEN",
+      "origin": "user",
+      "createdAt": "2026-11-03T09:10:00Z",
+      "updatedAt": "2026-11-03T10:00:00Z",
+      "referencedBy": ["ci-default"]
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "description": "Attaching a childless root to another root makes it a child (its own settings become overrides); the id stays and the parentId is set, so the tree gains a child without a move.",
+  "method": "component.attach",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 94,
+    "method": "component.attach",
+    "params": {
+      "id": "abc123",
+      "parentId": "root-456"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 94,
+    "result": {
+      "id": "abc123",
+      "parentId": "root-456",
+      "name": "Aeon QA",
+      "slug": "aeon-qa",
+      "root": "/home/p/aeon-qa",
+      "remote": "https://example.com/team/aeon-qa.git",
+      "remoteKey": "example/team/aeon-qa",
+      "repoKey": "aeon-qa",
+      "owner": "team",
+      "icon": "🧪",
+      "tags": ["go", "qa"],
+      "shortDescription": "",
+      "description": "",
+      "defaultBranch": "main",
+      "branchPrefix": "aeon",
+      "maxParallelAgents": 1,
+      "createdAt": "2026-10-20T08:00:00Z",
+      "updatedAt": "2026-10-21T09:00:00Z"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+$ aeon policy remove --id remove-me
+policy "remove-me" removed — the daemon's next read sees its absence
+$ aeon policy list
+no policies. default is DENY (PL5) — nothing is granted until something grants it.

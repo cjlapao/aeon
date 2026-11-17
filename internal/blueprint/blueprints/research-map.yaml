@@ -1,0 +1,41 @@
+# research-map — S14's demo blueprint: an agent asking another agent.
+#
+# This is the slice's keystone made walkable (DEMO §4): a planning step, then
+# a step that does NOT call a model and does NOT call a tool — it asks
+# reddit-agent, whose signed card offers `summarise-sentiment`, for a
+# judgement. The step suspends (the process exits; AS4, P2), the task is a
+# row, and a completion resumes the loop cold.
+#
+# What it needs before it can START, not merely fail later:
+#   - a signed card for reddit-agent at <store dir>/agentsvc/cards/reddit-agent.json
+#     (the walk publishes one; AS2 — no card, no ask, refused at the pin);
+#   - a daemon started through cmd/aeon serve, which wires the card store
+#     (an unwired daemon refuses the lane at loop start with the honest
+#     sentence — never a durable loop guaranteed to block).
+#
+# The third lane runs AFTER the resume: `report` is an ordinary model step,
+# and the loop reaching it is the proof the cold resume moved the ladder.
+---
+id: research-map
+schemaVersion: 1
+version: 1
+
+lanes:
+  - id: plan
+    step: { kind: model-step, agent: project-planner, produces: PLAN.md }
+
+  - id: survey
+    # The delegation. `agent` is the CALLER (the planner asks); the skill
+    # names the CALLEE and its skill as `agent/skill`. Params ride the task
+    # row so a resumed callee answers the ask it was given, not a re-guess.
+    step:
+      {
+        kind: model-step,
+        agent: project-planner,
+        skill: "reddit-agent/summarise-sentiment",
+        params: { query: "aeon" },
+        produces: SURVEY.md,
+      }
+
+  - id: report
+    step: { kind: model-step, agent: golang-engineer, produces: REPORT.md }

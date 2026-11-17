@@ -1,0 +1,11 @@
+{
+ "__status": 201,
+ "body": {
+  "id": 43,
+  "body": "Verified against the daemon.",
+  "state": "APPROVED",
+  "user": {
+   "login": "steward"
+  }
+ }
+}

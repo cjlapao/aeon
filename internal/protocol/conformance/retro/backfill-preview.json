@@ -1,0 +1,31 @@
+{
+  "description": "The backfill's first call always previews (RT13): counts by outcome, skips counted by WHY, and zero written.",
+  "method": "retro.backfill",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "retro.backfill",
+    "params": {
+      "root": "aeon"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "scanned": 140,
+      "dryRun": true,
+      "byKind": {
+        "done": 8,
+        "aborted": 1,
+        "blocked": 2
+      },
+      "skippedRecorded": 120,
+      "skippedRule": 3,
+      "skippedOpen": 6,
+      "skippedNoScope": 0,
+      "written": 0,
+      "statement": "A score is a measurement of what happened. It does not change what any agent, blueprint or project is allowed or asked to do."
+    }
+  }
+}

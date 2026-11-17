@@ -1,0 +1,36 @@
+{
+  "description": "`step.list` is the drill-down S24's history view makes: a loop's steps, oldest first, WITHOUT their transcripts. A listing that inflated every transcript would be one nobody can render.",
+  "method": "step.list",
+  "request": {
+    "jsonrpc": "2.0", "id": 52, "method": "step.list",
+    "params": {"slug": "refactor", "componentRoot": "/home/p/repo-a"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 52,
+    "result": {
+      "steps": [
+        {
+          "id": 3,
+          "loopSlug": "refactor",
+          "componentRoot": "/home/p/repo-a",
+          "phase": "build",
+          "agent": "golang-engineer",
+          "status": "done",
+          "startedAt": "2026-10-15T09:40:01.000Z",
+          "endedAt": "2026-10-15T09:40:44.000Z",
+          "cost": {"state": "known", "usd": 0.00081}
+        },
+        {
+          "id": 4,
+          "loopSlug": "refactor",
+          "componentRoot": "/home/p/repo-a",
+          "phase": "build",
+          "agent": "golang-engineer",
+          "status": "suspended",
+          "startedAt": "2026-10-15T09:41:12.345Z",
+          "cost": {"state": "partial", "usdAtLeast": 0.0012, "missing": ["cacheWriteUsdPerMTok"]}
+        }
+      ]
+    }
+  }
+}

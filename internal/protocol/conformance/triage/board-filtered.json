@@ -1,0 +1,6 @@
+{
+  "description": "S51 T2 (TM5), the three-word filter shape of the board: the root plus priority and handedOff (the pointer's THREE states — any, only-handed-off, only-not) ride one request; every word is from the closed set triage.vocabulary answers, and the answer is the FILTERED rows (empty means nothing matches the filter — the filter's answer, never the backlog's). A word outside the sets is refused by name before any read: the board speaks only the vocabulary.",
+  "method": "triage.board",
+  "request": {"jsonrpc": "2.0", "id": 446, "method": "triage.board", "params": {"componentRoot": "/srv/projects/ledger", "priority": "unknown", "handedOff": false}},
+  "response": {"jsonrpc": "2.0", "id": 446, "result": []}
+}

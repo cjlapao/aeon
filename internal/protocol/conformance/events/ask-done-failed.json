@@ -1,0 +1,25 @@
+{
+  "description": "`ask.done` when the call failed. It is emitted either way, because an ask that reports nothing loses the spend (M15) — note the cost is still present, reporting `unknown` with the reason the stream was cut. The error is the SAME structured object the synchronous path returns, carrying all three parts: in streaming mode this is the only place a client learns what to do, and an earlier draft carried a bare string here, which meant `aeon ask` printed the provider's sentence and no remedy.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c", "seq": 1450, "kind": "ask.done",
+      "at": "2026-10-15T09:25:00.000000000Z",
+      "payload": {
+        "askId": "a-11",
+        "usage": {},
+        "cost": {"state": "unknown", "reason": "stream-aborted-early"},
+        "error": {
+          "code": -31102,
+          "message": "the model provider failed",
+          "data": {
+            "what": "model: anthropic answered 404: {\"error\":{\"message\":\"model: claude-sonnet-99\"}} (not retried: the provider will answer the same way)",
+            "means": "the provider refused the request, or the stream was cut; the daemon retried where retrying was safe and did not where a reply had already begun",
+            "todo": "the message carries the provider's own words — check the route's credential and model name first",
+            "fatal": false
+          }
+        }
+      }
+    }
+  }
+}

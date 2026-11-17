@@ -1,0 +1,185 @@
+{
+  "settings": {
+    "system": {
+      "title": "Platform status",
+      "subtitle": "Health of the whole daemon: index jobs across every component, what they cost, and the ledger. The graph and search you use live in each component''s Knowledge tab.",
+      "reconnecting": "The daemon is reconnecting — this panel asks nothing until it is current.",
+      "loading": "Asking the daemon…",
+      "evaluated": "Evaluated {at}",
+      "disabled": "Held down while the daemon reports an operation in flight — its answer names who started it.",
+      "status": {
+        "failed": "The daemon''s status panel could not be read."
+      },
+      "tab": {
+        "activity": "Activity",
+        "graph": "Graph roots",
+        "retrieval": "Search indexes"
+      },
+      "actions": {
+        "retry": "Retry",
+        "cancel": "Cancel",
+        "reindex": "Reindex…",
+        "confirmReindex": "Yes — run the pass",
+        "indexAll": "Index",
+        "reindexAll": "Reindex",
+        "indexing": "Indexing…",
+        "indexAllTitle": "Index the search for {root}?",
+        "build": "Build…",
+        "reparse": "Reparse…",
+        "delete": "Delete…",
+        "confirmBuild": "Yes — rebuild the rows",
+        "confirmReparse": "Yes — replace this file''s rows",
+        "confirmDelete": "Yes — remove the root''s graph",
+        "refresh": "Refresh"
+      },
+      "retrieval": {
+        "corpus": "Corpus",
+        "files": "Files",
+        "staleChunks": "Stale chunks",
+        "flying": "a pass is flying",
+        "noEmbed": "No embedding route — keyword answers only.",
+        "embedRoute": "Embedding route {route} · model {model} · {dim} dims",
+        "confirm": {
+          "title": "Reindex {corpus} at {root} — the daemon''s plan first, nothing started yet.",
+          "pricing": "Pricing the plan…",
+          "counts": "{files} files · {staleFiles} stale · {staleChunks} stale chunks",
+          "tokens": "≈ {tokens} input tokens — basis: {basis}",
+          "estimateNotInvoice": "an estimate, never an invoice",
+          "replaces": "This pass replaces the corpus''s derived vectors; source files are never touched."
+        },
+        "state": "State",
+        "emptyIndex": "empty",
+        "hasStale": "stale",
+        "current": "current",
+        "none": "No search indexes",
+        "noneBody": "The daemon reports no retrieval corpora yet.",
+        "refused": "The reindex was refused",
+        "alreadyFlying": "A pass was already running"
+      },
+      "graph": {
+        "root": "Root",
+        "neverBuilt": "never built",
+        "build": {
+          "title": "Build the graph at {root}",
+          "statement": "A build regenerates this root''s DERIVED graph rows from the source files; the run is audited to you under a platform_change row."
+        },
+        "reparse": {
+          "title": "Reparse one file at {root}",
+          "statement": "The file''s graph rows are REPLACED by a fresh parse — derived rows only, source files untouched; the run is audited to you.",
+          "path": "File path"
+        },
+        "delete": {
+          "title": "Delete the graph at {root}",
+          "statement": "This removes the root''s ENTIRE derived graph — every node and every edge; a later build regenerates them, and no source file is touched. The run is audited to you."
+        },
+        "counts": "Indexed",
+        "countsLine": "{files} files · {nodes} symbols · {edges} links",
+        "maintain": "Maintain…",
+        "maintainTitle": "Maintain the code graph",
+        "noRoots": "No roots to index",
+        "noRootsBody": "The daemon lists no component roots yet. Add a component with a repository and its graph shows up here.",
+        "q": {
+          "roots": "Which roots are indexed?",
+          "running": "Is anything running?",
+          "acts": "What does each act do?"
+        },
+        "runningNow": "A pass is running. The other acts stand down until it finishes.",
+        "idleNow": "Nothing is running.",
+        "actsBody": "Build regenerates a root''s symbols and links from its files. Reparse replaces the rows for one file only. Delete removes the root''s whole graph; a later build brings it back. Source files are never touched, and every act asks you to confirm.",
+        "refused": "The graph act was refused",
+        "alreadyFlying": "A pass was already running",
+        "nodes": "Symbols",
+        "edges": "Links"
+      },
+      "usage": {
+        "loops": "{count} loops run",
+        "tokens": "{input} input / {output} output tokens",
+        "unrecorded": "Nothing recorded yet — this workspace has run no counted loops."
+      },
+      "activity": {
+        "failed": "The ledger could not be read.",
+        "empty": "No platform changes — the ledger has never seen a derived-store operation.",
+        "when": "When",
+        "op": "Operation",
+        "subject": "Subject",
+        "actor": "Started by",
+        "summary": "Summary",
+        "search": "Search subject or summary…",
+        "any": "any",
+        "footer": "Showing {shown} of {total}"
+      },
+      "startedBy": "A pass was already flying — the daemon names its starter: {by} at {at}",
+      "help": {
+        "title": "What is platform status?",
+        "body": "Agents find code two ways. The **code graph** answers *who calls what* exactly. **Retrieval** answers *where is this discussed* by meaning or keyword. Both are **derived from your files** and can be rebuilt at any time — nothing on this page changes your source.\n\n### What you can do here\n- **Explore the graph** — pick a symbol to see its callers and callees, or pick two to see how they connect.\n- **Maintain the graph** — build, reparse one file, or delete a root''s graph. Each act confirms first and names the root.\n- **Keep retrieval current** — reindex a corpus. The daemon prices the pass before you confirm; an unpriced route never starts.\n- **Try a search** — see exactly what an agent would get back for a term.\n- **Read the activity** — every operation a person started, and who started it.\n\n### Cost\nKeeping the search index current costs tokens when embeddings are used. The cost is shown before you confirm, always with its state (known, partial or unknown) — an estimate is never an invoice. Totals sit in the Usage card."
+      },
+      "hint": {
+        "graph": "Every code-graph root the daemon holds, with its counts. Build, reparse or delete from Maintain. To read who calls what, open a component''s Knowledge tab.",
+        "retrieval": "Every search index across all components. Keep each current with Reindex. To try a search, open a component''s Knowledge tab.",
+        "activity": "Every build, reparse, delete and reindex, newest first, with who started it."
+      },
+      "strip": {
+        "graph": "Code graph",
+        "graphSub": "{roots} roots · {edges} links",
+        "retrieval": "Retrieval",
+        "retrievalSub": "{files} files · {stale} stale chunks",
+        "usage": "Usage"
+      },
+      "explore": {
+        "mode": "Mode",
+        "modeExplore": "Explore",
+        "modePath": "Path A → B",
+        "symbol": "Symbol",
+        "symbolHint": "Search a symbol…",
+        "kind": "Kind",
+        "anyKind": "Any kind",
+        "go": "Explore",
+        "from": "From",
+        "to": "To",
+        "findPath": "Find path",
+        "matches": "Matches",
+        "selected": "Selected symbol",
+        "nothingSelected": "Nothing selected yet.",
+        "lines": "lines {start} – {end}",
+        "counts": "{callers} callers · {callees} callees",
+        "cardHint": "Click any node to open it here.",
+        "centre": "Centre on this",
+        "pathStart": "Use as path start",
+        "hint": "Search for a symbol",
+        "hintBody": "Type at least two letters, pick a match or press Enter, and its callers and callees are drawn here.",
+        "ambiguous": "More than one match",
+        "ambiguousBody": "Every match is listed and none is picked for you. Pick one to explore it.",
+        "pick": "Explore",
+        "notFound": "Indexed, no match",
+        "notFoundBody": "This root has a graph and nothing in it matches that name. The symbol may live in a file the build skipped, or it may not exist.",
+        "notBuilt": "This root has no graph yet",
+        "notBuiltBody": "It was never built, which is different from empty. Build it, then explore.",
+        "build": "Build graph…",
+        "rootNotBuilt": "This root has no graph yet",
+        "rootNotBuiltBody": "Nothing to draw until the root is built. Building reads its files and can take a few minutes for a large repository.",
+        "noNode": "The daemon answered found with no symbol to draw.",
+        "unknownState": "The daemon answered \"{state}\" — this page predates it.",
+        "pathHint": "Find how two symbols connect",
+        "pathHintBody": "Type the names of two symbols and the path between them is drawn here.",
+        "pathState": "Path answer: {state}",
+        "pathStateBody": "There is no path to draw for that answer.",
+        "ariaLabel": "Code graph network",
+        "refused": "The graph lookup was refused"
+      },
+      "probe": {
+        "title": "Try a search",
+        "subtitle": "What an agent would get back for a term",
+        "root": "Root",
+        "corpus": "Search index",
+        "query": "Term",
+        "queryHint": "how are blueprints validated",
+        "go": "Search",
+        "count": "{count} hits, in the daemon''s order",
+        "keywordOnly": "keyword only — no embeddings",
+        "empty": "No hits for that term.",
+        "note": "File ranges and scores only. Search and the code graph stay two separate lookups.",
+        "refused": "The search was refused"
+      }
+    }
+  }
+}

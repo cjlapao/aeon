@@ -1,0 +1,19 @@
+{
+  "description": "The estimate arrives whole or not at all (D3, P32's discipline carried from the queue's size): min, max AND basis travel together — the handler refuses a half-shape before the door, and the database CHECK is the backstop neither transport can skip. An estimate is writable at any rung before done (D3: the moment someone can say it is the moment to say it) — here on an `idea` item, months before anything runs. A bare figure is not expressible on this wire.",
+  "method": "roadmap.estimate",
+  "request": {"jsonrpc": "2.0", "id": 345, "method": "roadmap.estimate", "params": {"id": 12, "estimateMin": 2, "estimateMax": 5, "estimateBasis": "two handlers and a renderer, one door each"}},
+  "response": {"jsonrpc": "2.0", "id": 345, "result": {"item": {
+    "id": 12,
+    "componentRoot": "/srv/projects/ledger",
+    "title": "export monthly statements",
+    "status": "idea",
+    "priorityState": "unknown",
+    "priorityLabel": null,
+    "estimateMin": 2,
+    "estimateMax": 5,
+    "estimateBasis": "two handlers and a renderer, one door each",
+    "provenance": "authored",
+    "createdAt": "2026-10-29T09:00:00Z",
+    "updatedAt": "2026-10-29T09:15:00Z"
+  }}}
+}

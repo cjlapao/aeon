@@ -1,0 +1,7 @@
+$ aeon proposal commit 1
+proposal <ID> committed
+$ aeon policy list
+committed-add            tool_access    all-agents                   deny   operator     no expiry
+$ aeon proposal list
+ID    KIND               STATUS     CREATED BY               COMMAND
+<ID> policy_add         committed  user:1000                aeon proposal commit 1

@@ -1,0 +1,20 @@
+{
+  "description": "S52 T4 (LM1): the memory doors are agent-scoped in BOTH directions. A person session reaching learnings.mine.query is refused by name with the pointer sentence — the person's own reads are learnings.query, learnings.show, the board and the history, which answer over everything legitimately theirs. This is the opposite of the slice's human-door pattern on purpose: here the scoped surface is the agent's, and neither caller can borrow the other's view.",
+  "method": "learnings.mine.query",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 456,
+    "method": "learnings.mine.query",
+    "params": {
+      "queryText": "whatever a person typed at the agent's door"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 456,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: refused: this door is agent-scoped; a person uses learnings.query (learnings.board to browse, learnings.forAgent to ask what an agent would be shown)"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "description": "A server→client notification: no `id`, so it is not a response. Aeon's seq is in `params.seq` — THIS is the cursor `subscribe {after: n}` takes. The transport puts its own per-connection delivery counter on the envelope; a client must not use that one, because it restarts at reconnection, which is precisely when a cursor is needed.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 1421,
+      "kind": "client.connected",
+      "at": "2026-10-15T09:14:52.123456789Z",
+      "payload": {
+        "connId": "conn-7",
+        "clientName": "aeon-cli",
+        "clientVersion": "0.1.0",
+        "protocolVersion": 1,
+        "peerUid": 1000,
+        "peerPid": 4242,
+        "peerPidAvailable": true
+      }
+    }
+  }
+}

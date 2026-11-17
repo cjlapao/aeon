@@ -1,0 +1,12 @@
+{
+  "description": "`terminal.close` kills the session — the whole process group, the same discipline tools/spawn.go keeps (a backgrounded child must die with its parent, measured by a freed port, not a return code). It reports the exit code when the shell had already exited.",
+  "method": "terminal.close",
+  "request": {
+    "jsonrpc": "2.0", "id": 95, "method": "terminal.close",
+    "params": { "terminalId": "t-7f3a" }
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 95,
+    "result": { "exitCode": 0 }
+  }
+}

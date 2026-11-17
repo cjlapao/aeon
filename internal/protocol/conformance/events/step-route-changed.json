@@ -1,0 +1,22 @@
+{
+  "description": "A steer carried a provider override: the new route/effort pair applies FROM `fromIteration` — the NEXT call, never the in-flight one (D5). The effort is the effective one after the capability check: a request the provider refuses with tools is lowered and says so here, not silently.",
+  "event": "step.route.changed",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "seq": 11,
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1470,
+      "kind": "step.route.changed",
+      "at": "2026-10-24T12:00:00.000Z",
+      "payload": {
+        "stepId": 12,
+        "agent": "default",
+        "route": "anthropic-opus",
+        "reasoningEffort": "low",
+        "fromIteration": 4
+      }
+    }
+  }
+}

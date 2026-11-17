@@ -1,0 +1,18 @@
+{
+  "description": "The settings.unset happy path (S44 T5): removing a stored row returns the key's DEFAULT as its effective value (source=\"default\", stored=null) with changed=true, because the row actually went away. An unset is the inverse of a set: it clears the table's row so the resolution falls through to default (or an environment if one is in force). The event it records (CS12) names the removed value's old and null new — an unset is a write to the audit, not a no-op. A key with no row reports changed=false (there was nothing to remove).",
+  "method": "settings.unset",
+  "request": {"jsonrpc": "2.0", "id": 305, "method": "settings.unset", "params": {"key": "test.flag"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 305,
+    "result": {
+      "setting": {
+        "key": "test.flag", "area": "test", "type": "bool", "default": "false",
+        "description": "A test boolean setting.", "sensitive": false,
+        "value": "false", "source": "default", "stored": null,
+        "shadowedBy": "", "envInvalid": "", "storedInvalid": false,
+        "updatedAt": "", "updatedBy": ""
+      },
+      "changed": true
+    }
+  }
+}

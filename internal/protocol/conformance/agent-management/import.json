@@ -1,0 +1,28 @@
+{
+  "description": "agent.import reads a card file from a path and returns the imported agent with its idempotency result — created, updated, or no-op (AM3, the (slug, version) result a third-party client must be able to render). It is a daemon write the CLI and the app share (P34); unsigned import is refused by default (AM3) unless the operator's override is set, and a package arrives as a filesystem path, never a scheme.",
+  "method": "agent.import",
+  "request": {"jsonrpc": "2.0", "id": 112, "method": "agent.import", "params": {"path": "/home/operator/agents/reviewer-plus"}},
+  "response": {"jsonrpc": "2.0", "id": 112, "result": {
+    "agent": {
+      "id": 12,
+      "slug": "reviewer-plus",
+      "name": "Reviewer Plus",
+      "description": "Reviews pull requests and posts findings to the thread",
+      "functionality": "read, list, write",
+      "metadata": "",
+      "prompt": "You are a careful code reviewer.",
+      "skills": "[]",
+      "version": "1.0.0",
+      "internal": false,
+      "avatarType": "default",
+      "avatarColor": "blue",
+      "avatarMood": "neutral",
+      "signature": "",
+      "certificate": "",
+      "signed": false,
+      "createdAt": "2026-10-30T09:00:00Z",
+      "updatedAt": "2026-10-30T09:00:00Z"
+    },
+    "result": "created"
+  }}
+}

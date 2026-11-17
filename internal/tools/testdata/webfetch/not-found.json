@@ -1,0 +1,28 @@
+{
+  "description": "a non-2xx answer carries the number and none of the server's prose",
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "http://docs.test/gone",
+        "header": {
+          "Accept": [
+            "text/plain, text/markdown, application/json, application/xml"
+          ],
+          "User-Agent": [
+            "aeon-webfetch/1.0 (Aeon daemon; GET-only; sends no credentials)"
+          ]
+        }
+      },
+      "response": {
+        "status": 404,
+        "header": {
+          "Content-Type": [
+            "text/html"
+          ]
+        },
+        "body": "<html><body>404 Not Found</body></html>"
+      }
+    }
+  ]
+}

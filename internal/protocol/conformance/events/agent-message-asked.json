@@ -1,0 +1,20 @@
+{
+  "description": "MB6: the moment a wait:true ask suspends its caller is on the stream \u2014 the question row and this event are ONE moment, and the payload names the row (messageId) and the step so a subscriber paints without a read-back. The row remains the truth: racing the event, agent.messages reads the same fact.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 1501,
+      "kind": "agent.message.asked",
+      "at": "2026-10-31T10:00:00.000000001Z",
+      "payload": {
+        "stepId": 4,
+        "messageId": 12,
+        "agent": "planner",
+        "loopId": "l-7",
+        "lane": "plan"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "description": "A message with CHOSEN skills (S68 B8) lands in the thread: the row's body stays the operator's PURE words, and the announced `skills` are the riding names — the durable receipt of whose canonical instruction lines went into this turn's SYSTEM half (hidden from the chat window by design; the receipt under the bubble is how the window says so honestly). A message with nothing chosen omits `skills` entirely — the pre-S68 shape.",
+  "event": "loop.message.posted",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1608,
+      "kind": "loop.message.posted",
+      "at": "2026-10-31T09:00:00Z",
+      "payload": {
+        "loopId": "loop-9",
+        "messageId": 42,
+        "seq": 8,
+        "author": "human",
+        "kind": "note",
+        "source": "user",
+        "body": "now draft the migration notes",
+        "skills": ["verify-before-done"]
+      }
+    }
+  }
+}

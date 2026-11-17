@@ -1,0 +1,4 @@
+$ aeon policy add --type tool_access --id ok-expiring --target agent:frank --action deny --tool grep --spec {"state":"deny"} --source operator --not-after 2026-11-02T00:00:00Z
+policy ok-expiring stored — the daemon's next read sees it (N8 forbids caching)
+$ aeon policy list
+ok-expiring              tool_access    agent:frank                  deny   operator     <TIME>

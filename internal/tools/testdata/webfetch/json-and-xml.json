@@ -1,0 +1,51 @@
+{
+  "description": "application/json and application/xml are on the content-type allowlist",
+  "exchanges": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "http://docs.test/api/limits",
+        "header": {
+          "Accept": [
+            "text/plain, text/markdown, application/json, application/xml"
+          ],
+          "User-Agent": [
+            "aeon-webfetch/1.0 (Aeon daemon; GET-only; sends no credentials)"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "header": {
+          "Content-Type": [
+            "application/json; charset=utf-8"
+          ]
+        },
+        "body": "{\"requests_per_minute\":60,\"egress\":\"GET-only\"}\n"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "http://docs.test/feed.xml",
+        "header": {
+          "Accept": [
+            "text/plain, text/markdown, application/json, application/xml"
+          ],
+          "User-Agent": [
+            "aeon-webfetch/1.0 (Aeon daemon; GET-only; sends no credentials)"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "header": {
+          "Content-Type": [
+            "application/xml"
+          ]
+        },
+        "body": "<feed><title>Aeon</title></feed>\n"
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "description": "backup.run refused as a shape error because its params name an identity key: the actor is stamped by the daemon from the CONNECTION (the kernel's peer credential, the door's ActorFor seam) and never read from params (BK13) — a param that names it would let a caller forge the audit identity of a write to their own data. The refusal happens before the actor is even asked, and the same rejection guards list, verify, status and prune.",
+  "method": "backup.run",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 961,
+    "method": "backup.run",
+    "params": {
+      "reason": "manual",
+      "actor": {
+        "kind": "user",
+        "id": "0"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 961,
+    "error": {
+      "code": -32602,
+      "message": "invalid params: backup.run params carry \"actor\" — the actor is stamped by the daemon from the connection, never named by the caller (BK13)"
+    }
+  }
+}

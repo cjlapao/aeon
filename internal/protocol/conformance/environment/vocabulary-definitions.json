@@ -1,0 +1,192 @@
+{
+  "description": "S59 T6 (EV1, EV3, EV7, EV12): environment.vocabulary serves the plane's own definitions from the one place each is defined — the backend table with its STRENGTH NUMBERS, the default allowlist, the deny list in the shapes it actually has (words, prefixes, exact handles, loader names, exemptions, set-only), the closed sets of modes, and the two honesty lines. A client that retypes these lists is a client that drifts; a client that reads them reads what the daemon enforces. Every list here is the daemon's own, dumped from the same constants the validator uses. provisionIdleTtl comes from the DECLARED setting (S44), and provisionIdleTtlFrom says the value was read as set rather than fallen back to. knownLimits (EV15) carries the limitations the platform knows about with whether the daemon says each is true TODAY, so the panel prints a status it does not own — a fixed defect stops being announced the day it is fixed instead of living on in a client's string literal.",
+  "method": "environment.vocabulary",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 919,
+    "method": "environment.vocabulary"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 919,
+    "result": {
+      "backends": [
+        {
+          "name": "host-inherit",
+          "strength": 0,
+          "capabilities": [
+            "wall-limit"
+          ]
+        },
+        {
+          "name": "host-scrubbed",
+          "strength": 1,
+          "capabilities": [
+            "wall-limit",
+            "env-allowlist",
+            "secrets-redacted"
+          ]
+        },
+        {
+          "name": "container",
+          "strength": 2,
+          "capabilities": [
+            "wall-limit",
+            "env-allowlist",
+            "secrets-redacted",
+            "filesystem-isolation",
+            "egress-none",
+            "resource-limits",
+            "services"
+          ]
+        },
+        {
+          "name": "vm",
+          "strength": 3,
+          "capabilities": [
+            "wall-limit",
+            "env-allowlist",
+            "secrets-redacted",
+            "filesystem-isolation",
+            "egress-none",
+            "resource-limits",
+            "services"
+          ]
+        }
+      ],
+      "defaultAllowlist": [
+        "PATH",
+        "HOME",
+        "USER",
+        "LOGNAME",
+        "SHELL",
+        "LANG",
+        "LC_*",
+        "TZ",
+        "TMPDIR"
+      ],
+      "denyWords": [
+        "KEY",
+        "TOKEN",
+        "SECRET",
+        "PASSWORD",
+        "PASSWD",
+        "CREDENTIAL",
+        "AUTH",
+        "COOKIE",
+        "APIKEY",
+        "API_KEY",
+        "ACCESS_KEY",
+        "PRIVATE"
+      ],
+      "denyPrefixes": [
+        "AEON_",
+        "ANTHROPIC_",
+        "OPENAI_",
+        "GITHUB_",
+        "GH_",
+        "AWS_",
+        "AZURE_",
+        "GOOGLE_",
+        "GCP_",
+        "GITLAB_",
+        "BITBUCKET_",
+        "SLACK_",
+        "STRIPE_",
+        "NPM_",
+        "DOCKER_"
+      ],
+      "denyExact": [
+        "SSH_AUTH_SOCK",
+        "GPG_AGENT_INFO",
+        "GPG_AGENT_ADDRESS",
+        "DOCKER_HOST",
+        "KUBECONFIG",
+        "DBUS_SESSION_BUS_ADDRESS",
+        "DISPLAY",
+        "WAYLAND_DISPLAY"
+      ],
+      "denyLoader": [
+        "LD_PRELOAD",
+        "LD_LIBRARY_PATH",
+        "LD_AUDIT",
+        "DYLD_INSERT_LIBRARIES",
+        "DYLD_LIBRARY_PATH",
+        "BASH_ENV",
+        "ENV",
+        "SHELLOPTS",
+        "BASHOPTS",
+        "PROMPT_COMMAND",
+        "PS4",
+        "IFS",
+        "GLOBIGNORE",
+        "PYTHONSTARTUP",
+        "PYTHONPATH",
+        "NODE_OPTIONS",
+        "NODE_REPL_EXTERNAL_MODULE",
+        "PERL5OPT",
+        "RUBYOPT",
+        "RUBYLIB",
+        "RUST_MIN_STACK",
+        "GIT_CONFIG",
+        "GIT_CONFIG_GLOBAL",
+        "GIT_CONFIG_SYSTEM",
+        "GIT_SSH",
+        "GIT_SSH_COMMAND",
+        "GIT_EXEC_PATH",
+        "GIT_INDEX_FILE",
+        "GIT_DIR",
+        "GIT_WORK_TREE",
+        "GIT_OBJECT_DIRECTORY",
+        "GIT_ALTERNATE_OBJECT_DIRECTORIES",
+        "GIT_SEQUENCE_EDITOR",
+        "GIT_EDITOR",
+        "EDITOR",
+        "PAGER"
+      ],
+      "denyExempt": [
+        "AEON_SERVICE_"
+      ],
+      "denySetOnly": [
+        "PATH",
+        "HOME",
+        "TMPDIR",
+        "LD_PRELOAD"
+      ],
+      "proxyWarnPatterns": [
+        "PROXY"
+      ],
+      "egressModes": [
+        "unenforced",
+        "none",
+        "unrestricted"
+      ],
+      "sourceKinds": [
+        "daemon-env",
+        "key-file",
+        "store"
+      ],
+      "pullPolicies": [
+        "never",
+        "missing"
+      ],
+      "homeModes": [
+        "real",
+        "scratch"
+      ],
+      "honesty": "host-scrubbed removes ambient secrets from what a command sees; it is not a sandbox. The command still runs as the daemon's user, can read every file that user can read, and can reach the network. Filesystem and network isolation come from the container backend.",
+      "redactionLimits": "Redaction replaces an injected secret's exact bytes and their base64 (standard and URL-safe, padded and unpadded), hex and percent forms in a command's output, across chunk boundaries. It does not catch a secret the command transformed (reversed, split by a character, XORed, ROT13), one written to a file and read back with the read tool, or one a model produced from other knowledge. The first line of defence is that only the commands that need a variable get it. TestRedactLimitsAreTrue asserts this sentence and nothing wider.",
+      "provisionIdleTtl": "24h",
+      "provisionIdleTtlSeconds": 86400,
+      "provisionIdleTtlFrom": "setting",
+      "provisionIdleTtlKey": "execenv.provisionIdleTTL",
+      "knownLimits": [
+        {
+          "key": "s32-shared-working-tree",
+          "sentence": "parallel units of one loop still share a single working tree: each unit gets its own worktree created and ledgered, but the model step runs with the shared component root as its workspace, so two units editing the same file overwrite each other. This is not an execution-environment defect; the fix is S32's follow-up.",
+          "active": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "description": "Removes a route and FORGETS ITS CREDENTIAL, which is the only way to take one out of the daemon's memory short of restarting. `deleted: false` for a route that was not there is not an error — a client racing its own refresh is ordinary, and making it an error would mean every client needs code for a race it did not cause.",
+  "method": "routes.delete",
+  "request": {"jsonrpc": "2.0", "id": 32, "method": "routes.delete", "params": {"id": "local"}},
+  "response": {"jsonrpc": "2.0", "id": 32, "result": {"deleted": true}}
+}

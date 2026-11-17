@@ -1,0 +1,4 @@
+{
+  "description": "Recovery ends with a count of recovered and failed steps, allowing a client to reconcile the announced total with every resolution.",
+  "notification": {"jsonrpc":"2.0","method":"event","params":{"subscriptionId":"s-1","seq":2006,"kind":"recovery.finished","at":"2026-10-17T11:00:05Z","payload":{"total":2,"recovered":1,"failed":1,"skipped":0}}}
+}

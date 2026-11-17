@@ -1,0 +1,15 @@
+{
+  "description": "Emitted after a subscription is registered, and AFTER the cursor's replay has been delivered. Replay first on purpose: a client receiving this before its own backlog would reasonably treat the backlog as live traffic that arrived after creation, and order its UI by the wrong thing.",
+  "notification": {
+    "jsonrpc": "2.0", "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c", "seq": 1420, "kind": "subscription.created",
+      "at": "2026-10-15T09:14:00.000000000Z",
+      "payload": {
+        "subscriptionId": "s-7f3a1b2c", "connId": "conn-1",
+        "filter": {"componentRoot": "/home/me/repo", "kinds": ["loop.*"]},
+        "from": 1420
+      }
+    }
+  }
+}

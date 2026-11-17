@@ -1,0 +1,32 @@
+{
+  "description": "budget.list is a list-with-details (rule 3): each row carries its live status (computed at the read from the current spend and the warn line — never a stored flag), the per-dimension cap/spend-floor/exact/unknown detail, and the last change from the audit. The status filter here is on that computed status, so a list that filtered on a stored flag could not answer the way this one does.",
+  "method": "budget.list",
+  "request": {
+    "jsonrpc": "2.0", "id": 601, "method": "budget.list",
+    "params": {"scope": "epic", "status": "warn"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 601,
+    "result": {
+      "budgets": [
+        {
+          "id": "bud-epc-1",
+          "scope": "epic",
+          "subjectId": "epc-1",
+          "window": "lifetime",
+          "enabled": true,
+          "unknownPolicy": "proceed",
+          "warnPct": 80,
+          "origin": "user",
+          "createdAt": "2026-11-01T09:00:00.000Z",
+          "updatedAt": "2026-11-01T09:00:00.000Z",
+          "status": "warn",
+          "dimensions": [
+            {"dimension": "usd", "cap": 900, "spendFloor": 745.5, "exact": false, "unknownCount": 2}
+          ],
+          "lastChanged": {"at": "2026-11-01T09:00:00.000Z", "kind": "created", "byKind": "user", "byId": "1000"}
+        }
+      ]
+    }
+  }
+}

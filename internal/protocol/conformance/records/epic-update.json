@@ -1,0 +1,27 @@
+{
+  "description": "epic_update rewrites an epic's objective through the same arm the step's tool calls \u2014 authorship stays stamped, never carried.",
+  "method": "epic.update",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "method": "epic.update",
+    "params": {
+      "epic_id": "epic-7a1f",
+      "objective": "two doors, one ledger"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 340,
+    "result": {
+      "id": "epic-7a1f",
+      "rootId": "prj-7a1f",
+      "title": "Org layers",
+      "objective": "one definition, two doors",
+      "owner": "cjlapao",
+      "reviewState": "draft",
+      "createdAt": "2026-10-26T09:00:00Z",
+      "updatedAt": "2026-10-26T09:00:00Z"
+    }
+  }
+}

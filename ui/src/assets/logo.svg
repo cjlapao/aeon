@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Aeon Two-Tone Dual Loop Brand Mark (Electric Blue & Vivid Magenta) - Light Theme -->
+  <defs>
+    <linearGradient id="twoToneLightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EDF2F7"/>
+    </linearGradient>
+
+    <linearGradient id="streamBlueCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+
+    <linearGradient id="streamMagentaRose" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#D946EF"/>
+      <stop offset="100%" stop-color="#F43F5E"/>
+    </linearGradient>
+
+    <radialGradient id="twoToneGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#E879F9" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softCardShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0F172A" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#2563EB" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <path d="M 256,256 C 210,210 170,166 116,166 C 58,166 22,206 22,256 C 22,306 58,346 116,346 C 170,346 210,302 256,256 C 302,210 342,166 396,166 C 454,166 490,206 490,256 C 490,306 454,346 396,346 C 342,346 302,302 256,256 Z"
+        fill="none" stroke="#EEF2F6" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g filter="url(#softCardShadow)">
+    <path d="M 256,256 C 210,302 170,346 116,346 C 58,346 22,306 22,256 C 22,206 58,166 116,166 C 170,166 210,210 256,256"
+          fill="none" stroke="url(#streamBlueCyan)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 256,256 C 302,210 342,166 396,166 C 454,166 490,206 490,256 C 490,306 454,346 396,346 C 342,346 302,302 256,256"
+          fill="none" stroke="url(#streamMagentaRose)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 5 Nodes -->
+  <circle cx="116" cy="166" r="16" fill="#FFFFFF" stroke="#0284C7" stroke-width="6"/>
+  <circle cx="116" cy="166" r="6" fill="#0284C7"/>
+  <circle cx="116" cy="346" r="16" fill="#FFFFFF" stroke="#2563EB" stroke-width="6"/>
+  <circle cx="116" cy="346" r="6" fill="#2563EB"/>
+
+  <circle cx="396" cy="166" r="16" fill="#FFFFFF" stroke="#D946EF" stroke-width="6"/>
+  <circle cx="396" cy="166" r="6" fill="#D946EF"/>
+  <circle cx="396" cy="346" r="16" fill="#FFFFFF" stroke="#F43F5E" stroke-width="6"/>
+  <circle cx="396" cy="346" r="6" fill="#F43F5E"/>
+
+  <circle cx="256" cy="256" r="20" fill="#FFFFFF" stroke="#0F172A" stroke-width="7"/>
+  <circle cx="256" cy="256" r="8" fill="#38BDF8"/>
+</svg>

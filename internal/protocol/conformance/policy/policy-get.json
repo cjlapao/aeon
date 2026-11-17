@@ -1,0 +1,24 @@
+{
+  "description": "S45 T2 (PM5): policy.get answers the WHOLE row — the identity view plus the raw spec (here and only here: policy.list stays the identity view), the engine's own describe sentence printed verbatim (D9), the row's createdAt, and the two informational records. acceptedBy/acceptedAt come from policy_acceptance (PL10: the enforcement path does not know this question exists — the read side may say who was told and since when); authored reports whether the audit carries the rule's RecordAuthored row, and it is false for a lane-type target because the audit's subject parse admits agent and loop only — a stated truth, never a gap. The spec travels untouched: the same bytes the write boundary validated.",
+  "method": "policy.get",
+  "request": {"jsonrpc": "2.0", "id": 67, "method": "policy.get", "params": {"id": "until-halloween"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 67,
+    "result": {
+      "policy": {
+        "id": "until-halloween",
+        "type": "command_access",
+        "target": "lane-type:review",
+        "action": "deny",
+        "source": "operator",
+        "notAfter": "2026-11-01T00:00:00Z",
+        "describe": "denies commands matching \"git push*\" for lane type \"review\" — expires 2026-11-01T00:00:00Z — authored by operator",
+        "createdAt": "2026-10-21T12:00:00Z",
+        "spec": {"command": "git push*", "state": "deny"},
+        "acceptedBy": "ops",
+        "acceptedAt": "2026-10-21T12:05:00Z",
+        "authored": false
+      }
+    }
+  }
+}

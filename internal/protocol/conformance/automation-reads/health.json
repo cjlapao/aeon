@@ -1,0 +1,56 @@
+{
+  "description": "Health for every live automation, composed by the SAME code the gate runs: the blueprint state, the webhook secret as presence-only, workspace and scope, and CanFire with the engine\u2019s own reasons \u2014 advice, never a gate.",
+  "method": "automation.health",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8206,
+    "method": "automation.health",
+    "params": {}
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8206,
+    "result": {
+      "health": [
+        {
+          "source": "schedule",
+          "id": "sch-morning",
+          "blueprint": {
+            "state": "ok"
+          },
+          "workspace": {
+            "exists": true
+          },
+          "scope": {
+            "exists": true
+          },
+          "canFire": true,
+          "reasons": []
+        },
+        {
+          "source": "webhook",
+          "id": "whk-deploy",
+          "blueprint": {
+            "state": "missing"
+          },
+          "webhook": {
+            "envName": "AEON_WEBHOOK_DEPLOY",
+            "set": false
+          },
+          "workspace": {
+            "exists": true
+          },
+          "scope": {
+            "exists": true
+          },
+          "canFire": false,
+          "reasons": [
+            "the blueprint this automation fires does not exist \u2014 a fire would start nothing",
+            "env AEON_WEBHOOK_DEPLOY is not set in the daemon \u2014 every POST will be refused"
+          ]
+        }
+      ],
+      "evaluatedAt": "2026-11-03T09:00:00Z"
+    }
+  }
+}

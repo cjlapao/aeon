@@ -1,0 +1,42 @@
+[
+  {
+    "name": "all_three",
+    "brief": "/b.md",
+    "plan": "/p.md",
+    "priority": "known",
+    "ready": true,
+    "why": ""
+  },
+  {
+    "name": "no_brief",
+    "brief": "",
+    "plan": "/p.md",
+    "priority": "known",
+    "ready": false,
+    "why": "not ready: no brief agreed (brief_path unset)"
+  },
+  {
+    "name": "no_plan",
+    "brief": "/b.md",
+    "plan": "",
+    "priority": "known",
+    "ready": false,
+    "why": "not ready: no plan produced (plan_path unset — the project-planner step has not landed)"
+  },
+  {
+    "name": "priority_unknown",
+    "brief": "/b.md",
+    "plan": "/p.md",
+    "priority": "unknown",
+    "ready": false,
+    "why": "not ready: priority is unknown (D2 — an unknown priority never becomes ready by waiting)"
+  },
+  {
+    "name": "nothing_at_all",
+    "brief": "",
+    "plan": "",
+    "priority": "unknown",
+    "ready": false,
+    "why": "not ready: no brief agreed (brief_path unset); no plan produced (plan_path unset — the project-planner step has not landed); priority is unknown (D2 — an unknown priority never becomes ready by waiting)"
+  }
+]

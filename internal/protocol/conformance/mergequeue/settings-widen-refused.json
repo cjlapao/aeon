@@ -1,0 +1,28 @@
+{
+  "description": "An authority-widening settings write (mode to auto) WITHOUT the acknowledgement: the daemon refuses with its own statement sentence in the `what` and the digest to send back in `acknowledged` \u2014 the S49/S50 statement-then-act shape. Nothing was written; the old settings stand. The CLI and UI print this same sentence, because it rides from the one formatter.",
+  "method": "mergequeue.settings",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 388,
+    "method": "mergequeue.settings",
+    "params": {
+      "componentRoot": "/srv/components/alpha",
+      "mode": "auto"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 388,
+    "error": {
+      "code": -31952,
+      "message": "the merge-queue operation was refused",
+      "data": {
+        "what": "MERGE QUEUE \u2014 /srv/components/alpha: setting the queue to AUTO widens authority. The daemon will then land items that are green and match the S57 merge rule with NO further person in the loop, using the S56 `merge` grants (git.publishIntegration, forge.openLandingPR, forge.land) exactly as pinned. Conflict policy stays ask. Land method squash. Max catch-ups 3. \u2014 this widens the queue's authority. Nothing changed. Resend with acknowledged 2070edb13ad5f0d05879437bbbcb86be96c0feaaebb6cc53b27b7b252412cd22 to apply the sentence you have now read",
+        "means": "nothing changed: no queue row moved, no loop started, no event was written. A merge-queue write is a human door and the driver is the only mover of item states, so a refusal is the plane doing its job",
+        "todo": "do what the what says \u2014 re-read the item with mergequeue.show (its digest is the land's binding), fix the named setting, or accept that a landed or removed item has nothing left to do",
+        "fatal": false
+      }
+    }
+  },
+  "fromSeam": true
+}

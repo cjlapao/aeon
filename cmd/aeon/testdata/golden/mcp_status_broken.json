@@ -1,0 +1,6 @@
+{
+  "configPath": "«config»",
+  "present": true,
+  "loadError": "mcp: agents.golang-engineer.declares \"github.tool_that_was_never_configured\" — server \"github\" does not carry that tool in its configuration",
+  "probes": {}
+}

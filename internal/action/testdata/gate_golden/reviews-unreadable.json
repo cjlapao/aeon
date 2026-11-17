@@ -1,0 +1,9 @@
+{
+  "case": "reviews-unreadable",
+  "refused": true,
+  "sentence": "refused: forge.merge gate: PR #3 reviews cannot be read: transport: connection reset (scenario)\n  why:  the forge could not be reached — a transient fault\n  do:   retry; if it persists, run aeon doctor — the merge is refused BEFORE the forge is asked (L34/D10)\n  why:  the forge understood the call and declined it — a domain refusal, not a transient fault\n  do:   fix the request so it satisfies the refusal; resending it unchanged will fail again",
+  "calls": [
+    "ReadPR",
+    "ListReviews"
+  ]
+}

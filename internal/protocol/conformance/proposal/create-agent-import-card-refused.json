@@ -1,0 +1,27 @@
+{
+  "description": "proposal.create's agent_import refusal when the package is refused at the plugin layer (S37 T4, criterion 2): the seam (the entry point's closure over internal/plugin) refuses the package, and its verbatim reason passes back into the refusal's `what` byte-for-byte — the plugin layer's words, not a wrapper's (AP10's reason travels unchanged, the same shape S35's own proposals_test asserts). No row is written (TD3: an inert proposal is never carried to commit). The shape is identical to every other kind's refusal; only the `what` is this package's own.",
+  "method": "proposal.create",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 94,
+    "method": "proposal.create",
+    "params": {
+      "kind": "agent_import",
+      "payload": {"pkgPath": "/home/operator/agents/reviewer-plus"}
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 94,
+    "error": {
+      "code": -31710,
+      "message": "the proposal was refused",
+      "data": {
+        "what": "refused: card.json · the card could not be verified",
+        "means": "nothing was written — a refused proposal leaves no row, never one carrying an error flag",
+        "todo": "the `what` names the exact reason; fix the package and create again",
+        "fatal": false
+      }
+    }
+  }
+}

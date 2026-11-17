@@ -1,0 +1,19 @@
+{
+  "description": "S52 T2 (LM6): the memory board, filtered IN THE DAEMON. Every filter is optional and every set filter ANDs; the answer carries each row in full with its own Describe sentence — the daemon's own words for its provenance, quoted by every surface, never re-composed by the app. Retracted rows are absent unless includeRetracted is deliberately set; here it is not, and the one retracted row in this store does not appear.",
+  "method": "learnings.board",
+  "request": {"jsonrpc": "2.0", "id": 368, "method": "learnings.board", "params": {"provenance": "observed"}},
+  "response": {"jsonrpc": "2.0", "id": 368, "result": {"learnings": [
+    {
+      "id": 11,
+      "scope": "agent",
+      "scopeKey": "golang-engineer",
+      "body": "the CGO shim header must match go-sqlite3's version",
+      "provenance": "observed",
+      "observedCount": 3,
+      "tags": ["cgo"],
+      "sourceLoopSlug": "loop-cgo-fix",
+      "createdAt": "2026-10-31T09:15:00Z",
+      "describe": "observed (×3) — a loop saw it 3 times"
+    }
+  ]}}
+}

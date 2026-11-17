@@ -1,0 +1,41 @@
+{
+  "description": "mergerule.set refuses a require_dod value outside the closed set: the value is quoted and the closed set named in the sentence (code -31871, kind require-dod-invalid) — no revision is issued, no event is written, the row and its ledger are exactly as they were.",
+  "method": "mergerule.set",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1041,
+    "method": "mergerule.set",
+    "params": {
+      "componentId": "c-aeon",
+      "rule": {
+        "enabled": true,
+        "requireLocal": false,
+        "requireDod": "sometimes",
+        "requiredChecks": [],
+        "checksPolicy": "reported_green",
+        "noChecks": "allow",
+        "reviewMode": "forge",
+        "aeonReviewAgents": [
+          "code-reviewer"
+        ],
+        "requireThreadsResolved": false,
+        "method": "squash"
+      }
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1041,
+    "error": {
+      "code": -31871,
+      "message": "the merge rule operation was refused",
+      "data": {
+        "kind": "require-dod-invalid",
+        "what": "merge rule set refused: require_dod is \"sometimes\"; the closed set is none|all_met",
+        "means": "the daemon understood and declined — the rule row and its ledger are exactly as they were (no revision issued, no event written), and the kind in data kind says which closed set it refused",
+        "todo": "do what the what sentence names — put the field in the closed set it names, or clear the component it says has no row",
+        "fatal": false
+      }
+    }
+  }
+}

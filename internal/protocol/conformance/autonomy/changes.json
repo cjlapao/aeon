@@ -1,0 +1,32 @@
+{
+  "description": "The autonomy.changes happy path (S56 T6): the append-only audit rows in the store's order (oldest first), filtered by root and/or grant. The Summary is a fixed template from ids and enums — never the note or the reason (SEC-033: a summary that echoed free text would let an operator smuggle a message into an audit trail that downstream tools parse). An absent limit means every row; the rows are the source of truth, and autonomy.show answers the same rows for one grant.",
+  "method": "autonomy.changes",
+  "request": {"jsonrpc": "2.0", "id": 406, "method": "autonomy.changes", "params": {"rootId": "aeon", "grantId": "g-8c21", "limit": 20}},
+  "response": {
+    "jsonrpc": "2.0", "id": 406,
+    "result": {
+      "changes": [
+        {
+          "id": 118,
+          "at": "2026-11-01T09:00:00Z",
+          "rootId": "aeon",
+          "grantId": "g-8c21",
+          "changeKind": "grant",
+          "actorKind": "user",
+          "actorId": "1000",
+          "summary": "autonomy grant of forge.openPR on root aeon by 1000"
+        },
+        {
+          "id": 121,
+          "at": "2026-11-01T10:30:00Z",
+          "rootId": "aeon",
+          "grantId": "g-8c21",
+          "changeKind": "revoke",
+          "actorKind": "user",
+          "actorId": "1000",
+          "summary": "autonomy revoke of forge.openPR on root aeon by 1000"
+        }
+      ]
+    }
+  }
+}

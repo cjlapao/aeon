@@ -1,0 +1,31 @@
+{
+  "description": "agent.view is the read the CRUD pages open on: a slug returns the agent row verbatim — the one surface the daemon owns (P34), so the CLI and the app read the same bytes rather than a second copy drifting. The row here is the WHOLE internal/store/agent.go Agent, the S43-extra dispatch columns included (tools, temperature, handoff, policyAgent, bodyHash, origin): T4 added them to the struct and this fixture never followed, so the generated client was typed against an answer missing six fields it is actually handed — S73 T7 widened it, and design AR5 is why the six matter, because they are part of the row an editor holds and posts back. The avatar words are also corrected to the two migration CHECK vocabularies (avatar_type ∈ '' | minion | cat, avatar_mood ∈ '' | idle | hi | thinking | working | stuck | done): the S43 fixture said 'default'/'neutral', which the database would refuse to store. A known slug answers the row; an unknown one is refused by name ('refused: <slug> has no agent row'), never an empty row that reads as 'nothing here'.",
+  "method": "agent.view",
+  "request": {"jsonrpc": "2.0", "id": 110, "method": "agent.view", "params": {"slug": "reviewer-plus"}},
+  "response": {"jsonrpc": "2.0", "id": 110, "result": {
+    "id": 12,
+    "slug": "reviewer-plus",
+    "name": "Reviewer Plus",
+    "description": "Reviews pull requests and posts findings to the thread",
+    "functionality": "read, list, write",
+    "metadata": "",
+    "prompt": "You are a careful code reviewer.",
+    "skills": "[]",
+    "version": "1.0.0",
+    "internal": false,
+    "avatarType": "minion",
+    "avatarColor": "blue",
+    "avatarMood": "idle",
+    "signature": "",
+    "certificate": "",
+    "signed": false,
+    "tools": "[\"read\",\"list\",\"write\"]",
+    "temperature": 0.2,
+    "handoff": "{}",
+    "policyAgent": "",
+    "bodyHash": "sha256:1f4b0c9d2a7e43b1a6c85d0e9f3a2b4c6d8e0f1a3b5c7d9e1f3a5b7c9d1e3f5a",
+    "origin": "user",
+    "createdAt": "2026-10-30T09:00:00Z",
+    "updatedAt": "2026-10-30T09:00:00Z"
+  }}
+}

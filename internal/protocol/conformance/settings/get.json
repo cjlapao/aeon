@@ -1,0 +1,17 @@
+{
+  "description": "The settings.get happy path (S44 T5): one declared key returns its full SettingView. Here test.count has a stored row, so the EFFECTIVE value is the stored value with source=\"database\" and stored non-null. get is the read the UI opens a setting row with and the CLI reads back after a set; it answers the store's own resolution (env → database → default) field for field, so the app never re-derives precedence (CS10's one-resolution rule). A key the registry does not declare refuses with settings.get's unknown code, not a silent default.",
+  "method": "settings.get",
+  "request": {"jsonrpc": "2.0", "id": 301, "method": "settings.get", "params": {"key": "test.count"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 301,
+    "result": {
+      "setting": {
+        "key": "test.count", "area": "test", "type": "int", "default": "3",
+        "description": "A test count setting.", "sensitive": false, "min": 1, "max": 10,
+        "value": "7", "source": "database", "stored": "7",
+        "shadowedBy": "", "envInvalid": "", "storedInvalid": false,
+        "updatedAt": "2026-10-30T12:00:00Z", "updatedBy": "user:1000"
+      }
+    }
+  }
+}

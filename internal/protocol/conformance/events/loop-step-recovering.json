@@ -1,0 +1,24 @@
+{
+  "description": "A step ended without filing what it declared; it is given one more attempt before the loop moves on.",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "params": {
+      "subscriptionId": "s-7f3a1b2c",
+      "seq": 2001,
+      "dseq": 14,
+      "kind": "loop.step.recovering",
+      "at": "2026-11-17T06:20:00.123456789Z",
+      "payload": {
+        "loopId": "loop-9",
+        "lane": "discovery",
+        "step": "",
+        "missing": [
+          "discovery.md"
+        ],
+        "afterOutcome": "ok",
+        "stepId": 71
+      }
+    }
+  }
+}

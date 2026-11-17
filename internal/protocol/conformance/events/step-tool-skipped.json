@@ -1,0 +1,23 @@
+{
+  "description": "One skipped call, answered to its exact tool_use id: the transcript's tool_result carries the LW2 sentence — 'not run: the person steered before this tool ran' — and the stream carries this event, so a watcher's spinner closes honestly on a call that never ran. A steered skip publishes no step.tool.end at all: an end would claim the call completed.",
+  "event": "step.tool.skipped",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "event",
+    "seq": 11,
+    "params": {
+      "subscriptionId": "s-1",
+      "seq": 1470,
+      "kind": "step.tool.skipped",
+      "at": "2026-10-24T12:00:00.000Z",
+      "payload": {
+        "stepId": 12,
+        "agent": "default",
+        "tool": "bash",
+        "toolUseId": "toolu_07",
+        "reason": "steered",
+        "iteration": 3
+      }
+    }
+  }
+}

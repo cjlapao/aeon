@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient for Light Presentation -->
+    <linearGradient id="lightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EDF2F7"/>
+    </linearGradient>
+
+    <!-- Loop Primary Flow Gradient -->
+    <linearGradient id="aeonFlowGradLight" x1="15%" y1="20%" x2="85%" y2="80%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="48%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0D9488"/>
+    </linearGradient>
+
+    <!-- Secondary Pulse / Learning Glow -->
+    <linearGradient id="synapseGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+
+    <!-- Subtle Drop Shadow -->
+    <filter id="softShadowLight" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0F172A" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#2563EB" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Container / Canvas Backing -->
+  <rect width="512" height="512" rx="112" fill="url(#lightBg)"/>
+  <rect width="512" height="512" rx="112" fill="none" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Infinite Agentic Ribbon with Shadow -->
+  <g filter="url(#softShadowLight)">
+    <!-- Base Ribbon Track -->
+    <path d="M 256,256 C 298,318 344,352 400,352 C 456,352 492,308 492,256 C 492,204 456,160 400,160 C 344,160 298,194 256,256 C 214,318 168,352 112,352 C 56,352 20,308 20,256 C 20,204 56,160 112,160 C 168,160 214,194 256,256 Z"
+          fill="none"
+          stroke="#E0E7FF"
+          stroke-width="44"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+    <!-- Active Gradient Energy Stream -->
+    <path d="M 256,256 C 298,318 344,352 400,352 C 456,352 492,308 492,256 C 492,204 456,160 400,160 C 344,160 298,194 256,256 C 214,318 168,352 112,352 C 56,352 20,308 20,256 C 20,204 56,160 112,160 C 168,160 214,194 256,256 Z"
+          fill="none"
+          stroke="url(#aeonFlowGradLight)"
+          stroke-width="36"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+    <!-- Front Crossing Ribbon Highlight -->
+    <path d="M 216,196 C 238,230 274,282 296,316"
+          fill="none"
+          stroke="url(#synapseGlow)"
+          stroke-width="36"
+          stroke-linecap="round"/>
+  </g>
+
+  <!-- Autonomous Agent / Iteration Nodes -->
+  <circle cx="112" cy="160" r="14" fill="#FFFFFF" stroke="#2563EB" stroke-width="8"/>
+  <circle cx="112" cy="160" r="5" fill="#2563EB"/>
+
+  <circle cx="400" cy="352" r="14" fill="#FFFFFF" stroke="#0D9488" stroke-width="8"/>
+  <circle cx="400" cy="352" r="5" fill="#0D9488"/>
+
+  <!-- Central Orchestration Gate Core -->
+  <g transform="translate(256, 256)">
+    <circle cx="0" cy="0" r="18" fill="#FFFFFF" stroke="#1E293B" stroke-width="6"/>
+    <path d="M 0,-8 L 6,-2 L 2,6 L -2,6 L -6,-2 Z" fill="#2563EB"/>
+  </g>
+</svg>

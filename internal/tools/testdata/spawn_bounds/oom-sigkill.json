@@ -1,0 +1,4 @@
+{
+  "command": "kill -9 $$",
+  "render": "$ kill -9 $$\nKILLED (exit -1, signal killed). That is what the kernel's OOM killer looks like, and also what `kill -9` from anything else looks like — this layer cannot tell them apart.\n"
+}

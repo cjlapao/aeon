@@ -1,0 +1,41 @@
+{
+  "description": "The component list includes named components before they have any loops, so the Projects page can display the saved metadata and offer a first loop in its workspace.",
+  "method": "component.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 91,
+    "method": "component.list"
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 91,
+    "result": {
+      "components": [
+        {
+          "id": "abc123",
+          "name": "Aeon QA",
+          "slug": "aeon-qa",
+          "root": "/home/p/aeon-qa",
+          "remote": "https://example.com/team/aeon-qa.git",
+          "remoteKey": "example/team/aeon-qa",
+          "repoKey": "aeon-qa",
+          "owner": "team",
+          "icon": "🧪",
+          "tags": [
+            "go",
+            "qa"
+          ],
+          "createdAt": "2026-10-20T08:00:00Z",
+          "updatedAt": "2026-10-20T08:00:00Z",
+          "parentId": "prj-abc123",
+          "shortDescription": "",
+          "description": "",
+          "defaultBranch": "main",
+          "branchPrefix": "aeon",
+          "maxParallelAgents": 1,
+          "maxParallelAgents": 1
+        }
+      ]
+    }
+  }
+}

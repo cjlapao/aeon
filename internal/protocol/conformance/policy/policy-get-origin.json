@@ -1,0 +1,23 @@
+{
+  "description": "S45 T12 (PM15/PM16): policy.get answers the whole row WITH its provenance. `origin` sits beside createdAt — 'system' here, because this row was written by the declared policy.corpus set through the seed door (AddInTx names it; the plain Add's rows carry 'user' from the column's default). The detail read is where provenance belongs stated in full: a person reading one rule should be able to see who authored it AND where it came from without a second call. Absence of the field means a rendering daemon that predates S45 T12, never a row with no provenance — the same additive meaning createdAt and describe carry.",
+  "method": "policy.get",
+  "request": {"jsonrpc": "2.0", "id": 72, "method": "policy.get", "params": {"id": "corpus.memory-steward-loop.a1b2c3d4e5f6"}},
+  "response": {
+    "jsonrpc": "2.0", "id": 72,
+    "result": {
+      "policy": {
+        "id": "corpus.memory-steward-loop.a1b2c3d4e5f6",
+        "type": "command_access",
+        "target": "agent:memory-steward-loop",
+        "action": "allow",
+        "source": "operator",
+        "notAfter": null,
+        "describe": "allows commands matching \"ls*\" for agent \"memory-steward-loop\" — authored by operator",
+        "createdAt": "2026-10-31T09:00:00Z",
+        "origin": "system",
+        "spec": {"command": "ls*", "state": "allow"},
+        "authored": true
+      }
+    }
+  }
+}

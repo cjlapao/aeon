@@ -1,0 +1,27 @@
+{
+  "description": "`remote.complete` is S21 T6's mounting (RA7, RA8): the completion of an async remote Task arrives as a call to this surface, because a held connection dies with the daemon and P2 exists precisely so the suspended step survives that. Verified AND bound: the signature rides as a param (stdio has no headers, N18; X-Aeon-Completion-* is sugar for the same fields) and must verify against the CONFIGURED peer's own key, and the task must be one this daemon created, still awaiting, whose callee is the sender — verification proves WHO sent it, binding proves WHAT THEY WERE ASKED. An unsolicited completion is refused whatever its signature proves (a fabricated skill result is N6's failure for questions, one layer up). The landing is the store's compare-and-set: a completion delivered twice lands once, and the completion resumes the suspended step cold, from rows.",
+  "method": "remote.complete",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 68,
+    "method": "remote.complete",
+    "params": {
+      "task": "742",
+      "peer": "docs-peer",
+      "result": "{\"findings\":4,\"summary\":\"deep analysis complete\"}",
+      "signature": "sha256=9c2f7be0a1d34e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8",
+      "timestamp": "2026-10-28T12:04:31Z",
+      "deliveryId": "cb1d3e5a-1"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 68,
+    "result": {
+      "taskId": "742",
+      "peer": "docs-peer",
+      "outcome": "landed",
+      "httpStatus": 200
+    }
+  }
+}

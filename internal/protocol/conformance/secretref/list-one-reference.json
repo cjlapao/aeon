@@ -1,0 +1,28 @@
+{
+  "description": "S59 T6 (EV7): secretref.list answers with what a reference IS — a name, where the value lives (sourceKind and source), the name the child will see (injectAs), and the environments that reference it. There is NO field the value could arrive under: the response type has nowhere to put one, which is AGENTS.md §4c's rule carried into this plane. referencedBy is the delete-safety read: an environment still naming this reference is named here.",
+  "method": "secretref.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 916,
+    "method": "secretref.list",
+    "params": { "sourceKind": "daemon-env", "limit": 10 }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 916,
+    "result": [
+      {
+        "id": "sref_1a2b3c4d",
+        "name": "deploy-token",
+        "description": "The deploy bot's token, held by the daemon's environment.",
+        "sourceKind": "daemon-env",
+        "source": "DEPLOY_TOKEN",
+        "injectAs": "DEPLOY_TOKEN",
+        "origin": "user",
+        "createdAt": "2026-11-03T09:10:00Z",
+        "updatedAt": "2026-11-03T09:10:00Z",
+        "referencedBy": ["ci-default"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "description": "history.list renders every in-scope loop as a row through the ONE history.Row the CLI shares (H3): a populated set returns rows and NO statement, because the 'no history' caption belongs to the empty case only (P31's honest empty is never a gap). Each row is the merge's facts plus its floored cost, nothing more \u2014 the transcript is a second fetch (history.show), never pre-pulled into the list, so the list never carries a byte a person never opened.",
+  "method": "history.list",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 410,
+    "method": "history.list",
+    "params": {
+      "projectRoot": "/proj"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 410,
+    "result": {
+      "rows": [
+        {
+          "kind": "live",
+          "id": "live",
+          "slug": "live",
+          "title": "build the live loop",
+          "status": "running",
+          "cost": "0.001",
+          "describe": {
+            "lane": "live",
+            "outcome": "running",
+            "cost": "0.001",
+            "costState": "partial",
+            "links": [
+              {
+                "kind": "loop",
+                "id": "live"
+              }
+            ]
+          },
+          "timeline": "2026-11-04T10:00:00Z"
+        }
+      ]
+    }
+  }
+}

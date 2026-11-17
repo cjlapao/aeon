@@ -1,0 +1,28 @@
+{
+  "description": "S46 T4's mcp.importFile — the HUMAN door that deliberately adopts a legacy mcp.json into the tables (MG3). Success shape: mode dry-run answering the plan (servers/tools/declares added and removed, env NAMES only — MG13 has nowhere for a value to travel), outcome dry-run, nothing written. The actor is the kernel's peer credential stamped by Table.ActorFor and NEVER a param; replace mode answers outcome replaced with counts and the before/after grants for every affected agent. The startup twin (adoptLegacy, actor system:startup) shares this importer and needs no door.",
+  "method": "mcp.importFile",
+  "request": {"jsonrpc": "2.0", "id": 915, "method": "mcp.importFile", "params": {
+    "path": "/home/operator/.config/aeon/mcp.json",
+    "mode": "dry-run"
+  }},
+  "response": {
+    "jsonrpc": "2.0", "id": 915,
+    "result": {
+      "mode": "dry-run",
+      "outcome": "dry-run",
+      "path": "/home/operator/.config/aeon/mcp.json",
+      "servers": 0,
+      "tools": 0,
+      "declares": 0,
+      "diff": {
+        "serversAdded": ["github", "labnote"],
+        "serversRemoved": [],
+        "toolsAdded": ["github.list_issues", "labnote.draft_note"],
+        "toolsRemoved": [],
+        "declaresAdded": ["golang-engineer declares github.list_issues", "golang-engineer declares labnote.draft_note"],
+        "declaresRemoved": [],
+        "envNames": ["GITHUB_TOKEN"]
+      }
+    }
+  }
+}

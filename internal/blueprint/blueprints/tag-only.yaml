@@ -1,0 +1,13 @@
+# tag-only — the bench demo runner's one-lane rehearsal of the tech-tag
+# resolver (S13, spec 2026-10-25-bench-demo-runner). Not a workflow: the
+# resolver's two honest outcomes both surface from this single lane — an
+# unknown tag stops the loop naming the tag and the available tags, a known
+# tag dispatches the RESOLVED handler (visible on the step row as the step's
+# agent). It needs no credential to show the refusal half, which is why the
+# demo runs it live.
+id: tag-only
+schemaVersion: 1
+version: 1
+lanes:
+  - id: implement
+    step: {kind: model-step, agent: by-tech-tag, produces: OUT.md}

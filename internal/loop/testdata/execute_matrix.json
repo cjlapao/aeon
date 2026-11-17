@@ -1,0 +1,112 @@
+[
+  {
+    "action": "forge.openPR",
+    "attended": false,
+    "allowOutward": false,
+    "withTask": false,
+    "status": "blocked",
+    "lastReason": "forge.openPR denied — effect class 'outward' resolves to deny (loop is unattended)",
+    "questionId": 0,
+    "fakeCalls": []
+  },
+  {
+    "action": "forge.openPR",
+    "attended": false,
+    "allowOutward": true,
+    "withTask": true,
+    "status": "done",
+    "lastReason": "",
+    "questionId": 0,
+    "fakeCalls": [
+      {
+        "method": "FindOpenPR",
+        "args": [
+          "task/gld-openpr-att-false-out-true/4a17"
+        ]
+      },
+      {
+        "method": "OpenPR",
+        "args": [
+          {
+            "Title": "[4a17] Add version endpoint",
+            "Body": "Serves the per-loop opt-in drive; the base is code's fact, not the model's.",
+            "Head": "task/gld-openpr-att-false-out-true/4a17",
+            "Base": "feature/gld-openpr-att-false-out-true"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "action": "forge.openPR",
+    "attended": true,
+    "allowOutward": false,
+    "withTask": true,
+    "status": "waiting",
+    "lastReason": "",
+    "questionId": 1,
+    "questionKind": "gate",
+    "questionBody": "Open a pull request?\n\nforge.openPR\n  head: task/gld-openpr-att-true-out-false/4a17\n  base: feature/gld-openpr-att-true-out-false\n  title: Add version endpoint\nrepository:  /repo/golden\n\neffect: outward — other people will see this",
+    "questionOptions": [
+      "approve",
+      "deny"
+    ],
+    "fakeCalls": []
+  },
+  {
+    "action": "forge.openPR",
+    "attended": true,
+    "allowOutward": true,
+    "withTask": true,
+    "status": "waiting",
+    "lastReason": "",
+    "questionId": 1,
+    "questionKind": "gate",
+    "questionBody": "Open a pull request?\n\nforge.openPR\n  head: task/gld-openpr-att-true-out-true/4a17\n  base: feature/gld-openpr-att-true-out-true\n  title: Add version endpoint\nrepository:  /repo/golden\n\neffect: outward — other people will see this",
+    "questionOptions": [
+      "approve",
+      "deny"
+    ],
+    "fakeCalls": []
+  },
+  {
+    "action": "forge.merge",
+    "attended": false,
+    "allowOutward": false,
+    "withTask": false,
+    "status": "blocked",
+    "lastReason": "forge.merge denied — effect class 'irreversible' resolves to deny (loop is unattended)",
+    "questionId": 0,
+    "fakeCalls": []
+  },
+  {
+    "action": "forge.merge",
+    "attended": false,
+    "allowOutward": true,
+    "withTask": false,
+    "status": "blocked",
+    "lastReason": "forge.merge denied — effect class 'irreversible' resolves to deny (loop is unattended; allowOutward does not grant it)",
+    "questionId": 0,
+    "fakeCalls": []
+  },
+  {
+    "action": "forge.merge",
+    "attended": true,
+    "allowOutward": false,
+    "withTask": true,
+    "status": "blocked",
+    "lastReason": "the forge.merge ask must say what it affects (O1) — missing: pr number",
+    "questionId": 0,
+    "fakeCalls": []
+  },
+  {
+    "action": "forge.merge",
+    "attended": true,
+    "allowOutward": true,
+    "withTask": true,
+    "status": "blocked",
+    "lastReason": "the forge.merge ask must say what it affects (O1) — missing: pr number",
+    "questionId": 0,
+    "fakeCalls": []
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "description": "The empty roadmap is a statement, not a silence: `items` is a present, empty array — and the D8 promise lives here, said with the empty board — loop.start was never asked about any of this, and a project with zero roadmap items starts loops exactly as it always did. `componentRoot` echoes the asked-for project (N2: there is no cross-project board to accidentally read). When rows exist they arrive in R1's machine order — idea first, cancelled last — the forward Gantt's shape.",
+  "method": "roadmap.list",
+  "request": {"jsonrpc": "2.0", "id": 342, "method": "roadmap.list", "params": {"componentRoot": "/srv/projects/ledger"}},
+  "response": {"jsonrpc": "2.0", "id": 342, "result": {"componentRoot": "/srv/projects/ledger", "items": []}}
+}

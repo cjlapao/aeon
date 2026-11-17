@@ -1,0 +1,31 @@
+{
+  "description": "The loop's honest Delete (S33 T9, the bench's Delete door): the loop and its documents move into cold storage WITH their state \u2014 assembled by the store, never by the caller, because two callers would decide 'the loop's state' differently. The counters are the answer: bytes of state, the file mirror's size; `status` is the loop's status AS ARCHIVED (a snapshot, not a state machine). And the fact D8 stakes its name on: the telemetry rollups do NOT ride along. Counted work was counted; archiving the ledger's subject does not un-count it. A loop that is not pinned answers refused.no-such-loop as DATA, naming the id.",
+  "method": "loop.archive",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 266,
+    "method": "loop.archive",
+    "params": {
+      "id": "loop-7c31",
+      "note": "shopfront redesign shelved"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 266,
+    "result": {
+      "id": "arc-1",
+      "slug": "shopfront-redesign",
+      "componentRoot": "/home/dev/shop",
+      "title": "Shopfront redesign",
+      "goal": "a checkout that reads like the brand",
+      "status": "done",
+      "startedAt": "2026-10-29T08:00:00Z",
+      "endedAt": "2026-10-30T09:40:00Z",
+      "archivedAt": "2026-10-30T09:45:00Z",
+      "stateBytes": 4210,
+      "fileCount": 3,
+      "fileBytes": 1180
+    }
+  }
+}

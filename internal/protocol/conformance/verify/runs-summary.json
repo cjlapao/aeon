@@ -1,0 +1,42 @@
+{
+  "description": "verify.runs answering with a failed run: the reason is the runner's fixed counts sentence, the summary what the run's gates reported, the digest pins the output bundle. A passing run carries neither — their absence is honest, not empty prose.",
+  "method": "verify.runs",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1005,
+    "method": "verify.runs",
+    "params": {
+      "componentId": "c-aeon",
+      "loop": "fix-the-login",
+      "state": "",
+      "limit": 20
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1005,
+    "result": {
+      "runs": [
+        {
+          "id": "vr-310",
+          "loopSlug": "fix-the-login",
+          "componentRoot": "/home/cjlapao/src/aeon",
+          "componentId": "c-aeon",
+          "task": "verify",
+          "position": 3,
+          "attempt": 2,
+          "headSha": "9a4b7c6d5e8f0a1b2c3d4e5f6a7b8c9d3f8c2d1e",
+          "trigger": "loop",
+          "actorKind": "agent",
+          "actorId": "verifier-engineer",
+          "startedAt": "2026-11-03T09:55:00Z",
+          "endedAt": "2026-11-03T09:56:04Z",
+          "state": "fail",
+          "reason": "1 required gate failed",
+          "summary": "unit failed (exit 1); fmt passed",
+          "digest": "sha256:4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a"
+        }
+      ]
+    }
+  }
+}

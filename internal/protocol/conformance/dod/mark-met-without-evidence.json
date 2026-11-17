@@ -1,0 +1,28 @@
+{
+  "description": "dod.mark refuses a met item that names no evidence: a met item names its evidence — the ref it marks against — and an empty ref is refused (code -31872, kind met-without-evidence) with the store's own sentence; the item's row is exactly as it was.",
+  "method": "dod.mark",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 1063,
+    "method": "dod.mark",
+    "params": {
+      "id": "dod-2",
+      "state": "met"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1063,
+    "error": {
+      "code": -31872,
+      "message": "the DoD operation was refused",
+      "data": {
+        "kind": "met-without-evidence",
+        "what": "dod mark refused: a met item names its evidence — the ref is empty",
+        "means": "the daemon understood and declined — the item keeps its state and its evidence (no mark written, no updated stamp), and the kind in data kind says whose mark it is not",
+        "todo": "do what the what sentence names — name the evidence a met item needs, or ask the mark of the actor it says it belongs to",
+        "fatal": false
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "description": "The settings READ answers with both knobs and the three-state `known` (P31): `known=false` says no component owns this root — the values shown are then the slice's DECLARED defaults (`ask`, `manual`, R4) and never masquerade as a stored fact. A write names BOTH knobs at once (queueAdvance and sizingMode together, or neither): two callers each changing one knob would agree on a third state nobody said. A half-pair is a shape error decided before the store is touched.",
+  "method": "queue.settings",
+  "request": {"jsonrpc": "2.0", "id": 305, "method": "queue.settings", "params": {"componentRoot": "/srv/projects/ledger"}},
+  "response": {"jsonrpc": "2.0", "id": 305, "result": {"componentRoot": "/srv/projects/ledger", "known": true, "queueAdvance": "ask", "sizingMode": "manual"}}
+}

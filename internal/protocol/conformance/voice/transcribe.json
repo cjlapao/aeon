@@ -1,0 +1,6 @@
+{
+  "description": "`voice.transcribe` turns one recording into text with a route that declares the `asr` capability. The recording is base64 with its media type; the route is named by the caller and a route without the capability is refused by name, so a chat model is never sent audio. It changes nothing in the daemon.",
+  "method": "voice.transcribe",
+  "request": { "jsonrpc": "2.0", "id": 90, "method": "voice.transcribe", "params": { "route": "whisper", "audio": "UENN", "mime": "audio/webm", "language": "en" } },
+  "response": { "jsonrpc": "2.0", "id": 90, "result": { "text": "how is the dev loop going" } }
+}

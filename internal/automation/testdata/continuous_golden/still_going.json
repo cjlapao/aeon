@@ -1,0 +1,32 @@
+[
+  {
+    "status": "running",
+    "goSide": true,
+    "sqlFound": true
+  },
+  {
+    "status": "waiting",
+    "goSide": true,
+    "sqlFound": true
+  },
+  {
+    "status": "blocked",
+    "goSide": true,
+    "sqlFound": true
+  },
+  {
+    "status": "done",
+    "goSide": false,
+    "sqlFound": false
+  },
+  {
+    "status": "aborted",
+    "goSide": false,
+    "sqlFound": false
+  },
+  {
+    "status": "idle",
+    "goSide": false,
+    "sqlFound": false
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "case": "mergepr",
+  "method": "PUT",
+  "path": "/repos/acme/widget/pulls/7/merge",
+  "authShape": "Bearer \u003credacted\u003e",
+  "accept": "application/vnd.github+json",
+  "body": "{\"merge_method\":\"squash\"}",
+  "attempts": 1,
+  "wire": "{\n  \"merged\": true,\n  \"sha\": \"6d70a1d5e0c5a0c1e0b0f1f2a3b4c5d6e7f8091a\"\n }",
+  "mapped": "{\"SHA\":\"6d70a1d5e0c5a0c1e0b0f1f2a3b4c5d6e7f8091a\",\"Merged\":true}",
+  "wireHas": [
+    "merged",
+    "sha"
+  ],
+  "mappedHas": [
+    "merged",
+    "sha"
+  ]
+}

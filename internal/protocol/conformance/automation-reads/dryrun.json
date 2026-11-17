@@ -1,0 +1,29 @@
+{
+  "description": "What the waiting events WOULD have done against this trigger\u2019s match, from the trigger\u2019s own cursor \u2014 a scan that claims nothing and writes nothing: the engine\u2019s admission, held up to the outbox.",
+  "method": "automation.dryrun",
+  "request": {
+    "jsonrpc": "2.0",
+    "id": 8210,
+    "method": "automation.dryrun",
+    "params": {
+      "id": "trg-bugs"
+    }
+  },
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 8210,
+    "result": {
+      "wouldMatch": [
+        {
+          "outboxId": 41,
+          "event": "task.created",
+          "subjectKind": "task",
+          "subjectId": "tsk-61aa",
+          "at": "2026-11-03T08:59:00.000Z"
+        }
+      ],
+      "scanned": 2,
+      "from": 40
+    }
+  }
+}

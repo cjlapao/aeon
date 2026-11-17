@@ -1,0 +1,2 @@
+$ aeon policy in-force --agent stranger
+nothing governs "agent:stranger" — the default deny (PL5) binds everyone until an operator grant names an exception

@@ -1,0 +1,14 @@
+{
+  "description": "LW7 in one notification: terminal bytes are THIS notification, not an event — no seq from the durable log, no ring space, no subscription filter. The per-terminal `seq` is monotonic and allocates once per COALESCED chunk (16 ms or 32 KiB, LW10), not per byte or per read; `data` is base64 because a shell produces non-UTF-8 bytes (Q3). Delivery goes only to ATTACHED connections — the one(s) that called terminal.attach.",
+  "event": "terminal.output",
+  "notification": {
+    "jsonrpc": "2.0",
+    "method": "terminal.output",
+    "seq": 3,
+    "params": {
+      "terminalId": "t-7f3a",
+      "seq": 7,
+      "data": "JGhlYWQgL3N0cnMvQ0hBTkdFTUUubWQKRm91bmRzIGhlcmUuCg=="
+    }
+  }
+}

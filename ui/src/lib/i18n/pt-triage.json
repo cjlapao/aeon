@@ -1,0 +1,106 @@
+{
+  "settings": {
+    "triage": {
+      "title": "Triagem",
+      "subtitle": "Alegações de bugs, se se confirmam, e os atos humanos que os fazem avançar.",
+      "reconnecting": "O daemon está a reconectar — as leituras continuam, as escritas esperam.",
+      "vocabulary": {
+        "failed": "O vocabulário do daemon não pôde ser lido — até chegar, este painel não nomeia estados nem cita autoridade."
+      },
+      "actions": {
+        "retry": "Repetir",
+        "validate": "Validar",
+        "handoff": "Encaminhar",
+        "go": {
+          "validate": "Correr a validação",
+          "handoff": "Encaminhar agora"
+        },
+        "setting": "Blueprint de validação"
+      },
+      "filters": {
+        "root": "Raiz de componente",
+        "rootHint": "O tabuleiro responde a uma raiz de cada vez — é o daemon que filtra, este painel nunca varre.",
+        "validation": "Validação",
+        "priority": "Prioridade",
+        "handedOff": "Encaminhado",
+        "any": "qualquer",
+        "yes": "sim",
+        "no": "não"
+      },
+      "board": {
+        "needsRoot": "Nada carregado ainda — o tabuleiro é por raiz de componente; nomeie uma.",
+        "loading": "A perguntar ao daemon…",
+        "empty": "O tabuleiro respondeu vazio — para esta raiz e estes filtros, como o daemon os filtrou."
+      },
+      "row": {
+        "filedBy": "registada por",
+        "attempts": "tentativas de validação:",
+        "neverAttempted": "nunca tentada",
+        "candidates": "possíveis duplicados (mais próximos primeiro):",
+        "open": "Abrir"
+      },
+      "drawer": {
+        "attempts": "tentativas de validação:",
+        "history": "histórico de auditoria:",
+        "historyEmpty": "Ainda não há linhas de auditoria para este bug.",
+        "cancel": "Cancelar",
+        "refused": "O daemon recusou isto"
+      },
+      "edit": {
+        "intro": "Título e corpo — os únicos campos que uma pessoa pode editar; o daemon recusa qualquer outro, palavra por palavra.",
+        "title": "Título",
+        "body": "Corpo",
+        "save": "Guardar",
+        "saving": "A guardar…",
+        "saved": "Guardado — o daemon escreveu a linha e a sua auditoria.",
+        "noChange": "Nada mudou — o daemon disse-o; nenhuma linha de auditoria foi escrita."
+      },
+      "duplicates": {
+        "intro": "Possíveis duplicados, pontuados pela comparação do próprio daemon — um vínculo só se torna real a partir de uma pessoa com nome.",
+        "mark": "Marcar como duplicado",
+        "confirmLine": "Ligar o #{id} como duplicado do #{of}. Um duplicado é um ato humano irreversível — o daemon recusa um confirmador que não seja uma pessoa.",
+        "confirmedBy": "Confirmado por",
+        "confirmedByHint": "O seu nome, como o daemon conhece uma pessoa — verificado contra as pessoas, não digitado às cegas.",
+        "confirm": "Confirmar o vínculo"
+      },
+      "statement": {
+        "pending": "A declaração do daemon ainda não chegou — nada pode correr enquanto não for lida."
+      },
+      "blueprint": {
+        "intro": "Qual blueprint responde a uma corrida de validação. O daemon lê-la em cada validação e recusa pelo nome quando falta ou é inválida — nunca um recurso alternativo.",
+        "label": "Blueprint de validação",
+        "hint": "Guardado pela única porta de definições; o daemon responde com a nova vista ou uma recusa, ambos palavra por palavra.",
+        "save": "Guardar",
+        "saving": "A guardar…",
+        "saved": "Guardado — o daemon escreveu o novo valor e o seu evento.",
+        "noChange": "Nada mudou — o daemon disse-o.",
+        "healthAdvice": "O ponto de saúde é conselho, nunca portão — a validação revalida o blueprint no seu próprio momento."
+      },
+      "help": {
+        "title": "O que é a triagem?",
+        "body": "## O que é a triagem?\n\nUm **bug** aqui é uma alegação: uma pessoa ou um agente diz que algo está avariado num componente. A **triagem** é o quadro onde cada alegação é verificada e decidida, um componente de cada vez.\n\n- **Validação**: o Aeon executa o blueprint de validação para tentar reproduzir o bug. O resultado fica registado como o estado de validação do bug.\n- **Prioridade**: indica se a prioridade foi declarada, assumida ou é desconhecida. Nunca finge saber mais.\n- **Duplicados**: o daemon pontua possíveis duplicados. Uma ligação só se torna real quando uma pessoa identificada a confirma.\n- **Entregar**: um bug validado pode ser entregue ao roadmap para ser planeado.\n\nValidar e entregar mostram primeiro a declaração do próprio daemon, e nada corre até confirmar. Escolha um componente para ver o seu quadro."
+      },
+      "hint": "Escolha um componente para ver os seus bugs. Abra um para ler o histórico, editá-lo, confirmar um duplicado, validá-lo ou entregá-lo.",
+      "col": {
+        "bug": "Bug",
+        "validation": "Validação",
+        "priority": "Prioridade",
+        "filedBy": "Registado por",
+        "attempts": "Tentativas"
+      },
+      "footer": "A mostrar {shown} de {total}",
+      "root": {
+        "label": "Componente",
+        "none": "Escolha um componente…"
+      },
+      "q": {
+        "know": "O que sabemos?",
+        "dup": "É um duplicado?",
+        "edit": "O que diz?",
+        "history": "O que lhe aconteceu?",
+        "run": "Executar?",
+        "setting": "Que blueprint valida um bug?"
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "case": "bash-inherits-parent-env",
+  "stdout": "MARKER=inheritance-pin\nPATH_SET=1\n"
+}

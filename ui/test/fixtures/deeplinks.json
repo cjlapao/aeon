@@ -1,0 +1,126 @@
+{
+  "_comment": "S58 T7/T8 — the ONE deep-link grammar table (SV9). Read by BOTH parsers: the Rust `parse_link` (ui/src-tauri/tests/background_policy.rs, include_str!) and the web `parseTarget` (ui/test/navigate-listener.test.tsx). `accept` null means the link is refused; `reason` is the shell's fixed refusal word the Rust classify_link must answer (the web parser returns just null — it renders only the fixed words the shell sent). A case added on one side without the other is a drift bug this file catches the day it moves.",
+  "cases": [
+    {
+      "url": "aeon://inbox",
+      "accept": {
+        "kind": "inbox"
+      },
+      "reason": null
+    },
+    {
+      "url": "aeon://loop/ab12_CD-9",
+      "accept": {
+        "kind": "loop",
+        "id": "ab12_CD-9"
+      },
+      "reason": null
+    },
+    {
+      "url": "aeon://root/x1",
+      "accept": {
+        "kind": "root",
+        "id": "x1"
+      },
+      "reason": null
+    },
+    {
+      "url": "aeon://root/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "accept": {
+        "kind": "root",
+        "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "reason": null
+    },
+    {
+      "url": "",
+      "accept": null,
+      "reason": "wrong-scheme"
+    },
+    {
+      "url": "aeon://",
+      "accept": null,
+      "reason": "unknown-door"
+    },
+    {
+      "url": "aeon://inbox/",
+      "accept": null,
+      "reason": "carries-extra"
+    },
+    {
+      "url": "aeon://inbox?token=t",
+      "accept": null,
+      "reason": "carries-extra"
+    },
+    {
+      "url": "aeon://settings",
+      "accept": null,
+      "reason": "unknown-door"
+    },
+    {
+      "url": "http://aeon://inbox",
+      "accept": null,
+      "reason": "wrong-scheme"
+    },
+    {
+      "url": "AEON://inbox",
+      "accept": null,
+      "reason": "wrong-scheme"
+    },
+    {
+      "url": "aeon://loop",
+      "accept": null,
+      "reason": "bad-target"
+    },
+    {
+      "url": "aeon://loop/",
+      "accept": null,
+      "reason": "bad-target"
+    },
+    {
+      "url": "aeon://loop/a/b",
+      "accept": null,
+      "reason": "carries-extra"
+    },
+    {
+      "url": "aeon://loop/..%2f..",
+      "accept": null,
+      "reason": "carries-extra"
+    },
+    {
+      "url": "aeon://loop/../../etc/passwd",
+      "accept": null,
+      "reason": "carries-extra"
+    },
+    {
+      "url": "aeon://loop/a\\\\b",
+      "accept": null,
+      "reason": "carries-extra"
+    },
+    {
+      "url": "aeon://loop/with space",
+      "accept": null,
+      "reason": "bad-target"
+    },
+    {
+      "url": "aeon://loop/x?token=t",
+      "accept": null,
+      "reason": "carries-extra"
+    },
+    {
+      "url": "aeon://loop/x#frag",
+      "accept": null,
+      "reason": "carries-extra"
+    },
+    {
+      "url": "aeon://loop/x%41",
+      "accept": null,
+      "reason": "carries-extra"
+    },
+    {
+      "url": "aeon://loop/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "accept": null,
+      "reason": "oversize-target"
+    }
+  ]
+}

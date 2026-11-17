@@ -1,0 +1,9 @@
+{
+  "description": "agent.rows refused as a shape error because it was asked to sort by a name it has never published (PG4). The seven sorts are a closed vocabulary — the wire words the store's own bounds map turns into column literals — so an unknown one is refused BEFORE any query runs, naming what the caller sent and listing what exists. The order by is never built from a caller's string: a sort that reached SQL text would be a caller writing the query, and the refusal is the same −32602 voice the daemon uses for every other \"that is not one of the values\". A typo here costs one round trip; a silently ignored one costs a table that looks sorted while it is not.",
+  "method": "agent.rows",
+  "request": {"jsonrpc": "2.0", "id": 120, "method": "agent.rows", "params": {"sort": "colour", "dir": "asc"}},
+  "response": {"jsonrpc": "2.0", "id": 120, "error": {
+    "code": -32602,
+    "message": "invalid params: sort \"colour\" is not one of the sorts this read answers — \"createdAt\", \"internal\", \"name\", \"signed\", \"slug\", \"updatedAt\", \"version\""
+  }}
+}

@@ -1,0 +1,24 @@
+{
+  "description": "`loop.create` needs both a slug and a componentRoot. `awaiting` is on the view and is DERIVED (DB6) — there is no awaiting_user column, because a stored flag and an unanswered question can disagree and nothing would say which is right.",
+  "method": "loop.create",
+  "request": {
+    "jsonrpc": "2.0", "id": 41, "method": "loop.create",
+    "params": {"slug": "refactor", "componentRoot": "/home/p/repo-a", "goal": "split the store"}
+  },
+  "response": {
+    "jsonrpc": "2.0", "id": 41,
+    "result": {
+      "id": "9f2c1b7a4e5d6f8a0b1c2d3e4f5a6b7c",
+      "slug": "refactor",
+      "componentRoot": "/home/p/repo-a",
+      "title": "refactor",
+      "goal": "split the store",
+      "mode": "standard",
+      "phase": "preflight",
+      "status": "active",
+      "startedAt": "2026-10-15T09:41:12.345Z",
+      "updatedAt": "2026-10-15T09:41:12.345Z",
+      "awaiting": false
+    }
+  }
+}
